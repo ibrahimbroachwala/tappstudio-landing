@@ -2,273 +2,749 @@
 <html lang="en">
 
 <head>
-  <title>Chat, Create, Play - AI FunKit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAPP STUDIO - Mobile & Web Development Agency in Mumbai</title>
   <meta name="description"
-    content="Create high definition AI images with Dall-E3 and chat with unique AI characters with GPT-4. #openai #chatgpt #dalle3" />
-  <meta property="og:title" content="AI FunKit" />
-  <meta name="keywords" content="best ai chat,free dalle3,best image generator,funny ai chat,ai games">
+    content="TAPP STUDIO is a premier mobile and web development agency in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
+  <meta name="keywords" content="mobile app development, web development, UI/UX design, Mumbai, India, digital agency">
+  <meta name="author" content="TAPP STUDIO">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description"
-    content="Create high definition AI images with Dall-E3 and chat with unique AI characters with GPT-4. #openai #chatgpt #dalle3" />
-  <meta name="twitter:image" content="https://www.roleplay.lol/public/external/twitter_card.png" />
-  <meta name="twitter:site" content="@ai.funkit" />
-  <meta name="twitter:creator" content="@ibrahim_broach" />
-  <meta property="og:url" content="https://www.tappstudio.in" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tappstudio.com/">
+  <meta property="og:title" content="TAPP STUDIO - Mobile & Web Development Agency in Mumbai">
   <meta property="og:description"
-    content="Create high definition AI images with Dall-E3 and chat with unique AI characters with GPT-4. #openai #chatgpt #dalle3" />
-  <meta property="og:image"
-    content="https://www.tappstudio.in/public/external/screenshot_2024-01-24_at_2.36.04_pm-removebg-min-1500w.png" />
+    content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+  <meta property="og:image" content="https://tappstudio.com/images/og-image.jpg">
 
-  <style data-tag="reset-style-sheet">
-    html {
-      line-height: 1.15;
-    }
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tappstudio.com/">
+  <meta property="twitter:title" content="TAPP STUDIO - Mobile & Web Development">
+  <meta property="twitter:description"
+    content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+  <meta property="twitter:image" content="https://tappstudio.com/images/twitter-image.jpg">
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tappstudio.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="./index.css" as="style">
+
+  <!-- Critical CSS -->
+  <style>
+    /* Critical CSS for above-the-fold content */
     body {
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
       margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    * {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
       box-sizing: border-box;
-      border-width: 0;
-      border-style: solid;
+      transition: background 0.3s ease, padding 0.3s ease;
     }
 
-    p,
-    li,
-    ul,
-    pre,
-    div,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    figure,
-    blockquote,
-    figcaption {
-      margin: 0;
-      padding: 0;
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 5%;
+      position: relative;
+      overflow: hidden;
     }
 
-    button {
-      background-color: transparent;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+      z-index: -1;
     }
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: inherit;
-      font-size: 100%;
-      line-height: 1.15;
-      margin: 0;
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
+      z-index: -1;
     }
 
-    button,
-    select {
-      text-transform: none;
+    .hero>* {
+      position: relative;
+      z-index: 1;
     }
 
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"] {
-      -webkit-appearance: button;
+    .reduced-opacity {
+      opacity: 0.5;
     }
 
-    button::-moz-focus-inner,
-    [type="button"]::-moz-focus-inner,
-    [type="reset"]::-moz-focus-inner,
-    [type="submit"]::-moz-focus-inner {
-      border-style: none;
-      padding: 0;
-    }
-
-    button:-moz-focus,
-    [type="button"]:-moz-focus,
-    [type="reset"]:-moz-focus,
-    [type="submit"]:-moz-focus {
-      outline: 1px dotted ButtonText;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: inherit;
-    }
-
-    input {
-      padding: 2px 4px;
-    }
-
-    img {
-      display: block;
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-  </style>
-  <style data-tag="default-style-sheet">
-    html {
-      font-family: Inter;
-      font-size: 16px;
-    }
-
-    body {
-      font-weight: 400;
-      font-style: normal;
+    /* CTA Button Styles */
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
       text-decoration: none;
-      text-transform: none;
-      letter-spacing: normal;
-      line-height: 1.15;
-      color: var(--dl-color-gray-black);
-      background-color: var(--dl-color-gray-white);
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .cta-button:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 101;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    .menu-button.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-button.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 0;
+        transition: 0.3s;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+
+      nav ul li {
+        margin: 0.8rem 0;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: 0.3s;
+        width: 100%;
+        text-align: center;
+      }
+
+      nav.active ul li {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      nav ul li a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.8rem 0;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul li {
+        margin: 0.6rem 0;
+      }
+
+      nav ul li a {
+        font-size: 1.1rem;
+        padding: 0.6rem 0;
+      }
+
+      .menu-button {
+        padding: 0.3rem;
+      }
+
+      .menu-button span {
+        width: 20px;
+        margin: 4px 0;
+      }
+    }
+
+    /* Portfolio Grid Styles */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portfolio-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-image::after {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    .portfolio-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .portfolio-description {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .portfolio-tags span {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .portfolio-image {
+        height: 250px;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
-  <link rel="shortcut icon" href="public/dark-1x.png" type="icon/png" sizes="32x32" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TAPP STUDIO",
+      "url": "https://tappstudio.com",
+      "logo": "https://tappstudio.com/images/logo.png",
+      "description": "A premier mobile and web development agency in Mumbai, India",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 9820485853",
+        "contactType": "customer service",
+        "email": "tappstudio.in@gmail.com"
+      },
+      "sameAs": [
+        "https://twitter.com/tappstudio",
+        "https://www.linkedin.com/company/tappstudio",
+        "https://www.instagram.com/tappstudio"
+      ]
+    }
+  </script>
 </head>
 
-<body class="main-body">
-  <link rel="stylesheet" href="./style.css" />
-  <div>
-    <link href="./index.css" rel="stylesheet" />
+<body>
+  <header>
+    <div class="logo">TAPP<span class="reduced-opacity">STUDIO</span></div>
+    <button class="menu-button" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <ul>
+        <li style="--i:1"><a href="#work">WORK</a></li>
+        <li style="--i:2"><a href="#services">SERVICES</a></li>
+        <li style="--i:3"><a href="#about">ABOUT</a></li>
+        <li style="--i:4"><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="home-container">
-      <div class="home-container01">
+  <section class="hero">
+    <div class="studio-tag">[TAPPSTUDIO]</div>
+    <h1 class="hero-title"><span class="reduced-opacity">YOUR</span> IDEA,<br>PERFECTED <span
+        class="reduced-opacity">BY</span><br>DESIGN <span class="reduced-opacity">AND</span> CODE.</h1>
+    <p class="hero-description">We craft exceptional mobile and web experiences that blend technical excellence with
+      bold, innovative design.</p>
+    <a href="#work" class="cta-button">OUR WORK</a>
+    <div class="divider"></div>
+    <p class="tagline">With a blend of creativity and technical prowess, we transform ideas into reality!</p>
+  </section>
 
-        <div class="home-container03">
-          <img alt="image" src="public/external/icon.png" loading="eager" class="home-image" />
+  <section id="work" class="portfolio">
+    <div class="section-label">WORK</div>
+    <h2 class="section-title">OUR FINEST<br>WORK</h2>
+    <p class="section-description">Explore our most impactful digital experiences, each crafted with precision and
+      purpose.</p>
 
-          <img src="public/external/screenshot_2024-01-24_at_2.36.04_pm-removebg-min-1500w.png" alt="image"
-            class="home-image2" />
-          <div class="home-container04">
-            <h1 class="home-text03">
-              <span class="home-text05">Create</span>
-              <span class="home-text06">&amp;</span>
-              <span class="home-text05">Download</span>
-              <span class="home-text06">HD</span>
-              <span class="home-text05">AI Images.</span>
-              <br class="home-text07" />
-              <span class="home-text05">Chat</span>
-              <span class="home-text06">with unique</span>
-              <span class="home-text05">AI</span>
-              <span class="home-text05">Characters.</span>
-              <br />
-            </h1>
-            <h2 class="home-hashtags">Powered by <b> Dall-E 3 </b> & <b> GPT-4 </b></h2>
-
-
-            <div class="button-row">
-              <a href="https://apps.apple.com/in/app/roleplay-ai-art-fun-chat/id6450719081" target="_blank"
-                rel="noreferrer noopener">
-                <img src="public/external/appstore.png" alt="appstore" class="appstore">
-
-              </a> <a href="https://play.google.com/store/apps/details?id=ai.roleplay.chat" target="_blank"
-                rel="noreferrer noopener">
-                <img src="public/external/playstore.png" alt="playstore" class="playstore">
-              </a>
-            </div>
-
-
-          </div>
-          <div class="home-container05">
-            <div class="home-container06">
-              <svg viewBox="0 0 1024 1024" class="home-icon2">
-                <path
-                  d="M640 214v-44h-42v44h42zM426 214v-44h-42v44h42zM662 92q106 76 106 206h-512q0-54 30-114t74-92l-56-56q-16-16 0-30t30 0l64 64q52-28 114-28 52 0 112 28l64-64q16-14 30 0t0 30zM874 342q26 0 45 19t19 45v298q0 28-19 46t-45 18-45-18-19-46v-298q0-26 19-45t45-19zM150 342q26 0 45 19t19 45v298q0 28-19 46t-45 18-45-18-19-46v-298q0-26 19-45t45-19zM256 768v-426h512v426q0 18-12 30t-30 12h-44v150q0 28-19 46t-45 18-45-18-19-46v-150h-84v150q0 28-19 46t-45 18-45-18-19-46v-150h-44q-18 0-30-12t-12-30z">
-                </path>
-              </svg>
-              <svg viewBox="0 0 796.0137142857142 1024" class="home-icon4">
-                <path
-                  d="M796 694.286c-14.286 45.143-37.143 93.143-70.286 142.857-49.143 74.857-98.286 112-146.857 112-19.429 0-45.714-6.286-80-18.286-33.714-12.571-62.857-18.286-86.286-18.286-22.857 0-50.286 6.286-81.143 18.857-31.429 13.143-56.571 19.429-75.429 19.429-58.857 0-115.429-49.714-172-148-55.429-98.286-84-193.714-84-287.429 0-87.429 21.714-158.286 64.571-213.714 42.857-54.857 96.571-82.286 162.286-82.286 28 0 61.143 5.714 101.143 17.143 39.429 11.429 65.714 17.143 78.857 17.143 16.571 0 44-6.286 81.714-19.429 37.714-12.571 70.857-19.429 98.857-19.429 45.714 0 86.286 12.571 121.714 37.143 20 13.714 40 33.143 59.429 57.143-29.714 25.143-51.429 47.429-65.143 67.429-24.571 35.429-37.143 74.857-37.143 118.286 0 46.857 13.143 89.714 39.429 127.429s56.571 61.714 90.286 72zM581.143 24c0 23.429-5.714 49.714-16.571 77.714-11.429 28.571-29.143 54.857-53.143 78.857-20.571 20.571-41.143 34.286-61.714 41.143-13.143 4-32.571 7.429-59.429 9.714 1.143-56.571 16-105.714 44.571-146.857s76.571-69.143 142.857-84.571c1.143 5.143 2.286 9.143 2.857 12.571 0 4 0.571 7.429 0.571 11.429z">
-                </path>
-              </svg>
-
-            </div>
-            <div class="home-container07">
-              <!-- <svg viewBox="0 0 796.0137142857142 1024" class="home-icon4">
-                <path
-                  d="M796 694.286c-14.286 45.143-37.143 93.143-70.286 142.857-49.143 74.857-98.286 112-146.857 112-19.429 0-45.714-6.286-80-18.286-33.714-12.571-62.857-18.286-86.286-18.286-22.857 0-50.286 6.286-81.143 18.857-31.429 13.143-56.571 19.429-75.429 19.429-58.857 0-115.429-49.714-172-148-55.429-98.286-84-193.714-84-287.429 0-87.429 21.714-158.286 64.571-213.714 42.857-54.857 96.571-82.286 162.286-82.286 28 0 61.143 5.714 101.143 17.143 39.429 11.429 65.714 17.143 78.857 17.143 16.571 0 44-6.286 81.714-19.429 37.714-12.571 70.857-19.429 98.857-19.429 45.714 0 86.286 12.571 121.714 37.143 20 13.714 40 33.143 59.429 57.143-29.714 25.143-51.429 47.429-65.143 67.429-24.571 35.429-37.143 74.857-37.143 118.286 0 46.857 13.143 89.714 39.429 127.429s56.571 61.714 90.286 72zM581.143 24c0 23.429-5.714 49.714-16.571 77.714-11.429 28.571-29.143 54.857-53.143 78.857-20.571 20.571-41.143 34.286-61.714 41.143-13.143 4-32.571 7.429-59.429 9.714 1.143-56.571 16-105.714 44.571-146.857s76.571-69.143 142.857-84.571c1.143 5.143 2.286 9.143 2.857 12.571 0 4 0.571 7.429 0.571 11.429z">
-                </path>
-              </svg> -->
-              <span class="home-text16">
-                <span>android / iOS / ipadOS / macOS</span>
-                <br />
-              </span>
-            </div>
-          </div>
-          <!-- <img alt="image" src="public/external/chat_with_unique_ai_characters-removebg-1400w.png"
-            class="home-image3" /> -->
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img
+            src="https://images.unsplash.com/photo-1616469829526-7057a1427626?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="AI Funkit mobile app interface showing smart automation features and clean modern design" width="800"
+            height="600" loading="lazy">
         </div>
-        <div class="home-container02">
-          <span class="home-text">
-            <span>AI FunKit</span>
-            <br />
-          </span>
-          <div class="home-icon-group">
-            <a href="https://twitter.com/aifunkit" target="_blank" rel="noreferrer noopener" class="home-link">
-              <img alt="image" src="public/external/x-200w.png" class="home-image1" />
-            </a>
-            <a href="https://www.instagram.com/ai.funkit" target="_blank" rel="noreferrer noopener" class="home-link1">
-              <svg viewBox="0 0 877.7142857142857 1024" class="home-icon">
-                <path
-                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z">
-                </path>
-              </svg>
-            </a>
+        <div class="portfolio-overlay">
+          <h3 class="portfolio-title">AI Funkit</h3>
+          <p class="portfolio-description">A comprehensive redesign of the racing experience app, focusing on real-time
+            updates and immersive UI.</p>
+          <div class="portfolio-tags">
+            <span>Mobile App</span>
+            <span>UI/UX Design</span>
+            <span>React Native</span>
           </div>
         </div>
-        <footer class="home-footer">
-          <div class="home-container08">
-            <nav class="home-nav">
-              <a href="https://www.tappstudio.in/support" target="_blank" rel="noreferrer noopener" class="home-link3">
-                Support
-              </a>
-              <a href="https://www.tappstudio.in/terms" target="_blank" rel="noreferrer noopener" class="home-link4">
-                Terms &amp; Conditions
-              </a>
-              <a href="https://www.tappstudio.in/privacy-policy" target="_blank" rel="noreferrer noopener"
-                class="home-link5">
-                Privacy Policy
-              </a>
-            </nav>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img
+            src="https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Lumina E-Commerce platform dashboard with product listings and analytics interface" width="800"
+            height="600" loading="lazy">
+        </div>
+        <div class="portfolio-overlay">
+          <h3 class="portfolio-title">Lumina E-Commerce</h3>
+          <p class="portfolio-description">An AI-powered shopping platform with personalized recommendations and
+            seamless checkout experience.</p>
+          <div class="portfolio-tags">
+            <span>Web Platform</span>
+            <span>E-Commerce</span>
+            <span>AI Integration</span>
           </div>
-          <div class="home-separator"></div>
-          <div class="home-container09">
-            <span class="home-text19">© 2024 TappStudio</span>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img
+            src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Vertex Analytics dashboard showing data visualization charts and business intelligence metrics"
+            width="800" height="600" loading="lazy">
+        </div>
+        <div class="portfolio-overlay">
+          <h3 class="portfolio-title">Vertex Analytics</h3>
+          <p class="portfolio-description">A data visualization dashboard for enterprise clients that transforms complex
+            metrics into actionable insights.</p>
+          <div class="portfolio-tags">
+            <span>Data Visualization</span>
+            <span>SaaS</span>
+            <span>Enterprise Solution</span>
           </div>
-        </footer>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="services" class="expertise">
+    <div class="section-label">SERVICES</div>
+    <h2 class="section-title">WHERE WE<br>EXCEL</h2>
+    <p class="section-description">Our multi-disciplinary team brings together exceptional technical ability with deep
+      creative expertise.</p>
+
+    <div class="expertise-grid">
+      <!-- Row 1 -->
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </div>
+        <div class="expertise-number">01</div>
+        <h3 class="expertise-title">CREATIVE SOLUTIONS</h3>
+        <p class="expertise-description">We transform complex challenges into elegant, intuitive digital experiences
+          that captivate users and drive engagement.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+        <div class="expertise-number">02</div>
+        <h3 class="expertise-title">MODERN AI</h3>
+        <p class="expertise-description">Integrating cutting-edge AI technologies that provide intelligent, adaptive
+          solutions for next-generation applications that learn and evolve.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div class="expertise-number">03</div>
+        <h3 class="expertise-title">CROSS-PLATFORM</h3>
+        <p class="expertise-description">Seamless experiences across web, iOS, and Android platforms with native-quality
+          performance and consistent design language.</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="expertise-number">04</div>
+        <h3 class="expertise-title">TRUSTED EXPERTISE</h3>
+        <p class="expertise-description">Deep technical knowledge and proven track record working with startups and
+          established businesses alike to deliver exceptional products.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <div class="expertise-number">05</div>
+        <h3 class="expertise-title">RAPID DELIVERY</h3>
+        <p class="expertise-description">Efficient development process that brings your concept to market quickly
+          without sacrificing quality, powered by modern workflows.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+          </svg>
+        </div>
+        <div class="expertise-number">06</div>
+        <h3 class="expertise-title">PERFECTIONISM</h3>
+        <p class="expertise-description">Meticulous attention to detail, ensuring every aspect of your application meets
+          the highest standards of quality and user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-label">ABOUT</div>
+    <h2 class="section-title">WHO WE<br>ARE</h2>
+    <p class="section-description">We're a team of passionate technologists and designers dedicated to creating digital
+      products that make a difference.</p>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>Started in 2021, Tappstudio was born from a simple goal — to help people turn great ideas into real, working
+          apps using the latest technologies.</p>
+        <p>We love building things that are both smart and beautiful, and we believe the best products come from strong
+          collaboration. That's why we work closely with our clients to understand their goals and create something that
+          truly makes an impact.</p>
+        <p>Our mission is to grow a portfolio of apps that not only look good but also generate real value.</p>
+        <p>We'd love to team up and build something meaningful together.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">GET IN<br>TOUCH</h2>
+    <p class="section-description">Ready to transform your idea into reality? Let's start a conversation about your
+      project.</p>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3>Email</h3>
+          <p><a href="mailto:hello@tappstudio.com">tappstudio.in@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <p><a href="tel:+912241235678">+91 9820485853</a></p>
+        </div>
+        <div class="contact-item">
+          <h3>Location</h3>
+          <p>Mumbai, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">TAPP<span class="reduced-opacity">STUDIO</span></div>
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-1-4.8 4-8.9 8-5 1.6-1 3-2.2 4-4">
+            </path>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 TAPPSTUDIO. All rights reserved.
+      </div>
+      <div class="footer-info">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('header');
+      const menuButton = document.querySelector('.menu-button');
+      const nav = document.querySelector('nav');
+      let scrollTimer;
+
+      // Mobile menu toggle
+      menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuButton.classList.remove('active');
+          nav.classList.remove('active');
+        });
+      });
+
+      // Throttle scroll event for better performance
+      window.addEventListener('scroll', () => {
+        if (scrollTimer) return;
+        scrollTimer = setTimeout(() => {
+          if (window.scrollY > 50) {
+            header.style.background = 'rgba(0, 0, 0, 0.9)';
+            header.style.padding = '1rem 5%';
+          } else {
+            header.style.background = 'transparent';
+            header.style.padding = '2rem 5%';
+          }
+          scrollTimer = null;
+        }, 10);
+      });
+
+      // Animate elements on scroll with Intersection Observer API
+      const expertiseItems = document.querySelectorAll('.expertise-item');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      const aboutContent = document.querySelector('.about-content');
+      const contactContent = document.querySelector('.contact-content');
+
+      // Using Intersection Observer for better performance than scroll listeners
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+      expertiseItems.forEach((item) => {
+        observer.observe(item);
+      });
+
+      portfolioItems.forEach((item, index) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(50px)";
+        item.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        item.style.transitionDelay = `${0.2 * index}s`;
+
+        observer.observe(item);
+      });
+
+      // Animate about and contact sections
+      if (aboutContent) {
+        aboutContent.style.opacity = "0";
+        aboutContent.style.transform = "translateY(50px)";
+        aboutContent.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        observer.observe(aboutContent);
+      }
+
+      if (contactContent) {
+        contactContent.style.opacity = "0";
+        contactContent.style.transform = "translateY(50px)";
+        contactContent.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        observer.observe(contactContent);
+      }
+    });
+  </script>
 </body>
 
 </html>
