@@ -684,6 +684,44 @@ nav ul li a:hover::after {
   display: none;
 }
 
+/* 
+ * Media Query Explanation
+ * 
+ * @media (max-width: 768px) is a CSS media query that applies styles only when 
+ * the viewport width is 768 pixels or less. This is commonly used for targeting 
+ * tablet and mobile devices.
+ * 
+ * How it works:
+ * - The styles inside this media query will only take effect when the screen width
+ *   is less than or equal to 768px
+ * - When the screen is wider than 768px, these styles are ignored
+ * - This allows for responsive design where elements can be repositioned, resized,
+ *   or displayed differently on smaller screens
+ * 
+ * Common breakpoints:
+ * - 480px or less: Mobile phones
+ * - 768px or less: Tablets and small screens
+ * - 992px or less: Small laptops
+ * - 1200px or less: Desktops and large screens
+ */
+
+
+@media (max-width: 480px) {
+  .menu-button {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 2rem;
+    z-index: 102;
+    padding: 0.3rem;
+  }
+
+  .menu-button span {
+    width: 20px;
+    margin: 4px;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-button {
     display: block;

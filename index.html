@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tappStudio - Mobile & Web Development Studio in Mumbai</title>
+  <title>tappStudio - Web & Mobile App Development Studio in Mumbai</title>
   <meta name="description"
-    content="TAPPSTUDIO is a premier mobile and web development agency in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
+    content="TAPP STUDIO is a premier mobile and web development agency in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
   <meta name="keywords" content="mobile app development, web development, UI/UX design, Mumbai, India, digital agency">
-  <meta name="author" content="TAPPSTUDIO">
+  <meta name="author" content="TAPP STUDIO">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tappstudio.in/">
-  <meta property="og:title" content="TAPPSTUDIO - Mobile & Web Development Studio in Mumbai">
+  <meta property="og:title" content="TAPP STUDIO - Mobile & Web Development Studio in Mumbai">
   <meta property="og:description"
     content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
   <meta property="og:image" content="https://tappstudio.in/images/og-image.jpg">
@@ -21,7 +21,7 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://tappstudio.com/">
-  <meta property="twitter:title" content="TAPPSTUDIO - Mobile & Web Development">
+  <meta property="twitter:title" content="TAPP STUDIO - Mobile & Web Development">
   <meta property="twitter:description"
     content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
   <meta property="twitter:image" content="https://tappstudio.in/images/twitter-image.jpg">
@@ -617,8 +617,9 @@
     <div class="logo">
       <img src="public/images/logo.svg" alt="TAPP STUDIO" class="logo-image"
         onerror="this.onerror=null; this.src='public/images/logo.png'; this.classList.add('fallback')">
-      <span class="logo-text">TAPP<span class="reduced-opacity">STUDIO</span></span>
+      <!-- <span class="logo-text">TAPP<span class="reduced-opacity">STUDIO</span></span> -->
     </div>
+
     <button class="menu-button" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>
@@ -633,7 +634,25 @@
       </ul>
     </nav>
   </header>
+  <div class="mobile-spacer"></div>
+  <style>
+    .mobile-spacer {
+      display: none;
+    }
 
+    @media (max-width: 768px) {
+      .mobile-spacer {
+        display: block;
+        height: 60px;
+        /* Adjust based on your header height */
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+      }
+    }
+  </style>
   <section class="hero">
     <div class="studio-tag">[tappStudio]</div>
     <h1 class="hero-title"><span class="reduced-opacity">YOUR</span> IDEA,<br>PERFECTED <span
