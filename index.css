@@ -132,7 +132,7 @@ nav ul li a:hover::after {
 }
 
 .studio-tag {
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
   opacity: 0;
