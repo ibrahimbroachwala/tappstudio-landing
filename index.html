@@ -2,588 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tappStudio - Web & Mobile App Development Studio in Mumbai</title>
-  <meta name="description"
-    content="TAPP STUDIO is a premier mobile and web development agency in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
-  <meta name="keywords" content="mobile app development, web development, UI/UX design, Mumbai, India, digital agency">
-  <meta name="author" content="TAPP STUDIO">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tappstudio.in/">
-  <meta property="og:title" content="TAPP STUDIO - Mobile & Web Development Studio in Mumbai">
-  <meta property="og:description"
-    content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
-  <meta property="og:image" content="https://tappstudio.in/images/og-image.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://tappstudio.com/">
-  <meta property="twitter:title" content="TAPP STUDIO - Mobile & Web Development">
-  <meta property="twitter:description"
-    content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
-  <meta property="twitter:image" content="https://tappstudio.in/images/twitter-image.jpg">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://tappstudio.in/">
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Preload critical assets -->
-  <link rel="preload" href="./index.css" as="style">
-
-  <!-- Critical CSS -->
-  <style>
-    /* Critical CSS for above-the-fold content */
-    body {
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 5%;
-      position: fixed;
-      width: 100%;
-      z-index: 100;
-      box-sizing: border-box;
-      transition: background 0.3s ease, padding 0.3s ease;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 5%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.9;
-      z-index: -1;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
-      z-index: -1;
-    }
-
-    .hero>* {
-      position: relative;
-      z-index: 1;
-    }
-
-    .reduced-opacity {
-      opacity: 0.5;
-    }
-
-    /* CTA Button Styles */
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      margin-top: 2rem;
-      position: relative;
-      overflow: hidden;
-      width: auto;
-      max-width: fit-content;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: slideUp 0.8s ease forwards;
-      animation-delay: 0.9s;
-    }
-
-    .cta-button:hover {
-      background: #fff;
-      color: #000;
-      transform: translateY(-2px);
-    }
-
-    .cta-button:active {
-      transform: translateY(0);
-    }
-
-    /* Mobile Menu Styles */
-    .menu-button {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 101;
-    }
-
-    .menu-button span {
-      display: block;
-      width: 25px;
-      height: 2px;
-      background-color: #fff;
-      margin: 5px 0;
-      transition: 0.3s;
-    }
-
-    .menu-button.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-button.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-button.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    @media (max-width: 768px) {
-      .menu-button {
-        display: block;
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 0;
-        transition: 0.3s;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      nav.active {
-        right: 0;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-      }
-
-      nav ul li {
-        margin: 0.8rem 0;
-        opacity: 0;
-        transform: translateX(20px);
-        transition: 0.3s;
-        width: 100%;
-        text-align: center;
-      }
-
-      nav.active ul li {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      nav ul li a {
-        font-size: 1.2rem;
-        display: block;
-        padding: 0.8rem 0;
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav ul li {
-        margin: 0.6rem 0;
-      }
-
-      nav ul li a {
-        font-size: 1.1rem;
-        padding: 0.6rem 0;
-      }
-
-      .menu-button {
-        padding: 0.3rem;
-      }
-
-      .menu-button span {
-        width: 20px;
-        margin: 4px 0;
-      }
-    }
-
-    /* Portfolio Grid Styles */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .portfolio-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .portfolio-image {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .portfolio-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-      transition: background 0.3s ease;
-    }
-
-    .portfolio-item:hover .portfolio-image::after {
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .portfolio-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover .portfolio-image img {
-      transform: scale(1.05);
-    }
-
-    .portfolio-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.5rem;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
-      color: #fff;
-      transition: all 0.3s ease;
-      transform: translateY(70%);
-    }
-
-    /* Colored gradients for each card */
-    .portfolio-item:nth-child(1) .portfolio-overlay {
-      background: linear-gradient(to top, rgba(75, 123, 236, 0.9) 0%, rgba(75, 123, 236, 0.7) 50%, rgba(75, 123, 236, 0) 100%);
-    }
-
-    .portfolio-item:nth-child(2) .portfolio-overlay {
-      background: linear-gradient(to top, rgba(52, 191, 163, 0.9) 0%, rgba(52, 191, 163, 0.7) 50%, rgba(52, 191, 163, 0) 100%);
-    }
-
-    .portfolio-item:nth-child(3) .portfolio-overlay {
-      background: linear-gradient(to top, rgba(255, 87, 51, 0.9) 0%, rgba(255, 87, 51, 0.7) 50%, rgba(255, 87, 51, 0) 100%);
-    }
-
-    .portfolio-item:nth-child(1):hover .portfolio-overlay {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(75, 123, 236, 0.95) 0%, rgba(75, 123, 236, 0.85) 70%, rgba(75, 123, 236, 0.7) 100%);
-    }
-
-    .portfolio-item:nth-child(2):hover .portfolio-overlay {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(52, 191, 163, 0.95) 0%, rgba(52, 191, 163, 0.85) 70%, rgba(52, 191, 163, 0.7) 100%);
-    }
-
-    .portfolio-item:nth-child(3):hover .portfolio-overlay {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(255, 87, 51, 0.95) 0%, rgba(255, 87, 51, 0.85) 70%, rgba(255, 87, 51, 0.7) 100%);
-    }
-
-    .portfolio-item:hover .portfolio-overlay {
-      transform: translateY(0);
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 70%, rgba(0, 0, 0, 0.7) 100%);
-    }
-
-    .portfolio-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .portfolio-description {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transition-delay: 0.1s;
-    }
-
-    .portfolio-item:hover .portfolio-description {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .portfolio-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transition-delay: 0.2s;
-    }
-
-    .portfolio-item:hover .portfolio-tags {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .portfolio-tags span {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.8rem;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .portfolio-image {
-        height: 250px;
-      }
-    }
-
-    /* Portfolio Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 1000;
-      overflow-y: auto;
-      padding: 50px 20px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal.active {
-      display: block;
-      opacity: 1;
-    }
-
-    .modal-content {
-      position: relative;
-      background-color: #111;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-    }
-
-    .modal.active .modal-content {
-      transform: translateY(0);
-    }
-
-    .modal-image {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-    }
-
-    .modal-body {
-      padding: 30px;
-    }
-
-    .modal-title {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .modal-description {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 30px;
-    }
-
-    .modal-cta {
-      display: inline-block;
-      padding: 12px 30px;
-      background-color: #fff;
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 1px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .modal-cta:hover {
-      background-color: rgba(255, 255, 255, 0.9);
-      transform: translateY(-2px);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 30px;
-      height: 30px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      z-index: 10;
-    }
-
-    .modal-close:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .modal-close::before,
-    .modal-close::after {
-      content: '';
-      position: absolute;
-      width: 15px;
-      height: 2px;
-      background-color: #fff;
-    }
-
-    .modal-close::before {
-      transform: rotate(45deg);
-    }
-
-    .modal-close::after {
-      transform: rotate(-45deg);
-    }
-
-    @media (max-width: 768px) {
-      .modal-content {
-        max-width: 100%;
-      }
-
-      .modal-image {
-        max-height: 300px;
-      }
-
-      .modal-body {
-        padding: 20px;
-      }
-
-      .modal-title {
-        font-size: 1.5rem;
-      }
-
-      .modal {
-        padding: 30px 15px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .modal {
-        padding: 15px 10px;
-      }
-
-      .modal-content {
-        border-radius: 6px;
-      }
-
-      .modal-image {
-        max-height: 200px;
-      }
-
-      .modal-body {
-        padding: 15px;
-      }
-
-      .modal-title {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-
-      .modal-description {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-        line-height: 1.5;
-      }
-
-      .modal-cta {
-        padding: 10px 20px;
-        width: 100%;
-        text-align: center;
-        font-size: 0.9rem;
-      }
-
-      .modal-close {
-        top: 10px;
-        right: 10px;
-        width: 36px;
-        height: 36px;
-      }
-    }
-  </style>
-
-  <link rel="stylesheet" href="./index.css">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tappStudio - Web & Mobile App Development Studio in Mumbai</title>
+    <meta name="description"
+        content="TAPP STUDIO is a premier mobile and web development agency in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
+    <meta name="keywords"
+        content="mobile app development, web development, UI/UX design, Mumbai, India, digital agency">
+    <meta name="author" content="TAPP STUDIO">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tappstudio.in/">
+    <meta property="og:title" content="TAPP STUDIO - Mobile & Web Development Studio in Mumbai">
+    <meta property="og:description"
+        content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+    <meta property="og:image" content="https://tappstudio.in/images/og-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tappstudio.com/">
+    <meta property="twitter:title" content="TAPP STUDIO - Mobile & Web Development">
+    <meta property="twitter:description"
+        content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+    <meta property="twitter:image" content="https://tappstudio.in/images/twitter-image.jpg">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tappstudio.in/">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -609,495 +59,348 @@
       ]
     }
   </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            color: #eee;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4.5rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header img {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        header h1::before {
+            content: 'tapp';
+            font-weight: 600;
+            opacity: 1;
+        }
+
+        header h1::after {
+            content: 'Studio';
+            font-weight: 600;
+            opacity: 0.5;
+            margin-left: 0.25rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.6;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .portfolio-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .app {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .app.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-header img {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .app-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .app-description {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .app-screenshots {
+            display: flex;
+            gap: 1rem;
+            overflow: visible;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .app-screenshots img {
+            aspect-ratio: 215/466;
+            max-width: 215px;
+            max-height: 466px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-screenshots img:hover {
+            transform: scale(1.05) translateZ(0);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+            z-index: 10;
+        }
+
+        .app-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .store-buttons img {
+            height: 48px;
+            width: auto;
+            transition: transform 0.2s cubic-bezier(.4, 0, .2, 1), box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        .store-buttons img:hover {
+            transform: translateY(-4px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.10);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .footer-email-link {
+            color: #fff !important;
+            text-decoration: underline !important;
+        }
+
+        /* Splitup (first app) */
+        .portfolio-section .app:nth-of-type(1) .app-screenshots img:hover {
+            box-shadow: 0 0 32px 8px rgba(246, 196, 47, 0.22), 0 0 16px 4px rgba(246, 196, 47, 0.12);
+        }
+
+        /* My Deen (second app) */
+        .portfolio-section .app:nth-of-type(2) .app-screenshots img:hover {
+            box-shadow: 0 0 32px 8px rgba(255, 255, 255, 0.22), 0 0 16px 4px rgba(255, 255, 255, 0.12);
+        }
+
+        /* AI Funkit (third app) */
+        .portfolio-section .app:nth-of-type(3) .app-screenshots img:hover {
+            box-shadow: 0 0 32px 8px rgba(247, 141, 89, 0.22), 0 0 16px 4px rgba(247, 141, 89, 0.12);
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <img src="public/images/logo.svg" alt="TAPP STUDIO" class="logo-image"
-        onerror="this.onerror=null; this.src='public/images/logo.png'; this.classList.add('fallback')">
-      <!-- <span class="logo-text">TAPP<span class="reduced-opacity">STUDIO</span></span> -->
-    </div>
+    <header>
+        <img src="public/images/logo.svg"
+            alt="tappStudio logo - tappStudio Web & Mobile App Development Studio in Mumbai" title="tappStudio logo"
+            style="width:72px;height:72px;" />
+        <h1></h1>
+        <p>Bringing Ideas to life with code and creativity</p>
+    </header>
+    <main>
+        <section class="portfolio-section">
+            <div class="app">
+                <div class="app-header">
+                    <img src="public/apps/splitup/android.png" alt="Splitup App Icon - Group Expense Splitter"
+                        title="Splitup App Icon" />
+                    <h2>Splitup</h2>
+                </div>
+                <p class="app-description">Splitup is an app to split group expenses and bills with focus on 3 things.
+                    Split, remind and settle.</p>
+                <div class="app-screenshots">
+                    <img src="public/apps/splitup/1.png" alt="Splitup App Screenshot 1 - Group Expense Overview"
+                        title="Splitup App Screenshot: Group Expense Overview" />
+                    <img src="public/apps/splitup/2.png" alt="Splitup App Screenshot 2 - Bill Splitting Feature"
+                        title="Splitup App Screenshot: Bill Splitting Feature" />
+                    <img src="public/apps/splitup/3.png" alt="Splitup App Screenshot 3 - Settle Up Screen"
+                        title="Splitup App Screenshot: Settle Up Screen" />
+                </div>
+                <div class="app-links">
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/splitup-group-expense/id6744556329" target="_blank"
+                            title="Download Splitup on the App Store"
+                            aria-label="Download Splitup on the App Store"><img src="public/images/appstore.png"
+                                alt="Download Splitup on the App Store" title="App Store Badge for Splitup" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.splitup" target="_blank"
+                            title="Download Splitup on the Play Store"
+                            aria-label="Download Splitup on the Play Store"><img src="public/images/playstore.png"
+                                alt="Download Splitup on the Play Store" title="Play Store Badge for Splitup" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app">
+                <div class="app-header">
+                    <img src="public/apps/mydeen/android_icon.png" alt="My Deen App Icon - Amal Tracker"
+                        title="My Deen App Icon" />
+                    <h2>My Deen</h2>
+                </div>
+                <p class="app-description">My Deen is a smart Amal tracker that helps Muslims stay consistent with daily
+                    and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and
+                    achievement badges.</p>
+                <div class="app-screenshots">
+                    <img src="public/apps/mydeen/1.jpg" alt="My Deen App Screenshot 1 - Amal Tracking Dashboard"
+                        title="My Deen App Screenshot: Amal Tracking Dashboard" />
+                    <img src="public/apps/mydeen/2.jpg" alt="My Deen App Screenshot 2 - Streaks and Reminders"
+                        title="My Deen App Screenshot: Streaks and Reminders" />
+                    <img src="public/apps/mydeen/3.jpg" alt="My Deen App Screenshot 3 - Achievement Badges"
+                        title="My Deen App Screenshot: Achievement Badges" />
+                </div>
+                <div class="app-links">
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125" target="_blank"
+                            rel="noopener noreferrer" title="Download My Deen on the App Store"
+                            aria-label="Download My Deen on the App Store"><img src="public/images/appstore.png"
+                                alt="Download My Deen on the App Store" title="App Store Badge for My Deen" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mydeen" target="_blank"
+                            title="Download My Deen on the Play Store"
+                            aria-label="Download My Deen on the Play Store"><img src="public/images/playstore.png"
+                                alt="Download My Deen on the Play Store" title="Play Store Badge for My Deen" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app">
+                <div class="app-header">
+                    <img src="public/apps/aifunkit/android_icon.png"
+                        alt="AI Funkit App Icon - AI Chat & Image Generation" title="AI Funkit App Icon" />
+                    <h2>AI Funkit</h2>
+                </div>
+                <p class="app-description">AI Fun Kit is a playful AI app with unique characters and DALL·E-powered
+                    image generation. Chat, create, and explore interactive features — all with a flexible pay-as-you-go
+                    model.</p>
+                <div class="app-screenshots">
+                    <img src="public/apps/aifunkit/1.png" alt="AI Funkit App Screenshot 1 - AI Character Chat"
+                        title="AI Funkit App Screenshot: AI Character Chat" />
+                    <img src="public/apps/aifunkit/2.png" alt="AI Funkit App Screenshot 2 - DALL·E Image Generation"
+                        title="AI Funkit App Screenshot: DALL·E Image Generation" />
+                    <img src="public/apps/aifunkit/3.png" alt="AI Funkit App Screenshot 3 - Interactive Features"
+                        title="AI Funkit App Screenshot: Interactive Features" />
+                </div>
+                <div class="app-links">
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/ai-funkit/id6450719081" target="_blank"
+                            rel="noopener noreferrer" title="Download AI Funkit on the App Store"
+                            aria-label="Download AI Funkit on the App Store"><img src="public/images/appstore.png"
+                                alt="Download AI Funkit on the App Store" title="App Store Badge for AI Funkit" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=ai.roleplay.chat&hl=en_IN"
+                            target="_blank" title="Download AI Funkit on the Play Store"
+                            aria-label="Download AI Funkit on the Play Store"><img src="public/images/playstore.png"
+                                alt="Download AI Funkit on the Play Store" title="Play Store Badge for AI Funkit" /></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section" style="max-width:800px;margin:4rem auto 0;text-align:center;">
+            <h2>Contact</h2>
+            <p>Ready to transform your idea into reality? Let's start a conversation about your project.</p>
+            <div><a class="footer-email-link" href="mailto:tappstudio.in@gmail.com" title="Email tappStudio"
+                    aria-label="Email tappStudio">tappstudio.in@gmail.com</a></div>
 
-    <button class="menu-button" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav>
-      <ul>
-        <li style="--i:1"><a href="#work">WORK</a></li>
-        <li style="--i:2"><a href="#services">SERVICES</a></li>
-        <li style="--i:3"><a href="#about">ABOUT</a></li>
-        <li style="--i:4"><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="mobile-spacer"></div>
-  <style>
-    .mobile-spacer {
-      display: none;
-    }
+            <div>
+                <Mumbai, India</div>
+            </div>
+        </section>
+    </main>
+    <footer>
 
-    @media (max-width: 480px) {
-      .mobile-spacer {
-        display: block;
-        height: 100px;
-        /* Adjust based on your header height */
-      }
-
-      header {
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-      }
-    }
-  </style>
-  <section class="hero">
-    <div class="studio-tag">[tappStudio]</div>
-    <h1 class="hero-title"><span class="reduced-opacity">YOUR</span> IDEA,<br>PERFECTED <span
-        class="reduced-opacity">BY</span><br>DESIGN <span class="reduced-opacity">AND</span> CODE.</h1>
-    <p class="hero-description">We craft exceptional mobile and web experiences that blend technical excellence
-      with innovative design.</p>
-    <a href="#work" class="cta-button">OUR WORK</a>
-  </section>
-
-  <section id="work" class="portfolio">
-    <div class="section-label">WORK</div>
-    <h2 class="section-title">OUR FINEST<br>WORK</h2>
-    <p class="section-description">Explore our most impactful digital experiences, each crafted with precision and
-      purpose.</p>
-
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="public/images/my_deen.webp"
-            alt="My Deen - A habit tracker app for Muslims showing clean interface for building consistency" width="800"
-            height="600" loading="lazy">
+        <div class="social-links">
+            <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener noreferrer"
+                title="Message tappStudio on X (Twitter)" aria-label="Message tappStudio on X (Twitter)">X</a>
+            <a href="https://www.instagram.com/ibrahim.broach" rel="noopener noreferrer"
+                title="Follow tappStudio on Instagram" aria-label="Follow tappStudio on Instagram">Instagram</a>
+            <a href="https://www.linkedin.com/in/ibrahimbroachwala/" rel="noopener noreferrer"
+                title="Connect with tappStudio on LinkedIn"
+                aria-label="Connect with tappStudio on LinkedIn">LinkedIn</a>
         </div>
-        <div class="portfolio-overlay">
-          <h3 class="portfolio-title">My Deen</h3>
-          <p class="portfolio-description">My Deen is a smart Amal tracker that helps Muslims stay consistent with daily
-            and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement
-            badges.</p>
-          <div class="portfolio-tags">
-            <span>UI/UX Design</span>
-            <span>Flutter</span>
-            <span>Riverpod</span>
-            <span>Store Subscriptions</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="public/images/ai_funkit.webp"
-            alt="AI Funkit - Interactive AI entertainment app with DALL-E powered image generation and conversational AI interface"
-            width="800" height="600" loading="lazy">
-        </div>
-        <div class="portfolio-overlay">
-          <h3 class="portfolio-title">AI Funkit</h3>
-          <p class="portfolio-description">AI Fun Kit is a playful AI app with unique characters and DALL·E-powered
-            image generation.
-            Chat, create, and explore interactive features — all with a flexible pay-as-you-go model.
-          </p>
-          <div class="portfolio-tags">
-            <span>AI Chatbot</span>
-            <span>DALL-E 3</span>
-            <span>UI/UX Design</span>
-            <span>Flutter</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="public/images/seat_allocation.webp"
-            alt="Realtime Seat Allocation - Masjid seat booking software showing interactive layout and live booking status"
-            width="800" height="600" loading="lazy">
-        </div>
-        <div class="portfolio-overlay">
-          <h3 class="portfolio-title">Realtime Seat Allocation</h3>
-          <p class="portfolio-description">A real-time seat booking system for masjids with interactive layouts, live
-            seat status, and group booking support. Users can reserve seats easily on a first-come, first-served basis.
-          </p>
-          <div class="portfolio-tags">
-            <span>Flutter Web</span>
-            <span>Realtime booking</span>
-            <span>Responsive design</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="expertise">
-    <div class="section-label">SERVICES</div>
-    <h2 class="section-title">WHERE WE<br>EXCEL</h2>
-    <p class="section-description">Combining exceptional technical skill with a strong sense of creative vision to
-      deliver well-crafted digital experiences.</p>
-
-    <div class="expertise-grid">
-      <!-- Row 1 -->
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2"></path>
-            <path d="M12 20v2"></path>
-            <path d="m4.93 4.93 1.41 1.41"></path>
-            <path d="m17.66 17.66 1.41 1.41"></path>
-            <path d="M2 12h2"></path>
-            <path d="M20 12h2"></path>
-            <path d="m6.34 17.66-1.41 1.41"></path>
-            <path d="m19.07 4.93-1.41 1.41"></path>
-          </svg>
-        </div>
-        <div class="expertise-number">01</div>
-        <h3 class="expertise-title">CREATIVE SOLUTIONS</h3>
-        <p class="expertise-description">We transform complex challenges into elegant, intuitive digital experiences
-          that captivate users and drive engagement.</p>
-      </div>
-
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </div>
-        <div class="expertise-number">02</div>
-        <h3 class="expertise-title">AI-DRIVEN</h3>
-        <p class="expertise-description">Integrating cutting-edge AI technologies that provide intelligent, adaptive
-          solutions for next-generation applications that learn and evolve.</p>
-      </div>
-
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-        </div>
-        <div class="expertise-number">03</div>
-        <h3 class="expertise-title">CROSS-PLATFORM</h3>
-        <p class="expertise-description">Seamless experiences across web, iOS, and Android platforms with native-quality
-          performance and consistent design language.</p>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-        </div>
-        <div class="expertise-number">04</div>
-        <h3 class="expertise-title">TRUSTED EXPERTISE</h3>
-        <p class="expertise-description">Deep technical knowledge and proven track record working with startups and
-          established businesses alike to deliver exceptional products.</p>
-      </div>
-
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
-          </svg>
-        </div>
-        <div class="expertise-number">05</div>
-        <h3 class="expertise-title">RAPID DELIVERY</h3>
-        <p class="expertise-description">Efficient development process that brings your concept to market quickly
-          without sacrificing quality, powered by modern workflows.</p>
-      </div>
-
-      <div class="expertise-item">
-        <div class="expertise-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg>
-        </div>
-        <div class="expertise-number">06</div>
-        <h3 class="expertise-title">COLLABORATION</h3>
-        <p class="expertise-description">We prioritize open communication and teamwork, ensuring every idea is aligned
-          and every decision is made together.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="section-label">ABOUT</div>
-    <h2 class="section-title">WHO WE<br>ARE</h2>
-    <p class="section-description">Passionate about technology and design, dedicated to creating digital products that
-      make a difference.</p>
-
-    <div class="about-content">
-      <div class="about-text">
-        <p>Started in 2021, Tappstudio was born from a simple goal — to help people turn great ideas into real, working
-          apps using the latest technologies.</p>
-        <p>We love building things that are both smart and beautiful, and we believe the best products come from strong
-          collaboration. That's why we work closely with our clients to understand their goals and create something that
-          truly makes an impact.</p>
-        <p>Our mission is to grow a portfolio of apps that not only look good but also generate real value.</p>
-        <p>We'd love to team up and build something meaningful together.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="section-label">CONTACT</div>
-    <h2 class="section-title">GET IN<br>TOUCH</h2>
-    <p class="section-description">Ready to transform your idea into reality? Let's start a conversation about your
-      project.</p>
-
-    <div class="contact-content">
-      <div class="contact-info">
-        <div class="contact-item">
-          <h3>Email</h3>
-          <p><a href="mailto:hello@tappstudio.com">tappstudio.in@gmail.com</a></p>
-        </div>
-        <div class="contact-item">
-          <h3>Location</h3>
-          <p>Mumbai, India</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="public/images/logo.svg" alt="TAPP STUDIO" class="logo-image footer-logo-image"
-          onerror="this.onerror=null; this.src='public/images/logo.png'; this.classList.add('fallback')">
-        <span class="logo-text">TAPP<span class="reduced-opacity">STUDIO</span></span>
-      </div>
-      <div class="footer-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" aria-label="Twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x"
-            viewBox="0 0 16 16">
-            <path
-              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ibrahimbroachwala/" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/ibrahim.broach" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="copyright">
-        &copy; 2025 TAPPSTUDIO. All rights reserved.
-      </div>
-      <div class="footer-info">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Portfolio Modals -->
-  <div id="modal-my-deen" class="modal">
-    <div class="modal-content">
-      <div class="modal-close"></div>
-      <img src="public/images/my_deen.webp" alt="My Deen App" class="modal-image">
-      <div class="modal-body">
-        <h3 class="modal-title">My Deen</h3>
-        <p class="modal-description">My Deen is a smart Amal tracker designed to help Muslims stay consistent with their
-          daily and weekly spiritual habits. From Namaz and Duas to acts of kindness, it offers powerful tools like
-          reminders, streak tracking, and achievement badges to support and motivate your spiritual growth.</p>
-        <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125" target="_blank"
-          class="modal-cta">View
-          Project</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-ai-funkit" class="modal">
-    <div class="modal-content">
-      <div class="modal-close"></div>
-      <img src="public/images/ai_funkit.webp" alt="AI Funkit App" class="modal-image">
-      <div class="modal-body">
-        <h3 class="modal-title">AI Funkit</h3>
-        <p class="modal-description">AI Fun Kit is an interactive entertainment app that combines conversational AI with
-          creative tools like DALL·E-powered image generation. Designed for playful exploration, it features a range of
-          unique AI characters and a flexible pay-as-you-go model for a personalized, engaging experience.</p>
-        <a href="https://apps.apple.com/us/app/ai-funkit/id6450719081" target="_blank" class="modal-cta">View
-          Project</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-seat-allocation" class="modal">
-    <div class="modal-content">
-      <div class="modal-close"></div>
-      <img src="public/images/seat_allocation.webp" alt="Realtime Seat Allocation" class="modal-image">
-      <div class="modal-body">
-        <h3 class="modal-title">Realtime Seat Allocation</h3>
-        <p class="modal-description">This real-time seat allocation software is designed to streamline Masallah seat
-          booking in masjids. With an interactive masjid layout, live seat status, and support for group bookings like
-          families sitting together, it enables users to reserve seats easily on a first-come, first-served basis
-          through a secure login system.</p>
-
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Simple scroll animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const header = document.querySelector('header');
-      const menuButton = document.querySelector('.menu-button');
-      const nav = document.querySelector('nav');
-      let scrollTimer;
-
-      // Mobile menu toggle
-      menuButton.addEventListener('click', () => {
-        menuButton.classList.toggle('active');
-        nav.classList.toggle('active');
-      });
-
-      // Close mobile menu when clicking a link
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          menuButton.classList.remove('active');
-          nav.classList.remove('active');
+        <p>&copy; 2025 tappStudio. All rights reserved.</p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
         });
-      });
-
-      // Throttle scroll event for better performance
-      window.addEventListener('scroll', () => {
-        if (scrollTimer) return;
-        scrollTimer = setTimeout(() => {
-          if (window.scrollY > 50) {
-            header.style.background = 'rgba(0, 0, 0, 0.9)';
-            header.style.padding = '1rem 5%';
-          } else {
-            header.style.background = 'transparent';
-            header.style.padding = '2rem 5%';
-          }
-          scrollTimer = null;
-        }, 10);
-      });
-
-      // Modal functionality
-      const portfolioItems = document.querySelectorAll('.portfolio-item');
-      const modals = document.querySelectorAll('.modal');
-      const modalCloseButtons = document.querySelectorAll('.modal-close');
-
-      // Open modal when clicking on portfolio item
-      portfolioItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-          const modalId = item.getAttribute('data-modal') ||
-            ['modal-my-deen', 'modal-ai-funkit', 'modal-seat-allocation'][index];
-          const modal = document.getElementById(modalId);
-          if (modal) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-          }
-        });
-      });
-
-      // Close modal when clicking close button
-      modalCloseButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const modal = button.closest('.modal');
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-        });
-      });
-
-      // Close modal when clicking outside of modal content
-      modals.forEach(modal => {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-          }
-        });
-      });
-
-      // Close modal when pressing Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          modals.forEach(modal => {
-            modal.classList.remove('active');
-          });
-          document.body.style.overflow = '';
-        }
-      });
-
-      // Animate elements on scroll with Intersection Observer API
-      const expertiseItems = document.querySelectorAll('.expertise-item');
-      const aboutContent = document.querySelector('.about-content');
-      const contactContent = document.querySelector('.contact-content');
-
-      // Using Intersection Observer for better performance than scroll listeners
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-
-      expertiseItems.forEach((item) => {
-        observer.observe(item);
-      });
-
-      // Animate about and contact sections
-      if (aboutContent) {
-        aboutContent.style.opacity = "0";
-        aboutContent.style.transform = "translateY(50px)";
-        aboutContent.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        observer.observe(aboutContent);
-      }
-
-      if (contactContent) {
-        contactContent.style.opacity = "0";
-        contactContent.style.transform = "translateY(50px)";
-        contactContent.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        observer.observe(contactContent);
-      }
-    });
-  </script>
-
-  <!-- Add data-modal attributes to portfolio items -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const portfolioItems = document.querySelectorAll('.portfolio-item');
-      if (portfolioItems.length >= 1) portfolioItems[0].setAttribute('data-modal', 'modal-my-deen');
-      if (portfolioItems.length >= 2) portfolioItems[1].setAttribute('data-modal', 'modal-ai-funkit');
-      if (portfolioItems.length >= 3) portfolioItems[2].setAttribute('data-modal', 'modal-seat-allocation');
-    });
-  </script>
+        document.querySelectorAll('.app').forEach(app => observer.observe(app));
+    </script>
 </body>
 
 </html>
