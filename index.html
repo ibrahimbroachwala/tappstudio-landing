@@ -103,12 +103,11 @@
             content: 'Studio';
             font-weight: 600;
             opacity: 0.5;
-            margin-left: 0.25rem;
         }
 
         header p {
             font-size: 1rem;
-            opacity: 0.6;
+            opacity: 1;
             animation: fadeIn 1.5s ease-in;
         }
 
@@ -260,6 +259,30 @@
         /* AI Funkit (third app) */
         .portfolio-section .app:nth-of-type(3) .app-screenshots img:hover {
             box-shadow: 0 0 32px 8px rgba(247, 141, 89, 0.22), 0 0 16px 4px rgba(247, 141, 89, 0.12);
+        }
+
+        @media (max-width: 600px) {
+            .app-screenshots {
+                overflow-x: auto;
+                overflow-y: visible;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.5rem;
+                position: relative;
+            }
+
+            .app-screenshots img {
+                min-width: 180px;
+                max-width: 70vw;
+                position: relative;
+                z-index: 1;
+            }
+
+            .app-screenshots img:hover,
+            .app-screenshots img:active {
+                z-index: 10;
+                transform: none !important;
+            }
         }
     </style>
 </head>
