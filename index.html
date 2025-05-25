@@ -60,6 +60,45 @@
     }
   </script>
     <style>
+        :root {
+            --color-bg: #222;
+            --color-text: #fff;
+            --color-header: #fff;
+            --color-footer: #aaa;
+            --color-link: #aaa;
+            --color-link-hover: #fff;
+            --color-divider: rgba(255, 255, 255, 0.1);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.5;
+            --tapp-color: #fff;
+        }
+
+        [data-theme="light"] {
+            --color-bg: #f7f7f7;
+            --color-text: #111;
+            --color-header: #111;
+            --color-footer: #555;
+            --color-link: #555;
+            --color-link-hover: #000;
+            --color-divider: rgba(0, 0, 0, 0.08);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.32;
+            --tapp-color: #000;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #222;
+            --color-text: #fff;
+            --color-header: #fff;
+            --color-footer: #aaa;
+            --color-link: #aaa;
+            --color-link-hover: #fff;
+            --color-divider: rgba(255, 255, 255, 0.1);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.5;
+            --tapp-color: #fff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -68,8 +107,8 @@
         }
 
         body {
-            background-color: #111;
-            color: #eee;
+            background-color: var(--color-bg);
+            color: var(--color-text);
             line-height: 1.6;
             overflow-x: hidden;
             padding: 2rem;
@@ -79,6 +118,7 @@
             text-align: center;
             margin-bottom: 4.5rem;
             animation: fadeIn 1s ease-in;
+            position: relative;
         }
 
         header img {
@@ -96,13 +136,15 @@
         header h1::before {
             content: 'tapp';
             font-weight: 600;
-            opacity: 1;
+            color: var(--tapp-color);
         }
 
         header h1::after {
             content: 'Studio';
             font-weight: 600;
-            opacity: 0.5;
+            opacity: var(--studio-opacity);
+            color: var(--tapp-color);
+            margin-left: 0.25rem;
         }
 
         header p {
@@ -199,6 +241,7 @@
             transition: transform 0.2s cubic-bezier(.4, 0, .2, 1), box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
             cursor: pointer;
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+            background: var(--color-bg);
         }
 
         .store-buttons img:hover {
@@ -209,20 +252,21 @@
         footer {
             text-align: center;
             margin-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--color-divider);
             padding-top: 2rem;
-            color: #aaa;
+            color: var(--color-footer);
+            padding-bottom: 2.5rem;
         }
 
         footer a {
-            color: #aaa;
+            color: var(--color-link);
             text-decoration: none;
             margin: 0 0.5rem;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #fff;
+            color: var(--color-link-hover);
         }
 
         footer p {
@@ -242,7 +286,7 @@
         }
 
         .footer-email-link {
-            color: #fff !important;
+            color: var(--color-header) !important;
             text-decoration: underline !important;
         }
 
@@ -284,17 +328,49 @@
                 transform: none !important;
             }
         }
+
+        .section-separator {
+            border: none;
+            border-top: 1px solid var(--color-divider);
+            margin: 0 0 2.5rem 0;
+        }
+
+        .theme-toggle-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-bg);
+            color: var(--color-text);
+            border: 1px solid var(--color-divider);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            z-index: 100;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--color-divider);
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <img src="public/images/logo.svg"
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
+            aria-label="Toggle dark or light theme">🌙</button>
+        <img id="logo" src="public/images/logo_dark.svg"
             alt="tappStudio logo - tappStudio Web & Mobile App Development Studio in Mumbai" title="tappStudio logo"
             style="width:72px;height:72px;" />
         <h1></h1>
         <p>Bringing Ideas to life with code and creativity</p>
     </header>
+    <hr class="section-separator" aria-hidden="true" />
     <main>
         <section class="portfolio-section">
             <div class="app">
@@ -423,6 +499,35 @@
             threshold: 0.2
         });
         document.querySelectorAll('.app').forEach(app => observer.observe(app));
+
+        // Theme toggle logic
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const logo = document.getElementById('logo');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        function setTheme(mode) {
+            if (mode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeBtn.textContent = '🌙';
+                logo.src = 'public/images/logo.svg';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.textContent = '☀️';
+                logo.src = 'public/images/logo_dark.svg';
+            }
+        }
+        // Check localStorage or use browser default
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+        themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+            localStorage.setItem('theme', next);
+        });
     </script>
 </body>
 
