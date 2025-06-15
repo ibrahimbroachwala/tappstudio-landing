@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Deen - Amal Tracker | tappStudio</title>
+    <meta name="description"
+        content="Smart Amal tracker that helps Muslims stay consistent with daily and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement badges. Available on iOS and Android." />
+    <meta name="keywords" content="my deen, amal tracker, muslim app, tappstudio, Mumbai, iOS, Android, habits" />
+    <meta name="author" content="TAPP STUDIO">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tappstudio.in/mydeen/">
+    <meta property="og:title" content="My Deen - Amal Tracker | tappStudio">
+    <meta property="og:description"
+        content="Smart Amal tracker that helps Muslims stay consistent with daily and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement badges. Available on iOS and Android.">
+    <meta property="og:image" content="https://tappstudio.in/images/og-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tappstudio.in/mydeen/">
+    <meta property="twitter:title" content="My Deen - Amal Tracker | tappStudio">
+    <meta property="twitter:description"
+        content="Smart Amal tracker that helps Muslims stay consistent with daily and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement badges. Available on iOS and Android.">
+    <meta property="twitter:image" content="https://tappstudio.in/images/twitter-image.jpg">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tappstudio.in/mydeen/">
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--color-divider);
+            padding-top: 2rem;
+            color: var(--color-footer);
+            padding-bottom: 2.5rem;
+        }
+
+        footer a {
+            color: var(--color-link);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--color-link-hover);
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        :root {
+            --color-bg: #222;
+            --color-text: #fff;
+            --color-header: #fff;
+            --color-footer: #aaa;
+            --color-link: #aaa;
+            --color-link-hover: #fff;
+            --color-divider: rgba(255, 255, 255, 0.1);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.5;
+            --tapp-color: #fff;
+        }
+
+        [data-theme="light"] {
+            --color-bg: #f7f7f7;
+            --color-text: #111;
+            --color-header: #111;
+            --color-footer: #555;
+            --color-link: #555;
+            --color-link-hover: #000;
+            --color-divider: rgba(0, 0, 0, 0.08);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.32;
+            --tapp-color: #000;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #222;
+            --color-text: #fff;
+            --color-header: #fff;
+            --color-footer: #aaa;
+            --color-link: #aaa;
+            --color-link-hover: #fff;
+            --color-divider: rgba(255, 255, 255, 0.1);
+            --tapp-opacity: 1;
+            --studio-opacity: 0.5;
+            --tapp-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding: 2rem;
+        }
+
+        .app-page-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2.5rem;
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            box-shadow: 0 4px 24px 0 rgba(255, 255, 255, 0.10);
+            background: var(--color-bg);
+        }
+
+        .app-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-description {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+        }
+
+        .app-screenshots {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .app-screenshots img {
+            aspect-ratio: 215/466;
+            max-width: 215px;
+            max-height: 466px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            will-change: transform;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-screenshots img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 32px 8px rgba(255, 255, 255, 0.22), 0 0 16px 4px rgba(255, 255, 255, 0.12);
+            z-index: 10;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .store-buttons img {
+            height: 56px;
+            width: auto;
+            transition: transform 0.2s cubic-bezier(.4, 0, .2, 1), box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+            background: var(--color-bg);
+        }
+
+        .store-buttons img:hover {
+            transform: translateY(-4px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.10);
+        }
+
+        .theme-toggle-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-bg);
+            color: var(--color-text);
+            border: 1px solid var(--color-divider);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            z-index: 100;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--color-divider);
+        }
+
+        @media (max-width: 600px) {
+            .app-screenshots {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 0.5rem;
+            }
+
+            .app-screenshots img {
+                min-width: 110px;
+                max-width: 60vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
+        aria-label="Toggle dark or light theme">🌙</button>
+    <main class="app-page-container">
+        <img class="app-icon-large" src="../public/apps/mydeen/android_icon.png"
+            alt="My Deen App Icon - Amal Tracker" />
+        <div class="app-title">My Deen</div>
+        <div class="app-description">Smart Amal tracker that helps Muslims stay consistent with daily and weekly
+            spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement badges.</div>
+        <div class="app-screenshots">
+            <img src="../public/apps/mydeen/1.jpg" alt="My Deen App Screenshot 1 - Amal Tracking Dashboard" />
+            <img src="../public/apps/mydeen/2.jpg" alt="My Deen App Screenshot 2 - Streaks and Reminders" />
+            <img src="../public/apps/mydeen/3.jpg" alt="My Deen App Screenshot 3 - Achievement Badges" />
+        </div>
+        <div class="store-buttons">
+            <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125" target="_blank"
+                title="Download My Deen on the App Store" aria-label="Download My Deen on the App Store"><img
+                    src="../public/images/appstore.png" alt="Download My Deen on the App Store" /></a>
+            <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mydeen" target="_blank"
+                title="Download My Deen on the Play Store" aria-label="Download My Deen on the Play Store"><img
+                    src="../public/images/playstore.png" alt="Download My Deen on the Play Store" /></a>
+        </div>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener noreferrer"
+                title="Message tappStudio on X (Twitter)" aria-label="Message tappStudio on X (Twitter)">X</a>
+            <a href="https://www.instagram.com/ibrahim.broach" rel="noopener noreferrer"
+                title="Follow tappStudio on Instagram" aria-label="Follow tappStudio on Instagram">Instagram</a>
+            <a href="https://www.linkedin.com/in/ibrahimbroachwala/" rel="noopener noreferrer"
+                title="Connect with tappStudio on LinkedIn"
+                aria-label="Connect with tappStudio on LinkedIn">LinkedIn</a>
+        </div>
+        <p>&copy; 2025 tappStudio. All rights reserved.</p>
+    </footer>
+    <script>
+        // Theme toggle logic
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        function setTheme(mode) {
+            if (mode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeBtn.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.textContent = '☀️';
+            }
+        }
+        // Check localStorage or use browser default
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+        themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+            localStorage.setItem('theme', next);
+        });
+        // Animate in
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.app-page-container').style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector('.app-page-container').style.transition = 'opacity 0.8s';
+                document.querySelector('.app-page-container').style.opacity = 1;
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
