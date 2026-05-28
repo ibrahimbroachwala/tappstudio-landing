@@ -215,6 +215,7 @@
             will-change: transform;
             position: relative;
             z-index: 1;
+            cursor: zoom-in;
         }
 
         .app-screenshots img:hover {
@@ -366,6 +367,148 @@
 
         .theme-toggle-btn:hover {
             background: var(--color-divider);
+        }
+
+        .screenshot-lightbox {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(2px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1200;
+        }
+
+        .screenshot-lightbox.is-open {
+            animation: lightboxFadeIn 0.14s ease forwards;
+            pointer-events: auto;
+        }
+
+        .screenshot-lightbox.is-closing {
+            animation: lightboxFadeOut 0.10s ease forwards;
+            pointer-events: none;
+        }
+
+        .screenshot-lightbox-content {
+            position: relative;
+            width: fit-content;
+            max-width: min(92vw, 520px);
+            max-height: 92vh;
+            transform-origin: center;
+        }
+
+        .screenshot-lightbox.is-open .screenshot-lightbox-content {
+            animation: lightboxImageIn 0.12s ease;
+        }
+
+        .screenshot-lightbox.is-closing .screenshot-lightbox-content {
+            animation: lightboxImageOut 0.07s ease;
+        }
+
+        .screenshot-lightbox-image {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .screenshot-lightbox-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(35%, -35%);
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.78);
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            transition: transform 0.07s ease, background 0.07s ease;
+        }
+
+        .screenshot-lightbox-close:hover,
+        .screenshot-lightbox-close:focus-visible {
+            background: rgba(0, 0, 0, 0.92);
+            transform: translate(35%, -35%) scale(1.05);
+            outline: none;
+        }
+
+        @keyframes lightboxFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes lightboxFadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes lightboxImageIn {
+            from {
+                opacity: 0;
+                transform: scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lightboxImageOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-lightbox {
+                padding: 1rem;
+            }
+
+            .screenshot-lightbox-content {
+                max-width: min(94vw, 420px);
+            }
+
+            .screenshot-lightbox-close {
+                width: 38px;
+                height: 38px;
+                font-size: 1.3rem;
+                transform: translate(20%, -20%);
+            }
+
+            .screenshot-lightbox-close:hover,
+            .screenshot-lightbox-close:focus-visible {
+                transform: translate(20%, -20%) scale(1.04);
+            }
         }
     </style>
 </head>
@@ -562,6 +705,16 @@
             </div>
         </section>
     </main>
+
+    <div class="screenshot-lightbox" id="screenshot-lightbox" aria-hidden="true" role="dialog"
+        aria-label="Fullscreen screenshot preview">
+        <div class="screenshot-lightbox-content">
+            <button class="screenshot-lightbox-close" id="screenshot-lightbox-close"
+                aria-label="Close screenshot preview" title="Close">&times;</button>
+            <img class="screenshot-lightbox-image" id="screenshot-lightbox-image" src="" alt="" />
+        </div>
+    </div>
+
     <footer>
 
         <div class="social-links">
@@ -615,6 +768,57 @@
             const next = current === 'dark' ? 'light' : 'dark';
             setTheme(next);
             localStorage.setItem('theme', next);
+        });
+
+        // Fullscreen screenshot preview
+        const lightbox = document.getElementById('screenshot-lightbox');
+        const lightboxImage = document.getElementById('screenshot-lightbox-image');
+        const lightboxClose = document.getElementById('screenshot-lightbox-close');
+        const screenshotNodes = document.querySelectorAll('.app-screenshots img');
+
+        function openLightbox(sourceImg) {
+            lightboxImage.src = sourceImg.src;
+            lightboxImage.alt = sourceImg.alt || 'App screenshot preview';
+            lightbox.setAttribute('aria-hidden', 'false');
+            lightbox.classList.remove('is-closing');
+            lightbox.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            if (!lightbox.classList.contains('is-open')) return;
+            lightbox.classList.remove('is-open');
+            lightbox.classList.add('is-closing');
+
+            const handleAnimationEnd = (event) => {
+                if (event.target !== lightbox) return;
+                lightbox.classList.remove('is-closing');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImage.src = '';
+                lightboxImage.alt = '';
+                document.body.style.overflow = '';
+                lightbox.removeEventListener('animationend', handleAnimationEnd);
+            };
+
+            lightbox.addEventListener('animationend', handleAnimationEnd);
+        }
+
+        screenshotNodes.forEach((img) => {
+            img.addEventListener('click', () => openLightbox(img));
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
