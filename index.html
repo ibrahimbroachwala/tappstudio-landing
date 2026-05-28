@@ -290,18 +290,28 @@
             text-decoration: underline !important;
         }
 
-        /* Splitup (first app) */
+        /* Ontime Health (first app) */
         .portfolio-section .app:nth-of-type(1) .app-screenshots img:hover {
+            box-shadow: 0 0 32px 8px rgba(109, 201, 161, 0.22), 0 0 16px 4px rgba(109, 201, 161, 0.12);
+        }
+
+        /* Splitup (second app) */
+        .portfolio-section .app:nth-of-type(2) .app-screenshots img:hover {
             box-shadow: 0 0 32px 8px rgba(246, 196, 47, 0.22), 0 0 16px 4px rgba(246, 196, 47, 0.12);
         }
 
-        /* My Deen (second app) */
-        .portfolio-section .app:nth-of-type(2) .app-screenshots img:hover {
+        /* My Deen (third app) */
+        .portfolio-section .app:nth-of-type(3) .app-screenshots img:hover {
             box-shadow: 0 0 32px 8px rgba(255, 255, 255, 0.22), 0 0 16px 4px rgba(255, 255, 255, 0.12);
         }
 
-        /* AI Funkit (third app) */
-        .portfolio-section .app:nth-of-type(3) .app-screenshots img:hover {
+        /* Misbaha Tasbih Counter (fourth app) */
+        .portfolio-section .app:nth-of-type(4) .app-screenshots img:hover {
+            box-shadow: 0 0 32px 8px rgba(107, 176, 255, 0.22), 0 0 16px 4px rgba(107, 176, 255, 0.12);
+        }
+
+        /* AI Funkit (fifth app) */
+        .portfolio-section .app:nth-of-type(5) .app-screenshots img:hover {
             box-shadow: 0 0 32px 8px rgba(247, 141, 89, 0.22), 0 0 16px 4px rgba(247, 141, 89, 0.12);
         }
 
@@ -375,6 +385,39 @@
         <section class="portfolio-section">
             <div class="app">
                 <div class="app-header">
+                    <img src="public/apps/ontime_health/android.png"
+                        alt="Ontime Health App Icon - Daily Health Check-ins" title="Ontime Health App Icon" />
+                    <h2>Ontime Health</h2>
+                </div>
+                <p class="app-description">Ontime Health helps you build a consistent daily routine through check-ins
+                    across four areas: sleep, fasting, activity, and light exposure (sunlight and screen time). The app
+                    highlights trends in each area to support habit formation and provide a simple view of long-term
+                    lifestyle consistency.</p>
+                <div class="app-screenshots">
+                    <img src="public/apps/ontime_health/1.PNG"
+                        alt="Ontime Health App Screenshot 1 - Daily Health Check-ins"
+                        title="Ontime Health App Screenshot: Daily Health Check-ins" />
+                    <img src="public/apps/ontime_health/2.PNG"
+                        alt="Ontime Health App Screenshot 2 - Health Routine Progress"
+                        title="Ontime Health App Screenshot: Health Routine Progress" />
+                    <img src="public/apps/ontime_health/3.PNG" alt="Ontime Health App Screenshot 3 - Streak Tracking"
+                        title="Ontime Health App Screenshot: Streak Tracking" />
+                </div>
+                <div class="app-links">
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/ontime-sleep-weight-loss/id1564303902"
+                            title="Ontime Health on the App Store" aria-label="Ontime Health on the App Store"><img
+                                src="public/images/appstore.png" alt="Ontime Health App Store Link"
+                                title="App Store Badge for Ontime Health" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=app.health.ontime"
+                            title="Ontime Health on the Play Store" aria-label="Ontime Health on the Play Store"><img
+                                src="public/images/playstore.png" alt="Ontime Health Play Store Link"
+                                title="Play Store Badge for Ontime Health" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app">
+                <div class="app-header">
                     <a href="splitup/index.html" style="display:contents" tabindex="-1">
                         <img src="public/apps/splitup/android.png" alt="Splitup App Icon - Group Expense Splitter"
                             title="Splitup App Icon" />
@@ -441,6 +484,40 @@
             </div>
             <div class="app">
                 <div class="app-header">
+                    <img src="public/apps/misbaha/android.png" alt="Misbaha Tasbih Counter App Icon - Tasbeeh Counter"
+                        title="Misbaha Tasbih Counter App Icon" />
+                    <h2>Misbaha Tasbih Counter</h2>
+                </div>
+                <p class="app-description">A beautiful and modern Tasbih counter designed to help users stay consistent
+                    with daily tasbeeh and remembrance. The app features a sleek interface with interactive 3D tasbih
+                    beads for a focused and engaging counting experience.</p>
+                <div class="app-screenshots">
+                    <img src="public/apps/misbaha/1.PNG"
+                        alt="Misbaha Tasbih Counter Screenshot 1 - Main Counter Interface"
+                        title="Misbaha Tasbih Counter Screenshot: Main Counter Interface" />
+                    <img src="public/apps/misbaha/2.PNG" alt="Misbaha Tasbih Counter Screenshot 2 - 3D Tasbih Beads"
+                        title="Misbaha Tasbih Counter Screenshot: 3D Tasbih Beads" />
+                    <img src="public/apps/misbaha/3.PNG"
+                        alt="Misbaha Tasbih Counter Screenshot 3 - Daily Remembrance Tracking"
+                        title="Misbaha Tasbih Counter Screenshot: Daily Remembrance Tracking" />
+                </div>
+                <div class="app-links">
+                    <div class="store-buttons">
+                        <a href="https://apps.apple.com/us/app/misbaha-tasbih-counter/id6757333557"
+                            title="Misbaha Tasbih Counter on the App Store"
+                            aria-label="Misbaha Tasbih Counter on the App Store"><img src="public/images/appstore.png"
+                                alt="Misbaha Tasbih Counter App Store Link"
+                                title="App Store Badge for Misbaha Tasbih Counter" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mytasbih"
+                            title="Misbaha Tasbih Counter on the Play Store"
+                            aria-label="Misbaha Tasbih Counter on the Play Store"><img src="public/images/playstore.png"
+                                alt="Misbaha Tasbih Counter Play Store Link"
+                                title="Play Store Badge for Misbaha Tasbih Counter" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app">
+                <div class="app-header">
                     <a href="aifunkit/index.html" style="display:contents" tabindex="-1">
                         <img src="public/apps/aifunkit/android_icon.png"
                             alt="AI Funkit App Icon - AI Chat & Image Generation" title="AI Funkit App Icon" />
@@ -476,7 +553,7 @@
         </section>
         <section class="contact-section" style="max-width:800px;margin:4rem auto 0;text-align:center;">
             <h2>Contact</h2>
-            <p>Got an idea? Let's turn that vision into something real — hit me up and let's make it happen.</p>
+            <p>Have a project in mind? Get in touch to discuss how we can bring it to life.</p>
             <div><a class="footer-email-link" href="mailto:tappstudio.in@gmail.com" title="Email tappStudio"
                     aria-label="Email tappStudio">tappstudio.in@gmail.com</a></div>
 
