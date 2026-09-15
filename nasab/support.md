@@ -20,7 +20,7 @@ Common topics we can help with:
 - Joining or leaving a Family Space
 - Issues uploading or viewing photos, videos, or voice notes
 - Subscription, billing, or storage questions
-- Reporting inappropriate content added by another family member
+- Reporting inappropriate content added by another family member, or a child safety concern (see our [Child Safety Standards](https://tappstudio.in/nasab/child-safety-standards))
 - Requesting a data export or account/data deletion (see below)
 
 ---
@@ -104,6 +104,7 @@ For full details on what we collect, how it's used, and your rights, see our [Pr
 
 - [Privacy Policy](https://tappstudio.in/nasab/privacy-policy)
 - [Terms of Use](https://tappstudio.in/nasab/terms)
+- [Child Safety Standards](https://tappstudio.in/nasab/child-safety-standards)
 
 ---
 
