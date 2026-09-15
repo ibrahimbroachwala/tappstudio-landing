@@ -1,0 +1,26 @@
+# tappStudio
+
+> tappStudio is a mobile and web app development studio based in Mumbai, India, building and publishing its own portfolio of iOS and Android apps.
+
+tappStudio designs, builds, and ships consumer mobile apps end-to-end — product design, engineering, and App Store/Play Store publishing. The site at https://tappstudio.in/ is a portfolio landing page listing the studio's published apps, each linking out to its App Store and Play Store listing.
+
+## Apps
+
+- [Nasab](https://tappstudio.in/#nasab): A living family archive app. Build a family tree, preserve family stories, photos, and voice notes, and invite family members to keep it growing together. iOS: https://apps.apple.com/us/app/nasab-the-family-archive/id6793519541 — Android: https://play.google.com/store/apps/details?id=in.tappstudio.nasab
+- [My Deen](https://tappstudio.in/mydeen/): A smart Amal (deed) tracker that helps Muslims stay consistent with daily and weekly spiritual habits — tracking Namaz, Duas, and good deeds with reminders, streaks, and achievement badges. iOS: https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125 — Android: https://play.google.com/store/apps/details?id=in.tappstudio.mydeen
+- [Misbaha Tasbih Counter](https://tappstudio.in/#misbaha-tasbih-counter): A modern Tasbih (dhikr) counter app with interactive 3D tasbih beads, designed to help users stay consistent with daily tasbeeh and remembrance. iOS: https://apps.apple.com/us/app/misbaha-tasbih-counter/id6757333557 — Android: https://play.google.com/store/apps/details?id=in.tappstudio.mytasbih
+- [Splitup](https://tappstudio.in/splitup/): A group expense and bill-splitting app — split costs, send reminders, and settle up with friends. iOS: https://apps.apple.com/us/app/splitup-group-expense/id6744556329 — Android: https://play.google.com/store/apps/details?id=in.tappstudio.splitup
+- [Ontime Health](https://tappstudio.in/#ontime-health): A daily habit and routine tracker covering sleep, fasting, activity, and light exposure, with trend views to support long-term consistency. iOS: https://apps.apple.com/us/app/ontime-sleep-weight-loss/id1564303902 — Android: https://play.google.com/store/apps/details?id=app.health.ontime
+- [AI Funkit](https://tappstudio.in/aifunkit/): A playful AI chat app with unique characters and DALL·E-powered image generation, using a pay-as-you-go pricing model. iOS: https://apps.apple.com/us/app/ai-funkit/id6450719081 — Android: https://play.google.com/store/apps/details?id=ai.roleplay.chat
+
+## Docs
+
+- [Privacy Policy](https://tappstudio.in/privacy-policy.html): tappStudio's studio-wide privacy policy.
+- [Terms of Service](https://tappstudio.in/terms-of-service.html): tappStudio's studio-wide terms of service.
+
+## Contact
+
+- Email: tappstudio.in@gmail.com
+- Location: Mumbai, India
+- LinkedIn: https://www.linkedin.com/in/ibrahimbroachwala/
+- Instagram: https://www.instagram.com/ibrahim.broach
