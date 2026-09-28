@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tappStudio - Mobile App Development Studio in Mumbai</title>
+    <title>tappStudio: Custom mobile apps &amp; websites, built by one developer</title>
     <meta name="description"
-        content="TAPP STUDIO is a premier mobile and web development studio in Mumbai, India. We craft exceptional digital experiences with technical excellence and innovative design.">
+        content="tappStudio is Ibrahim, a solo developer in Mumbai who designs and builds custom mobile apps and websites end to end: no agency, no account manager, MVP in about a week.">
     <meta name="keywords"
-        content="mobile app development, web development, UI/UX design, Mumbai, India, digital studio, app development studio, iOS app development, Android app development">
-    <meta name="author" content="TAPP STUDIO">
+        content="freelance app developer, solo developer, mobile app development, web development, MVP development, iOS app developer, Android app developer, Mumbai, India, custom software developer">
+    <meta name="author" content="Ibrahim Broachwala">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tappstudio.in/">
     <meta property="og:site_name" content="tappStudio">
-    <meta property="og:title" content="TAPP STUDIO - Mobile App Development Studio in Mumbai">
+    <meta property="og:title" content="tappStudio: Custom mobile apps &amp; websites, built by one developer">
     <meta property="og:description"
-        content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+        content="One developer, zero account managers. I design and build custom apps and websites end-to-end, MVP in about a week. Six apps shipped and live on both stores to prove it.">
     <meta property="og:image" content="https://tappstudio.in/public/images/logo.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
@@ -27,9 +27,9 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://tappstudio.in/">
-    <meta name="twitter:title" content="TAPP STUDIO - Mobile App Development">
+    <meta name="twitter:title" content="tappStudio: Custom mobile apps &amp; websites, built by one developer">
     <meta name="twitter:description"
-        content="We craft exceptional mobile and web experiences that blend technical excellence with bold, innovative design.">
+        content="One developer, zero account managers. I design and build custom apps and websites end-to-end, MVP in about a week.">
     <meta name="twitter:image" content="https://tappstudio.in/public/images/logo.png">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tappstudio.in/">
@@ -38,16 +38,41 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&amp;display=swap" rel="stylesheet">
+    <!-- Theme, before first paint: no flash of the wrong theme -->
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "TAPP STUDIO",
+      "@type": "ProfessionalService",
+      "name": "tappStudio",
       "url": "https://tappstudio.in",
       "logo": "https://tappstudio.in/public/images/logo.png",
-      "description": "A premier mobile and web development studio in Mumbai, India",
+      "image": "https://tappstudio.in/public/images/logo.png",
+      "description": "tappStudio is Ibrahim Broachwala, a solo developer in Mumbai designing and building custom mobile apps and websites end-to-end.",
+      "priceRange": "$$",
+      "founder": {
+        "@type": "Person",
+        "name": "Ibrahim Broachwala",
+        "sameAs": [
+          "https://www.linkedin.com/in/ibrahimbroachwala/",
+          "https://www.instagram.com/ibrahim.broach"
+        ]
+      },
+      "areaServed": "Worldwide",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mumbai",
@@ -59,6 +84,11 @@
         "contactType": "customer service",
         "email": "tappstudio.in@gmail.com"
       },
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom mobile app development (iOS & Android)" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website & landing page development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MVP development for founders" } }
+      ],
       "sameAs": [
         "https://twitter.com/messages/compose?recipient_id=ibrahim_broach",
         "https://www.linkedin.com/in/ibrahimbroachwala/",
@@ -70,7 +100,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Apps by TAPP STUDIO",
+      "name": "Apps by tappStudio",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -153,694 +183,622 @@
       ]
     }
   </script>
-    <style>
-        :root {
-            --color-bg: #222;
-            --color-text: #fff;
-            --color-header: #fff;
-            --color-footer: #aaa;
-            --color-link: #aaa;
-            --color-link-hover: #fff;
-            --color-divider: rgba(255, 255, 255, 0.1);
-            --tapp-opacity: 1;
-            --studio-opacity: 0.5;
-            --tapp-color: #fff;
-        }
-
-        [data-theme="light"] {
-            --color-bg: #f7f7f7;
-            --color-text: #111;
-            --color-header: #111;
-            --color-footer: #555;
-            --color-link: #555;
-            --color-link-hover: #000;
-            --color-divider: rgba(0, 0, 0, 0.08);
-            --tapp-opacity: 1;
-            --studio-opacity: 0.32;
-            --tapp-color: #000;
-        }
-
-        [data-theme="dark"] {
-            --color-bg: #222;
-            --color-text: #fff;
-            --color-header: #fff;
-            --color-footer: #aaa;
-            --color-link: #aaa;
-            --color-link-hover: #fff;
-            --color-divider: rgba(255, 255, 255, 0.1);
-            --tapp-opacity: 1;
-            --studio-opacity: 0.5;
-            --tapp-color: #fff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Prompt', sans-serif;
-        }
-
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 4.5rem;
-            animation: fadeIn 1s ease-in;
-            position: relative;
-        }
-
-        header img {
-            width: 72px;
-            height: 72px;
-            margin-bottom: 1rem;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        header h1 .brand-tapp {
-            font-weight: 600;
-            color: var(--tapp-color);
-        }
-
-        header h1 .brand-studio {
-            font-weight: 600;
-            opacity: var(--studio-opacity);
-            color: var(--tapp-color);
-            margin-left: 0.25rem;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 1;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        .portfolio-section {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .app {
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .app.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .app-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .app-header img {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
-        .app-header h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .app-description {
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .app-screenshots {
-            display: flex;
-            gap: 1rem;
-            overflow: visible;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .app-screenshots img {
-            aspect-ratio: 215/466;
-            width: 215px;
-            height: auto;
-            max-width: 215px;
-            max-height: 466px;
-            border-radius: 12px;
-            object-fit: cover;
-            flex-shrink: 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            will-change: transform;
-            position: relative;
-            z-index: 1;
-            cursor: zoom-in;
-        }
-
-        .app-screenshots img:hover {
-            transform: scale(1.05) translateZ(0);
-            border-radius: 12px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
-            z-index: 10;
-        }
-
-        .app-links {
-            display: flex;
-            justify-content: center;
-        }
-
-        .store-buttons {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-        }
-
-        .store-buttons img {
-            height: 48px;
-            width: auto;
-            transition: transform 0.2s cubic-bezier(.4, 0, .2, 1), box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
-            cursor: pointer;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
-            background: var(--color-bg);
-        }
-
-        .store-buttons img:hover {
-            transform: translateY(-4px) scale(1.04) rotate(-1deg);
-            box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.10);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            border-top: 1px solid var(--color-divider);
-            padding-top: 2rem;
-            color: var(--color-footer);
-            padding-bottom: 2.5rem;
-        }
-
-        footer a {
-            color: var(--color-link);
-            text-decoration: none;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--color-link-hover);
-        }
-
-        footer p {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            opacity: 0.6;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .footer-email-link {
-            color: var(--color-header) !important;
-            text-decoration: underline !important;
-        }
-
-        /* Ontime Health (first app) */
-        .portfolio-section .app:nth-of-type(1) .app-screenshots img:hover {
-            box-shadow: 0 0 32px 8px rgba(109, 201, 161, 0.22), 0 0 16px 4px rgba(109, 201, 161, 0.12);
-        }
-
-        /* Splitup (second app) */
-        .portfolio-section .app:nth-of-type(2) .app-screenshots img:hover {
-            box-shadow: 0 0 32px 8px rgba(246, 196, 47, 0.22), 0 0 16px 4px rgba(246, 196, 47, 0.12);
-        }
-
-        /* My Deen (third app) */
-        .portfolio-section .app:nth-of-type(3) .app-screenshots img:hover {
-            box-shadow: 0 0 32px 8px rgba(255, 255, 255, 0.22), 0 0 16px 4px rgba(255, 255, 255, 0.12);
-        }
-
-        /* Misbaha Tasbih Counter (fourth app) */
-        .portfolio-section .app:nth-of-type(4) .app-screenshots img:hover {
-            box-shadow: 0 0 32px 8px rgba(107, 176, 255, 0.22), 0 0 16px 4px rgba(107, 176, 255, 0.12);
-        }
-
-        /* AI Funkit (fifth app) */
-        .portfolio-section .app:nth-of-type(5) .app-screenshots img:hover {
-            box-shadow: 0 0 32px 8px rgba(247, 141, 89, 0.22), 0 0 16px 4px rgba(247, 141, 89, 0.12);
-        }
-
-        @media (max-width: 600px) {
-            .app-screenshots {
-                overflow-x: auto;
-                overflow-y: visible;
-                justify-content: flex-start;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 0.5rem;
-                position: relative;
-            }
-
-            .app-screenshots img {
-                min-width: 180px;
-                max-width: 70vw;
-                position: relative;
-                z-index: 1;
-            }
-
-            .app-screenshots img:hover,
-            .app-screenshots img:active {
-                z-index: 10;
-                transform: none !important;
-            }
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .section-separator {
-            border: none;
-            border-top: 1px solid var(--color-divider);
-            margin: 0 0 2.5rem 0;
-        }
-
-        .theme-toggle-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--color-bg);
-            color: var(--color-text);
-            border: 1px solid var(--color-divider);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.3rem;
-            transition: background 0.2s, color 0.2s, border 0.2s;
-            z-index: 100;
-        }
-
-        .theme-toggle-btn:hover {
-            background: var(--color-divider);
-        }
-
-        .screenshot-lightbox {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.78);
-            backdrop-filter: blur(2px);
-            opacity: 0;
-            pointer-events: none;
-            z-index: 1200;
-        }
-
-        .screenshot-lightbox.is-open {
-            animation: lightboxFadeIn 0.14s ease forwards;
-            pointer-events: auto;
-        }
-
-        .screenshot-lightbox.is-closing {
-            animation: lightboxFadeOut 0.10s ease forwards;
-            pointer-events: none;
-        }
-
-        .screenshot-lightbox-content {
-            position: relative;
-            width: fit-content;
-            max-width: min(92vw, 520px);
-            max-height: 92vh;
-            transform-origin: center;
-        }
-
-        .screenshot-lightbox.is-open .screenshot-lightbox-content {
-            animation: lightboxImageIn 0.12s ease;
-        }
-
-        .screenshot-lightbox.is-closing .screenshot-lightbox-content {
-            animation: lightboxImageOut 0.07s ease;
-        }
-
-        .screenshot-lightbox-image {
-            display: block;
-            width: auto;
-            max-width: 100%;
-            max-height: 92vh;
-            border-radius: 14px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-        }
-
-        .screenshot-lightbox-close {
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translate(35%, -35%);
-            width: 42px;
-            height: 42px;
-            border: none;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, 0.78);
-            color: #fff;
-            font-size: 1.5rem;
-            line-height: 1;
-            cursor: pointer;
-            display: grid;
-            place-items: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-            transition: transform 0.07s ease, background 0.07s ease;
-        }
-
-        .screenshot-lightbox-close:hover,
-        .screenshot-lightbox-close:focus-visible {
-            background: rgba(0, 0, 0, 0.92);
-            transform: translate(35%, -35%) scale(1.05);
-            outline: none;
-        }
-
-        @keyframes lightboxFadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes lightboxFadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes lightboxImageIn {
-            from {
-                opacity: 0;
-                transform: scale(0.97);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes lightboxImageOut {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .screenshot-lightbox {
-                padding: 1rem;
-            }
-
-            .screenshot-lightbox-content {
-                max-width: min(94vw, 420px);
-            }
-
-            .screenshot-lightbox-close {
-                width: 38px;
-                height: 38px;
-                font-size: 1.3rem;
-                transform: translate(20%, -20%);
-            }
-
-            .screenshot-lightbox-close:hover,
-            .screenshot-lightbox-close:focus-visible {
-                transform: translate(20%, -20%) scale(1.04);
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <header>
-        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
-            aria-label="Toggle dark or light theme">🌙</button>
-        <img id="logo" src="public/images/logo_dark.svg"
-            alt="tappStudio logo - tappStudio Web & Mobile App Development Studio in Mumbai" title="tappStudio logo"
-            style="width:72px;height:72px;" />
-        <h1><span class="brand-tapp">tapp</span><span class="brand-studio">Studio</span></h1>
-        <p>Bringing ideas to life with code and creativity</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="wrap header-inner">
+            <a href="#top" class="brand" aria-label="tappStudio, back to top">
+                <svg class="brand-logo" width="28" height="28" viewBox="0 0 512 512" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path class="brand-logo-t"
+                        d="M195.581 190.455V231.818H76.0142V190.455H195.581ZM103.159 142.886H158.224V327.989C158.224 333.073 159 337.037 160.551 339.881C162.102 342.638 164.257 344.577 167.014 345.697C169.858 346.818 173.133 347.378 176.838 347.378C179.423 347.378 182.009 347.162 184.594 346.732C187.179 346.214 189.161 345.827 190.54 345.568L199.2 386.544C196.443 387.406 192.565 388.397 187.567 389.517C182.569 390.723 176.493 391.456 169.341 391.714C156.07 392.232 144.437 390.465 134.44 386.415C124.53 382.365 116.818 376.074 111.303 367.543C105.787 359.011 103.073 348.24 103.159 335.227V142.886Z" />
+                    <path class="brand-logo-s"
+                        d="M376.094 200.408C375.06 189.981 370.622 181.88 362.781 176.107C354.939 170.333 344.296 167.446 330.853 167.446C321.719 167.446 314.006 168.739 307.715 171.324C301.424 173.823 296.599 177.313 293.238 181.794C289.963 186.275 288.326 191.359 288.326 197.047C288.154 201.786 289.145 205.923 291.299 209.456C293.54 212.989 296.599 216.048 300.477 218.634C304.354 221.133 308.835 223.33 313.92 225.226C319.004 227.036 324.433 228.587 330.207 229.879L353.991 235.567C365.538 238.152 376.138 241.599 385.789 245.908C395.441 250.216 403.799 255.516 410.866 261.807C417.932 268.098 423.404 275.509 427.282 284.04C431.246 292.571 433.271 302.352 433.357 313.382C433.271 329.583 429.135 343.629 420.948 355.521C412.848 367.327 401.128 376.505 385.789 383.054C370.536 389.517 352.138 392.749 330.594 392.749C309.223 392.749 290.61 389.474 274.754 382.925C258.984 376.375 246.661 366.681 237.785 353.841C228.995 340.915 224.385 324.929 223.954 305.885H278.114C278.718 314.761 281.26 322.172 285.741 328.118C290.308 333.978 296.383 338.416 303.967 341.432C311.636 344.362 320.297 345.827 329.948 345.827C339.427 345.827 347.657 344.448 354.637 341.69C361.703 338.933 367.175 335.098 371.053 330.186C374.931 325.274 376.87 319.63 376.87 313.253C376.87 307.307 375.103 302.309 371.57 298.259C368.123 294.208 363.039 290.761 356.317 287.918C349.682 285.074 341.539 282.489 331.887 280.162L303.062 272.923C280.743 267.494 263.12 259.006 250.194 247.459C237.268 235.911 230.848 220.357 230.934 200.795C230.848 184.767 235.113 170.764 243.731 158.786C252.434 146.807 264.37 137.457 279.536 130.736C294.703 124.014 311.938 120.653 331.241 120.653C350.888 120.653 368.037 124.014 382.687 130.736C397.423 137.457 408.884 146.807 417.07 158.786C425.257 170.764 429.479 184.638 429.738 200.408H376.094Z" />
+                </svg>
+                <span class="brand-word"><span class="brand-tapp">tapp</span><span
+                        class="brand-studio">Studio</span></span>
+            </a>
+            <nav class="nav-links" aria-label="Section navigation">
+                <a href="#work">Work</a>
+                <a href="#what-you-get">What you get</a>
+                <a href="#how">How it works</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
+                    aria-label="Toggle dark or light theme" type="button">
+                    <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                </button>
+                <button class="btn btn-accent btn-small" data-open-contact type="button">Hire me</button>
+            </div>
+        </div>
     </header>
-    <hr class="section-separator" aria-hidden="true" />
-    <main>
-        <section class="portfolio-section">
-            <h2 class="visually-hidden">Our Apps</h2>
-            <div class="app" id="nasab">
-                <div class="app-header">
-                    <a href="https://nasab.tappstudio.in" style="display:contents" tabindex="-1">
-                        <img src="public/apps/nasab/icon-256.webp" width="64" height="64" decoding="async" alt="Nasab App Icon - Family Archive"
-                            title="Nasab App Icon" />
-                    </a>
-                    <a href="https://nasab.tappstudio.in" style="color:inherit;text-decoration:none">
-                        <h2>Nasab</h2>
-                    </a>
-                </div>
-                <p class="app-description">A living family archive. Build your tree, preserve your family's stories,
-                    photos, and voice notes, invite the people who care to keep it growing with you.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/nasab/1-540.webp" srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w" sizes="215px" width="1320" height="2868" decoding="async" alt="Nasab App Screenshot 1 - Family Tree"
-                        title="Nasab App Screenshot: Family Tree" />
-                    <img src="public/apps/nasab/2-540.webp" srcset="public/apps/nasab/2-540.webp 540w, public/apps/nasab/2-1080.webp 1080w" sizes="215px" width="1320" height="2868" decoding="async" alt="Nasab App Screenshot 2 - Family Memories"
-                        title="Nasab App Screenshot: Family Memories" />
-                    <img src="public/apps/nasab/3-540.webp" srcset="public/apps/nasab/3-540.webp 540w, public/apps/nasab/3-1080.webp 1080w" sizes="215px" width="1320" height="2868" decoding="async" alt="Nasab App Screenshot 3 - Family Space"
-                        title="Nasab App Screenshot: Family Space" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/nasab-the-family-archive/id6793519541" target="_blank"
-                            title="Download Nasab on the App Store" aria-label="Download Nasab on the App Store"><img
-                                src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async" alt="Download Nasab on the App Store"
-                                title="App Store Badge for Nasab" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.nasab" target="_blank"
-                            title="Download Nasab on the Play Store" aria-label="Download Nasab on the Play Store"><img
-                                src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async" alt="Download Nasab on the Play Store"
-                                title="Play Store Badge for Nasab" /></a>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="wrap hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Solo developer · Mumbai · available for projects</p>
+                    <h1>One developer.<br>Zero account managers.<br><span class="accent-text">Apps that actually
+                            ship.</span></h1>
+                    <p class="hero-sub">I'm Ibrahim. I design and build custom mobile apps and websites, from napkin
+                        sketch to App Store, without the agency markup, the kickoff deck, or the guy whose job is
+                        forwarding your emails to someone else.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-accent btn-large" data-open-contact type="button">Start a
+                            conversation <span aria-hidden="true">→</span></button>
+                        <a class="btn btn-ghost btn-large" href="#work">See the receipts <span
+                                aria-hidden="true">↓</span></a>
                     </div>
+                    <ul class="hero-stats" role="list">
+                        <li><span class="stat-num">6</span> apps live</li>
+                        <li>iOS + Android + Web</li>
+                        <li>MVP in <span class="stat-num">~1</span> week</li>
+                        <li><span class="stat-num">1</span> human</li>
+                    </ul>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <img class="hero-phone hero-phone-a" src="public/apps/splitup/1-540.webp"
+                        srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w"
+                        sizes="180px" width="1320" height="2868" decoding="async" loading="eager" alt="" />
+                    <img class="hero-phone hero-phone-b" src="public/apps/nasab/1-540.webp"
+                        srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w" sizes="200px"
+                        width="1320" height="2868" decoding="async" loading="eager" alt="" />
+                    <img class="hero-phone hero-phone-c" src="public/apps/mydeen/1-540.webp"
+                        srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w"
+                        sizes="180px" width="1320" height="2868" decoding="async" loading="eager" alt="" />
                 </div>
             </div>
-            <div class="app" id="my-deen">
-                <div class="app-header">
-                    <a href="mydeen/index.html" style="display:contents" tabindex="-1">
-                        <img src="public/apps/mydeen/icon-256.webp" width="64" height="64" loading="lazy" decoding="async" alt="My Deen App Icon - Amal Tracker"
-                            title="My Deen App Icon" />
-                    </a>
-                    <a href="mydeen/index.html" style="color:inherit;text-decoration:none">
-                        <h2>My Deen</h2>
-                    </a>
-                </div>
-                <p class="app-description">Smart Amal tracker that helps Muslims stay consistent with daily
-                    and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and
-                    achievement badges.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/mydeen/1-540.webp" srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="My Deen App Screenshot 1 - Amal Tracking Dashboard"
-                        title="My Deen App Screenshot: Amal Tracking Dashboard" />
-                    <img src="public/apps/mydeen/2-540.webp" srcset="public/apps/mydeen/2-540.webp 540w, public/apps/mydeen/2-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="My Deen App Screenshot 2 - Streaks and Reminders"
-                        title="My Deen App Screenshot: Streaks and Reminders" />
-                    <img src="public/apps/mydeen/3-540.webp" srcset="public/apps/mydeen/3-540.webp 540w, public/apps/mydeen/3-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="My Deen App Screenshot 3 - Achievement Badges"
-                        title="My Deen App Screenshot: Achievement Badges" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125" target="_blank"
-                            rel="noopener noreferrer" title="Download My Deen on the App Store"
-                            aria-label="Download My Deen on the App Store"><img src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async"
-                                alt="Download My Deen on the App Store" title="App Store Badge for My Deen" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mydeen" target="_blank"
-                            title="Download My Deen on the Play Store"
-                            aria-label="Download My Deen on the Play Store"><img src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async"
-                                alt="Download My Deen on the Play Store" title="Play Store Badge for My Deen" /></a>
-                    </div>
+        </section>
+
+        <!-- NOT AN AGENCY STRIP -->
+        <section class="not-agency">
+            <div class="wrap not-agency-inner">
+                <ul class="strike-list" role="list">
+                    <li><s>Account manager</s></li>
+                    <li><s>Billable discovery workshop</s></li>
+                    <li><s>Junior dev learning on your budget</s></li>
+                    <li><s>"Let me loop in the team"</s></li>
+                </ul>
+                <p class="not-agency-line">→ Just me. The person you talk to is the person writing the code.</p>
+            </div>
+        </section>
+
+        <!-- WHAT YOU CAN BUILD -->
+        <section class="section build-section">
+            <div class="wrap">
+                <h2 class="section-title">What you can build with me</h2>
+                <div class="build-grid">
+                    <article class="build-card">
+                        <p class="build-index">01</p>
+                        <h3>Mobile apps, iOS &amp; Android</h3>
+                        <p>From idea to both stores. I handle the submission paperwork, including the rejection
+                            emails Apple likes to send on Fridays.</p>
+                    </article>
+                    <article class="build-card">
+                        <p class="build-index">02</p>
+                        <h3>Websites &amp; landing pages</h3>
+                        <p>Fast, responsive, and nothing like a template with your logo pasted over someone else's
+                            layout.</p>
+                    </article>
+                    <article class="build-card">
+                        <p class="build-index">03</p>
+                        <h3>MVPs for founders</h3>
+                        <p>A working product in about a week, so investors can tap something real instead of
+                            squinting at a slide.</p>
+                    </article>
+                    <article class="build-card">
+                        <p class="build-index">04</p>
+                        <h3>Rescue &amp; polish</h3>
+                        <p>An existing app that's buggy, slow, or ugly. I'll fix it without a lecture about who built
+                            it.</p>
+                    </article>
                 </div>
             </div>
-            <div class="app" id="misbaha-tasbih-counter">
-                <div class="app-header">
-                    <img src="public/apps/misbaha/icon-256.webp" width="64" height="64" loading="lazy" decoding="async" alt="Misbaha Tasbih Counter App Icon - Tasbeeh Counter"
-                        title="Misbaha Tasbih Counter App Icon" />
-                    <h2>Misbaha Tasbih Counter</h2>
-                </div>
-                <p class="app-description">A beautiful and modern Tasbih counter designed to help users stay consistent
-                    with daily tasbeeh and remembrance. The app features a sleek interface with interactive 3D tasbih
-                    beads for a focused and engaging counting experience.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/misbaha/1-540.webp" srcset="public/apps/misbaha/1-540.webp 540w, public/apps/misbaha/1-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
-                        alt="Misbaha Tasbih Counter Screenshot 1 - Main Counter Interface"
-                        title="Misbaha Tasbih Counter Screenshot: Main Counter Interface" />
-                    <img src="public/apps/misbaha/2-540.webp" srcset="public/apps/misbaha/2-540.webp 540w, public/apps/misbaha/2-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async" alt="Misbaha Tasbih Counter Screenshot 2 - 3D Tasbih Beads"
-                        title="Misbaha Tasbih Counter Screenshot: 3D Tasbih Beads" />
-                    <img src="public/apps/misbaha/3-540.webp" srcset="public/apps/misbaha/3-540.webp 540w, public/apps/misbaha/3-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
-                        alt="Misbaha Tasbih Counter Screenshot 3 - Daily Remembrance Tracking"
-                        title="Misbaha Tasbih Counter Screenshot: Daily Remembrance Tracking" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/misbaha-tasbih-counter/id6757333557"
-                            title="Misbaha Tasbih Counter on the App Store"
-                            aria-label="Misbaha Tasbih Counter on the App Store"><img src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async"
-                                alt="Misbaha Tasbih Counter App Store Link"
-                                title="App Store Badge for Misbaha Tasbih Counter" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mytasbih"
-                            title="Misbaha Tasbih Counter on the Play Store"
-                            aria-label="Misbaha Tasbih Counter on the Play Store"><img src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async"
-                                alt="Misbaha Tasbih Counter Play Store Link"
-                                title="Play Store Badge for Misbaha Tasbih Counter" /></a>
-                    </div>
+        </section>
+
+        <!-- WORK -->
+        <section class="section work-section" id="work">
+            <div class="wrap">
+                <h2 class="section-title">The work</h2>
+                <p class="section-sub">I don't just build apps for clients. I build and ship my own. So I already
+                    know the boring parts nobody puts in the proposal.</p>
+
+                <div class="app-list">
+                    <article class="app" id="nasab">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/nasab/1-540.webp"
+                                    srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" decoding="async"
+                                    alt="Nasab App Screenshot 1 - Family Tree" title="Nasab App Screenshot: Family Tree" />
+                                <img src="public/apps/nasab/2-540.webp"
+                                    srcset="public/apps/nasab/2-540.webp 540w, public/apps/nasab/2-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" decoding="async"
+                                    alt="Nasab App Screenshot 2 - Family Memories"
+                                    title="Nasab App Screenshot: Family Memories" />
+                                <img src="public/apps/nasab/3-540.webp"
+                                    srcset="public/apps/nasab/3-540.webp 540w, public/apps/nasab/3-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" decoding="async"
+                                    alt="Nasab App Screenshot 3 - Family Space" title="Nasab App Screenshot: Family Space" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <a href="https://nasab.tappstudio.in" style="display:contents" tabindex="-1">
+                                    <img src="public/apps/nasab/icon-256.webp" width="56" height="56"
+                                        decoding="async" alt="Nasab App Icon - Family Archive" title="Nasab App Icon" />
+                                </a>
+                                <a href="https://nasab.tappstudio.in" class="app-title-link">
+                                    <h3>Nasab</h3>
+                                </a>
+                            </div>
+                            <p class="app-description">A living family archive. Build your tree, preserve your
+                                family's stories, photos, and voice notes, invite the people who care to keep it
+                                growing with you.</p>
+                            <ul class="app-proof" role="list">
+                                <li>Family tree UI</li>
+                                <li>Photo &amp; voice uploads</li>
+                                <li>Invites &amp; shared spaces</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/nasab-the-family-archive/id6793519541"
+                                        target="_blank" title="Download Nasab on the App Store"
+                                        aria-label="Download Nasab on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download Nasab on the App Store"
+                                            title="App Store Badge for Nasab" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.nasab"
+                                        target="_blank" title="Download Nasab on the Play Store"
+                                        aria-label="Download Nasab on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Download Nasab on the Play Store"
+                                            title="Play Store Badge for Nasab" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app" id="my-deen">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/mydeen/1-540.webp"
+                                    srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen App Screenshot 1 - Amal Tracking Dashboard"
+                                    title="My Deen App Screenshot: Amal Tracking Dashboard" />
+                                <img src="public/apps/mydeen/2-540.webp"
+                                    srcset="public/apps/mydeen/2-540.webp 540w, public/apps/mydeen/2-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen App Screenshot 2 - Streaks and Reminders"
+                                    title="My Deen App Screenshot: Streaks and Reminders" />
+                                <img src="public/apps/mydeen/3-540.webp"
+                                    srcset="public/apps/mydeen/3-540.webp 540w, public/apps/mydeen/3-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen App Screenshot 3 - Achievement Badges"
+                                    title="My Deen App Screenshot: Achievement Badges" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <a href="mydeen/index.html" style="display:contents" tabindex="-1">
+                                    <img src="public/apps/mydeen/icon-256.webp" width="56" height="56" loading="lazy"
+                                        decoding="async" alt="My Deen App Icon - Amal Tracker"
+                                        title="My Deen App Icon" />
+                                </a>
+                                <a href="mydeen/index.html" class="app-title-link">
+                                    <h3>My Deen</h3>
+                                </a>
+                            </div>
+                            <p class="app-description">Smart Amal tracker that helps Muslims stay consistent with
+                                daily and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders,
+                                streaks, and achievement badges.</p>
+                            <ul class="app-proof" role="list">
+                                <li>Reminders</li>
+                                <li>Streaks</li>
+                                <li>Achievement badges</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125"
+                                        target="_blank" rel="noopener noreferrer"
+                                        title="Download My Deen on the App Store"
+                                        aria-label="Download My Deen on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download My Deen on the App Store"
+                                            title="App Store Badge for My Deen" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mydeen"
+                                        target="_blank" title="Download My Deen on the Play Store"
+                                        aria-label="Download My Deen on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Download My Deen on the Play Store"
+                                            title="Play Store Badge for My Deen" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app" id="misbaha-tasbih-counter">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/misbaha/1-540.webp"
+                                    srcset="public/apps/misbaha/1-540.webp 540w, public/apps/misbaha/1-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha Tasbih Counter Screenshot 1 - Main Counter Interface"
+                                    title="Misbaha Tasbih Counter Screenshot: Main Counter Interface" />
+                                <img src="public/apps/misbaha/2-540.webp"
+                                    srcset="public/apps/misbaha/2-540.webp 540w, public/apps/misbaha/2-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha Tasbih Counter Screenshot 2 - 3D Tasbih Beads"
+                                    title="Misbaha Tasbih Counter Screenshot: 3D Tasbih Beads" />
+                                <img src="public/apps/misbaha/3-540.webp"
+                                    srcset="public/apps/misbaha/3-540.webp 540w, public/apps/misbaha/3-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha Tasbih Counter Screenshot 3 - Daily Remembrance Tracking"
+                                    title="Misbaha Tasbih Counter Screenshot: Daily Remembrance Tracking" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <img src="public/apps/misbaha/icon-256.webp" width="56" height="56" loading="lazy"
+                                    decoding="async" alt="Misbaha Tasbih Counter App Icon - Tasbeeh Counter"
+                                    title="Misbaha Tasbih Counter App Icon" />
+                                <h3>Misbaha Tasbih Counter</h3>
+                            </div>
+                            <p class="app-description">A beautiful and modern Tasbih counter designed to help users
+                                stay consistent with daily tasbeeh and remembrance, featuring interactive 3D tasbih
+                                beads for a focused, tactile counting experience.</p>
+                            <ul class="app-proof" role="list">
+                                <li>Interactive 3D beads</li>
+                                <li>Tactile UI</li>
+                                <li>Daily remembrance tracking</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/misbaha-tasbih-counter/id6757333557"
+                                        title="Misbaha Tasbih Counter on the App Store"
+                                        aria-label="Misbaha Tasbih Counter on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Misbaha Tasbih Counter App Store Link"
+                                            title="App Store Badge for Misbaha Tasbih Counter" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mytasbih"
+                                        title="Misbaha Tasbih Counter on the Play Store"
+                                        aria-label="Misbaha Tasbih Counter on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Misbaha Tasbih Counter Play Store Link"
+                                            title="Play Store Badge for Misbaha Tasbih Counter" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app" id="splitup">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/splitup/1-540.webp"
+                                    srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup App Screenshot 1 - Group Expense Dashboard"
+                                    title="Splitup App Screenshot: Group Expense Dashboard" />
+                                <img src="public/apps/splitup/2-540.webp"
+                                    srcset="public/apps/splitup/2-540.webp 540w, public/apps/splitup/2-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup App Screenshot 2 - Add Expenses by Voice"
+                                    title="Splitup App Screenshot: Add Expenses by Voice" />
+                                <img src="public/apps/splitup/3-540.webp"
+                                    srcset="public/apps/splitup/3-540.webp 540w, public/apps/splitup/3-1080.webp 1080w"
+                                    sizes="215px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup App Screenshot 3 - Works Offline with Auto-Sync"
+                                    title="Splitup App Screenshot: Works Offline with Auto-Sync" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <a href="https://splitup.tappstudio.in" style="display:contents" tabindex="-1">
+                                    <img src="public/apps/splitup/icon-256.webp" width="56" height="56" loading="lazy"
+                                        decoding="async" alt="Splitup App Icon - Group Expense Splitter"
+                                        title="Splitup App Icon" />
+                                </a>
+                                <a href="https://splitup.tappstudio.in" class="app-title-link">
+                                    <h3>Splitup</h3>
+                                </a>
+                            </div>
+                            <p class="app-description">Split. Remind. Settle. Group expenses and bills with friends.
+                            </p>
+                            <ul class="app-proof" role="list">
+                                <li>Voice input</li>
+                                <li>Works offline</li>
+                                <li>Settle-up flows</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/splitup-group-expense/id6744556329"
+                                        target="_blank" title="Download Splitup on the App Store"
+                                        aria-label="Download Splitup on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download Splitup on the App Store"
+                                            title="App Store Badge for Splitup" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.splitup"
+                                        target="_blank" title="Download Splitup on the Play Store"
+                                        aria-label="Download Splitup on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Download Splitup on the Play Store"
+                                            title="Play Store Badge for Splitup" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app" id="ontime-health">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/ontime_health/1-540.webp"
+                                    srcset="public/apps/ontime_health/1-540.webp 540w, public/apps/ontime_health/1-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Ontime Health App Screenshot 1 - Daily Health Check-ins"
+                                    title="Ontime Health App Screenshot: Daily Health Check-ins" />
+                                <img src="public/apps/ontime_health/2-540.webp"
+                                    srcset="public/apps/ontime_health/2-540.webp 540w, public/apps/ontime_health/2-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Ontime Health App Screenshot 2 - Health Routine Progress"
+                                    title="Ontime Health App Screenshot: Health Routine Progress" />
+                                <img src="public/apps/ontime_health/3-540.webp"
+                                    srcset="public/apps/ontime_health/3-540.webp 540w, public/apps/ontime_health/3-1080.webp 1080w"
+                                    sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Ontime Health App Screenshot 3 - Streak Tracking"
+                                    title="Ontime Health App Screenshot: Streak Tracking" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <img src="public/apps/ontime_health/icon-256.webp" width="56" height="56"
+                                    loading="lazy" decoding="async"
+                                    alt="Ontime Health App Icon - Daily Health Check-ins"
+                                    title="Ontime Health App Icon" />
+                                <h3>Ontime Health</h3>
+                            </div>
+                            <p class="app-description">Ontime Health helps you build a consistent daily routine
+                                through check-ins across four areas: sleep, fasting, activity, and light exposure. The
+                                app highlights trends to support habit formation and long-term consistency.</p>
+                            <ul class="app-proof" role="list">
+                                <li>Daily check-ins</li>
+                                <li>Trend charts</li>
+                                <li>Streak tracking</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/ontime-sleep-weight-loss/id1564303902"
+                                        title="Ontime Health on the App Store"
+                                        aria-label="Ontime Health on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Ontime Health App Store Link"
+                                            title="App Store Badge for Ontime Health" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=app.health.ontime"
+                                        title="Ontime Health on the Play Store"
+                                        aria-label="Ontime Health on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Ontime Health Play Store Link"
+                                            title="Play Store Badge for Ontime Health" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app" id="ai-funkit">
+                        <div class="app-media">
+                            <div class="app-screenshots">
+                                <img src="public/apps/aifunkit/1-540.webp"
+                                    srcset="public/apps/aifunkit/1-540.webp 540w, public/apps/aifunkit/1-1080.webp 1080w"
+                                    sizes="215px" width="1290" height="2796" loading="lazy" decoding="async"
+                                    alt="AI Funkit App Screenshot 1 - AI Character Chat"
+                                    title="AI Funkit App Screenshot: AI Character Chat" />
+                                <img src="public/apps/aifunkit/2-540.webp"
+                                    srcset="public/apps/aifunkit/2-540.webp 540w, public/apps/aifunkit/2-1080.webp 1080w"
+                                    sizes="215px" width="1290" height="2796" loading="lazy" decoding="async"
+                                    alt="AI Funkit App Screenshot 2 - DALL·E Image Generation"
+                                    title="AI Funkit App Screenshot: DALL·E Image Generation" />
+                                <img src="public/apps/aifunkit/3-540.webp"
+                                    srcset="public/apps/aifunkit/3-540.webp 540w, public/apps/aifunkit/3-1080.webp 1080w"
+                                    sizes="215px" width="1290" height="2796" loading="lazy" decoding="async"
+                                    alt="AI Funkit App Screenshot 3 - Interactive Features"
+                                    title="AI Funkit App Screenshot: Interactive Features" />
+                            </div>
+                        </div>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <a href="aifunkit/index.html" style="display:contents" tabindex="-1">
+                                    <img src="public/apps/aifunkit/icon-256.webp" width="56" height="56"
+                                        loading="lazy" decoding="async"
+                                        alt="AI Funkit App Icon - AI Chat & Image Generation"
+                                        title="AI Funkit App Icon" />
+                                </a>
+                                <a href="aifunkit/index.html" class="app-title-link">
+                                    <h3>AI Funkit</h3>
+                                </a>
+                            </div>
+                            <p class="app-description">Playful AI app with unique characters and DALL·E-powered image
+                                generation. Chat, create, and explore interactive features, all on a flexible
+                                pay-as-you-go model.</p>
+                            <ul class="app-proof" role="list">
+                                <li>AI chat</li>
+                                <li>Image generation</li>
+                                <li>In-app purchases</li>
+                            </ul>
+                            <div class="app-links">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/ai-funkit/id6450719081" target="_blank"
+                                        rel="noopener noreferrer" title="Download AI Funkit on the App Store"
+                                        aria-label="Download AI Funkit on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download AI Funkit on the App Store"
+                                            title="App Store Badge for AI Funkit" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=ai.roleplay.chat&amp;hl=en_IN"
+                                        target="_blank" title="Download AI Funkit on the Play Store"
+                                        aria-label="Download AI Funkit on the Play Store"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Download AI Funkit on the Play Store"
+                                            title="Play Store Badge for AI Funkit" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="app" id="splitup">
-                <div class="app-header">
-                    <a href="https://splitup.tappstudio.in" style="display:contents" tabindex="-1">
-                        <img src="public/apps/splitup/icon-256.webp" width="64" height="64" loading="lazy" decoding="async" alt="Splitup App Icon - Group Expense Splitter"
-                            title="Splitup App Icon" />
-                    </a>
-                    <a href="https://splitup.tappstudio.in" style="color:inherit;text-decoration:none">
-                        <h2>Splitup</h2>
-                    </a>
-                </div>
-                <p class="app-description">Split. Remind. Settle. Group expenses and bills with friends.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/splitup/1-540.webp" srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="Splitup App Screenshot 1 - Group Expense Overview"
-                        title="Splitup App Screenshot: Group Expense Overview" />
-                    <img src="public/apps/splitup/2-540.webp" srcset="public/apps/splitup/2-540.webp 540w, public/apps/splitup/2-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="Splitup App Screenshot 2 - Bill Splitting Feature"
-                        title="Splitup App Screenshot: Bill Splitting Feature" />
-                    <img src="public/apps/splitup/3-540.webp" srcset="public/apps/splitup/3-540.webp 540w, public/apps/splitup/3-1080.webp 1080w" sizes="215px" width="1320" height="2868" loading="lazy" decoding="async" alt="Splitup App Screenshot 3 - Settle Up Screen"
-                        title="Splitup App Screenshot: Settle Up Screen" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/splitup-group-expense/id6744556329" target="_blank"
-                            title="Download Splitup on the App Store"
-                            aria-label="Download Splitup on the App Store"><img src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async"
-                                alt="Download Splitup on the App Store" title="App Store Badge for Splitup" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=in.tappstudio.splitup" target="_blank"
-                            title="Download Splitup on the Play Store"
-                            aria-label="Download Splitup on the Play Store"><img src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async"
-                                alt="Download Splitup on the Play Store" title="Play Store Badge for Splitup" /></a>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section class="section" id="what-you-get">
+            <div class="wrap">
+                <h2 class="section-title">What you get</h2>
+                <p class="section-sub">No jargon, no surprise line items. Just what happens when you work with one
+                    accountable person.</p>
+                <div class="get-grid">
+                    <div class="get-card">
+                        <h3>Designs before code</h3>
+                        <p>You see screens before paying for mistakes.</p>
                     </div>
-                </div>
-            </div>
-            <div class="app" id="ontime-health">
-                <div class="app-header">
-                    <img src="public/apps/ontime_health/icon-256.webp" width="64" height="64" loading="lazy" decoding="async"
-                        alt="Ontime Health App Icon - Daily Health Check-ins" title="Ontime Health App Icon" />
-                    <h2>Ontime Health</h2>
-                </div>
-                <p class="app-description">Ontime Health helps you build a consistent daily routine through check-ins
-                    across four areas: sleep, fasting, activity, and light exposure (sunlight and screen time). The app
-                    highlights trends in each area to support habit formation and provide a simple view of long-term
-                    lifestyle consistency.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/ontime_health/1-540.webp" srcset="public/apps/ontime_health/1-540.webp 540w, public/apps/ontime_health/1-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
-                        alt="Ontime Health App Screenshot 1 - Daily Health Check-ins"
-                        title="Ontime Health App Screenshot: Daily Health Check-ins" />
-                    <img src="public/apps/ontime_health/2-540.webp" srcset="public/apps/ontime_health/2-540.webp 540w, public/apps/ontime_health/2-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async"
-                        alt="Ontime Health App Screenshot 2 - Health Routine Progress"
-                        title="Ontime Health App Screenshot: Health Routine Progress" />
-                    <img src="public/apps/ontime_health/3-540.webp" srcset="public/apps/ontime_health/3-540.webp 540w, public/apps/ontime_health/3-1080.webp 1080w" sizes="215px" width="1170" height="2532" loading="lazy" decoding="async" alt="Ontime Health App Screenshot 3 - Streak Tracking"
-                        title="Ontime Health App Screenshot: Streak Tracking" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/ontime-sleep-weight-loss/id1564303902"
-                            title="Ontime Health on the App Store" aria-label="Ontime Health on the App Store"><img
-                                src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async" alt="Ontime Health App Store Link"
-                                title="App Store Badge for Ontime Health" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=app.health.ontime"
-                            title="Ontime Health on the Play Store" aria-label="Ontime Health on the Play Store"><img
-                                src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async" alt="Ontime Health Play Store Link"
-                                title="Play Store Badge for Ontime Health" /></a>
+                    <div class="get-card">
+                        <h3>Builds on your phone, as it's made</h3>
+                        <p>Real TestFlight and Play Store test builds, not screenshots in a deck.</p>
                     </div>
-                </div>
-            </div>
-            <div class="app" id="ai-funkit">
-                <div class="app-header">
-                    <a href="aifunkit/index.html" style="display:contents" tabindex="-1">
-                        <img src="public/apps/aifunkit/icon-256.webp" width="64" height="64" loading="lazy" decoding="async"
-                            alt="AI Funkit App Icon - AI Chat & Image Generation" title="AI Funkit App Icon" />
-                    </a>
-                    <a href="aifunkit/index.html" style="color:inherit;text-decoration:none">
-                        <h2>AI Funkit</h2>
-                    </a>
-                </div>
-                <p class="app-description">Playful AI app with unique characters and DALL·E-powered
-                    image generation. Chat, create, and explore interactive features — all with a flexible pay-as-you-go
-                    model.</p>
-                <div class="app-screenshots">
-                    <img src="public/apps/aifunkit/1-540.webp" srcset="public/apps/aifunkit/1-540.webp 540w, public/apps/aifunkit/1-1080.webp 1080w" sizes="215px" width="1290" height="2796" loading="lazy" decoding="async" alt="AI Funkit App Screenshot 1 - AI Character Chat"
-                        title="AI Funkit App Screenshot: AI Character Chat" />
-                    <img src="public/apps/aifunkit/2-540.webp" srcset="public/apps/aifunkit/2-540.webp 540w, public/apps/aifunkit/2-1080.webp 1080w" sizes="215px" width="1290" height="2796" loading="lazy" decoding="async" alt="AI Funkit App Screenshot 2 - DALL·E Image Generation"
-                        title="AI Funkit App Screenshot: DALL·E Image Generation" />
-                    <img src="public/apps/aifunkit/3-540.webp" srcset="public/apps/aifunkit/3-540.webp 540w, public/apps/aifunkit/3-1080.webp 1080w" sizes="215px" width="1290" height="2796" loading="lazy" decoding="async" alt="AI Funkit App Screenshot 3 - Interactive Features"
-                        title="AI Funkit App Screenshot: Interactive Features" />
-                </div>
-                <div class="app-links">
-                    <div class="store-buttons">
-                        <a href="https://apps.apple.com/us/app/ai-funkit/id6450719081" target="_blank"
-                            rel="noopener noreferrer" title="Download AI Funkit on the App Store"
-                            aria-label="Download AI Funkit on the App Store"><img src="public/images/appstore.webp" width="567" height="168" loading="lazy" decoding="async"
-                                alt="Download AI Funkit on the App Store" title="App Store Badge for AI Funkit" /></a>
-                        <a href="https://play.google.com/store/apps/details?id=ai.roleplay.chat&amp;hl=en_IN"
-                            target="_blank" title="Download AI Funkit on the Play Store"
-                            aria-label="Download AI Funkit on the Play Store"><img src="public/images/playstore.webp" width="566" height="168" loading="lazy" decoding="async"
-                                alt="Download AI Funkit on the Play Store" title="Play Store Badge for AI Funkit" /></a>
+                    <div class="get-card">
+                        <h3>Store submission handled</h3>
+                        <p>Apple and Google's paperwork is mine to deal with, not yours.</p>
+                    </div>
+                    <div class="get-card">
+                        <h3>Your code, your accounts</h3>
+                        <p>Your repo, your developer accounts. No hostage situations.</p>
+                    </div>
+                    <div class="get-card">
+                        <h3>A direct line to me</h3>
+                        <p>Replies in plain English, not ticket numbers.</p>
+                    </div>
+                    <div class="get-card">
+                        <h3>Post-launch fixes</h3>
+                        <p>I don't vanish the day after launch. That's when real users show up.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact-section" style="max-width:800px;margin:4rem auto 0;text-align:center;">
-            <h2>Contact</h2>
-            <p>Have a project in mind? Get in touch to discuss how we can bring it to life.</p>
-            <div><a class="footer-email-link" href="mailto:tappstudio.in@gmail.com" title="Email tappStudio"
-                    aria-label="Email tappStudio">tappstudio.in@gmail.com</a></div>
 
-            <address style="font-style:normal;">Mumbai, India</address>
+        <!-- HOW IT WORKS -->
+        <section class="section how-section" id="how">
+            <div class="wrap">
+                <h2 class="section-title">How it works</h2>
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <p class="timeline-day">Day 0</p>
+                        <h3>Talk</h3>
+                        <p>You explain the idea. I ask the annoying questions that actually matter.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timeline-day">Day 1</p>
+                        <h3>Scope &amp; screens</h3>
+                        <p>A clear plan and the first designs, so we agree on what "done" looks like.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timeline-day">Days 2 to 6</p>
+                        <h3>Build</h3>
+                        <p>Daily builds land on your phone. You watch it come together, not just the invoice.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timeline-day">Day 7</p>
+                        <h3>MVP in your hands</h3>
+                        <p>A working product you can actually use, demo, or ship.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timeline-day">After</p>
+                        <h3>Polish, launch, iterate</h3>
+                        <p>We tighten what needs tightening, ship it, and keep improving.</p>
+                    </li>
+                </ol>
+                <p class="how-aside">Yes, one week. It's the age of AI. I use it the way a chef uses a sharp knife:
+                    faster cuts, same taste. Every line still gets reviewed by someone who cares. That's me.</p>
+            </div>
+        </section>
+
+        <!-- WHY TRUST -->
+        <section class="section trust-section">
+            <div class="wrap">
+                <h2 class="section-title">Why trust one person over an agency</h2>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <h3>Shipped, not just designed</h3>
+                        <p>Six apps live on both stores, maintained by me, right now.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>Obsessed with detail</h3>
+                        <p>I'll spend twenty minutes arguing with myself over 2px of padding. Your app gets the
+                            same treatment, whether you notice or not.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>One accountable person</h3>
+                        <p>No handoffs between departments. If something's wrong, you know exactly who to blame:
+                            me.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>Clear communication</h3>
+                        <p>Straight answers, real timelines, no jargon to make simple things sound complicated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section" id="faq">
+            <div class="wrap">
+                <h2 class="section-title">Questions you're probably asking</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Why not just hire an agency?</summary>
+                        <p>You can. You'll also pay for their office, their sales team, and the junior developer
+                            practicing on your codebase. With me, every rupee goes toward the thing you actually
+                            asked for.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What does it cost?</summary>
+                        <p>Depends on scope. Tell me what you need and I'll give you a straight number, not a range
+                            wide enough to park a bus in.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I own the code?</summary>
+                        <p>Yes. It lives in your repository, under your accounts, from day one.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>I only have an idea, not a spec. Is that enough?</summary>
+                        <p>That's usually where this starts. Scoping it into something buildable is part of the job.
+                        </p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What do you actually use AI for?</summary>
+                        <p>Writing boilerplate faster and catching my own mistakes sooner, not deciding what your
+                            product should be. That part's still on me.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What if I need changes after launch?</summary>
+                        <p>Normal. Apps evolve. We work out ongoing support based on how much you need.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section final-cta">
+            <div class="wrap final-cta-inner">
+                <h2>Got an idea that's been living in your Notes app for two years?</h2>
+                <div class="final-cta-actions">
+                    <button class="btn btn-accent btn-large" data-open-contact type="button">Start a conversation
+                        <span aria-hidden="true">→</span></button>
+                    <a class="footer-email-link" href="mailto:tappstudio.in@gmail.com"
+                        title="Email tappStudio">tappstudio.in@gmail.com</a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -854,114 +812,88 @@
         </div>
     </div>
 
-    <footer>
+    <!-- CONTACT DIALOG -->
+    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
+        <form class="contact-form" id="contact-form">
+            <div class="contact-form-header">
+                <h2 id="contact-dialog-title">Let's talk</h2>
+                <button type="button" class="contact-close" id="contact-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="contact-form-sub">Tell me what you're building. I read every message myself. No forms, no CRM,
+                just me.</p>
 
-        <div class="social-links">
-            <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener noreferrer"
-                title="Message tappStudio on X (Twitter)" aria-label="Message tappStudio on X (Twitter)">X</a>
-            <a href="https://www.instagram.com/ibrahim.broach" rel="noopener noreferrer"
-                title="Follow tappStudio on Instagram" aria-label="Follow tappStudio on Instagram">Instagram</a>
-            <a href="https://www.linkedin.com/in/ibrahimbroachwala/" rel="noopener noreferrer"
-                title="Connect with tappStudio on LinkedIn"
-                aria-label="Connect with tappStudio on LinkedIn">LinkedIn</a>
+            <div class="field">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+                <label for="contact-email">Your email</label>
+                <input type="email" id="contact-email" name="email" autocomplete="email" required
+                    placeholder="so I can actually reply" />
+            </div>
+            <div class="field">
+                <label>Topic</label>
+                <div class="topic-chips" role="radiogroup" aria-label="Topic">
+                    <label class="chip"><input type="radio" name="topic" value="New app" checked /><span>New
+                            app</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Website" /><span>Website</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Fix / improve an app" /><span>Fix an
+                            app</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Just saying hi" /><span>Just saying
+                            hi</span></label>
+                </div>
+            </div>
+            <div class="field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="4" required
+                    placeholder="What are you building, and what's the timeline?"></textarea>
+            </div>
+
+            <!-- Web3Forms config -->
+            <input type="hidden" name="access_key" value="aa9d2ffd-12bd-4e53-a4da-546a73ef4a8b" />
+            <!-- TODO: replace with the real key from https://web3forms.com (enter tappstudio.in@gmail.com to get one) -->
+            <input type="hidden" name="subject" id="contact-subject" value="tappStudio: New app" />
+            <input type="hidden" name="from_name" value="tappStudio site" />
+            <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" />
+
+            <button type="submit" class="btn btn-accent btn-large contact-submit" id="contact-submit">Send
+                message</button>
+
+            <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-success" id="contact-success" hidden>
+            <h2>Sent.</h2>
+            <p>I'll reply before an agency finishes scheduling the kickoff call.</p>
+            <button type="button" class="btn btn-ghost" id="contact-success-close">Close</button>
         </div>
-        <p>&copy; 2026 tappStudio. All rights reserved.</p>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <div class="footer-brand">
+                <span class="brand-tapp">tapp</span><span class="brand-studio">Studio</span>
+            </div>
+            <div class="social-links">
+                <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener noreferrer"
+                    title="Message tappStudio on X (Twitter)" aria-label="Message tappStudio on X (Twitter)">X</a>
+                <a href="https://www.instagram.com/ibrahim.broach" rel="noopener noreferrer"
+                    title="Follow tappStudio on Instagram" aria-label="Follow tappStudio on Instagram">Instagram</a>
+                <a href="https://www.linkedin.com/in/ibrahimbroachwala/" rel="noopener noreferrer"
+                    title="Connect with tappStudio on LinkedIn"
+                    aria-label="Connect with tappStudio on LinkedIn">LinkedIn</a>
+            </div>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms-of-service.html">Terms</a>
+            </div>
+        </div>
+        <div class="wrap">
+            <address>Mumbai, India</address>
+            <p>&copy; 2026 tappStudio. All rights reserved.</p>
+        </div>
     </footer>
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        document.querySelectorAll('.app').forEach(app => observer.observe(app));
 
-        // Theme toggle logic
-        const themeBtn = document.getElementById('theme-toggle-btn');
-        const logo = document.getElementById('logo');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        function setTheme(mode) {
-            if (mode === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeBtn.textContent = '🌙';
-                logo.src = 'public/images/logo.svg';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeBtn.textContent = '☀️';
-                logo.src = 'public/images/logo_dark.svg';
-            }
-        }
-        // Check localStorage or use browser default
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else {
-            setTheme(prefersDark ? 'dark' : 'light');
-        }
-        themeBtn.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            setTheme(next);
-            localStorage.setItem('theme', next);
-        });
-
-        // Fullscreen screenshot preview
-        const lightbox = document.getElementById('screenshot-lightbox');
-        const lightboxImage = document.getElementById('screenshot-lightbox-image');
-        const lightboxClose = document.getElementById('screenshot-lightbox-close');
-        const screenshotNodes = document.querySelectorAll('.app-screenshots img');
-
-        function openLightbox(sourceImg) {
-            lightboxImage.srcset = sourceImg.srcset;
-            lightboxImage.src = sourceImg.src;
-            lightboxImage.alt = sourceImg.alt || 'App screenshot preview';
-            lightbox.setAttribute('aria-hidden', 'false');
-            lightbox.classList.remove('is-closing');
-            lightbox.classList.add('is-open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            if (!lightbox.classList.contains('is-open')) return;
-            lightbox.classList.remove('is-open');
-            lightbox.classList.add('is-closing');
-
-            const handleAnimationEnd = (event) => {
-                if (event.target !== lightbox) return;
-                lightbox.classList.remove('is-closing');
-                lightbox.setAttribute('aria-hidden', 'true');
-                lightboxImage.removeAttribute('srcset');
-                lightboxImage.src = '';
-                lightboxImage.alt = '';
-                document.body.style.overflow = '';
-                lightbox.removeEventListener('animationend', handleAnimationEnd);
-            };
-
-            lightbox.addEventListener('animationend', handleAnimationEnd);
-        }
-
-        screenshotNodes.forEach((img) => {
-            img.addEventListener('click', () => openLightbox(img));
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-
-        lightbox.addEventListener('click', (event) => {
-            if (event.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-    </script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
