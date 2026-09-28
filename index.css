@@ -517,17 +517,36 @@ h3 {
     }
 
     .hero-visual {
-        height: 320px;
+        height: auto;
         order: -1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem 0 2.5rem;
+    }
+
+    .hero-phone {
+        position: static;
     }
 
     .hero-phone-a,
     .hero-phone-c {
-        width: 130px;
+        width: 120px;
+        margin-top: 36px;
+    }
+
+    .hero-phone-a {
+        margin-right: -30px;
+    }
+
+    .hero-phone-c {
+        margin-left: -30px;
     }
 
     .hero-phone-b {
-        width: 155px;
+        width: 150px;
+        transform: none;
+        animation-name: floaty;
     }
 }
 
@@ -879,6 +898,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .trust-item h3 {
@@ -1385,4 +1405,90 @@ h3 {
         opacity: 1;
         transform: none;
     }
+}
+
+/* ==========================================================================
+   Legal pages (Privacy Policy, Terms of Service)
+   ========================================================================== */
+
+.legal-hero {
+    padding: clamp(3rem, 6vw, 4rem) 0 2.5rem;
+}
+
+.legal-hero .eyebrow {
+    margin-bottom: 1rem;
+}
+
+.legal-updated {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+.legal-content {
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: 72ch;
+}
+
+.legal-content>p {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.02rem;
+}
+
+.legal-content h2 {
+    font-size: 1.3rem;
+    margin: 2.75rem 0 1rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+}
+
+.legal-content h2:first-of-type {
+    margin-top: 1rem;
+}
+
+.legal-content h3 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.6rem;
+}
+
+.legal-content ul {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+    color: var(--muted);
+}
+
+.legal-content li {
+    margin-bottom: 0.6rem;
+}
+
+.legal-content li::marker {
+    color: var(--accent);
+}
+
+.legal-content strong {
+    color: var(--text);
+}
+
+.legal-content a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.back-to-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+.back-to-home:hover {
+    color: var(--accent);
 }
