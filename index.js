@@ -151,7 +151,7 @@ if (contactForm) {
         contactStatus.textContent = '';
         contactStatus.classList.remove('is-error');
 
-        if (!accessKey || accessKey === 'aa9d2ffd-12bd-4e53-a4da-546a73ef4a8b') {
+        if (!accessKey) {
             // Not configured yet: fail gracefully with a mailto fallback.
             showContactError(name, email, message, 'The contact form isn\'t wired up yet.');
             return;
