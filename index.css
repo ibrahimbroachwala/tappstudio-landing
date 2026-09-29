@@ -759,7 +759,12 @@ h3 {
 
 @media (max-width: 820px) {
     .app {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-media,
+    .app-info {
+        min-width: 0;
     }
 
     .app:nth-of-type(even) .app-media {
