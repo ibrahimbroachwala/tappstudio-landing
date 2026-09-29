@@ -1,6 +1,6 @@
 {
-    "name": "TAPP STUDIO",
-    "short_name": "TAPP",
+    "name": "tappStudio",
+    "short_name": "tappStudio",
     "icons": [
         {
             "src": "public/images/icon-192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#0e0e0c",
+    "background_color": "#0e0e0c",
     "display": "standalone"
 }
