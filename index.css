@@ -741,6 +741,12 @@ h3 {
     padding: 0.35rem 0.8rem;
 }
 
+.app-links .btn {
+    height: 44px;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+}
+
 .store-buttons {
     display: flex;
     gap: 0.75rem;
