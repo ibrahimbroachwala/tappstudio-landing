@@ -873,6 +873,39 @@ h3 {
     font-size: 0.9rem;
 }
 
+.how-needs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.how-needs-col {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.how-needs-col h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.how-needs-col ul {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.how-needs-col li {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.how-needs-col strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
 .how-aside {
     max-width: 62ch;
     color: var(--muted);
@@ -882,6 +915,11 @@ h3 {
 }
 
 @media (max-width: 900px) {
+    .how-needs {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+    }
+
     .timeline {
         grid-template-columns: 1fr;
         gap: 1.75rem;

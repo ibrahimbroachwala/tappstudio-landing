@@ -2,7 +2,7 @@
 
 > tappStudio is Ibrahim Broachwala, a solo developer based in Mumbai, India, who designs and builds custom mobile apps and websites for clients, and also builds and publishes his own portfolio of iOS and Android apps.
 
-tappStudio is a one-person freelance practice, not an agency. Ibrahim designs and builds consumer mobile apps and websites end to end, covering product design, engineering, and App Store/Play Store publishing, typically producing a working MVP within about a week using an AI-assisted workflow. The site at https://tappstudio.in/ is both a portfolio and a hiring page: it lists Ibrahim's own published apps as proof of shipped work, explains what a client gets (designs before code, daily test builds, store submission, code ownership, direct communication, post-launch support), and includes a contact form that reaches tappstudio.in@gmail.com.
+tappStudio is a one-person freelance practice, not an agency. Ibrahim designs and builds consumer mobile apps and websites end to end, covering product design, engineering, and App Store/Play Store publishing, typically producing a working MVP within about a week, counted from the day scope is signed off. He builds with Claude Code (Anthropic's AI coding agent) alongside his own saved code guides and best practices, and reviews every line himself. The site at https://tappstudio.in/ is both a portfolio and a hiring page: it lists Ibrahim's own published apps as proof of shipped work, explains what a client gets (designs before code, frequent test builds via TestFlight and Firebase App Distribution, store submission, code ownership, direct communication, post-launch support), and includes a contact form that reaches tappstudio.in@gmail.com.
 
 ## Apps
 
