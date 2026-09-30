@@ -1,0 +1,19 @@
+{
+  "_readme": "Single source of truth for tappStudio brand colors. Edit here, then run: python3 brand/build.py",
+  "dark": {
+    "bg": "#0e0e0c",
+    "text": "#f2efe8",
+    "muted": "#9a968c",
+    "accent": "#14b8a6",
+    "accentInk": "#0e0e0c",
+    "accentSoftAlpha": 0.14
+  },
+  "light": {
+    "bg": "#f6f3ec",
+    "text": "#15140f",
+    "muted": "#6b675e",
+    "accent": "#0d9488",
+    "accentInk": "#f0fdfa",
+    "accentSoftAlpha": 0.1
+  }
+}

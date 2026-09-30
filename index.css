@@ -11,9 +11,11 @@
     --muted: #9a968c;
     --line: rgba(255, 255, 255, 0.08);
     --line-strong: rgba(255, 255, 255, 0.16);
-    --accent: #ff6b2c;
+    /* brand:dark:start */
+    --accent: #14b8a6;
     --accent-ink: #0e0e0c;
-    --accent-soft: rgba(255, 107, 44, 0.14);
+    --accent-soft: rgba(20, 184, 166, 0.14);
+    /* brand:dark:end */
     --shadow: rgba(0, 0, 0, 0.45);
 
     --font-display: "Bricolage Grotesque", "Geist", sans-serif;
@@ -35,9 +37,11 @@
     --muted: #6b675e;
     --line: rgba(21, 20, 15, 0.08);
     --line-strong: rgba(21, 20, 15, 0.16);
-    --accent: #d94e12;
-    --accent-ink: #fff8f0;
-    --accent-soft: rgba(217, 78, 18, 0.1);
+    /* brand:light:start */
+    --accent: #0d9488;
+    --accent-ink: #f0fdfa;
+    --accent-soft: rgba(13, 148, 136, 0.1);
+    /* brand:light:end */
     --shadow: rgba(21, 20, 15, 0.12);
 }
 

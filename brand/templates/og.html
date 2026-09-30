@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:{{BG}};color:{{TEXT}};font-family:'Geist',sans-serif;position:relative;overflow:hidden}
+.glow{position:absolute;right:-120px;top:-160px;width:820px;height:820px;background:radial-gradient(circle,rgba({{ACCENT_RGB}},.28),transparent 65%)}
+.left{position:absolute;left:72px;top:64px;width:600px;height:502px;display:flex;flex-direction:column}
+.brand{font-family:'Bricolage Grotesque';font-weight:800;font-size:34px;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.brand svg{width:48px;height:48px}.brand .tapp{color:{{ACCENT}}}.brand .studio{color:{{MUTED}};margin-left:2px}
+.eyebrow{font-family:'Geist Mono';font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:{{ACCENT}};margin-top:64px}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:76px;line-height:.98;letter-spacing:-2.5px;margin-top:18px}
+h1 span{color:{{ACCENT}}}
+p{font-size:25px;line-height:1.35;color:#a8a49a;margin-top:22px;max-width:540px}
+.ph{position:absolute;width:250px;border-radius:30px;box-shadow:0 30px 60px -10px rgba(0,0,0,.7);border:2px solid rgba(255,255,255,.08)}
+.a{left:700px;top:120px;transform:rotate(-7deg);z-index:1}
+.b{left:832px;top:40px;width:270px;z-index:3}
+.c{left:990px;top:150px;transform:rotate(7deg);z-index:2}
+.url{position:absolute;right:56px;bottom:26px;font-family:'Geist Mono';font-size:18px;color:{{MUTED}};z-index:5;background:rgba({{BG_RGB}},.75);padding:6px 14px;border-radius:999px}
+</style></head><body>
+<div class="glow"></div>
+<img class="ph a" src="{{ROOT}}/public/apps/splitup/1-1080.webp">
+<img class="ph c" src="{{ROOT}}/public/apps/mydeen/2-1080.webp">
+<img class="ph b" src="{{ROOT}}/public/apps/nasab/2-1080.webp">
+<div class="left">
+<div class="brand">{{LOGO_SVG}}<span><span class="tapp">tapp</span><span class="studio">Studio</span></span></div>
+<div class="eyebrow">Solo developer · Mumbai</div>
+<h1>Apps that<br><span>actually ship.</span></h1>
+<p>Custom mobile apps and websites, designed and built by one developer.</p>
+</div>
+<div class="url">tappstudio.in</div>
+</body></html>
