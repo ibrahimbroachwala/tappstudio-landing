@@ -573,6 +573,13 @@ h3 {
     gap: 1.5rem;
 }
 
+.not-agency-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1 1 100%;
+}
+
 .strike-list {
     display: flex;
     flex-wrap: wrap;
@@ -590,6 +597,113 @@ h3 {
 .not-agency-line {
     font-weight: 600;
     font-size: 1.05rem;
+}
+
+/* Portrait: a 3D pop-out card that straddles the strip and the next section.
+   The photo is clipped to the frame on the sides and bottom only, so the head
+   breaks out of the top edge. */
+.not-agency {
+    position: relative;
+    z-index: 2;
+}
+
+.me-card {
+    --me-w: 220px;
+    --me-frame-h: 160px;
+    --me-photo-w: 244px;
+    --me-radius: var(--radius-l);
+    --rx: 6deg;
+    --ry: -14deg;
+    width: var(--me-w);
+    flex-shrink: 0;
+    perspective: 900px;
+}
+
+.me-card-body {
+    position: relative;
+    height: calc(var(--me-photo-w) * 697 / 720);
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.me-card:hover .me-card-body {
+    transition-duration: 0.15s;
+}
+
+.me-card-frame {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: var(--me-frame-h);
+    border-radius: var(--me-radius);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background:
+        radial-gradient(120% 90% at 30% 0%, rgba(255, 255, 255, 0.22), transparent 60%),
+        linear-gradient(160deg, color-mix(in srgb, var(--accent) 85%, #fff), var(--accent) 55%, color-mix(in srgb, var(--accent) 70%, #000));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 6px var(--surface-1),
+        0 0 0 7px var(--line-strong),
+        0 28px 40px -20px var(--shadow);
+}
+
+.me-card-photo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: var(--me-photo-w);
+    height: auto;
+    max-width: none;
+    transform: translateX(-50%);
+    clip-path: inset(-50% calc((var(--me-photo-w) - var(--me-w)) / 2 + 1px) 1px round 0 0 calc(var(--me-radius) - 1px) calc(var(--me-radius) - 1px));
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.35));
+}
+
+[data-theme="light"] .me-card-photo {
+    filter: drop-shadow(0 0 1px rgba(21, 20, 15, 0.35)) drop-shadow(0 10px 12px rgba(21, 20, 15, 0.25));
+}
+
+.me-card-tag {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    white-space: nowrap;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    box-shadow: 0 6px 16px -8px var(--shadow);
+}
+
+@media (min-width: 900px) {
+    /* Tall enough that the popped-out head always clears the top border */
+    .not-agency-inner {
+        position: relative;
+        min-height: 6.25rem;
+    }
+
+    .not-agency-copy {
+        max-width: calc(100% - 220px - 3rem);
+    }
+
+    .me-card {
+        position: absolute;
+        right: clamp(1.25rem, 4vw, 2.5rem);
+        bottom: calc(-2.25rem - 88px);
+    }
+}
+
+@media (max-width: 899px) {
+    .not-agency-inner {
+        justify-content: center;
+    }
+
+    .me-card {
+        margin: 0.5rem auto 0.75rem;
+    }
 }
 
 /* ==========================================================================

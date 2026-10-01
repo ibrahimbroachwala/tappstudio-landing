@@ -189,3 +189,23 @@ function showContactError(name, email, message, reason) {
     contactSubmit.disabled = false;
     contactSubmit.textContent = 'Send message';
 }
+
+// ---------------------------------------------------------------------------
+// Portrait card tilt
+// ---------------------------------------------------------------------------
+const tiltCard = document.querySelector('[data-tilt]');
+const canTilt = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+
+if (tiltCard && canTilt.matches) {
+    tiltCard.addEventListener('pointermove', (event) => {
+        const rect = tiltCard.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        tiltCard.style.setProperty('--ry', (x * 22).toFixed(2) + 'deg');
+        tiltCard.style.setProperty('--rx', (-y * 16).toFixed(2) + 'deg');
+    });
+    tiltCard.addEventListener('pointerleave', () => {
+        tiltCard.style.removeProperty('--ry');
+        tiltCard.style.removeProperty('--rx');
+    });
+}
