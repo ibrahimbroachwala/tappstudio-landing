@@ -1181,6 +1181,65 @@ h3 {
     font-size: 0.95rem;
 }
 
+.how-proof {
+    grid-column: 1 / -1;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.how-proof .how-kicker {
+    color: var(--muted);
+}
+
+.how-proof ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.how-proof-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 1rem 0.6rem 0.6rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-m);
+    background: var(--surface-1);
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.how-proof-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.how-proof-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.how-proof-link span:not(.how-proof-arrow) {
+    display: grid;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    color: var(--muted);
+}
+
+.how-proof-link strong {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.how-proof-arrow {
+    margin-left: 0.25rem;
+    color: var(--accent);
+}
+
 .how-ai {
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -1270,6 +1329,14 @@ h3 {
     .how-facts div {
         grid-template-columns: minmax(0, 1fr);
         gap: 0.2rem;
+    }
+
+    .how-proof-link {
+        width: 100%;
+    }
+
+    .how-proof li {
+        flex: 1 1 100%;
     }
 }
 
