@@ -769,70 +769,199 @@
         <section class="section how-section" id="how">
             <div class="wrap">
                 <h2 class="section-title">How it works</h2>
-                <ol class="timeline">
-                    <li class="timeline-item">
-                        <p class="timeline-day">Before Day 1</p>
-                        <h3>Scope &amp; sign-off</h3>
-                        <p>We talk and agree on the screens and a written scope. The clock starts only once
-                            it's signed off. No accounts needed to begin.</p>
-                    </li>
-                    <li class="timeline-item">
-                        <p class="timeline-day">Day 1</p>
-                        <h3>First test build</h3>
-                        <p>The app's foundation and first screens are installed on your phone. iPhone through
-                            TestFlight, Android through Firebase App Distribution.</p>
-                    </li>
-                    <li class="timeline-item">
-                        <p class="timeline-day">Days 2 to 6</p>
-                        <h3>Build &amp; test</h3>
-                        <p>A new build every day or two, on the same install. You try it, send feedback, and
-                            I fold it in within the agreed scope.</p>
-                    </li>
-                    <li class="timeline-item">
-                        <p class="timeline-day">Day 7</p>
-                        <h3>MVP ready to test</h3>
-                        <p>Everything in the agreed scope works end to end. Use it, demo it, hand it to your first
-                            testers.</p>
-                    </li>
-                    <li class="timeline-item">
-                        <p class="timeline-day">After</p>
-                        <h3>Polish &amp; launch</h3>
-                        <p>Fixes from real testing, then store listing and submission. Review times are Apple's and
-                            Google's, not mine.</p>
-                    </li>
-                </ol>
-                <div class="how-needs">
-                    <div class="how-needs-col">
-                        <h3>How you test the app</h3>
-                        <ul>
-                            <li><strong>iPhone:</strong> you get an email invite, install Apple's free TestFlight app,
-                                and tap Install. Every new build shows up as an update.</li>
-                            <li><strong>Android:</strong> you get an email invite through Firebase App Distribution,
-                                install once, and updates arrive the same way. No Play Store account needed for
-                                testing.</li>
-                            <li><strong>Websites:</strong> a private preview link from Day 1.</li>
-                        </ul>
+                <p class="section-sub">Every project starts the same way. After that, the steps depend on what we're
+                    building.</p>
+
+                <!-- Step 1: always discovery -->
+                <div class="discovery">
+                    <div class="discovery-intro">
+                        <p class="how-kicker">Step 01 · Always</p>
+                        <h3>Discovery: I learn your business first</h3>
+                        <p>A short call and a questionnaire, so what I build fits how you actually work.</p>
+                        <p class="discovery-output">You get a written scope, a fixed price, and nothing starts until
+                            you sign off.</p>
                     </div>
-                    <div class="how-needs-col">
-                        <h3>What I need from you</h3>
-                        <ul>
-                            <li><strong>Nothing to set up for testing.</strong> Test builds go out through my own
-                                Apple Developer and Firebase accounts, so you start Day 1 without waiting on any
-                                approval.</li>
-                            <li><strong>Your own store accounts, before launch.</strong> An Apple Developer account
-                                ($99/year) and a Google Play Console account ($25 once). The app moves into them
-                                before it goes public. Apple approval can take days (longer for companies, which need
-                                a D-U-N-S number), so create them while we build.</li>
-                            <li><strong>Tester emails:</strong> an Apple ID email for each iPhone tester, a Gmail
-                                address for each Android tester.</li>
-                            <li><strong>Assets and one decision-maker:</strong> logo, brand colors, copy, plus one
-                                person who can approve things within a day. Slow feedback moves the dates.</li>
-                        </ul>
+                    <ul class="discovery-asks" role="list" aria-label="What the questionnaire covers">
+                        <li><strong>Your business</strong>What you sell, to whom, and how you earn.</li>
+                        <li><strong>The problem</strong>What's slow, manual, or costing you today.</li>
+                        <li><strong>Your users</strong>Who uses it, how many, on which devices.</li>
+                        <li><strong>Must-haves</strong>What ships first and what waits for v2.</li>
+                        <li><strong>What exists</strong>Brand, tools, data, and systems to connect.</li>
+                        <li><strong>Constraints</strong>Deadline, budget, and who signs off.</li>
+                    </ul>
+                </div>
+
+                <!-- Steps 2 to 5: depends on the project -->
+                <div class="how-tabs" data-tabs>
+                    <p class="how-kicker how-tabs-label" id="how-tabs-label">Steps 02 to 05 · Pick what you're
+                        building</p>
+                    <div class="how-tablist" role="tablist" aria-labelledby="how-tabs-label">
+                        <button class="how-tab" role="tab" id="how-tab-app" aria-controls="how-panel-app"
+                            aria-selected="true" type="button">Mobile app</button>
+                        <button class="how-tab" role="tab" id="how-tab-web" aria-controls="how-panel-web"
+                            aria-selected="false" tabindex="-1" type="button">Web app &amp; dashboard</button>
+                        <button class="how-tab" role="tab" id="how-tab-site" aria-controls="how-panel-site"
+                            aria-selected="false" tabindex="-1" type="button">Website</button>
+                        <button class="how-tab" role="tab" id="how-tab-fix" aria-controls="how-panel-fix"
+                            aria-selected="false" tabindex="-1" type="button">Fix an app</button>
+                    </div>
+
+                    <!-- Mobile app -->
+                    <div class="how-panel" role="tabpanel" id="how-panel-app" aria-labelledby="how-tab-app">
+                        <div class="how-pitch">
+                            <h3>On your phone on Day&nbsp;1. In the stores after.</h3>
+                            <p>iOS and Android, built together and tested on your own device from the first day.</p>
+                            <dl class="how-facts">
+                                <div><dt>First build</dt><dd>Day 1</dd></div>
+                                <div><dt>You test on</dt><dd>Your phone, via TestFlight or Firebase</dd></div>
+                                <div><dt>You bring</dt><dd>Logo, copy, and your own store accounts before launch</dd>
+                                </div>
+                            </dl>
+                            <button class="btn btn-accent btn-large" data-open-contact data-topic="New app"
+                                type="button">Start with discovery <span aria-hidden="true">→</span></button>
+                        </div>
+                        <ol class="how-steps">
+                            <li>
+                                <p class="how-when">Day 1</p>
+                                <h4>First build on your phone</h4>
+                                <p>Foundation and first screens, installed in minutes.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Days 2 to 6</p>
+                                <h4>Build and feedback</h4>
+                                <p>A new build every day or two. You try it, I fold in changes.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Day 7</p>
+                                <h4>MVP ready</h4>
+                                <p>Everything in scope works end to end. Demo it, hand it to testers.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">After</p>
+                                <h4>Polish and launch</h4>
+                                <p>I handle store submission. Review times are Apple's and Google's.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Web app & dashboard -->
+                    <div class="how-panel" role="tabpanel" id="how-panel-web" aria-labelledby="how-tab-web" hidden>
+                        <div class="how-pitch">
+                            <h3>Replace the spreadsheet your team works around.</h3>
+                            <p>Internal dashboards, admin panels, and customer portals. Your data, your logins, your
+                                rules.</p>
+                            <dl class="how-facts">
+                                <div><dt>First version</dt><dd>About a week, bigger systems in phases</dd></div>
+                                <div><dt>You review on</dt><dd>A private link, in any browser</dd></div>
+                                <div><dt>You bring</dt><dd>Sample data and a list of who should see what</dd></div>
+                            </dl>
+                            <button class="btn btn-accent btn-large" data-open-contact data-topic="Web app / dashboard"
+                                type="button">Start with discovery <span aria-hidden="true">→</span></button>
+                        </div>
+                        <ol class="how-steps">
+                            <li>
+                                <p class="how-when">Day 1</p>
+                                <h4>Private link goes live</h4>
+                                <p>Login, navigation, and the first screens at a real URL.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Days 2 to 6</p>
+                                <h4>Built on your real data</h4>
+                                <p>Your sheets imported, roles set up, a new version every day or two.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Day 7</p>
+                                <h4>First version in use</h4>
+                                <p>Your team logs in and does real work in it.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">After</p>
+                                <h4>Go live and hand over</h4>
+                                <p>Hosted on your account, data moved over, a short walkthrough for your team.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Website -->
+                    <div class="how-panel" role="tabpanel" id="how-panel-site" aria-labelledby="how-tab-site" hidden>
+                        <div class="how-pitch">
+                            <h3>A site that loads fast and gets people to call you.</h3>
+                            <p>Landing pages and company sites, built from scratch. Not a template with your logo on
+                                it.</p>
+                            <dl class="how-facts">
+                                <div><dt>First version</dt><dd>Days for a landing page, about a week for a full site
+                                    </dd></div>
+                                <div><dt>You review on</dt><dd>A private preview link, on any device</dd></div>
+                                <div><dt>You bring</dt><dd>Logo, brand colors, and copy (or I draft it with you)</dd>
+                                </div>
+                            </dl>
+                            <button class="btn btn-accent btn-large" data-open-contact data-topic="Website"
+                                type="button">Start with discovery <span aria-hidden="true">→</span></button>
+                        </div>
+                        <ol class="how-steps">
+                            <li>
+                                <p class="how-when">First</p>
+                                <h4>Design and wording</h4>
+                                <p>You see the layout and the copy before any code is written.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Then</p>
+                                <h4>Build and preview</h4>
+                                <p>Responsive and fast, on a private link you can open on your phone.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Then</p>
+                                <h4>Your feedback</h4>
+                                <p>Changes within the agreed scope, then a final polish.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Launch</p>
+                                <h4>Live on your domain</h4>
+                                <p>Hosting, analytics, and search basics set up in your own accounts.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Fix an app -->
+                    <div class="how-panel" role="tabpanel" id="how-panel-fix" aria-labelledby="how-tab-fix" hidden>
+                        <div class="how-pitch">
+                            <h3>Keep the app. Lose the bugs.</h3>
+                            <p>Slow, buggy, or ugly? I'll tell you exactly what's wrong before I touch anything.</p>
+                            <dl class="how-facts">
+                                <div><dt>First result</dt><dd>A plain-English audit, ranked by impact</dd></div>
+                                <div><dt>You test on</dt><dd>Test builds or a preview link after each batch</dd></div>
+                                <div><dt>You bring</dt><dd>Access to the code and your store accounts</dd></div>
+                            </dl>
+                            <button class="btn btn-accent btn-large" data-open-contact data-topic="Fix / improve an app"
+                                type="button">Start with discovery <span aria-hidden="true">→</span></button>
+                        </div>
+                        <ol class="how-steps">
+                            <li>
+                                <p class="how-when">First</p>
+                                <h4>Audit</h4>
+                                <p>I read the code, use the app, and list what's wrong.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Then</p>
+                                <h4>Fix list and price</h4>
+                                <p>You approve what gets fixed before any work starts.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Then</p>
+                                <h4>Fixes, tested as I go</h4>
+                                <p>A new build after each batch, so you see progress as it happens.</p>
+                            </li>
+                            <li>
+                                <p class="how-when">Finally</p>
+                                <h4>Ship the update</h4>
+                                <p>Released to the stores or your server, then I watch for fallout.</p>
+                            </li>
+                        </ol>
                     </div>
                 </div>
-                <p class="how-aside">Yes, one week from the day scope is locked. The trick is Claude Code plus a set of
-                    code guides I reuse, so I never solve the same problem twice. Claude types fast. I decide what's
-                    worth typing, and I read every line before it ships.</p>
+
+                <p class="how-aside">Yes, one week from the day scope is locked. Claude Code types fast; I decide
+                    what's worth typing and read every line before it ships.</p>
             </div>
         </section>
 
@@ -981,6 +1110,8 @@
                     <label class="chip"><input type="radio" name="topic" value="New app" checked /><span>New
                             app</span></label>
                     <label class="chip"><input type="radio" name="topic" value="Website" /><span>Website</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Web app / dashboard" /><span>Web
+                            app / dashboard</span></label>
                     <label class="chip"><input type="radio" name="topic" value="Fix / improve an app" /><span>Fix an
                             app</span></label>
                     <label class="chip"><input type="radio" name="topic" value="Just saying hi" /><span>Just saying

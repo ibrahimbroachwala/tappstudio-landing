@@ -101,9 +101,20 @@ function resetContactForm() {
     contactStatus.classList.remove('is-error');
 }
 
-function openContactDialog() {
+function openContactDialog(event) {
     if (!contactDialog) return;
     resetContactForm();
+
+    // Buttons can pre-select a topic, e.g. data-topic="Website"
+    const topic = event && event.currentTarget && event.currentTarget.dataset
+        ? event.currentTarget.dataset.topic : '';
+    if (topic) {
+        const radio = document.querySelector('input[name="topic"][value="' + topic + '"]');
+        if (radio) {
+            radio.checked = true;
+            radio.dispatchEvent(new Event('change'));
+        }
+    }
     contactDialog.showModal();
     const nameField = document.getElementById('contact-name');
     if (nameField) nameField.focus();
@@ -209,3 +220,36 @@ if (tiltCard && canTilt.matches) {
         tiltCard.style.removeProperty('--rx');
     });
 }
+
+// ---------------------------------------------------------------------------
+// How it works tabs
+// ---------------------------------------------------------------------------
+document.querySelectorAll('[data-tabs]').forEach((group) => {
+    const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+
+    function selectTab(tab, focus) {
+        tabs.forEach((t) => {
+            const active = t === tab;
+            t.setAttribute('aria-selected', String(active));
+            t.tabIndex = active ? 0 : -1;
+            document.getElementById(t.getAttribute('aria-controls')).hidden = !active;
+        });
+        if (focus) tab.focus();
+    }
+
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => selectTab(tab, false));
+        tab.addEventListener('keydown', (event) => {
+            const last = tabs.length - 1;
+            let next = null;
+            if (event.key === 'ArrowRight') next = tabs[i === last ? 0 : i + 1];
+            if (event.key === 'ArrowLeft') next = tabs[i === 0 ? last : i - 1];
+            if (event.key === 'Home') next = tabs[0];
+            if (event.key === 'End') next = tabs[last];
+            if (next) {
+                event.preventDefault();
+                selectTab(next, true);
+            }
+        });
+    });
+});
