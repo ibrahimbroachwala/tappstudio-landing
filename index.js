@@ -40,6 +40,7 @@ function openLightbox(sourceImg) {
     lightboxImage.srcset = sourceImg.srcset;
     lightboxImage.src = sourceImg.src;
     lightboxImage.alt = sourceImg.alt || 'App screenshot preview';
+    lightbox.classList.toggle('is-wide', Boolean(sourceImg.closest('.app--wide')));
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.remove('is-closing');
     lightbox.classList.add('is-open');

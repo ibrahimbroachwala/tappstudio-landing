@@ -1548,6 +1548,24 @@ h3 {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
+/* Wide (desktop-landscape) screenshots open large; width is capped by both viewport width and height so the aspect ratio holds */
+.screenshot-lightbox.is-wide .screenshot-lightbox-content {
+    max-width: 96vw;
+}
+
+.screenshot-lightbox.is-wide .screenshot-lightbox-image {
+    width: min(96vw, calc(88vh * 2000 / 1242), 1800px);
+    max-width: none;
+    height: auto;
+    max-height: none;
+}
+
+.screenshot-lightbox.is-wide .screenshot-lightbox-close,
+.screenshot-lightbox.is-wide .screenshot-lightbox-close:hover,
+.screenshot-lightbox.is-wide .screenshot-lightbox-close:focus-visible {
+    transform: translate(-0.6rem, 0.6rem);
+}
+
 .screenshot-lightbox-close {
     position: absolute;
     top: 0;
@@ -1625,6 +1643,20 @@ h3 {
 
     .screenshot-lightbox-content {
         max-width: min(94vw, 420px);
+    }
+
+    .screenshot-lightbox.is-wide .screenshot-lightbox-content {
+        max-width: 94vw;
+    }
+
+    .screenshot-lightbox.is-wide .screenshot-lightbox-image {
+        width: 94vw;
+    }
+
+    .screenshot-lightbox.is-wide .screenshot-lightbox-close,
+    .screenshot-lightbox.is-wide .screenshot-lightbox-close:hover,
+    .screenshot-lightbox.is-wide .screenshot-lightbox-close:focus-visible {
+        transform: translate(-0.4rem, 0.4rem);
     }
 
     .screenshot-lightbox-close {
