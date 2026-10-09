@@ -39,30 +39,31 @@
         var perHour = cfg.hourlyRateUSD * tl.surcharge;
 
         var lines = [];
-        function add(id, label, group, rawHours) {
+        function add(id, label, group, rawHours, hint) {
             if (!(rawHours > 0)) return;
             var hours = rawHours * factor;
-            lines.push({ id: id, label: label, group: group, rawHours: rawHours, hours: hours, usd: hours * perHour });
+            lines.push({ id: id, label: label, group: group, hint: hint || '', rawHours: rawHours, hours: hours, usd: hours * perHour });
         }
 
-        add('base', 'Foundation: setup, architecture, deployment', 'Foundation', type.baseHours);
+        add('base', 'Foundation: setup, architecture, deployment', 'Foundation', type.baseHours,
+            'Project setup, code structure, hosting and release pipeline');
 
         if (screens > 0) {
             var unit = type.unit + (screens === 1 ? '' : 's');
             add('screens', screens + ' ' + unit + ', ' + design.label.toLowerCase(), 'Design & build',
-                screens * type.hoursPerScreen * design.factor);
+                screens * type.hoursPerScreen * design.factor, design.hint);
         }
 
         if (type.app) {
             var backend = byId(cfg.backends, input.backend);
-            add('backend', 'Backend: ' + backend.label, 'Backend', backend.hours);
+            add('backend', 'Backend: ' + backend.label, 'Backend', backend.hours, backend.hint);
         }
 
         featuresFor(input.type, cfg).forEach(function (f) {
             var raw = input.features && input.features[f.id];
             if (!raw) return;
             var qty = f.qty ? Math.round(num(raw, 1, 50, 1)) : 1;
-            add('f_' + f.id, f.label + (f.qty ? ' (' + qty + ')' : ''), f.group, f.hours * qty);
+            add('f_' + f.id, f.label + (f.qty ? ' (' + qty + ')' : ''), f.group, f.hours * qty, f.hint);
         });
 
         var subtotal = lines.reduce(function (s, l) { return s + l.usd; }, 0);
@@ -115,7 +116,7 @@
 
         var total = ceilTo(conv(quote.projectUSD), cur.roundTo);
         var lines = quote.lines.map(function (l) {
-            return { id: l.id, label: l.label, group: l.group, hours: l.hours, rawHours: l.rawHours, amount: roundTo(conv(l.usd), cur.lineRound) };
+            return { id: l.id, label: l.label, group: l.group, hint: l.hint, hours: l.hours, rawHours: l.rawHours, amount: roundTo(conv(l.usd), cur.lineRound) };
         });
 
         // Absorb rounding drift into the largest line so lines always sum to the total.

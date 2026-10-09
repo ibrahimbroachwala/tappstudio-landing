@@ -60,6 +60,7 @@
                         <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
                         <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
                     </button>
+                    <button class="pq-btn" id="pq-rates-btn" type="button">Rates<span class="pq-badge" id="pq-rates-badge" hidden></span></button>
                     <button class="pq-btn pq-btn-ghost" id="pq-lock" type="button">Lock</button>
                 </div>
             </div>
@@ -78,6 +79,22 @@
         </section>
 
         <div class="pq-mobile-bar" id="pq-mobile-bar"></div>
+
+        <!-- Rates sheet -->
+        <div class="pq-scrim" id="pq-scrim"></div>
+        <aside class="pq-sheet" id="pq-sheet" role="dialog" aria-modal="true" aria-labelledby="pq-sheet-title" aria-hidden="true">
+            <div class="pq-sheet-head">
+                <div>
+                    <h2 id="pq-sheet-title">Rate card</h2>
+                    <p class="pq-muted pq-small" id="pq-sheet-sub"></p>
+                </div>
+                <div class="pq-sheet-head-actions">
+                    <button class="pq-btn pq-btn-small pq-btn-ghost" id="pq-sheet-reset" type="button">Reset all</button>
+                    <button class="pq-btn pq-btn-small" id="pq-sheet-close" type="button" aria-label="Close rate card">Close</button>
+                </div>
+            </div>
+            <div class="pq-sheet-body" id="pq-sheet-body"></div>
+        </aside>
     </div>
 
     <!-- Printable client quote (shown only when printing) -->
@@ -85,6 +102,7 @@
 
     <script src="./config.js"></script>
     <script src="./engine.js"></script>
+    <script src="./rates.js"></script>
     <script src="./app.js"></script>
 </body>
 
