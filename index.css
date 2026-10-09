@@ -835,6 +835,42 @@ h3 {
     text-decoration: none;
 }
 
+/* Wide card: desktop-landscape screenshots, media above the text */
+.app.app--wide {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.app.app--wide:nth-of-type(n) .app-media {
+    order: 0;
+}
+
+.app--wide .app-screenshots img {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 2000/1242;
+    border: 1px solid var(--line-strong);
+    cursor: zoom-in;
+}
+
+.app-tag {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+    white-space: nowrap;
+}
+
+.app-tag--client {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 .app-description {
     color: var(--muted);
     margin-bottom: 1rem;
@@ -904,6 +940,11 @@ h3 {
 
     .app-screenshots img {
         min-width: 120px;
+    }
+
+    .app--wide .app-screenshots img {
+        flex: 0 0 80%;
+        min-width: 0;
     }
 }
 
