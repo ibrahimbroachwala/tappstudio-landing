@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | tappStudio</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./pricing.css">
+</head>
+
+<body class="pq-body">
+    <!-- Passcode gate -->
+    <div class="pq-gate" id="pq-gate">
+        <form class="pq-gate-card" id="pq-gate-form" autocomplete="off">
+            <img class="pq-gate-logo" src="../public/images/logo.svg" alt="" width="44" height="44">
+            <h1>Pricing</h1>
+            <p class="pq-muted">Private to tappStudio.</p>
+            <input type="password" id="pq-gate-input" class="pq-input" placeholder="Passcode" aria-label="Passcode"
+                autocomplete="current-password" required>
+            <label class="pq-check"><input type="checkbox" id="pq-gate-remember"> Remember this device</label>
+            <p class="pq-error" id="pq-gate-error" role="alert" hidden>Wrong passcode.</p>
+            <button class="pq-btn pq-btn-primary" type="submit">Unlock</button>
+        </form>
+    </div>
+
+    <!-- App -->
+    <div id="pq-app" hidden>
+        <header class="pq-header">
+            <div class="pq-wrap pq-header-inner">
+                <div class="pq-brand">
+                    <img src="../public/images/logo.svg" alt="" width="28" height="28" class="pq-brand-logo">
+                    <span class="pq-brand-name">tappStudio</span>
+                    <span class="pq-brand-tag">Pricing</span>
+                </div>
+                <div class="pq-header-actions">
+                    <div class="pq-seg pq-seg-compact" id="pq-currency" role="radiogroup" aria-label="Currency"></div>
+                    <button class="theme-toggle-btn" id="pq-theme" title="Toggle dark/light mode"
+                        aria-label="Toggle dark or light theme" type="button">
+                        <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                    </button>
+                    <button class="pq-btn pq-btn-ghost" id="pq-lock" type="button">Lock</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="pq-wrap pq-layout">
+            <div class="pq-col-form" id="pq-form"></div>
+            <aside class="pq-col-summary">
+                <div class="pq-summary" id="pq-summary" aria-live="polite"></div>
+            </aside>
+        </main>
+
+        <section class="pq-wrap pq-extra">
+            <div class="pq-card" id="pq-saved"></div>
+            <details class="pq-card pq-settings" id="pq-settings"></details>
+        </section>
+
+        <div class="pq-mobile-bar" id="pq-mobile-bar"></div>
+    </div>
+
+    <!-- Printable client quote (shown only when printing) -->
+    <div class="pq-doc" id="pq-doc"></div>
+
+    <script src="./config.js"></script>
+    <script src="./engine.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
