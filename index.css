@@ -952,67 +952,59 @@ h3 {
    What you get
    ========================================================================== */
 
-.get-featured {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-}
-
-.get-feature {
-    padding: clamp(1.5rem, 3vw, 2rem);
+.get-list {
+    list-style: none;
+    counter-reset: get;
     background: var(--surface-1);
     border: 1px solid var(--line-strong);
     border-radius: var(--radius-l);
+    overflow: hidden;
 }
 
-.get-feature h3 {
-    margin-bottom: 0.6rem;
-    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-    color: var(--accent);
-}
-
-.get-feature p {
-    color: var(--muted);
-    max-width: 44ch;
-}
-
-.get-grid {
+.get-item {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-}
-
-.get-card {
-    padding: 1.5rem 0;
+    grid-template-columns: 2.5rem minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    column-gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1.1rem, 2.4vw, 1.6rem) clamp(1.25rem, 3vw, 2.25rem);
     border-top: 1px solid var(--line);
 }
 
-.get-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
+.get-item:first-child {
+    border-top: 0;
 }
 
-.get-card p {
+.get-letter {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.get-item h3 {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    line-height: 2rem;
+}
+
+.get-item p {
     color: var(--muted);
-    font-size: 0.92rem;
-}
-
-@media (max-width: 900px) {
-    .get-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 700px) {
-    .get-featured {
-        grid-template-columns: minmax(0, 1fr);
+    .get-item {
+        grid-template-columns: 2.5rem minmax(0, 1fr);
+        row-gap: 0.35rem;
     }
-}
 
-@media (max-width: 560px) {
-    .get-grid {
-        grid-template-columns: 1fr;
+    .get-item p {
+        grid-column: 2;
     }
 }
 
