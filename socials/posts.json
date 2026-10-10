@@ -1038,7 +1038,7 @@
       "carousel": false
     },
     {
-      "text": "Most AI-agent horror stories are the same story: the agent guessed.\n\nOne rule in the CLAUDE.md of my live app (Nasab):\n\n\"When a change cannot be made backward compatible, stop and ask. Don't guess.\"\n\nOld app versions live on phones for months. Guessing is how you break them.",
+      "text": "I'm one developer in Mumbai. I design, build and publish my own apps.\n\nFour are live: Splitup, Nasab, My Deen, Misbaha.\n\nFor the next few weeks I'll share how they got built: the commits, the bugs, and how I work with AI.\n\nNo hype. Just the git log.",
       "images": [],
       "alt": {
         "summary": "",
@@ -1052,7 +1052,7 @@
       "status": "ready",
       "warn": false,
       "note": "",
-      "title": "The one rule my AI agent cannot improvise on.",
+      "title": "Hi, I'm Ibrahim. One developer, four apps.",
       "posted": "",
       "carousel": false
     },
@@ -4650,5 +4650,5 @@
       "carousel": false
     }
   ],
-  "built": "10 Oct 2026, 20:07"
+  "built": "10 Oct 2026, 20:09"
 }
