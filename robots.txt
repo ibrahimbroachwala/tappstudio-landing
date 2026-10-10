@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /socials/
 
 # Sitemap
 Sitemap: https://tappstudio.in/sitemap.xml 
