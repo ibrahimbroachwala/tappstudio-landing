@@ -1950,6 +1950,20 @@ h3 {
     margin: 0 auto 0.75rem;
 }
 
+.footer-meta {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.mascot-footer {
+    width: 72px;
+    flex-shrink: 0;
+    color: var(--muted);
+    opacity: 0.9;
+}
+
 @media (max-width: 900px) {
     .mascot-hero {
         left: auto;
