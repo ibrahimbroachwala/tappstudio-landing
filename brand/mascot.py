@@ -27,6 +27,9 @@ BODY = "#13b8a7"
 LEG = "#0f9b8e"
 INK = "#0e0e0c"
 EYE = "#f3f0e8"
+# Marks outside the body (sparkles, thought bubbles, zzz): a mid grey between the
+# dark and light theme muted colors so they read on both page backgrounds.
+FX = "#8a867c"
 GOLD = "#f6b04a"
 
 # Geometry (viewBox 0 0 360 380)
@@ -79,13 +82,13 @@ EXPRESSIONS = {
     "neutral": (LEFT_DOWN + RIGHT_DOWN, eyes(), SMILE, ""),
     "wave": (LEFT_DOWN + RIGHT_WAVE, eyes(), SMILE, ""),
     "happy": (UP_L + UP_R, eyes(), OPEN_SMILE,
-              star(62, 82, 17, EYE) + star(300, 84, 13, BODY) +
-              f'<circle cx="104" cy="40" r="5" fill="{GOLD}"/><circle cx="270" cy="36" r="4.5" fill="{EYE}"/>'),
+              star(62, 82, 17, FX) + star(300, 84, 13, BODY) +
+              f'<circle cx="104" cy="40" r="5" fill="{GOLD}"/><circle cx="270" cy="36" r="4.5" fill="{FX}"/>'),
     "thinking": (LEFT_DOWN, eyes(pdx=-5, pdy=-6), FLAT,
                  arm("M252 232 Q232 236 214 204", hand=(212, 202), color="#0c8f82") +
-                 f'<circle cx="274" cy="60" r="5" fill="{EYE}" opacity=".8"/>'
-                 f'<circle cx="292" cy="40" r="7" fill="{EYE}" opacity=".8"/>'
-                 f'<circle cx="316" cy="16" r="10" fill="{EYE}" opacity=".8"/>'),
+                 f'<circle cx="274" cy="60" r="5" fill="{FX}"/>'
+                 f'<circle cx="292" cy="40" r="7" fill="{FX}"/>'
+                 f'<circle cx="316" cy="16" r="10" fill="{FX}"/>'),
     "surprised": (OUT_L + OUT_R, eyes(rx=22, ry=27, pr=7), O_MOUTH,
                   stroke("M150 82 L142 66", 5).replace(INK, EYE) +
                   stroke("M180 74 L180 56", 5).replace(INK, EYE) +
@@ -95,7 +98,7 @@ EXPRESSIONS = {
     "sleeping": (LEFT_DOWN + RIGHT_DOWN,
                  stroke("M138 130 Q156 146 174 130", 6) + stroke("M186 130 Q204 146 222 130", 6),
                  stroke("M166 184 Q180 192 194 184"),
-                 f'<g fill="{EYE}" font-family="Geist Mono, monospace" font-weight="700">'
+                 f'<g fill="{FX}" font-family="Geist Mono, monospace" font-weight="700">'
                  f'<text x="262" y="70" font-size="30">Z</text><text x="286" y="42" font-size="22">z</text>'
                  f'<text x="304" y="22" font-size="16">z</text></g>'),
     "wink": (LEFT_DOWN + RIGHT_WAVE,

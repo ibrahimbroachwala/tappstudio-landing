@@ -1960,7 +1960,6 @@ h3 {
 .mascot-footer {
     width: 72px;
     flex-shrink: 0;
-    color: var(--muted);
     opacity: 0.9;
 }
 
