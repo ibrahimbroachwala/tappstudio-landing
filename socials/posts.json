@@ -1624,31 +1624,6 @@
       "carousel": false
     },
     {
-      "text": "The first three commits of my first app of my own. All on the same day:\n\nInitial Commit\nDelete mydeen directory\nInitial Commit Again\n\nThat app is My Deen. It's on both stores now.\n\nStarting over on day one is still starting. 😅",
-      "images": [
-        [
-          "img/2f9c733841f0f004.webp",
-          "img/2f9c733841f0f004-t.webp",
-          "tappstudio-X-03.jpg"
-        ]
-      ],
-      "alt": {
-        "summary": "A terminal-style card: \"Day one of my first own app. Starting over is still starting.\" It lists the first three commits of My Deen from the same day: Initial Commit, Delete mydeen directory, Initial Commit Again. Footer: My Deen is on both stores now. Take two.",
-        "slides": []
-      },
-      "brand": "tappstudio",
-      "id": "X-03",
-      "platform": "X",
-      "date": "2026-10-16",
-      "time": "18:30 IST",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "My first app of my own started with a do-over.",
-      "posted": "",
-      "carousel": false
-    },
-    {
       "text": "The beads in my tasbih app ride a circle whose centre sits below the screen. Radius = screen width.\n\nEach tap animates for 1,100 ms with easeOutBack. That tiny overshoot is the click your thumb expects from a real bead.\n\nFlutter, plus one CustomPainter for the string.",
       "images": [],
       "alt": {
@@ -1798,7 +1773,7 @@
         [
           "img/d8a63cc01acefb04.webp",
           "img/d8a63cc01acefb04-t.webp",
-          "tappstudio-X-04.jpg"
+          "tappstudio-X-03.jpg"
         ]
       ],
       "alt": {
@@ -1806,10 +1781,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-04",
+      "id": "X-03",
       "platform": "X",
-      "date": "2026-10-17",
-      "time": "10:00 IST",
+      "date": "2026-10-16",
+      "time": "18:30 IST",
       "status": "ready",
       "warn": false,
       "note": "",
@@ -2017,7 +1992,7 @@
         [
           "img/49b08649882052ed.webp",
           "img/49b08649882052ed-t.webp",
-          "tappstudio-X-05.jpg"
+          "tappstudio-X-04.jpg"
         ]
       ],
       "alt": {
@@ -2025,9 +2000,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-05",
+      "id": "X-04",
       "platform": "X",
-      "date": "2026-10-18",
+      "date": "2026-10-17",
       "time": "10:00 IST",
       "status": "ready",
       "warn": false,
@@ -2208,10 +2183,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-06",
+      "id": "X-05",
       "platform": "X",
-      "date": "2026-10-19",
-      "time": "18:30 IST",
+      "date": "2026-10-18",
+      "time": "10:00 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -2452,9 +2427,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-07",
+      "id": "X-06",
       "platform": "X",
-      "date": "2026-10-21",
+      "date": "2026-10-19",
       "time": "18:30 IST",
       "status": "planned",
       "warn": false,
@@ -2703,9 +2678,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-08",
+      "id": "X-07",
       "platform": "X",
-      "date": "2026-10-23",
+      "date": "2026-10-21",
       "time": "18:30 IST",
       "status": "planned",
       "warn": false,
@@ -2867,10 +2842,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-09",
+      "id": "X-08",
       "platform": "X",
-      "date": "2026-10-24",
-      "time": "10:00 IST",
+      "date": "2026-10-23",
+      "time": "18:30 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -3025,9 +3000,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-10",
+      "id": "X-09",
       "platform": "X",
-      "date": "2026-10-25",
+      "date": "2026-10-24",
       "time": "10:00 IST",
       "status": "planned",
       "warn": true,
@@ -3144,10 +3119,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-11",
+      "id": "X-10",
       "platform": "X",
-      "date": "2026-10-26",
-      "time": "18:30 IST",
+      "date": "2026-10-25",
+      "time": "10:00 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -3423,9 +3398,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-12",
+      "id": "X-11",
       "platform": "X",
-      "date": "2026-10-28",
+      "date": "2026-10-26",
       "time": "18:30 IST",
       "status": "planned",
       "warn": true,
@@ -3655,9 +3630,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-13",
+      "id": "X-12",
       "platform": "X",
-      "date": "2026-10-30",
+      "date": "2026-10-28",
       "time": "18:30 IST",
       "status": "planned",
       "warn": false,
@@ -3731,10 +3706,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-14",
+      "id": "X-13",
       "platform": "X",
-      "date": "2026-10-31",
-      "time": "10:00 IST",
+      "date": "2026-10-30",
+      "time": "18:30 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -3826,9 +3801,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-15",
+      "id": "X-14",
       "platform": "X",
-      "date": "2026-11-01",
+      "date": "2026-10-31",
       "time": "10:00 IST",
       "status": "planned",
       "warn": false,
@@ -3902,10 +3877,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-16",
+      "id": "X-15",
       "platform": "X",
-      "date": "2026-11-02",
-      "time": "18:30 IST",
+      "date": "2026-11-01",
+      "time": "10:00 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -4054,9 +4029,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-17",
+      "id": "X-16",
       "platform": "X",
-      "date": "2026-11-03",
+      "date": "2026-11-02",
       "time": "18:30 IST",
       "status": "planned",
       "warn": true,
@@ -4130,9 +4105,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-18",
+      "id": "X-17",
       "platform": "X",
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "time": "18:30 IST",
       "status": "planned",
       "warn": false,
@@ -4399,10 +4374,10 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-19",
+      "id": "X-18",
       "platform": "X",
-      "date": "2026-11-07",
-      "time": "10:00 IST",
+      "date": "2026-11-04",
+      "time": "18:30 IST",
       "status": "planned",
       "warn": false,
       "note": "",
@@ -4456,9 +4431,9 @@
         "slides": []
       },
       "brand": "tappstudio",
-      "id": "X-20",
+      "id": "X-19",
       "platform": "X",
-      "date": "2026-11-08",
+      "date": "2026-11-07",
       "time": "10:00 IST",
       "status": "planned",
       "warn": true,
@@ -4650,5 +4625,5 @@
       "carousel": false
     }
   ],
-  "built": "10 Oct 2026, 20:09"
+  "built": "10 Oct 2026, 20:13"
 }
