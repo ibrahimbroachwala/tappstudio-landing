@@ -4041,7 +4041,7 @@
       "carousel": false
     },
     {
-      "text": "110 days ago I made the first commit on Nasab. Here's the build log in numbers:\n\n📦 157 commits\n🗄 117 database migrations, all forward-only\n⚡ 17 edge functions\n🧩 18 feature modules\n🌍 997 strings in English and Arabic\n📱 Version 0.10.7, live on iOS and Android\n\nWhat I'd tell myself on day 1:\n1. Put privacy in the database, not the UI.\n2. Once you're live, every migration is a promise to old builds.\n3. The invisible details (a reminder that skips someone who has passed away, a calendar your family actually uses) matter more than the feature list.\n4. Delete a feature when two of them do one job.\n5. Build for one family first. Mine.\n\nWhat's next: [ROADMAP, 2-3 items you're happy to announce]\n\nIf you've followed this build log, thank you. If your family has a story worth keeping, Nasab is live on iOS and Android. The link's in the first comment.\n\n#BuildInPublic #IndieHacker #Flutter",
+      "text": "110 days ago I made the first commit on Nasab. Here's the build log in numbers:\n\n📦 157 commits\n🗄 117 database migrations, all forward-only\n⚡ 17 edge functions\n🧩 18 feature modules\n🌍 997 strings in English and Arabic\n📱 Version 0.10.7, live on iOS and Android\n\nWhat I'd tell myself on day 1:\n1. Put privacy in the database, not the UI.\n2. Once you're live, every migration is a promise to old builds.\n3. The invisible details (a reminder that skips someone who has passed away, a calendar your family actually uses) matter more than the feature list.\n4. Delete a feature when two of them do one job.\n5. Build for one family first. Mine.\n\nWhat's next: [ROADMAP, 2-3 items you're happy to announce]\n\nIf you've followed this build log, thank you. If your family has a story worth keeping, Nasab is live on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
       "images": [],
       "alt": {
         "summary": "A stat board of Nasab's build in numbers: 157 commits, 117 migrations, 17 edge functions, 18 feature modules, 997 strings in English and Arabic, and version 0.10.7.",
@@ -4285,7 +4285,7 @@
       "carousel": false
     },
     {
-      "text": "📊 Splitup, in numbers:\n\n🌍 10 languages, including right-to-left Arabic and Urdu, all the way into the PDF exports\n💱 50+ currencies\n🗣️ 340 strings in the English source, translated 9 more ways\n🧪 19 test files, 17 of them for offline sync and voice input\n🙅 0 subscriptions\n\nWhat I'd tell myself on day 1: 💭\n1️⃣ Money is integer cents. Decide it before the first table.\n2️⃣ Every migration has to keep old app versions working. People update slowly.\n3️⃣ Build for no signal from the start. Retrofitting offline sync is a project, not a feature.\n4️⃣ The boring solution (a Dart parser) can beat the shiny one (an LLM) when you know your users' phones.\n5️⃣ Ask for reviews when people are happy. Then get out of the way.\n\n🔭 What's next: [ROADMAP, 2 or 3 items you're happy to announce]\n\nIf you've followed this Ship Log, thank you. 🙏 Splitup is free to start on iOS and Android. Link in the first comment.\n\n#BuildInPublic #IndieHacker #Flutter",
+      "text": "📊 Splitup, in numbers:\n\n🌍 10 languages, including right-to-left Arabic and Urdu, all the way into the PDF exports\n💱 50+ currencies\n🗣️ 340 strings in the English source, translated 9 more ways\n🧪 19 test files, 17 of them for offline sync and voice input\n🙅 0 subscriptions\n\nWhat I'd tell myself on day 1: 💭\n1️⃣ Money is integer cents. Decide it before the first table.\n2️⃣ Every migration has to keep old app versions working. People update slowly.\n3️⃣ Build for no signal from the start. Retrofitting offline sync is a project, not a feature.\n4️⃣ The boring solution (a Dart parser) can beat the shiny one (an LLM) when you know your users' phones.\n5️⃣ Ask for reviews when people are happy. Then get out of the way.\n\n🔭 What's next: [ROADMAP, 2 or 3 items you're happy to announce]\n\nIf you've followed this Ship Log, thank you. 🙏 Splitup is free to start on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
       "images": [],
       "alt": {
         "summary": "A stat board for Splitup: 10 languages, 50+ currencies, 340 strings, 19 test files and zero subscriptions. Text: \"Splitup in numbers. Zero subscriptions.\"",
@@ -4625,5 +4625,5 @@
       "carousel": false
     }
   ],
-  "built": "10 Oct 2026, 20:13"
+  "built": "10 Oct 2026, 20:51"
 }
