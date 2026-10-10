@@ -1038,7 +1038,7 @@
       "carousel": false
     },
     {
-      "text": "The best instruction I've ever written for an AI coding agent:\n\n\"When a change cannot be made backward compatible, stop and ask. Don't guess.\"\n\nIt's in the CLAUDE.md of my live app. It has saved me more than any clever prompt.",
+      "text": "Most AI-agent horror stories are the same story: the agent guessed.\n\nOne rule in the CLAUDE.md of my live app (Nasab):\n\n\"When a change cannot be made backward compatible, stop and ask. Don't guess.\"\n\nOld app versions live on phones for months. Guessing is how you break them.",
       "images": [],
       "alt": {
         "summary": "",
@@ -1052,7 +1052,7 @@
       "status": "ready",
       "warn": false,
       "note": "",
-      "title": "The best instruction I have written for an AI.",
+      "title": "The one rule my AI agent cannot improvise on.",
       "posted": "",
       "carousel": false
     },
@@ -4650,5 +4650,5 @@
       "carousel": false
     }
   ],
-  "built": "10 Oct 2026, 15:10"
+  "built": "10 Oct 2026, 20:07"
 }
