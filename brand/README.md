@@ -35,3 +35,9 @@ Current accent: **deep teal**. Dark theme `#14b8a6`, light theme `#0d9488`
 - The inline nav logo in `index.html` uses `var(--accent)` and `var(--muted)`, so it follows the CSS tokens.
 - App pages with their own styling (`mydeen/`, `splitup/`, `aifunkit/`) and the app screenshots and icons under `public/apps/` are separate products and keep their own colors.
 - After deploying, browsers and X/WhatsApp cache favicons and link previews; expect a delay (X Card Validator or `?v=2` refreshes the preview).
+
+## Mascot
+
+`python3 brand/mascot.py` generates the tS mascot (the teal character from the social posts) in eight expressions
+(`neutral`, `wave`, `happy`, `thinking`, `surprised`, `sad`, `sleeping`, `wink`) as SVG and transparent 512px PNG
+into `public/images/mascot/`. Needs headless Chrome and Pillow.

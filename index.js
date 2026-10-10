@@ -254,3 +254,147 @@ document.querySelectorAll('[data-tabs]').forEach((group) => {
         });
     });
 });
+
+// ---------------------------------------------------------------------------
+// Section nav ("spine"): right-edge track on desktop, chip + sheet on mobile
+// ---------------------------------------------------------------------------
+const spine = document.getElementById('spine');
+
+if (spine) {
+    const spineToggle = document.getElementById('spine-toggle');
+    const spinePanel = document.getElementById('spine-panel');
+    const ringFill = document.getElementById('spine-ring-fill');
+    const spineLinks = Array.from(spine.querySelectorAll('.spine-link'));
+    const spineSections = spineLinks.map((link) => document.getElementById(link.hash.slice(1)));
+    const numSlots = spine.querySelectorAll('[data-spine-num]');
+    const labelSlots = spine.querySelectorAll('[data-spine-label]');
+    const hero = document.getElementById('intro');
+    const footer = document.querySelector('.site-footer');
+    const TICK_GAP = 22; // min px between ticks on the desktop track
+
+    let sectionTops = [];
+    let activeIndex = -1;
+    let ticking = false;
+
+    function maxScroll() {
+        return Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    }
+
+    // Place each tick at the scroll progress where its section reaches the top,
+    // nudging neighbours apart so they stay clickable.
+    function layoutSpine() {
+        sectionTops = spineSections.map((s) => s.getBoundingClientRect().top + window.scrollY);
+        const trackH = spinePanel.clientHeight;
+        if (!trackH || getComputedStyle(spineToggle).display !== 'none') return;
+        const n = spineLinks.length;
+        const pos = sectionTops.map((top) => Math.min(1, top / maxScroll()) * trackH);
+        for (let i = 1; i < n; i++) pos[i] = Math.max(pos[i], pos[i - 1] + TICK_GAP);
+        for (let i = n - 1; i >= 0; i--) pos[i] = Math.min(pos[i], trackH - (n - 1 - i) * TICK_GAP);
+        pos.forEach((px, i) => spineLinks[i].parentElement.style.setProperty('--pos', px + 'px'));
+    }
+
+    function setActive(index) {
+        if (index === activeIndex) return;
+        activeIndex = index;
+        spineLinks.forEach((link, i) => {
+            if (i === index) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+        });
+        const num = String(index + 1).padStart(2, '0');
+        const label = spineLinks[index].querySelector('.spine-name').textContent;
+        numSlots.forEach((el) => { el.textContent = num; });
+        labelSlots.forEach((el) => { el.textContent = label; });
+    }
+
+    function updateSpine() {
+        ticking = false;
+        const y = window.scrollY;
+        const p = Math.min(1, Math.max(0, y / maxScroll()));
+        spine.style.setProperty('--spine-p', p.toFixed(4));
+        if (ringFill) ringFill.style.strokeDashoffset = String(100 - p * 100);
+
+        // Active = last section whose top has passed 40% of the viewport
+        const line = y + window.innerHeight * 0.4;
+        let index = 0;
+        sectionTops.forEach((top, i) => { if (top <= line) index = i; });
+        if (p > 0.995) index = spineLinks.length - 1;
+        setActive(index);
+
+        // Mobile chip stays out of the way over the hero and the footer
+        const pastHero = hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.5 : true;
+        const atFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight - 40 : false;
+        spine.classList.toggle('is-hidden', !pastHero || atFooter);
+    }
+
+    function requestUpdate() {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateSpine);
+        }
+    }
+
+    function setOpen(open) {
+        spine.classList.toggle('is-open', open);
+        spineToggle.setAttribute('aria-expanded', String(open));
+    }
+
+    // iOS swallows the click when a tap lands on a page that is still coasting from a
+    // swipe (the tap only stops the momentum). Act on touchend instead, unless the
+    // finger moved (a scroll), and cancel the click so it doesn't fire twice.
+    function onTap(el, handler) {
+        let start = null;
+        el.addEventListener('touchstart', (event) => {
+            const t = event.touches[0];
+            start = { x: t.clientX, y: t.clientY };
+        }, { passive: true });
+        el.addEventListener('touchend', (event) => {
+            const t = event.changedTouches[0];
+            const moved = !start || Math.hypot(t.clientX - start.x, t.clientY - start.y) > 10;
+            start = null;
+            if (moved) return;
+            event.preventDefault();
+            handler(event);
+        });
+        el.addEventListener('click', handler);
+    }
+
+    onTap(spineToggle, () => {
+        const open = !spine.classList.contains('is-open');
+        setOpen(open);
+        if (open) (spineLinks[activeIndex] || spineLinks[0]).focus({ preventScroll: true });
+    });
+
+    onTap(document.getElementById('spine-backdrop'), () => setOpen(false));
+
+    spineLinks.forEach((link) => onTap(link, (event) => {
+        setOpen(false);
+        if (event.type !== 'touchend') return; // mouse/keyboard: let the anchor navigate
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target) return;
+        const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+        history.pushState(null, '', link.hash);
+    }));
+
+    document.addEventListener('click', (event) => {
+        if (spine.classList.contains('is-open') && !spine.contains(event.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && spine.classList.contains('is-open')) {
+            setOpen(false);
+            spineToggle.focus();
+        }
+    });
+
+    function relayout() {
+        layoutSpine();
+        requestUpdate();
+    }
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', relayout);
+    window.addEventListener('load', relayout);
+    if ('ResizeObserver' in window) new ResizeObserver(relayout).observe(document.body);
+    relayout();
+}
