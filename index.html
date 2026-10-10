@@ -237,7 +237,7 @@
 
     <main id="main">
         <!-- HERO -->
-        <section class="hero">
+        <section class="hero" id="intro">
             <div class="wrap hero-inner">
                 <div class="hero-copy">
                     <p class="eyebrow">Solo developer · iOS, Android &amp; Web</p>
@@ -274,7 +274,7 @@
         </section>
 
         <!-- NOT AN AGENCY STRIP -->
-        <section class="not-agency">
+        <section class="not-agency" id="just-me">
             <div class="wrap not-agency-inner">
                 <div class="not-agency-copy">
                     <ul class="strike-list" role="list">
@@ -299,7 +299,7 @@
         </section>
 
         <!-- WHAT YOU CAN BUILD -->
-        <section class="section build-section">
+        <section class="section build-section" id="build">
             <div class="wrap">
                 <h2 class="section-title">What you can build with me</h2>
                 <div class="build-grid">
@@ -1018,7 +1018,7 @@
         </section>
 
         <!-- WHY TRUST -->
-        <section class="section trust-section">
+        <section class="section trust-section" id="why-me">
             <div class="wrap">
                 <h2 class="section-title">Why trust one person over an agency</h2>
                 <div class="trust-grid">
@@ -1118,7 +1118,7 @@
         </section>
 
         <!-- FINAL CTA -->
-        <section class="section final-cta">
+        <section class="section final-cta" id="start">
             <div class="wrap final-cta-inner">
                 <img class="mascot mascot-cta" src="public/images/mascot/happy.svg" width="130" height="137" decoding="async" loading="lazy" alt="" />
                 <h2>Got an idea that's been living in your Notes app for two years?</h2>
@@ -1131,6 +1131,55 @@
             </div>
         </section>
     </main>
+
+    <!-- SECTION NAV: right-edge scroll track on desktop, floating chip + sheet on mobile -->
+    <nav class="spine is-hidden" id="spine" aria-label="Jump to section">
+        <button class="spine-toggle" id="spine-toggle" type="button" aria-expanded="false"
+            aria-controls="spine-panel">
+            <span class="spine-dial" aria-hidden="true">
+                <svg class="spine-ring" viewBox="0 0 36 36">
+                    <circle class="spine-ring-track" cx="18" cy="18" r="15.5" />
+                    <circle class="spine-ring-fill" id="spine-ring-fill" cx="18" cy="18" r="15.5"
+                        pathLength="100" />
+                </svg>
+                <span class="spine-dial-num" data-spine-num>01</span>
+            </span>
+            <span class="spine-toggle-label" data-spine-label>Intro</span>
+            <span class="visually-hidden">, show all sections</span>
+        </button>
+        <div class="spine-panel" id="spine-panel">
+            <div class="spine-panel-head">
+                <img class="mascot" src="public/images/mascot/wave.svg" width="36" height="38" decoding="async"
+                    loading="lazy" alt="" />
+                <span>Jump to</span>
+            </div>
+            <ol class="spine-list" role="list">
+                <li><a class="spine-link" href="#intro"><span class="spine-tip"><span class="spine-num">01</span><span
+                                class="spine-name">Intro</span></span></a></li>
+                <li><a class="spine-link" href="#just-me"><span class="spine-tip"><span class="spine-num">02</span><span
+                                class="spine-name">Just me</span></span></a></li>
+                <li><a class="spine-link" href="#build"><span class="spine-tip"><span class="spine-num">03</span><span
+                                class="spine-name">What I build</span></span></a></li>
+                <li><a class="spine-link" href="#work"><span class="spine-tip"><span class="spine-num">04</span><span
+                                class="spine-name">The work</span></span></a></li>
+                <li><a class="spine-link" href="#what-you-get"><span class="spine-tip"><span class="spine-num">05</span><span
+                                class="spine-name">Included</span></span></a></li>
+                <li><a class="spine-link" href="#how"><span class="spine-tip"><span class="spine-num">06</span><span
+                                class="spine-name">How it works</span></span></a></li>
+                <li><a class="spine-link" href="#why-me"><span class="spine-tip"><span class="spine-num">07</span><span
+                                class="spine-name">Why me</span></span></a></li>
+                <li><a class="spine-link" href="#faq"><span class="spine-tip"><span class="spine-num">08</span><span
+                                class="spine-name">FAQ</span></span></a></li>
+                <li><a class="spine-link" href="#start"><span class="spine-tip"><span class="spine-num">09</span><span
+                                class="spine-name">Let's talk</span></span></a></li>
+            </ol>
+            <div class="spine-track" aria-hidden="true">
+                <span class="spine-fill"></span>
+                <span class="spine-thumb"></span>
+                <span class="spine-now"><span data-spine-num>01</span> · <span data-spine-label>Intro</span></span>
+            </div>
+        </div>
+    </nav>
 
     <div class="screenshot-lightbox" id="screenshot-lightbox" aria-hidden="true" role="dialog"
         aria-label="Fullscreen screenshot preview">
