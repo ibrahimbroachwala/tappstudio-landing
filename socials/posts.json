@@ -1038,7 +1038,7 @@
       "carousel": false
     },
     {
-      "text": "$100 split three ways is $33.33 + $33.33 + $33.33.\n\nThat's $99.99. A cent just vanished.\n\nIn Splitup, money is stored as integer cents and the leftover cent goes to one person, on purpose. $33.33 + $33.33 + $33.34. The group always balances to exactly zero.\n\nFloats and expense apps don't mix.",
+      "text": "$100 split three ways is $33.33 + $33.33 + $33.33.\n\nThat's $99.99. A cent just vanished.\n\nSplitup stores money as integer cents. The leftover cent goes to one person, on purpose: $33.33 + $33.33 + $33.34.\n\nThe group always balances to zero. Floats and expense apps don't mix.",
       "images": [],
       "alt": {
         "summary": "",
