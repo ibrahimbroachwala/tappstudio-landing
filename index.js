@@ -338,13 +338,43 @@ if (spine) {
         spineToggle.setAttribute('aria-expanded', String(open));
     }
 
-    spineToggle.addEventListener('click', () => {
+    // iOS swallows the click when a tap lands on a page that is still coasting from a
+    // swipe (the tap only stops the momentum). Act on touchend instead, unless the
+    // finger moved (a scroll), and cancel the click so it doesn't fire twice.
+    function onTap(el, handler) {
+        let start = null;
+        el.addEventListener('touchstart', (event) => {
+            const t = event.touches[0];
+            start = { x: t.clientX, y: t.clientY };
+        }, { passive: true });
+        el.addEventListener('touchend', (event) => {
+            const t = event.changedTouches[0];
+            const moved = !start || Math.hypot(t.clientX - start.x, t.clientY - start.y) > 10;
+            start = null;
+            if (moved) return;
+            event.preventDefault();
+            handler(event);
+        });
+        el.addEventListener('click', handler);
+    }
+
+    onTap(spineToggle, () => {
         const open = !spine.classList.contains('is-open');
         setOpen(open);
         if (open) (spineLinks[activeIndex] || spineLinks[0]).focus({ preventScroll: true });
     });
 
-    spineLinks.forEach((link) => link.addEventListener('click', () => setOpen(false)));
+    onTap(document.getElementById('spine-backdrop'), () => setOpen(false));
+
+    spineLinks.forEach((link) => onTap(link, (event) => {
+        setOpen(false);
+        if (event.type !== 'touchend') return; // mouse/keyboard: let the anchor navigate
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target) return;
+        const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+        history.pushState(null, '', link.hash);
+    }));
 
     document.addEventListener('click', (event) => {
         if (spine.classList.contains('is-open') && !spine.contains(event.target)) setOpen(false);

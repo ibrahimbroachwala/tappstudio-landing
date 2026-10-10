@@ -1994,11 +1994,32 @@ h3 {
     --spine-p: 0;
 }
 
+/* Dims the page behind the open mobile sheet */
+.spine-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s;
+}
+
+[data-theme="light"] .spine-backdrop {
+    background: rgba(21, 20, 15, 0.3);
+}
+
+.spine.is-open .spine-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
 .spine-toggle {
     position: fixed;
+    touch-action: manipulation;
     right: 16px;
     bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: 95;
+    z-index: 111;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -2070,7 +2091,7 @@ h3 {
     position: fixed;
     right: 16px;
     bottom: calc(76px + env(safe-area-inset-bottom));
-    z-index: 95;
+    z-index: 111;
     width: min(260px, calc(100vw - 32px));
     max-height: calc(100vh - var(--nav-h) - 110px);
     overflow-y: auto;
@@ -2149,7 +2170,8 @@ h3 {
 }
 
 @media (min-width: 1100px) {
-    .spine-toggle {
+    .spine-toggle,
+    .spine-backdrop {
         display: none;
     }
 
