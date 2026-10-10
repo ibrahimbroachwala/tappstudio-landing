@@ -79,6 +79,7 @@
   .row.open .alt { display: block; }
   .alt-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font: 600 11px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
   .alt-h button { font: 600 11px 'Geist Mono', monospace; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--cream); }
+  .reply-t { white-space: pre-wrap; user-select: all; font: 500 13px 'Geist Mono', monospace; color: var(--cream); margin: 0; }
   .alt ol { padding-left: 20px; } .alt li { margin: 4px 0; } .alt p { margin-bottom: 4px; }
   .days { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin: 18px 0 4px; scroll-snap-type: x proximity; scrollbar-width: thin; }
   .day { flex: 0 0 auto; min-width: 118px; text-align: left; background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 11px; color: var(--cream); scroll-snap-align: start; font-family: inherit; }
@@ -193,6 +194,8 @@ const altBlock = p => { const a = p.alt || {}, sl = a.slides || [];
   const all = [a.summary, ...sl.map((t, i) => (sl.length > 1 ? (i + 1) + '. ' : '') + t)].filter(Boolean).join('\n');
   return `<div class="alt"><div class="alt-h"><b>Alt text</b><button class="ghost" data-alt="${esc(p.brand + '/' + p.id)}">Copy alt</button></div>` +
     (a.summary ? `<p>${esc(a.summary)}</p>` : '') + (sl.length ? `<ol>${sl.map(t => `<li>${esc(t)}</li>`).join('')}</ol>` : '') + `</div>`; };
+const replyBlock = p => !p.reply ? '' :
+  `<div class="alt"><div class="alt-h"><b>${p.platform === 'LI' ? 'First comment' : 'Reply'} (with link)</b><button class="ghost" data-reply="${esc(p.brand + '/' + p.id)}">Copy reply</button></div><pre class="reply-t">${esc(p.reply)}</pre></div>`;
 const altText = p => { const a = p.alt || {}; const sl = a.slides || [];
   return [a.summary, ...sl.map((t, i) => (sl.length > 1 ? (i + 1) + '. ' : '') + t)].filter(Boolean).join('\n'); };
 const pf = p => { const u = PAGES[p.platform] && PAGES[p.platform](p.brand);
@@ -368,6 +371,10 @@ function render() {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.alt);
     navigator.clipboard.writeText(altText(p)).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy alt', 1500); });
   });
+  g.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.reply);
+    navigator.clipboard.writeText(p.reply).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy reply', 1500); });
+  });
   g.querySelectorAll('[data-copy]').forEach(b => b.onclick = () => {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.copy);
     navigator.clipboard.writeText(p.text).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy post', 1500); });
@@ -450,6 +457,7 @@ function row(p) {
       ${imgs.length ? `<div class="thumbs">${imgs.slice(0, isOpen ? 99 : 4).map(([full, th, name], n) => `<img loading="lazy" src="${isOpen ? full : th}" data-full="${full}" data-name="${esc(name)}" alt="${esc(((p.alt || {}).slides || [])[n] || (p.alt || {}).summary || '')}">`).join('')}${!isOpen && imgs.length > 4 ? `<span class="plus">+${imgs.length - 4}</span>` : ''}</div>` : ''}
       <button class="prev" data-toggle="${esc(k)}">${esc(p.text)}</button>
       ${altBlock(p)}
+      ${replyBlock(p)}
       <div class="tools"><button data-copy="${esc(k)}">Copy post</button>
         ${imgs.length ? `<button class="ghost" data-save="${esc(k)}">Save ${imgs.length > 1 ? imgs.length + ' images' : 'image'}</button>` : ''}
         ${p.carousel && imgs.length > 1 ? `<button class="ghost" data-pdf="${esc(k)}">Make PDF</button>` : ''}
