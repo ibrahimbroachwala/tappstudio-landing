@@ -2550,6 +2550,26 @@
       "carousel": false
     },
     {
+      "text": "2 payments.\nThat's all it took to settle a 4-day trip to Dubai.\n\nNot 14 transfers. Not a spreadsheet. Not everyone paying everyone.\n\nHere's how I think about settling up in Splitup.\n\nMost expense apps stop at \"who owes what\". That's the easy part.\nThe part people dread is the next one: who actually sends money to whom?\n\nSo the whole app is built around that moment.\n\nA GOOD SETTLE-UP HAS THE FEWEST PAYMENTS POSSIBLE.\n\nHere's what Splitup does differently:\n\n1️⃣ Fewest payments\nSplitup nets everyone's balance first, then shows who pays whom in as few transfers as it can.\nTakeaway: Every extra transfer is another reason to put it off until next week.\n\n2️⃣ Nudges in your tone\nSomeone gone quiet? Pick Friendly, Neutral, Firm or Rude. The name and amount are filled in for you.\nTakeaway: The awkward part should be optional.\n\n3️⃣ Free to start\nJoining a group is free. No subscriptions, ever.\nTakeaway: An app for splitting a bill shouldn't send you one of its own.\n\nAdd. Settle. Done.\nThat's the whole idea.\n\nWhen your last trip ended, who did the chasing: one patient friend, or a spreadsheet nobody opened?\n\n♻️ Repost this for the friend who's been \"about to pay you back\" since the last trip.\n\nP.S. I'm Ibrahim. I design, build and publish apps like Splitup on my own. Got an idea you want built? DM me.\n\n🤖 Written with AI assistance, proofread by me. The experiences and opinions are mine.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "splitup",
+      "id": "LI-12",
+      "platform": "LI",
+      "date": "2026-10-19",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": true,
+      "note": "Needs attention: text only. Add your App Store page screenshot when posting. Check the \"4-day trip to Dubai, 2 payments\" example is OK to use, and that you're happy with the \"Written with AI assistance\" line and the DM-me P.S.",
+      "title": "2 payments settled a 4-day trip",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
       "text": "$100 split three ways is $33.33, $33.33 and $33.33. That's $99.99. Where does the last cent go? 🪙\n\nIn an expense splitter this isn't trivia. If the shares don't add up to the bill, balances drift, settle-ups end at \"you owe me 1 cent\", and people stop trusting the numbers.\n\nHow Splitup handles money:\n• 🔢 Amounts are stored as an integer number of cents, never as a decimal.\n• ➗ Equal splits use integer division, then hand out the leftover cents one at a time. $100 becomes 3,334 + 3,333 + 3,333 cents. Always exactly $100.\n• 🎯 Splits by percentage or by custom amount are rounded to the nearest cent, so they can be a cent off. That's why Splitup checks they add up before you can save, and does the same for multiple payers.\n• 🧮 Balances are added up in cents. The settle-up step then works in dollars and ignores anything within a cent of zero.\n\nNobody sees any of this. They see \"Your share: $33.34\" and a settle-up that adds up.\n\nSmall rule, huge trust. 🤝 What's your money-handling rule? 👇\n\n#MobileDev #Flutter #BuildInPublic",
       "images": [
         [
@@ -4731,5 +4751,5 @@
       "carousel": false
     }
   ],
-  "built": "10 Oct 2026, 21:01"
+  "built": "11 Oct 2026, 13:49"
 }
