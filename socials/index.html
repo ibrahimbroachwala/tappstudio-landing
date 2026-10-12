@@ -79,6 +79,9 @@
   .row.open .alt { display: block; }
   .alt-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font: 600 11px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
   .alt-h button { font: 600 11px 'Geist Mono', monospace; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--cream); }
+  .altbox { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-top: 8px; background: rgba(255,255,255,.02); }
+  .altbox-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; font: 600 10.5px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .altbox-h button { font: 600 11px 'Geist Mono', monospace; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--cream); }
   .reply-t { white-space: pre-wrap; user-select: all; font: 500 13px 'Geist Mono', monospace; color: var(--cream); margin: 0; }
   .alt ol { padding-left: 20px; } .alt li { margin: 4px 0; } .alt p { margin-bottom: 4px; }
   .days { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin: 18px 0 4px; scroll-snap-type: x proximity; scrollbar-width: thin; }
@@ -189,11 +192,11 @@ const PAGES = {
   LI: b => b === 'tappstudio' ? 'https://www.linkedin.com/company/145285359/admin/page-posts/published/?share=true' : 'https://www.linkedin.com/sharing/compose',
   IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/my.deen.app/' })[b],
 };
-const altBlock = p => { const a = p.alt || {}, sl = a.slides || [];
+const altBox = (k, i, label, t) => `<div class="altbox"><div class="altbox-h"><span>${label}</span><button class="ghost" data-altpart="${esc(k)}" data-i="${i}">Copy</button></div><pre class="reply-t">${esc(t)}</pre></div>`;
+const altBlock = p => { const a = p.alt || {}, sl = a.slides || [], k = p.brand + '/' + p.id;
   if (!a.summary && !sl.length) return '';
-  const all = [a.summary, ...sl.map((t, i) => (sl.length > 1 ? (i + 1) + '. ' : '') + t)].filter(Boolean).join('\n');
-  return `<div class="alt"><div class="alt-h"><b>Alt text</b><button class="ghost" data-alt="${esc(p.brand + '/' + p.id)}">Copy alt</button></div>` +
-    (a.summary ? `<p>${esc(a.summary)}</p>` : '') + (sl.length ? `<ol>${sl.map(t => `<li>${esc(t)}</li>`).join('')}</ol>` : '') + `</div>`; };
+  return `<div class="alt"><div class="alt-h"><b>Alt text${sl.length > 1 ? ' · ' + sl.length + ' images' : ''}</b><button class="ghost" data-alt="${esc(k)}">Copy all</button></div>` +
+    (a.summary ? altBox(k, -1, 'Summary', a.summary) : '') + sl.map((t, i) => altBox(k, i, sl.length > 1 ? 'Image ' + (i + 1) : 'Image', t)).join('') + `</div>`; };
 const replyBlock = p => !p.reply ? '' :
   `<div class="alt"><div class="alt-h"><b>${p.platform === 'LI' ? 'First comment' : 'Reply'} (with link)</b><button class="ghost" data-reply="${esc(p.brand + '/' + p.id)}">Copy reply</button></div><pre class="reply-t">${esc(p.reply)}</pre></div>`;
 const altText = p => { const a = p.alt || {}; const sl = a.slides || [];
@@ -370,6 +373,11 @@ function render() {
   g.querySelectorAll('[data-alt]').forEach(b => b.onclick = () => {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.alt);
     navigator.clipboard.writeText(altText(p)).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy alt', 1500); });
+  });
+  g.querySelectorAll('[data-altpart]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.altpart), i = +b.dataset.i;
+    const t = i < 0 ? p.alt.summary : p.alt.slides[i];
+    navigator.clipboard.writeText(t).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
   });
   g.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.reply);
