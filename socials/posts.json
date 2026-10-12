@@ -1088,8 +1088,8 @@
           "misbaha-IG-01-03.jpg"
         ],
         [
-          "img/ef6f106c29cb6543.webp",
-          "img/ef6f106c29cb6543-t.webp",
+          "img/20ec85fffe6f6147.webp",
+          "img/20ec85fffe6f6147-t.webp",
           "misbaha-IG-01-04.jpg"
         ],
         [
@@ -1104,7 +1104,7 @@
           "Amber beads on a gold string with a crimson tassel. Text: Your tasbih, but it feels real.",
           "Jade beads on a string under a large count of 17. Text: Tap anywhere. A bead slides over.",
           "Pearl beads with a cream tassel at the top of the string. Text: Every 33rd, the tassel comes round.",
-          "Green beads under a count of 100 with gold confetti. Text: Hit your target. A small celebration.",
+          "Green beads under a count of 100 with gold confetti and the line Astagfirullah, target 100. Text: Hit your target. A small celebration.",
           "Murano glass beads with a teal tassel. Text: Rare stones. Fine tassels. Your misbaha."
         ]
       },
@@ -3573,7 +3573,15 @@
       ],
       "alt": {
         "summary": "A 7-slide trip story in Splitup for a group called Trip to Dubai: flights and hotel split by shares, a desert safari added by voice, two expenses logged offline in the dunes, a friendly reminder to Priya, and the trip settled in two payments to Ali at the airport.",
-        "slides": []
+        "slides": [
+          "Yellow slide with a Splitup group card named Trip to Dubai! with 3 members and a badge reading 4 days, 3 friends. Text: Trip to Dubai, settled before the flight home. Swipe for how.",
+          "Yellow slide showing a Splitup expense, Flights and hotel, AED 3,000, split by shares between Ali, Priya and Lucy: AED 1,125, AED 1,125 and AED 750. A badge reads Fewer nights, fewer shares. Text: Day 1. Flights and hotel, split by shares. Lucy came a night late. She pays less.",
+          "Yellow slide showing Splitup listening to a voice note, \"Desert safari 900 dirhams, split with everyone\", with the fields filled in below and a badge reading AED 300 each. Text: Day 2. Desert safari, added by voice. Say it once. Splitup fills in the rest.",
+          "Yellow slide showing two expenses saved on the phone and waiting to sync, Dune dinner AED 450 and Camel ride AED 180, with badges reading No signal and 2 changes waiting to sync. Text: Day 3. No signal in the dunes. Logged anyway. Auto-syncs when you're back.",
+          "Yellow slide showing the Splitup Send Reminder sheet to Priya with four tone options and the Friendly tone selected: \"Hey! Just a quick reminder about the AED 1185 pending to Ali. Thanks\". Text: Day 4. Priya owes. Priya gets a nudge. Pick the tone. Friendly, obviously.",
+          "Yellow slide showing two settle-up suggestions, Priya should pay Ali AED 1,185 and Lucy should pay Ali AED 1,080, each with Settle and Remind buttons, and a badge reading Everything is settled! Text: Airport. Two payments. Everyone's square. Who pays whom, worked out for you.",
+          "Yellow closing slide with the Splitup app icon above the App Store and Google Play badges. Text: One trip. One group. Free to start on iOS and Android. No subscriptions, ever. Link in Bio."
+        ]
       },
       "brand": "splitup",
       "id": "IG-19",
@@ -4751,5 +4759,5 @@
       "carousel": false
     }
   ],
-  "built": "11 Oct 2026, 13:49"
+  "built": "12 Oct 2026, 09:59"
 }
