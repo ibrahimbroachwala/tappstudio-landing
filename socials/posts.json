@@ -1378,26 +1378,6 @@
       "carousel": false
     },
     {
-      "text": "Hijri birthday, Gregorian birthday, or both?\n\nNasab can show both on any date, because plenty of families live in two calendars at once.\n\nWhich one does your family actually use?",
-      "images": [],
-      "alt": {
-        "summary": "",
-        "slides": []
-      },
-      "brand": "nasab",
-      "id": "X-18",
-      "platform": "X",
-      "date": "2026-10-15",
-      "time": "8-10 pm",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "Hijri, Gregorian, or both",
-      "posted": "",
-      "carousel": false,
-      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
-    },
-    {
       "text": "Hot take: splitting equally is a scam. Not everyone had the lobster. 🦞\n\nIn Splitup, any expense can be split equally, by exact amounts, by percentage or by shares. Two people paid? 💳 Add both payers. Splitup does the math to the cent. 🧮\n\n⚖️ Fair beats equal. Agree or fight us in the comments. 👇\n.\n#Splitup #SplitTheBill #FriendsAndMoney #BillSplitting",
       "images": [
         [
@@ -4759,5 +4739,5 @@
       "carousel": false
     }
   ],
-  "built": "13 Oct 2026, 18:35"
+  "built": "13 Oct 2026, 20:43"
 }
