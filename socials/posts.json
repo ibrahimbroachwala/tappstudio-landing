@@ -1518,26 +1518,6 @@
       "carousel": false
     },
     {
-      "text": "Nobody writes down the small things.\n\nHow Nani stirred her tea. The song Dada hummed. The way your father said your name.\n\nThose go first.\n\nNasab keeps photos, voice notes and stories tied to the person they belong to.\n\nWhat small thing about your family would you hate to forget?",
-      "images": [],
-      "alt": {
-        "summary": "",
-        "slides": []
-      },
-      "brand": "nasab",
-      "id": "X-19",
-      "platform": "X",
-      "date": "2026-10-16",
-      "time": "8-10 pm",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "The small things nobody writes down",
-      "posted": "",
-      "carousel": false,
-      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
-    },
-    {
       "text": "✈️ The hardest feature I've shipped in Splitup: adding an expense in airplane mode.\n\nIt sounds simple. Save it on the phone, upload it later. Then the edge cases show up:\n• 🔁 the upload succeeds but the response is lost, so the app retries and creates a duplicate\n• ✌️ two friends edit the same expense offline, on two phones\n• 🗑️ someone deletes an expense while another phone is still offline\n• 🕰️ older app versions, which know nothing about any of this, keep writing to the same database\n\nWhat made it work: 🔧\n1️⃣ Every expense gets an ID on the device (client_id). A unique index turns a retried upload into a no-op. Duplicates become impossible.\n2️⃣ Every row has a version, bumped by the database on each update. An edit says which version it was based on, so conflicting offline edits get caught instead of silently overwriting each other.\n3️⃣ Deletes leave a tombstone 🪦, so phones that were offline still learn the expense is gone.\n4️⃣ The database stamps version and updated_at itself, with a trigger. Old builds, new builds and admin scripts all show up in the next sync without changing a line of their code.\n\n⛴️ For the person on the ferry: they add the expense, the balance updates instantly, and it syncs when the signal comes back.\n\nOffline-first is mostly about the unhappy paths. What's the nastiest sync bug you've met? 🐛\n\n#Flutter #Supabase #BuildInPublic",
       "images": [
         [
@@ -4739,5 +4719,5 @@
       "carousel": false
     }
   ],
-  "built": "13 Oct 2026, 22:13"
+  "built": "13 Oct 2026, 22:55"
 }
