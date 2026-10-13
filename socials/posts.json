@@ -1463,28 +1463,28 @@
           "misbaha-IG-02-01.jpg"
         ],
         [
-          "img/e7d5cc0ce5fd7237.webp",
-          "img/e7d5cc0ce5fd7237-t.webp",
+          "img/9ff9faeeed2127d4.webp",
+          "img/9ff9faeeed2127d4-t.webp",
           "misbaha-IG-02-02.jpg"
         ],
         [
-          "img/19ab1115339b8e86.webp",
-          "img/19ab1115339b8e86-t.webp",
+          "img/62e41004431567e5.webp",
+          "img/62e41004431567e5-t.webp",
           "misbaha-IG-02-03.jpg"
         ],
         [
-          "img/4117a00aadb0adf5.webp",
-          "img/4117a00aadb0adf5-t.webp",
+          "img/ee21b9b610e11e9f.webp",
+          "img/ee21b9b610e11e9f-t.webp",
           "misbaha-IG-02-04.jpg"
         ],
         [
-          "img/b4b76eb7e0c6f277.webp",
-          "img/b4b76eb7e0c6f277-t.webp",
+          "img/6baa4f8b9fa41dc6.webp",
+          "img/6baa4f8b9fa41dc6-t.webp",
           "misbaha-IG-02-05.jpg"
         ],
         [
-          "img/a3b316ccbd17f114.webp",
-          "img/a3b316ccbd17f114-t.webp",
+          "img/79a6247716732e6a.webp",
+          "img/79a6247716732e6a-t.webp",
           "misbaha-IG-02-06.jpg"
         ],
         [
@@ -1497,11 +1497,11 @@
         "summary": "A 7-slide post with five short tasbihs in Arabic with meaning: Alhamdulillah, Shukran lillah, La ilaha illallah, Ya Hussain and Ya Fatema.",
         "slides": [
           "Gold beads with a gold tassel. Text: Five simple tasbihs. A few words. Any time of day.",
-          "Alhamdulillah in Arabic, All praise is for Allah, count 33, above pearl beads.",
-          "Shukran lillah in Arabic, Thanks be to Allah, count 33, above jade beads.",
-          "La ilaha illallah in Arabic, There is no god but Allah, count 33, above red aqeeq beads.",
-          "Ya Hussain in Arabic, O Hussain, count 33, above faceted ruby beads.",
-          "Ya Fatema in Arabic, O Fatema, count 33, above turquoise beads.",
+          "Alhamdulillah in Arabic, All praise is for Allah, count 100, above pearl beads.",
+          "Shukran lillah in Arabic, Thanks be to Allah, count 100, above jade beads.",
+          "La ilaha illallah in Arabic, There is no god but Allah, count 100, above red aqeeq beads.",
+          "Ya Hussain in Arabic, O Hussain, count 100, above faceted ruby beads.",
+          "Ya Fatema in Arabic, O Fatema, count 100, above turquoise beads.",
           "Pearl beads with a striped tassel. Text: Save your four favourites free."
         ]
       },
@@ -1518,7 +1518,7 @@
       "carousel": false
     },
     {
-      "text": "A small thing I like in Nasab: tap a birthday reminder and it opens that person's celebration, not a generic home screen.\n\nA notification should land where the thing is.",
+      "text": "Nobody writes down the small things.\n\nHow Nani stirred her tea. The song Dada hummed. The way your father said your name.\n\nThose go first.\n\nNasab keeps photos, voice notes and stories tied to the person they belong to.\n\nWhat small thing about your family would you hate to forget?",
       "images": [],
       "alt": {
         "summary": "",
@@ -1532,7 +1532,7 @@
       "status": "ready",
       "warn": false,
       "note": "",
-      "title": "A reminder that opens the person",
+      "title": "The small things nobody writes down",
       "posted": "",
       "carousel": false,
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
@@ -4739,5 +4739,5 @@
       "carousel": false
     }
   ],
-  "built": "13 Oct 2026, 20:43"
+  "built": "13 Oct 2026, 22:13"
 }
