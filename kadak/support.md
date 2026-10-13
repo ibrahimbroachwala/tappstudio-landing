@@ -37,6 +37,9 @@ Subscriptions are managed by the store, not by us. On iPhone: Settings → your 
 **How do I get a refund?**
 Refunds are handled by Apple (reportaproblem.apple.com) or Google Play (Order history → Request a refund). We cannot issue refunds ourselves.
 
+**How do I delete my data?**
+See [Data Deletion](#3-data-deletion) below: Settings → Delete my data, or email us. No account or sign-in is needed.
+
 **Are the ₹ amounts in the game real money?**
 No. Rupees in Kadak are a virtual, in-game score. They have no real value, we do not collect or hold any money for them, and nobody owes anyone anything because of a number in the Game. The only real money involved is an in-app purchase you choose to make at the store checkout. See [Terms of Use](https://tappstudio.in/kadak/terms), Section 3.
 
@@ -48,31 +51,53 @@ Update to the latest version, free some storage, and restart your device. If it 
 
 ---
 
-## 3. How to Delete Your Data
+## 3. Data Deletion
 
-Kadak has no accounts, so there is no account to close. Your data is in four places. You can remove each one:
+*This section is the data-deletion page for Kadak: Idle Chai Empire (TappStudio), as required by Google Play and the Apple App Store. Direct link: `https://tappstudio.in/kadak/support`.*
 
-### Option A: Inside the Game (recommended)
+Kadak has **no accounts**, so there is no account to close. You can delete your data in the Game, without the Game installed, or by asking us.
+
+### 3.1 Option A: Inside the Game (recommended)
 
 1. Open Kadak and go to **Settings**
 2. Tap **Delete my data**
 3. Confirm
 
-This removes your local save, removes your cloud save, and resets your analytics ID so earlier analytics are no longer connected to your device.
+This removes your local save, removes your cloud save, and resets your analytics ID so earlier analytics are no longer connected to your device. Deletion cannot be undone.
 
-### Option B: Without the Game installed
+### 3.2 Option B: Without the Game installed
 
 | Data | How to delete it |
 |---|---|
 | **Save on your device** | Uninstall the Game. This deletes the save file |
 | **Cloud save (Android)** | Google Play Games app → Settings → Delete Play Games account and data (or delete the Kadak game data there) |
 | **Cloud save and Game Center (iPhone)** | Settings → your name → iCloud → Manage Account Storage → Kadak → Delete Data. Game Center data can be removed in Settings → Game Center |
-| **Analytics and error data (PostHog)** | Uninstalling and reinstalling creates a new random ID. To ask us to delete data linked to an ID, email us (see below) |
+| **Analytics and error data (PostHog)** | Reinstalling creates a new random ID. To have data linked to an ID deleted, email us (Option C) |
 | **Purchase records (RevenueCat, Apple, Google)** | Kept as required for tax, accounting and legal reasons. Request deletion by email, and we will delete what the law allows |
 
-### Option C: Ask us
+### 3.3 Option C: Ask us by email
 
-Email **tappstudio.in@gmail.com** with the subject **"Kadak Data Deletion Request"**. Include your device type and, if you have it, the analytics ID or a purchase receipt number so we can find your records. We will confirm that the request is genuine, then process it within **30 days** and tell you when it is done.
+Email **tappstudio.in@gmail.com** with the subject **"Kadak Data Deletion Request"**. You do not need the Game installed. Include:
+
+- Your device type (Android or iPhone)
+- If you have it, the analytics ID shown in Settings, or an Apple or Google purchase receipt number, so we can find your records
+
+Because there are no accounts, we may ask for something that proves the data is yours (such as a purchase receipt) so nobody can delete another person's data. We will process the request within **30 days** and email you when it is done.
+
+### 3.4 What is deleted, what is kept, and for how long
+
+| Data | Deleted when you request deletion? | Notes |
+|---|---|---|
+| Game progress on your device | Yes | Immediately (in-app or by uninstalling) |
+| Cloud save in Google Play Games / iCloud | Yes | Immediately when deleted in-app; otherwise by you in your Google or Apple settings |
+| Analytics and error reports (anonymous ID) | Yes | Deleted within 30 days of a verified request. In-app deletion resets the ID so earlier data is no longer linked to your device |
+| Ad data held by Google AdMob | Not by us | Managed by Google. See your Google account's ad settings |
+| Leaderboard scores and achievements | Not by us | Held by Google Play Games or Apple Game Center. Remove them in those services |
+| Purchase and subscription records | Partly | Kept only as long as tax, accounting and legal rules require, then deleted. The items and benefits you bought are lost once the record is deleted |
+| Emails you sent to support | Yes | Deleted within 30 days of your request, unless we must keep them to resolve a dispute or by law |
+| Backups of the above | Yes | Removed from backups within a further 30 days |
+
+Deleting your data does **not** cancel a subscription (cancel it in the store, see Section 2) and does not give you a refund.
 
 ---
 
