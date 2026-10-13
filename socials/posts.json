@@ -1250,16 +1250,16 @@
       "carousel": false
     },
     {
-      "text": "The day Nasab went live, my backend stopped being only mine.\n\nOld app builds stay installed for months. People update slowly, store review takes time, rollouts are staged. So at any moment, several versions of Nasab are talking to the same database.\n\nThat changed how I write every migration. These are the rules I work by now:\n\n1. Additive schema only. New tables and nullable columns, never a rename or drop of something a shipped build reads.\n2. Never change a function's signature. Add an optional parameter with a default, or ship fn_v2 and keep v1 alive.\n3. Enum values can be added, never removed or renamed.\n4. Security policies can't quietly revoke access an older build depends on.\n5. If a change can't be backward compatible, it's a deliberate decision (a forced update or a deprecation window), never a side effect.\n\nThey sit at the very top of the project's engineering guide, above everything else.\n\n118 migrations in, every one of them is forward-only.\n\nFor a family app this matters more than usual. The person on the oldest build is often the grandparent. They shouldn't be the one whose app breaks.\n\nWhat's your rule for evolving a live API?\n\n#MobileDev #Supabase #BuildInPublic",
+      "text": "A family tree isn't a tree. It's a graph, and real families prove it constantly.\n\nBuilding Nasab, I kept hitting families a tidy parent-to-child diagram can't hold:\n\n• People who remarry, so someone has a current spouse and a former one\n• Birthdays the family only half remembers: \"sometime in 1950\"\n• Relatives who have passed away, who still belong in the tree but not in the reminders\n• Cousins who join later and need to claim their own place on a tree that already exists\n• Two calendars (Hijri and Gregorian) for the same person\n\nA strict tree breaks on the first one.\n\nSo Nasab stores people and the relationships between them, and the tree is just one view. Vertical, horizontal and radial are three ways to look at the same data.\n\nThe lesson I keep relearning: model the messy real thing first. You can always simplify a screen. You can't easily recover information your data model threw away.\n\nWhich \"obvious\" data model has broken on you in real life?\n\n#SoftwareEngineering #DataModeling #BuildInPublic",
       "images": [
         [
-          "img/3b1be7d3756f6a5f.webp",
-          "img/3b1be7d3756f6a5f-t.webp",
+          "img/afd373ef13acfe0a.webp",
+          "img/afd373ef13acfe0a-t.webp",
           "nasab-LI-06.jpg"
         ]
       ],
       "alt": {
-        "summary": "Four app versions (v0.2.1, v0.5.2, v0.8.5 and v0.10.7) all pointing at one backend, beside a checklist of five migration rules for keeping old app builds working.",
+        "summary": "A diagram of a family as a graph: Yusuf Malik (passed away, born \"sometime in 1950\") linked to a former wife Rukhsana by a dashed line and a current wife Salma by a solid line, with daughter Farah and son Arif below. Headline: \"A family tree isn't a tree.\"",
         "slides": []
       },
       "brand": "nasab",
@@ -1267,25 +1267,25 @@
       "platform": "LI",
       "date": "2026-10-14",
       "time": "8-10 am",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "Once you ship, old builds never die",
-      "posted": "",
+      "status": "planned",
+      "warn": true,
+      "note": "Replaced the old-builds post. Check: the example family is made up (fine to keep); confirm Nasab really stores former/current spouses and partial birth dates the way the card and text say.",
+      "title": "A family tree isn't a tree",
       "carousel": false,
-      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
+      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in",
+      "posted": ""
     },
     {
-      "text": "Once your app is live, every database migration is a promise to old versions.\n\nOld builds stay installed for months, so mine follow rules:\n• Additive schema only\n• Never change a function signature\n\n118 migrations in, all forward-only.",
+      "text": "A family tree isn't a tree. It's a graph.\n\nPeople remarry. Birthdays are \"sometime in 1950\". Relatives who've passed still belong on it.\n\nNasab stores people and relationships. The tree is just one view.\n\nWhich data model broke on a real family?",
       "images": [
         [
-          "img/e19ff5daf4e9171f.webp",
-          "img/e19ff5daf4e9171f-t.webp",
+          "img/afd373ef13acfe0a.webp",
+          "img/afd373ef13acfe0a-t.webp",
           "nasab-X-06.jpg"
         ]
       ],
       "alt": {
-        "summary": "",
+        "summary": "A diagram of a family as a graph: Yusuf Malik (passed away, born \"sometime in 1950\") linked to a former wife Rukhsana by a dashed line and a current wife Salma by a solid line, with daughter Farah and son Arif below. Headline: \"A family tree isn't a tree.\"",
         "slides": []
       },
       "brand": "nasab",
@@ -1293,13 +1293,13 @@
       "platform": "X",
       "date": "2026-10-14",
       "time": "8-10 am",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "Once you ship, old builds never die",
-      "posted": "",
+      "status": "planned",
+      "warn": true,
+      "note": "Replaced the old-builds post. Check: the example family is made up (fine to keep); confirm Nasab really stores former/current spouses and partial birth dates the way the card and text say.",
+      "title": "A family tree isn't a tree",
       "carousel": false,
-      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
+      "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in",
+      "posted": ""
     },
     {
       "text": "3 friends. 1 trip. 2 payments. That's the whole settle-up. ✅\n\nSplitup works out who owes whom with the fewest payments it can. No \"you pay him, he pays her, she pays you back.\" Just: 👉 Hitesh pays Ali $109.17. Max pays Ali $39.16. Done. 🎉\n\nTap Settle when it's paid. ✔️ Tap Remind if it isn't. 🔔\n.\n#Splitup #SplitTheBill #GroupTrip #ExpenseSplitter",
@@ -4759,5 +4759,5 @@
       "carousel": false
     }
   ],
-  "built": "12 Oct 2026, 09:59"
+  "built": "13 Oct 2026, 18:35"
 }
