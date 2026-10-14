@@ -1630,16 +1630,16 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
-      "text": "Some of our birthdays move 11 days every year.\n\nIf your family marks birthdays and anniversaries by the Hijri calendar, you know the dance: working out which Gregorian date it falls on this year, and asking an uncle which calendar he means.\n\nNasab shows every date in the Hijri calendar alongside the Gregorian one (Umm al-Qura or Misri) and sends a Hijri birthday or anniversary reminder on the right day, every year.\n\nDoes your family celebrate Hijri birthdays? 🌙\n.\n#Hijri #HijriCalendar #MuslimFamily #FamilyTraditions #Nasab",
+      "text": "Never miss a family birthday again. 🎂\n\nNasab sends a reminder for every birthday and anniversary in your family tree, on the right day, every year.\n\nIt's careful, too: no reminder for someone who has passed away, and no guessing when the family only knows the month or the year. Tap a reminder and it opens that person's celebration.\n\nWhose birthday do you always forget? Tag them 👇\n.\n#FamilyBirthdays #FamilyReminders #FamilyTree #FamilyMemories #Nasab",
       "images": [
         [
-          "img/ead66884503b2a03.webp",
-          "img/ead66884503b2a03-t.webp",
+          "img/48b46f061d21f2af.webp",
+          "img/48b46f061d21f2af-t.webp",
           "nasab-IG-10.jpg"
         ]
       ],
       "alt": {
-        "summary": "Nasab timeline cards showing each date in both Gregorian and Hijri: Iman's birth on 9 Apr 1997, 1st Dhul Hijjah 1417H, and Junaid and Sana's wedding. A Gregorian/Hijri toggle with Hijri selected, and a countdown: 4 days to Sana's Hijri birthday, 7th Muharram 1448H.",
+        "summary": "Two Nasab notifications on a warm ivory background: \"It's Iman's birthday today!\" and \"Farah Malik and Arif Yusuf are celebrating another year together!\", both with \"Celebrate their special day.\" Below, a Coming up in the family card: Sana's birthday in 4 days and Junaid and Sana's anniversary in 12 days. Headline: \"Never miss a family birthday.\"",
         "slides": []
       },
       "brand": "nasab",
@@ -1650,7 +1650,7 @@
       "status": "ready",
       "warn": false,
       "note": "",
-      "title": "Two calendars. One family.",
+      "title": "Never miss a family birthday",
       "posted": "",
       "carousel": false
     },
@@ -1974,32 +1974,6 @@
       "title": "git log --reverse: five years, told in first commits.",
       "posted": "",
       "carousel": true,
-      "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
-    },
-    {
-      "text": "Five years in first commits:\n\n2021 a client's app\n2023 tappstudio.in\n2024 My Deen (started with \"Initial Commit Again\")\n2025 Splitup\n2026 Misbaha, Nasab, Hunar Circle\n\ngit log is the only diary I've ever kept.",
-      "images": [
-        [
-          "img/49b08649882052ed.webp",
-          "img/49b08649882052ed-t.webp",
-          "tappstudio-X-04.jpg"
-        ]
-      ],
-      "alt": {
-        "summary": "",
-        "slides": []
-      },
-      "brand": "tappstudio",
-      "id": "X-04",
-      "platform": "X",
-      "date": "2026-10-17",
-      "time": "10:00 IST",
-      "status": "ready",
-      "warn": false,
-      "note": "",
-      "title": "Five years in first commits.",
-      "posted": "",
-      "carousel": false,
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
@@ -4719,5 +4693,5 @@
       "carousel": false
     }
   ],
-  "built": "13 Oct 2026, 22:55"
+  "built": "14 Oct 2026, 09:35"
 }
