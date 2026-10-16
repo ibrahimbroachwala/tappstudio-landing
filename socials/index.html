@@ -137,6 +137,33 @@
   .tools a { font: 600 11.5px 'Geist Mono', monospace; padding: 7px 11px; border-radius: 7px; border: 1px solid var(--line); color: var(--cream); text-decoration: none; }
   .tools button.ghost { background: transparent; color: var(--cream); border: 1px solid var(--line); }
 
+
+  /* Ideastore */
+  #ideasview { display: none; margin-top: 18px; }
+  .idea-add, .idea { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+  .idea-add { display: grid; gap: 8px; }
+  .idea-add h3, .idea h3 { font: 600 15px/1.3 'Geist', sans-serif; }
+  .idea input, .idea textarea, .idea select, .idea-add input, .idea-add textarea, .idea-add select { width: 100%; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--ink); font: 400 14px/1.45 'Geist', sans-serif; outline: none; }
+  .idea textarea, .idea-add textarea { min-height: 96px; resize: vertical; }
+  .idea input:focus, .idea textarea:focus, .idea-add input:focus, .idea-add textarea:focus { border-color: var(--teal); }
+  .idea select, .idea-add select { color: var(--cream); }
+  .idea-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .idea-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .idea-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .itag { font: 600 10.5px 'Geist Mono', monospace; padding: 3px 7px; border-radius: 5px; background: var(--ink-3); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .itag.new { background: var(--soft); color: var(--teal); } .itag.shaping { background: rgba(245,177,76,.15); color: var(--amber); }
+  .itag.scheduled { background: var(--teal); color: var(--ink); }
+  .idea-brief { white-space: pre-wrap; font-size: 13.5px; line-height: 1.55; color: var(--muted); margin-top: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+  .idea.open .idea-brief { display: block; color: var(--cream); background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .idea-notes { margin-top: 8px; font: 500 11.5px/1.5 'Geist Mono', monospace; color: var(--muted); }
+  .idea-acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .idea-acts button, .idea-add button, .idea-banner button { font: 600 11.5px 'Geist Mono', monospace; padding: 7px 11px; border-radius: 7px; border: 1px solid var(--line); background: var(--ink); }
+  .idea-acts button:hover, .idea-banner button:hover { border-color: var(--teal); color: var(--teal); }
+  .idea-add button.go, .idea-acts button.go { background: var(--teal); color: var(--ink); border-color: var(--teal); justify-self: start; }
+  .idea-banner { background: rgba(245,177,76,.1); border: 1px solid rgba(245,177,76,.4); border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+  .idea-banner pre { margin: 8px 0; padding: 10px; background: var(--ink); border-radius: 8px; font: 500 12px/1.5 'Geist Mono', monospace; overflow-x: auto; user-select: all; }
+  @media (max-width: 860px) { .idea-row { grid-template-columns: 1fr; } }
+
   @media (max-width: 860px) {
     .barbtn.hide-sm { display: none; }
     .row { grid-template-columns: auto auto 30px 1fr; grid-template-areas: "date brand pf st" "ttl ttl ttl ttl" "more more more more" "acts acts acts acts"; }
@@ -176,6 +203,7 @@
     <div class="filters" id="filters"></div>
     <div class="sync" id="sync"></div>
     <div id="groups"></div>
+    <div id="ideasview"></div>
   </main>
 </div>
 <div class="toast" id="toast"></div>
@@ -221,6 +249,7 @@ async function unlock() {
   tab = store(localStorage, 'socials:tab') || 'all';
   render();
   loadStatus();
+  loadIdeas();
 }
 document.getElementById('lockform').onsubmit = async e => {
   e.preventDefault();
@@ -283,6 +312,113 @@ async function setStatus(brand, id, status, btn) {
   } catch (e) { toast('Could not save. Check your connection and try again.'); if (btn) btn.disabled = false; }
 }
 
+/* ---------- Ideastore (Firestore: boards/<board>/ideastore) ---------- */
+let IDEAS = [], ideasMode = 'loading';   // loading | live | offline (offline = read-only starter ideas)
+const ideaEdit = new Set(), ideaOpen = new Set();
+const RULE = `match /boards/{board}/ideastore/{idea} {\n  allow read, write: if true;\n}`;
+const ideaUrl = id => `${FS}/boards/${BOARD}/ideastore${id ? '/' + encodeURIComponent(id) : ''}?key=${FS_KEY}`;
+const ideaFields = i => ({ title: { stringValue: i.title || '' }, brief: { stringValue: i.brief || '' }, brand: { stringValue: i.brand || '' },
+  platform: { stringValue: i.platform || '' }, status: { stringValue: i.status || 'new' }, notes: { stringValue: i.notes || '' },
+  source: { stringValue: i.source || '' }, created: { timestampValue: i.created || new Date().toISOString() }, updated: { timestampValue: new Date().toISOString() } });
+async function loadIdeas() {
+  try {
+    let token = '', list = [];
+    do {
+      const r = await fetch(`${FS}/boards/${BOARD}/ideastore?key=${FS_KEY}&pageSize=300${token ? '&pageToken=' + token : ''}`);
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json();
+      (j.documents || []).forEach(d => { const f = Object.fromEntries(Object.entries(d.fields || {}).map(([k, v]) => [k, Object.values(v)[0]])); f.id = d.name.split('/').pop(); list.push(f); });
+      token = j.nextPageToken || '';
+    } while (token);
+    IDEAS = list; ideasMode = 'live';
+  } catch (e) {
+    try { IDEAS = (await (await fetch('ideas.seed.json', { cache: 'no-cache' })).json()).ideas; } catch (x) { IDEAS = []; }
+    ideasMode = 'offline';
+  }
+  render();
+}
+async function saveIdea(i) {
+  const r = await fetch(ideaUrl(i.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: ideaFields(i) }) });
+  if (!r.ok) throw new Error(r.status);
+}
+const ideaGuard = () => { if (ideasMode === 'live') return true; toast('The ideastore is read-only until the Firestore rule is added.'); return false; };
+const brandOpts = sel => `<option value="">Any brand</option>` + DATA.brands.map(b => `<option value="${b.key}"${sel === b.key ? ' selected' : ''}>${esc(b.label)}</option>`).join('');
+const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['LI', 'LinkedIn'], ['X', 'X']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
+const statusOpts = sel => ['new', 'shaping', 'scheduled', 'dropped'].map(v => `<option value="${v}"${sel === v ? ' selected' : ''}>${v}</option>`).join('');
+function ideaCard(i) {
+  const isOpen = ideaOpen.has(i.id);
+  if (ideaEdit.has(i.id)) return `<div class="idea open" data-card="${esc(i.id)}">
+    <input data-f="title" value="${esc(i.title)}" placeholder="Title">
+    <textarea data-f="brief" style="margin-top:8px;min-height:180px" placeholder="Brief">${esc(i.brief)}</textarea>
+    <div class="idea-row" style="margin-top:8px"><select data-f="brand">${brandOpts(i.brand)}</select><select data-f="platform">${platOpts(i.platform)}</select><select data-f="status">${statusOpts(i.status)}</select></div>
+    <input data-f="notes" style="margin-top:8px" value="${esc(i.notes)}" placeholder="Notes, sources, cautions">
+    <div class="idea-acts"><button class="go" data-idea-save="${esc(i.id)}">Save</button><button data-idea-cancel="${esc(i.id)}">Cancel</button></div></div>`;
+  const b = BR[i.brand];
+  return `<div class="idea${isOpen ? ' open' : ''}" data-card="${esc(i.id)}"${b ? ` style="border-left:3px solid ${b.accent}"` : ''}>
+    <div class="idea-top"><h3>${esc(i.title)}</h3></div>
+    <div class="idea-tags"><span class="itag ${esc(i.status)}">${esc(i.status)}</span>${b ? `<span class="itag">${esc(b.label)}</span>` : ''}${i.platform ? `<span class="itag">${esc(i.platform)}</span>` : ''}</div>
+    <div class="idea-brief" data-idea-toggle="${esc(i.id)}">${esc(i.brief)}</div>
+    ${isOpen && i.notes ? `<div class="idea-notes">${esc(i.notes)}</div>` : ''}
+    <div class="idea-acts"><button data-idea-edit="${esc(i.id)}">Edit</button>
+      ${i.status === 'new' ? `<button data-idea-set="shaping" data-id="${esc(i.id)}">Shaping</button>` : ''}
+      ${i.status !== 'scheduled' && i.status !== 'dropped' ? `<button data-idea-set="scheduled" data-id="${esc(i.id)}">Scheduled</button><button data-idea-set="dropped" data-id="${esc(i.id)}">Drop</button>` : `<button data-idea-set="new" data-id="${esc(i.id)}">Restore</button>`}
+      <button data-idea-copy="${esc(i.id)}">Copy</button><button data-idea-del="${esc(i.id)}">Delete</button></div></div>`;
+}
+function renderIdeas() {
+  const el = document.getElementById('ideasview');
+  const keepFocus = el.contains(document.activeElement) && document.activeElement.id === 'ni-title';
+  const list = IDEAS.slice().sort((a, b) => String(b.created || '').localeCompare(String(a.created || '')));
+  const live = list.filter(i => i.status !== 'dropped' && i.status !== 'scheduled'), rest = list.filter(i => i.status === 'dropped' || i.status === 'scheduled');
+  const banner = ideasMode === 'offline'
+    ? `<div class="idea-banner"><b>Ideastore is read-only.</b> Firestore is not allowing the <code>ideastore</code> collection yet, so these are the starter ideas from the repo. In the Firebase console go to Firestore, Rules, add this next to the existing <code>status</code> rule and publish:<pre>${esc(RULE)}</pre><button id="ideaRetry">Retry</button></div>`
+    : ideasMode === 'live' && !list.length ? `<div class="idea-banner">The ideastore is empty. <button id="ideaSeed">Add the 4 starter ideas</button></div>` : '';
+  el.innerHTML = banner + `<div class="idea-add"><h3>New idea</h3>
+    <input id="ni-title" placeholder="Title (or leave blank and just write the brief)">
+    <textarea id="ni-brief" placeholder="Brief: what is the idea, why it works, what image could go with it"></textarea>
+    <div class="idea-row"><select id="ni-brand">${brandOpts('')}</select><select id="ni-plat">${platOpts('')}</select><input id="ni-notes" placeholder="Notes or source"></div>
+    <button class="go" id="ni-add">Add idea</button></div>` +
+    `<section class="group"><h2>Open ideas <span>${live.length}</span></h2>${live.length ? live.map(ideaCard).join('') : '<div class="empty">No open ideas.</div>'}</section>` +
+    (rest.length ? `<section class="group"><details><summary><h2>Scheduled and dropped <span>${rest.length}</span></h2></summary>${rest.map(ideaCard).join('')}</details></section>` : '');
+  if (keepFocus) document.getElementById('ni-title').focus();
+  const find = id => IDEAS.find(x => x.id === id);
+  const done = (fn) => async function () { const b = this; b.disabled = true; try { await fn(b); } catch (e) { toast('Could not save. Check your connection and try again.'); } finally { b.disabled = false; } };
+  const q = (sel, fn) => el.querySelectorAll(sel).forEach(b => b.onclick = done(fn));
+  const rt = document.getElementById('ideaRetry'); if (rt) rt.onclick = () => loadIdeas();
+  const sd = document.getElementById('ideaSeed');
+  if (sd) sd.onclick = done(async () => {
+    const seed = (await (await fetch('ideas.seed.json', { cache: 'no-cache' })).json()).ideas;
+    for (const [n, i] of seed.entries()) await saveIdea({ ...i, created: new Date(Date.now() - n * 1000).toISOString() });
+    await loadIdeas(); toast('Starter ideas added.');
+  });
+  document.getElementById('ni-add').onclick = done(async () => {
+    if (!ideaGuard()) return;
+    const brief = document.getElementById('ni-brief').value.trim(); let title = document.getElementById('ni-title').value.trim();
+    if (!title && !brief) { toast('Add a title or a brief first.'); return; }
+    if (!title) title = brief.split('\n')[0].slice(0, 70);
+    const i = { id: 'i' + Date.now().toString(36), title, brief, brand: document.getElementById('ni-brand').value, platform: document.getElementById('ni-plat').value,
+      notes: document.getElementById('ni-notes').value.trim(), status: 'new', source: 'Ibrahim', created: new Date().toISOString() };
+    await saveIdea(i); IDEAS.push(i); render(); toast('Idea added.');
+  });
+  q('[data-idea-toggle]', b => { if (getSelection().toString()) return; const k = b.dataset.ideaToggle; ideaOpen.has(k) ? ideaOpen.delete(k) : ideaOpen.add(k); const y = scrollY; render(); scrollTo(0, y); });
+  q('[data-idea-edit]', b => { ideaEdit.add(b.dataset.ideaEdit); render(); });
+  q('[data-idea-cancel]', b => { ideaEdit.delete(b.dataset.ideaCancel); render(); });
+  q('[data-idea-save]', async b => {
+    if (!ideaGuard()) return;
+    const i = find(b.dataset.ideaSave), c = el.querySelector(`[data-card="${CSS.escape(i.id)}"]`), g = f => c.querySelector(`[data-f="${f}"]`).value;
+    const next = { ...i, title: g('title').trim() || i.title, brief: g('brief').trim(), brand: g('brand'), platform: g('platform'), status: g('status'), notes: g('notes').trim() };
+    await saveIdea(next); Object.assign(i, next); ideaEdit.delete(i.id); render(); toast('Saved.');
+  });
+  q('[data-idea-set]', async b => { if (!ideaGuard()) return; const i = find(b.dataset.id); const next = { ...i, status: b.dataset.ideaSet }; await saveIdea(next); Object.assign(i, next); render(); toast(`Marked ${next.status}.`); });
+  q('[data-idea-copy]', async b => { const i = find(b.dataset.ideaCopy); await navigator.clipboard.writeText(`${i.title}\n\n${i.brief}${i.notes ? '\n\n' + i.notes : ''}`); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
+  q('[data-idea-del]', async b => {
+    if (!ideaGuard()) return;
+    if (!confirm('Delete this idea for good?')) return;
+    const i = find(b.dataset.ideaDel);
+    const r = await fetch(ideaUrl(i.id), { method: 'DELETE' }); if (!r.ok) throw new Error(r.status);
+    IDEAS = IDEAS.filter(x => x.id !== i.id); render(); toast('Deleted.');
+  });
+}
+
 /* ---------- UI ---------- */
 const pad = n => String(n).padStart(2, '0');
 const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
@@ -320,15 +456,20 @@ function renderDays(ps, rerender) {
 }
 function render() {
   const nav = document.getElementById('tabs'); nav.innerHTML = '';
-  [{ key: 'all', label: 'All brands' }, ...DATA.brands].forEach(t => {
+  [{ key: 'all', label: 'All brands' }, ...DATA.brands, { key: 'ideas', label: 'Ideas' }].forEach(t => {
     const b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', t.key === tab);
     const mine = DATA.posts.filter(p => t.key === 'all' || p.brand === t.key);
     const late = mine.filter(p => open(p) && p.date < today).length, due = mine.filter(p => open(p) && p.date <= plus(7)).length;
+    const nIdeas = IDEAS.filter(i => i.status !== 'dropped' && i.status !== 'scheduled').length;
     b.innerHTML = (t.accent ? `<span class="dot" style="background:${t.accent}"></span>` : '') + esc(t.label) +
-      (late ? `<span class="n hot">${late} late</span>` : due ? `<span class="n">${due}</span>` : '');
+      (t.key === 'ideas' ? (nIdeas ? `<span class="n">${nIdeas}</span>` : '') : late ? `<span class="n hot">${late} late</span>` : due ? `<span class="n">${due}</span>` : '');
     b.onclick = () => { tab = t.key; store(localStorage, 'socials:tab', tab); render(); };
     nav.appendChild(b);
   });
+  const onIdeas = tab === 'ideas';
+  ['days', 'stats', 'filters', 'groups'].forEach(id => document.getElementById(id).style.display = onIdeas ? 'none' : '');
+  document.getElementById('ideasview').style.display = onIdeas ? 'block' : 'none';
+  if (onIdeas) { document.getElementById('headline').innerHTML = 'Ideas. <span class="t">Dump now, shape later.</span><span class="cur"></span>'; renderIdeas(); return; }
   document.getElementById('headline').innerHTML = tab === 'all' ? 'Every brand. <span class="t">One calendar.</span><span class="cur"></span>'
     : `${esc(BR[tab].label)}, <span class="t">on schedule.</span><span class="cur"></span>`;
 
@@ -447,7 +588,7 @@ function makePdf(p, btn) {
     else download(file);
   });
 }
-document.getElementById('refresh').onclick = () => loadStatus();
+document.getElementById('refresh').onclick = () => { loadStatus(); loadIdeas(); };
 
 function row(p) {
   const b = BR[p.brand], k = p.brand + '/' + p.id, isOpen = opened.has(k);
