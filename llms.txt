@@ -1,8 +1,8 @@
 # tappStudio
 
-> tappStudio is an independent app studio in Mumbai, India, run by Ibrahim Broachwala. It designs, builds, publishes and maintains its own iOS, Android and web apps, made for family, friends, faith and community. It does not take client or freelance work.
+> tappStudio is an independent app studio in Mumbai, India, run by Ibrahim Broachwala. It designs, builds, publishes and maintains its own iOS, Android and web apps, made for family, friends, faith and community.
 
-tappStudio is a one-person studio. Every app is designed, engineered, shipped to the App Store and Google Play (or the web) and supported in-house, and it keeps getting updates after launch. Apps are built with Claude Code (Anthropic's AI coding agent) inside the studio's own code guides, with every design decision and line of code reviewed by Ibrahim. The site at https://tappstudio.in/ is the studio's home: it showcases each app, lists the principles the studio works by, keeps a public "now" status board of what is live and in progress, and has a contact form (reaching tappstudio.in@gmail.com) for app feedback, bug reports, feature ideas and press.
+tappStudio is a one-person studio. Every app is designed, engineered, shipped to the App Store and Google Play (or the web) and supported in-house, and it keeps getting updates after launch. Apps are built with Claude Code (Anthropic's AI coding agent) inside the studio's own code guides, with every design decision and line of code reviewed by Ibrahim. The site at https://tappstudio.in/ is the studio's home: it showcases each app, keeps a public "now" status board of what is live and in progress, and has a contact form (reaching tappstudio.in@gmail.com) for app feedback, bug reports, feature ideas and press.
 
 ## Apps
 
@@ -26,7 +26,7 @@ tappStudio is a one-person studio. Every app is designed, engineered, shipped to
 
 ## Contact
 
-- Email: tappstudio.in@gmail.com (app feedback, support and press; tappStudio does not take client projects)
+- Email: tappstudio.in@gmail.com (app feedback, support, press and general enquiries)
 - Location: Mumbai, India
 - LinkedIn (Page): https://www.linkedin.com/company/tappstudio/
 - LinkedIn (profile): https://www.linkedin.com/in/ibrahimbroachwala/
