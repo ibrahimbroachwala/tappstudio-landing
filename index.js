@@ -1,15 +1,29 @@
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 // ---------------------------------------------------------------------------
-// Reveal-on-scroll for app cards
+// Reveal on scroll (tiles, principles, the Now board)
 // ---------------------------------------------------------------------------
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
+const revealNodes = document.querySelectorAll('[data-reveal]');
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealNodes.forEach((node) => {
+        // Stagger siblings that enter together
+        const siblings = Array.from(node.parentElement.children).filter((el) => el.hasAttribute('data-reveal'));
+        node.style.setProperty('--reveal-delay', (siblings.indexOf(node) % 3) * 0.08 + 's');
+        revealObserver.observe(node);
     });
-}, { threshold: 0.15 });
-document.querySelectorAll('.app').forEach((app) => revealObserver.observe(app));
+} else {
+    revealNodes.forEach((node) => node.classList.add('is-visible'));
+}
 
 // ---------------------------------------------------------------------------
 // Theme toggle
@@ -29,26 +43,128 @@ if (themeBtn) {
 }
 
 // ---------------------------------------------------------------------------
+// Hero: rotating word, screenshot deck and app dock stay in step
+// ---------------------------------------------------------------------------
+const dock = document.getElementById('dock');
+
+if (dock) {
+    const dockBtns = Array.from(dock.querySelectorAll('.dock-btn'));
+    const cards = Array.from(document.querySelectorAll('#deck .deck-card'));
+    const words = Array.from(document.querySelectorAll('.hero-word'));
+    const caption = document.getElementById('stage-caption');
+    const captionIcon = document.getElementById('stage-caption-icon');
+    const captionName = document.getElementById('stage-caption-name');
+    const captionLine = document.getElementById('stage-caption-line');
+    const stage = document.querySelector('.hero-stage');
+    const n = dockBtns.length;
+    const CYCLE_MS = 3600;
+    let current = 0;
+    let timer = null;
+    let paused = false;
+
+    function show(index) {
+        const prev = current;
+        current = (index + n) % n;
+
+        cards.forEach((card, i) => card.setAttribute('data-pos', String((i - current + n) % n)));
+        dockBtns.forEach((btn, i) => btn.setAttribute('aria-pressed', String(i === current)));
+
+        if (prev !== current && words[prev]) {
+            const leaving = words[prev];
+            leaving.classList.remove('is-active');
+            leaving.classList.add('is-leaving');
+            setTimeout(() => leaving.classList.remove('is-leaving'), 650);
+        }
+        words.forEach((w, i) => w.classList.toggle('is-active', i === current));
+
+        const btn = dockBtns[current];
+        caption.href = btn.dataset.href;
+        captionIcon.src = btn.dataset.icon;
+        captionName.textContent = btn.dataset.name;
+        captionLine.textContent = btn.dataset.line;
+
+        // Restart the timer bar animation on the newly active button
+        if (dock.classList.contains('is-playing')) {
+            dock.classList.remove('is-playing');
+            void dock.offsetWidth;
+            dock.classList.add('is-playing');
+        }
+    }
+
+    function play() {
+        stop();
+        if (reducedMotion.matches || paused || document.hidden) return;
+        dock.classList.add('is-playing');
+        dockBtns.forEach((btn) => btn.style.setProperty('--cycle', CYCLE_MS + 'ms'));
+        timer = setInterval(() => show(current + 1), CYCLE_MS);
+    }
+
+    function stop() {
+        clearInterval(timer);
+        timer = null;
+        dock.classList.remove('is-playing');
+    }
+
+    dockBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            show(i);
+            paused = true; // the visitor picked one: stop auto-playing
+            stop();
+        });
+    });
+
+    // Pause while the pointer or keyboard focus is on the stage
+    stage.addEventListener('pointerenter', () => stop());
+    stage.addEventListener('pointerleave', () => play());
+    stage.addEventListener('focusin', () => stop());
+    stage.addEventListener('focusout', () => play());
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
+
+    // Only animate while the hero is on screen
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([entry]) => (entry.isIntersecting ? play() : stop()))
+            .observe(document.getElementById('intro'));
+    } else {
+        play();
+    }
+}
+
+// ---------------------------------------------------------------------------
+// App tiles: spotlight follows the pointer
+// ---------------------------------------------------------------------------
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.tile').forEach((tile) => {
+        tile.addEventListener('pointermove', (event) => {
+            const rect = tile.getBoundingClientRect();
+            tile.style.setProperty('--mx', (event.clientX - rect.left) + 'px');
+            tile.style.setProperty('--my', (event.clientY - rect.top) + 'px');
+        });
+    });
+}
+
+// ---------------------------------------------------------------------------
 // Fullscreen screenshot preview
 // ---------------------------------------------------------------------------
 const lightbox = document.getElementById('screenshot-lightbox');
 const lightboxImage = document.getElementById('screenshot-lightbox-image');
 const lightboxClose = document.getElementById('screenshot-lightbox-close');
-const screenshotNodes = document.querySelectorAll('.app-screenshots img');
+const screenshotNodes = document.querySelectorAll('.shot');
+let lightboxOpener = null;
 
-function openLightbox(sourceImg) {
+function openLightbox(sourceImg, opener) {
+    lightboxOpener = opener || null;
     lightboxImage.srcset = sourceImg.srcset;
     lightboxImage.src = sourceImg.src;
     lightboxImage.alt = sourceImg.alt || 'App screenshot preview';
-    lightbox.classList.toggle('is-wide', Boolean(sourceImg.closest('.app--wide')));
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.remove('is-closing');
     lightbox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    if (lightboxClose) lightboxClose.focus({ preventScroll: true });
 }
 
 function closeLightbox() {
-    if (!lightbox.classList.contains('is-open')) return;
+    if (!lightbox || !lightbox.classList.contains('is-open')) return;
     lightbox.classList.remove('is-open');
     lightbox.classList.add('is-closing');
 
@@ -64,10 +180,11 @@ function closeLightbox() {
     };
 
     lightbox.addEventListener('animationend', handleAnimationEnd);
+    if (lightboxOpener) lightboxOpener.focus({ preventScroll: true });
 }
 
-screenshotNodes.forEach((img) => {
-    img.addEventListener('click', () => openLightbox(img));
+screenshotNodes.forEach((btn) => {
+    btn.addEventListener('click', () => openLightbox(btn.querySelector('img'), btn));
 });
 
 if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -221,39 +338,6 @@ if (tiltCard && canTilt.matches) {
         tiltCard.style.removeProperty('--rx');
     });
 }
-
-// ---------------------------------------------------------------------------
-// How it works tabs
-// ---------------------------------------------------------------------------
-document.querySelectorAll('[data-tabs]').forEach((group) => {
-    const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
-
-    function selectTab(tab, focus) {
-        tabs.forEach((t) => {
-            const active = t === tab;
-            t.setAttribute('aria-selected', String(active));
-            t.tabIndex = active ? 0 : -1;
-            document.getElementById(t.getAttribute('aria-controls')).hidden = !active;
-        });
-        if (focus) tab.focus();
-    }
-
-    tabs.forEach((tab, i) => {
-        tab.addEventListener('click', () => selectTab(tab, false));
-        tab.addEventListener('keydown', (event) => {
-            const last = tabs.length - 1;
-            let next = null;
-            if (event.key === 'ArrowRight') next = tabs[i === last ? 0 : i + 1];
-            if (event.key === 'ArrowLeft') next = tabs[i === 0 ? last : i - 1];
-            if (event.key === 'Home') next = tabs[0];
-            if (event.key === 'End') next = tabs[last];
-            if (next) {
-                event.preventDefault();
-                selectTab(next, true);
-            }
-        });
-    });
-});
 
 // ---------------------------------------------------------------------------
 // Section nav ("spine"): right-edge track on desktop, chip + sheet on mobile
