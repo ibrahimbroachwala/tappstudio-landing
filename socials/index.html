@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>tappStudio Socials</title>
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0e0e0c; --ink-2:#181814; --ink-3:#24231e; --cream:#f2efe8; --muted:#9a968c; --teal:#14b8a6; --soft:rgba(20,184,166,.14); --line:rgba(242,239,232,.1); --amber:#f5b14c; --ig:#f472b6; --li:#5aa9ff; --x:#f2efe8; --bar:56px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--ink); color: var(--cream); font-family: 'Geist', sans-serif; }
+  body { min-height: 100vh; }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .cur { display: inline-block; width: .42em; height: .8em; background: var(--teal); border-radius: 2px; margin-left: .08em; vertical-align: -.05em; }
+  .t { color: var(--teal); }
+
+  /* Lock screen */
+  #lock { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; }
+  .lockbox { width: min(380px, 100%); }
+  .lockbox .crumb { font: 500 12px 'Geist Mono', monospace; color: var(--muted); }
+  .lockbox h1 { font: 800 40px/1 'Bricolage Grotesque', sans-serif; letter-spacing: -1.4px; margin: 10px 0 22px; }
+  .lockbox input[type=password] { width: 100%; padding: 13px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--ink-2); font: 500 15px 'Geist Mono', monospace; outline: none; }
+  .lockbox input[type=password]:focus { border-color: var(--teal); }
+  .lockbox label { display: flex; gap: 8px; align-items: center; margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .lockbox .go { margin-top: 16px; width: 100%; padding: 13px; border: 0; border-radius: 10px; background: var(--teal); color: var(--ink); font: 600 14px 'Geist Mono', monospace; }
+  .lockbox .go:disabled { opacity: .6; cursor: wait; }
+  .lockbox .err { margin-top: 12px; min-height: 18px; font-size: 13px; color: var(--amber); }
+
+  /* App */
+  #app { display: none; }
+  .bar { position: sticky; top: 0; z-index: 10; height: var(--bar); display: flex; align-items: center; gap: 12px; padding: 0 16px; background: var(--ink-2); border-bottom: 1px solid var(--line); }
+  .logo { font: 800 20px 'Bricolage Grotesque', sans-serif; letter-spacing: -.5px; }
+  .logo i { font-style: normal; color: var(--teal); } .logo span { color: var(--muted); }
+  .tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 9px; border: 1px solid transparent; background: none; font: 500 13px 'Geist Mono', monospace; color: var(--muted); white-space: nowrap; }
+  .tab:hover { color: var(--cream); background: var(--ink-3); }
+  .tab[aria-selected="true"] { color: var(--cream); background: var(--ink-3); border-color: var(--line); }
+  .chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .tab .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .tab .n { font-size: 11px; padding: 1px 6px; border-radius: 999px; background: var(--ink); color: var(--muted); }
+  .tab .n.hot { background: var(--amber); color: var(--ink); }
+  .barbtn { font: 500 12px 'Geist Mono', monospace; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: none; color: var(--muted); white-space: nowrap; }
+  .barbtn:hover { color: var(--cream); border-color: var(--cream); }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 26px 16px 70px; }
+  .crumb { font: 500 12px 'Geist Mono', monospace; color: var(--muted); }
+  .crumb b { color: var(--cream); font-weight: 500; }
+  h1.big { font: 800 clamp(30px, 5vw, 48px)/1 'Bricolage Grotesque', sans-serif; letter-spacing: -1.8px; margin-top: 10px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .stat { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; min-width: 110px; }
+  .stat b { display: block; font: 800 26px/1 'Bricolage Grotesque', sans-serif; }
+  .stat span { font: 500 11px 'Geist Mono', monospace; color: var(--muted); }
+  .stat.hot b { color: var(--amber); }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font: 500 12px 'Geist Mono', monospace; background: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; color: var(--muted); }
+  .chip.on { color: var(--cream); border-color: var(--cream); }
+  .sep { width: 1px; height: 22px; background: var(--line); margin: 0 4px; }
+  .sync { font: 500 11px 'Geist Mono', monospace; color: var(--muted); margin-top: 10px; }
+
+  section.group { margin-top: 26px; }
+  section.group h2 { font: 500 11px 'Geist Mono', monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; display: flex; gap: 8px; }
+  section.group h2.hot { color: var(--amber); }
+  section.group h2 span { color: var(--muted); }
+  details > summary { cursor: pointer; list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  .row { display: grid; grid-template-columns: 96px 78px 96px 30px 52px minmax(0, 1fr) 92px auto; gap: 10px; align-items: center; padding: 10px 12px; background: var(--ink-2); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 6px; font-size: 13.5px; }
+  .row { background: color-mix(in srgb, var(--accent, #888) 8%, var(--ink-2)); border-color: color-mix(in srgb, var(--accent, #888) 22%, var(--line)); }
+  .row.open { border-color: rgba(20,184,166,.5); }
+  .m { font: 500 11.5px 'Geist Mono', monospace; color: var(--muted); }
+  .brand { display: inline-flex; align-items: center; gap: 6px; font: 600 11.5px 'Geist Mono', monospace; }
+  .brand i { width: 8px; height: 8px; border-radius: 2px; }
+  .pf { font: 600 10.5px 'Geist Mono', monospace; text-align: center; padding: 2px 0; border-radius: 4px; background: var(--cream); color: var(--ink); }
+  .alt { width: 100%; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin-top: 8px; font-size: 13px; line-height: 1.5; color: var(--muted); display: none; }
+  .row.open .alt { display: block; }
+  .alt-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font: 600 11px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+  .alt-h button { font: 600 11px 'Geist Mono', monospace; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--cream); }
+  .altbox { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-top: 8px; background: rgba(255,255,255,.02); }
+  .altbox-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; font: 600 10.5px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .altbox-h button { font: 600 11px 'Geist Mono', monospace; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--cream); }
+  .reply-t { white-space: pre-wrap; user-select: all; font: 500 13px 'Geist Mono', monospace; color: var(--cream); margin: 0; }
+  .alt ol { padding-left: 20px; } .alt li { margin: 4px 0; } .alt p { margin-bottom: 4px; }
+  .days { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin: 18px 0 4px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+  .day { flex: 0 0 auto; min-width: 118px; text-align: left; background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 11px; color: var(--cream); scroll-snap-align: start; font-family: inherit; }
+  .day:hover { border-color: var(--muted); }
+  .day .wd { font: 500 10.5px 'Geist Mono', monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .day .num { font: 600 20px 'Bricolage Grotesque', 'Geist', sans-serif; margin: 2px 0 6px; }
+  .day .num small { font: 500 11px 'Geist Mono', monospace; color: var(--muted); margin-left: 4px; }
+  .day .cnt { font: 500 11.5px 'Geist Mono', monospace; color: var(--muted); }
+  .day .cnt b { font-weight: 800; font-size: 15px; color: var(--cream); margin-right: 3px; }
+  .day .sub { font: 500 10px 'Geist Mono', monospace; color: var(--muted); margin-top: 3px; white-space: nowrap; min-height: 12px; }
+  .day .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; min-height: 18px; }
+  .day .tag { font: 600 10px 'Geist Mono', monospace; padding: 2px 6px; border-radius: 5px; color: var(--cream); background: color-mix(in srgb, var(--accent) 24%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); }
+  .day.today { border-color: var(--teal); }
+  .day.today .wd { color: var(--teal); }
+  .day.sel { border-color: var(--cream); background: var(--ink-3); }
+  .day.none { opacity: .45; }
+  .day.done .cnt b { color: var(--muted); }
+  .row .tm { color: var(--cream); }
+  .pf { text-decoration: none; } a.pf:hover { filter: brightness(1.15); outline: 1px solid var(--cream); }
+  .pf.IG { background: var(--ig); } .pf.LI { background: var(--li); } .pf.X { background: var(--x); }
+  .ttl { background: none; border: 0; text-align: left; color: var(--cream); line-height: 1.35; }
+  .ttl:hover { color: var(--teal); }
+  .ttl small { display: block; color: var(--amber); font-size: 11.5px; margin-top: 3px; }
+  .st { font: 600 10.5px 'Geist Mono', monospace; text-transform: uppercase; letter-spacing: .06em; padding: 3px 7px; border-radius: 5px; text-align: center; background: var(--ink-3); color: var(--muted); }
+  .st.ready { background: var(--soft); color: var(--teal); }
+  .st.scheduled { background: rgba(245,177,76,.15); color: var(--amber); }
+  .st.posted { background: var(--teal); color: var(--ink); }
+  .acts { display: flex; gap: 6px; justify-content: flex-end; }
+  .acts button { font: 600 11px 'Geist Mono', monospace; padding: 6px 9px; border-radius: 6px; border: 1px solid var(--line); background: var(--ink); }
+  .acts button:hover { border-color: var(--teal); color: var(--teal); }
+  .acts button:disabled { opacity: .5; cursor: wait; }
+  .more { grid-column: 1 / -1; display: flex; gap: 14px; align-items: flex-start; }
+  .thumbs { display: flex; gap: 6px; flex: none; }
+  .thumbs img { width: 54px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); background: var(--ink); display: block; }
+  .thumbs .plus { width: 54px; height: 68px; border-radius: 6px; border: 1px dashed var(--line); display: grid; place-items: center; font: 600 12px 'Geist Mono', monospace; color: var(--muted); }
+  .prev { flex: 1; min-width: 0; background: none; border: 0; text-align: left; color: var(--muted); font-size: 13px; line-height: 1.5; white-space: pre-line;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .row.open .more { flex-direction: column; }
+  .row.open .thumbs { flex-wrap: wrap; gap: 8px; }
+  .row.open .thumbs img { width: 168px; height: 210px; cursor: zoom-in; }
+  .row.open .prev { display: block; -webkit-line-clamp: unset; overflow: visible; white-space: pre-wrap; color: var(--cream); font-size: 14px; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%; cursor: text; user-select: text; }
+  .tools { display: none; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .row.open .tools { display: flex; }
+  .tools button { font: 600 11.5px 'Geist Mono', monospace; padding: 7px 11px; border-radius: 7px; border: 0; background: var(--teal); color: var(--ink); }
+  .tools .meta { font: 500 11px 'Geist Mono', monospace; color: var(--muted); }
+  .empty { color: var(--muted); font-size: 13px; padding: 6px 2px; }
+  .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--cream); color: var(--ink); padding: 10px 14px; border-radius: 10px; font-size: 13px; font-weight: 500; display: none; z-index: 20; max-width: calc(100vw - 32px); }
+  .viewer { position: fixed; inset: 0; background: rgba(0,0,0,.88); display: none; place-items: center; z-index: 30; padding: 16px; }
+  .viewer { grid-template-rows: 1fr auto; gap: 12px; }
+  .viewer img { max-width: 100%; max-height: calc(100vh - 90px); border-radius: 8px; justify-self: center; align-self: center; }
+  .viewer a { justify-self: center; font: 600 12px 'Geist Mono', monospace; padding: 9px 14px; border-radius: 8px; background: var(--teal); color: var(--ink); text-decoration: none; }
+  .tools a { font: 600 11.5px 'Geist Mono', monospace; padding: 7px 11px; border-radius: 7px; border: 1px solid var(--line); color: var(--cream); text-decoration: none; }
+  .tools button.ghost { background: transparent; color: var(--cream); border: 1px solid var(--line); }
+
+
+  /* Ideastore */
+  #ideasview { display: none; margin-top: 18px; }
+  .idea-add, .idea { background: var(--ink-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+  .idea-add { display: grid; gap: 8px; }
+  .idea-add h3, .idea h3 { font: 600 15px/1.3 'Geist', sans-serif; }
+  .idea input, .idea textarea, .idea select, .idea-add input, .idea-add textarea, .idea-add select { width: 100%; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--ink); font: 400 14px/1.45 'Geist', sans-serif; outline: none; }
+  .idea textarea, .idea-add textarea { min-height: 96px; resize: vertical; }
+  .idea input:focus, .idea textarea:focus, .idea-add input:focus, .idea-add textarea:focus { border-color: var(--teal); }
+  .idea select, .idea-add select { color: var(--cream); }
+  .idea-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .idea-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+  .idea-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .itag { font: 600 10.5px 'Geist Mono', monospace; padding: 3px 7px; border-radius: 5px; background: var(--ink-3); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .itag.new { background: var(--soft); color: var(--teal); } .itag.shaping { background: rgba(245,177,76,.15); color: var(--amber); }
+  .itag.scheduled { background: var(--teal); color: var(--ink); }
+  .idea-brief { white-space: pre-wrap; font-size: 13.5px; line-height: 1.55; color: var(--muted); margin-top: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+  .idea.open .idea-brief { display: block; color: var(--cream); background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .idea-notes { margin-top: 8px; font: 500 11.5px/1.5 'Geist Mono', monospace; color: var(--muted); }
+  .idea-acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .idea-acts button, .idea-add button, .idea-banner button { font: 600 11.5px 'Geist Mono', monospace; padding: 7px 11px; border-radius: 7px; border: 1px solid var(--line); background: var(--ink); }
+  .idea-acts button:hover, .idea-banner button:hover { border-color: var(--teal); color: var(--teal); }
+  .idea-add button.go, .idea-acts button.go { background: var(--teal); color: var(--ink); border-color: var(--teal); justify-self: start; }
+  .idea-banner { background: rgba(245,177,76,.1); border: 1px solid rgba(245,177,76,.4); border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+  .idea-banner pre { margin: 8px 0; padding: 10px; background: var(--ink); border-radius: 8px; font: 500 12px/1.5 'Geist Mono', monospace; overflow-x: auto; user-select: all; }
+  @media (max-width: 860px) { .idea-row { grid-template-columns: 1fr; } }
+
+  @media (max-width: 860px) {
+    .barbtn.hide-sm { display: none; }
+    .row { grid-template-columns: auto auto 30px 1fr; grid-template-areas: "date brand pf st" "ttl ttl ttl ttl" "more more more more" "acts acts acts acts"; }
+    .row .d { grid-area: date; } .row .brand { grid-area: brand; } .row .pf { grid-area: pf; } .row .st { grid-area: st; justify-self: end; }
+    .row .ttl { grid-area: ttl; } .row .more { grid-area: more; flex-direction: column; } .row .acts { grid-area: acts; justify-content: flex-start; }
+    .row .id { display: none; }
+    .row { grid-template-areas: "date brand pf st" "tm ttl ttl ttl" "more more more more" "acts acts acts acts"; }
+    .row .tm { grid-area: tm; }
+    .row.open .thumbs img { width: calc(50% - 4px); height: auto; aspect-ratio: 4 / 5; }
+  }
+</style>
+</head>
+<body>
+<div id="lock">
+  <form class="lockbox" id="lockform" autocomplete="off">
+    <div class="crumb">~/tappstudio/<b>socials</b></div>
+    <h1>Locked<span class="cur"></span></h1>
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" autofocus>
+    <label><input type="checkbox" id="remember"> Remember on this device</label>
+    <button class="go" id="go">Unlock</button>
+    <div class="err" id="err"></div>
+  </form>
+</div>
+
+<div id="app">
+  <header class="bar">
+    <div class="logo"><i>t</i><span>S</span></div>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <button class="barbtn hide-sm" id="refresh">Refresh</button>
+    <button class="barbtn" id="lockbtn">Lock</button>
+  </header>
+  <main>
+    <div class="crumb">~/tappstudio/<b>socials</b></div>
+    <h1 class="big" id="headline"></h1>
+    <div class="days" id="days"></div>
+    <div class="stats" id="stats"></div>
+    <div class="filters" id="filters"></div>
+    <div class="sync" id="sync"></div>
+    <div id="groups"></div>
+    <div id="ideasview"></div>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="viewer" id="viewer"><img alt=""><a id="viewerdl" href="#">Save full quality</a></div>
+
+<script>
+const PASS_HASH = '69984fdca2bd0a5b1dab8c86a27620c2b6bc4f9eaf995aef63abef70cf471bad'; // SHA-256 of the passcode. Casual gate only: posts.json is public.
+const FS = "https://firestore.googleapis.com/v1/projects/tappstudio-socials/databases/(default)/documents", FS_KEY = "AIzaSyDQ191Pr07oIAV9_hZNuO9SYyAIOUU8mB4";
+const hex = buf => [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+const sha256 = async s => hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)));
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const PAGES = {
+  X: () => 'https://x.com/ibrahim_broach',
+  LI: b => b === 'tappstudio' ? 'https://www.linkedin.com/company/145285359/admin/page-posts/published/?share=true' : 'https://www.linkedin.com/sharing/compose',
+  IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/my.deen.app/' })[b],
+};
+const altBox = (k, i, label, t) => `<div class="altbox"><div class="altbox-h"><span>${label}</span><button class="ghost" data-altpart="${esc(k)}" data-i="${i}">Copy</button></div><pre class="reply-t">${esc(t)}</pre></div>`;
+const altBlock = p => { const a = p.alt || {}, sl = a.slides || [], k = p.brand + '/' + p.id;
+  if (!a.summary && !sl.length) return '';
+  return `<div class="alt"><div class="alt-h"><b>Alt text${sl.length > 1 ? ' · ' + sl.length + ' images' : ''}</b><button class="ghost" data-alt="${esc(k)}">Copy all</button></div>` +
+    (a.summary ? altBox(k, -1, 'Summary', a.summary) : '') + sl.map((t, i) => altBox(k, i, sl.length > 1 ? 'Image ' + (i + 1) : 'Image', t)).join('') + `</div>`; };
+const replyBlock = p => !p.reply ? '' :
+  `<div class="alt"><div class="alt-h"><b>${p.platform === 'LI' ? 'First comment' : 'Reply'} (with link)</b><button class="ghost" data-reply="${esc(p.brand + '/' + p.id)}">Copy reply</button></div><pre class="reply-t">${esc(p.reply)}</pre></div>`;
+const altText = p => { const a = p.alt || {}; const sl = a.slides || [];
+  return [a.summary, ...sl.map((t, i) => (sl.length > 1 ? (i + 1) + '. ' : '') + t)].filter(Boolean).join('\n'); };
+const pf = p => { const u = PAGES[p.platform] && PAGES[p.platform](p.brand);
+  return u ? `<a class="pf ${p.platform}" href="${u}" target="_blank" rel="noopener" title="Open ${p.platform} for ${p.brand}">${p.platform}</a>` : `<span class="pf ${p.platform}">${p.platform}</span>`; };
+const store = (area, k, v) => { try { if (v === undefined) return area.getItem(k); if (v === null) area.removeItem(k); else area.setItem(k, v); } catch (e) { return null; } };
+
+let DATA = null, BOARD = null, BR = {};
+let tab = 'all', plat = 'all', hidePosted = true;
+const opened = new Set();
+
+/* ---------- unlock ---------- */
+async function unlock() {
+  const r = await fetch('posts.json', { cache: 'no-cache' });
+  if (!r.ok) throw new Error('posts.json ' + r.status);
+  DATA = await r.json();
+  BOARD = DATA.board;
+  BR = Object.fromEntries(DATA.brands.map(b => [b.key, b]));
+  document.getElementById('lock').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  tab = store(localStorage, 'socials:tab') || 'all';
+  render();
+  loadStatus();
+  loadIdeas();
+}
+document.getElementById('lockform').onsubmit = async e => {
+  e.preventDefault();
+  const btn = document.getElementById('go'), err = document.getElementById('err');
+  btn.disabled = true; btn.textContent = 'Unlocking…'; err.textContent = '';
+  try {
+    const h = await sha256(document.getElementById('pw').value);
+    if (h !== PASS_HASH) { err.textContent = 'Wrong password.'; return; }
+    store(sessionStorage, 'socials:pass', h);
+    if (document.getElementById('remember').checked) store(localStorage, 'socials:pass', h);
+    document.getElementById('pw').value = '';
+    await unlock();
+  } catch (x) {
+    err.textContent = 'Could not load posts.';
+  } finally { btn.disabled = false; btn.textContent = 'Unlock'; }
+};
+document.getElementById('lockbtn').onclick = () => {
+  store(sessionStorage, 'socials:pass', null); store(localStorage, 'socials:pass', null); location.reload();
+};
+(async () => {
+  const saved = store(sessionStorage, 'socials:pass') || store(localStorage, 'socials:pass');
+  if (saved === PASS_HASH) { try { await unlock(); } catch (e) { /* stay locked */ } }
+})();
+
+/* ---------- Firestore (REST, no SDK) ---------- */
+const docUrl = id => `${FS}/boards/${BOARD}/status/${encodeURIComponent(id)}?key=${FS_KEY}`;
+async function loadStatus() {
+  const sync = document.getElementById('sync');
+  sync.textContent = 'Loading live statuses…';
+  try {
+    let token = '', n = 0;
+    do {
+      const r = await fetch(`${FS}/boards/${BOARD}/status?key=${FS_KEY}&pageSize=300${token ? '&pageToken=' + token : ''}`);
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json();
+      (j.documents || []).forEach(d => {
+        const f = Object.fromEntries(Object.entries(d.fields || {}).map(([k, v]) => [k, Object.values(v)[0]]));
+        const p = DATA.posts.find(x => x.brand === f.brand && x.id === f.id);
+        if (p && f.status) { p.status = f.status; p.posted = f.posted || ''; n++; }
+      });
+      token = j.nextPageToken || '';
+    } while (token);
+    sync.textContent = `Live · ${n} statuses synced · page built ${DATA.built}`;
+    render();
+  } catch (e) {
+    sync.textContent = `Offline copy from ${DATA.built}. Status changes need a connection.`;
+  }
+}
+async function setStatus(brand, id, status, btn) {
+  const p = DATA.posts.find(x => x.brand === brand && x.id === id);
+  const posted = status === 'posted' ? new Date().toISOString().slice(0, 10) : '';
+  const fields = { brand: { stringValue: brand }, id: { stringValue: id }, status: { stringValue: status },
+                   posted: { stringValue: posted }, updated: { timestampValue: new Date().toISOString() } };
+  if (btn) btn.disabled = true;
+  try {
+    const r = await fetch(docUrl(brand + '__' + id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields }) });
+    if (!r.ok) throw new Error(r.status);
+    p.status = status; p.posted = posted;
+    render(); toast(`${BR[brand].label} ${id} marked ${status}.`);
+  } catch (e) { toast('Could not save. Check your connection and try again.'); if (btn) btn.disabled = false; }
+}
+
+/* ---------- Ideastore (Firestore: boards/<board>/ideastore) ---------- */
+let IDEAS = [], ideasMode = 'loading';   // loading | live | offline (offline = read-only starter ideas)
+const ideaEdit = new Set(), ideaOpen = new Set();
+const RULE = `match /boards/{board}/ideastore/{idea} {\n  allow read, write: if true;\n}`;
+const ideaUrl = id => `${FS}/boards/${BOARD}/ideastore${id ? '/' + encodeURIComponent(id) : ''}?key=${FS_KEY}`;
+const ideaFields = i => ({ title: { stringValue: i.title || '' }, brief: { stringValue: i.brief || '' }, brand: { stringValue: i.brand || '' },
+  platform: { stringValue: i.platform || '' }, status: { stringValue: i.status || 'new' }, notes: { stringValue: i.notes || '' },
+  source: { stringValue: i.source || '' }, created: { timestampValue: i.created || new Date().toISOString() }, updated: { timestampValue: new Date().toISOString() } });
+async function loadIdeas() {
+  try {
+    let token = '', list = [];
+    do {
+      const r = await fetch(`${FS}/boards/${BOARD}/ideastore?key=${FS_KEY}&pageSize=300${token ? '&pageToken=' + token : ''}`);
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json();
+      (j.documents || []).forEach(d => { const f = Object.fromEntries(Object.entries(d.fields || {}).map(([k, v]) => [k, Object.values(v)[0]])); f.id = d.name.split('/').pop(); list.push(f); });
+      token = j.nextPageToken || '';
+    } while (token);
+    IDEAS = list; ideasMode = 'live';
+  } catch (e) {
+    try { IDEAS = (await (await fetch('ideas.seed.json', { cache: 'no-cache' })).json()).ideas; } catch (x) { IDEAS = []; }
+    ideasMode = 'offline';
+  }
+  render();
+}
+async function saveIdea(i) {
+  const r = await fetch(ideaUrl(i.id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: ideaFields(i) }) });
+  if (!r.ok) throw new Error(r.status);
+}
+const ideaGuard = () => { if (ideasMode === 'live') return true; toast('The ideastore is read-only until the Firestore rule is added.'); return false; };
+const brandOpts = sel => `<option value="">Any brand</option>` + DATA.brands.map(b => `<option value="${b.key}"${sel === b.key ? ' selected' : ''}>${esc(b.label)}</option>`).join('');
+const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['LI', 'LinkedIn'], ['X', 'X']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
+const statusOpts = sel => ['new', 'shaping', 'scheduled', 'dropped'].map(v => `<option value="${v}"${sel === v ? ' selected' : ''}>${v}</option>`).join('');
+function ideaCard(i) {
+  const isOpen = ideaOpen.has(i.id);
+  if (ideaEdit.has(i.id)) return `<div class="idea open" data-card="${esc(i.id)}">
+    <input data-f="title" value="${esc(i.title)}" placeholder="Title">
+    <textarea data-f="brief" style="margin-top:8px;min-height:180px" placeholder="Brief">${esc(i.brief)}</textarea>
+    <div class="idea-row" style="margin-top:8px"><select data-f="brand">${brandOpts(i.brand)}</select><select data-f="platform">${platOpts(i.platform)}</select><select data-f="status">${statusOpts(i.status)}</select></div>
+    <input data-f="notes" style="margin-top:8px" value="${esc(i.notes)}" placeholder="Notes, sources, cautions">
+    <div class="idea-acts"><button class="go" data-idea-save="${esc(i.id)}">Save</button><button data-idea-cancel="${esc(i.id)}">Cancel</button></div></div>`;
+  const b = BR[i.brand];
+  return `<div class="idea${isOpen ? ' open' : ''}" data-card="${esc(i.id)}"${b ? ` style="border-left:3px solid ${b.accent}"` : ''}>
+    <div class="idea-top"><h3>${esc(i.title)}</h3></div>
+    <div class="idea-tags"><span class="itag ${esc(i.status)}">${esc(i.status)}</span>${b ? `<span class="itag">${esc(b.label)}</span>` : ''}${i.platform ? `<span class="itag">${esc(i.platform)}</span>` : ''}</div>
+    <div class="idea-brief" data-idea-toggle="${esc(i.id)}">${esc(i.brief)}</div>
+    ${isOpen && i.notes ? `<div class="idea-notes">${esc(i.notes)}</div>` : ''}
+    <div class="idea-acts"><button data-idea-edit="${esc(i.id)}">Edit</button>
+      ${i.status === 'new' ? `<button data-idea-set="shaping" data-id="${esc(i.id)}">Shaping</button>` : ''}
+      ${i.status !== 'scheduled' && i.status !== 'dropped' ? `<button data-idea-set="scheduled" data-id="${esc(i.id)}">Scheduled</button><button data-idea-set="dropped" data-id="${esc(i.id)}">Drop</button>` : `<button data-idea-set="new" data-id="${esc(i.id)}">Restore</button>`}
+      <button data-idea-copy="${esc(i.id)}">Copy</button><button data-idea-del="${esc(i.id)}">Delete</button></div></div>`;
+}
+function renderIdeas() {
+  const el = document.getElementById('ideasview');
+  const keepFocus = el.contains(document.activeElement) && document.activeElement.id === 'ni-title';
+  const list = IDEAS.slice().sort((a, b) => String(b.created || '').localeCompare(String(a.created || '')));
+  const live = list.filter(i => i.status !== 'dropped' && i.status !== 'scheduled'), rest = list.filter(i => i.status === 'dropped' || i.status === 'scheduled');
+  const banner = ideasMode === 'offline'
+    ? `<div class="idea-banner"><b>Ideastore is read-only.</b> Firestore is not allowing the <code>ideastore</code> collection yet, so these are the starter ideas from the repo. In the Firebase console go to Firestore, Rules, add this next to the existing <code>status</code> rule and publish:<pre>${esc(RULE)}</pre><button id="ideaRetry">Retry</button></div>`
+    : ideasMode === 'live' && !list.length ? `<div class="idea-banner">The ideastore is empty. <button id="ideaSeed">Add the 4 starter ideas</button></div>` : '';
+  el.innerHTML = banner + `<div class="idea-add"><h3>New idea</h3>
+    <input id="ni-title" placeholder="Title (or leave blank and just write the brief)">
+    <textarea id="ni-brief" placeholder="Brief: what is the idea, why it works, what image could go with it"></textarea>
+    <div class="idea-row"><select id="ni-brand">${brandOpts('')}</select><select id="ni-plat">${platOpts('')}</select><input id="ni-notes" placeholder="Notes or source"></div>
+    <button class="go" id="ni-add">Add idea</button></div>` +
+    `<section class="group"><h2>Open ideas <span>${live.length}</span></h2>${live.length ? live.map(ideaCard).join('') : '<div class="empty">No open ideas.</div>'}</section>` +
+    (rest.length ? `<section class="group"><details><summary><h2>Scheduled and dropped <span>${rest.length}</span></h2></summary>${rest.map(ideaCard).join('')}</details></section>` : '');
+  if (keepFocus) document.getElementById('ni-title').focus();
+  const find = id => IDEAS.find(x => x.id === id);
+  const done = (fn) => async function () { const b = this; b.disabled = true; try { await fn(b); } catch (e) { toast('Could not save. Check your connection and try again.'); } finally { b.disabled = false; } };
+  const q = (sel, fn) => el.querySelectorAll(sel).forEach(b => b.onclick = done(fn));
+  const rt = document.getElementById('ideaRetry'); if (rt) rt.onclick = () => loadIdeas();
+  const sd = document.getElementById('ideaSeed');
+  if (sd) sd.onclick = done(async () => {
+    const seed = (await (await fetch('ideas.seed.json', { cache: 'no-cache' })).json()).ideas;
+    for (const [n, i] of seed.entries()) await saveIdea({ ...i, created: new Date(Date.now() - n * 1000).toISOString() });
+    await loadIdeas(); toast('Starter ideas added.');
+  });
+  document.getElementById('ni-add').onclick = done(async () => {
+    if (!ideaGuard()) return;
+    const brief = document.getElementById('ni-brief').value.trim(); let title = document.getElementById('ni-title').value.trim();
+    if (!title && !brief) { toast('Add a title or a brief first.'); return; }
+    if (!title) title = brief.split('\n')[0].slice(0, 70);
+    const i = { id: 'i' + Date.now().toString(36), title, brief, brand: document.getElementById('ni-brand').value, platform: document.getElementById('ni-plat').value,
+      notes: document.getElementById('ni-notes').value.trim(), status: 'new', source: 'Ibrahim', created: new Date().toISOString() };
+    await saveIdea(i); IDEAS.push(i); render(); toast('Idea added.');
+  });
+  q('[data-idea-toggle]', b => { if (getSelection().toString()) return; const k = b.dataset.ideaToggle; ideaOpen.has(k) ? ideaOpen.delete(k) : ideaOpen.add(k); const y = scrollY; render(); scrollTo(0, y); });
+  q('[data-idea-edit]', b => { ideaEdit.add(b.dataset.ideaEdit); render(); });
+  q('[data-idea-cancel]', b => { ideaEdit.delete(b.dataset.ideaCancel); render(); });
+  q('[data-idea-save]', async b => {
+    if (!ideaGuard()) return;
+    const i = find(b.dataset.ideaSave), c = el.querySelector(`[data-card="${CSS.escape(i.id)}"]`), g = f => c.querySelector(`[data-f="${f}"]`).value;
+    const next = { ...i, title: g('title').trim() || i.title, brief: g('brief').trim(), brand: g('brand'), platform: g('platform'), status: g('status'), notes: g('notes').trim() };
+    await saveIdea(next); Object.assign(i, next); ideaEdit.delete(i.id); render(); toast('Saved.');
+  });
+  q('[data-idea-set]', async b => { if (!ideaGuard()) return; const i = find(b.dataset.id); const next = { ...i, status: b.dataset.ideaSet }; await saveIdea(next); Object.assign(i, next); render(); toast(`Marked ${next.status}.`); });
+  q('[data-idea-copy]', async b => { const i = find(b.dataset.ideaCopy); await navigator.clipboard.writeText(`${i.title}\n\n${i.brief}${i.notes ? '\n\n' + i.notes : ''}`); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
+  q('[data-idea-del]', async b => {
+    if (!ideaGuard()) return;
+    if (!confirm('Delete this idea for good?')) return;
+    const i = find(b.dataset.ideaDel);
+    const r = await fetch(ideaUrl(i.id), { method: 'DELETE' }); if (!r.ok) throw new Error(r.status);
+    IDEAS = IDEAS.filter(x => x.id !== i.id); render(); toast('Deleted.');
+  });
+}
+
+/* ---------- UI ---------- */
+const pad = n => String(n).padStart(2, '0');
+const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const today = iso(new Date());
+const plus = n => { const d = new Date(); d.setDate(d.getDate() + n); return iso(d); };
+const label = s => new Date(s + 'T00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+const open = p => p.status !== 'posted';
+function toast(m) { const t = document.getElementById('toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(() => t.style.display = 'none', 3000); }
+
+const SHORT = { tappstudio: 'tS', splitup: 'SU', nasab: 'NA', misbaha: 'MI' };
+const addDays = (s, n) => { const d = new Date(s + 'T00:00'); d.setDate(d.getDate() + n); return iso(d); };
+let dayPick = '';
+function renderDays(ps, rerender) {
+  const el = document.getElementById('days'); const keep = el.scrollLeft, first = !el.dataset.init;
+  const by = {}; ps.forEach(p => (by[p.date] = by[p.date] || []).push(p));
+  const dates = Object.keys(by).sort();
+  const from = [addDays(today, -2), ...ps.filter(p => open(p)).map(p => p.date)].sort()[0];
+  const to = dates.length ? dates[dates.length - 1] : addDays(today, 14);
+  let html = '';
+  for (let d = from, n = 0; d <= to && n < 120; d = addDays(d, 1), n++) {
+    const L = by[d] || [], t = new Date(d + 'T00:00');
+    const tags = {}; L.forEach(p => tags[p.brand] = (tags[p.brand] || 0) + 1);
+    const nSch = L.filter(p => p.status === 'scheduled').length, nRdy = L.filter(p => p.status === 'ready').length;
+    const sub = [nSch ? nSch + ' scheduled' : '', nRdy ? nRdy + ' ready' : ''].filter(Boolean).join(' · ') || (L.length && L.every(p => !open(p)) ? 'all posted' : '');
+    html += `<button class="day${d === today ? ' today' : ''}${d === dayPick ? ' sel' : ''}${L.length ? '' : ' none'}${L.length && L.every(p => !open(p)) ? ' done' : ''}" data-day="${d}">
+      <div class="wd">${t.toLocaleDateString('en-GB', { weekday: 'short' })}${d === today ? ' · today' : ''}</div>
+      <div class="num">${t.getDate()}<small>${t.toLocaleDateString('en-GB', { month: 'short' })}</small></div>
+      <div class="cnt"><b>${L.length}</b>${L.length === 1 ? 'post' : 'posts'}</div>
+      <div class="sub">${sub}</div>
+      <div class="tags">${Object.entries(tags).map(([k, c]) => `<span class="tag" style="--accent:${BR[k].accent}">${SHORT[k] || BR[k].label.slice(0, 2)}${c > 1 ? ' ×' + c : ''}</span>`).join('')}</div></button>`;
+  }
+  el.innerHTML = html;
+  el.querySelectorAll('[data-day]').forEach(b => b.onclick = () => { dayPick = dayPick === b.dataset.day ? '' : b.dataset.day; rerender(); });
+  if (first) { el.dataset.init = 1; const t = el.querySelector('.today'); if (t) el.scrollLeft = Math.max(0, t.offsetLeft - 16); } else el.scrollLeft = keep;
+}
+function render() {
+  const nav = document.getElementById('tabs'); nav.innerHTML = '';
+  [{ key: 'all', label: 'All brands' }, ...DATA.brands, { key: 'ideas', label: 'Ideas' }].forEach(t => {
+    const b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', t.key === tab);
+    const mine = DATA.posts.filter(p => t.key === 'all' || p.brand === t.key);
+    const late = mine.filter(p => open(p) && p.date < today).length, due = mine.filter(p => open(p) && p.date <= plus(7)).length;
+    const nIdeas = IDEAS.filter(i => i.status !== 'dropped' && i.status !== 'scheduled').length;
+    b.innerHTML = (t.accent ? `<span class="dot" style="background:${t.accent}"></span>` : '') + esc(t.label) +
+      (t.key === 'ideas' ? (nIdeas ? `<span class="n">${nIdeas}</span>` : '') : late ? `<span class="n hot">${late} late</span>` : due ? `<span class="n">${due}</span>` : '');
+    b.onclick = () => { tab = t.key; store(localStorage, 'socials:tab', tab); render(); };
+    nav.appendChild(b);
+  });
+  const onIdeas = tab === 'ideas';
+  ['days', 'stats', 'filters', 'groups'].forEach(id => document.getElementById(id).style.display = onIdeas ? 'none' : '');
+  document.getElementById('ideasview').style.display = onIdeas ? 'block' : 'none';
+  if (onIdeas) { document.getElementById('headline').innerHTML = 'Ideas. <span class="t">Dump now, shape later.</span><span class="cur"></span>'; renderIdeas(); return; }
+  document.getElementById('headline').innerHTML = tab === 'all' ? 'Every brand. <span class="t">One calendar.</span><span class="cur"></span>'
+    : `${esc(BR[tab].label)}, <span class="t">on schedule.</span><span class="cur"></span>`;
+
+  const ps = DATA.posts.filter(p => (tab === 'all' || p.brand === tab) && (plat === 'all' || p.platform === plat));
+  const late = ps.filter(p => open(p) && p.date < today), tod = ps.filter(p => open(p) && p.date === today),
+        week = ps.filter(p => open(p) && p.date > today && p.date <= plus(7)), later = ps.filter(p => open(p) && p.date > plus(7)),
+        done = ps.filter(p => !open(p));
+  document.getElementById('stats').innerHTML = [['Late', late.length, late.length ? 'hot' : ''], ['Today', tod.length], ['Next 7 days', week.length],
+    ['Ready', ps.filter(p => p.status === 'ready').length], ['Scheduled', ps.filter(p => p.status === 'scheduled').length], ['Posted', done.length]]
+    .map(([l, n, c]) => `<div class="stat ${c || ''}"><b>${n}</b><span>${l}</span></div>`).join('');
+
+  const f = document.getElementById('filters'); f.innerHTML = '';
+  const chip = (html, on, fn) => { const b = document.createElement('button'); b.className = 'chip' + (on ? ' on' : ''); b.innerHTML = html; b.onclick = fn; f.appendChild(b); };
+  [['all', 'All'], ['IG', 'Instagram'], ['LI', 'LinkedIn'], ['X', 'X']].forEach(([v, l]) => chip((v === 'all' ? '' : `<span class="dot" style="background:var(--${v.toLowerCase()})"></span>`) + l, plat === v, () => { plat = v; render(); }));
+  f.appendChild(Object.assign(document.createElement('span'), { className: 'sep' }));
+  chip(hidePosted ? 'Posted hidden' : 'Showing posted', !hidePosted, () => { hidePosted = !hidePosted; render(); });
+
+  renderDays(ps, render);
+  const g = document.getElementById('groups'); g.innerHTML = '';
+  const group = (title, list, o = {}) => {
+    const s = document.createElement('section'); s.className = 'group';
+    const head = `<h2 class="${o.hot ? 'hot' : ''}">${title} <span>${list.length}</span></h2>`;
+    const body = list.length ? list.map(row).join('') : `<div class="empty">${o.empty || 'Nothing here.'}</div>`;
+    s.innerHTML = o.fold ? `<details${o.open ? ' open' : ''}><summary>${head}</summary>${body}</details>` : head + body;
+    g.appendChild(s);
+  };
+  if (dayPick) group(label(dayPick) + (dayPick === today ? ' · today' : ''), ps.filter(p => p.date === dayPick), { empty: 'No posts on this day.' });
+  else {
+    if (late.length) group('Late, not posted yet', late, { hot: true });
+    group('Today · ' + label(today), tod, { empty: 'Nothing scheduled today.' });
+    group('Next 7 days', week);
+    group('Later', later, { fold: true, open: tab !== 'all' });
+    if (!hidePosted) group('Posted', done.slice().reverse(), { fold: true, open: true });
+  }
+
+  g.querySelectorAll('[data-toggle]').forEach(b => b.onclick = () => {
+    if (getSelection().toString()) return;
+    const k = b.dataset.toggle; opened.has(k) ? opened.delete(k) : opened.add(k);
+    const y = scrollY; render(); scrollTo(0, y);
+  });
+  g.querySelectorAll('[data-set]').forEach(b => b.onclick = () => setStatus(b.dataset.brand, b.dataset.id, b.dataset.set, b));
+  g.querySelectorAll('[data-alt]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.alt);
+    navigator.clipboard.writeText(altText(p)).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy alt', 1500); });
+  });
+  g.querySelectorAll('[data-altpart]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.altpart), i = +b.dataset.i;
+    const t = i < 0 ? p.alt.summary : p.alt.slides[i];
+    navigator.clipboard.writeText(t).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
+  });
+  g.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.reply);
+    navigator.clipboard.writeText(p.reply).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy reply', 1500); });
+  });
+  g.querySelectorAll('[data-copy]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.copy);
+    navigator.clipboard.writeText(p.text).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy post', 1500); });
+  });
+  g.querySelectorAll('.row.open .thumbs img').forEach(i => i.onclick = () => {
+    const v = document.getElementById('viewer'); v.querySelector('img').src = i.dataset.full;
+    const a = document.getElementById('viewerdl');
+    a.onclick = ev => { ev.preventDefault(); saveFiles([[i.dataset.full, null, i.dataset.name]], a); };
+    v.style.display = 'grid';
+  });
+  g.querySelectorAll('[data-pdf]').forEach(b => b.onclick = () => makePdf(DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.pdf), b));
+  g.querySelectorAll('[data-save]').forEach(b => b.onclick = () => saveFiles(DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.save).images, b));
+}
+document.getElementById('viewer').onclick = e => { if (e.target.tagName !== 'A') e.currentTarget.style.display = 'none'; };
+
+/* Nothing full-size is stored online. On Save, the 1080px WebP is turned into a full-size JPEG in the browser.
+   On phones that opens the share sheet (Save to Photos, or straight into Instagram / LinkedIn / X); elsewhere it downloads. */
+async function toJpeg(url, name) {
+  const r = await fetch(url); if (!r.ok) throw new Error(r.status);
+  const bmp = await createImageBitmap(await r.blob());
+  const c = Object.assign(document.createElement('canvas'), { width: bmp.width, height: bmp.height });
+  const ctx = c.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height); ctx.drawImage(bmp, 0, 0);
+  const blob = await new Promise(res => c.toBlob(res, 'image/jpeg', 0.95));
+  return new File([blob], name, { type: 'image/jpeg' });
+}
+async function busy(btn, fn) {
+  const label = btn.textContent; btn.disabled = true; btn.textContent = 'Preparing…';
+  try { await fn(); } catch (e) { if (e.name !== 'AbortError') toast('Could not prepare the files. Try again.'); }
+  finally { btn.disabled = false; btn.textContent = label; }
+}
+function download(file) {
+  const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = file.name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+function saveFiles(images, btn) {
+  return busy(btn, async () => {
+    const files = await Promise.all(images.map(([full, , name]) => toJpeg(full, name)));
+    if (matchMedia('(pointer: coarse)').matches && navigator.canShare && navigator.canShare({ files })) await navigator.share({ files });
+    else files.forEach((f, i) => setTimeout(() => download(f), i * 350));
+  });
+}
+function loadJsPdf() {
+  return window.jspdf ? Promise.resolve() : new Promise((res, rej) => {
+    const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s.onload = res; s.onerror = rej; document.head.appendChild(s);
+  });
+}
+function makePdf(p, btn) {
+  return busy(btn, async () => {
+    await loadJsPdf();
+    const files = await Promise.all(p.images.map(([full, , name]) => toJpeg(full, name)));
+    let doc = null;
+    for (const f of files) {
+      const bmp = await createImageBitmap(f), w = bmp.width, h = bmp.height;
+      const data = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(f); });
+      if (!doc) doc = new window.jspdf.jsPDF({ unit: 'px', format: [w, h], orientation: h >= w ? 'portrait' : 'landscape', hotfixes: ['px_scaling'] });
+      else doc.addPage([w, h], h >= w ? 'portrait' : 'landscape');
+      doc.addImage(data, 'JPEG', 0, 0, w, h);
+    }
+    const file = new File([doc.output('blob')], `${p.brand}-${p.id}-carousel.pdf`, { type: 'application/pdf' });
+    if (matchMedia('(pointer: coarse)').matches && navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file] });
+    else download(file);
+  });
+}
+document.getElementById('refresh').onclick = () => { loadStatus(); loadIdeas(); };
+
+function row(p) {
+  const b = BR[p.brand], k = p.brand + '/' + p.id, isOpen = opened.has(k);
+  const btn = (s, l) => `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-set="${s}">${l}</button>`;
+  const acts = p.status === 'posted' ? btn('ready', 'Undo')
+    : (p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted');
+  const imgs = p.images || [];
+  return `<div class="row${isOpen ? ' open' : ''}" style="--accent:${b.accent}">
+    <span class="m d">${label(p.date)}</span><span class="m tm">${esc(p.time)}</span>
+    <span class="brand"><i style="background:${b.accent}"></i>${esc(b.label)}</span>
+    ${pf(p)}<span class="m id">${esc(p.id)}</span>
+    <button class="ttl" data-toggle="${esc(k)}">${esc(p.title)}${p.warn && open(p) ? `<small>⚠️ ${esc(p.note).slice(0, 140)}</small>` : ''}</button>
+    <span class="st ${esc(p.status)}">${esc(p.status)}</span><span class="acts">${acts}</span>
+    <div class="more">
+      ${imgs.length ? `<div class="thumbs">${imgs.slice(0, isOpen ? 99 : 4).map(([full, th, name], n) => `<img loading="lazy" src="${isOpen ? full : th}" data-full="${full}" data-name="${esc(name)}" alt="${esc(((p.alt || {}).slides || [])[n] || (p.alt || {}).summary || '')}">`).join('')}${!isOpen && imgs.length > 4 ? `<span class="plus">+${imgs.length - 4}</span>` : ''}</div>` : ''}
+      <button class="prev" data-toggle="${esc(k)}">${esc(p.text)}</button>
+      ${altBlock(p)}
+      ${replyBlock(p)}
+      <div class="tools"><button data-copy="${esc(k)}">Copy post</button>
+        ${imgs.length ? `<button class="ghost" data-save="${esc(k)}">Save ${imgs.length > 1 ? imgs.length + ' images' : 'image'}</button>` : ''}
+        ${p.carousel && imgs.length > 1 ? `<button class="ghost" data-pdf="${esc(k)}">Make PDF</button>` : ''}
+        <span class="meta">${esc(p.format)} · ${imgs.length ? imgs.length + ' image' + (imgs.length > 1 ? 's' : '') : 'no images yet'}${p.posted ? ' · posted ' + esc(p.posted) : ''}</span></div>
+    </div></div>`;
+}
+</script>
+</body>
+</html>

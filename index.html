@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tappStudio: independent apps, made in Mumbai</title>
+    <meta name="description"
+        content="tappStudio is an independent app studio in Mumbai. It designs, builds and looks after its own apps for family, friends, faith and community: Nasab, Splitup, My Deen, Misbaha and Hunar Circle. No client work.">
+    <meta name="keywords"
+        content="tappStudio, independent app studio, indie apps, Nasab, Splitup, My Deen, Misbaha, Hunar Circle, iOS apps, Android apps, Mumbai, India">
+    <meta name="author" content="Ibrahim Broachwala">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tappstudio.in/">
+    <meta property="og:site_name" content="tappStudio">
+    <meta property="og:title" content="tappStudio: independent apps, made in Mumbai">
+    <meta property="og:description"
+        content="Small apps for family, friends, faith and community. Nasab, Splitup, My Deen, Misbaha and Hunar Circle, designed, built and looked after in-house.">
+    <meta property="og:image" content="https://tappstudio.in/public/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="tappStudio, an independent app studio: small apps for family, friends and faith, shown with screenshots of Splitup, Nasab and My Deen.">
+    <meta property="og:locale" content="en_IN">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tappstudio.in/">
+    <meta name="twitter:title" content="tappStudio: independent apps, made in Mumbai">
+    <meta name="twitter:description"
+        content="Small apps for family, friends, faith and community, designed, built and looked after in-house.">
+    <meta name="twitter:image" content="https://tappstudio.in/public/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="tappStudio, an independent app studio: small apps for family, friends and faith, shown with screenshots of Splitup, Nasab and My Deen.">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tappstudio.in/">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <!-- Theme, before first paint: no flash of the wrong theme -->
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./index.css?v=20261016">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "tappStudio",
+      "url": "https://tappstudio.in",
+      "logo": "https://tappstudio.in/public/images/logo.png",
+      "image": "https://tappstudio.in/public/images/logo.png",
+      "slogan": "Small apps for family, friends, faith and community.",
+      "description": "tappStudio is an independent app studio in Mumbai, run by Ibrahim Broachwala. It designs, builds and maintains its own iOS, Android and web apps, and does not take client work.",
+      "founder": {
+        "@type": "Person",
+        "name": "Ibrahim Broachwala",
+        "sameAs": [
+          "https://www.linkedin.com/in/ibrahimbroachwala/",
+          "https://www.instagram.com/ibrahim.broach"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "tappstudio.in@gmail.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/tappstudio/",
+        "https://www.linkedin.com/in/ibrahimbroachwala/",
+        "https://www.instagram.com/ibrahim.broach",
+        "https://twitter.com/messages/compose?recipient_id=ibrahim_broach"
+      ]
+    }
+  </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Apps by tappStudio",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "Nasab",
+            "description": "A living family archive. Build your tree, preserve your family's stories, photos, and voice notes, invite the people who care to keep it growing with you.",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://nasab.tappstudio.in",
+            "image": "https://tappstudio.in/public/apps/nasab/icon.png"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "Splitup",
+            "description": "Split. Remind. Settle. Group expenses and bills with friends.",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://splitup.tappstudio.in",
+            "image": "https://tappstudio.in/public/apps/splitup/android.png"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "My Deen",
+            "description": "Smart Amal tracker that helps Muslims stay consistent with daily and weekly spiritual habits. Track Namaz, Duas, and good deeds with reminders, streaks, and achievement badges.",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://tappstudio.in/mydeen/",
+            "image": "https://tappstudio.in/public/apps/mydeen/android_icon.png"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "Misbaha Tasbih Counter",
+            "description": "A premium tasbih counter with interactive 3D beads, for a focused, tactile count of daily tasbeeh and remembrance.",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "iOS, Android",
+            "url": "https://tappstudio.in/#misbaha-tasbih-counter",
+            "image": "https://tappstudio.in/public/apps/misbaha/android.png"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Hunar Circle",
+            "description": "A free, verified directory of skilled Dawoodi Bohra individuals and their businesses. Search by craft, city and availability and contact people directly.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://hunarcircle.com",
+            "image": "https://tappstudio.in/public/apps/hunarcircle/icon.png"
+          }
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="wrap header-inner">
+            <a href="#top" class="brand" aria-label="tappStudio, back to top">
+                <svg class="brand-logo" width="28" height="28" viewBox="0 0 512 512" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path class="brand-logo-t"
+                        d="M195.581 190.455V231.818H76.0142V190.455H195.581ZM103.159 142.886H158.224V327.989C158.224 333.073 159 337.037 160.551 339.881C162.102 342.638 164.257 344.577 167.014 345.697C169.858 346.818 173.133 347.378 176.838 347.378C179.423 347.378 182.009 347.162 184.594 346.732C187.179 346.214 189.161 345.827 190.54 345.568L199.2 386.544C196.443 387.406 192.565 388.397 187.567 389.517C182.569 390.723 176.493 391.456 169.341 391.714C156.07 392.232 144.437 390.465 134.44 386.415C124.53 382.365 116.818 376.074 111.303 367.543C105.787 359.011 103.073 348.24 103.159 335.227V142.886Z" />
+                    <path class="brand-logo-s"
+                        d="M376.094 200.408C375.06 189.981 370.622 181.88 362.781 176.107C354.939 170.333 344.296 167.446 330.853 167.446C321.719 167.446 314.006 168.739 307.715 171.324C301.424 173.823 296.599 177.313 293.238 181.794C289.963 186.275 288.326 191.359 288.326 197.047C288.154 201.786 289.145 205.923 291.299 209.456C293.54 212.989 296.599 216.048 300.477 218.634C304.354 221.133 308.835 223.33 313.92 225.226C319.004 227.036 324.433 228.587 330.207 229.879L353.991 235.567C365.538 238.152 376.138 241.599 385.789 245.908C395.441 250.216 403.799 255.516 410.866 261.807C417.932 268.098 423.404 275.509 427.282 284.04C431.246 292.571 433.271 302.352 433.357 313.382C433.271 329.583 429.135 343.629 420.948 355.521C412.848 367.327 401.128 376.505 385.789 383.054C370.536 389.517 352.138 392.749 330.594 392.749C309.223 392.749 290.61 389.474 274.754 382.925C258.984 376.375 246.661 366.681 237.785 353.841C228.995 340.915 224.385 324.929 223.954 305.885H278.114C278.718 314.761 281.26 322.172 285.741 328.118C290.308 333.978 296.383 338.416 303.967 341.432C311.636 344.362 320.297 345.827 329.948 345.827C339.427 345.827 347.657 344.448 354.637 341.69C361.703 338.933 367.175 335.098 371.053 330.186C374.931 325.274 376.87 319.63 376.87 313.253C376.87 307.307 375.103 302.309 371.57 298.259C368.123 294.208 363.039 290.761 356.317 287.918C349.682 285.074 341.539 282.489 331.887 280.162L303.062 272.923C280.743 267.494 263.12 259.006 250.194 247.459C237.268 235.911 230.848 220.357 230.934 200.795C230.848 184.767 235.113 170.764 243.731 158.786C252.434 146.807 264.37 137.457 279.536 130.736C294.703 124.014 311.938 120.653 331.241 120.653C350.888 120.653 368.037 124.014 382.687 130.736C397.423 137.457 408.884 146.807 417.07 158.786C425.257 170.764 429.479 184.638 429.738 200.408H376.094Z" />
+                </svg>
+                <span class="brand-word"><span class="brand-tapp">tapp</span><span
+                        class="brand-studio">Studio</span></span>
+            </a>
+            <nav class="nav-links" aria-label="Section navigation">
+                <a href="#apps">Apps</a>
+                <a href="#principles">Principles</a>
+                <a href="#now">Now</a>
+                <a href="#studio">Studio</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
+                    aria-label="Toggle dark or light theme" type="button">
+                    <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                </button>
+                <button class="btn btn-ghost btn-small" data-open-contact type="button">Say hello</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero" id="intro">
+            <div class="hero-grain" aria-hidden="true"></div>
+            <div class="wrap hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>Independent app studio ·
+                        Mumbai</p>
+                    <h1 class="hero-title">
+                        <span class="hero-lead">Small apps for</span>
+                        <span class="hero-rotator" aria-hidden="true">
+                            <span class="hero-word is-active">your family.</span>
+                            <span class="hero-word">your friends.</span>
+                            <span class="hero-word">your deen.</span>
+                            <span class="hero-word">your tasbih.</span>
+                            <span class="hero-word">your community.</span>
+                        </span>
+                        <span class="visually-hidden">family, friends, faith and community.</span>
+                    </h1>
+                    <p class="hero-sub">tappStudio designs, builds and looks after its own apps for iPhone, Android
+                        and the web. No client work and no outside roadmap: a handful of products, made with care and
+                        kept going long after launch day.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-accent btn-large" href="#apps">Explore the apps <span
+                                aria-hidden="true">↓</span></a>
+                        <a class="btn btn-ghost btn-large" href="#now">What's on the bench</a>
+                    </div>
+                    <ul class="hero-stats" role="list">
+                        <li><span class="stat-num">5</span> apps live</li>
+                        <li>iOS · Android · Web</li>
+                        <li><span class="stat-num">1</span> person</li>
+                        <li><span class="stat-num">0</span> clients</li>
+                    </ul>
+                </div>
+
+                <div class="hero-stage">
+                    <div class="stage-glow" aria-hidden="true"></div>
+                    <div class="stage-device">
+                        <div class="deck" id="deck" aria-hidden="true">
+                            <img class="deck-card" data-pos="0" src="public/apps/nasab/1-540.webp"
+                                    srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w"
+                                    sizes="250px" width="1320" height="2868" decoding="async" fetchpriority="high"
+                                    alt="" />
+                            <img class="deck-card" data-pos="1" src="public/apps/splitup/1-540.webp"
+                                    srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w"
+                                    sizes="250px" width="1320" height="2868" decoding="async" alt="" />
+                            <img class="deck-card" data-pos="2" src="public/apps/mydeen/1-540.webp"
+                                    srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w"
+                                    sizes="250px" width="1320" height="2868" decoding="async" alt="" />
+                            <img class="deck-card" data-pos="3" src="public/apps/misbaha/2-540.webp"
+                                    srcset="public/apps/misbaha/2-540.webp 540w, public/apps/misbaha/2-1080.webp 1080w"
+                                    sizes="250px" width="1170" height="2532" decoding="async" alt="" />
+                            <img class="deck-card" data-pos="4" src="public/apps/hunarcircle/1-540.webp"
+                                    srcset="public/apps/hunarcircle/1-540.webp 540w, public/apps/hunarcircle/1-1080.webp 1080w"
+                                    sizes="250px" width="1080" height="2341" decoding="async" alt="" />
+                        </div>
+                        <a class="stage-caption" id="stage-caption" href="#nasab">
+                            <img id="stage-caption-icon" src="public/apps/nasab/icon-256.webp" width="40" height="40"
+                                decoding="async" alt="" />
+                            <span class="stage-caption-text">
+                                <strong id="stage-caption-name">Nasab</strong>
+                                <span id="stage-caption-line">The family archive</span>
+                            </span>
+                            <span class="stage-caption-arrow" aria-hidden="true">↓</span>
+                        </a>
+                        <img class="mascot mascot-hero" src="public/images/mascot/wave.svg" width="120" height="127"
+                            decoding="async" alt="" />
+                    </div>
+
+                    <div class="dock" id="dock" role="group" aria-label="Preview an app">
+                        <button class="dock-btn" type="button" aria-pressed="true" data-index="0"
+                            data-name="Nasab" data-line="The family archive" data-href="#nasab"
+                            data-icon="public/apps/nasab/icon-256.webp">
+                            <img src="public/apps/nasab/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview Nasab</span>
+                        </button>
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="1"
+                            data-name="Splitup" data-line="Split, remind, settle" data-href="#splitup"
+                            data-icon="public/apps/splitup/icon-256.webp">
+                            <img src="public/apps/splitup/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview Splitup</span>
+                        </button>
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="2"
+                            data-name="My Deen" data-line="Daily Amal tracker" data-href="#my-deen"
+                            data-icon="public/apps/mydeen/icon-256.webp">
+                            <img src="public/apps/mydeen/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview My Deen</span>
+                        </button>
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="3"
+                            data-name="Misbaha" data-line="Tasbih with 3D beads" data-href="#misbaha-tasbih-counter"
+                            data-icon="public/apps/misbaha/icon-256.webp">
+                            <img src="public/apps/misbaha/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview Misbaha</span>
+                        </button>
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="4"
+                            data-name="Hunar Circle" data-line="Community directory" data-href="#hunar-circle"
+                            data-icon="public/apps/hunarcircle/icon-256.webp">
+                            <img src="public/apps/hunarcircle/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview Hunar Circle</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TICKER -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <div class="ticker-group">
+                    <span class="ticker-item"><img src="public/apps/nasab/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Nasab<em>family archive</em></span>
+                    <span class="ticker-item"><img src="public/apps/splitup/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Splitup<em>group expenses</em></span>
+                    <span class="ticker-item"><img src="public/apps/mydeen/icon-256.webp" width="28" height="28" loading="lazy" alt="" />My Deen<em>daily habits</em></span>
+                    <span class="ticker-item"><img src="public/apps/misbaha/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Misbaha<em>tasbih counter</em></span>
+                    <span class="ticker-item"><img src="public/apps/hunarcircle/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Hunar Circle<em>community directory</em></span>
+                </div>
+                <div class="ticker-group">
+                    <span class="ticker-item"><img src="public/apps/nasab/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Nasab<em>family archive</em></span>
+                    <span class="ticker-item"><img src="public/apps/splitup/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Splitup<em>group expenses</em></span>
+                    <span class="ticker-item"><img src="public/apps/mydeen/icon-256.webp" width="28" height="28" loading="lazy" alt="" />My Deen<em>daily habits</em></span>
+                    <span class="ticker-item"><img src="public/apps/misbaha/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Misbaha<em>tasbih counter</em></span>
+                    <span class="ticker-item"><img src="public/apps/hunarcircle/icon-256.webp" width="28" height="28" loading="lazy" alt="" />Hunar Circle<em>community directory</em></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPS -->
+        <section class="section apps-section" id="apps">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="kicker"><span>01</span> The apps</p>
+                    <h2 class="section-title">Five apps. Made here,<br class="br-wide"> still looked after here.</h2>
+                    <p class="section-sub">Designed, built, shipped and supported in-house. Tap a screenshot to see it
+                        full size.</p>
+                </div>
+
+                <div class="bento">
+                    <!-- Nasab -->
+                    <article class="tile tile--feature" id="nasab" data-reveal>
+                        <div class="tile-body">
+                            <header class="tile-head">
+                                <a href="https://nasab.tappstudio.in" class="tile-icon-link" tabindex="-1">
+                                    <img class="tile-icon" src="public/apps/nasab/icon-256.webp" width="64"
+                                        height="64" loading="lazy" decoding="async"
+                                        alt="Nasab app icon" /></a>
+                                <div class="tile-title">
+                                    <h3><a href="https://nasab.tappstudio.in">Nasab</a></h3>
+                                    <p class="tile-cat">Family archive · iOS &amp; Android</p>
+                                </div>
+                                <span class="tile-badge">Newest</span>
+                            </header>
+                            <p class="tile-desc">A living family archive. Build your tree, preserve your family's
+                                stories, photos, and voice notes, and invite the people who care to keep it growing with
+                                you.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>Family tree, three layouts</li>
+                                <li>Photo &amp; voice memories</li>
+                                <li>Shared family spaces</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/nasab-the-family-archive/id6793519541"
+                                        target="_blank" rel="noopener" aria-label="Download Nasab on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download on the App Store" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.nasab"
+                                        target="_blank" rel="noopener" aria-label="Get Nasab on Google Play"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Get it on Google Play" /></a>
+                                </div>
+                                <a class="tile-link" href="https://nasab.tappstudio.in">nasab.tappstudio.in <span
+                                        aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                        <div class="tile-shots tile-shots--fan">
+                            <button class="shot" type="button" aria-label="View Nasab screenshot: your family tree, a living archive">
+                                <img src="public/apps/nasab/1-540.webp"
+                                    srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w"
+                                    sizes="220px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Nasab: your family tree, a living archive" /></button>
+                            <button class="shot" type="button" aria-label="View Nasab screenshot: family tree in vertical, horizontal and radial layouts">
+                                <img src="public/apps/nasab/2-540.webp"
+                                    srcset="public/apps/nasab/2-540.webp 540w, public/apps/nasab/2-1080.webp 1080w"
+                                    sizes="240px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Nasab: family tree in vertical, horizontal and radial layouts" /></button>
+                            <button class="shot" type="button" aria-label="View Nasab screenshot: albums and memories tied to people">
+                                <img src="public/apps/nasab/3-540.webp"
+                                    srcset="public/apps/nasab/3-540.webp 540w, public/apps/nasab/3-1080.webp 1080w"
+                                    sizes="220px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Nasab: albums and memories tied to people" /></button>
+                        </div>
+                    </article>
+
+                    <!-- Splitup -->
+                    <article class="tile" id="splitup" data-reveal>
+                        <div class="tile-body">
+                            <header class="tile-head">
+                                <a href="https://splitup.tappstudio.in" class="tile-icon-link" tabindex="-1">
+                                    <img class="tile-icon" src="public/apps/splitup/icon-256.webp" width="64"
+                                        height="64" loading="lazy" decoding="async"
+                                        alt="Splitup app icon" /></a>
+                                <div class="tile-title">
+                                    <h3><a href="https://splitup.tappstudio.in">Splitup</a></h3>
+                                    <p class="tile-cat">Group expenses · iOS &amp; Android</p>
+                                </div>
+                            </header>
+                            <p class="tile-desc">Split. Remind. Settle. Group expenses and bills with friends, added by
+                                voice and synced even when you're offline.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>Voice input</li>
+                                <li>Works offline</li>
+                                <li>Settle-up flows</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/splitup-group-expense/id6744556329"
+                                        target="_blank" rel="noopener" aria-label="Download Splitup on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download on the App Store" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.splitup"
+                                        target="_blank" rel="noopener" aria-label="Get Splitup on Google Play"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Get it on Google Play" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile-shots">
+                            <button class="shot" type="button" aria-label="View Splitup screenshot: group expense dashboard">
+                                <img src="public/apps/splitup/1-540.webp"
+                                    srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup: group expense dashboard" /></button>
+                            <button class="shot" type="button" aria-label="View Splitup screenshot: add expenses by voice">
+                                <img src="public/apps/splitup/2-540.webp"
+                                    srcset="public/apps/splitup/2-540.webp 540w, public/apps/splitup/2-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup: add expenses by voice" /></button>
+                            <button class="shot" type="button" aria-label="View Splitup screenshot: works offline with auto-sync">
+                                <img src="public/apps/splitup/3-540.webp"
+                                    srcset="public/apps/splitup/3-540.webp 540w, public/apps/splitup/3-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Splitup: works offline with auto-sync" /></button>
+                        </div>
+                    </article>
+
+                    <!-- My Deen -->
+                    <article class="tile" id="my-deen" data-reveal>
+                        <div class="tile-body">
+                            <header class="tile-head">
+                                <a href="mydeen/" class="tile-icon-link" tabindex="-1">
+                                    <img class="tile-icon" src="public/apps/mydeen/icon-256.webp" width="64"
+                                        height="64" loading="lazy" decoding="async"
+                                        alt="My Deen app icon" /></a>
+                                <div class="tile-title">
+                                    <h3><a href="mydeen/">My Deen</a></h3>
+                                    <p class="tile-cat">Daily habits · iOS &amp; Android</p>
+                                </div>
+                            </header>
+                            <p class="tile-desc">A smart Amal tracker for staying consistent with daily and weekly
+                                spiritual habits. Namaz, Duas and good deeds, with reminders, streaks and badges.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>Reminders</li>
+                                <li>Streaks</li>
+                                <li>Achievement badges</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125"
+                                        target="_blank" rel="noopener" aria-label="Download My Deen on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download on the App Store" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mydeen"
+                                        target="_blank" rel="noopener" aria-label="Get My Deen on Google Play"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Get it on Google Play" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile-shots">
+                            <button class="shot" type="button" aria-label="View My Deen screenshot: Amal tracking dashboard">
+                                <img src="public/apps/mydeen/1-540.webp"
+                                    srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen: Amal tracking dashboard" /></button>
+                            <button class="shot" type="button" aria-label="View My Deen screenshot: streaks and reminders">
+                                <img src="public/apps/mydeen/2-540.webp"
+                                    srcset="public/apps/mydeen/2-540.webp 540w, public/apps/mydeen/2-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen: streaks and reminders" /></button>
+                            <button class="shot" type="button" aria-label="View My Deen screenshot: achievement badges">
+                                <img src="public/apps/mydeen/3-540.webp"
+                                    srcset="public/apps/mydeen/3-540.webp 540w, public/apps/mydeen/3-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="My Deen: achievement badges" /></button>
+                        </div>
+                    </article>
+
+                    <!-- Misbaha -->
+                    <article class="tile" id="misbaha-tasbih-counter" data-reveal>
+                        <div class="tile-body">
+                            <header class="tile-head">
+                                <img class="tile-icon" src="public/apps/misbaha/icon-256.webp" width="64" height="64"
+                                    loading="lazy" decoding="async" alt="Misbaha Tasbih Counter app icon" />
+                                <div class="tile-title">
+                                    <h3>Misbaha</h3>
+                                    <p class="tile-cat">Tasbih counter · iOS &amp; Android</p>
+                                </div>
+                            </header>
+                            <p class="tile-desc">A premium tasbih counter with interactive 3D beads, for a focused,
+                                tactile count of daily tasbeeh and remembrance.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>Interactive 3D beads</li>
+                                <li>Tactile counting</li>
+                                <li>Daily remembrance</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/misbaha-tasbih-counter/id6757333557"
+                                        target="_blank" rel="noopener" aria-label="Download Misbaha on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download on the App Store" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.mytasbih"
+                                        target="_blank" rel="noopener" aria-label="Get Misbaha on Google Play"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Get it on Google Play" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile-shots">
+                            <button class="shot" type="button" aria-label="View Misbaha screenshot: main counter">
+                                <img src="public/apps/misbaha/1-540.webp"
+                                    srcset="public/apps/misbaha/1-540.webp 540w, public/apps/misbaha/1-1080.webp 1080w"
+                                    sizes="170px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha: main counter" /></button>
+                            <button class="shot" type="button" aria-label="View Misbaha screenshot: 3D tasbih beads">
+                                <img src="public/apps/misbaha/2-540.webp"
+                                    srcset="public/apps/misbaha/2-540.webp 540w, public/apps/misbaha/2-1080.webp 1080w"
+                                    sizes="170px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha: 3D tasbih beads" /></button>
+                            <button class="shot" type="button" aria-label="View Misbaha screenshot: daily remembrance tracking">
+                                <img src="public/apps/misbaha/3-540.webp"
+                                    srcset="public/apps/misbaha/3-540.webp 540w, public/apps/misbaha/3-1080.webp 1080w"
+                                    sizes="170px" width="1170" height="2532" loading="lazy" decoding="async"
+                                    alt="Misbaha: daily remembrance tracking" /></button>
+                        </div>
+                    </article>
+
+                    <!-- Hunar Circle -->
+                    <article class="tile" id="hunar-circle" data-reveal>
+                        <div class="tile-body">
+                            <header class="tile-head">
+                                <a href="https://hunarcircle.com" target="_blank" rel="noopener"
+                                    class="tile-icon-link" tabindex="-1">
+                                    <img class="tile-icon" src="public/apps/hunarcircle/icon-256.webp" width="64"
+                                        height="64" loading="lazy" decoding="async"
+                                        alt="Hunar Circle logo" /></a>
+                                <div class="tile-title">
+                                    <h3><a href="https://hunarcircle.com" target="_blank" rel="noopener">Hunar
+                                            Circle</a></h3>
+                                    <p class="tile-cat">Community directory · Web</p>
+                                </div>
+                            </header>
+                            <p class="tile-desc">A free, verified directory of skilled Dawoodi Bohra individuals and
+                                their businesses. Search by craft, city and availability, then contact people
+                                directly.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>Mobile-first web app</li>
+                                <li>Verified listings</li>
+                                <li>Shareable profile cards</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <a class="btn btn-accent" href="https://hunarcircle.com" target="_blank"
+                                    rel="noopener" aria-label="Visit hunarcircle.com">hunarcircle.com <span
+                                        aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                        <div class="tile-shots">
+                            <button class="shot" type="button" aria-label="View Hunar Circle screenshot: directory home">
+                                <img src="public/apps/hunarcircle/1-540.webp"
+                                    srcset="public/apps/hunarcircle/1-540.webp 540w, public/apps/hunarcircle/1-1080.webp 1080w"
+                                    sizes="170px" width="1080" height="2341" loading="lazy" decoding="async"
+                                    alt="Hunar Circle: community directory home" /></button>
+                            <button class="shot" type="button" aria-label="View Hunar Circle screenshot: verified profile">
+                                <img src="public/apps/hunarcircle/2-540.webp"
+                                    srcset="public/apps/hunarcircle/2-540.webp 540w, public/apps/hunarcircle/2-1080.webp 1080w"
+                                    sizes="170px" width="1080" height="2341" loading="lazy" decoding="async"
+                                    alt="Hunar Circle: verified profile with skills and contact links" /></button>
+                            <button class="shot" type="button" aria-label="View Hunar Circle screenshot: verified business listings">
+                                <img src="public/apps/hunarcircle/3-540.webp"
+                                    srcset="public/apps/hunarcircle/3-540.webp 540w, public/apps/hunarcircle/3-1080.webp 1080w"
+                                    sizes="170px" width="1080" height="2341" loading="lazy" decoding="async"
+                                    alt="Hunar Circle: verified business listings" /></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPLES -->
+        <section class="section principles-section" id="principles">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="kicker"><span>02</span> How the studio works</p>
+                    <h2 class="section-title">A few rules,<br class="br-wide"> kept on purpose.</h2>
+                    <p class="section-sub">They're the reason there are only a handful of apps, and the reason each one
+                        still gets looked after.</p>
+                </div>
+                <ol class="rules" role="list">
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">01</span>
+                        <h3>Only build what's missing</h3>
+                        <p>Every app starts with a real gap in a family, a friend group or a community. Not a gap in a
+                            market report.</p>
+                    </li>
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">02</span>
+                        <h3>Small on purpose</h3>
+                        <p>One person, a handful of apps. Fewer things, each one looked after properly instead of
+                            abandoned for the next shiny idea.</p>
+                    </li>
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">03</span>
+                        <h3>No clients, no compromises</h3>
+                        <p>No outside roadmap and no deadline set by someone else's launch party. The apps answer to
+                            the people who use them.</p>
+                    </li>
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">04</span>
+                        <h3>Launch day is day one</h3>
+                        <p>Store release is the start. Updates, fixes and support replies keep coming long after the
+                            launch post scrolls away.</p>
+                    </li>
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">05</span>
+                        <h3>AI types, a human decides</h3>
+                        <p>Built with Claude Code inside house code guides written from every app shipped so far. Every
+                            design call and every line gets reviewed by hand.</p>
+                    </li>
+                    <li class="rule" data-reveal>
+                        <span class="rule-num" aria-hidden="true">06</span>
+                        <h3>Sweat the 2px</h3>
+                        <p>Twenty minutes arguing over padding nobody will notice. Somebody would, and that somebody
+                            deserves it.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- NOW -->
+        <section class="section now-section" id="now">
+            <div class="wrap now-inner">
+                <div class="now-copy">
+                    <p class="kicker"><span>03</span> Now</p>
+                    <h2 class="section-title">What's on the bench</h2>
+                    <p>A public note of what the studio is focused on right now, in the spirit of <a
+                            href="https://nownownow.com/about" target="_blank" rel="noopener">/now pages</a>. It
+                        changes when the focus does.</p>
+                    <p class="now-updated">Last updated <time datetime="2026-10-16">16 October 2026</time></p>
+                    <img class="mascot mascot-now" src="public/images/mascot/thinking.svg" width="96" height="101"
+                        decoding="async" loading="lazy" alt="" />
+                </div>
+                <div class="board" data-reveal>
+                    <div class="board-bar" aria-hidden="true">
+                        <span class="board-dots"><i></i><i></i><i></i></span>
+                        <span class="board-title">tappstudio ~ now</span>
+                    </div>
+                    <table class="board-table">
+                        <caption class="visually-hidden">Status of every tappStudio project</caption>
+                        <thead class="visually-hidden">
+                            <tr>
+                                <th scope="col">Status</th>
+                                <th scope="col">Project</th>
+                                <th scope="col">Where</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#nasab">Nasab</a></th>
+                                <td>iOS · Android</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#splitup">Splitup</a></th>
+                                <td>iOS · Android</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#my-deen">My Deen</a></th>
+                                <td>iOS · Android</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#misbaha-tasbih-counter">Misbaha</a></th>
+                                <td>iOS · Android</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#hunar-circle">Hunar Circle</a></th>
+                                <td>Web</td>
+                            </tr>
+                            <tr class="board-row--brewing">
+                                <td><span class="status status--brewing">brewing</span></td>
+                                <th scope="row"><span class="redacted">Something new</span></th>
+                                <td>No name, no date yet</td>
+                            </tr>
+                            <tr class="board-row--closed">
+                                <td><span class="status status--closed">closed</span></td>
+                                <th scope="row">Client work</th>
+                                <td>Not taking any</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="board-prompt" aria-hidden="true"><span>$</span> ship --carefully<span
+                            class="caret"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDIO -->
+        <section class="section studio-section" id="studio">
+            <div class="wrap studio-inner">
+                <figure class="me-card" data-tilt>
+                    <div class="me-card-body">
+                        <div class="me-card-frame" aria-hidden="true"></div>
+                        <img class="me-card-photo" src="public/images/me-360.webp"
+                            srcset="public/images/me-360.webp 360w, public/images/me-720.webp 720w" sizes="244px"
+                            width="720" height="697" decoding="async" loading="lazy"
+                            alt="Ibrahim Broachwala, founder of tappStudio" />
+                        <figcaption class="me-card-tag">Ibrahim · the whole studio</figcaption>
+                    </div>
+                </figure>
+                <div class="studio-note">
+                    <p class="kicker"><span>04</span> The studio</p>
+                    <h2 class="section-title">One person.<br>A handful of apps.<br><span class="accent-text">No
+                            clients.</span></h2>
+                    <p>tappStudio is me, Ibrahim, working from Mumbai. It used to build apps for clients too. Not any
+                        more: every hour now goes into the apps on this page and the ones that come after them.</p>
+                    <p>So when you leave a review, report a bug or email support, the person reading it is the same
+                        person who designed the screen and wrote the code. That's the whole point.</p>
+                    <p class="signature">Ibrahim Broachwala<span>Founder, tappStudio</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAY HELLO -->
+        <section class="section hello-section" id="hello">
+            <div class="wrap hello-inner">
+                <img class="mascot mascot-hello" src="public/images/mascot/happy.svg" width="130" height="137"
+                    decoding="async" loading="lazy" alt="" />
+                <h2>Using one of the apps?<br><span class="accent-text">Say hello.</span></h2>
+                <p class="hello-sub">Feedback, a bug, a feature idea or a kind word. It all lands in one inbox and gets
+                    read by a person, not a ticket queue.</p>
+                <div class="hello-actions">
+                    <button class="btn btn-accent btn-large" data-open-contact type="button">Write to the studio
+                        <span aria-hidden="true">→</span></button>
+                    <a class="hello-email" href="mailto:tappstudio.in@gmail.com">tappstudio.in@gmail.com</a>
+                </div>
+                <ul class="hello-support" role="list" aria-label="App support pages">
+                    <li class="hello-support-label">App support</li>
+                    <li><a href="nasab/support.html">Nasab</a></li>
+                    <li><a href="splitup/support.html">Splitup</a></li>
+                    <li><a href="mydeen/support.html">My Deen</a></li>
+                    <li><a href="mytasbih/support.html">Misbaha</a></li>
+                </ul>
+                <p class="hello-note">Heads up: the studio doesn't take client or freelance projects.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- SECTION NAV: right-edge scroll track on desktop, floating chip + sheet on mobile -->
+    <nav class="spine is-hidden" id="spine" aria-label="Jump to section">
+        <div class="spine-backdrop" id="spine-backdrop" aria-hidden="true"></div>
+        <button class="spine-toggle" id="spine-toggle" type="button" aria-expanded="false"
+            aria-controls="spine-panel">
+            <span class="spine-dial" aria-hidden="true">
+                <svg class="spine-ring" viewBox="0 0 36 36">
+                    <circle class="spine-ring-track" cx="18" cy="18" r="15.5" />
+                    <circle class="spine-ring-fill" id="spine-ring-fill" cx="18" cy="18" r="15.5"
+                        pathLength="100" />
+                </svg>
+                <span class="spine-dial-num" data-spine-num>01</span>
+            </span>
+            <span class="spine-toggle-label" data-spine-label>Intro</span>
+            <span class="visually-hidden">, show all sections</span>
+        </button>
+        <div class="spine-panel" id="spine-panel">
+            <div class="spine-panel-head">
+                <img class="mascot" src="public/images/mascot/wave.svg" width="36" height="38" decoding="async"
+                    loading="lazy" alt="" />
+                <span>Jump to</span>
+            </div>
+            <ol class="spine-list" role="list">
+                <li><a class="spine-link" href="#intro"><span class="spine-tip"><span class="spine-num">01</span><span
+                                class="spine-name">Intro</span></span></a></li>
+                <li><a class="spine-link" href="#apps"><span class="spine-tip"><span class="spine-num">02</span><span
+                                class="spine-name">The apps</span></span></a></li>
+                <li><a class="spine-link" href="#principles"><span class="spine-tip"><span class="spine-num">03</span><span
+                                class="spine-name">Principles</span></span></a></li>
+                <li><a class="spine-link" href="#now"><span class="spine-tip"><span class="spine-num">04</span><span
+                                class="spine-name">Now</span></span></a></li>
+                <li><a class="spine-link" href="#studio"><span class="spine-tip"><span class="spine-num">05</span><span
+                                class="spine-name">The studio</span></span></a></li>
+                <li><a class="spine-link" href="#hello"><span class="spine-tip"><span class="spine-num">06</span><span
+                                class="spine-name">Say hello</span></span></a></li>
+            </ol>
+            <div class="spine-track" aria-hidden="true">
+                <span class="spine-fill"></span>
+                <span class="spine-thumb"></span>
+                <span class="spine-now"><span data-spine-num>01</span> · <span data-spine-label>Intro</span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="screenshot-lightbox" id="screenshot-lightbox" aria-hidden="true" role="dialog"
+        aria-label="Fullscreen screenshot preview">
+        <div class="screenshot-lightbox-content">
+            <button class="screenshot-lightbox-close" id="screenshot-lightbox-close"
+                aria-label="Close screenshot preview" title="Close">&times;</button>
+            <img class="screenshot-lightbox-image" id="screenshot-lightbox-image" src="" alt=""
+                sizes="min(92vw, 520px)" decoding="async" />
+        </div>
+    </div>
+
+    <!-- CONTACT DIALOG -->
+    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
+        <form class="contact-form" id="contact-form">
+            <div class="contact-form-header">
+                <h2 id="contact-dialog-title">Say hello</h2>
+                <button type="button" class="contact-close" id="contact-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="contact-form-sub">Which app, and what's on your mind? Every message gets read by the person who
+                built it.</p>
+
+            <div class="field">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+                <label for="contact-email">Your email</label>
+                <input type="email" id="contact-email" name="email" autocomplete="email" required
+                    placeholder="so a reply can find you" />
+            </div>
+            <div class="field">
+                <label>Topic</label>
+                <div class="topic-chips" role="radiogroup" aria-label="Topic">
+                    <label class="chip"><input type="radio" name="topic" value="Feedback"
+                            checked /><span>Feedback</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Bug report" /><span>Bug
+                            report</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Feature idea" /><span>Feature
+                            idea</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Press" /><span>Press</span></label>
+                    <label class="chip"><input type="radio" name="topic" value="Just saying hi" /><span>Just saying
+                            hi</span></label>
+                </div>
+            </div>
+            <div class="field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="4" required
+                    placeholder="Which app is this about, and what happened?"></textarea>
+            </div>
+
+            <!-- Web3Forms config -->
+            <input type="hidden" name="access_key" value="aa9d2ffd-12bd-4e53-a4da-546a73ef4a8b" />
+            <input type="hidden" name="subject" id="contact-subject" value="tappStudio: Feedback" />
+            <input type="hidden" name="from_name" value="tappStudio site" />
+            <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" />
+
+            <button type="submit" class="btn btn-accent btn-large contact-submit" id="contact-submit">Send
+                message</button>
+
+            <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-success" id="contact-success" hidden>
+            <img class="mascot mascot-sent" src="public/images/mascot/wink.svg" width="100" height="106"
+                decoding="async" loading="lazy" alt="" />
+            <h2>Sent.</h2>
+            <p>Thanks for writing. A real person will read it, usually within a day or two.</p>
+            <button type="button" class="btn btn-ghost btn-large" id="contact-success-close">Close</button>
+        </div>
+    </dialog>
+
+    <footer class="site-footer site-footer--home">
+        <div class="wrap footer-grid">
+            <div class="footer-about">
+                <p class="footer-brand"><span class="brand-tapp">tapp</span><span class="brand-studio">Studio</span>
+                </p>
+                <p class="footer-tagline">Small apps for family, friends, faith and community. Made in Mumbai.</p>
+            </div>
+            <nav class="footer-col" aria-label="Apps">
+                <h3>Apps</h3>
+                <a href="https://nasab.tappstudio.in">Nasab</a>
+                <a href="https://splitup.tappstudio.in">Splitup</a>
+                <a href="mydeen/">My Deen</a>
+                <a href="#misbaha-tasbih-counter">Misbaha</a>
+                <a href="https://hunarcircle.com" target="_blank" rel="noopener">Hunar Circle</a>
+            </nav>
+            <nav class="footer-col" aria-label="Support">
+                <h3>Support</h3>
+                <a href="nasab/support.html">Nasab support</a>
+                <a href="splitup/support.html">Splitup support</a>
+                <a href="mydeen/support.html">My Deen support</a>
+                <a href="mytasbih/support.html">Misbaha support</a>
+                <a href="mailto:tappstudio.in@gmail.com">Email the studio</a>
+            </nav>
+            <nav class="footer-col" aria-label="Studio">
+                <h3>Studio</h3>
+                <a href="#now">Now</a>
+                <a href="https://www.linkedin.com/company/tappstudio/" rel="noopener">LinkedIn</a>
+                <a href="https://www.instagram.com/ibrahim.broach" rel="noopener">Instagram</a>
+                <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener">X</a>
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms-of-service.html">Terms</a>
+            </nav>
+        </div>
+        <div class="wrap footer-meta">
+            <div>
+                <address>Mumbai, India</address>
+                <p>&copy; 2026 tappStudio. All rights reserved.</p>
+            </div>
+            <img class="mascot mascot-footer" src="public/images/mascot/sleeping.svg" width="72" height="76"
+                decoding="async" loading="lazy" alt="" />
+        </div>
+    </footer>
+
+    <script src="./index.js?v=20261016"></script>
+</body>
+
+</html>

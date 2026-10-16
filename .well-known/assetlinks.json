@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ai.roleplay.chat",
+      "sha256_cert_fingerprints": [
+        "12:D4:1F:AE:0B:6D:87:CE:DA:AB:99:AC:DB:E1:EE:93:56:46:84:B4:11:32:FF:7D:89:DC:51:DD:76:5E:33:30"
+      ]
+    }
+  }
+]

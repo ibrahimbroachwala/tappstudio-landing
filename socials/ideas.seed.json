@@ -1,0 +1,44 @@
+{
+  "ideas": [
+    {
+      "id": "seed-rc-happy",
+      "title": "The little red icon that means money",
+      "brief": "Relatable indie-dev feeling: the RevenueCat icon and its red mean 'a stranger just paid for something I built'. Angle: some people feel happy at a sunset, indie devs feel it at one red notification.\n\nExact terms found while researching: a third-party alert app (NewSub) sells exactly this as 'revenue dopamine' (a ping the second a trial starts or a sub renews). RevenueCat's own iOS app pitches real-time transaction notifications so you can 'celebrate' wins. RevenueCat red is #F2545B in their press kit.\n\nImage idea: the RC icon on a phone lock screen next to a plain, relatable caption of the feeling (no real revenue numbers unless Ibrahim OKs it). Short X version plus a single-image IG or LI version.\n\nBefore posting: RevenueCat is their trademark, so use the icon the way the press kit allows and don't imply endorsement. Open the RC app and copy the notification wording from a real one, don't invent it.",
+      "brand": "tappstudio",
+      "platform": "X",
+      "status": "new",
+      "notes": "Sources: RevenueCat press kit (revenuecat.com/press-and-brand-resources), RevenueCat iOS app blog post, NewSub App Store listing.",
+      "source": "Ibrahim"
+    },
+    {
+      "id": "seed-version-code",
+      "title": "\"This version code has already been used.\"",
+      "brief": "Relatable dev-pain post. Setup: terminal says the app bundle built successfully, 'Perfect, time to upload to the Play Store'. Punchline: Play Console says 'This version code has already been used', because the version/build number in pubspec.yaml was not bumped. Then the ritual: update the number, build another AAB, upload again, wait again. Ends on a question that invites comments: 'What's the one small mistake you've repeated so many times you still can't believe it happens?'\n\nWhy it works: short and shared pain, a clear before/after, and a question at the end.\n\nOur take: make it ours and useful. Add how we stopped it happening (for example bumping the build number automatically in the release script or CI) so the joke ends in a tip. Draw our own image (mascot facepalm, terminal tick vs Play Console error) instead of the meme photo of a real person the original used.\n\nPlatforms: LinkedIn post with the question, X as a two-line version.",
+      "brand": "tappstudio",
+      "platform": "LI",
+      "status": "new",
+      "notes": "Inspired by a LinkedIn post by Muhammad Ahmad (Flutter developer). Do not copy the wording or the meme image.",
+      "source": "LinkedIn screenshot"
+    },
+    {
+      "id": "seed-flutter-ai-services",
+      "title": "What can you build with Flutter + AI? Pretty much anything.",
+      "brief": "Services post for the hiring side of tappStudio. Hook is a question, answer is 'pretty much anything'. Then: a list of app types (e-commerce, marketplace and booking, social and community, fintech and payments, AI-powered, healthcare and fitness, SaaS, on-demand and delivery, location-based, internal business apps); the stack; the AI tools used to get from idea to working product faster; and the full journey Idea > UI > Development > Backend > APIs > Integrations > Testing > Debugging > Performance > iOS and Android > App Store and Google Play. Closes with years of experience and a soft call to reach out.\n\nOur take: replace the generic list with proof. We have shipped Splitup, Nasab, My Deen, Misbaha, Ontime and Kadak, so name the ones that match each app type and link to the hiring page. Use our real stack and real years from the site, not the original's.\n\nFormat: LinkedIn text post, or a carousel where each slide is one step of the journey. Short X version that links to the page.",
+      "brand": "tappstudio",
+      "platform": "LI",
+      "status": "new",
+      "notes": "Inspired by another developer's services post. Check stack and years of experience against index.html before drafting.",
+      "source": "LinkedIn screenshot"
+    },
+    {
+      "id": "seed-milestone",
+      "title": "Milestone post: \"just hit 1,000 users\"",
+      "brief": "A milestone post template. The original (an app called nuzz hitting 1,000 users) got 286 reactions and 18 comments: a one-line honest hook ('I literally just wanted to build something cool and now there's 1,000 people using it'), then a bold graphic with the big number and the app logo on its brand colour.\n\nUse it whenever a real milestone lands for Splitup, Nasab, My Deen, Misbaha, Ontime or Kadak: users, downloads, first paid subscriber, first 5-star review, first family tree with 100 people.\n\nShape: one honest sentence about why it was built, the number, one thing learned, a thank-you and one ask (try it, or tell me what to fix). Image: 1080x1350 card with the huge number, one line under it, the app icon, in that app's own colours.\n\nRule: only post numbers we can verify from the stores or the database. Leave the number blank in the draft until it is real.",
+      "brand": "",
+      "platform": "",
+      "status": "new",
+      "notes": "Template idea, no date until a milestone is real. Inspired by a LinkedIn post about the nuzz app.",
+      "source": "LinkedIn screenshot"
+    }
+  ]
+}
