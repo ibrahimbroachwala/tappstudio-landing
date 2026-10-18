@@ -1783,9 +1783,15 @@
     },
     {
       "text": "1/ The mobile rule nobody tells web devs: your old app versions never die. 📱 People update slowly. Store review adds lag. At any moment, five versions of your app are talking to one backend.\n\n2/ So: add columns, never rename or drop ones a shipped build reads. New columns need a default or must be nullable.\n\n3/ Need to change a function's signature? Don't. Ship fn_v2 and keep v1 alive until old builds age out.\n\n4/ Enum values: add, never rename. And security rules must never revoke access an old build depends on.",
-      "images": [],
+      "images": [
+        [
+          "img/b615de3fba06e31a.webp",
+          "img/b615de3fba06e31a-t.webp",
+          "tappstudio-X-06.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Field-note card titled \"Your old app versions never die.\" Five app versions, v1.0 to v1.4, all point to one backend. A checklist of four rules: add columns and never rename or drop them, with new ones nullable or defaulted; ship fn_v2 and keep v1 alive; add enum values, never rename; never revoke old builds' access in security rules.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -1803,9 +1809,15 @@
     },
     {
       "text": "2 payments.\nThat's all it took to settle a 4-day trip to Dubai.\n\nNot 14 transfers. Not a spreadsheet. Not everyone paying everyone.\n\nHere's how I think about settling up in Splitup.\n\nMost expense apps stop at \"who owes what\". That's the easy part.\nThe part people dread is the next one: who actually sends money to whom?\n\nSo the whole app is built around that moment.\n\nA GOOD SETTLE-UP HAS THE FEWEST PAYMENTS POSSIBLE.\n\nHere's what Splitup does differently:\n\n1️⃣ Fewest payments\nSplitup nets everyone's balance first, then shows who pays whom in as few transfers as it can.\nTakeaway: Every extra transfer is another reason to put it off until next week.\n\n2️⃣ Nudges in your tone\nSomeone gone quiet? Pick Friendly, Neutral, Firm or Rude. The name and amount are filled in for you.\nTakeaway: The awkward part should be optional.\n\n3️⃣ Free to start\nJoining a group is free. No subscriptions, ever.\nTakeaway: An app for splitting a bill shouldn't send you one of its own.\n\nAdd. Settle. Done.\nThat's the whole idea.\n\nWhen your last trip ended, who did the chasing: one patient friend, or a spreadsheet nobody opened?\n\n♻️ Repost this for the friend who's been \"about to pay you back\" since the last trip.\n\nP.S. I'm Ibrahim. I design, build and publish apps like Splitup on my own. Got an idea you want built? DM me.\n\n🤖 Written with AI assistance, proofread by me. The experiences and opinions are mine.",
-      "images": [],
+      "images": [
+        [
+          "img/ddacf5df60ecf17e.webp",
+          "img/ddacf5df60ecf17e-t.webp",
+          "splitup-LI-12.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Two diagrams of five friends settling a trip. On the left, everyone pays everyone: 14 transfers drawn as a tangle of arrows. On the right, settled in Splitup: 2 payments, two arrows. Text: \"2 payments. Not 14 transfers.\" Chips: Fewest payments, Nudges in your tone, Free to start.",
         "slides": []
       },
       "brand": "splitup",
@@ -1815,7 +1827,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": true,
-      "note": "Needs attention: text only. Add your App Store page screenshot when posting. Check the \"4-day trip to Dubai, 2 payments\" example is OK to use, and that you're happy with the \"Written with AI assistance\" line and the DM-me P.S.",
+      "note": "Needs attention: check the \"4-day trip to Dubai, 2 payments\" example is OK to use, and that you're happy with the \"Written with AI assistance\" line and the DM-me P.S. The image shows 2 vs 14 transfers; there's no app screenshot, add your App Store page screenshot too if you want one.",
       "title": "2 payments settled a 4-day trip",
       "posted": "",
       "carousel": false,
@@ -4545,5 +4557,5 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     }
   ],
-  "built": "16 Oct 2026, 14:42"
+  "built": "18 Oct 2026, 12:18"
 }
