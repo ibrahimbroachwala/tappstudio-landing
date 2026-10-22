@@ -20,6 +20,11 @@
       "key": "misbaha",
       "label": "Misbaha",
       "accent": "#a78bfa"
+    },
+    {
+      "key": "kadak",
+      "label": "Kadak Chai",
+      "accent": "#F4A300"
     }
   ],
   "posts": [
@@ -2212,6 +2217,26 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
+      "text": "I've built apps for years. 11 days ago I started my first game.\n\nIt's called Kadak. You start with one roadside chai tapri and grow it into a chai chain across 28 Indian cities.\n\nCutting chai, bun maska, vada pav, samosa, kulfi. All the things I grew up eating at the corner stall.\n\nIt's an idle game, so the stall keeps earning while you're away. Open it for a few minutes, a few times a day.\n\nI'll post here every day while I finish it. The good days and the days I break things.\n\nWhat's your go-to order at a chai stall?",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-01",
+      "platform": "LI",
+      "date": "2026-10-22",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Attach the app icon or the tapri screen. Ask people to comment their order, reply to every one.",
+      "title": "I'm making my first game",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
       "text": "Living with flatmates is 10% vibes and 90% \"who bought the milk?\" 🥛\n\nSwipe for the 3BHK edition of Splitup: 👉\n🏠 rent split by shares, because the big room pays more\n📶 WiFi split equally\n🛒 groceries split between whoever's in\n🔔 one reminder at the end of the month, in your tone\n\nOne group for the flat. 🏠 Everyone joins free. 🆓\n.\n#Splitup #Flatmates #Roommates #FlatLife #SharedLiving",
       "images": [
         [
@@ -2315,6 +2340,26 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
+      "text": "What 11 days of building a game looks like:\n\nDay 1: design doc, project setup, the game maths in its own package\nDay 2: first playable screen. A tapri, a kettle, coins\nDay 3: menus, onboarding, analytics, boosts, festivals\nDay 4: in-app purchases, events, rival stalls\nDay 5: rebalanced the whole economy (more on that soon)\nDay 6 to 9: redesigned almost every screen. Added sounds\nDay 10 to 11: store screenshots, new icon, ads, polish\n\n71 commits. 91 test files. One very patient laptop.\n\nThe plan was written before the code. Every phase had a checklist, and I didn't move on until it was ticked.\n\nThat's the only reason it's still on track.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-02",
+      "platform": "LI",
+      "date": "2026-10-23",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Visual: screenshot of the git log or the phase checklist.",
+      "title": "15 phases in 11 days",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
       "text": "Amber or Jade? One word in the comments.\n\nBoth are beads in Misbaha. Tap, and they slide along the string as you count.\n\n#misbaha #tasbih #prayerbeads #thisorthat #dhikr",
       "images": [
         [
@@ -2386,6 +2431,26 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
+      "text": "Most idle games count like this: 1K, 1M, 1B, 1T.\n\nMine counts like this: 1 Lakh, 1 Crore, 1 Arab, 1 Kharab.\n\nBecause if you're running a chai empire in India, your money should look like Indian money.\n\nPlayers outside India still see K, M and B, so nobody gets lost. It's a setting, and the default follows your region.\n\nSmall thing. But it was the first time the game felt like mine and not a copy of something else.\n\nDid you know Arab and Kharab come after Crore?",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-03",
+      "platform": "LI",
+      "date": "2026-10-24",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Visual: wallet bar showing a big number in Crore next to the same number in M.",
+      "title": "My game counts in Lakh and Crore",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
       "text": "Nasab (نَسَب) is Arabic for lineage: the chain of names that links you to the people before you.\n\nIn many families, your name is your family tree. Iman bint Arif bin Yusuf: Iman, daughter of Arif, son of Yusuf. Three generations in one breath.\n\nWe named the app after it, and built it in: turn on patronymic naming and Nasab shows each member's name the way your family says it. The whole app also works in Arabic, right to left, with every date in Hijri too.\n\nHow far back does your name go? 👇\n.\n#Nasab #Lineage #Arabic #MuslimFamily #FamilyTree",
       "images": [
         [
@@ -2449,6 +2514,26 @@
       "posted": "",
       "carousel": false,
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "Every stall in my game has an Ustaad. The master who runs it so you don't have to.\n\nBablu Bhaiya runs the cutting chai kettle.\nRustom Uncle, the bun maska counter.\nSakharam Mama, the vada pav stall.\nGurpreet Paaji, the samosa kadhai.\nKamla Maasi, kulhad masala chai.\nShabana Aapa, the pakora bhatti.\nDarius Seth, the Irani bakery corner.\nMurugan Anna, the kesar kulfi cart.\n\nEight stalls, eight people you've probably met on some street in India.\n\nWhich one would run your favourite stall?",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-04",
+      "platform": "LI",
+      "date": "2026-10-25",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Good one for a carousel: one slide per Ustaad card. Pin the question.",
+      "title": "Meet the Ustaads",
+      "posted": "",
+      "carousel": true,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
       "text": "✈️ Trip to Dubai in dirhams. Flat in rupees. Weekend away in euros. One app. 🌍\n\n💱 Every Splitup group has its own currency, from 50+ to choose from. And the whole app speaks 10 languages: 🗣️ English, Hindi, Arabic, Urdu, Bengali, Chinese, Spanish, French, Italian and Russian.\n\nYour group. 👥 Your money. 💰 Your language. 💬\n.\n#Splitup #TravelWithFriends #GroupTrip #SplitTheBill",
@@ -2520,6 +2605,26 @@
       "posted": "",
       "carousel": false,
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "On day 4 my game was fun for about 20 minutes.\n\nThen the numbers went crazy. Prices shot up, earnings shot up more, and by the evening I had more money than a small country.\n\nThat's normal for idle games. It still felt wrong for a chai stall.\n\nSo I threw out the curve and started again. Flat, believable prices. A cutting chai earns ₹1, not ₹1 crore. Getting to Arab now takes weeks, not hours.\n\nI wrote a small simulator that plays the game for weeks in seconds, so I can see the pace before any real player does.\n\nHardest day of the project. Best decision too.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-05",
+      "platform": "LI",
+      "date": "2026-10-26",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Visual: before/after chart from the pacing simulator, if you can export one.",
+      "title": "I broke my own economy",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
       "text": "How many generations of your family can you name? Be honest.\n\nMost people get to their grandparents. Some get to great-grandparents. Very few go further, unless someone wrote it down.\n\nNasab's Family in Numbers shows your family at a glance: generations, people, living and deceased, marriages, memories, even the oldest member. It grows every time someone adds a relative. Watching the generations count tick up is oddly addictive.\n\nComment your number. We'll go first: the Malik family (our demo family) is at 7.\n.\n#FamilyTree #Genealogy #FamilyHistoryMonth #FamilyHistory #Nasab",
@@ -2599,6 +2704,26 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
+      "text": "A chai stall has a sound. You know it even with your eyes closed.\n\nThe kettle hissing. Chai poured from height. Kulhads clinking. A train horn somewhere behind. Traffic.\n\nSo the game has all of those. The pour plays when you serve, the clink when you buy, and the street hums quietly in the back.\n\nThe first kettle hiss I picked sounded like a pressure cooker. Had to swap it.\n\nTurn your sound on for this one.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-06",
+      "platform": "LI",
+      "date": "2026-10-27",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Post as a short native video (10 to 15 s) of the tapri with sound on. Keep the text short if the video is strong.",
+      "title": "What a chai stall sounds like",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
       "text": "Start splitting before your friends even download the app. 👻\n\n➕ Add them to the group by name and keep logging expenses. When they finally join with your invite link, Splitup asks \"Is one of these you?\" and their whole history moves over to them. ✨\n\nJoining is always free. 🆓 Your first group is free too. 🎁\n.\n#Splitup #GroupTrip #Roommates #SplitTheBill",
       "images": [
         [
@@ -2668,6 +2793,26 @@
       "posted": "",
       "carousel": false,
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "My game is full of Hindi and Urdu words. Tapri, Ustaad, Kulhad, Bazaar, Kesar.\n\nBut I want someone in Toronto to play it without Googling anything.\n\nSo I made three rules:\n\n1. The first time a word shows up, a one-line tip explains it.\n2. Buttons and instructions are always in English.\n3. Names never get translated. Bablu Bhaiya stays Bablu Bhaiya.\n\nAnd one rule about what not to say: no \"chhotu\". The people who work your stalls are adults, and they're called Ustaads.\n\nThe flavour stays. The confusion doesn't.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-07",
+      "platform": "LI",
+      "date": "2026-10-28",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Visual: the first-use tooltip on a term like Kulhad.",
+      "title": "Hinglish, but you never get lost",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
       "text": "It's Friday. Send salawat.\n\nAllahumma salli ala Muhammadin wa aali Muhammad.\n\nSet a target of 100 in Misbaha and let the tassel tell you when you're done.\n\nJumu'ah Mubarak 🤍\n\n#jummahmubarak #salawat #durood #dhikr #misbaha",
@@ -2759,6 +2904,26 @@
       "posted": "",
       "carousel": true,
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "My game has no server. On purpose.\n\nYour progress lives on your phone. Leaderboards and cloud saves use Google Play and Game Center. Analytics and settings I can change remotely go through PostHog.\n\nRunning cost right now: about ₹0 a month.\n\nWhat I gave up: co-op and rewards for ranking against real players. Without a server I can't stop cheating, so I'd rather not tie rewards to it.\n\nEverything else is single-player, so if someone cheats, they only spoil their own game.\n\nFor a solo dev, the cheapest server is the one you never build.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-08",
+      "platform": "LI",
+      "date": "2026-10-29",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Visual: a simple diagram, phone in the middle, Play Games / Game Center / PostHog around it.",
+      "title": "My game has no server",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
       "text": "5 recordings every family should have. Save this and make one this week.\n\n1. The recipe, in their words. Not the measurements, the \"andaza\".\n2. The lullaby they sang to your parents.\n3. The saying they repeat every time.\n4. The journey: how the family got to where it lives now.\n5. The dua they make for you.\n\nTen minutes each. In Nasab, each becomes a voice memory, tagged to them and shared with the whole family.\n\nWhich one does your family need most? 🎙\n.\n#OralHistory #FamilyRecipes #FamilyStories #Grandparents #Nasab",
@@ -2870,6 +3035,26 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
+      "text": "Open my game at 6 am and the sky over the tapri is pale and early.\n\nAt noon it's bright. At 7 pm it turns orange. At midnight the stall lights are on and the street is quiet.\n\nIt follows the time in India, wherever you are. So if you're in London missing home, the sky shows you what it looks like there right now.\n\nThe teaser site does the same thing. Link in the comments, open it at different times of the day.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-09",
+      "platform": "LI",
+      "date": "2026-10-30",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": false,
+      "note": "Short video or a 4-image grid: morning, noon, sunset, night.",
+      "title": "The sky follows India time",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
       "text": "Things people say instead of paying you back. Save this for your next trip. 😤\n\n1️⃣ \"I'll GPay you tonight.\" 🙏\n2️⃣ \"Wait, is that amount right?\" 🤔\n3️⃣ \"Let's settle at the end of the trip.\" 🧳\n4️⃣ \"I thought Max paid?\" 🤷\n5️⃣ \"I already paid you. Cash, last week.\" 💵\n\nWhich one did you hear this week? 👇\n(Splitup has an answer for all five. 😌)\n.\n#Splitup #FriendsAndMoney #GroupTrip #MoneyTalk",
       "images": [
         [
@@ -2971,6 +3156,26 @@
       "posted": "",
       "carousel": false,
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
+      "text": "10 days of posts. The game is close.\n\nBefore it can go live on Google Play, I need at least 12 people to test it for 14 days. That's the rule for new developer accounts.\n\nSo I'm asking. If you have an Android phone, like chai, and want to break my game before anyone else does, comment \"chai\" and I'll send you the link.\n\nYou get early access. I get honest feedback.\n\nThanks to everyone who read along this week. More from the tapri soon.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "LI-10",
+      "platform": "LI",
+      "date": "2026-10-31",
+      "time": "6-8 pm IST",
+      "status": "planned",
+      "warn": true,
+      "note": "CONFIRM before posting: Play closed-test requirement applies (personal Play account) and the test track is ready. Reply to each 'chai' comment by DM.",
+      "title": "Looking for testers",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
       "text": "On a real misbaha, your thumb finds the tassel and you know you're done.\n\nIn Misbaha, the tassel comes round on the string at exactly your target: 33, 99, 100, or any number you set.\n\nA growing collection of tassels to choose from. Which one would you hang on yours?\n\n#misbaha #tasbih #dhikr #prayerbeads #muslimapp",
@@ -4557,5 +4762,5 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     }
   ],
-  "built": "18 Oct 2026, 12:18"
+  "built": "22 Oct 2026, 12:00"
 }
