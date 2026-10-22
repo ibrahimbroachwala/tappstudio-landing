@@ -2217,8 +2217,14 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
-      "text": "I've built apps for years. 11 days ago I started my first game.\n\nIt's called Kadak. You start with one roadside chai tapri and grow it into a chai chain across 28 Indian cities.\n\nCutting chai, bun maska, vada pav, samosa, kulfi. All the things I grew up eating at the corner stall.\n\nIt's an idle game, so the stall keeps earning while you're away. Open it for a few minutes, a few times a day.\n\nI'll post here every day while I finish it. The good days and the days I break things.\n\nWhat's your go-to order at a chai stall?",
-      "images": [],
+      "text": "I've built apps for years. On 11 October I started my first game, which feels a bit like a dentist deciding to open a bakery.\n\nIt's called Kadak. You run one roadside chai tapri and grow it into a chai chain across 28 Indian cities. Cutting chai, bun maska, vada pav, samosa, kulfi. Basically my college diet, now with an economy.\n\nIt's an idle game, so the stall keeps earning while you're away.\n\nThe biggest surprise so far: apps and games want opposite things. An app wants you to finish a task and leave. A game wants you to come back tomorrow. That one difference changes almost every decision, from what gets saved on the phone to when a notification is allowed to bother you.\n\nOver the next few days I'll write up what I'm learning: planning, game maths, sound, language, and the parts I broke. Most of it is useful even if you never make a game.",
+      "images": [
+        [
+          "img/1135cc7d458ccad8.webp",
+          "img/1135cc7d458ccad8-t.webp",
+          "kadak-LI-01.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2230,7 +2236,7 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Attach the app icon or the tapri screen. Ask people to comment their order, reply to every one.",
+      "note": "",
       "title": "I'm making my first game",
       "posted": "",
       "carousel": false,
@@ -2340,8 +2346,14 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
-      "text": "What 11 days of building a game looks like:\n\nDay 1: design doc, project setup, the game maths in its own package\nDay 2: first playable screen. A tapri, a kettle, coins\nDay 3: menus, onboarding, analytics, boosts, festivals\nDay 4: in-app purchases, events, rival stalls\nDay 5: rebalanced the whole economy (more on that soon)\nDay 6 to 9: redesigned almost every screen. Added sounds\nDay 10 to 11: store screenshots, new icon, ads, polish\n\n71 commits. 91 test files. One very patient laptop.\n\nThe plan was written before the code. Every phase had a checklist, and I didn't move on until it was ticked.\n\nThat's the only reason it's still on track.",
-      "images": [],
+      "text": "Kadak went from an empty folder to a playable game in 11 days. Not because I type fast. Because I wrote the plan before the code.\n\nWhat that looked like:\n\n1. A game design doc first. Every stall, price, currency and festival written down before a single screen existed.\n\n2. A technical plan split into 16 phases, Phase 0 to Phase 15, each with a checklist. A phase isn't done until every box is ticked, however nice it looks.\n\n3. The game maths lives in its own Dart package with no Flutter in it. I can test the whole economy without opening the app, and a button can't quietly change a price.\n\nSo far: 71 commits and 91 test files. Most of the tests exist because I don't trust myself after 11 pm.\n\nIf you're starting a game, write the boring doc first. Future you will be confused enough as it is.",
+      "images": [
+        [
+          "img/38c4581f9f1302d7.webp",
+          "img/38c4581f9f1302d7-t.webp",
+          "kadak-LI-02.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2353,8 +2365,8 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Visual: screenshot of the git log or the phase checklist.",
-      "title": "15 phases in 11 days",
+      "note": "",
+      "title": "16 phases in 11 days",
       "posted": "",
       "carousel": false,
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
@@ -2431,8 +2443,14 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "Most idle games count like this: 1K, 1M, 1B, 1T.\n\nMine counts like this: 1 Lakh, 1 Crore, 1 Arab, 1 Kharab.\n\nBecause if you're running a chai empire in India, your money should look like Indian money.\n\nPlayers outside India still see K, M and B, so nobody gets lost. It's a setting, and the default follows your region.\n\nSmall thing. But it was the first time the game felt like mine and not a copy of something else.\n\nDid you know Arab and Kharab come after Crore?",
-      "images": [],
+      "text": "Most idle games count like this: 1K, 1M, 1B, 1T.\n\nKadak counts like this: 1 Lakh, 1 Crore, 1 Arab, 1 Kharab.\n\nA quick guide if you didn't grow up with it:\n1 Lakh = 100,000\n1 Crore = 10 million\n1 Arab = 1 billion\n1 Kharab = 100 billion\n\nThe game picks the style from your region, and there's a switch in settings: Auto, Indian or International. Same number, same maths, just read differently.\n\nTwo things I learned building it:\n\n1. Indian grouping isn't just different names. The commas move too: 1,00,000, not 100,000. A standard formatter gets this wrong, so it has its own tests.\n\n2. Keep formatting at the very edge. The game engine only knows plain numbers. The words and commas get added right before the number hits the screen.\n\nSide effect of testing all this: my chai stall now has more money than I do. I've decided not to think about it.",
+      "images": [
+        [
+          "img/848974f1d12a3443.webp",
+          "img/848974f1d12a3443-t.webp",
+          "kadak-LI-03.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2444,8 +2462,8 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Visual: wallet bar showing a big number in Crore next to the same number in M.",
-      "title": "My game counts in Lakh and Crore",
+      "note": "",
+      "title": "Counting money in Lakh and Crore",
       "posted": "",
       "carousel": false,
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
@@ -2516,8 +2534,14 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
-      "text": "Every stall in my game has an Ustaad. The master who runs it so you don't have to.\n\nBablu Bhaiya runs the cutting chai kettle.\nRustom Uncle, the bun maska counter.\nSakharam Mama, the vada pav stall.\nGurpreet Paaji, the samosa kadhai.\nKamla Maasi, kulhad masala chai.\nShabana Aapa, the pakora bhatti.\nDarius Seth, the Irani bakery corner.\nMurugan Anna, the kesar kulfi cart.\n\nEight stalls, eight people you've probably met on some street in India.\n\nWhich one would run your favourite stall?",
-      "images": [],
+      "text": "In idle games you hire managers so your stalls run without you tapping. In Kadak they're called Ustaads, meaning masters of their craft.\n\nEach one got a name that fits their food, because vada pav made by \"Manager 3\" just tastes worse:\n\nBablu Bhaiya, cutting chai\nRustom Uncle, bun maska\nSakharam Mama, vada pav\nGurpreet Paaji, samosa\nKamla Maasi, kulhad masala chai\nShabana Aapa, pakoras\nDarius Seth, the Irani bakery\nMurugan Anna, kesar kulfi\n\nThe word after the name does most of the work. Bhaiya, Uncle, Mama, Paaji, Maasi, Aapa, Seth, Anna: eight ways India says \"someone you can trust with your order\", from eight corners of the country.\n\nA design note for anyone making characters on a small budget: a name and one line of flavour go a long way. Players fill in the rest from the stalls on their own street.",
+      "images": [
+        [
+          "img/159ded3c2f6f6643.webp",
+          "img/159ded3c2f6f6643-t.webp",
+          "kadak-LI-04.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2529,7 +2553,7 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Good one for a carousel: one slide per Ustaad card. Pin the question.",
+      "note": "",
       "title": "Meet the Ustaads",
       "posted": "",
       "carousel": true,
@@ -2607,8 +2631,14 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "On day 4 my game was fun for about 20 minutes.\n\nThen the numbers went crazy. Prices shot up, earnings shot up more, and by the evening I had more money than a small country.\n\nThat's normal for idle games. It still felt wrong for a chai stall.\n\nSo I threw out the curve and started again. Flat, believable prices. A cutting chai earns ₹1, not ₹1 crore. Getting to Arab now takes weeks, not hours.\n\nI wrote a small simulator that plays the game for weeks in seconds, so I can see the pace before any real player does.\n\nHardest day of the project. Best decision too.",
-      "images": [],
+      "text": "On day 4 I found out my game economy was broken. By evening I had more money than a small country, from a stall that sells ₹10 chai.\n\nIdle games run on growth curves. Every stall level costs a bit more than the last (17 to 20% more in Kadak), and earnings jump at milestones. Get those numbers slightly wrong and everything explodes by hour two. Get them right and something new unlocks every few minutes.\n\nWhat I changed:\n\n1. Flat, believable prices. A cutting chai earns roughly what a cutting chai should.\n2. Reaching ₹1 Arab (a billion rupees) now takes months of play, not one afternoon.\n3. A pacing simulator: a small program that plays the game for months in a few seconds and prints when each stall unlocks.\n\nThe simulator is the real lesson. You can't playtest week three of an idle game by hand unless you have a lot of spare weeks. Write the bot that plays it for you, then tune the numbers until the timeline looks right.",
+      "images": [
+        [
+          "img/16486bb2f1436626.webp",
+          "img/16486bb2f1436626-t.webp",
+          "kadak-LI-05.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2620,7 +2650,7 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Visual: before/after chart from the pacing simulator, if you can export one.",
+      "note": "",
       "title": "I broke my own economy",
       "posted": "",
       "carousel": false,
@@ -2704,7 +2734,7 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
-      "text": "A chai stall has a sound. You know it even with your eyes closed.\n\nThe kettle hissing. Chai poured from height. Kulhads clinking. A train horn somewhere behind. Traffic.\n\nSo the game has all of those. The pour plays when you serve, the clink when you buy, and the street hums quietly in the back.\n\nThe first kettle hiss I picked sounded like a pressure cooker. Had to swap it.\n\nTurn your sound on for this one.",
+      "text": "Kadak's sound list so far:\n\nChai being poured, when you serve\nA coin, when you earn\nA kulhad clink\nA kettle hiss\nA train horn somewhere in the distance\nStreet ambience under everything\n\nWhat I learned about sound in a small mobile game:\n\n1. Short effects as WAV, the long ambience loop as MP3. The loop is the only big file, so it's the only one worth compressing.\n\n2. Ambience gets its own switch in settings, separate from effects. Some people play on a crowded train and want the clink without the traffic. They already have traffic.\n\n3. The whole game has a 40 MB size budget. Sound is the easiest place to blow it.\n\nA chai stall with no sound is just a spreadsheet with a kettle.",
       "images": [],
       "alt": {
         "summary": "",
@@ -2717,7 +2747,7 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Post as a short native video (10 to 15 s) of the tapri with sound on. Keep the text short if the video is strong.",
+      "note": "Text-only, or post a short native video (10 to 15 s) of the tapri with sound on.",
       "title": "What a chai stall sounds like",
       "posted": "",
       "carousel": false,
@@ -2795,8 +2825,14 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "My game is full of Hindi and Urdu words. Tapri, Ustaad, Kulhad, Bazaar, Kesar.\n\nBut I want someone in Toronto to play it without Googling anything.\n\nSo I made three rules:\n\n1. The first time a word shows up, a one-line tip explains it.\n2. Buttons and instructions are always in English.\n3. Names never get translated. Bablu Bhaiya stays Bablu Bhaiya.\n\nAnd one rule about what not to say: no \"chhotu\". The people who work your stalls are adults, and they're called Ustaads.\n\nThe flavour stays. The confusion doesn't.",
-      "images": [],
+      "text": "Kadak is full of Hindi and Urdu words: Tapri, Ustaad, Kulhad, Bazaar, Kesar.\n\nI also want someone in Toronto to play it without opening Google Translate to buy a samosa.\n\nSo the game follows three rules:\n\n1. The first time a word appears, a one-line tip explains it. After that it lives in a glossary in settings.\n2. Buttons and instructions are always in plain English. Hinglish is for flavour, never for a step you must follow.\n3. Names never get translated. Bablu Bhaiya stays Bablu Bhaiya.\n\nAnd one rule about what not to say: no \"chhotu\". The word is tied to child labour at real stalls. Everyone working at your tapri is an adult, and they're called Ustaads.\n\nIf you're putting a local culture into a product, this split works well: keep the flavour in the words people read, and keep the words people act on boring and clear.",
+      "images": [
+        [
+          "img/a8fcce5ab1dd5936.webp",
+          "img/a8fcce5ab1dd5936-t.webp",
+          "kadak-LI-07.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2808,8 +2844,8 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Visual: the first-use tooltip on a term like Kulhad.",
-      "title": "Hinglish, but you never get lost",
+      "note": "",
+      "title": "Hinglish, without getting lost",
       "posted": "",
       "carousel": false,
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
@@ -2906,8 +2942,14 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "My game has no server. On purpose.\n\nYour progress lives on your phone. Leaderboards and cloud saves use Google Play and Game Center. Analytics and settings I can change remotely go through PostHog.\n\nRunning cost right now: about ₹0 a month.\n\nWhat I gave up: co-op and rewards for ranking against real players. Without a server I can't stop cheating, so I'd rather not tie rewards to it.\n\nEverything else is single-player, so if someone cheats, they only spoil their own game.\n\nFor a solo dev, the cheapest server is the one you never build.",
-      "images": [],
+      "text": "Kadak has no game server. On purpose.\n\nWhere everything lives instead:\nYour progress: on your phone\nCloud save, leaderboards, achievements: Google Play Games and Game Center\nAnalytics, errors, and settings I can change remotely: PostHog\nEvents and festivals: bundled in the app, switched on by a remote schedule\n\nRunning cost right now: about ₹0 a month. The stores take their cut, and that's it.\n\nWhat I gave up:\nCo-op play, because that needs shared state on a server.\nRewards for ranking against real players, because without a server I can't stop cheating. Leaderboards are for bragging only.\n\nSince everything else is single-player, a cheater only spoils their own game. Which is a very fair punishment.\n\nFor a solo developer, the cheapest server is the one you never build.",
+      "images": [
+        [
+          "img/a8e6823b4f6b89d5.webp",
+          "img/a8e6823b4f6b89d5-t.webp",
+          "kadak-LI-08.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -2919,8 +2961,8 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Visual: a simple diagram, phone in the middle, Play Games / Game Center / PostHog around it.",
-      "title": "My game has no server",
+      "note": "",
+      "title": "A game with no server",
       "posted": "",
       "carousel": false,
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
@@ -3016,7 +3058,13 @@
     },
     {
       "text": "Add a friend to your group before they download the app, and they end up in it twice. Here's how I fixed that in Splitup. 👻\n\nAn admin can add people by name and start logging expenses straight away. Those are \"ghost\" members. When the real person joined with the invite code, the app created a brand-new member for them, and their share of every past expense stayed with the ghost.\n\nThe fix, shipped without breaking a single older app version:\n• 🧱 A new column, is_claimed, set by a database trigger that checks the member against real accounts. It never trusts what the app sends.\n• 🙋 Right after someone joins, if the group has ghosts, a sheet asks: \"Is one of these you?\"\n• 🔀 Confirming calls one database function that moves the ghost's history (who paid, who owes, reminders) onto the real account and removes the duplicate. The identity comes from the session on the server, so nobody can claim as someone else.\n• 🔐 The ghost row is locked during the claim, so two people tapping the same name at once can't both win.\n• ⏭️ \"Skip, I'm new\" makes no call at all. The safest default is doing nothing.\n\nFor users: add friends today, and they claim their spot whenever they finally install it.\n\nWhat's your favourite invisible fix? 👇\n\n#Supabase #PostgreSQL #BuildInPublic",
-      "images": [],
+      "images": [
+        [
+          "img/36af1414c0f5c4ba.webp",
+          "img/36af1414c0f5c4ba-t.webp",
+          "splitup-LI-07.jpg"
+        ]
+      ],
       "alt": {
         "summary": "The Splitup \"Is one of these you?\" sheet with four callouts explaining how a ghost member is claimed safely: a database trigger, one server function, a row lock, and a skip option that does nothing.",
         "slides": []
@@ -3026,7 +3074,7 @@
       "platform": "LI",
       "date": "2026-10-30",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "Add a friend before they download. Don't count them twice.",
@@ -3035,8 +3083,14 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
-      "text": "Open my game at 6 am and the sky over the tapri is pale and early.\n\nAt noon it's bright. At 7 pm it turns orange. At midnight the stall lights are on and the street is quiet.\n\nIt follows the time in India, wherever you are. So if you're in London missing home, the sky shows you what it looks like there right now.\n\nThe teaser site does the same thing. Link in the comments, open it at different times of the day.",
-      "images": [],
+      "text": "The sky above the tapri in Kadak follows the time in India, not the time on your phone.\n\n6 am in India: pale and early. Noon: bright. 7 pm: orange. Midnight: stall lights on, street quiet.\n\nHow it works:\n1. The sky is a set of colour keyframes, one per point in the day.\n2. The game reads the current time in IST and blends between the two nearest keyframes.\n3. Your phone's time zone is ignored on purpose.\n\nSo if you're in London at 2 pm, the tapri shows the evening in India. It feels odd for one second, then it feels like home.\n\nOne practical tip if you build anything time-based: write the time zone helpers first and test them with fixed times. \"What hour is it in India\" sounds simple until daylight saving in other countries joins the conversation.\n\nThe teaser site uses the same keyframes, so it changes through the day too.",
+      "images": [
+        [
+          "img/0727f8bb3466579c.webp",
+          "img/0727f8bb3466579c-t.webp",
+          "kadak-LI-09.jpg"
+        ]
+      ],
       "alt": {
         "summary": "",
         "slides": []
@@ -3048,7 +3102,7 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": false,
-      "note": "Short video or a 4-image grid: morning, noon, sunset, night.",
+      "note": "",
       "title": "The sky follows India time",
       "posted": "",
       "carousel": false,
@@ -3139,7 +3193,13 @@
     },
     {
       "text": "For a while, some Splitup purchases were credited twice. Here's how that happens, and how I fixed it. 🐞\n\nSplitup sells one-time group packs. Buy a pack and your group allowance goes up. The original flow lived in the app: after a purchase, the app inserted a row, a database trigger fired, and a function raised the allowance.\n\nThen I added a RevenueCat webhook, server to server, so purchases get granted even if the app crashes mid-flow or the user is on an old build.\n\nTwo paths, one purchase. 🔀 Their de-duplication keys didn't reliably match, so the same purchase could be granted by both.\n\nThe fix:\n1️⃣ One source of truth. The webhook calls a single database function that records the purchase and raises the allowance in one atomic step.\n2️⃣ The store's transaction ID gets a unique index, so a redelivered webhook can't grant twice.\n3️⃣ The old app-side trigger is disabled. The app no longer writes purchases at all; it just watches the allowance update in real time.\n\n💡 Lesson: the moment you add a second path to the same side effect, you have a distributed systems problem. Pick one owner.\n\nEver had two code paths fighting over the same row? 👇\n\n#Payments #Supabase #BuildInPublic",
-      "images": [],
+      "images": [
+        [
+          "img/5c1542b665053d96.webp",
+          "img/5c1542b665053d96-t.webp",
+          "splitup-LI-08.jpg"
+        ]
+      ],
       "alt": {
         "summary": "Before and after diagrams: two separate paths both raising a user's group allowance for one purchase, replaced by a single webhook path with a unique transaction ID. Text: \"One purchase. Two grants.\"",
         "slides": []
@@ -3149,7 +3209,7 @@
       "platform": "LI",
       "date": "2026-10-31",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "note": "confirm you're happy to share this incident",
       "title": "The bug that credited purchases twice",
@@ -3158,7 +3218,7 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
-      "text": "10 days of posts. The game is close.\n\nBefore it can go live on Google Play, I need at least 12 people to test it for 14 days. That's the rule for new developer accounts.\n\nSo I'm asking. If you have an Android phone, like chai, and want to break my game before anyone else does, comment \"chai\" and I'll send you the link.\n\nYou get early access. I get honest feedback.\n\nThanks to everyone who read along this week. More from the tapri soon.",
+      "text": "Something useful if you're about to ship your first Android app on a personal Google Play account: you can't go straight to the store.\n\nGoogle first asks for a closed test with at least 12 testers who stay opted in for 14 days. Only then do you get access to production.\n\nWhat that means in practice:\n1. Plan for at least two extra weeks before launch day.\n2. Find the testers before you need them. Twelve people sounds easy until you start counting friends with Android phones.\n3. Testers have to stay in for the full 14 days, so ask people who'll actually keep the app installed.\n\nThat's where Kadak is now. If you have an Android phone and are happy to run a small chai stall for two weeks, message me and I'll send you the test link. The stall is low-maintenance. It mostly runs itself.",
       "images": [],
       "alt": {
         "summary": "",
@@ -3171,8 +3231,8 @@
       "time": "6-8 pm IST",
       "status": "planned",
       "warn": true,
-      "note": "CONFIRM before posting: Play closed-test requirement applies (personal Play account) and the test track is ready. Reply to each 'chai' comment by DM.",
-      "title": "Looking for testers",
+      "note": "Text-only. CONFIRM before posting: the Play closed-test rule still applies to your account and the test track is ready.",
+      "title": "Looking for Android testers",
       "posted": "",
       "carousel": false,
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
@@ -3386,7 +3446,13 @@
     },
     {
       "text": "One of the best product decisions I made on Nasab was deleting a feature before launch.\n\nMember profiles were going to have their own photo gallery. Memories already had photos. Same media, two homes.\n\nEvery time you added a photo of your grandmother, you'd have to decide: her profile, or Memories? There's no good answer, so \"photos of Nani\" would end up split across two places, and neither would feel complete.\n\nSo the profile gallery went. Every photo and video lives in Memories, tagged to the people in it. Want every photo of Nani? Filter Memories by her.\n\nProfiles kept one kind of media: voice notes, capped at 5. A voice clip isn't tied to an event. It's identity: \"this is what she sounds like.\" It belongs to the person.\n\nWhat deleting it bought:\n→ One place to add media, one place to find it\n→ Much simpler permission rules (the riskiest security policy in the app shrank)\n→ A whole feature area I never have to keep backward compatible\n\nThe best time to delete a feature is before anyone depends on it.\n\nWhat's the best feature you've ever cut?\n\n#ProductManagement #UX #BuildInPublic",
-      "images": [],
+      "images": [
+        [
+          "img/5174a14740f44d13.webp",
+          "img/5174a14740f44d13-t.webp",
+          "nasab-LI-13.jpg"
+        ]
+      ],
       "alt": {
         "summary": "Before and after: a member profile with a photo gallery crossed out, versus the Memories grid filtered by one person and a profile that keeps only voice notes.",
         "slides": []
@@ -3396,7 +3462,7 @@
       "platform": "LI",
       "date": "2026-11-03",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "The feature I deleted",
@@ -3614,7 +3680,13 @@
     },
     {
       "text": "I removed Nasab's free plan. Here's my reasoning, and I'd genuinely like pushback.\n\nNasab launched with a limited free plan and a paid tier, Heritage. [YOUR REAL REASON, e.g. families would start, hit a limit right as the archive got meaningful (voice, video, shared storage), and stall.]\n\nSo new families now get a 14-day free trial of full Heritage access instead of a cut-down version.\n\nTwo decisions shape the model:\n1. One subscription per family, not per person. Only the family owner subscribes. Everyone they invite gets full access. Families shouldn't need everyone's credit card to share Nani's stories.\n2. Storage is shared. Keeping a family's photos and voices for decades costs real money. [Optional: why a free tier couldn't fund that honestly.]\n\nThe trade-off: fewer casual signups. The bet: the families who start are the ones who'll keep going.\n\nIt's early. I'll share what the numbers say.\n\nFounders: free tier or trial for a consumer subscription app? Where did you land?\n\n#Pricing #IndieHacker #BuildInPublic",
-      "images": [],
+      "images": [
+        [
+          "img/167ba5071c84e3cf.webp",
+          "img/167ba5071c84e3cf-t.webp",
+          "nasab-LI-14.jpg"
+        ]
+      ],
       "alt": {
         "summary": "Two plan cards: a greyed-out free plan with its limits, and Nasab Heritage with a 14-day free trial where one plan covers the whole family.",
         "slides": []
@@ -3624,7 +3696,7 @@
       "platform": "LI",
       "date": "2026-11-06",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "note": "needs your real reasoning",
       "title": "Why Nasab has no free tier",
@@ -3679,7 +3751,13 @@
     },
     {
       "text": "110 days ago I made the first commit on Nasab. Here's the build log in numbers:\n\n📦 157 commits\n🗄 117 database migrations, all forward-only\n⚡ 17 edge functions\n🧩 18 feature modules\n🌍 997 strings in English and Arabic\n📱 Version 0.10.7, live on iOS and Android\n\nWhat I'd tell myself on day 1:\n1. Put privacy in the database, not the UI.\n2. Once you're live, every migration is a promise to old builds.\n3. The invisible details (a reminder that skips someone who has passed away, a calendar your family actually uses) matter more than the feature list.\n4. Delete a feature when two of them do one job.\n5. Build for one family first. Mine.\n\nWhat's next: [ROADMAP, 2-3 items you're happy to announce]\n\nIf you've followed this build log, thank you. If your family has a story worth keeping, Nasab is live on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
-      "images": [],
+      "images": [
+        [
+          "img/6dce784d5aa165a3.webp",
+          "img/6dce784d5aa165a3-t.webp",
+          "nasab-LI-15.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A stat board of Nasab's build in numbers: 157 commits, 117 migrations, 17 edge functions, 18 feature modules, 997 strings in English and Arabic, and version 0.10.7.",
         "slides": []
@@ -3689,7 +3767,7 @@
       "platform": "LI",
       "date": "2026-11-07",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "Building a family archive, in numbers",
@@ -3764,7 +3842,48 @@
     },
     {
       "text": "One week, one family, one photo that started it all. Swipe →\n\nIman found an old print in her Nani's cupboard and scanned it. Her Nani, Gulnaz, recorded the story behind it. Cousin Leila, three time zones away, heard it for the first time. And by Saturday, nobody forgot Farah and Arif's anniversary.\n\nThat's what a living archive looks like. Not a museum: a family conversation that keeps going.\n\n(The Malik family is our demo family. This week could be yours.)\n.\n#FamilyStories #FamilyArchive #Diaspora #FamilyMemories #Nasab",
-      "images": [],
+      "images": [
+        [
+          "img/8fb8bfad0a6f1125.webp",
+          "img/8fb8bfad0a6f1125-t.webp",
+          "nasab-IG-19-01.jpg"
+        ],
+        [
+          "img/0297b603d25d8da2.webp",
+          "img/0297b603d25d8da2-t.webp",
+          "nasab-IG-19-02.jpg"
+        ],
+        [
+          "img/6ef9e574e2c04217.webp",
+          "img/6ef9e574e2c04217-t.webp",
+          "nasab-IG-19-03.jpg"
+        ],
+        [
+          "img/439369ddf98687a0.webp",
+          "img/439369ddf98687a0-t.webp",
+          "nasab-IG-19-04.jpg"
+        ],
+        [
+          "img/d8c1bb09d1535fd8.webp",
+          "img/d8c1bb09d1535fd8-t.webp",
+          "nasab-IG-19-05.jpg"
+        ],
+        [
+          "img/2a235dfa8ae830af.webp",
+          "img/2a235dfa8ae830af-t.webp",
+          "nasab-IG-19-06.jpg"
+        ],
+        [
+          "img/0161d35e20c09724.webp",
+          "img/0161d35e20c09724-t.webp",
+          "nasab-IG-19-07.jpg"
+        ],
+        [
+          "img/73c1e1e033e62de7.webp",
+          "img/73c1e1e033e62de7-t.webp",
+          "nasab-IG-19-08.jpg"
+        ]
+      ],
       "alt": {
         "summary": "An 8-slide story: an old photo is scanned and tagged, a grandmother records its story, a cousin abroad comments, an anniversary reminder arrives, and a wish card goes to the family group.",
         "slides": []
@@ -3774,12 +3893,12 @@
       "platform": "IG",
       "date": "2026-11-09",
       "time": "7-9 pm",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "One week in the Malik family archive",
       "posted": "",
-      "carousel": false
+      "carousel": true
     },
     {
       "text": "Arabic phone? Nasab opens in Arabic on first launch, mirrored right to left, with Hijri dates beside Gregorian.\n\nBuilt for families across South Asia, the Middle East and the diaspora.",
@@ -3927,7 +4046,13 @@
     },
     {
       "text": "⭐ I only ask for an App Store review when nobody owes anybody anything.\n\nReview prompts are rare. iOS shows the sheet about three times a year, and Android has its own quota. Spend one at a bad moment and you get a one-star review from someone mid-argument about $39.16.\n\nSo Splitup's review policy is a small, unit-tested piece of pure Dart. A prompt can only fire on a happy moment:\n• 🤝 right after you settle a suggested payment\n• ✅ when a settlement leaves the whole group owing nothing\n• 💸 after you record a payment\n• 🎯 when you hit your 5th, 15th or 40th expense\n\nAnd never when: 🚫\n• 🗓️ you've had the app for less than 3 days\n• 🧭 you haven't done at least 3 meaningful things yet\n• ⏳ you were asked in the last 90 days, or 3 times already\n• 📝 you rated the app yourself in the last 180 days\n• 💳 you saw the paywall this session\n\nEvery skipped prompt logs a reason, so I can see which rule does the work.\n\nTiming is part of the product. ⏱️ When does your app ask for a review? 👇\n\n#ProductDesign #MobileDev #BuildInPublic",
-      "images": [],
+      "images": [
+        [
+          "img/c19a52147d444f52.webp",
+          "img/c19a52147d444f52-t.webp",
+          "splitup-LI-09.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A code card with Splitup's review rules (3 days minimum, 3 actions, a 90-day cooldown, 3 prompts in a lifetime, milestones at 5, 15 and 40 expenses) next to an \"Everything is settled!\" sticker.",
         "slides": []
@@ -3937,7 +4062,7 @@
       "platform": "LI",
       "date": "2026-11-10",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "I only ask for a review when nobody owes anybody",
@@ -3992,7 +4117,13 @@
     },
     {
       "text": "📊 Splitup, in numbers:\n\n🌍 10 languages, including right-to-left Arabic and Urdu, all the way into the PDF exports\n💱 50+ currencies\n🗣️ 340 strings in the English source, translated 9 more ways\n🧪 19 test files, 17 of them for offline sync and voice input\n🙅 0 subscriptions\n\nWhat I'd tell myself on day 1: 💭\n1️⃣ Money is integer cents. Decide it before the first table.\n2️⃣ Every migration has to keep old app versions working. People update slowly.\n3️⃣ Build for no signal from the start. Retrofitting offline sync is a project, not a feature.\n4️⃣ The boring solution (a Dart parser) can beat the shiny one (an LLM) when you know your users' phones.\n5️⃣ Ask for reviews when people are happy. Then get out of the way.\n\n🔭 What's next: [ROADMAP, 2 or 3 items you're happy to announce]\n\nIf you've followed this Ship Log, thank you. 🙏 Splitup is free to start on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
-      "images": [],
+      "images": [
+        [
+          "img/e6206c5e5e6effc3.webp",
+          "img/e6206c5e5e6effc3-t.webp",
+          "splitup-LI-10.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A stat board for Splitup: 10 languages, 50+ currencies, 340 strings, 19 test files and zero subscriptions. Text: \"Splitup in numbers. Zero subscriptions.\"",
         "slides": []
@@ -4002,7 +4133,7 @@
       "platform": "LI",
       "date": "2026-11-11",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "note": "add the roadmap line",
       "title": "Splitup in numbers",
@@ -4012,7 +4143,13 @@
     },
     {
       "text": "Quick question: what year is the oldest photo in your family? Guess if you have to.\n\nOurs (well, the Malik family's) is 1958. Somewhere in your family there's an older one, in an album, a frame or a shoebox. It might be the only copy.\n\nThis week: find it, scan it, and ask someone who's in it, or who knew someone who was.\n\nDrop the year below. Let's see how far back this community goes 👇\n.\n#OldPhotos #FamilyPhotos #FamilyHistory #Genealogy #Nasab",
-      "images": [],
+      "images": [
+        [
+          "img/b853bcf434cf948b.webp",
+          "img/b853bcf434cf948b-t.webp",
+          "nasab-IG-20.jpg"
+        ]
+      ],
       "alt": {
         "summary": "Four old family photographs fanned out on cream paper, labelled 1958, 1962, 1974 and 1988. Text: \"What year is your family's oldest photo?\"",
         "slides": []
@@ -4022,7 +4159,7 @@
       "platform": "IG",
       "date": "2026-11-12",
       "time": "7-9 pm",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "What year is your family's oldest photo?",
@@ -4071,7 +4208,13 @@
     },
     {
       "text": "Confession time: what's the most someone still owes you? 💀\n\n💰 Amount and currency only. No names. We're not trying to start anything. 😇\n\n(Okay, we're a little bit trying to start something. Splitup can send the reminder. 🔔)\n.\n#Splitup #FriendsAndMoney #MoneyTalk #SplitTheBill",
-      "images": [],
+      "images": [
+        [
+          "img/7cd3424e58fb057b.webp",
+          "img/7cd3424e58fb057b-t.webp",
+          "splitup-IG-20.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A torn receipt with a blank amount under the question \"What's the most someone still owes you?\"",
         "slides": []
@@ -4081,7 +4224,7 @@
       "platform": "IG",
       "date": "2026-11-13",
       "time": "7-9 pm",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "What's the most someone still owes you?",
@@ -4130,7 +4273,53 @@
     },
     {
       "text": "Save this: your first week with Nasab, one small step a day.\n\nDay 1: Add your parents and grandparents\nDay 2: Invite one sibling or cousin\nDay 3: Scan 5 old photos\nDay 4: Record 10 minutes with an elder\nDay 5: Add birthdays and anniversaries (Hijri too)\nDay 6: Make an album for one family event\nDay 7: Send someone a wish\n\nSeven days in, your family's story has a home. Start your 14-day free trial. Link in bio.\n.\n#FamilyArchive #FamilyTree #FamilyHistory #FamilyMemories #Nasab",
-      "images": [],
+      "images": [
+        [
+          "img/5300700bc16119a6.webp",
+          "img/5300700bc16119a6-t.webp",
+          "nasab-IG-21-01.jpg"
+        ],
+        [
+          "img/2682d37a8ae498f4.webp",
+          "img/2682d37a8ae498f4-t.webp",
+          "nasab-IG-21-02.jpg"
+        ],
+        [
+          "img/358f6af473c3c5a2.webp",
+          "img/358f6af473c3c5a2-t.webp",
+          "nasab-IG-21-03.jpg"
+        ],
+        [
+          "img/7f47e34806c3af9f.webp",
+          "img/7f47e34806c3af9f-t.webp",
+          "nasab-IG-21-04.jpg"
+        ],
+        [
+          "img/edd8521be4d9618f.webp",
+          "img/edd8521be4d9618f-t.webp",
+          "nasab-IG-21-05.jpg"
+        ],
+        [
+          "img/0504de79b60aa2de.webp",
+          "img/0504de79b60aa2de-t.webp",
+          "nasab-IG-21-06.jpg"
+        ],
+        [
+          "img/1ff7c46f9e4e99f9.webp",
+          "img/1ff7c46f9e4e99f9-t.webp",
+          "nasab-IG-21-07.jpg"
+        ],
+        [
+          "img/b59391e1117e33dd.webp",
+          "img/b59391e1117e33dd-t.webp",
+          "nasab-IG-21-08.jpg"
+        ],
+        [
+          "img/d9c82a7e09f356f7.webp",
+          "img/d9c82a7e09f356f7-t.webp",
+          "nasab-IG-21-09.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A 9-slide, seven-day starter checklist for Nasab: add family, invite a cousin, scan photos, record an elder, add birthdays, make an album, send a wish.",
         "slides": []
@@ -4140,12 +4329,12 @@
       "platform": "IG",
       "date": "2026-11-14",
       "time": "7-9 pm",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "Your first week with Nasab",
       "posted": "",
-      "carousel": false
+      "carousel": true
     },
     {
       "text": "Airplane mode is my favourite tester. ✈️\n\nWrite locally first. Queue the change and show it (\"2 changes waiting to sync\"). Never make a tap wait for a server. Test sync with the network switched off.\n\nIf it works in airplane mode, it works.",
@@ -4195,7 +4384,43 @@
     },
     {
       "text": "Your first Splitup group, in 60 seconds. Save this. ⏱️\n\n1️⃣ 🔐 Sign in with Google or Apple. No new password.\n2️⃣ 👥 Create a group. The currency sets itself from your phone.\n3️⃣ 🔗 Share the invite link or the 6-character code.\n4️⃣ 🎙️ Add your first expense. Type it or say it.\n5️⃣ 🤝 Watch \"How to settle\" do the math.\n\nFree to start, on iOS and Android. 📱 Link in bio.\n.\n#Splitup #SplitTheBill #GroupTrip #Roommates #ExpenseSplitter",
-      "images": [],
+      "images": [
+        [
+          "img/dcda65b7021b34c3.webp",
+          "img/dcda65b7021b34c3-t.webp",
+          "splitup-IG-21-01.jpg"
+        ],
+        [
+          "img/498a9ae3a9cf0937.webp",
+          "img/498a9ae3a9cf0937-t.webp",
+          "splitup-IG-21-02.jpg"
+        ],
+        [
+          "img/98442fc6e22deb54.webp",
+          "img/98442fc6e22deb54-t.webp",
+          "splitup-IG-21-03.jpg"
+        ],
+        [
+          "img/4ba047ba5830717f.webp",
+          "img/4ba047ba5830717f-t.webp",
+          "splitup-IG-21-04.jpg"
+        ],
+        [
+          "img/7c77dbc3f7270c62.webp",
+          "img/7c77dbc3f7270c62-t.webp",
+          "splitup-IG-21-05.jpg"
+        ],
+        [
+          "img/e7accaaab13c4dc8.webp",
+          "img/e7accaaab13c4dc8-t.webp",
+          "splitup-IG-21-06.jpg"
+        ],
+        [
+          "img/5870a0e4c68e42ca.webp",
+          "img/5870a0e4c68e42ca-t.webp",
+          "splitup-IG-21-07.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A 7-slide guide to starting with Splitup: sign in with Google or Apple, create a group, share the invite link, add an expense by typing or voice, and see who pays whom.",
         "slides": []
@@ -4205,12 +4430,12 @@
       "platform": "IG",
       "date": "2026-11-15",
       "time": "7-9 pm",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "Your first group in 60 seconds",
       "posted": "",
-      "carousel": false
+      "carousel": true
     },
     {
       "text": "Best thing I did for Nasab: delete a feature before launch.\n\nProfiles were getting a photo gallery, but Memories already had the photos. Two homes for one set of media. Now every photo lives in Memories, tagged to people. Profiles keep voice notes.\n\nBest feature you've cut?",
@@ -4234,7 +4459,13 @@
     },
     {
       "text": "🎨 I redesigned splitup.tappstudio.in with Claude Opus 5.5. The part that mattered most wasn't the layout. It was the rules the page had to follow.\n\nA landing page for an expense splitter has one job: say \"Split. Remind. Settle.\" in three seconds, then get out of the way. Here is what we held it to:\n\n• 🎯 One source of truth for the look. Colours, radii and spacing are mirrored from the Flutter app's own tokens. The rule in the README: change a colour in the app first, then port it here. Never invent one. So the site, the store screenshots and the app read as one product.\n• 🧰 No build step. Plain HTML and CSS, no node_modules, nothing to install. Open index.html and it works.\n• 📱 The hero phone isn't a screenshot. It's a live HTML port of the app's UI at true app scale, and it switches to the app's dark theme when the page does.\n• 🌗 Light and dark mode with a toggle and no flash on load. Per-theme values are tokens, so a component never needs its own dark rule.\n• 🪶 Small on purpose. Inline SVG icons instead of a 323 KB icon font. Ten gallery screenshots cut from 2.7 MB to under 700 KB as WebP. Poppins self-hosted.\n• ✍️ Copy rules too: no em dashes anywhere, and the pricing is stated plainly: create 1 group free, join unlimited, one-time packs after that.\n\n💡 What I'd tell anyone designing with an AI model: write the rules down in the README before the second prompt. A written rule survives every new session. So do the lessons. A clipped hero headline and chips that vanished in dark mode are both documented there now, with the fix.\n\nThe model gave me speed. ⚡ The README gave me consistency. 📖\n\nWhat rule would you write down first? 👇\n\n#BuildInPublic #ProductDesign #ClaudeAI",
-      "images": [],
+      "images": [
+        [
+          "img/f0dbebaf1ac9ad55.webp",
+          "img/f0dbebaf1ac9ad55-t.webp",
+          "splitup-LI-11.jpg"
+        ]
+      ],
       "alt": {
         "summary": "A board of six stats about the Splitup website redesign: zero build steps, zero dependencies, two themes with no flash, a 323 KB icon font not shipped, gallery screenshots cut from 2.7 MB to under 700 KB, and zero invented colours. Text: \"Site redesign with Opus 5.5. Zero build step.\"",
         "slides": []
@@ -4244,7 +4475,7 @@
       "platform": "LI",
       "date": "2026-11-15",
       "time": "8-10 am",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "I redesigned the Splitup site with Claude Opus 5.5",
@@ -4762,5 +4993,5 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     }
   ],
-  "built": "22 Oct 2026, 12:00"
+  "built": "22 Oct 2026, 14:00"
 }
