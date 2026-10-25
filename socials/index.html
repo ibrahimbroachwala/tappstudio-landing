@@ -114,6 +114,18 @@
   .acts button { font: 600 11px 'Geist Mono', monospace; padding: 6px 9px; border-radius: 6px; border: 1px solid var(--line); background: var(--ink); }
   .acts button:hover { border-color: var(--teal); color: var(--teal); }
   .acts button:disabled { opacity: .5; cursor: wait; }
+  .row.arch { opacity: .45; filter: grayscale(.8); }
+  .row.arch .ttl { text-decoration: line-through; }
+  .st.archived { background: var(--ink-3); color: var(--muted); }
+  dialog.mv { background: var(--ink-2); color: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 18px; width: min(380px, calc(100vw - 32px)); }
+  dialog.mv::backdrop { background: rgba(0,0,0,.6); }
+  dialog.mv h3 { font: 600 15px/1.3 'Geist', sans-serif; margin-bottom: 4px; }
+  dialog.mv p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+  dialog.mv input[type=date] { width: 100%; margin-top: 10px; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--ink); color: var(--cream); font: 400 14px 'Geist', sans-serif; color-scheme: dark; }
+  dialog.mv ul { margin: 8px 0 0 16px; font-size: 12.5px; color: var(--cream); }
+  dialog.mv .btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+  dialog.mv button { font: 600 11.5px 'Geist Mono', monospace; padding: 8px 12px; border-radius: 7px; border: 1px solid var(--line); background: var(--ink); color: var(--cream); }
+  dialog.mv button.go { background: var(--teal); color: var(--ink); border-color: var(--teal); }
   .more { grid-column: 1 / -1; display: flex; gap: 14px; align-items: flex-start; }
   .thumbs { display: flex; gap: 6px; flex: none; }
   .thumbs img { width: 54px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); background: var(--ink); display: block; }
@@ -207,6 +219,7 @@
   </main>
 </div>
 <div class="toast" id="toast"></div>
+<dialog class="mv" id="mv"></dialog>
 <div class="viewer" id="viewer"><img alt=""><a id="viewerdl" href="#">Save full quality</a></div>
 
 <script>
@@ -243,6 +256,7 @@ async function unlock() {
   if (!r.ok) throw new Error('posts.json ' + r.status);
   DATA = await r.json();
   BOARD = DATA.board;
+  DATA.posts.forEach(p => p.origDate = p.date);
   BR = Object.fromEntries(DATA.brands.map(b => [b.key, b]));
   document.getElementById('lock').style.display = 'none';
   document.getElementById('app').style.display = 'block';
@@ -288,7 +302,7 @@ async function loadStatus() {
       (j.documents || []).forEach(d => {
         const f = Object.fromEntries(Object.entries(d.fields || {}).map(([k, v]) => [k, Object.values(v)[0]]));
         const p = DATA.posts.find(x => x.brand === f.brand && x.id === f.id);
-        if (p && f.status) { p.status = f.status; p.posted = f.posted || ''; n++; }
+        if (p && f.status) { const m = decMeta(f.posted); p.status = f.status; p.posted = m.p || ''; p.archived = !!m.a; p.date = m.d || p.origDate; n++; }
       });
       token = j.nextPageToken || '';
     } while (token);
@@ -298,18 +312,51 @@ async function loadStatus() {
     sync.textContent = `Offline copy from ${DATA.built}. Status changes need a connection.`;
   }
 }
-async function setStatus(brand, id, status, btn) {
-  const p = DATA.posts.find(x => x.brand === brand && x.id === id);
-  const posted = status === 'posted' ? new Date().toISOString().slice(0, 10) : '';
-  const fields = { brand: { stringValue: brand }, id: { stringValue: id }, status: { stringValue: status },
-                   posted: { stringValue: posted }, updated: { timestampValue: new Date().toISOString() } };
+/* The rules only allow brand/id/status/posted/updated and the four statuses, so archive and move ride in the free-text
+   `posted` field as `p=<posted date>;a=1;d=<moved date>`. A bare date (older writes) still reads as the posted date. */
+const decMeta = v => { const m = {}; if (!v) return m; if (!v.includes('=')) { m.p = v; return m; }
+  v.split(';').forEach(kv => { const [k, ...r] = kv.split('='); m[k] = r.join('='); }); return m; };
+const encMeta = p => [p.posted ? 'p=' + p.posted : '', p.archived ? 'a=1' : '', p.date !== p.origDate ? 'd=' + p.date : ''].filter(Boolean).join(';');
+async function savePost(brand, id, patch, msg, btn) {
+  const p = DATA.posts.find(x => x.brand === brand && x.id === id), old = { status: p.status, posted: p.posted, archived: p.archived, date: p.date };
+  Object.assign(p, patch);
+  const fields = { brand: { stringValue: brand }, id: { stringValue: id }, status: { stringValue: p.status },
+                   posted: { stringValue: encMeta(p) }, updated: { timestampValue: new Date().toISOString() } };
   if (btn) btn.disabled = true;
   try {
     const r = await fetch(docUrl(brand + '__' + id), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields }) });
     if (!r.ok) throw new Error(r.status);
-    p.status = status; p.posted = posted;
-    render(); toast(`${BR[brand].label} ${id} marked ${status}.`);
-  } catch (e) { toast('Could not save. Check your connection and try again.'); if (btn) btn.disabled = false; }
+    render(); toast(msg);
+    return true;
+  } catch (e) {
+    Object.assign(p, old);
+    toast(String(e.message) === '403' ? `Firestore rules refused ${BR[brand].label}. Add "${brand}" to the allowed brands in the status rule.` : 'Could not save. Check your connection and try again.');
+    if (btn) btn.disabled = false;
+    return false;
+  }
+}
+function setStatus(brand, id, status, btn) {
+  return savePost(brand, id, { status, posted: status === 'posted' ? new Date().toISOString().slice(0, 10) : '' }, `${BR[brand].label} ${id} marked ${status}.`, btn);
+}
+const archivePost = (brand, id, on, btn) => savePost(brand, id, { archived: on }, `${BR[brand].label} ${id} ${on ? 'archived' : 'restored'}.`, btn);
+
+/* Move: pick a date, then confirm */
+function openMove(brand, id) {
+  const p = DATA.posts.find(x => x.brand === brand && x.id === id), dlg = document.getElementById('mv');
+  const step1 = () => {
+    dlg.innerHTML = `<h3>Move ${esc(BR[brand].label)} ${esc(id)}</h3><p>Currently ${esc(label(p.date))}. Pick a new date.</p><input type="date" id="mvd" value="${p.date}"><div class="btns"><button id="mvx">Cancel</button></div>`;
+    dlg.querySelector('#mvx').onclick = () => dlg.close();
+    const inp = dlg.querySelector('#mvd'); inp.onchange = () => { if (inp.value && inp.value !== p.date) step2(inp.value); };
+  };
+  const step2 = d => {
+    const same = DATA.posts.filter(x => x.date === d && !x.archived && x !== p);
+    dlg.innerHTML = `<h3>Move to ${esc(label(d))}?</h3><p>${esc(p.title)} will be added to that day, which ${same.length ? 'already has:' : 'has no posts yet.'}</p>` +
+      (same.length ? `<ul>${same.map(x => `<li>${esc(BR[x.brand].label)} ${esc(x.id)} · ${esc(x.title)}</li>`).join('')}</ul>` : '') +
+      `<div class="btns"><button id="mvb">Back</button><button class="go" id="mvg">Move</button></div>`;
+    dlg.querySelector('#mvb').onclick = step1;
+    dlg.querySelector('#mvg').onclick = async e => { if (await savePost(brand, id, { date: d }, `${id} moved to ${label(d)}.`, e.target)) dlg.close(); };
+  };
+  step1(); dlg.showModal();
 }
 
 /* ---------- Ideastore (Firestore: boards/<board>/ideastore) ---------- */
@@ -425,7 +472,8 @@ const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.get
 const today = iso(new Date());
 const plus = n => { const d = new Date(); d.setDate(d.getDate() + n); return iso(d); };
 const label = s => new Date(s + 'T00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-const open = p => p.status !== 'posted';
+const open = p => p.status !== 'posted' && !p.archived;
+const isDone = p => p.status === 'posted' && !p.archived;
 function toast(m) { const t = document.getElementById('toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(() => t.style.display = 'none', 3000); }
 
 const SHORT = { tappstudio: 'tS', splitup: 'SU', nasab: 'NA', misbaha: 'MI' };
@@ -439,7 +487,7 @@ function renderDays(ps, rerender) {
   const to = dates.length ? dates[dates.length - 1] : addDays(today, 14);
   let html = '';
   for (let d = from, n = 0; d <= to && n < 120; d = addDays(d, 1), n++) {
-    const L = by[d] || [], t = new Date(d + 'T00:00');
+    const L = (by[d] || []).filter(p => !p.archived), t = new Date(d + 'T00:00');
     const tags = {}; L.forEach(p => tags[p.brand] = (tags[p.brand] || 0) + 1);
     const nSch = L.filter(p => p.status === 'scheduled').length, nRdy = L.filter(p => p.status === 'ready').length;
     const sub = [nSch ? nSch + ' scheduled' : '', nRdy ? nRdy + ' ready' : ''].filter(Boolean).join(' · ') || (L.length && L.every(p => !open(p)) ? 'all posted' : '');
@@ -474,11 +522,12 @@ function render() {
     : `${esc(BR[tab].label)}, <span class="t">on schedule.</span><span class="cur"></span>`;
 
   const ps = DATA.posts.filter(p => (tab === 'all' || p.brand === tab) && (plat === 'all' || p.platform === plat));
-  const late = ps.filter(p => open(p) && p.date < today), tod = ps.filter(p => open(p) && p.date === today),
-        week = ps.filter(p => open(p) && p.date > today && p.date <= plus(7)), later = ps.filter(p => open(p) && p.date > plus(7)),
-        done = ps.filter(p => !open(p));
-  document.getElementById('stats').innerHTML = [['Late', late.length, late.length ? 'hot' : ''], ['Today', tod.length], ['Next 7 days', week.length],
-    ['Ready', ps.filter(p => p.status === 'ready').length], ['Scheduled', ps.filter(p => p.status === 'scheduled').length], ['Posted', done.length]]
+  const vis = ps.filter(p => !isDone(p)), n = l => l.filter(open).length;
+  const late = vis.filter(p => p.date < today), tod = vis.filter(p => p.date === today),
+        week = vis.filter(p => p.date > today && p.date <= plus(7)), later = vis.filter(p => p.date > plus(7)),
+        done = ps.filter(isDone);
+  document.getElementById('stats').innerHTML = [['Late', n(late), n(late) ? 'hot' : ''], ['Today', n(tod)], ['Next 7 days', n(week)],
+    ['Ready', ps.filter(p => open(p) && p.status === 'ready').length], ['Scheduled', ps.filter(p => open(p) && p.status === 'scheduled').length], ['Posted', done.length]]
     .map(([l, n, c]) => `<div class="stat ${c || ''}"><b>${n}</b><span>${l}</span></div>`).join('');
 
   const f = document.getElementById('filters'); f.innerHTML = '';
@@ -491,14 +540,14 @@ function render() {
   const g = document.getElementById('groups'); g.innerHTML = '';
   const group = (title, list, o = {}) => {
     const s = document.createElement('section'); s.className = 'group';
-    const head = `<h2 class="${o.hot ? 'hot' : ''}">${title} <span>${list.length}</span></h2>`;
+    const head = `<h2 class="${o.hot ? 'hot' : ''}">${title} <span>${list.filter(p => !p.archived).length}</span></h2>`;
     const body = list.length ? list.map(row).join('') : `<div class="empty">${o.empty || 'Nothing here.'}</div>`;
     s.innerHTML = o.fold ? `<details${o.open ? ' open' : ''}><summary>${head}</summary>${body}</details>` : head + body;
     g.appendChild(s);
   };
   if (dayPick) group(label(dayPick) + (dayPick === today ? ' · today' : ''), ps.filter(p => p.date === dayPick), { empty: 'No posts on this day.' });
   else {
-    if (late.length) group('Late, not posted yet', late, { hot: true });
+    if (n(late)) group('Late, not posted yet', late, { hot: true });
     group('Today · ' + label(today), tod, { empty: 'Nothing scheduled today.' });
     group('Next 7 days', week);
     group('Later', later, { fold: true, open: tab !== 'all' });
@@ -511,6 +560,8 @@ function render() {
     const y = scrollY; render(); scrollTo(0, y);
   });
   g.querySelectorAll('[data-set]').forEach(b => b.onclick = () => setStatus(b.dataset.brand, b.dataset.id, b.dataset.set, b));
+  g.querySelectorAll('[data-arch]').forEach(b => b.onclick = () => archivePost(b.dataset.brand, b.dataset.id, b.dataset.arch === '1', b));
+  g.querySelectorAll('[data-move]').forEach(b => b.onclick = () => openMove(b.dataset.brand, b.dataset.id));
   g.querySelectorAll('[data-alt]').forEach(b => b.onclick = () => {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.alt);
     navigator.clipboard.writeText(altText(p)).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy alt', 1500); });
@@ -593,15 +644,18 @@ document.getElementById('refresh').onclick = () => { loadStatus(); loadIdeas(); 
 function row(p) {
   const b = BR[p.brand], k = p.brand + '/' + p.id, isOpen = opened.has(k);
   const btn = (s, l) => `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-set="${s}">${l}</button>`;
-  const acts = p.status === 'posted' ? btn('ready', 'Undo')
-    : (p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted');
+  const ab = (v, l) => `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-arch="${v}">${l}</button>`;
+  const mv = `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-move="1">Move</button>`;
+  const acts = p.archived ? ab(0, 'Restore')
+    : (p.status === 'posted' ? btn('ready', 'Undo')
+    : (p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted')) + mv + ab(1, 'Archive');
   const imgs = p.images || [];
-  return `<div class="row${isOpen ? ' open' : ''}" style="--accent:${b.accent}">
+  return `<div class="row${isOpen ? ' open' : ''}${p.archived ? ' arch' : ''}" style="--accent:${b.accent}">
     <span class="m d">${label(p.date)}</span><span class="m tm">${esc(p.time)}</span>
     <span class="brand"><i style="background:${b.accent}"></i>${esc(b.label)}</span>
     ${pf(p)}<span class="m id">${esc(p.id)}</span>
     <button class="ttl" data-toggle="${esc(k)}">${esc(p.title)}${p.warn && open(p) ? `<small>⚠️ ${esc(p.note).slice(0, 140)}</small>` : ''}</button>
-    <span class="st ${esc(p.status)}">${esc(p.status)}</span><span class="acts">${acts}</span>
+    <span class="st ${p.archived ? 'archived' : esc(p.status)}">${p.archived ? 'archived' : esc(p.status)}</span><span class="acts">${acts}</span>
     <div class="more">
       ${imgs.length ? `<div class="thumbs">${imgs.slice(0, isOpen ? 99 : 4).map(([full, th, name], n) => `<img loading="lazy" src="${isOpen ? full : th}" data-full="${full}" data-name="${esc(name)}" alt="${esc(((p.alt || {}).slides || [])[n] || (p.alt || {}).summary || '')}">`).join('')}${!isOpen && imgs.length > 4 ? `<span class="plus">+${imgs.length - 4}</span>` : ''}</div>` : ''}
       <button class="prev" data-toggle="${esc(k)}">${esc(p.text)}</button>
