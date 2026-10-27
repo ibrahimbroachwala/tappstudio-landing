@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#0e0e0c; --ink-2:#181814; --ink-3:#24231e; --cream:#f2efe8; --muted:#9a968c; --teal:#14b8a6; --soft:rgba(20,184,166,.14); --line:rgba(242,239,232,.1); --amber:#f5b14c; --ig:#f472b6; --li:#5aa9ff; --x:#f2efe8; --bar:56px; }
+  :root { --ink:#0e0e0c; --ink-2:#181814; --ink-3:#24231e; --cream:#f2efe8; --muted:#9a968c; --teal:#14b8a6; --soft:rgba(20,184,166,.14); --line:rgba(242,239,232,.1); --amber:#f5b14c; --ig:#f472b6; --yt:#ff6a5e; --li:#5aa9ff; --x:#f2efe8; --bar:56px; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: var(--ink); color: var(--cream); font-family: 'Geist', sans-serif; }
   body { min-height: 100vh; }
@@ -102,7 +102,7 @@
   .day.done .cnt b { color: var(--muted); }
   .row .tm { color: var(--cream); }
   .pf { text-decoration: none; } a.pf:hover { filter: brightness(1.15); outline: 1px solid var(--cream); }
-  .pf.IG { background: var(--ig); } .pf.LI { background: var(--li); } .pf.X { background: var(--x); }
+  .pf.IG { background: var(--ig); } .pf.YT { background: var(--yt); } .pf.LI { background: var(--li); } .pf.X { background: var(--x); }
   .ttl { background: none; border: 0; text-align: left; color: var(--cream); line-height: 1.35; }
   .ttl:hover { color: var(--teal); }
   .ttl small { display: block; color: var(--amber); font-size: 11.5px; margin-top: 3px; }
@@ -135,6 +135,12 @@
   .row.open .more { flex-direction: column; }
   .row.open .thumbs { flex-wrap: wrap; gap: 8px; }
   .row.open .thumbs img { width: 168px; height: 210px; cursor: zoom-in; }
+  /* reels: a 9:16 poster with a play badge; a click opens the video link, not the image viewer */
+  .thumbs.vid .vp { position: relative; padding: 0; border: 0; background: none; display: block; cursor: pointer; }
+  .thumbs.vid img { width: 54px; height: 96px; }
+  .row.open .thumbs.vid img { width: 168px; height: 299px; cursor: pointer; }
+  .thumbs.vid .vp::after { content: ''; position: absolute; left: 50%; top: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: rgba(14,14,12,.68) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M10 7.5v11l9-5.5z' fill='%23f2efe8'/%3E%3C/svg%3E") center/100% no-repeat; }
+  .row.open .thumbs.vid .vp::after { width: 48px; height: 48px; margin: -24px 0 0 -24px; }
   .row.open .prev { display: block; -webkit-line-clamp: unset; overflow: visible; white-space: pre-wrap; color: var(--cream); font-size: 14px; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%; cursor: text; user-select: text; }
   .tools { display: none; gap: 8px; flex-wrap: wrap; align-items: center; }
   .row.open .tools { display: flex; }
@@ -185,6 +191,7 @@
     .row { grid-template-areas: "date brand pf st" "tm ttl ttl ttl" "more more more more" "acts acts acts acts"; }
     .row .tm { grid-area: tm; }
     .row.open .thumbs img { width: calc(50% - 4px); height: auto; aspect-ratio: 4 / 5; }
+    .row.open .thumbs.vid { flex-wrap: nowrap; } .row.open .thumbs.vid .vp { width: min(220px, 62%); } .row.open .thumbs.vid img { width: 100%; height: auto; aspect-ratio: 9 / 16; }
   }
 </style>
 </head>
@@ -230,6 +237,7 @@ const sha256 = async s => hex(await crypto.subtle.digest('SHA-256', new TextEnco
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const PAGES = {
   X: () => 'https://x.com/ibrahim_broach',
+  YT: () => 'https://studio.youtube.com/',
   LI: b => b === 'tappstudio' ? 'https://www.linkedin.com/company/145285359/admin/page-posts/published/?share=true' : 'https://www.linkedin.com/sharing/compose',
   IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/my.deen.app/' })[b],
 };
@@ -390,7 +398,7 @@ async function saveIdea(i) {
 }
 const ideaGuard = () => { if (ideasMode === 'live') return true; toast('The ideastore is read-only until the Firestore rule is added.'); return false; };
 const brandOpts = sel => `<option value="">Any brand</option>` + DATA.brands.map(b => `<option value="${b.key}"${sel === b.key ? ' selected' : ''}>${esc(b.label)}</option>`).join('');
-const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['LI', 'LinkedIn'], ['X', 'X']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
+const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
 const statusOpts = sel => ['new', 'shaping', 'scheduled', 'dropped'].map(v => `<option value="${v}"${sel === v ? ' selected' : ''}>${v}</option>`).join('');
 function ideaCard(i) {
   const isOpen = ideaOpen.has(i.id);
@@ -532,7 +540,7 @@ function render() {
 
   const f = document.getElementById('filters'); f.innerHTML = '';
   const chip = (html, on, fn) => { const b = document.createElement('button'); b.className = 'chip' + (on ? ' on' : ''); b.innerHTML = html; b.onclick = fn; f.appendChild(b); };
-  [['all', 'All'], ['IG', 'Instagram'], ['LI', 'LinkedIn'], ['X', 'X']].forEach(([v, l]) => chip((v === 'all' ? '' : `<span class="dot" style="background:var(--${v.toLowerCase()})"></span>`) + l, plat === v, () => { plat = v; render(); }));
+  [['all', 'All'], ['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X']].forEach(([v, l]) => chip((v === 'all' ? '' : `<span class="dot" style="background:var(--${v.toLowerCase()})"></span>`) + l, plat === v, () => { plat = v; render(); }));
   f.appendChild(Object.assign(document.createElement('span'), { className: 'sep' }));
   chip(hidePosted ? 'Posted hidden' : 'Showing posted', !hidePosted, () => { hidePosted = !hidePosted; render(); });
 
@@ -579,7 +587,11 @@ function render() {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.copy);
     navigator.clipboard.writeText(p.text).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy post', 1500); });
   });
-  g.querySelectorAll('.row.open .thumbs img').forEach(i => i.onclick = () => {
+  g.querySelectorAll('[data-video]').forEach(b => b.onclick = () => {
+    const v = (DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.video).video || [])[0];
+    if (v) window.open(v, '_blank', 'noopener'); else toast('No video link yet. Upload the MP4 to Drive and paste the link into posts.json.');
+  });
+  g.querySelectorAll('.row.open .thumbs:not(.vid) img').forEach(i => i.onclick = () => {
     const v = document.getElementById('viewer'); v.querySelector('img').src = i.dataset.full;
     const a = document.getElementById('viewerdl');
     a.onclick = ev => { ev.preventDefault(); saveFiles([[i.dataset.full, null, i.dataset.name]], a); };
@@ -649,7 +661,8 @@ function row(p) {
   const acts = p.archived ? ab(0, 'Restore')
     : (p.status === 'posted' ? btn('ready', 'Undo')
     : (p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted')) + mv + ab(1, 'Archive');
-  const imgs = p.images || [];
+  const vid = p.video, imgs = vid ? [] : (p.images || []);
+  const poster = vid ? vid[1] : '';
   return `<div class="row${isOpen ? ' open' : ''}${p.archived ? ' arch' : ''}" style="--accent:${b.accent}">
     <span class="m d">${label(p.date)}</span><span class="m tm">${esc(p.time)}</span>
     <span class="brand"><i style="background:${b.accent}"></i>${esc(b.label)}</span>
@@ -657,14 +670,16 @@ function row(p) {
     <button class="ttl" data-toggle="${esc(k)}">${esc(p.title)}${p.warn && open(p) ? `<small>⚠️ ${esc(p.note).slice(0, 140)}</small>` : ''}</button>
     <span class="st ${p.archived ? 'archived' : esc(p.status)}">${p.archived ? 'archived' : esc(p.status)}</span><span class="acts">${acts}</span>
     <div class="more">
+      ${vid ? `<div class="thumbs vid"><button class="vp" data-video="${esc(k)}" title="${vid[0] ? 'Open the video' : 'No video link yet'}"><img loading="lazy" src="${isOpen ? poster : poster.replace(/\.webp$/, '-t.webp')}" alt="${esc((p.alt || {}).summary || '')}"></button></div>` : ''}
       ${imgs.length ? `<div class="thumbs">${imgs.slice(0, isOpen ? 99 : 4).map(([full, th, name], n) => `<img loading="lazy" src="${isOpen ? full : th}" data-full="${full}" data-name="${esc(name)}" alt="${esc(((p.alt || {}).slides || [])[n] || (p.alt || {}).summary || '')}">`).join('')}${!isOpen && imgs.length > 4 ? `<span class="plus">+${imgs.length - 4}</span>` : ''}</div>` : ''}
       <button class="prev" data-toggle="${esc(k)}">${esc(p.text)}</button>
       ${altBlock(p)}
       ${replyBlock(p)}
       <div class="tools"><button data-copy="${esc(k)}">Copy post</button>
+        ${vid ? `<button class="ghost" data-video="${esc(k)}">${vid[0] ? 'Open video' : 'Video link missing'}</button>` : ''}
         ${imgs.length ? `<button class="ghost" data-save="${esc(k)}">Save ${imgs.length > 1 ? imgs.length + ' images' : 'image'}</button>` : ''}
         ${p.carousel && imgs.length > 1 ? `<button class="ghost" data-pdf="${esc(k)}">Make PDF</button>` : ''}
-        <span class="meta">${esc(p.format)} · ${imgs.length ? imgs.length + ' image' + (imgs.length > 1 ? 's' : '') : 'no images yet'}${p.posted ? ' · posted ' + esc(p.posted) : ''}</span></div>
+        <span class="meta">${vid ? 'Reel · 9:16 · ' + esc(vid[2] || '') + (vid[0] ? '' : ' · not uploaded yet') : esc(p.format) + ' · ' + (imgs.length ? imgs.length + ' image' + (imgs.length > 1 ? 's' : '') : 'no images yet')}${p.posted ? ' · posted ' + esc(p.posted) : ''}</span></div>
     </div></div>`;
 }
 </script>

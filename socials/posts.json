@@ -4549,16 +4549,9 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
-      "text": "33 taps, one tassel. 🔊\n\nMorning dhikr with Misbaha. On iOS and Android, link in bio.\n\n#dhikr #tasbih #misbaha #morningadhkar #muslimapp",
-      "images": [
-        [
-          "img/3e8ce305b9aaea2e.webp",
-          "img/3e8ce305b9aaea2e-t.webp",
-          "misbaha-IG-10.jpg"
-        ]
-      ],
+      "text": "33 taps, one tassel.\n\nMorning dhikr with Misbaha. On iOS and Android, link in bio.\n\n#dhikr #tasbih #misbaha #morningadhkar #muslimapp",
       "alt": {
-        "summary": "A screen recording of Misbaha counting to 33. Crystal beads slide along the string until the tassel comes round and confetti plays.",
+        "summary": "Misbaha counting from 0 to 33 on a dark screen. Crystal beads slide along the string until the teal tassel comes round and confetti plays.",
         "slides": []
       },
       "brand": "misbaha",
@@ -4568,10 +4561,16 @@
       "time": "6:30 am IST",
       "status": "planned",
       "warn": true,
-      "note": "needs a screen recording",
+      "note": "Reel is built (misbaha-R01.mp4, 16 s, soft bead knocks over a calm pad). Upload it to Drive, paste the link into video[0], and have the Arabic on screen checked.",
       "title": "33 taps, one tassel (Reel)",
       "posted": "",
-      "carousel": false
+      "carousel": false,
+      "video": [
+        "",
+        "img/b223d70d279d219b.webp",
+        "misbaha-R01.mp4"
+      ],
+      "kind": "reel"
     },
     {
       "text": "The best paywall in my app isn't a screen. It's a button label.\n\nPick a Prime bead and it's on your misbaha straight away. The button changes from \"Apply\" to \"Unlock & Apply\".\n\nNo launch paywall. No nag. You ask for it.",
@@ -5011,7 +5010,79 @@
       "posted": "",
       "carousel": false,
       "reply": "Pre-register on Google Play:\nhttps://play.google.com/store/apps/details?id=in.tappstudio.kadakchai"
+    },
+    {
+      "text": "Counting to 33 on Misbaha, one soft bead at a time, until the tassel comes round.\n\nMisbaha is on iOS and Android.\n\n#Shorts #dhikr #tasbih #misbaha",
+      "alt": {
+        "summary": "Misbaha counting from 0 to 33 on a dark screen. Crystal beads slide along the string until the teal tassel comes round and confetti plays.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "id": "YT-01",
+      "platform": "YT",
+      "date": "2026-11-17",
+      "time": "7:30 am IST",
+      "status": "planned",
+      "warn": true,
+      "note": "Same video as IG-10. Title is the YouTube Shorts title, the caption is the description. Arabic on screen needs a check.",
+      "title": "33 taps, one tassel (Short)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/b223d70d279d219b.webp",
+        "misbaha-R01.mp4"
+      ]
+    },
+    {
+      "text": "Every stone in the collection.\n\nAqeeq, amber, feroza, pearl, ruby. Put any of them on your own string before you decide.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #prayerbeads #muslimapp",
+      "alt": {
+        "summary": "Misbaha counting on a dark screen while the whole string changes stone: aqeeq, amber, feroza, pearl and ruby, each with its own tassel.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "id": "IG-15",
+      "platform": "IG",
+      "date": "2026-11-19",
+      "time": "9:30 pm IST",
+      "status": "planned",
+      "warn": true,
+      "note": "Reel is built (misbaha-R02.mp4, 18 s, voice plus calm pad). The date is a placeholder, move it. Upload to Drive and paste the link into video[0]. Arabic on screen needs a check.",
+      "title": "Every stone in the collection (Reel)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/d382da7c6612e150.webp",
+        "misbaha-R02.mp4"
+      ]
+    },
+    {
+      "text": "Aqeeq, amber, feroza, pearl, ruby. Every stone in the collection, on your own string first.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #dhikr",
+      "alt": {
+        "summary": "Misbaha counting on a dark screen while the whole string changes stone: aqeeq, amber, feroza, pearl and ruby, each with its own tassel.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "id": "YT-02",
+      "platform": "YT",
+      "date": "2026-11-19",
+      "time": "8:30 pm IST",
+      "status": "planned",
+      "warn": true,
+      "note": "Same video as IG-15. Date is a placeholder.",
+      "title": "Every stone in the collection (Short)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/d382da7c6612e150.webp",
+        "misbaha-R02.mp4"
+      ]
     }
   ],
-  "built": "25 Oct 2026, 12:00"
+  "built": "27 Oct 2026, 13:40"
 }

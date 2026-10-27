@@ -1,3 +1,6 @@
 tools/revenuecat/snapshots/
 .env
 tools/revenuecat/.env
+
+# Kadak audio from the game: kept local, not published
+brand/kadak/audio/
