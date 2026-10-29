@@ -2851,16 +2851,16 @@
       "reply": "Kadak's teaser site. The sky follows the time in India:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "It's Friday. Send salawat.\n\nAllahumma salli ala Muhammadin wa aali Muhammad.\n\nSet a target of 100 in Misbaha and let the tassel tell you when you're done.\n\nJumu'ah Mubarak 🤍\n\n#jummahmubarak #salawat #durood #dhikr #misbaha",
+      "text": "It's Friday. Send salawat.\n\nAllahumma salli ala Muhammadin wa aali Muhammad wa barik wa sallim.\n\nSet a target of 100 in Misbaha and let the tassel tell you when you're done.\n\nJumu'ah Mubarak 🤍\n\n#jummahmubarak #salawat #durood #dhikr #misbaha",
       "images": [
         [
-          "img/54630f643ad3533e.webp",
-          "img/54630f643ad3533e-t.webp",
+          "img/e33b86e9dbcbba0c.webp",
+          "img/e33b86e9dbcbba0c-t.webp",
           "misbaha-IG-05.jpg"
         ]
       ],
       "alt": {
-        "summary": "Arabic text Allahumma salli ala Muhammadin wa aali Muhammad above a string of turquoise beads with a turquoise tassel. Text: It's Friday. Send salawat. Target 100.",
+        "summary": "Arabic text Allahumma salli ala Muhammadin wa aali Muhammad wa barik wa sallim above a string of turquoise beads with a turquoise tassel. Text: It's Friday. Send salawat. Target 100.",
         "slides": []
       },
       "brand": "misbaha",
@@ -2942,7 +2942,7 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "Kadak has no game server. On purpose.\n\nWhere everything lives instead:\nYour progress: on your phone\nCloud save, leaderboards, achievements: Google Play Games and Game Center\nAnalytics, errors, and settings I can change remotely: PostHog\nEvents and festivals: bundled in the app, switched on by a remote schedule\n\nRunning cost right now: about ₹0 a month. The stores take their cut, and that's it.\n\nWhat I gave up:\nCo-op play, because that needs shared state on a server.\nRewards for ranking against real players, because without a server I can't stop cheating. Leaderboards are for bragging only.\n\nSince everything else is single-player, a cheater only spoils their own game. Which is a very fair punishment.\n\nFor a solo developer, the cheapest server is the one you never build.",
+      "text": "Kadak has no game server. On purpose.\n\nWhere everything lives instead:\nYour progress: on your phone\nCloud save, leaderboards, achievements: Google Play Games and Game Center\nAnalytics, errors, and settings I can change remotely: PostHog\nEvents and festivals: bundled in the app, switched on by a remote schedule\n\nRunning cost right now: about ₹0 a month. The stores take their cut, and that's it.\n\nLeaderboards and achievements are still there. They run on Google Play Games and Game Center, so the sign-in, scores and unlocks all live with Google and Apple, not with me.\n\nWhat I gave up:\nCo-op play, because that needs shared state on a server.\nMy own accounts and friend lists, because the platforms already do that job.\n\nFewer moving parts means fewer things to break at 2 am. If a server is down, it isn't mine.\n\nFor a solo developer, the cheapest server is the one you never build.",
       "images": [
         [
           "img/a8e6823b4f6b89d5.webp",
@@ -5084,5 +5084,5 @@
       ]
     }
   ],
-  "built": "27 Oct 2026, 13:40"
+  "built": "30 Oct 2026, 12:30"
 }
