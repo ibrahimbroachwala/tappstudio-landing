@@ -5106,7 +5106,679 @@
         "nasab-R02.mp4"
       ],
       "kind": "reel"
+    },
+    {
+      "text": "A trip for 6 people can be settled in 5 payments. Never more. This is true for any group.\n\nMost groups still end up with 12 or 15 transfers, because everyone repays whoever they remember owing. Half of those payments are people passing the same money around in a circle.\n\nThe trick is to stop settling expense by expense and settle once, from the totals:\n1. Add up what each person paid.\n2. Divide by the group size. That is each person's fair share.\n3. Some people paid more than their share (they are owed). Some paid less (they owe).\n4. Match the biggest debtor with the biggest creditor. Repeat until everyone is at zero.\n\nEvery payment clears at least one person for good, so a group of N is done in at most N-1 payments.\n\nTwo habits that make this painless on a real trip:\n• Log each expense the day it happens, while everyone still remembers it\n• Settle once, on the last day, not at every dinner\n\nThis is exactly what Splitup does for you. But the method works with a notes app and a calculator too, and it will save your group a few awkward messages.\n\nA circle of people repaying each other is the only kind of circle that should be broken.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "splitup",
+      "id": "LI-13",
+      "platform": "LI",
+      "date": "2026-11-16",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "A trip for N people never needs more than N-1 payments",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
+      "text": "Every feature I have added and later deleted failed the same three questions. I just asked them too late.\n\n1. Who asked for this, in their own words? \"It would be nice\" from me doesn't count. A user describing a problem does.\n2. What does the app do today when this problem happens? If the answer is \"nothing, they leave\", it is worth building. If the answer is \"they find a workaround in ten seconds\", it probably isn't.\n3. What will I have to keep maintaining? A feature isn't built once. It is tested on every new OS version, translated into every language, and explained in every support reply.\n\nWhen a small studio says yes to everything, the app slowly becomes a settings screen.\n\nA good week for me is often one where a feature request becomes a smaller fix to something that already exists.\n\nThe best code I ship is the code I talked myself out of.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-11",
+      "platform": "LI",
+      "date": "2026-11-17",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Three questions I ask before I add a feature",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "If you could only ask an elder in your family seven questions, which would you pick?\n\nThese are the ones I'd start with. They work because none of them can be answered with yes or no:\n1. What is the earliest thing you remember?\n2. How did you and your spouse meet? (Then ask who disapproved.)\n3. What was your mother like when you were small?\n4. What did Eid feel like when you were a child?\n5. What did you leave behind when the family moved?\n6. Which saying did your father always repeat?\n7. What do you want your great-grandchildren to know about you?\n\nThree tips that make the conversation better:\n• Ask at a meal or on a walk. People tell stories sideways, not across a table\n• Record audio. A voice at 80 is worth more than any transcript\n• Write down the names while they speak. Spellings are the first thing a family forgets\n\nDon't wait for a milestone birthday to ask. Ask this weekend. Nani will also be happy to be asked, and slightly suspicious about why.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "nasab",
+      "id": "LI-17",
+      "platform": "LI",
+      "date": "2026-11-18",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Seven questions for your grandparents, before the stories are gone",
+      "posted": "",
+      "carousel": false,
+      "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "Most dhikr habits don't fail because of faith. They fail because the target was too big for a Tuesday.\n\nIf you want a habit that survives a busy week, shrink it until it is almost embarrassing:\n• Pick one anchor you never skip (after fajr, after a prayer, before sleep)\n• Pick one small count, like 33\n• Do only that, every day, for two weeks\n\nThe count matters less than the streak. A person who does 33 every day for a month has built something that a person who does 1,000 once on Friday hasn't.\n\nA few things that help:\n• Keep the counter where your hands already are, not in a drawer\n• Make it quiet, so it works in a bus or beside a sleeping child\n• Don't track a number you'll feel guilty about\n\nI built Misbaha around the same idea. The counting is free and calm, and the bead and tassel styles are there for the days you want it to feel special.\n\nConsistency is quiet. Your counter can be too.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "id": "LI-06",
+      "platform": "LI",
+      "date": "2026-11-19",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "A dhikr habit that survives a busy week",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
+    },
+    {
+      "text": "AI writes a pull request in minutes. Reviewing it still takes me an hour. That hour is the actual job.\n\nHere is the order I read it in, because order matters:\n1. The tests first. If the tests only check the happy path, the code probably does too.\n2. Anything that touches money, login or data deletion. I read these slowly, line by line.\n3. The edges: empty lists, no network, a user who taps twice, a language that reads right to left.\n4. What it did not change. Missing changes are harder to see than wrong ones.\n\nWhat I've learned to distrust:\n• Code that looks tidy but handles errors by ignoring them\n• Names that sound right but do something slightly different\n• Comments that describe the idea, not the code\n\nThe AI is a fast junior who never gets tired and never says \"I'm not sure\". So I do the saying for it.\n\nReading code carefully is still faster than debugging it in production.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-12",
+      "platform": "LI",
+      "date": "2026-11-20",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "How I review a pull request written by AI",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "Nobody forgets a debt on purpose. It dies of politeness.\n\nDay 1: you remember it clearly.\nDay 3: you're embarrassed to bring it up first.\nDay 10: you're not sure of the amount, so you say nothing.\n\nThree small habits fix almost all of it:\n• Put the amount in writing the same day. A number in a chat is easier to settle than a vague memory\n• Ask in a neutral way. \"Splitup says it's $12.80\" is a lot easier than \"you owe me\"\n• Settle in one payment, not in pieces. Partial repayments are where the arithmetic gets lost\n\nIt also helps to remove the person from the conversation. A reminder from an app is just a reminder. A reminder from a friend is a conversation.\n\nThat is why Splitup sends the reminder for you. You stay the friend, and the app plays the accountant.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "splitup",
+      "id": "LI-14",
+      "platform": "LI",
+      "date": "2026-11-21",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Why 'I'll pay you back' dies after three days",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
+      "text": "A family tree with ten names and no details is a list. A family tree with five facts per person is a family.\n\nIf you are starting to record your family, these five fields do most of the work:\n1. Full name, as they would write it, in every script they use\n2. Birth and death dates. Note whether they are Gregorian or Hijri\n3. Where they lived, in order\n4. Who they were to others (father, teacher, neighbour, the one who made the best biryani)\n5. One story, in a sentence or two\n\nWhy these five:\n• Names are the first thing to blur. Spellings change between passports, school records and what the family says\n• Dates are what let a tree become a timeline\n• Places explain why branches ended up where they did\n• The role and the story are the reason anyone will read it in thirty years\n\nStart with the oldest person you can still ask. A tree filled in from the top is always more accurate than one filled in from memory.\n\nNobody ever finished a family tree. Everyone just got further than the last person.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "nasab",
+      "id": "LI-18",
+      "platform": "LI",
+      "date": "2026-11-22",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "What to write down about a person before it is too late",
+      "posted": "",
+      "carousel": false,
+      "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "Every setting is a decision I made not to decide.\n\nWhen I build an app, I used to add a toggle whenever two options seemed equally good. Notification sound, default view, date format, sort order. It felt generous.\n\nIt wasn't. It meant:\n• More screens to design in two themes\n• More states to test on every OS version\n• More support questions that start with \"I can't find where to change it\"\n• Most users never opening the screen anyway\n\nA rule I follow now: pick the default that is right for most people, and add a setting only after three different users ask for it.\n\nThe exceptions are accessibility and language. Those are never optional.\n\nAn app with ten choices respects the user's time less than an app with the right ten defaults.\n\nThe best setting is the one you didn't have to make.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-13",
+      "platform": "LI",
+      "date": "2026-11-23",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Small apps need fewer settings than you think",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "Open your phone's tasbih counter and ask one thing: would this work in a mosque, on a train and next to a sleeping baby?\n\nMost don't. They beep, flash or buzz the whole phone every time you tap.\n\nWhat a counter needs to get right:\n• A soft, short sound (or none) that doesn't turn heads\n• A tap area big enough to hit without looking\n• A count that is still there when you switch apps or lock the screen\n• Nothing on screen that competes with the number\n\nThe reason this matters isn't comfort. A distracting tool turns dhikr into a task. A calm one lets you drift into the rhythm and forget the phone is there.\n\nThat is the standard I hold Misbaha to. The beads move, the sound is soft, and the number stays big.\n\nIf your tool makes more noise than you do, it is the wrong tool.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "id": "LI-07",
+      "platform": "LI",
+      "date": "2026-11-24",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Why a counter should be quiet",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
+    },
+    {
+      "text": "Every group trip has a person who ends up paying for everything. It's usually the one who is bad at saying no.\n\nIf you plan the trip with a bit of structure, it never has to be them:\n• Rotate who pays. Dinner is on Ali, fuel is on Sara, tickets on Max. Over four days it evens out\n• Or pick one person as the bank, and give them a clear note of the cost at each step\n• Never pay for someone else's expense without writing it down at the time. \"I'll remember\" has a short shelf life\n\nAnd for the one who always ends up paying: set a personal limit. \"I'll cover up to $50, after that it goes in the app.\" It sounds blunt but people respect it.\n\nThe point of tracking isn't to be petty. It is so that nobody has to be generous by accident.\n\nA trip is better when the only thing anyone owes each other is a good story.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "splitup",
+      "id": "LI-15",
+      "platform": "LI",
+      "date": "2026-11-25",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Who should be the bank on a group trip",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
+      "text": "Most App Store rejections are not about the code. They are about things I forgot to check.\n\nMy pre-submit list, in the order I run it:\n1. The privacy policy and support URLs open on a phone, and match what the app does\n2. Screenshots show the current build, not last month's design\n3. Every purchase works from a fresh install, including Restore Purchases\n4. The app does something useful with no account, or the review notes explain how to log in\n5. Permissions are asked for at the moment they are needed, with a plain reason\n6. The subscription terms and price are visible before the buy button\n7. The app works with the network off, and doesn't crash in airplane mode\n\nItems 1 and 3 are where I've lost the most time. A dead link is a rejection. A broken restore is a bad review.\n\nReviewers are people with a queue. If I make their job easy, mine gets easier.\n\nIt takes me twenty minutes. A rejection takes me two days.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-14",
+      "platform": "LI",
+      "date": "2026-11-26",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Before I press Submit for Review",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "If your family uses both the Gregorian and the Hijri calendar, you already know the problem. Eid moves. A wedding anniversary isn't where it was last year.\n\nThe Islamic year is about 11 days shorter than the Gregorian one. So a date stays the same in one calendar and drifts in the other.\n\nWhat works:\n• Record each date once, in the calendar it was celebrated in. A birth in Ramadan should stay a Ramadan date\n• Store the other calendar next to it, as a reference\n• Decide which one your family follows for each event. Birthdays may be Gregorian and religious anniversaries Hijri\n\nThen let a tool do the conversion and the reminding. Doing it by hand means you'll be wrong by a day, and that's the day someone feels forgotten.\n\nNasab does exactly this. Every date is shown in both calendars and the upcoming celebrations include the ones that moved.\n\nA remembered birthday isn't a small thing.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "nasab",
+      "id": "LI-19",
+      "platform": "LI",
+      "date": "2026-11-27",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "How to keep family dates straight when the calendar moves",
+      "posted": "",
+      "carousel": false,
+      "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "text": "When AI gets something wrong, I used to blame the model. Now I check my prompt first, and the prompt is usually the problem.\n\nA prompt that works looks a lot like a good spec:\n• The goal, in one sentence (\"Add offline mode to expenses\")\n• The constraints (\"No new packages. Keep the existing database\")\n• What done looks like (\"Tests pass. A new expense saves with the network off\")\n• What not to touch (\"Leave payments alone\")\n\nA prompt that doesn't work looks like a wish: \"Make it better.\"\n\nTwo things I do before I start:\n• Write the acceptance check first, and give it to the AI\n• Ask it for a plan before any code, and edit the plan\n\nFixing a plan takes one minute. Fixing a wrong implementation takes an afternoon.\n\nThe time you spend on the spec is the time you save on the rework.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-15",
+      "platform": "LI",
+      "date": "2026-11-28",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "A prompt is a spec. Write it like one.",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "The rent is easy. The electricity bill is where flatmates fall out.\n\nA monthly routine that keeps it calm:\n• Rent is fixed, so set it once and forget it\n• Shared bills (electricity, internet, gas) go in the day they arrive, with a photo of the bill\n• Groceries: only log shared items. Personal snacks stay personal\n• On the first of the month, settle in one go\n\nA few rules that save arguments:\n• Agree the split before the first bill, not after. Equal is simplest. If rooms are different sizes, agree a ratio once\n• Whoever pays the bill gets paid back within a week, not \"when it is convenient\"\n• If someone leaves, settle up the same day\n\nMost flat arguments aren't about money. They are about not knowing where the money went.\n\nShow the numbers and the argument becomes a conversation.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "splitup",
+      "id": "LI-16",
+      "platform": "LI",
+      "date": "2026-11-29",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "Splitting rent and utilities with flatmates, without the monthly argument",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
+    },
+    {
+      "text": "A month of building in public, by the numbers. [YOUR NUMBERS: apps updated, releases shipped, posts published, people who wrote in]\n\nWhat I shipped:\n• [YOUR LINE: the 2 or 3 things that actually shipped, in a sentence each]\n\nWhat I learned:\n• [YOUR LINE: one thing that went wrong, and what changed because of it]\n\nWhat I'm doing in December:\n• [YOUR LINE: the one thing that matters most next month]\n\nI'm keeping this format for each month end. It forces me to look at what happened, not what I meant to do.\n\nIf you are building something small, write your own version. Three lines are enough.\n\nA month goes faster than it feels like it should.",
+      "images": [],
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "id": "LI-16",
+      "platform": "LI",
+      "date": "2026-11-30",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": false,
+      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "title": "November, in plain numbers",
+      "posted": "",
+      "carousel": false,
+      "reply": "More of what I build:\nhttps://tappstudio.in"
+    },
+    {
+      "alt": {
+        "summary": "A group chat skit about paying for a cab, then voice entry fills in an expense of $38.40 split three ways, then a reminder gets Max to pay.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-22",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "You paid for the cab. Again.\n\nSay it once and Splitup fills it in: the cab, $38.40, split three ways, $12.80 each. One reminder later, Max pays up.\n\nSplitup is free to start on iOS and Android. Link in bio.\n.\n#splitup #splitexpenses #groupexpenses #tripwithfriends #Reels",
+      "id": "IG-22",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "POV: you paid for the cab. Again. (Reel)",
+      "note": "Reel is built (splitup-R01.mp4, voice plus bounce music, mock screens). Upload it to Drive, paste the link into video[0], then schedule it.",
+      "video": [
+        "",
+        "img/6cbee2e510e3d37b.webp",
+        "splitup-R01.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "A group chat skit about paying for a cab, then voice entry fills in an expense of $38.40 split three ways, then a reminder gets Max to pay.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-22",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Cab, $38.40, split three ways. Say it once and Splitup fills it in. One reminder, and Max pays up.\n\nSplitup is free to start on iOS and Android.\n\n#Shorts #splitup #splitexpenses",
+      "id": "YT-01",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "You paid for the cab. Again. (Short)",
+      "note": "Same video as IG-22. Title is the Shorts title, the caption is the description.",
+      "video": [
+        "",
+        "img/6cbee2e510e3d37b.webp",
+        "splitup-R01.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Seven question cards in turn, from the earliest memory to what she wants her great-grandchildren to know.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-23",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Seven questions to ask your Nani this weekend.\n\nThe earliest thing she remembers. How she met Nana (and who disapproved). What Eid felt like. The last one is the one to press record for.\n\nWrite them into Nasab as you go, with every name spelled right.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyHistory #FamilyTree #AskYourGrandparents #Reels",
+      "id": "IG-23",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "7 questions to ask your Nani (Reel)",
+      "note": "Reel is built (nasab-R01.mp4, voice plus heirloom bed). Upload it to Drive, paste the link into video[0], then schedule it.",
+      "video": [
+        "",
+        "img/688f6850b737c57c.webp",
+        "nasab-R01.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Seven question cards in turn, from the earliest memory to what she wants her great-grandchildren to know.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-23",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Seven questions to ask your Nani this weekend, and why the last one is worth recording.\n\nNasab is on iOS and Android.\n\n#Shorts #familyhistory #familytree",
+      "id": "YT-01",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "7 questions to ask your Nani (Short)",
+      "note": "Same video as IG-23. Title is the Shorts title, the caption is the description.",
+      "video": [
+        "",
+        "img/688f6850b737c57c.webp",
+        "nasab-R01.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Nine trip expenses add up to $410, then the settle screen shows only two payments, $109.17 and $39.16.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-24",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Three friends. Nine expenses. Two payments.\n\nEveryone adds what they paid as they go. Splitup works out who pays whom, and tap settle is all that is left.\n\nSplitup is free to start on iOS and Android. Link in bio.\n.\n#splitup #tripexpenses #splitbills #roadtrip #Reels",
+      "id": "IG-23",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "3 friends. 9 expenses. 2 payments. (Reel)",
+      "note": "Reel is built (splitup-R02.mp4, voice plus bounce music). Upload it to Drive, paste the link into video[0], then schedule it.",
+      "video": [
+        "",
+        "img/8bb68852fed3e299.webp",
+        "splitup-R02.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Nine trip expenses add up to $410, then the settle screen shows only two payments, $109.17 and $39.16.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-24",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Nine expenses on a trip come down to two payments. Splitup works out who pays whom.\n\nSplitup is free to start on iOS and Android.\n\n#Shorts #splitup #splitbills",
+      "id": "YT-02",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "9 expenses, 2 payments (Short)",
+      "note": "Same video as IG-23. Title is the Shorts title, the caption is the description.",
+      "video": [
+        "",
+        "img/8bb68852fed3e299.webp",
+        "splitup-R02.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Misbaha counting while one stone is previewed on the string, then the unlock sheet.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-25",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Try the stone on your own string before you decide.\n\nAqeeq, amber, feroza, pearl, ruby. Tap one, count a few beads, then keep it or don't.\n\nMisbaha, on iOS and Android. Link in bio.\n.\n#misbaha #tasbih #dhikr #prayerbeads #muslimapp",
+      "id": "IG-16",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Preview, then pay (Reel)",
+      "note": "Not built yet. Brief: misbaha-R03, about 16 s. Open on counting, tap a stone to preview, count 3 beads, show the unlock. Line: Try it on your own string first. Arabic on screen needs a check."
+    },
+    {
+      "alt": {
+        "summary": "Misbaha counting while one stone is previewed on the string, then the unlock sheet.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-25",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Preview a stone on your own string before you pay. Misbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha",
+      "id": "YT-03",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Preview the stone first (Short)",
+      "note": "Same video as IG-16. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "alt": {
+        "summary": "A $100 expense splits as $33.34, $33.33 and $33.33 on a Splitup screen.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-26",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "$100 split three ways is $33.33. And one cent that belongs to nobody.\n\nSplitup gives that cent to someone, every time, so the totals always add up.\n\nSplitup is free to start on iOS and Android. Link in bio.\n.\n#splitup #splitexpenses #money #mathfacts #Reels",
+      "id": "IG-24",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "The last cent (Reel)",
+      "note": "Not built yet. Brief: splitup-R03, about 14 s. Show $100, three people, 33.33 x 3 = 99.99, then the extra cent assigned. Joke: the cent is not worth arguing over."
+    },
+    {
+      "alt": {
+        "summary": "A $100 expense splits as $33.34, $33.33 and $33.33 on a Splitup screen.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-26",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "$100 split three ways leaves one cent nobody owns. Splitup gives it to someone so totals always match.\n\n#Shorts #splitup #money",
+      "id": "YT-03",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "The missing cent (Short)",
+      "note": "Same video as IG-24. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "alt": {
+        "summary": "A birthday card in Nasab with a Gregorian date and a Hijri date, and an upcoming celebrations list.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-27",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Some birthdays move 11 days a year.\n\nIf your family keeps Hijri dates, Nasab shows both calendars side by side and reminds you before the day arrives.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #Hijri #FamilyDates #IslamicCalendar #Reels",
+      "id": "IG-24",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Birthdays that move (Reel)",
+      "note": "Not built yet. Brief: nasab-R03, about 16 s. Person screen with both dates, then Upcoming Celebrations. Line: some birthdays move 11 days a year."
+    },
+    {
+      "alt": {
+        "summary": "A birthday card in Nasab with a Gregorian date and a Hijri date, and an upcoming celebrations list.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-27",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Hijri dates drift about 11 days a year. Nasab shows both calendars and reminds you.\n\n#Shorts #hijri #family",
+      "id": "YT-02",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Birthdays that move 11 days (Short)",
+      "note": "Same video as IG-24. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "alt": {
+        "summary": "Splitup group with a friend marked as invited, expenses already split with them.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-28",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Your friend doesn't have the app yet. Add them anyway.\n\nSplitup keeps their share, and when they join later, everything is already waiting for them.\n\nSplitup is free to start on iOS and Android. Link in bio.\n.\n#splitup #groupexpenses #splitbills #friends #Reels",
+      "id": "IG-25",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Add a friend before they download (Reel)",
+      "note": "Not built yet. Brief: splitup-R04, about 14 s. Add a person by name, log an expense with them, show they are counted once. Line: they can join whenever."
+    },
+    {
+      "alt": {
+        "summary": "Splitup group with a friend marked as invited, expenses already split with them.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-28",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Add a friend to a group before they download Splitup. Their share is waiting when they join.\n\n#Shorts #splitup #groupexpenses",
+      "id": "YT-04",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Add a friend before they download (Short)",
+      "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "alt": {
+        "summary": "Misbaha counting beads with a soft sound on a dark screen.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-29",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "A counter you can use anywhere.\n\nSoft bead, one tap, a number that stays big. On the bus, in the mosque, next to a sleeping baby.\n\nMisbaha, on iOS and Android. Link in bio.\n.\n#misbaha #tasbih #dhikr #muslimapp #Reels",
+      "id": "IG-17",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Quiet counting (Reel)",
+      "note": "Not built yet. Brief: misbaha-R04, about 15 s. Calm counting, minimal text, one line: it works where you do."
+    },
+    {
+      "alt": {
+        "summary": "Misbaha counting beads with a soft sound on a dark screen.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-29",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "A calm, quiet tasbih counter for the bus, the mosque or a sleeping baby. Misbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha",
+      "id": "YT-04",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "A quiet tasbih counter (Short)",
+      "note": "Same video as IG-17. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "alt": {
+        "summary": "Nasab's Home screen showing Family in Numbers tiles and the next celebration.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-30",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "How many generations? How many people? Whose birthday is next?\n\nNasab's family overview answers in one screen, from what you have added.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHeritage #Reels",
+      "id": "IG-25",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Your family in numbers (Reel)",
+      "note": "Not built yet. Brief: nasab-R04, about 15 s. Home screen, Family in Numbers, then the next celebration."
+    },
+    {
+      "alt": {
+        "summary": "Nasab's Home screen showing Family in Numbers tiles and the next celebration.",
+        "slides": []
+      },
+      "brand": "nasab",
+      "date": "2026-11-30",
+      "status": "planned",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Family in Numbers: generations, people and the next birthday on one Nasab screen.\n\n#Shorts #familytree #family",
+      "id": "YT-03",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Your family in numbers (Short)",
+      "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
     }
   ],
-  "built": "30 Oct 2026, 13:30"
+  "built": "30 Oct 2026, 15:00"
 }
