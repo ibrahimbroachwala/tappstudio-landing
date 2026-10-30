@@ -83,7 +83,7 @@ To pause it, set `AUTOPOST_LIVE` to `0`, or disable the workflow in the Actions 
 python3 tools/autopost/ui.py
 ```
 
-Opens http://127.0.0.1:8790 with buttons to upload reels, commit and push `posts.json`, check, dry run and post live. It only listens on this machine, uses your `tools/autopost/.env`, and asks you to confirm before posting live or pushing.
+Opens http://127.0.0.1:8790 with buttons to play the built reels, upload them, commit and push `posts.json`, check, dry run and post live. It only listens on this machine, uses your `tools/autopost/.env`, and asks you to confirm before posting live or pushing.
 
 ## Commands
 

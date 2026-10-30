@@ -37,6 +37,9 @@ button:disabled{opacity:.45;cursor:not-allowed}.reel{display:flex;gap:10px;align
 .hint{color:var(--mute);font-size:13px;margin:8px 0 0}
 </style></head><body><main>
 <h1>Autopost</h1><p class="sub">Runs the Instagram and YouTube posting scripts on this machine.</p>
+<div class="card" id="player" hidden><h2 id="ptitle">Preview</h2>
+<video id="video" controls playsinline style="width:100%;max-width:300px;aspect-ratio:9/16;background:#000;border-radius:10px;display:block"></video>
+<div class="row" style="margin-top:10px"><button id="pclose">Close</button></div></div>
 <div class="card"><h2>1. Upload reels to R2</h2><div id="reels">Loading…</div>
 <div class="row" style="margin-top:10px"><button class="pri" id="upload">Upload selected</button><button id="commit">Commit and push posts.json</button></div>
 <p class="hint">Upload links the reel in posts.json. Commit and push it so the scheduled job sees the links.</p></div>
@@ -48,7 +51,7 @@ button:disabled{opacity:.45;cursor:not-allowed}.reel{display:flex;gap:10px;align
 const $=s=>document.querySelector(s),out=$('#out');let busy=false;
 function lock(b){busy=b;document.querySelectorAll('button').forEach(x=>x.disabled=b)}
 async function reels(){const r=await (await fetch('/api/reels')).json();
-$('#reels').innerHTML=r.length?r.map(x=>`<div class="reel"><label><input type="checkbox" value="${x.name}"> ${x.name}</label><span class="tag ${x.linked?'ok':''}">${x.used?(x.linked?'uploaded and linked':'not uploaded'):'not on the calendar yet'}</span></div>`).join(''):'No built reels found in '+${JSON.stringify(OUTDIR)}}
+$('#reels').innerHTML=r.length?r.map(x=>`<div class="reel"><label><input type="checkbox" value="${x.name}"> ${x.name}</label><button data-play="${x.name}">Play</button><span class="tag ${x.linked?'ok':''}">${x.used?(x.linked?'uploaded and linked':'not uploaded'):'not on the calendar yet'}</span></div>`).join(''):'No built reels found in '+${JSON.stringify(OUTDIR)}}
 async function run(cmd,args,confirmMsg){if(busy)return;if(confirmMsg&&!confirm(confirmMsg))return;
 lock(true);out.textContent='Starting…\\n';
 const j=await (await fetch('/api/run',{method:'POST',body:JSON.stringify({cmd,args,confirm:!!confirmMsg})})).json();
@@ -63,6 +66,9 @@ if(!names.length){out.textContent='Tick at least one reel first.';return}run('up
 $('#commit').onclick=()=>run('commit',[],'Commit socials/posts.json and push it to the current branch?');
 $('#check').onclick=()=>run('check',[]);$('#dry').onclick=()=>run('dry',[]);
 $('#live').onclick=()=>run('live',[],'Post every due Ready reel to Instagram and YouTube right now? This publishes for real.');
+document.addEventListener('click',e=>{const n=e.target.dataset&&e.target.dataset.play;if(!n)return;
+$('#ptitle').textContent=n;$('#video').src='/media/'+n;$('#player').hidden=false;$('#video').play().catch(()=>{});$('#player').scrollIntoView({behavior:'smooth'})});
+$('#pclose').onclick=()=>{$('#video').pause();$('#video').removeAttribute('src');$('#video').load();$('#player').hidden=true};
 reels();
 </script></body></html>"""
 
@@ -125,6 +131,37 @@ class Handler(BaseHTTPRequestHandler):
         host = self.headers.get("Host", "")
         return host.split(":")[0] in ("127.0.0.1", "localhost")
 
+    def media(self, name):
+        """Streams a built reel for the preview player. Safari needs Range support to play and seek."""
+        found = glob.glob(os.path.join(OUT, "*", name)) if name.endswith(".mp4") else []
+        if not found:
+            return self.send(404, "{}")
+        size, start, end = os.path.getsize(found[0]), 0, None
+        rng = self.headers.get("Range", "")
+        if rng.startswith("bytes="):
+            a, _, b = rng[6:].partition("-")
+            start, end = int(a or 0), int(b) if b else size - 1
+        end = size - 1 if end is None else min(end, size - 1)
+        self.send_response(206 if rng else 200)
+        self.send_header("Content-Type", "video/mp4")
+        self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Content-Length", str(end - start + 1))
+        if rng:
+            self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+        self.end_headers()
+        try:
+            with open(found[0], "rb") as f:
+                f.seek(start)
+                left = end - start + 1
+                while left > 0:
+                    chunk = f.read(min(65536, left))
+                    if not chunk:
+                        break
+                    self.wfile.write(chunk)
+                    left -= len(chunk)
+        except (BrokenPipeError, ConnectionResetError):
+            pass
+
     def do_GET(self):
         if not self.local_only():
             return self.send(403, "{}")
@@ -133,6 +170,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, PAGE.replace("${JSON.stringify(OUTDIR)}", json.dumps(OUT)), "text/html")
         if path == "/api/reels":
             return self.send(200, json.dumps(reel_list()))
+        if path.startswith("/media/"):
+            return self.media(os.path.basename(path))
         if path.startswith("/api/job/"):
             job = JOBS.get(path.rsplit("/", 1)[1])
             if not job:
