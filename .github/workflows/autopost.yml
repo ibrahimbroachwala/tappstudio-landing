@@ -1,0 +1,47 @@
+# Posts due Instagram reels and YouTube Shorts from socials/posts.json (see tools/autopost/README.md).
+# Scheduled workflows only run from the default branch, so this file must also be on main.
+# It checks out release, where the calendar lives. Nothing is posted until the AUTOPOST_LIVE variable is 1.
+name: autopost
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = verify accounts and list the queue, run = post what is due"
+        type: choice
+        options: [check, run]
+        default: check
+
+concurrency:
+  group: autopost
+  cancel-in-progress: false
+
+jobs:
+  autopost:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: autopost
+        run: python3 tools/autopost/autopost.py ${{ inputs.mode || 'run' }} ${{ vars.AUTOPOST_LIVE == '1' && '--live' || '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_STATE_BUCKET: ${{ vars.R2_STATE_BUCKET }}
+          R2_PUBLIC_BASE: ${{ vars.R2_PUBLIC_BASE }}
+          IG_TOKEN_MISBAHA: ${{ secrets.IG_TOKEN_MISBAHA }}
+          IG_TOKEN_NASAB: ${{ secrets.IG_TOKEN_NASAB }}
+          IG_TOKEN_SPLITUP: ${{ secrets.IG_TOKEN_SPLITUP }}
+          IG_TOKEN_KADAK: ${{ secrets.IG_TOKEN_KADAK }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: ${{ vars.YT_PRIVACY }}

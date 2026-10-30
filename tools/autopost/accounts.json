@@ -1,0 +1,9 @@
+{
+  "instagram": {
+    "misbaha": { "ig_id": "", "token_env": "IG_TOKEN_MISBAHA" },
+    "nasab": { "ig_id": "", "token_env": "IG_TOKEN_NASAB" },
+    "splitup": { "ig_id": "", "token_env": "IG_TOKEN_SPLITUP" },
+    "kadak": { "ig_id": "", "token_env": "IG_TOKEN_KADAK" }
+  },
+  "youtube": { "brands": ["misbaha", "nasab", "splitup", "kadak"] }
+}
