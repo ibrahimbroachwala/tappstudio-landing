@@ -4559,7 +4559,7 @@
       "platform": "IG",
       "date": "2026-11-17",
       "time": "6:30 am IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "note": "Reel is built (misbaha-R01.mp4, 16 s, soft bead knocks over a calm pad). Upload it to Drive, paste the link into video[0], and have the Arabic on screen checked.",
       "title": "33 taps, one tassel (Reel)",
@@ -5022,7 +5022,7 @@
       "platform": "YT",
       "date": "2026-11-17",
       "time": "7:30 am IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "note": "Same video as IG-10. Title is the YouTube Shorts title, the caption is the description. Arabic on screen needs a check.",
       "title": "33 taps, one tassel (Short)",
@@ -5046,9 +5046,9 @@
       "platform": "IG",
       "date": "2026-11-19",
       "time": "9:30 pm IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
-      "note": "Reel is built (misbaha-R02.mp4, 18 s, voice plus calm pad). The date is a placeholder, move it. Upload to Drive and paste the link into video[0]. Arabic on screen needs a check.",
+      "note": "Reel is built (misbaha-R02.mp4, 18 s, voice plus calm pad). Upload to Drive and paste the link into video[0]. Arabic on screen needs a check. Same day as IG-12, so post this one in the evening slot.",
       "title": "Every stone in the collection (Reel)",
       "posted": "",
       "carousel": false,
@@ -5070,9 +5070,9 @@
       "platform": "YT",
       "date": "2026-11-19",
       "time": "8:30 pm IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
-      "note": "Same video as IG-15. Date is a placeholder.",
+      "note": "Same video as IG-15.",
       "title": "Every stone in the collection (Short)",
       "posted": "",
       "carousel": false,
@@ -5780,5 +5780,5 @@
       "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
     }
   ],
-  "built": "30 Oct 2026, 15:00"
+  "built": "30 Oct 2026, 16:00"
 }
