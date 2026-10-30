@@ -2942,7 +2942,7 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "Kadak has no game server. On purpose.\n\nWhere everything lives instead:\nYour progress: on your phone\nCloud save, leaderboards, achievements: Google Play Games and Game Center\nAnalytics, errors, and settings I can change remotely: PostHog\nEvents and festivals: bundled in the app, switched on by a remote schedule\n\nRunning cost right now: about ₹0 a month. The stores take their cut, and that's it.\n\nLeaderboards and achievements are still there. They run on Google Play Games and Game Center, so the sign-in, scores and unlocks all live with Google and Apple, not with me.\n\nWhat I gave up:\nCo-op play, because that needs shared state on a server.\nMy own accounts and friend lists, because the platforms already do that job.\n\nFewer moving parts means fewer things to break at 2 am. If a server is down, it isn't mine.\n\nFor a solo developer, the cheapest server is the one you never build.",
+      "text": "Kadak has no game server. On purpose.\n\nSo where does everything live?\nYour progress: on your phone\nCloud save, leaderboards and achievements: Google Play Games and Game Center\nCrash reports and settings I can change later: PostHog\nEvents and festivals: already inside the app, and I switch them on remotely\n\nRunning cost right now: about ₹0 a month. Only the stores take their cut.\n\nLeaderboards and achievements still work. Google and Apple handle the sign-in and the scores, not me.\n\nWhat you won't find in Kadak:\nPlaying together with friends, because that needs a server.\nA Kadak account. You just use your Google or Apple login.\n\nFewer parts means fewer things to break at 2 am. And if a server goes down, it isn't mine.\n\nFor a solo developer, the cheapest server is the one you never build.",
       "images": [
         [
           "img/a8e6823b4f6b89d5.webp",
@@ -5082,7 +5082,31 @@
         "img/d382da7c6612e150.webp",
         "misbaha-R02.mp4"
       ]
+    },
+    {
+      "text": "Your whole family, in one place.\n\nThe tree, the timeline, and the birthdays coming up. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nWhen someone's day comes round, you will know before it does. Then you can send them a wish.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHistory #FamilyHeritage #Reels",
+      "alt": {
+        "summary": "Four Nasab screens in turn: the family overview, the family tree, a timeline of births and weddings, and Upcoming Celebrations with a wish ready to send. Text: \"Your whole family. One place.\"",
+        "slides": []
+      },
+      "brand": "nasab",
+      "id": "IG-22",
+      "platform": "IG",
+      "date": "2026-10-30",
+      "time": "6:00 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (nasab-R02.mp4, 17 s, voice plus soft heirloom bed, locked Nasab style). Upload it to Drive, paste the link into video[0], then schedule in Meta Business Suite for today. Use nasab-R02-nomusic.mp4 if you want to add a licensed IG sound instead. Set the cover to nasab-R02-cover.png. Today also has IG-15 at 7 to 9 pm, so this goes out ahead of it.",
+      "title": "Your whole family, one place (Reel)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/c59a68105567ad6d.webp",
+        "nasab-R02.mp4"
+      ],
+      "kind": "reel"
     }
   ],
-  "built": "30 Oct 2026, 12:30"
+  "built": "30 Oct 2026, 13:30"
 }
