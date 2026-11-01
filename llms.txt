@@ -14,7 +14,7 @@ tappStudio is a one-person studio. Every app is designed, engineered, shipped to
 
 ## Support
 
-- [Nasab support](https://tappstudio.in/nasab/support.html)
+- [Nasab support](https://nasab.tappstudio.in/support/)
 - [Splitup support](https://tappstudio.in/splitup/support.html)
 - [My Deen support](https://tappstudio.in/mydeen/support.html)
 - [Misbaha support](https://tappstudio.in/mytasbih/support.html)
