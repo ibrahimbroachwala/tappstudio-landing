@@ -3375,9 +3375,15 @@
     },
     {
       "text": "An agency org chart, vs. mine. 👇\n\nTheirs: an account manager, a billable discovery workshop, a junior developer learning on your budget, and \"let me loop in the team.\"\n\nMine: me.\n\nFor years \"solo\" meant \"slow.\" That changed. With AI doing the typing, one person can now take an app from napkin sketch to the App Store in the time a big team spends scheduling the kickoff.\n\nWhat doesn't change:\n• You talk to the person writing the code.\n• You see screens before you pay for mistakes.\n• A test build is on your phone on day one, not a deck.\n• Someone actually reads every line before it ships.\n\nIt's not for everything. If you need fifty engineers on a bank, hire the agency.\n\nBut if you have an app idea that's been living in your Notes app for two years, that's exactly what I build. DMs are open.",
-      "images": [],
+      "images": [
+        [
+          "img/73b9234c012f6718.webp",
+          "img/73b9234c012f6718-t.webp",
+          "tappstudio-LI-06.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "An org chart card. The agency side lists four struck-through boxes: account manager, billable discovery workshop, junior developer learning on your budget, and \"let me loop in the team\". Mine is one teal box: Ibrahim, the whole team.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -3385,7 +3391,7 @@
       "platform": "LI",
       "date": "2026-11-02",
       "time": "09:30 IST",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "The agency org chart vs. mine.",
@@ -5780,5 +5786,5 @@
       "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
     }
   ],
-  "built": "30 Oct 2026, 16:00"
+  "built": "1 Nov 2026, 11:00"
 }
