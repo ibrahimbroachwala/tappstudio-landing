@@ -4563,7 +4563,7 @@
       "brand": "misbaha",
       "id": "IG-10",
       "platform": "IG",
-      "date": "2026-11-17",
+      "date": "2026-11-07",
       "time": "6:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5026,7 +5026,7 @@
       "brand": "misbaha",
       "id": "YT-01",
       "platform": "YT",
-      "date": "2026-11-17",
+      "date": "2026-11-07",
       "time": "7:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5050,11 +5050,11 @@
       "brand": "misbaha",
       "id": "IG-15",
       "platform": "IG",
-      "date": "2026-11-19",
+      "date": "2026-11-09",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
-      "note": "Reel is built (misbaha-R02.mp4, 18 s, voice plus calm pad). Upload to Drive and paste the link into video[0]. Arabic on screen needs a check. Same day as IG-12, so post this one in the evening slot.",
+      "note": "Reel is built (misbaha-R02.mp4, 18 s, voice plus calm pad). Upload to Drive and paste the link into video[0]. Arabic on screen needs a check.",
       "title": "Every stone in the collection (Reel)",
       "posted": "",
       "carousel": false,
@@ -5074,7 +5074,7 @@
       "brand": "misbaha",
       "id": "YT-02",
       "platform": "YT",
-      "date": "2026-11-19",
+      "date": "2026-11-09",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5098,11 +5098,11 @@
       "brand": "nasab",
       "id": "IG-22",
       "platform": "IG",
-      "date": "2026-10-30",
+      "date": "2026-11-01",
       "time": "6:00 pm IST",
       "status": "ready",
       "warn": true,
-      "note": "Reel is built (nasab-R02.mp4, 17 s, voice plus soft heirloom bed, locked Nasab style). Upload it to Drive, paste the link into video[0], then schedule in Meta Business Suite for today. Use nasab-R02-nomusic.mp4 if you want to add a licensed IG sound instead. Set the cover to nasab-R02-cover.png. Today also has IG-15 at 7 to 9 pm, so this goes out ahead of it.",
+      "note": "Reel is built (nasab-R02.mp4, 17 s, voice plus soft heirloom bed, locked Nasab style). Upload it to Drive, paste the link into video[0], then schedule in Meta Business Suite. Use nasab-R02-nomusic.mp4 if you want to add a licensed IG sound instead. Set the cover to nasab-R02-cover.png. Nasab has no other Instagram post today, and the YouTube Short is YT-04.",
       "title": "Your whole family, one place (Reel)",
       "posted": "",
       "carousel": false,
@@ -5419,8 +5419,8 @@
         "slides": []
       },
       "brand": "splitup",
-      "date": "2026-11-22",
-      "status": "planned",
+      "date": "2026-11-04",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5443,8 +5443,8 @@
         "slides": []
       },
       "brand": "splitup",
-      "date": "2026-11-22",
-      "status": "planned",
+      "date": "2026-11-04",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5467,8 +5467,8 @@
         "slides": []
       },
       "brand": "nasab",
-      "date": "2026-11-23",
-      "status": "planned",
+      "date": "2026-11-03",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5491,8 +5491,8 @@
         "slides": []
       },
       "brand": "nasab",
-      "date": "2026-11-23",
-      "status": "planned",
+      "date": "2026-11-03",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5515,8 +5515,8 @@
         "slides": []
       },
       "brand": "splitup",
-      "date": "2026-11-24",
-      "status": "planned",
+      "date": "2026-11-06",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5539,8 +5539,8 @@
         "slides": []
       },
       "brand": "splitup",
-      "date": "2026-11-24",
-      "status": "planned",
+      "date": "2026-11-06",
+      "status": "ready",
       "warn": false,
       "posted": "",
       "carousel": false,
@@ -5784,7 +5784,127 @@
       "time": "7:00 pm IST",
       "title": "Your family in numbers (Short)",
       "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
+    },
+    {
+      "text": "The tree, the timeline and the birthdays coming up, all in one place. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nNasab is free for 14 days on iOS and Android.\n\n#Shorts #familytree #familyhistory #Nasab",
+      "brand": "nasab",
+      "id": "YT-04",
+      "platform": "YT",
+      "date": "2026-11-01",
+      "time": "7:00 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Same video as IG-22. Title is the Shorts title, the caption is the description.",
+      "title": "Your whole family, one place (Short)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/c59a68105567ad6d.webp",
+        "nasab-R02.mp4"
+      ],
+      "kind": "reel",
+      "alt": {
+        "summary": "Four Nasab screens in turn: the family overview, the family tree, a timeline of births and weddings, and Upcoming Celebrations with a wish ready to send. Text: \"Your whole family. One place.\"",
+        "slides": []
+      }
+    },
+    {
+      "text": "Subhanallah, in the rain.\n\nA quiet minute and a string of beads to count it on. The rain is not included, the beads are.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #subhanallah #muslimapp",
+      "brand": "misbaha",
+      "id": "IG-18",
+      "platform": "IG",
+      "date": "2026-11-02",
+      "time": "9:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (misbaha-R03.mp4, 36 s, rain, soft taps and a calm pad, no voice). Upload to Drive and paste the link into video[0]. Arabic on screen (Subhanallah) needs a check. Use misbaha-R03-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R03-cover.png.",
+      "title": "Subhanallah in the rain (Reel)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/fa05b63380c874b0.webp",
+        "misbaha-R03.mp4"
+      ],
+      "kind": "reel",
+      "alt": {
+        "summary": "A rainy night with a moon that grows fuller. Gold beads slide past one by one along a string, a ring fills, and a tassel arrives at the end. Subhanallah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      }
+    },
+    {
+      "text": "Rain, a slow count and a string of beads, with Subhanallah glowing above.\n\nMisbaha is on iOS and Android.\n\n#Shorts #dhikr #tasbih #misbaha #subhanallah",
+      "brand": "misbaha",
+      "id": "YT-05",
+      "platform": "YT",
+      "date": "2026-11-02",
+      "time": "8:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Same video as IG-18. Title is the Shorts title, the caption is the description. Arabic on screen needs a check.",
+      "title": "A quiet minute of Subhanallah (Short)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/fa05b63380c874b0.webp",
+        "misbaha-R03.mp4"
+      ],
+      "kind": "reel",
+      "alt": {
+        "summary": "A rainy night with a moon that grows fuller. Gold beads slide past one by one along a string, a ring fills, and a tassel arrives at the end. Subhanallah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      }
+    },
+    {
+      "text": "Astaghfirullah, one bead at a time.\n\nA slow thumb, an even beat, and a string that only moves when you do.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #astaghfirullah #istighfar #muslimapp",
+      "brand": "misbaha",
+      "id": "IG-19",
+      "platform": "IG",
+      "date": "2026-11-05",
+      "time": "6:30 am IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (misbaha-R04.mp4, 34 s, thumb moving the beads, soft taps and a calm pad, no voice). Upload to Drive and paste the link into video[0]. Arabic on screen (Astaghfirullah) needs a check. Use misbaha-R04-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R04-cover.png.",
+      "title": "Astaghfirullah, one bead at a time (Reel)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/616af98c6b47a68f.webp",
+        "misbaha-R04.mp4"
+      ],
+      "kind": "reel",
+      "alt": {
+        "summary": "A thumb hovers above the screen and swings up and down. Each time it rises, one gold bead flies up a diagonal string, and a soft tap sounds. The tassel arrives at the end. Astaghfirullah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      }
+    },
+    {
+      "text": "A thumb, a slow beat and one bead at a time, with Astaghfirullah glowing above.\n\nMisbaha is on iOS and Android.\n\n#Shorts #dhikr #tasbih #misbaha #astaghfirullah",
+      "brand": "misbaha",
+      "id": "YT-06",
+      "platform": "YT",
+      "date": "2026-11-05",
+      "time": "7:30 am IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Same video as IG-19. Title is the Shorts title, the caption is the description. Arabic on screen needs a check.",
+      "title": "Astaghfirullah, one bead at a time (Short)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/616af98c6b47a68f.webp",
+        "misbaha-R04.mp4"
+      ],
+      "kind": "reel",
+      "alt": {
+        "summary": "A thumb hovers above the screen and swings up and down. Each time it rises, one gold bead flies up a diagonal string, and a soft tap sounds. The tassel arrives at the end. Astaghfirullah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      }
     }
   ],
-  "built": "1 Nov 2026, 11:00"
+  "built": "1 Nov 2026, 14:50"
 }
