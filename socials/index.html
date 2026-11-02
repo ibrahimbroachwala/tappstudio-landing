@@ -585,7 +585,11 @@ function render() {
   });
   g.querySelectorAll('[data-copy]').forEach(b => b.onclick = () => {
     const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.copy);
-    navigator.clipboard.writeText(p.text).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy post', 1500); });
+    navigator.clipboard.writeText(p.text).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = p.platform === 'YT' ? 'Copy description' : 'Copy post', 1500); });
+  });
+  g.querySelectorAll('[data-title]').forEach(b => b.onclick = () => {
+    const p = DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.title);
+    navigator.clipboard.writeText(p.title).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy title', 1500); });
   });
   g.querySelectorAll('[data-video]').forEach(b => b.onclick = () => {
     const v = (DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.video).video || [])[0];
@@ -675,7 +679,8 @@ function row(p) {
       <button class="prev" data-toggle="${esc(k)}">${esc(p.text)}</button>
       ${altBlock(p)}
       ${replyBlock(p)}
-      <div class="tools"><button data-copy="${esc(k)}">Copy post</button>
+      <div class="tools"><button data-copy="${esc(k)}">${p.platform === 'YT' ? 'Copy description' : 'Copy post'}</button>
+        ${p.platform === 'YT' ? `<button data-title="${esc(k)}">Copy title</button>` : ''}
         ${vid ? `<button class="ghost" data-video="${esc(k)}">${vid[0] ? 'Open video' : 'Video link missing'}</button>` : ''}
         ${imgs.length ? `<button class="ghost" data-save="${esc(k)}">Save ${imgs.length > 1 ? imgs.length + ' images' : 'image'}</button>` : ''}
         ${p.carousel && imgs.length > 1 ? `<button class="ghost" data-pdf="${esc(k)}">Make PDF</button>` : ''}
