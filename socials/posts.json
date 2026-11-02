@@ -6098,11 +6098,11 @@
       }
     },
     {
-      "text": "November in Kadak means Diwali, and Diwali means a Kaju Katli Counter next to your chai.\n\nEvery month in the game is a festival season with its own limited stall and a decoration for the tapri:\n\nJan: Sankranti and Lohri, Til-Gud Chai\nMar: Holi, Thandai Cart\nJul: Monsoon, Bhutta Stove\nSep: Ganeshotsav, Modak Counter\nNov: Diwali, Kaju Katli Counter\nDec: Christmas, Plum Cake Counter\n\nPlus six more in between.\n\nHow it works, in case you're building anything seasonal:\n\n1. All twelve seasons ship inside the app. A remote schedule can tune them, but if it sends something broken, the game falls back to the bundled month. A typo in a dashboard can't cancel Diwali.\n2. Seasons follow India time, from the 1st to the last day of the month, wherever you play.\n3. Themes stay with food and weather. The festival is in what the stall sells and the lights above it.\n\nWhen the month ends the seasonal stall closes, but the decorations you earned stay with you. Unlike the kaju katli at home, which never survives the week.",
+      "text": "November in Kadak means Diwali, and Diwali means a Kaju Katli Counter next to your chai. January now has one too: New Year, with a Pav Bhaji Tawa.\n\nEvery month in the game is a festival season with its own limited stall and a decoration for the tapri. January's stall is a hot tawa selling buttery pav bhaji, late into the night, with a midnight clock hanging over the tapri.\n\nAll twelve, in order:\nJan: New Year, Pav Bhaji Tawa\nFeb: Goa Carnival, Bebinca Counter\nMar: Holi, Thandai Cart\nApr: Baisakhi, Aam Panna Counter\nMay: Mango season, Mango Lassi Bar\nJun: Loo and lemons, Nimbu Soda Cart\nJul: Monsoon, Bhutta Stove\nAug: Rakhi and Teej, Ghevar Counter\nSep: Ganeshotsav, Modak Counter\nOct: Navratri and Dussehra, Jalebi-Fafda Stall\nNov: Diwali, Kaju Katli Counter\nDec: Christmas, Plum Cake Counter\n\nHow it works, in case you're building anything seasonal:\n\n1. All twelve seasons ship inside the app. A remote schedule can tune them, but if it sends something broken, the game falls back to the bundled month. A typo in a dashboard can't cancel Diwali.\n2. Seasons follow India time, from the 1st to the last day of the month, wherever you play.\n3. Themes stay with food, season and light. The festival is in what the stall sells and the lights above it.\n\nEach season also has a 30-tier reward track. Everyone can keep the season's kulhad at tier 30. The Festival Pass gets it at tier 10, and the decoration at tier 20.\n\nWhen the month ends the stall closes, but what you earned stays. Unlike the kaju katli at home, which never survives the week.",
       "images": [
         [
-          "img/4d5973ec433ee38c.webp",
-          "img/4d5973ec433ee38c-t.webp",
+          "img/889afd91b34f17ea.webp",
+          "img/889afd91b34f17ea-t.webp",
           "kadak-LI-12.jpg"
         ]
       ],
@@ -6118,17 +6118,17 @@
       "status": "ready",
       "warn": false,
       "note": "",
-      "title": "A festival for every month",
+      "title": "The year starts at a pav bhaji tawa",
       "posted": "",
       "carousel": false,
       "reply": "Kadak is open for pre-registration on Google Play:\nhttps://play.google.com/store/apps/details?id=in.tappstudio.kadakchai"
     },
     {
-      "text": "Kadak has a map of India with 28 cities, 4 city tiers, and not a single border.\n\nDrawing India's outline in an app is harder than it sounds. Maps of India are expected to follow the official Survey of India boundary, and getting it slightly wrong can cause real trouble. A chai game doesn't need that risk.\n\nSo the map is a railway network instead: coloured lines, round stations, city names. You open outlets city by city, and a short train ride takes you to the new one.\n\nThe cities come in tiers:\nMetro: Mumbai, Delhi, Bengaluru, Kolkata, Chennai, Hyderabad\nBig city: Pune, Jaipur, Kochi, Lucknow and four more\nRising city: Guwahati, Patna, Coimbatore, Visakhapatnam and four more\nHeritage and hills: Darjeeling, Munnar, Varanasi, Amritsar, Udaipur, Panaji\n\nHeritage cities pay less but each has a perk. Darjeeling and Munnar are tea country, so your stalls earn 10% more while you're away. Seemed only fair.\n\nDesign lesson: when a detail is risky and adds nothing to the fun, leave it out. A railway map also turned out more Indian than an outline. Every long trip here is a train with chai in it.",
+      "text": "Kadak has a map of India with 28 cities, 4 kinds of city, five rail lines, and not a single border.\n\nDrawing India's outline in an app is harder than it sounds. Maps of India are expected to follow the official Survey of India boundary, and getting it slightly wrong can cause real trouble. A chai game doesn't need that risk.\n\nSo the map is a railway network instead: coloured lines, round stations, city names. Each line has its own dash pattern too, so colour is never the only cue. You open outlets city by city, and a short train ride takes you to the new one.\n\nEvery city is one of four kinds, shown by its station colour and a chip in the app, and each kind pays a different amount of Kesar for opening an outlet:\nMetro, 12 Kesar: Mumbai, Delhi, Bengaluru, Kolkata, Chennai, Hyderabad\nBig, 9: Pune, Ahmedabad, Jaipur, Lucknow, Surat, Kochi, Chandigarh, Indore\nRising, 8: Nagpur, Bhopal, Patna, Guwahati, Bhubaneswar, Coimbatore, Visakhapatnam, Vadodara\nHeritage/Hills, 6: Darjeeling, Munnar, Varanasi, Amritsar, Udaipur, Panaji\n\nHeritage cities pay less but each has a perk. Darjeeling and Munnar are tea country, so your stalls earn 10% more while you're away. Seemed only fair.\n\nDesign lesson: when a detail is risky and adds nothing to the fun, leave it out. A railway map also turned out more Indian than an outline. Every long trip here is a train with chai in it.",
       "images": [
         [
-          "img/87a4d7b395554b6f.webp",
-          "img/87a4d7b395554b6f-t.webp",
+          "img/228d77ae75bc8e65.webp",
+          "img/228d77ae75bc8e65-t.webp",
           "kadak-LI-13.jpg"
         ]
       ],
@@ -6358,5 +6358,5 @@
       "reply": "Kadak is open for pre-registration on Google Play:\nhttps://play.google.com/store/apps/details?id=in.tappstudio.kadakchai"
     }
   ],
-  "built": "2 Nov 2026, 15:30"
+  "built": "2 Nov 2026, 17:00"
 }
