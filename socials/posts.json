@@ -4563,7 +4563,7 @@
       "brand": "misbaha",
       "id": "IG-10",
       "platform": "IG",
-      "date": "2026-11-07",
+      "date": "2026-11-04",
       "time": "6:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5026,7 +5026,7 @@
       "brand": "misbaha",
       "id": "YT-01",
       "platform": "YT",
-      "date": "2026-11-07",
+      "date": "2026-11-04",
       "time": "7:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5050,7 +5050,7 @@
       "brand": "misbaha",
       "id": "IG-15",
       "platform": "IG",
-      "date": "2026-11-09",
+      "date": "2026-11-06",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5074,7 +5074,7 @@
       "brand": "misbaha",
       "id": "YT-02",
       "platform": "YT",
-      "date": "2026-11-09",
+      "date": "2026-11-06",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5862,7 +5862,7 @@
       "brand": "misbaha",
       "id": "IG-19",
       "platform": "IG",
-      "date": "2026-11-05",
+      "date": "2026-11-02",
       "time": "6:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5886,7 +5886,7 @@
       "brand": "misbaha",
       "id": "YT-06",
       "platform": "YT",
-      "date": "2026-11-05",
+      "date": "2026-11-02",
       "time": "7:30 am IST",
       "status": "ready",
       "warn": true,
@@ -5910,7 +5910,7 @@
       "brand": "misbaha",
       "id": "IG-20",
       "platform": "IG",
-      "date": "2026-11-10",
+      "date": "2026-11-03",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5934,7 +5934,7 @@
       "brand": "misbaha",
       "id": "YT-07",
       "platform": "YT",
-      "date": "2026-11-10",
+      "date": "2026-11-03",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5958,7 +5958,7 @@
       "brand": "misbaha",
       "id": "IG-21",
       "platform": "IG",
-      "date": "2026-11-12",
+      "date": "2026-11-05",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -5982,7 +5982,7 @@
       "brand": "misbaha",
       "id": "YT-08",
       "platform": "YT",
-      "date": "2026-11-12",
+      "date": "2026-11-05",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6006,7 +6006,7 @@
       "brand": "misbaha",
       "id": "IG-22",
       "platform": "IG",
-      "date": "2026-11-14",
+      "date": "2026-11-07",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6030,7 +6030,7 @@
       "brand": "misbaha",
       "id": "YT-09",
       "platform": "YT",
-      "date": "2026-11-14",
+      "date": "2026-11-07",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6054,7 +6054,7 @@
       "brand": "misbaha",
       "id": "IG-23",
       "platform": "IG",
-      "date": "2026-11-17",
+      "date": "2026-11-08",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6078,7 +6078,7 @@
       "brand": "misbaha",
       "id": "YT-10",
       "platform": "YT",
-      "date": "2026-11-17",
+      "date": "2026-11-08",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6356,7 +6356,151 @@
       "posted": "",
       "carousel": false,
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-09",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/6e29f28e11927fbb.webp",
+        "misbaha-R09.mp4"
+      ],
+      "alt": {
+        "summary": "A starry night sky that lightens bead by bead into a gold sunrise. Gold beads slide past one by one along a string, a ring fills, and a tassel arrives as the sun clears the hills. Alhamdulillah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      },
+      "id": "IG-24",
+      "platform": "IG",
+      "time": "9:30 pm IST",
+      "title": "Alhamdulillah at Fajr (Reel)",
+      "text": "Alhamdulillah, at Fajr.\n\nThe sky goes from night to gold in twenty seconds, one bead at a time. The sunrise is not included, the beads are.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #fajr #alhamdulillah #muslimapp",
+      "note": "Reel is built (misbaha-R09.mp4, 20 s, night to sunrise, birdsong, soft taps and a calm pad, no voice). Upload to Drive and paste the link into video[0]. Arabic on screen (Alhamdulillah) needs a check. Use misbaha-R09-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R09-cover.png."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-09",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/6e29f28e11927fbb.webp",
+        "misbaha-R09.mp4"
+      ],
+      "alt": {
+        "summary": "A starry night sky that lightens bead by bead into a gold sunrise. Gold beads slide past one by one along a string, a ring fills, and a tassel arrives as the sun clears the hills. Alhamdulillah glows at the top, in Arabic and in English letters.",
+        "slides": []
+      },
+      "id": "YT-11",
+      "platform": "YT",
+      "time": "8:30 pm IST",
+      "title": "A quiet Fajr of Alhamdulillah (Short)",
+      "text": "A starry night turns to sunrise, one bead at a time, with Alhamdulillah glowing above.\n\nMisbaha is on iOS and Android.\n\n#Shorts #dhikr #tasbih #misbaha #alhamdulillah #fajr",
+      "note": "Same video as IG-24. Title is the Shorts title, the caption is the description. Arabic on screen needs a check."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-10",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/fbaa5bc94d045cb2.webp",
+        "misbaha-R10.mp4"
+      ],
+      "alt": {
+        "summary": "Top-down on dark velvet, a gold thread draws a loop and stones in every colour drop onto it one by one, faster and faster, with a click for each. A tassel lands at the top, every tassel design flicks through in turn, then the loop shows the Misbaha icon and the words Get Misbaha, on iOS and Android.",
+        "slides": []
+      },
+      "id": "IG-25",
+      "platform": "IG",
+      "time": "9:30 pm IST",
+      "title": "Threading the misbaha (Reel)",
+      "text": "Threading a misbaha, one stone at a time.\n\nThirty-three stones drop onto the string, every design in the app in turn, and the tassel goes on last. Pick your own, then count.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #prayerbeads #muslimapp",
+      "note": "Reel is built (misbaha-R10.mp4, 20 s, clockwise thread, stones drop faster and faster, tassel run, Get Misbaha end card, no voice, no Arabic). Upload to Drive and paste the link into video[0]. Use misbaha-R10-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R10-cover.png."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-10",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/fbaa5bc94d045cb2.webp",
+        "misbaha-R10.mp4"
+      ],
+      "alt": {
+        "summary": "Top-down on dark velvet, a gold thread draws a loop and stones in every colour drop onto it one by one, faster and faster, with a click for each. A tassel lands at the top, every tassel design flicks through in turn, then the loop shows the Misbaha icon and the words Get Misbaha, on iOS and Android.",
+        "slides": []
+      },
+      "id": "YT-12",
+      "platform": "YT",
+      "time": "8:30 pm IST",
+      "title": "Threading a misbaha, stone by stone (Short)",
+      "text": "A gold thread, a loop of stones dropping on to it faster and faster, and a tassel to finish.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #dhikr #prayerbeads",
+      "note": "Same video as IG-25 (misbaha-R10.mp4). Upload to Drive and paste the link into video[0]."
+    },
+    {
+      "alt": {
+        "summary": "Yellow and black kinetic reel: a hook asking who owes who what, then say it, split it, add as you go, and settle up, ending with the Splitup icon and the line Stop doing the math.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-03",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Who paid for the cab? Who owes who what? Nobody remembers, and that is the whole problem.\n\nSay it out loud, split it equally or by amount, percent or shares, add expenses as you go, and let Splitup settle a trip down to the fewest payments.\n\nSplitup is free to start on iOS and Android. Link in bio.\n.\n#splitup #splitbills #tripexpenses #expensetracker #Reels",
+      "id": "IG-26",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Who owes who what? (Reel)",
+      "note": "Reel is built (splitup-R03.mp4, kinetic, no voice, hype music). Upload it to Drive, paste the link into video[0], then schedule it. Splitup IG-16 (carousel) is also on 3 Nov, 7-9 pm.",
+      "video": [
+        "",
+        "img/c40a73ab5debb731.webp",
+        "splitup-R03.mp4"
+      ]
+    },
+    {
+      "alt": {
+        "summary": "Yellow and black kinetic reel: a hook asking who owes who what, then say it, split it, add as you go, and settle up, ending with the Splitup icon and the line Stop doing the math.",
+        "slides": []
+      },
+      "brand": "splitup",
+      "date": "2026-11-03",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "text": "Say it, split it, add as you go, settle up. Splitup works out who owes who what, so nobody has to.\n\nSplitup is free to start on iOS and Android.\n\n#Shorts #splitup #splitbills",
+      "id": "YT-05",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Stop doing the math (Short)",
+      "note": "Same video as IG-26. Title is the Shorts title, the caption is the description.",
+      "video": [
+        "",
+        "img/c40a73ab5debb731.webp",
+        "splitup-R03.mp4"
+      ]
     }
   ],
-  "built": "2 Nov 2026, 18:00"
+  "built": "3 Nov 2026, 10:30"
 }
