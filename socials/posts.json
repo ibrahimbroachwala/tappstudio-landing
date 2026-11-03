@@ -2164,8 +2164,8 @@
       "date": "2026-10-22",
       "time": "7-9 pm",
       "status": "ready",
-      "warn": false,
-      "note": "",
+      "warn": true,
+      "note": "The carousel images still say \"Free for 14 days\" and need re-rendering with \"Free to start\" before this goes out.",
       "title": "Make their day a little brighter",
       "posted": "",
       "carousel": false
@@ -3477,7 +3477,7 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "One subscription covers your whole family. Not per person. Per family.\n\nThe family owner subscribes to Nasab Heritage, and everyone they invite gets full access at no extra cost: parents, siblings, cousins, and the uncle who forwards everything.\n\nHeritage includes shared family storage, voice and video memories, full-resolution photos, the radial tree view, unlimited albums and Editor roles.\n\nTry it free for 14 days. Link in bio.\n.\n#Nasab #FamilyArchive #FamilyTree #FamilyApp #FamilyHistory",
+      "text": "One subscription covers your whole family. Not per person. Per family.\n\nThe family owner subscribes to Nasab Heritage, and everyone they invite gets full access at no extra cost: parents, siblings, cousins, and the uncle who forwards everything.\n\nHeritage includes shared family storage, voice and video memories, full-resolution photos, the radial tree view, unlimited albums and Editor roles.\n\nNasab is free to start. Link in bio.\n.\n#Nasab #FamilyArchive #FamilyTree #FamilyApp #FamilyHistory",
       "images": [
         [
           "img/bd134fba550e5aaf.webp",
@@ -3495,8 +3495,8 @@
       "date": "2026-11-04",
       "time": "7-9 pm",
       "status": "ready",
-      "warn": false,
-      "note": "",
+      "warn": true,
+      "note": "The carousel images still say \"Free for 14 days\" and need re-rendering with \"Free to start\" before this goes out.",
       "title": "One plan. The whole family.",
       "posted": "",
       "carousel": false
@@ -3702,9 +3702,9 @@
       "platform": "LI",
       "date": "2026-11-06",
       "time": "8-10 am",
-      "status": "ready",
+      "status": "planned",
       "warn": true,
-      "note": "needs your real reasoning",
+      "note": "Premise is out of date: Nasab has a permanent free tier, so \"I removed the free plan\" and the 14-day trial no longer apply, and the image shows a greyed-out free plan. Needs a new angle (e.g. one subscription per family) and new image before it goes out.",
       "title": "Why Nasab has no free tier",
       "posted": "",
       "carousel": false,
@@ -4278,7 +4278,7 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
-      "text": "Save this: your first week with Nasab, one small step a day.\n\nDay 1: Add your parents and grandparents\nDay 2: Invite one sibling or cousin\nDay 3: Scan 5 old photos\nDay 4: Record 10 minutes with an elder\nDay 5: Add birthdays and anniversaries (Hijri too)\nDay 6: Make an album for one family event\nDay 7: Send someone a wish\n\nSeven days in, your family's story has a home. Start your 14-day free trial. Link in bio.\n.\n#FamilyArchive #FamilyTree #FamilyHistory #FamilyMemories #Nasab",
+      "text": "Save this: your first week with Nasab, one small step a day.\n\nDay 1: Add your parents and grandparents\nDay 2: Invite one sibling or cousin\nDay 3: Scan 5 old photos\nDay 4: Record 10 minutes with an elder\nDay 5: Add birthdays and anniversaries (Hijri too)\nDay 6: Make an album for one family event\nDay 7: Send someone a wish\n\nSeven days in, your family's story has a home. Start free. Link in bio.\n.\n#FamilyArchive #FamilyTree #FamilyHistory #FamilyMemories #Nasab",
       "images": [
         [
           "img/5300700bc16119a6.webp",
@@ -4643,7 +4643,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": true,
-      "note": "needs your real reasoning",
+      "note": "Premise is out of date: Nasab has a permanent free tier, so \"I removed the free plan\" and the 14-day trial no longer apply, and the image shows a greyed-out free plan. Needs a new angle (e.g. one subscription per family) and new image before it goes out.",
       "title": "Why Nasab has no free tier",
       "posted": "",
       "carousel": false,
@@ -5090,7 +5090,7 @@
       ]
     },
     {
-      "text": "Your whole family, in one place.\n\nThe tree, the timeline, and the birthdays coming up. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nWhen someone's day comes round, you will know before it does. Then you can send them a wish.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHistory #FamilyHeritage #Reels",
+      "text": "Your whole family, in one place.\n\nThe tree, the timeline, and the birthdays coming up. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nWhen someone's day comes round, you will know before it does. Then you can send them a wish.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHistory #FamilyHeritage #Reels",
       "alt": {
         "summary": "Four Nasab screens in turn: the family overview, the family tree, a timeline of births and weddings, and Upcoming Celebrations with a wish ready to send. Text: \"Your whole family. One place.\"",
         "slides": []
@@ -5463,7 +5463,7 @@
     },
     {
       "alt": {
-        "summary": "Seven question cards in turn, from the earliest memory to what she wants her great-grandchildren to know.",
+        "summary": "A calm paper and burgundy reel with no phone and no voice. Seven index cards are dealt, then each question to ask a grandmother gets a page with a piece of the Nasab app: a 1950 print tagged Gulnaz, a 1966 wedding on the timeline, her mother added to the family tree, an Eid album, the move from Damascus to Amman, a voice memory playing, and Record Voice saving \"For my great-grandchildren\". Ends on the Nasab icon: \"Ask them. Keep their answers.\"",
         "slides": []
       },
       "brand": "nasab",
@@ -5473,21 +5473,21 @@
       "posted": "",
       "carousel": false,
       "kind": "reel",
-      "text": "Seven questions to ask your Nani this weekend.\n\nThe earliest thing she remembers. How she met Nana (and who disapproved). What Eid felt like. The last one is the one to press record for.\n\nWrite them into Nasab as you go, with every name spelled right.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyHistory #FamilyTree #AskYourGrandparents #Reels",
+      "text": "Seven questions to ask your Nani this weekend.\n\nThe earliest thing she remembers. How she met Nana (and who disapproved). What Eid felt like. What the family left behind when it moved. The last one is the one to press record for.\n\nIn Nasab, every answer has a place: the photo tagged to her, the wedding on the timeline, her mother on the tree, and her voice kept for the great-grandchildren.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyHistory #FamilyTree #AskYourGrandparents #Reels",
       "id": "IG-23",
       "platform": "IG",
       "time": "6:00 pm IST",
       "title": "7 questions to ask your Nani (Reel)",
-      "note": "Reel is built (nasab-R01.mp4, voice plus heirloom bed). Upload it to Drive, paste the link into video[0], then schedule it.",
+      "note": "Rebuilt 3 Nov to the new Nasab reel standard (nasab-R01.mp4, 32 s, no phone, no voice, felt piano bed). Upload it to Drive, paste the link into video[0], then schedule it. Use nasab-R01-nomusic.mp4 to add a licensed IG sound instead. Cover: nasab-R01-cover.png.",
       "video": [
         "",
-        "img/688f6850b737c57c.webp",
+        "img/2061f2cd4bfb029f.webp",
         "nasab-R01.mp4"
       ]
     },
     {
       "alt": {
-        "summary": "Seven question cards in turn, from the earliest memory to what she wants her great-grandchildren to know.",
+        "summary": "A calm paper and burgundy reel with no phone and no voice. Seven index cards are dealt, then each question to ask a grandmother gets a page with a piece of the Nasab app: a 1950 print tagged Gulnaz, a 1966 wedding on the timeline, her mother added to the family tree, an Eid album, the move from Damascus to Amman, a voice memory playing, and Record Voice saving \"For my great-grandchildren\". Ends on the Nasab icon: \"Ask them. Keep their answers.\"",
         "slides": []
       },
       "brand": "nasab",
@@ -5497,15 +5497,15 @@
       "posted": "",
       "carousel": false,
       "kind": "reel",
-      "text": "Seven questions to ask your Nani this weekend, and why the last one is worth recording.\n\nNasab is on iOS and Android.\n\n#Shorts #familyhistory #familytree",
+      "text": "Seven questions to ask your Nani this weekend, from the earliest thing she remembers to the one worth recording.\n\nNasab is free on iOS and Android.\n\n#Shorts #familyhistory #familytree #Nasab",
       "id": "YT-01",
       "platform": "YT",
       "time": "7:00 pm IST",
       "title": "7 questions to ask your Nani (Short)",
-      "note": "Same video as IG-23. Title is the Shorts title, the caption is the description.",
+      "note": "Same video as IG-23 (rebuilt 3 Nov). Title is the Shorts title, the caption is the description.",
       "video": [
         "",
-        "img/688f6850b737c57c.webp",
+        "img/2061f2cd4bfb029f.webp",
         "nasab-R01.mp4"
       ]
     },
@@ -5645,7 +5645,7 @@
       "posted": "",
       "carousel": false,
       "kind": "reel",
-      "text": "Some birthdays move 11 days a year.\n\nIf your family keeps Hijri dates, Nasab shows both calendars side by side and reminds you before the day arrives.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #Hijri #FamilyDates #IslamicCalendar #Reels",
+      "text": "Some birthdays move 11 days a year.\n\nIf your family keeps Hijri dates, Nasab shows both calendars side by side and reminds you before the day arrives.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #Hijri #FamilyDates #IslamicCalendar #Reels",
       "id": "IG-24",
       "platform": "IG",
       "time": "6:00 pm IST",
@@ -5759,7 +5759,7 @@
       "posted": "",
       "carousel": false,
       "kind": "reel",
-      "text": "How many generations? How many people? Whose birthday is next?\n\nNasab's family overview answers in one screen, from what you have added.\n\nNasab is free for 14 days on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHeritage #Reels",
+      "text": "How many generations? How many people? Whose birthday is next?\n\nNasab's family overview answers in one screen, from what you have added.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #FamilyArchive #FamilyHeritage #Reels",
       "id": "IG-25",
       "platform": "IG",
       "time": "6:00 pm IST",
@@ -5786,7 +5786,7 @@
       "note": "Same video as IG-25. Title is the Shorts title, the caption is the description."
     },
     {
-      "text": "The tree, the timeline and the birthdays coming up, all in one place. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nNasab is free for 14 days on iOS and Android.\n\n#Shorts #familytree #familyhistory #Nasab",
+      "text": "The tree, the timeline and the birthdays coming up, all in one place. Add each person once and Nasab does the lining up, with Hijri dates alongside.\n\nNasab is free on iOS and Android.\n\n#Shorts #familytree #familyhistory #Nasab",
       "brand": "nasab",
       "id": "YT-04",
       "platform": "YT",
@@ -6502,5 +6502,5 @@
       ]
     }
   ],
-  "built": "3 Nov 2026, 10:30"
+  "built": "3 Nov 2026, 12:40"
 }
