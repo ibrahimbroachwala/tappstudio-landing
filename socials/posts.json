@@ -6644,7 +6644,241 @@
         "img/5c10a77f6e4690c6.webp",
         "splitup-R06.mp4"
       ]
+    },
+    {
+      "brand": "splitup",
+      "id": "LI-17",
+      "platform": "LI",
+      "date": "2026-12-01",
+      "time": "8-10 am",
+      "title": "My app's nudges have a cooldown",
+      "text": "🔔 Splitup sends two notifications on its own. Most of the code is about when not to send them.\n\n1️⃣ The settle-up nudge. If you've had an open balance in a group for 2 days, you get one evening notification (7 pm, your time) about the biggest payment you're part of. After that, nothing for 7 days in that group, however long the balance stays open. Settle up and the pending one is cancelled.\n\n2️⃣ The invite nudge. You made a group and 24 hours later nobody else has joined. One reminder. It's cancelled the moment a second person with an account joins. Members you only added by name don't count.\n\nThe rules behind both:\n• They're scheduled on the phone itself, not pushed from a server. There's no job somewhere nagging you.\n• They only exist if notifications are already allowed. The scheduling code never asks for permission itself.\n• Each group has one fixed notification id, so scheduling again replaces the old one instead of stacking a second.\n• The cooldown is per group, so a busy trip doesn't silence your flat.\n\nThe first version of any reminder is easy. The version people keep switched on is the one that knows when to shut up.\n\nA reminder that comes every day isn't a reminder. It's a flatmate. 😄\n\n#BuildInPublic #ProductDesign #Flutter",
+      "alt": {
+        "summary": "Two timelines on a yellow Splitup card. Settle-up nudge: day 0 balance opens, day 2 still open, 7 pm one nudge, then 7 days of silence; settling cancels it. Invite nudge: day 0 group created, 24 hours nobody has joined, one reminder; a second person joining cancels it. Text: Two nudges. Lots of quiet.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "Check the 7 pm / 2 days / 7 days numbers still match notification_policy.dart before posting.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in",
+      "images": [
+        [
+          "img/ba9f3fb8c4f1bad3.webp",
+          "img/ba9f3fb8c4f1bad3-t.webp",
+          "splitup-LI-17.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "splitup",
+      "id": "LI-18",
+      "platform": "LI",
+      "date": "2026-12-03",
+      "time": "8-10 am",
+      "title": "The villa that taught me portions",
+      "text": "🏡 Splitting a villa equally is how the person who arrives on day 3 ends up paying for day 1.\n\nSay it's a $480 villa. Ali and Max stay 4 nights. Sara joins for the last 2. Split equally and everyone pays $160, so Sara just paid $64 for nights she wasn't there.\n\nSplitup has four ways to split any expense: equally, exact amounts, percentages and portions. Portions is the one for this.\n\nGive Ali 4 portions, Max 4 and Sara 2. That's 10 in total, so one portion is $48:\n• Ali $192\n• Max $192\n• Sara $96\n\nNo percentages, no calculator. You enter things people already know (nights, rooms, slices of a cake) and the app does the division.\n\nA few details I like:\n• Change someone's percentage and the people below them fill in the remaining percent, so you're never fighting the 100% total.\n• Portions only need a total above zero. Everything else is arithmetic.\n• When a split doesn't divide evenly, the leftover cents are handed out one at a time, so the shares always add up to the bill.\n\nEqual is the right default. It's just the wrong answer more often than people admit.\n\n#BuildInPublic #ProductDesign #Flutter",
+      "alt": {
+        "summary": "A $480 villa split by portions: Ali 4 nights and 4 portions pays $192, Max 4 nights pays $192, Sara 2 nights and 2 portions pays $96. Below, equal split would be $160 each, so Sara overpays $64. Text: Nights, not percentages.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "The villa example is made up; say so if anyone asks.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in",
+      "images": [
+        [
+          "img/dc9659e21bc2b70a.webp",
+          "img/dc9659e21bc2b70a-t.webp",
+          "splitup-LI-18.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "splitup",
+      "id": "LI-19",
+      "platform": "LI",
+      "date": "2026-12-04",
+      "time": "8-10 am",
+      "title": "Two people paid for the same dinner",
+      "text": "🧾 Two people paid for the same dinner. In Splitup that's still one expense. Here's why that works.\n\nThe bill is $90. Ali put $60 on his card, Max put $30 on his, and three people ate: Ali, Max and Sara.\n\nEvery expense stores two separate lists:\n• Who paid: Ali $60, Max $30\n• Who owes (equal split): Ali $30, Max $30, Sara $30\n\nA person's balance is what they paid minus what they owe:\n• Ali: 60 - 30 = +$30\n• Max: 30 - 30 = $0\n• Sara: 0 - 30 = -$30\n\nSo Sara pays Ali $30, and Max isn't part of any payment.\n\nThree things fall out of keeping it this way:\n1️⃣ Splitup never keeps a balance number. It adds up the list every time, so editing or deleting an old expense fixes everything after it automatically.\n2️⃣ A payment you record goes into the same list, as a settlement. There's no second system for payments to keep in step.\n3️⃣ Everything is whole cents, so the lists always add up exactly.\n\nIf \"who paid\" and \"who owes\" are one field, splits break the first time a second person pays. Two lists, one subtraction.\n\n#BuildInPublic #Flutter #Algorithms",
+      "alt": {
+        "summary": "A $90 dinner. Who paid: Ali $60, Max $30. Who owes with an equal split: Ali $30, Max $30, Sara $30. Balance equals paid minus owes: Ali plus $30, Max $0, Sara minus $30. Text: One dinner. Two payers.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "Example is invented: Ali/Max/Sara and $90.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in",
+      "images": [
+        [
+          "img/1d84d04fd881cd3d.webp",
+          "img/1d84d04fd881cd3d-t.webp",
+          "splitup-LI-19.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "splitup",
+      "id": "LI-20",
+      "platform": "LI",
+      "date": "2026-12-10",
+      "time": "8-10 am",
+      "title": "A group code you can read over a phone call",
+      "text": "🔑 Joining a Splitup group takes a 6-character code. Small thing, five small decisions.\n\n1️⃣ 34 characters, not 36. No letter O and no zero, because they look the same when read out or typed from a screenshot.\n2️⃣ Six characters from 34 is about 1.5 billion combinations. Short enough to say over a call, too many to guess your way into someone's group.\n3️⃣ It's generated with a cryptographic random source, not the usual random(), because this code is what lets a stranger in.\n4️⃣ Typed in lowercase? Still works. The app also matches the uppercase version.\n5️⃣ Joining is safe to repeat. If your connection drops after the server already added you, the retry answers \"already a member\" and the app treats that as success instead of an error.\n\nThe fifth one matters most. On a trip, people join from airport wifi. A join that fails halfway and then scolds you for trying again is a quick way to lose a new user.\n\nAnything a person has to copy by hand should be designed for tired thumbs.\n\n#BuildInPublic #Supabase #Flutter",
+      "alt": {
+        "summary": "A six-character group code, K7M2QX, shown as yellow tiles. Below, the 34 allowed characters: the letters A to Z and digits 0 to 9, with the letter O and the digit 0 crossed out. Three stats: 6 characters, 1.5 billion possible codes, O and 0 left out. Text: No O. No zero.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "The code K7M2QX is only an example.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in",
+      "images": [
+        [
+          "img/ee22f43bc927360c.webp",
+          "img/ee22f43bc927360c-t.webp",
+          "splitup-LI-20.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "splitup",
+      "id": "LI-21",
+      "platform": "LI",
+      "date": "2026-12-11",
+      "time": "8-10 am",
+      "title": "The PDF and the screen use the same function",
+      "text": "📄 If an app's export disagrees with its own screen by one cent, nobody trusts either.\n\nSplitup shows a group's balances on the dashboard, and it can export the group for a date range as a PDF or an Excel sheet. Two places showing the same money.\n\nSo the balance math lives in exactly one file. It has two jobs: add up what everyone is owed, and suggest who pays whom. The dashboard calls it. The export calls it too, after trimming the expenses to the dates you chose. There's no second copy to drift apart.\n\nTwo details I'm glad I got right:\n• The date filter uses the day the expense happened, not the day it was saved. An expense added late for last Tuesday lands in last Tuesday's report.\n• The filter runs first and the same math runs second, so a report for 1 to 15 March adds up only those expenses.\n\nDuplicated money math is a bug waiting for the first rule change. Keeping one copy was a boring afternoon and a very good trade.\n\n#BuildInPublic #Flutter #CleanCode",
+      "alt": {
+        "summary": "Two boxes, Dashboard (every expense, all time) and PDF or Excel (1 to 15 March only), both feeding one code card named balance_calculator with calculateMemberBalances and calculateSettlementSuggestions. Text: One function. Two reports. Same function, same cents.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "\"A boring afternoon\" is a flourish, not a measured fact. Trim it if you prefer.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in",
+      "images": [
+        [
+          "img/88f677881d5aebf5.webp",
+          "img/88f677881d5aebf5-t.webp",
+          "splitup-LI-21.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "misbaha",
+      "id": "LI-08",
+      "platform": "LI",
+      "date": "2026-11-12",
+      "time": "5:30 pm IST",
+      "title": "A million beads, a few dozen on screen",
+      "text": "Misbaha's string can count past a million. The screen only ever holds a few dozen beads.\n\nThe string is drawn as a huge circle sitting below the screen, with a radius equal to the screen's width. Only the top of it shows, as a gentle hump. Every bead has a number.\n\nFor a count of N, the app draws beads N - k to N + k, where k is just enough to fill the width, and skips any that land off screen. That's it.\n\nWhen you tap, nothing new is created. The same window slides one bead along the circle, over about a second, with a small overshoot so it settles like a real bead dropping into place.\n\nWhy I like it:\n• Speed and memory are the same at 33 as at 33,000.\n• The tassel is just the bead whose number is a multiple of your target, so it turns up on its own.\n• There's no list to scroll, load or reset.\n\nA real misbaha usually has 33, 99 or 100 beads. This one has as many as you've counted and weighs nothing.\n\nWith a long list, draw the window, not the list.",
+      "alt": {
+        "summary": "The Misbaha bead string drawn as an arc, with a dashed gold box around the visible beads labelled Drawn. Below, the count 1,000,000 and two lines of code: draw beads N minus k to N plus k, skip any off screen; on tap, slide the same window one bead along the circle. Text: A million beads. A few dozen on screen.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "\"A few dozen\" is the loop range (up to about 30 indexes); on screen it is fewer. Fine for a light claim, change to \"a few\" if you want it strict.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter",
+      "images": [
+        [
+          "img/77960a96a2f6905a.webp",
+          "img/77960a96a2f6905a-t.webp",
+          "misbaha-LI-08.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "misbaha",
+      "id": "LI-09",
+      "platform": "LI",
+      "date": "2026-11-17",
+      "time": "5:30 pm IST",
+      "title": "Counting in your own numerals is a list of ten characters",
+      "text": "Misbaha can show your count in Arabic, Gujarati or Bengali numerals. It's one of the smallest features in the app, and it taught me a rule I now use everywhere.\n\nHow it works: each numeral system is a list of ten characters, from zero to nine. To show 108, the app takes the digits 1, 0 and 8 and swaps each one for the character in that position.\n\nThe part that matters is what doesn't change. The count itself stays a plain whole number. It's saved, synced and compared to your target as a number. The other numerals only exist at the very last step, when the number is turned into text for the screen. The stats and the share card go through the same step.\n\nIf I had stored the Arabic digits, every comparison, sync and backup would have had to understand them. As it is, one small function does.\n\nSame number, three ways: 108 becomes ١٠٨ in Arabic, ૧૦૮ in Gujarati and ১০৮ in Bengali.\n\nStore plain data. Translate at the last moment, on screen.\n\n(The extra numerals are part of Misbaha Prime.)",
+      "alt": {
+        "summary": "A table of the digits 0 to 9 in English, Arabic, Gujarati and Bengali numerals, and below it the number 108 written in Arabic, Gujarati and Bengali numerals. Text: Ten characters. Three scripts. 108 is stored as a plain number; the numerals only appear in the last step, on screen.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "Have the numerals glance-checked once (108 in each script) before posting.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter",
+      "images": [
+        [
+          "img/ca45f445b15ed086.webp",
+          "img/ca45f445b15ed086-t.webp",
+          "misbaha-LI-09.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "misbaha",
+      "id": "LI-10",
+      "platform": "LI",
+      "date": "2026-11-21",
+      "time": "5:30 pm IST",
+      "title": "One buzz per bead, a heavier one for the tassel",
+      "text": "You can count 33 with your eyes closed and know exactly when you're done. That's what the haptics are for.\n\nMisbaha gives two kinds of feedback:\n• Every tap: a tiny click. On Android it's 20 milliseconds, on iPhone the light selection tick.\n• The tap that reaches your target: a long, heavy buzz (240 milliseconds on Android, a heavy impact on iPhone), with confetti on the screen.\n\nSo the buzz changes when the round is done. You never look at the phone to check.\n\nThe choices I'd defend:\n• The per-tap click is close to nothing. A strong buzz on every tap is tiring by the twentieth.\n• The target buzz is a different feeling, not just a bigger version of the same one. Different is easier to notice than stronger.\n• It's one switch. Turn haptics off and the app is silent.\n\nFeedback should carry information. If every event feels the same, none of them mean anything.",
+      "alt": {
+        "summary": "A bar chart of what your thumb feels: 32 short grey bars for taps 1 to 32 and one tall gold bar for tap 33. Below, two cards: every tap is a tiny click, 20 milliseconds on Android and the light selection tick on iPhone; the target tap is a long heavy buzz, 240 milliseconds on Android, plus confetti. Text: Count 33 with your eyes closed.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "Numbers are from the code; \"tiring by the twentieth\" is opinion.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter",
+      "images": [
+        [
+          "img/87d3d265954dd1d7.webp",
+          "img/87d3d265954dd1d7-t.webp",
+          "misbaha-LI-10.jpg"
+        ]
+      ]
+    },
+    {
+      "brand": "misbaha",
+      "id": "LI-11",
+      "platform": "LI",
+      "date": "2026-11-26",
+      "time": "5:30 pm IST",
+      "title": "Misbaha is now on Apple Watch and Wear OS",
+      "text": "Misbaha is now on your wrist. It's out on Apple Watch and Wear OS.\n\nThe phone app is Flutter, and Flutter doesn't run on watches, so I wrote the two watch apps natively: Swift on Apple Watch, Kotlin on Wear OS. I built both with Claude Code.\n\nWhat you get on the watch:\n• The same moving beads and tassel\n• Your tasbihs and counts, in step with your phone, even when it's out of range\n• A finished round saved to your history\n• A complication for your watch face that shows today's rounds\n\nOne rule keeps the two devices honest. The watch tells the phone what you did (a tap, a finished round), never what the total is. So taps on the watch and the phone always add up.\n\nSmall screen, same beads.",
+      "alt": {
+        "summary": "An Apple Watch and a round Wear OS watch side by side, each showing the Misbaha bead string with a tassel and the count 27 of 33. Captions: Apple Watch, Swift; Wear OS, Kotlin. Text: Same beads. Now on your wrist. Built with Claude Code.",
+        "slides": []
+      },
+      "status": "ready",
+      "warn": true,
+      "note": "Check the \"I built both with Claude Code\" line. The watch screens in the image are a mock.",
+      "posted": "",
+      "carousel": false,
+      "reply": "Misbaha Tasbih Counter is on iOS, Apple Watch, Android and Wear OS:\nhttps://tappstudio.in/#misbaha-tasbih-counter",
+      "images": [
+        [
+          "img/7984ac28f2400eb0.webp",
+          "img/7984ac28f2400eb0-t.webp",
+          "misbaha-LI-11.jpg"
+        ]
+      ]
     }
   ],
-  "built": "4 Nov 2026, 23:30"
+  "built": "6 Nov 2026, 10:50"
 }
