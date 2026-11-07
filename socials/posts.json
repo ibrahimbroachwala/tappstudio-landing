@@ -6006,7 +6006,7 @@
       "brand": "misbaha",
       "id": "IG-22",
       "platform": "IG",
-      "date": "2026-11-07",
+      "date": "2026-11-11",
       "time": "9:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6030,7 +6030,7 @@
       "brand": "misbaha",
       "id": "YT-09",
       "platform": "YT",
-      "date": "2026-11-07",
+      "date": "2026-11-11",
       "time": "8:30 pm IST",
       "status": "ready",
       "warn": true,
@@ -6878,7 +6878,55 @@
           "misbaha-LI-11.jpg"
         ]
       ]
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-07",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/b538ce5647f39cbf.webp",
+        "misbaha-R11.mp4"
+      ],
+      "alt": {
+        "summary": "A moonlit desert at night. Glowing drops fall one by one onto the dunes while a thin gold bar fills to a hundred under the words Shukran Lillah in Arabic and English. The water rises over the sand, night turns to day, the moon gives way to the sun, and the desert ends as an open morning sea.",
+        "slides": []
+      },
+      "id": "IG-26",
+      "platform": "IG",
+      "time": "9:30 pm IST",
+      "title": "A hundred drops of Shukran lillah (Reel)",
+      "text": "A hundred drops of Shukran lillah, one by one, and a desert becomes an ocean.\n\nCount them on the bar, then count your own.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #shukranlillah #dhikr #muslimapp",
+      "note": "Reel is built (misbaha-R11.mp4, 46.8 s, 100 drops at an even tasbih pace, progress bar to 100, desert to ocean and night to day, no voice). Check the Arabic (شُكْرًا لِلَّهِ) before posting. Upload to Drive and paste the link into video[0]. Use misbaha-R11-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R11-cover.png."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-07",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/b538ce5647f39cbf.webp",
+        "misbaha-R11.mp4"
+      ],
+      "alt": {
+        "summary": "A moonlit desert at night. Glowing drops fall one by one onto the dunes while a thin gold bar fills to a hundred under the words Shukran Lillah in Arabic and English. The water rises over the sand, night turns to day, the moon gives way to the sun, and the desert ends as an open morning sea.",
+        "slides": []
+      },
+      "id": "YT-13",
+      "platform": "YT",
+      "time": "8:30 pm IST",
+      "title": "A hundred drops of Shukran lillah",
+      "text": "A hundred drops, one at a time, turn a desert into an ocean and night into day.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #shukranlillah #dhikr",
+      "note": "Same video as IG-26 (misbaha-R11.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "6 Nov 2026, 10:50"
+  "built": "7 Nov 2026, 19:20"
 }
