@@ -3756,16 +3756,16 @@
       "reply": "Nasab is live on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
-      "text": "110 days ago I made the first commit on Nasab. Here's the build log in numbers:\n\n📦 157 commits\n🗄 117 database migrations, all forward-only\n⚡ 17 edge functions\n🧩 18 feature modules\n🌍 997 strings in English and Arabic\n📱 Version 0.10.7, live on iOS and Android\n\nWhat I'd tell myself on day 1:\n1. Put privacy in the database, not the UI.\n2. Once you're live, every migration is a promise to old builds.\n3. The invisible details (a reminder that skips someone who has passed away, a calendar your family actually uses) matter more than the feature list.\n4. Delete a feature when two of them do one job.\n5. Build for one family first. Mine.\n\nWhat's next: [ROADMAP, 2-3 items you're happy to announce]\n\nIf you've followed this build log, thank you. If your family has a story worth keeping, Nasab is live on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
+      "text": "112 days ago I made the first commit on Nasab. Here's the build log in numbers:\n\n📦 166 commits\n🗄 132 database migrations, all forward-only\n⚡ 18 edge functions\n🧩 18 feature modules\n🌍 1,109 strings in English and Arabic\n📱 Version 0.14.3, live on iOS and Android\n\nWhat I'd tell myself on day 1:\n1. Put privacy in the database, not the UI.\n2. Once you're live, every migration is a promise to old builds.\n3. The invisible details (a reminder that skips someone who has passed away, a calendar your family actually uses) matter more than the feature list.\n4. Delete a feature when two of them do one job.\n5. Build for one family first. Mine.\n\nIf you've followed this build log, thank you. If your family has a story worth keeping, Nasab is live on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
       "images": [
         [
-          "img/6dce784d5aa165a3.webp",
-          "img/6dce784d5aa165a3-t.webp",
+          "img/727002c3973d9747.webp",
+          "img/727002c3973d9747-t.webp",
           "nasab-LI-15.jpg"
         ]
       ],
       "alt": {
-        "summary": "A stat board of Nasab's build in numbers: 157 commits, 117 migrations, 17 edge functions, 18 feature modules, 997 strings in English and Arabic, and version 0.10.7.",
+        "summary": "A stat board of Nasab's build in numbers: 166 commits, 132 migrations, 18 edge functions, 18 feature modules, 1,109 strings in English and Arabic, and version 0.14.3.",
         "slides": []
       },
       "brand": "nasab",
@@ -6928,5 +6928,5 @@
       "note": "Same video as IG-26 (misbaha-R11.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "7 Nov 2026, 19:20"
+  "built": "7 Nov 2026, 19:30"
 }
