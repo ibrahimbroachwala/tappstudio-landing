@@ -487,7 +487,7 @@ function toast(m) { const t = document.getElementById('toast'); t.textContent = 
 
 const SHORT = { tappstudio: 'tS', splitup: 'SU', nasab: 'NA', misbaha: 'MI' };
 const addDays = (s, n) => { const d = new Date(s + 'T00:00'); d.setDate(d.getDate() + n); return iso(d); };
-let dayPick = '';
+let dayPick = today;
 function renderDays(ps, rerender) {
   const el = document.getElementById('days'); const keep = el.scrollLeft, first = !el.dataset.init;
   const by = {}; ps.forEach(p => (by[p.date] = by[p.date] || []).push(p));
@@ -509,7 +509,8 @@ function renderDays(ps, rerender) {
   }
   el.innerHTML = html;
   el.querySelectorAll('[data-day]').forEach(b => b.onclick = () => { dayPick = dayPick === b.dataset.day ? '' : b.dataset.day; rerender(); });
-  if (first) { el.dataset.init = 1; const t = el.querySelector('.today'); if (t) el.scrollLeft = Math.max(0, t.offsetLeft - 16); } else el.scrollLeft = keep;
+  const toToday = () => { const t = el.querySelector('.today'); if (!t || !el.clientWidth) return false; el.scrollLeft = Math.max(0, t.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft - 16); return true; };
+  if (first && el.clientWidth) { el.dataset.init = 1; el.style.scrollSnapType = 'none'; toToday(); requestAnimationFrame(() => { toToday(); el.style.scrollSnapType = ''; }); } else el.scrollLeft = keep;
 }
 function render() {
   const nav = document.getElementById('tabs'); nav.innerHTML = '';
