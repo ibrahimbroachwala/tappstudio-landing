@@ -3827,23 +3827,61 @@
       "reply": "Splitup is free to start on iOS and Android:\nhttps://splitup.tappstudio.in"
     },
     {
-      "text": "Three things I never let AI decide. 🎥\n\nI build apps with Claude Code every day. It's the reason one person can ship an MVP in about a week.\n\nBut three decisions stay with me:\n1. What the product should be.\n2. Anything that could break a live app.\n3. Whether the code ships.\n\n45 seconds on why. 👇",
-      "images": [],
+      "text": "Three things I never let AI decide.\n\nI build apps with Claude Code every day. It's the reason one person can ship an MVP in about a week.\n\nBut three decisions stay with me:\n1. What the product should be. AI will build any screen I ask for. Which screens should exist, and what to leave out, is the product.\n2. Anything that could break a live app. Old builds stay on people's phones for months, so my CLAUDE.md says it plainly: \"When a change cannot be made backward compatible, stop and ask. Don't guess.\"\n3. Whether the code ships. The AI writes the change and the tests. I read every line, and the merge button is mine.\n\nEverything else, how a function is written, which widget to use, the first draft of anything, I happily let it type.\n\nAI does the typing. I do the thinking.",
+      "images": [
+        [
+          "img/0c0153c2dc85a955.webp",
+          "img/0c0153c2dc85a955-t.webp",
+          "tappstudio-LI-08-01.jpg"
+        ],
+        [
+          "img/3f9c413664c272a8.webp",
+          "img/3f9c413664c272a8-t.webp",
+          "tappstudio-LI-08-02.jpg"
+        ],
+        [
+          "img/92bb7f10f2b2ea3f.webp",
+          "img/92bb7f10f2b2ea3f-t.webp",
+          "tappstudio-LI-08-03.jpg"
+        ],
+        [
+          "img/e92d1ebf77ecbc0c.webp",
+          "img/e92d1ebf77ecbc0c-t.webp",
+          "tappstudio-LI-08-04.jpg"
+        ],
+        [
+          "img/d7148771643db4a3.webp",
+          "img/d7148771643db4a3-t.webp",
+          "tappstudio-LI-08-05.jpg"
+        ],
+        [
+          "img/e421b1eddaec4daf.webp",
+          "img/e421b1eddaec4daf-t.webp",
+          "tappstudio-LI-08-06.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
-        "slides": []
+        "summary": "A 6-slide carousel on the three decisions I never hand to AI when building apps: what the product should be, anything that could break a live app, and whether the code ships.",
+        "slides": [
+          "Cover slide on a dark code-editor background. Title: \"Three things I never let AI decide.\" A card titled decisions.md lists them: 01 What the product should be. 02 Anything that could break a live app. 03 Whether the code ships. A teal cursor mascot, Caret, thinks beside it.",
+          "\"01 The product: What the product should be.\" A diff card of what the AI does: build any screen I ask for, try three layouts in minutes. Struck through: decide which screens should exist, decide what to leave out. Caption: AI will build whatever you ask for. Choosing what's worth building, and what to cut, is the product.",
+          "\"02 Live apps: Anything that could break a live app.\" The Nasab CLAUDE.md file: Nasab is LIVE, backward compatibility is mandatory, never break an existing RPC signature, additive schema changes only. Highlighted: When a change cannot be made backward compatible, stop and ask. Don't guess.",
+          "\"03 Shipping: Whether the code ships.\" A mock pull request: AI writes the change, AI writes the tests. Struck through: AI approves its own PR. A status flips from in review to approved by Ibrahim. Caption: I read every line before it ships. The merge button is mine.",
+          "\"The rest? Let it type.\" What the AI does decide: how a function is written, which widget to reach for, which test cases to cover, the first draft of anything. Caption: That's most of the work, and it's why one person can ship an MVP in about a week.",
+          "End-of-file slide: \"AI does the typing. I do the thinking.\" Ibrahim Broachwala, tappStudio, Mumbai. Follow for how I build apps with AI, honestly. Next in the series: AI wrote my CI in one PR."
+        ]
       },
       "brand": "tappstudio",
       "id": "LI-08",
       "platform": "LI",
       "date": "2026-11-08",
       "time": "09:30 IST",
-      "status": "planned",
+      "status": "ready",
       "warn": false,
       "note": "",
       "title": "Three things I never let AI decide.",
       "posted": "",
-      "carousel": false,
+      "carousel": true,
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
@@ -6263,7 +6301,7 @@
         ]
       ],
       "alt": {
-        "summary": "",
+        "summary": "A build-log card for the game Kadak. Headline: \"₹19 in India. $0.99 in the US.\" Subtitle: The smallest Elaichi pack, priced by hand for about 40 countries. A price list for \"Mutthi of Elaichi, 60\" shows India ₹19 highlighted, then United States $0.99, United Kingdom £0.99, Germany €0.99, Canada 1.49 CAD, UAE 2.99 AED, Japan ¥130 and Pakistan 59 PKR. Three numbered notes beside it: First pack you buy pays double. No paid random chests. One file: plan, check, apply.",
         "slides": []
       },
       "brand": "kadak",
@@ -6289,7 +6327,7 @@
         ]
       ],
       "alt": {
-        "summary": "",
+        "summary": "A build-log card for the game Kadak. Headline: \"My tutorial is a chai seller.\" Subtitle: Bablu Bhaiya teaches step by step. The game opens as you earn. A list titled \"Opens when you've earned\": ₹2,500 Quick Jugaad, a free boost; ₹5,000 Tasks; ₹10,000 Nuskhe, recipe upgrades; ₹25,000 Lucky customers; ₹50,000 Bazaar, the shop; ₹1.5 lakh Outlets, a new city. Beside it, a portrait card of Bablu Bhaiya, a mustached chai seller in a checked shirt: Cutting chai, your first Ustaad. Footer line: The shop opens fifth, not first.",
         "slides": []
       },
       "brand": "kadak",
@@ -6315,7 +6353,7 @@
         ]
       ],
       "alt": {
-        "summary": "",
+        "summary": "A build-log card for the game Kadak. Headline: \"Where did my Elaichi come from?\" Subtitle: Tap Elaichi or Kesar in the top bar. Now the game tells you. An in-game panel for Elaichi, cardamom, the premium currency, lists where it came from: Pop-up event rank +40, Daily Kulhad +10, Task +5, Lucky customer +3, Before this update +120. Three numbered notes beside it: One place records every gain. It can only watch, never change a balance. Latest 100, plus totals forever.",
         "slides": []
       },
       "brand": "kadak",
@@ -6341,7 +6379,7 @@
         ]
       ],
       "alt": {
-        "summary": "",
+        "summary": "A build-log card for the game Kadak. Headline: \"No guilt. Just timers.\" Subtitle: What Kadak won't do to bring you back, and what it does instead. A \"Won't do\" card with every line struck through: Energy bars, Events gone for good, Streaks lost to one missed day, Notifications at midnight. A second card, \"Finishes while you're away\": Ustaad training, 30 min to 8 h; Chest unlocking, 3 h or 8 h; Tapri filling up, overnight; Daily Kulhad, tomorrow. Footer line: Max 2 notifications a day. None from 10 pm to 8 am.",
         "slides": []
       },
       "brand": "kadak",
@@ -6928,5 +6966,5 @@
       "note": "Same video as IG-26 (misbaha-R11.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "7 Nov 2026, 19:30"
+  "built": "8 Nov 2026, 09:42"
 }
