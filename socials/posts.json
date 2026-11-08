@@ -7003,14 +7003,14 @@
       "time": "7:30 pm IST",
       "status": "ready",
       "warn": true,
-      "note": "Reel is built (kadak-R04.mp4, 10.5 s, loops). Upload it to Drive and paste the link into video[0]. Use the cover at 1.2 s so the grid tile reads 'It starts with one cup of chai.' Pin with IG-03 and IG-04.",
+      "note": "Reel is built (kadak-R04.mp4, 22 s, loops). Upload it to Drive and paste the link into video[0]. Use the cover at 2.2 s so the grid tile reads 'It starts with one cup of chai.' Pin with IG-03 and IG-04.",
       "title": "One cup to a chai empire (Reel)",
       "posted": "",
       "carousel": false,
       "kind": "reel",
       "video": [
         "",
-        "img/fa037321747a1f40.webp",
+        "img/837e98a5c28e836f.webp",
         "kadak-R04.mp4"
       ]
     },
@@ -7165,5 +7165,5 @@
       ]
     }
   ],
-  "built": "8 Nov 2026, 22:33"
+  "built": "8 Nov 2026, 22:43"
 }
