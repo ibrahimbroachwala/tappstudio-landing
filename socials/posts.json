@@ -6318,16 +6318,16 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "Early builds of Kadak showed new players most of the game at once: stalls, recipes, a shop, tasks, festivals, events. Clear to me. A wall to everyone else.\n\nNow Bablu Bhaiya, the cutting chai Ustaad, teaches you step by step, and the game opens up as you earn:\n\n₹2,500: Quick Jugaad, a free income boost\n₹5,000: tasks\n₹10,000: Nuskhe, the recipe upgrades\n₹25,000: lucky customers\n₹50,000: the Bazaar, the shop\n₹1.5 lakh: Outlets, your next city\n\nThe rules behind it:\n1. Unlock by money earned, not time spent. A fast player sees things sooner, a slow one is never rushed.\n2. The shop opens fifth. Nobody should see a price before they understand what it buys.\n3. Reward videos wait another 2 minutes after the shop opens.\n4. Every stall and Ustaad is on show from the start, greyed out with its price, so you can see where you're heading.\n\nThe test I use: can someone play for ten minutes without reading anything longer than one line? Bablu Bhaiya talks less than any real chai seller I've met.",
+      "text": "Early builds of Kadak showed new players most of the game at once: stalls, recipes, a shop, tasks, festivals, events. Clear to me. A wall to everyone else.\n\nNow Bablu Bhaiya, the cutting chai Ustaad, teaches it one thing at a time:\n\nTutorial: pour chai, open your first stall, hire Bablu\nThen Quick Jugaad, a free income boost\nThen tasks and the Daily Kulhad\nThen Nuskhe, the recipe upgrades\nThen lucky customers\n₹40,000 earned: the Bazaar, the shop\n₹1 lakh earned: Outlets, your next city\n\nThe rules behind it:\n1. The first four open by play, not by money. Each waits until Bablu has introduced the one before it, so nothing arrives in a pile.\n2. Only the big doors cost earnings. The shop opens at ₹40,000. Nobody should see a price before they understand what it buys.\n3. Reward videos wait another 2 minutes after the shop opens, and the festival season waits for the Bazaar and your next visit.\n4. Once the tutorial ends, all eight stalls are on show, locked with their price, so you can see where you're heading.\n\nThe test I use: can someone play for ten minutes without reading anything longer than one line? Bablu Bhaiya talks less than any real chai seller I've met.",
       "images": [
         [
-          "img/ad120cdf9694d454.webp",
-          "img/ad120cdf9694d454-t.webp",
+          "img/b5e760e441ff604f.webp",
+          "img/b5e760e441ff604f-t.webp",
           "kadak-LI-19.jpg"
         ]
       ],
       "alt": {
-        "summary": "A build-log card for the game Kadak. Headline: \"My tutorial is a chai seller.\" Subtitle: Bablu Bhaiya teaches step by step. The game opens as you earn. A list titled \"Opens when you've earned\": ₹2,500 Quick Jugaad, a free boost; ₹5,000 Tasks; ₹10,000 Nuskhe, recipe upgrades; ₹25,000 Lucky customers; ₹50,000 Bazaar, the shop; ₹1.5 lakh Outlets, a new city. Beside it, a portrait card of Bablu Bhaiya, a mustached chai seller in a checked shirt: Cutting chai, your first Ustaad. Footer line: The shop opens fifth, not first.",
+        "summary": "A build-log card for the game Kadak. Headline: \"My tutorial is a chai seller.\" Subtitle: Bablu teaches one thing at a time. Money opens the rest. A list titled \"Opens one at a time\": Tutorial, pour, open a stall, then hire Bablu; next Quick Jugaad, a free boost; next Tasks; next Nuskhe, recipe upgrades; next Lucky customers; ₹40,000 Bazaar, the shop; ₹1 lakh Outlets, a new city. Beside it, a portrait card of Bablu Bhaiya, a mustached chai seller in a checked shirt: Cutting chai, your first Ustaad. Footer line: No price until you know what it buys.",
         "slides": []
       },
       "brand": "kadak",
@@ -7165,5 +7165,5 @@
       ]
     }
   ],
-  "built": "8 Nov 2026, 22:43"
+  "built": "9 Nov 2026, 10:30"
 }
