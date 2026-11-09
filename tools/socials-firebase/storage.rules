@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// Post media waiting to go out. Only the signed-in owner (custom claim set by the `api` function) can touch it.
+// Instagram fetches files through download-token URLs that the function creates, which don't go through these rules.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /media/{path=**} {
+      allow read, delete: if request.auth != null && request.auth.token.owner == true;
+      allow create, update: if request.auth != null && request.auth.token.owner == true
+        && request.resource.size < 300 * 1024 * 1024
+        && request.resource.contentType.matches('image/jpeg|video/mp4');
+    }
+  }
+}

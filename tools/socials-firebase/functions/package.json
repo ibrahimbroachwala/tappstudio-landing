@@ -1,0 +1,14 @@
+{
+  "name": "tappstudio-socials-functions",
+  "private": true,
+  "description": "Posts Instagram images, carousels and reels, and YouTube Shorts, from the socials calendar.",
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "scripts": {
+    "e2e": "node test/e2e.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.1.0"
+  }
+}

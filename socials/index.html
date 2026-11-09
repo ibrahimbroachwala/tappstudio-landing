@@ -118,7 +118,7 @@
   .row.arch { opacity: .45; filter: grayscale(.8); }
   .row.arch .ttl { text-decoration: line-through; }
   .st.archived { background: var(--ink-3); color: var(--muted); }
-  dialog.mv { background: var(--ink-2); color: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 18px; width: min(380px, calc(100vw - 32px)); }
+  dialog.mv { margin: auto; background: var(--ink-2); color: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 18px; width: min(380px, calc(100vw - 32px)); }
   dialog.mv::backdrop { background: rgba(0,0,0,.6); }
   dialog.mv h3 { font: 600 15px/1.3 'Geist', sans-serif; margin-bottom: 4px; }
   dialog.mv p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
@@ -183,6 +183,33 @@
   .idea-banner pre { margin: 8px 0; padding: 10px; background: var(--ink); border-radius: 8px; font: 500 12px/1.5 'Geist Mono', monospace; overflow-x: auto; user-select: all; }
   @media (max-width: 860px) { .idea-row { grid-template-columns: 1fr; } }
 
+  /* Posting (Firebase): job chips on rows, the publish dialog and Accounts */
+  .barbtn.on { color: var(--teal); border-color: rgba(20,184,166,.5); }
+  .acts button.pub { white-space: nowrap; background: var(--teal); color: var(--ink); border-color: var(--teal); }
+  .acts button.pub:hover { color: var(--ink); filter: brightness(1.1); }
+  .job { font: 600 10.5px 'Geist Mono', monospace; padding: 6px 8px; border-radius: 6px; white-space: nowrap; background: rgba(245,177,76,.15); color: var(--amber); text-decoration: none; }
+  .job.posting { background: var(--soft); color: var(--teal); }
+  .job.failed { background: rgba(255,106,94,.15); color: var(--yt); }
+  .job.posted { background: var(--teal); color: var(--ink); }
+  .ttl small.err { color: var(--yt); }
+  dialog.mv.wide { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow-y: auto; }
+  dialog.mv input[type=datetime-local], dialog.mv input[type=text], dialog.mv input[type=password], dialog.mv select { width: 100%; margin-top: 8px; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--ink); color: var(--cream); font: 400 14px 'Geist', sans-serif; color-scheme: dark; }
+  dialog.mv input[type=file] { margin-top: 8px; font-size: 13px; color: var(--muted); max-width: 100%; }
+  dialog.mv .kv { display: grid; grid-template-columns: 96px 1fr; gap: 6px 10px; margin-top: 12px; font-size: 13px; }
+  dialog.mv .kv span:nth-child(odd) { font: 500 11px 'Geist Mono', monospace; color: var(--muted); padding-top: 2px; }
+  dialog.mv .cap { white-space: pre-wrap; font-size: 12.5px; line-height: 1.5; color: var(--muted); background: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-top: 10px; max-height: 120px; overflow: auto; }
+  dialog.mv .note { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  dialog.mv .note.bad { color: var(--yt); } dialog.mv .note.good { color: var(--teal); }
+  dialog.mv .prog { height: 4px; background: var(--ink); border-radius: 4px; margin-top: 12px; overflow: hidden; display: none; }
+  dialog.mv .prog i { display: block; height: 100%; width: 0; background: var(--teal); transition: width .2s; }
+  dialog.mv button:disabled { opacity: .55; cursor: wait; }
+  dialog.mv .acct { border-top: 1px solid var(--line); padding: 12px 0 4px; margin-top: 12px; }
+  dialog.mv .acct h4 { font: 600 13px 'Geist', sans-serif; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  dialog.mv .acct h4 small { font: 500 11px 'Geist Mono', monospace; color: var(--muted); text-align: right; }
+  dialog.mv .acct .line { display: flex; gap: 8px; align-items: center; } dialog.mv .acct .line input, dialog.mv .acct .line select { flex: 1; }
+  dialog.mv .acct .line button { margin-top: 8px; }
+  dialog.mv a { color: var(--teal); }
+
   @media (max-width: 860px) {
     .barbtn.hide-sm { display: none; }
     .row { grid-template-columns: auto auto 30px 1fr; grid-template-areas: "date brand pf st" "ttl ttl ttl ttl" "more more more more" "acts acts acts acts"; }
@@ -213,6 +240,7 @@
     <div class="logo"><i>t</i><span>S</span></div>
     <nav class="tabs" role="tablist" id="tabs"></nav>
     <button class="barbtn hide-sm" id="refresh">Refresh</button>
+    <button class="barbtn" id="postauth" title="Sign in with Google to post to Instagram and YouTube">Sign in to post</button>
     <button class="barbtn" id="lockbtn">Lock</button>
   </header>
   <main>
@@ -240,7 +268,7 @@ const PAGES = {
   X: () => 'https://x.com/ibrahim_broach',
   YT: () => 'https://studio.youtube.com/',
   LI: b => b === 'tappstudio' ? 'https://www.linkedin.com/company/145285359/admin/page-posts/published/?share=true' : 'https://www.linkedin.com/sharing/compose',
-  IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/my.deen.app/' })[b],
+  IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/getmisbaha/', kadak: 'https://www.instagram.com/kadakchai.empire/' })[b],
 };
 const altBox = (k, i, label, t) => `<div class="altbox"><div class="altbox-h"><span>${label}</span><button class="ghost" data-altpart="${esc(k)}" data-i="${i}">Copy</button></div><pre class="reply-t">${esc(t)}</pre></div>`;
 const altBlock = p => { const a = p.alt || {}, sl = a.slides || [], k = p.brand + '/' + p.id;
@@ -256,6 +284,7 @@ const pf = p => { const u = PAGES[p.platform] && PAGES[p.platform](p.brand);
 const store = (area, k, v) => { try { if (v === undefined) return area.getItem(k); if (v === null) area.removeItem(k); else area.setItem(k, v); } catch (e) { return null; } };
 
 let DATA = null, BOARD = null, BR = {};
+let USER = null, JOBS = {}, ACCTS = null;   // posting: signed-in owner, jobs by "brand/id", connected accounts
 let tab = 'all', plat = 'all', hidePosted = true;
 const opened = new Set();
 
@@ -273,6 +302,7 @@ async function unlock() {
   render();
   loadStatus();
   loadIdeas();
+  restoreSignIn();
 }
 document.getElementById('lockform').onsubmit = async e => {
   e.preventDefault();
@@ -352,6 +382,7 @@ const archivePost = (brand, id, on, btn) => savePost(brand, id, { archived: on }
 /* Move: pick a date, then confirm */
 function openMove(brand, id) {
   const p = DATA.posts.find(x => x.brand === brand && x.id === id), dlg = document.getElementById('mv');
+  dlg.className = 'mv';
   const step1 = () => {
     dlg.innerHTML = `<h3>Move ${esc(BR[brand].label)} ${esc(id)}</h3><p>Currently ${esc(label(p.date))}. Pick a new date.</p><input type="date" id="mvd" value="${p.date}"><div class="btns"><button id="mvx">Cancel</button></div>`;
     dlg.querySelector('#mvx').onclick = () => dlg.close();
@@ -603,6 +634,8 @@ function render() {
     a.onclick = ev => { ev.preventDefault(); saveFiles([[i.dataset.full, null, i.dataset.name]], a); };
     v.style.display = 'grid';
   });
+  g.querySelectorAll('[data-pub]').forEach(b => b.onclick = () => openPublish(findK(b.dataset.k), b.dataset.pub));
+  g.querySelectorAll('[data-job]').forEach(b => b.onclick = () => jobAction(findK(b.dataset.k), b.dataset.job, b));
   g.querySelectorAll('[data-pdf]').forEach(b => b.onclick = () => makePdf(DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.pdf), b));
   g.querySelectorAll('[data-save]').forEach(b => b.onclick = () => saveFiles(DATA.posts.find(x => x.brand + '/' + x.id === b.dataset.save).images, b));
 }
@@ -657,23 +690,293 @@ function makePdf(p, btn) {
     else download(file);
   });
 }
-document.getElementById('refresh').onclick = () => { loadStatus(); loadIdeas(); };
+document.getElementById('refresh').onclick = () => { loadStatus(); loadIdeas(); if (USER) loadJobs(); };
+
+/* ---------- Posting: Instagram and YouTube through Firebase (tools/socials-firebase) ----------
+   Sign in with Google (owner accounts only), then Post now or Schedule on any IG/YT post. Media is uploaded to
+   Firebase Storage from here; the `api` function posts it now, or the `tick` function posts it at the picked time.
+   Add ?emu to a localhost URL to use the local Firebase emulators instead. */
+const FB_CFG = { apiKey: FS_KEY, authDomain: 'tappstudio-socials.firebaseapp.com', projectId: 'tappstudio-socials',
+  storageBucket: 'tappstudio-socials.firebasestorage.app', appId: '1:308660430456:web:40190cb5adc230122e6f8d' };
+const SDK = 'https://www.gstatic.com/firebasejs/12.19.0/';
+const EMU = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && new URLSearchParams(location.search).has('emu');
+let fb = null, jobPoll = 0;
+const findK = k => DATA.posts.find(x => x.brand + '/' + x.id === k);
+const canPublish = p => p.platform === 'IG' || (p.platform === 'YT' && p.kind === 'reel');
+const kindOf = p => p.platform === 'YT' ? 'short' : p.kind === 'reel' ? 'reel' : (p.images || []).length > 1 ? 'carousel' : 'image';
+const KIND = { image: 'Instagram image', carousel: 'Instagram carousel', reel: 'Instagram reel', short: 'YouTube Short' };
+const when = ms => new Date(ms).toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+const localInput = d => `${iso(d)}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+/* The tick function runs at :00 and :30 IST, so a scheduled time is rounded up to the next half hour (IST is UTC+5:30,
+   so UTC half hours are IST half hours too). */
+const SLOT = 30 * 60000, slotUp = ms => Math.ceil(ms / SLOT) * SLOT;
+
+async function sdk() {
+  if (fb) return fb;
+  const [app, auth, storage, functions] = await Promise.all(['app', 'auth', 'storage', 'functions'].map(m => import(`${SDK}firebase-${m}.js`)));
+  const a = app.initializeApp(FB_CFG);
+  fb = { auth, storage, functions, au: auth.getAuth(a), st: storage.getStorage(a), fn: functions.getFunctions(a, 'us-central1') };
+  if (EMU) {
+    auth.connectAuthEmulator(fb.au, 'http://127.0.0.1:9099', { disableWarnings: true });
+    storage.connectStorageEmulator(fb.st, '127.0.0.1', 9199);
+    functions.connectFunctionsEmulator(fb.fn, '127.0.0.1', 5001);
+  }
+  return fb;
+}
+async function api(action, data = {}) {
+  const f = await sdk();
+  const call = f.functions.httpsCallable(f.fn, 'api', { timeout: 560000 });
+  return (await call({ action, ...data })).data;
+}
+const apiErr = e => String((e && e.message) || e).replace(/^FirebaseError:\s*/, '');
+
+function paintAuth() {
+  const b = document.getElementById('postauth');
+  b.textContent = USER ? 'Accounts' : 'Sign in to post';
+  b.classList.toggle('on', !!USER);
+  b.title = USER ? `Signed in as ${USER.email}. Connect Instagram and YouTube.` : 'Sign in with Google to post to Instagram and YouTube';
+}
+async function afterSignIn(user) {
+  const r = await api('hello');
+  if (r.refreshToken) await user.getIdToken(true);   // picks up the owner claim the Storage rules check
+  USER = user; store(localStorage, 'socials:post', '1');
+  paintAuth(); render();
+  await Promise.all([loadJobs(), loadAccounts()]);
+}
+async function signIn() {
+  const b = document.getElementById('postauth'); b.disabled = true;
+  try {
+    const f = await sdk();
+    const cred = await f.auth.signInWithPopup(f.au, new f.auth.GoogleAuthProvider());
+    await afterSignIn(cred.user);
+    toast(`Signed in as ${cred.user.email}.`);
+  } catch (e) {
+    const m = apiErr(e);
+    if (/permission-denied|not allowed/i.test(m) && fb) await fb.auth.signOut(fb.au);
+    if (!/popup-closed|cancelled-popup/.test(m)) toast(/not allowed/i.test(m) ? 'That Google account is not allowed to post.' : 'Could not sign in: ' + m);
+  } finally { b.disabled = false; }
+}
+async function restoreSignIn() {
+  if (store(localStorage, 'socials:post') !== '1') return;
+  try {
+    const f = await sdk();
+    await f.au.authStateReady();
+    if (f.au.currentUser) await afterSignIn(f.au.currentUser);
+  } catch (e) { /* stay signed out; the button still works */ }
+}
+async function signOut() {
+  if (fb) await fb.auth.signOut(fb.au);
+  USER = null; JOBS = {}; ACCTS = null; store(localStorage, 'socials:post', null);
+  paintAuth(); render();
+}
+document.getElementById('postauth').onclick = () => USER ? openAccounts() : signIn();
+
+async function loadJobs() {
+  try {
+    const { jobs } = await api('jobs', { board: BOARD });
+    JOBS = Object.fromEntries(jobs.map(j => [j.brand + '/' + j.id, j]));
+    render();
+  } catch (e) { toast('Could not load posting status: ' + apiErr(e)); }
+  clearTimeout(jobPoll);
+  const soon = Object.values(JOBS).some(j => j.state === 'posting' || (j.state === 'scheduled' && j.at < Date.now() + 10 * 60000));
+  if (soon) jobPoll = setTimeout(() => { loadJobs(); loadStatus(); }, 30000);
+}
+async function loadAccounts() {
+  try { ACCTS = await api('accounts'); } catch (e) { ACCTS = null; }
+}
+
+function jobActs(p, j, k) {
+  const b = (a, l) => `<button data-job="${a}" data-k="${esc(k)}">${l}</button>`;
+  if (j.state === 'posted') return j.url ? `<a class="job posted" href="${esc(j.url)}" target="_blank" rel="noopener">View post</a>` : `<span class="job posted">Posted</span>`;
+  if (j.state === 'posting') return `<span class="job posting">Posting…</span>`;
+  if (j.state === 'failed') return `<span class="job failed" title="${esc(j.error)}">Failed</span>` + b('retry', 'Retry') + b('cancel', 'Cancel');
+  return `<span class="job" title="Goes out automatically">⏱ ${esc(when(j.at))}</span>` + b('cancel', 'Cancel');
+}
+async function jobAction(p, action, btn) {
+  const name = `${BR[p.brand].label} ${p.id}`;
+  if (action === 'cancel' && !confirm(`Cancel ${name}? It won't be posted, and its uploaded media is deleted.`)) return;
+  btn.disabled = true; btn.textContent = action === 'retry' ? 'Posting…' : 'Cancelling…';
+  try {
+    const r = await api(action, { board: BOARD, brand: p.brand, id: p.id });
+    toast(action === 'cancel' ? `${name} cancelled.` : r.job.state === 'posted' ? `${name} is live.` : `${name} failed again: ${r.job.error}`);
+  } catch (e) { toast(apiErr(e)); }
+  await Promise.all([loadJobs(), loadStatus()]);
+}
+
+/* Due time from the calendar: "6:00 pm IST", "7-9 pm", "18:30 IST". A range uses its start. Same rules as before. */
+function dueOf(p) {
+  let h = 18, m = 0;
+  const hit = /(\d{1,2})(?::(\d{2}))?\s*(?:-\s*\d{1,2}(?::\d{2})?\s*)?(am|pm)?/i.exec(p.time || '');
+  if (hit) { h = +hit[1]; m = +(hit[2] || 0); const ap = (hit[3] || '').toLowerCase(); if (ap === 'pm' && h < 12) h += 12; if (ap === 'am' && h === 12) h = 0; }
+  return new Date(`${p.date}T${pad(Math.min(h, 23))}:${pad(Math.min(m, 59))}:00+05:30`);
+}
+
+async function upload(path, blob, onPct) {
+  const f = await sdk(), r = f.storage.ref(f.st, path);
+  await new Promise((res, rej) => {
+    const t = f.storage.uploadBytesResumable(r, blob, { contentType: blob.type });
+    t.on('state_changed', s => onPct(s.bytesTransferred / s.totalBytes), rej, res);
+  });
+}
+async function existing(path) {
+  try { const f = await sdk(); return await f.storage.getMetadata(f.storage.ref(f.st, path)); } catch (e) { return null; }
+}
+
+async function openPublish(p, mode) {
+  const dlg = document.getElementById('mv'), kind = kindOf(p), k = p.brand + '/' + p.id, name = `${BR[p.brand].label} ${p.id}`;
+  if (!ACCTS) await loadAccounts();
+  const ig = ((ACCTS || {}).ig || {})[p.brand], yt = (ACCTS || {}).yt || {};
+  const acct = p.platform === 'IG' ? (ig ? '@' + ig.username + (ig.quota && ig.quota.total ? ` · ${ig.quota.used}/${ig.quota.total} posts used today` : '') : '')
+    : (yt.connected && yt.channel ? yt.channel.title + ` · uploads as ${yt.privacy}` : '');
+  const imgs = p.images || [], vid = p.video || [], reelName = vid[2] || '';
+  const reelPath = `media/reels/${reelName}`, coverPath = `media/reels/${reelName.replace(/\.mp4$/i, '')}-cover.jpg`;
+  const already = (kind === 'reel' || kind === 'short') && reelName ? await existing(reelPath) : null;
+  const block = !acct ? `${p.platform === 'IG' ? 'Instagram' : 'YouTube'} is not connected for ${BR[p.brand].label}. Connect it in Accounts first.`
+    : (kind === 'image' || kind === 'carousel') && !imgs.length ? 'This post has no images yet.'
+    : kind === 'carousel' && imgs.length > 10 ? `Instagram takes at most 10 images in a carousel; this one has ${imgs.length}.`
+    : (kind === 'reel' || kind === 'short') && !reelName ? 'This reel has no MP4 name in posts.json (video[2]).' : '';
+  const due = dueOf(p), soon = new Date(Date.now() + 2 * 60000), pick = new Date(slotUp(Math.max(due, soon)));
+  dlg.className = 'mv wide';
+  dlg.innerHTML = `<h3>${mode === 'now' ? 'Post' : 'Schedule'} ${esc(name)}</h3>
+    <div class="kv"><span>Where</span><span>${acct ? esc(acct) : '<span style="color:var(--yt)">not connected</span>'}</span>
+      <span>What</span><span>${KIND[kind]}${kind === 'carousel' ? ` · ${imgs.length} slides` : ''}${p.platform === 'IG' && ig && ig.story ? ` · plus a Story (${kind === 'carousel' ? 'first slide' : kind === 'reel' ? 'the video' : 'the image'})` : ''}${p.platform === 'YT' ? ' · ' + esc(String(p.title).replace(/\s*\((Short|Reel)\)\s*$/i, '')) : ''}</span>
+      ${kind === 'reel' || kind === 'short' ? `<span>Video</span><span>${esc(reelName)}${already ? ` · <b class="t">uploaded</b> (${(already.size / 1048576).toFixed(1)} MB)` : ''}</span>` : ''}</div>
+    ${(kind === 'reel' || kind === 'short') && !block ? `<p class="note">${already ? 'Pick a file only to replace the uploaded one.' : `Pick <b>${esc(reelName)}</b> from <code>~/Projects/tappstudio_socials/reels/out/${esc(p.brand)}/</code>.`}</p><input type="file" id="pubfile" accept="video/mp4">` : ''}
+    ${mode === 'at' && !block ? `<p class="note">Scheduled posts go out on the hour and half hour, so other times round up to the next one. The calendar says ${esc(label(p.date))}, ${esc(p.time || '')}.</p><input type="datetime-local" id="pubat" step="1800" value="${localInput(pick)}" min="${localInput(new Date())}">` : ''}
+    <div class="cap">${esc(p.text)}</div>
+    <p class="note ${block ? 'bad' : ''}" id="pubmsg">${esc(block || (mode === 'now' ? 'Goes live as soon as you confirm. You can\'t undo it from here.' : ''))}</p>
+    <div class="prog" id="pubprog"><i></i></div>
+    <div class="btns"><button id="pubx">Close</button>${block ? '' : `<button class="go" id="pubgo">${mode === 'now' ? 'Post now' : 'Schedule'}</button>`}</div>`;
+  dlg.querySelector('#pubx').onclick = () => dlg.close();
+  dlg.showModal();
+  if (block) return;
+  const msg = dlg.querySelector('#pubmsg'), prog = dlg.querySelector('#pubprog'), bar = prog.querySelector('i');
+  const say = (t, cls = '') => { msg.textContent = t; msg.className = 'note ' + cls; };
+  const fileIn = dlg.querySelector('#pubfile');
+  if (fileIn) fileIn.onchange = () => { const f = fileIn.files[0]; if (f && f.name !== reelName) say(`You picked ${f.name}; this post expects ${reelName}. It will still be used.`); else say(''); };
+  dlg.querySelector('#pubgo').onclick = async e => {
+    const go = e.target, x = dlg.querySelector('#pubx');
+    let at = null;
+    if (mode === 'at') {
+      const v = dlg.querySelector('#pubat').value, d = v ? new Date(v) : null;
+      if (!d || d < new Date(Date.now() + 60000)) { say('Pick a time at least a minute from now.', 'bad'); return; }
+      at = slotUp(d.getTime());
+    }
+    const file = fileIn && fileIn.files[0];
+    if ((kind === 'reel' || kind === 'short') && !file && !already) { say(`Pick ${reelName} first.`, 'bad'); return; }
+    go.disabled = x.disabled = true; prog.style.display = 'block';
+    try {
+      let media = [], cover = '';
+      if (kind === 'image' || kind === 'carousel') {
+        for (const [i, [full]] of imgs.entries()) {
+          say(`Uploading image ${i + 1} of ${imgs.length}…`);
+          const jpg = await toJpeg(full, `${i + 1}.jpg`), path = `media/${p.brand}/${p.id}/${pad(i + 1)}.jpg`;
+          await upload(path, jpg, f => bar.style.width = ((i + f) / imgs.length * 100) + '%');
+          media.push(path);
+        }
+      } else {
+        if (file) { say(`Uploading ${file.name} (${(file.size / 1048576).toFixed(1)} MB)…`); await upload(reelPath, new File([file], reelName, { type: 'video/mp4' }), f => bar.style.width = (f * 100) + '%'); }
+        media = [reelPath];
+        if (kind === 'reel' && vid[1]) { try { await upload(coverPath, await toJpeg(vid[1], 'cover.jpg'), () => {}); cover = coverPath; } catch (x) { /* Instagram picks a frame */ } }
+      }
+      bar.style.width = '100%';
+      say(at ? 'Scheduling…' : kind === 'reel' || kind === 'short' ? 'Posting. Videos take a minute or two to process…' : 'Posting…');
+      const { job } = await api('queue', { board: BOARD, brand: p.brand, id: p.id, platform: p.platform, kind, caption: p.text || '', title: p.title || '', media, cover, at });
+      JOBS[k] = job;
+      if (job.state === 'scheduled') { toast(`${name} goes out ${when(job.at)}.`); dlg.close(); }
+      else if (job.state === 'posted') { say('Live.', 'good'); msg.innerHTML = `Live. ${job.url ? `<a href="${esc(job.url)}" target="_blank" rel="noopener">Open the post</a>` : ''}`; go.remove(); x.disabled = false; }
+      else { say('Failed: ' + job.error, 'bad'); x.disabled = false; }
+    } catch (err) {
+      say(apiErr(err), 'bad'); go.disabled = x.disabled = false;
+    }
+    loadJobs(); loadStatus();
+  };
+}
+
+/* Accounts: connect one Instagram account per brand, and the YouTube channel. Tokens go straight to the function
+   and are stored where only it can read them; this page never gets them back. */
+async function openAccounts() {
+  const dlg = document.getElementById('mv');
+  dlg.className = 'mv wide';
+  dlg.innerHTML = `<h3>Accounts</h3><p>Loading…</p>`;
+  dlg.showModal();
+  await loadAccounts();
+  const A = ACCTS || { ig: {}, yt: {} }, yt = A.yt || {};
+  const igRow = b => { const a = A.ig[b.key];
+    return `<div class="acct"><h4><span><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${b.accent}"></span> ${esc(b.label)} · Instagram</span>
+      <small>${a ? `@${esc(a.username)}${a.quota && a.quota.total ? ` · ${a.quota.used}/${a.quota.total} today` : ''}${a.error ? ' · <span style="color:var(--yt)">token problem</span>' : ''}` : 'not connected'}</small></h4>
+      <div class="line"><input type="password" data-igtok="${b.key}" placeholder="${a ? 'Paste a new token to replace it' : 'Paste the long-lived Instagram token'}" autocomplete="off">
+      <button class="go" data-igsave="${b.key}">Save</button>${a ? `<button data-igdel="${b.key}">Remove</button>` : ''}</div>
+      ${a ? `<label class="note" style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" data-igstory="${b.key}"${a.story ? ' checked' : ''}> Also post to Story: the image, the first slide, or the reel</label>` : ''}
+      ${a && a.error ? `<p class="note bad">${esc(a.error)}</p>` : ''}</div>`; };
+  dlg.innerHTML = `<h3>Accounts</h3><p>Signed in as ${esc(USER.email)}. Setup steps are in <code>tools/socials-firebase/README.md</code>.</p>
+    ${DATA.brands.map(igRow).join('')}
+    <div class="acct"><h4><span>YouTube · one channel for every brand</span><small>${yt.connected && yt.channel ? esc(yt.channel.title) : 'not connected'}</small></h4>
+      <input type="text" id="ytid" placeholder="OAuth client ID (Web application)" value="${esc(yt.clientId || '')}" autocomplete="off">
+      <input type="password" id="ytsec" placeholder="${yt.hasSecret ? 'Client secret saved. Paste to replace it' : 'OAuth client secret'}" autocomplete="off">
+      <div class="line"><select id="ytpriv">${['public', 'unlisted', 'private'].map(v => `<option${(yt.privacy || 'public') === v ? ' selected' : ''}>${v}</option>`).join('')}</select>
+      <button id="ytsave">Save</button><button class="go" id="ytcon"${yt.clientId && yt.hasSecret ? '' : ' disabled title="Save the client ID and secret first"'}>${yt.connected ? 'Reconnect' : 'Connect YouTube'}</button></div>
+      <p class="note">Until Google approves the API audit, YouTube keeps API uploads private whatever you pick here.</p></div>
+    <p class="note" id="acmsg"></p>
+    <div class="btns"><button id="acout">Sign out</button><button class="go" id="acx">Done</button></div>`;
+  const msg = dlg.querySelector('#acmsg'), say = (t, cls = '') => { msg.textContent = t; msg.className = 'note ' + cls; };
+  const busyBtn = async (b, fn) => { b.disabled = true; try { await fn(); } catch (e) { say(apiErr(e), 'bad'); } finally { b.disabled = false; } };
+  dlg.querySelector('#acx').onclick = () => { dlg.close(); render(); };
+  dlg.querySelector('#acout').onclick = async () => { dlg.close(); await signOut(); toast('Signed out.'); };
+  dlg.querySelectorAll('[data-igsave]').forEach(b => b.onclick = () => busyBtn(b, async () => {
+    const tok = dlg.querySelector(`[data-igtok="${b.dataset.igsave}"]`).value.trim();
+    if (!tok) { say('Paste the token first.', 'bad'); return; }
+    const r = await api('setInstagram', { brand: b.dataset.igsave, token: tok });
+    toast(`${BR[b.dataset.igsave].label} connected as @${r.username}.`); openAccounts();
+  }));
+  dlg.querySelectorAll('[data-igstory]').forEach(c => c.onchange = async () => {
+    const brand = c.dataset.igstory, on = c.checked; c.disabled = true;
+    try { await api('setInstagramStory', { brand, on }); ACCTS.ig[brand].story = on; say(`${BR[brand].label}: ${on ? 'posts also go to Story' : 'feed only, no Story'}.`, 'good'); }
+    catch (e) { c.checked = !on; say(apiErr(e), 'bad'); } finally { c.disabled = false; }
+  });
+  dlg.querySelectorAll('[data-igdel]').forEach(b => b.onclick = () => busyBtn(b, async () => {
+    if (!confirm(`Disconnect Instagram for ${BR[b.dataset.igdel].label}?`)) return;
+    await api('removeInstagram', { brand: b.dataset.igdel }); openAccounts();
+  }));
+  dlg.querySelector('#ytsave').onclick = e => busyBtn(e.target, async () => {
+    await api('setYouTubeClient', { clientId: dlg.querySelector('#ytid').value.trim(), clientSecret: dlg.querySelector('#ytsec').value.trim(), privacy: dlg.querySelector('#ytpriv').value });
+    toast('YouTube settings saved.'); openAccounts();
+  });
+  dlg.querySelector('#ytcon').onclick = e => busyBtn(e.target, async () => {
+    if (!window.google || !google.accounts || !google.accounts.oauth2) await new Promise((res, rej) => {
+      const s = document.createElement('script'); s.src = 'https://accounts.google.com/gsi/client'; s.onload = res; s.onerror = () => rej(new Error('Could not load Google sign-in.')); document.head.appendChild(s);
+    });
+    const code = await new Promise((res, rej) => google.accounts.oauth2.initCodeClient({
+      client_id: dlg.querySelector('#ytid').value.trim(), ux_mode: 'popup',
+      scope: 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly',
+      callback: r => r.code ? res(r.code) : rej(new Error(r.error || 'Google sign-in was cancelled.')),
+      error_callback: r => rej(new Error(r.message || r.type || 'Google sign-in was cancelled.')),
+    }).requestCode());
+    say('Connecting…');
+    const r = await api('connectYouTube', { code });
+    toast(`YouTube connected: ${r.channel.title}.`); openAccounts();
+  });
+}
 
 function row(p) {
   const b = BR[p.brand], k = p.brand + '/' + p.id, isOpen = opened.has(k);
   const btn = (s, l) => `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-set="${s}">${l}</button>`;
   const ab = (v, l) => `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-arch="${v}">${l}</button>`;
   const mv = `<button data-brand="${p.brand}" data-id="${esc(p.id)}" data-move="1">Move</button>`;
+  const job = JOBS[k], auto = USER && canPublish(p);
   const acts = p.archived ? ab(0, 'Restore')
+    : auto && job ? jobActs(p, job, k) + (job.state === 'posted' ? '' : mv + ab(1, 'Archive'))
     : (p.status === 'posted' ? btn('ready', 'Undo')
-    : (p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted')) + mv + ab(1, 'Archive');
+    : (auto ? `<button class="pub" data-pub="now" data-k="${esc(k)}">Post now</button><button data-pub="at" data-k="${esc(k)}">Schedule</button>`
+      : p.status === 'scheduled' ? btn('ready', 'Unschedule') : btn('scheduled', 'Scheduled')) + btn('posted', 'Posted')) + mv + ab(1, 'Archive');
   const vid = p.video, imgs = vid ? [] : (p.images || []);
   const poster = vid ? vid[1] : '';
   return `<div class="row${isOpen ? ' open' : ''}${p.archived ? ' arch' : ''}" style="--accent:${b.accent}">
     <span class="m d">${label(p.date)}</span><span class="m tm">${esc(p.time)}</span>
     <span class="brand"><i style="background:${b.accent}"></i>${esc(b.label)}</span>
     ${pf(p)}<span class="m id">${esc(p.id)}${(/-(R\d+)\.mp4$/.exec(vid ? vid[2] : '') || [])[1] ? `<small class="rno">${/-(R\d+)\.mp4$/.exec(vid[2])[1]}</small>` : ''}</span>
-    <button class="ttl" data-toggle="${esc(k)}">${esc(p.title)}${p.warn && open(p) ? `<small>⚠️ ${esc(p.note).slice(0, 140)}</small>` : ''}</button>
+    <button class="ttl" data-toggle="${esc(k)}">${esc(p.title)}${auto && job && job.state === 'failed' ? `<small class="err">Failed: ${esc(job.error).slice(0, 220)}</small>`
+      : auto && job && job.state === 'posted' && job.storyError ? `<small class="err">Posted, but the Story didn't go out: ${esc(job.storyError).slice(0, 200)}</small>` : p.warn && open(p) ? `<small>⚠️ ${esc(p.note).slice(0, 140)}</small>` : ''}</button>
     <span class="st ${p.archived ? 'archived' : esc(p.status)}">${p.archived ? 'archived' : esc(p.status)}</span><span class="acts">${acts}</span>
     <div class="more">
       ${vid ? `<div class="thumbs vid"><button class="vp" data-video="${esc(k)}" title="${vid[0] ? 'Open the video' : 'No video link yet'}"><img loading="lazy" src="${isOpen ? poster : poster.replace(/\.webp$/, '-t.webp')}" alt="${esc((p.alt || {}).summary || '')}"></button></div>` : ''}
