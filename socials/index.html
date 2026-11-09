@@ -298,7 +298,7 @@ async function unlock() {
   BR = Object.fromEntries(DATA.brands.map(b => [b.key, b]));
   document.getElementById('lock').style.display = 'none';
   document.getElementById('app').style.display = 'block';
-  tab = store(localStorage, 'socials:tab') || 'all';
+  tab = 'all'; dayPick = today; // always open on All brands and today
   render();
   loadStatus();
   loadIdeas();
@@ -520,7 +520,10 @@ const SHORT = { tappstudio: 'tS', splitup: 'SU', nasab: 'NA', misbaha: 'MI' };
 const addDays = (s, n) => { const d = new Date(s + 'T00:00'); d.setDate(d.getDate() + n); return iso(d); };
 let dayPick = today;
 function renderDays(ps, rerender) {
-  const el = document.getElementById('days'); const keep = el.scrollLeft, first = !el.dataset.init;
+  const el = document.getElementById('days'), first = !el.dataset.init;
+  // Keep the strip on the same date across re-renders (the first date shifts once live statuses load), not the same pixel offset.
+  const L0 = el.getBoundingClientRect().left, anchor = [...el.querySelectorAll('[data-day]')].find(b => b.getBoundingClientRect().right > L0);
+  const keepDay = anchor && anchor.dataset.day, keepOff = anchor ? anchor.getBoundingClientRect().left - L0 : 0;
   const by = {}; ps.forEach(p => (by[p.date] = by[p.date] || []).push(p));
   const dates = Object.keys(by).sort();
   const from = [addDays(today, -2), ...ps.filter(p => open(p)).map(p => p.date)].sort()[0];
@@ -541,7 +544,8 @@ function renderDays(ps, rerender) {
   el.innerHTML = html;
   el.querySelectorAll('[data-day]').forEach(b => b.onclick = () => { dayPick = dayPick === b.dataset.day ? '' : b.dataset.day; rerender(); });
   const toToday = () => { const t = el.querySelector('.today'); if (!t || !el.clientWidth) return false; el.scrollLeft = Math.max(0, t.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft - 16); return true; };
-  if (first && el.clientWidth) { el.dataset.init = 1; el.style.scrollSnapType = 'none'; toToday(); requestAnimationFrame(() => { toToday(); el.style.scrollSnapType = ''; }); } else el.scrollLeft = keep;
+  if (first && el.clientWidth) { el.dataset.init = 1; el.style.scrollSnapType = 'none'; toToday(); requestAnimationFrame(() => { toToday(); el.style.scrollSnapType = ''; }); }
+  else if (keepDay) { const b = el.querySelector(`[data-day="${keepDay}"]`); if (b) { el.style.scrollSnapType = 'none'; el.scrollLeft += b.getBoundingClientRect().left - el.getBoundingClientRect().left - keepOff; requestAnimationFrame(() => el.style.scrollSnapType = ''); } else toToday(); }
 }
 function render() {
   const nav = document.getElementById('tabs'); nav.innerHTML = '';
@@ -552,7 +556,7 @@ function render() {
     const nIdeas = IDEAS.filter(i => i.status !== 'dropped' && i.status !== 'scheduled').length;
     b.innerHTML = (t.accent ? `<span class="dot" style="background:${t.accent}"></span>` : '') + esc(t.label) +
       (t.key === 'ideas' ? (nIdeas ? `<span class="n">${nIdeas}</span>` : '') : late ? `<span class="n hot">${late} late</span>` : due ? `<span class="n">${due}</span>` : '');
-    b.onclick = () => { tab = t.key; store(localStorage, 'socials:tab', tab); render(); };
+    b.onclick = () => { tab = t.key; render(); };
     nav.appendChild(b);
   });
   const onIdeas = tab === 'ideas';
