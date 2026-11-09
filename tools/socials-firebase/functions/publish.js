@@ -1,6 +1,7 @@
 /* Talks to Instagram (API with Instagram login) and YouTube (Data API v3). No Firebase in here.
    Base URLs can be pointed at a local fake for the emulator tests. */
 const IG = process.env.IG_GRAPH_BASE || 'https://graph.instagram.com/v23.0';
+const FB = process.env.FB_GRAPH_BASE || 'https://graph.facebook.com/v23.0';
 const IG_REFRESH = process.env.IG_REFRESH_URL || 'https://graph.instagram.com/refresh_access_token';
 const G_TOKEN = process.env.GOOGLE_TOKEN_URL || 'https://oauth2.googleapis.com/token';
 const YT_API = process.env.YT_API_BASE || 'https://www.googleapis.com/youtube/v3';
@@ -29,7 +30,24 @@ async function call(url, { method = 'GET', form, json, headers = {}, body } = {}
 
 /* ---------- Instagram ---------- */
 
-async function igMe(token) {
+/* Unified-login system-user tokens start with EAA and go to graph.facebook.com; Instagram-login tokens go to graph.instagram.com. */
+const isFb = t => /^EAA/.test(String(t));
+const base = t => (isFb(t) ? FB : IG);
+
+async function igMe(token, wantId) {
+  if (isFb(token)) {
+    // Unified-login tokens: /me is a Facebook (system) user, so check the token against the Instagram account directly.
+    const tries = [];
+    if (wantId) tries.push(async () => [(await call(`${FB}/${wantId}?fields=id,username&access_token=${encodeURIComponent(token)}`)).data]);
+    tries.push(async () => (await call(`${FB}/me/assigned_instagram_accounts?fields=id,username&access_token=${encodeURIComponent(token)}`)).data.data || []);
+    tries.push(async () => ((await call(`${FB}/me/accounts?fields=instagram_business_account{id,username}&access_token=${encodeURIComponent(token)}`)).data.data || [])
+      .map(p => p.instagram_business_account).filter(Boolean));
+    let list = [], lastErr;
+    for (const t of tries) { try { list = await t(); if (list.length) break; } catch (e) { lastErr = e; } }
+    const hit = wantId ? list.find(a => String(a.id) === String(wantId)) : list.length === 1 ? list[0] : null;
+    if (!hit) throw lastErr && !list.length ? lastErr : new Error(`This token covers ${list.map(a => '@' + a.username).join(', ') || 'no Instagram accounts'}.`);
+    return { igId: String(hit.id), username: hit.username };
+  }
   const { data } = await call(`${IG}/me?fields=user_id,username&access_token=${encodeURIComponent(token)}`);
   return { igId: String(data.user_id), username: data.username };
 }
@@ -40,7 +58,7 @@ async function igRefresh(token) {
 }
 
 async function igQuota(igId, token) {
-  const { data } = await call(`${IG}/${igId}/content_publishing_limit?fields=quota_usage,config&access_token=${encodeURIComponent(token)}`);
+  const { data } = await call(`${base(token)}/${igId}/content_publishing_limit?fields=quota_usage,config&access_token=${encodeURIComponent(token)}`);
   const d = (data.data || [])[0] || {};
   return { used: d.quota_usage ?? null, total: (d.config || {}).quota_total ?? null };
 }
@@ -48,7 +66,7 @@ async function igQuota(igId, token) {
 async function igWait(id, token, { every, max }) {
   const until = Date.now() + max;
   while (Date.now() < until) {
-    const { data } = await call(`${IG}/${id}?fields=status_code,status&access_token=${encodeURIComponent(token)}`);
+    const { data } = await call(`${base(token)}/${id}?fields=status_code,status&access_token=${encodeURIComponent(token)}`);
     if (data.status_code === 'FINISHED') return;
     if (data.status_code === 'ERROR' || data.status_code === 'EXPIRED') throw new Error(`Instagram could not process the media: ${data.status || data.status_code}`);
     await sleep(every);
@@ -57,7 +75,7 @@ async function igWait(id, token, { every, max }) {
 }
 
 async function igContainer(igId, token, fields) {
-  const { data } = await call(`${IG}/${igId}/media`, { method: 'POST', form: { ...fields, access_token: token } });
+  const { data } = await call(`${base(token)}/${igId}/media`, { method: 'POST', form: { ...fields, access_token: token } });
   return data.id;
 }
 
@@ -82,9 +100,9 @@ async function postInstagram({ igId, token, kind, caption, urls, coverUrl, wait 
   } else {
     throw new Error(`Unknown Instagram post type ${kind}`);
   }
-  const { data } = await call(`${IG}/${igId}/media_publish`, { method: 'POST', form: { creation_id: container, access_token: token } });
+  const { data } = await call(`${base(token)}/${igId}/media_publish`, { method: 'POST', form: { creation_id: container, access_token: token } });
   let url = '';
-  try { url = (await call(`${IG}/${data.id}?fields=permalink&access_token=${encodeURIComponent(token)}`)).data.permalink || ''; } catch { /* the post is live either way */ }
+  try { url = (await call(`${base(token)}/${data.id}?fields=permalink&access_token=${encodeURIComponent(token)}`)).data.permalink || ''; } catch { /* the post is live either way */ }
   return { id: data.id, url };
 }
 
@@ -95,7 +113,7 @@ async function postInstagramStory({ igId, token, imageUrl, videoUrl, wait = {} }
   if (videoUrl) f.video_url = videoUrl; else f.image_url = imageUrl;
   const container = await igContainer(igId, token, f);
   await igWait(container, token, videoUrl ? { every: wait.video ?? 10000, max: 7 * 60000 } : { every: wait.image ?? 3000, max: 120000 });
-  const { data } = await call(`${IG}/${igId}/media_publish`, { method: 'POST', form: { creation_id: container, access_token: token } });
+  const { data } = await call(`${base(token)}/${igId}/media_publish`, { method: 'POST', form: { creation_id: container, access_token: token } });
   return data.id;
 }
 

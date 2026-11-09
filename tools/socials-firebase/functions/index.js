@@ -99,6 +99,9 @@ async function ytCreds() {
   return yt;
 }
 
+/* Instagram account ids per brand, as Meta's app dashboard lists them. Unified-login tokens are checked against these. */
+const IG_IDS = { nasab: '17841435631780906', kadak: '17841414977107902', misbaha: '17841464963491348', splitup: '17841474271475128' };
+
 /* ---------- posting ---------- */
 async function publish(job) {
   if (job.platform === 'IG') {
@@ -247,7 +250,7 @@ const actions = {
     const { brand, token } = req.data;
     if (!OK_ID.test(brand || '') || typeof token !== 'string' || token.length < 20) throw new HttpsError('invalid-argument', 'Paste the long-lived Instagram token.');
     let me;
-    try { me = await P.igMe(token.trim()); } catch (e) { throw new HttpsError('invalid-argument', `Instagram rejected the token: ${e.message}`); }
+    try { me = await P.igMe(token.trim(), req.data.igId || IG_IDS[brand]); } catch (e) { throw new HttpsError('invalid-argument', `Instagram rejected the token: ${e.message}`); }
     await CREDS().set({ ig: { [brand]: { token: token.trim(), igId: me.igId, username: me.username, refreshed: new Date().toISOString() } } }, { merge: true });
     return { username: me.username };
   },
@@ -314,6 +317,7 @@ exports.api = onCall({ timeoutSeconds: 540, memory: '512MiB' }, async req => {
 async function refreshInstagramTokens() {
   const c = await readCreds();
   for (const [brand, a] of Object.entries(c.ig || {})) {
+    if (/^EAA/.test(a.token)) continue; // system-user tokens never expire
     if (a.refreshed && Date.now() - Date.parse(a.refreshed) < TOKEN_REFRESH_MS) continue;
     try {
       const token = await P.igRefresh(a.token);

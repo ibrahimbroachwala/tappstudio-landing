@@ -32,7 +32,7 @@ Safety:
   9 Nov 2026). The page never gets them back. If you ever add a catch-all rule, keep `private/` locked.
 - The Firestore rules were not changed. Storage rules (`storage.rules`) only let the signed-in owner upload JPEGs and MP4s
   under `media/`.
-- Instagram refreshes each 60-day token every week, so a connected account keeps working.
+- Unified-login tokens never expire. Older Instagram-login tokens (60 days) are refreshed every week.
 
 ## Cost: the Blaze plan at $0
 
@@ -69,15 +69,19 @@ firebase deploy --only functions,storage --project tappstudio-socials
 2. At [developers.facebook.com](https://developers.facebook.com) log in (register as a developer if asked), then
    My Apps > **Create App**. Under Add use cases, filter by **Content management** and pick **Manage messaging & content
    on Instagram**. Skip connecting a business portfolio and create the app.
-3. Use cases > Manage messaging & content on Instagram > Customize > **API setup with Instagram login** (not Facebook
-   login). The messaging and webhook sections there aren't needed.
-4. Under **Generate access tokens**, click **Add account** for each Instagram account, with `instagram_business_basic`
-   and `instagram_business_content_publish`, then **Generate token**. If an account can't be added, add it under
-   App roles > Roles as an **Instagram Tester** and accept the invite in the Instagram app (Settings > Website
-   permissions > Apps and websites > Tester invites). Meta renames these screens often; its current guide is
-   [Create an Instagram app](https://developers.facebook.com/documentation/instagram-platform/create-an-instagram-app).
-5. On the calendar, open **Accounts**, paste the token next to the brand and tap **Save**. It checks the token and shows
-   the account's @name and how many of today's posts are used.
+3. Use cases > Manage messaging & content on Instagram > Customize. Newer apps only get **API setup with Unified login**
+   (Meta says the Instagram-login setup "is not available for newer apps").
+4. Under **1. Configure your app**, click **Create new configuration** > **Create from template** (Instagram API
+   (Unified Login), a system-user token that never expires). Its ads permissions are unused.
+5. Under **2. Generate access tokens**, click **Add account** for each Instagram account, then **Generate token**. If an
+   account can't be added, add it under App roles > Roles as an **Instagram Tester** and accept the invite in the
+   Instagram app (Settings > Website permissions > Apps and websites > Tester invites).
+6. On the calendar, open **Accounts**, paste the token next to the brand and tap **Save**. It checks the token against
+   that brand's Instagram account id (`IG_IDS` in `functions/index.js`, from Meta's token list) and shows the @name and
+   today's post usage.
+
+Tokens starting with `EAA` (Unified login) go to `graph.facebook.com` and are never refreshed; older Instagram-login
+tokens go to `graph.instagram.com` and are refreshed weekly. A new Instagram account needs its id added to `IG_IDS`.
 
 The app can stay in development mode: you are its admin and the accounts are testers, so no App Review is needed.
 
