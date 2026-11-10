@@ -6318,7 +6318,7 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "Early builds of Kadak showed new players most of the game at once: stalls, recipes, a shop, tasks, festivals, events. Clear to me. A wall to everyone else.\n\nNow Bablu Bhaiya, the cutting chai Ustaad, teaches it one thing at a time:\n\nTutorial: pour chai, open your first stall, hire Bablu\nThen Quick Jugaad, a free income boost\nThen tasks and the Daily Kulhad\nThen Nuskhe, the recipe upgrades\nThen lucky customers\n₹40,000 earned: the Bazaar, the shop\n₹1 lakh earned: Outlets, your next city\n\nThe rules behind it:\n1. The first four open by play, not by money. Each waits until Bablu has introduced the one before it, so nothing arrives in a pile.\n2. Only the big doors cost earnings. The shop opens at ₹40,000. Nobody should see a price before they understand what it buys.\n3. Reward videos wait another 2 minutes after the shop opens, and the festival season waits for the Bazaar and your next visit.\n4. Once the tutorial ends, all eight stalls are on show, locked with their price, so you can see where you're heading.\n\nThe test I use: can someone play for ten minutes without reading anything longer than one line? Bablu Bhaiya talks less than any real chai seller I've met.",
+      "text": "The first version of Kadak showed new players everything on day one. Stalls, recipes, shop, tasks, festivals, events. All of it.\n\nTo me it made total sense. I built it. To everyone else it looked like a wedding menu card. Too many options, no idea where to start.\n\nSo now Bablu Bhaiya teaches you. One thing at a time.\n\nFirst you pour chai, open a stall and hire Bablu.\nThen Quick Jugaad, a free boost.\nThen tasks and the Daily Kulhad.\nThen Nuskhe, the recipe upgrades.\nThen lucky customers.\nAt ₹40,000 the Bazaar opens. That's the shop.\nAt ₹1 lakh you get Outlets and a new city.\n\nA few simple rules I followed:\n1. The early stuff opens when you play, not when you pay. Bablu explains one thing, then the next one shows up.\n2. No price tags before you know what you're buying. The shop waits till ₹40,000.\n3. Reward videos wait 2 more minutes after the shop opens. Festivals wait for the Bazaar and your next visit.\n4. After the tutorial you can see all 8 stalls, locked with their price. So you know what you're saving up for.\n\nMy test: can someone play for 10 minutes without reading more than one line at a time?\n\nBablu Bhaiya talks less than any real chai wala I know. Honestly that's the most unrealistic part of the game.",
       "images": [
         [
           "img/b5e760e441ff604f.webp",
@@ -6344,7 +6344,7 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "The latest Kadak update added a small screen I should have built on day one. Tap Elaichi or Kesar in the top bar and the game tells you where it came from.\n\nIt shows three things:\nEvery gain, newest first, like \"Task +5\" or \"Lucky customer +3\"\nAll-time totals by source, which never go down\nWays to get more and ways to spend it, each with a button that takes you there\n\nHow it's built, if you're adding one to your own app:\n1. One place records everything. The ledger reads the events the game already fires when it pays out, so no feature has to remember to log itself.\n2. It can only watch. Nothing in the ledger can change a balance, so a bug there can't cost anyone their Elaichi.\n3. It keeps the latest 100 gains of each currency, and the totals keep the rest. Save files stay small.\n4. Existing players got one entry called \"Before this update\" for what they already had. Starting their history at zero would have looked like a robbery.\n\nA premium currency with no history makes people suspicious, and suspicious people write support emails. This screen answers before they type.",
+      "text": "New Kadak update has a small screen I should have made on day one.\n\nTap Elaichi or Kesar at the top and the game shows you where it came from. Like a bank passbook, but for cardamom.\n\nIt shows:\nEvery time you got some, newest first. \"Task +5\", \"Lucky customer +3\".\nYour total from each source, all time.\nWays to get more and ways to spend it, with a button to go there.\n\nIf you want one in your own app, here's how I did it:\n1. Everything gets recorded in one place. The game already sends an event every time it pays you. The screen just listens. No feature has to remember to write it down.\n2. It can only read. It can't touch your balance. So if it has a bug, nobody loses their Elaichi.\n3. It keeps the last 100 entries per currency. The totals remember the rest. Save files stay small.\n4. Old players got one entry called \"Before this update\" for what they already had. Starting them at zero would look like someone robbed them.\n\nWhen people can't see where their coins came from, they think something's wrong. Then they email support. This screen saves both of us that email.",
       "images": [
         [
           "img/f6bbb41179e5c4c8.webp",
@@ -6370,7 +6370,7 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "Idle games are famous for guilt. Streaks that reset, events you'll never see again, notifications at midnight.\n\nBefore I built the parts of Kadak that bring people back, I wrote down what it won't do:\n\n1. No energy bars. Play as long as you like.\n2. Missing a pop-up event costs nothing. Its Guest Ustaad and rewards come back when the event reruns.\n3. The daily reward forgives one missed day a week before the streak resets.\n4. At most 2 notifications a day, all opt-in, none between 10 pm and 8 am.\n5. Every return pays something, even after 10 minutes away. The game never opens on an empty screen.\n\nWhat brings people back instead is something finishing while they're away: an Ustaad's training, a chest unlocking, the tapri filling up overnight. A timer is a reason to return. Guilt is a tax on it.\n\nBablu Bhaiya doesn't take days off, but he doesn't hold grudges either.",
+      "text": "Idle games love guilt. Your streak is gone. This event will never come back. A notification at 2 am saying your customers miss you.\n\nBefore building the stuff that brings people back to Kadak, I made a list of what it won't do:\n\n1. No energy bars. Play as long as you want.\n2. Missed a pop-up event? No problem. It comes back later with the same Guest Ustaad and rewards.\n3. Miss one day of the daily reward and your streak stays. One free miss a week.\n4. Max 2 notifications a day. Only if you turn them on. Nothing between 10 pm and 8 am.\n5. Come back after even 10 minutes and something's waiting. Never an empty screen.\n\nSo what brings people back? Stuff that finishes while you're gone. Ustaad training done. A chest opened. The tapri full of chai by morning.\n\nA timer gives you a reason to come back. Guilt just makes you uninstall.\n\nBablu Bhaiya never takes a day off. But he also doesn't sulk like the relative you forgot to call on Diwali.",
       "images": [
         [
           "img/6d8a25d4993477c1.webp",
@@ -7163,7 +7163,55 @@
           "kadak-IG-04-08.jpg"
         ]
       ]
+    },
+    {
+      "alt": {
+        "summary": "Barren cracked land under a dusty night sky. Glowing drops fall one by one while a thin gold bar fills to a hundred under the words Alhamdulillah in Arabic and English. Each drop leaves a green patch, a river runs down from the mountains, palms grow on its banks, the mountains turn green, and the night becomes a clear morning over an oasis.",
+        "slides": []
+      },
+      "text": "A hundred drops of Alhamdulillah, one at a time. The land stays dry until the water comes.\n\nBy the hundredth drop, the desert is an oasis with a river, palms and green mountains.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #alhamdulillah #dhikr #muslimapp",
+      "brand": "misbaha",
+      "id": "IG-27",
+      "platform": "IG",
+      "date": "2026-11-12",
+      "time": "9:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (misbaha-R12.mp4, 46.8 s, 100 drops at an even tasbih pace, barren land to oasis, no voice). Check the Arabic (ٱلْحَمْدُ لِلَّهِ) before posting. Upload to Drive and paste the link into video[0]. Use misbaha-R12-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R12-cover.png.",
+      "title": "Barren land to oasis (Reel)",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/075b2aaa4e9714e2.webp",
+        "misbaha-R12.mp4"
+      ],
+      "kind": "reel"
+    },
+    {
+      "alt": {
+        "summary": "Barren cracked land under a dusty night sky. Glowing drops fall one by one while a thin gold bar fills to a hundred under the words Alhamdulillah in Arabic and English. Each drop leaves a green patch, a river runs down from the mountains, palms grow on its banks, the mountains turn green, and the night becomes a clear morning over an oasis.",
+        "slides": []
+      },
+      "text": "A hundred drops, one at a time, turn barren land into an oasis.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #alhamdulillah #dhikr",
+      "brand": "misbaha",
+      "id": "YT-14",
+      "platform": "YT",
+      "date": "2026-11-12",
+      "time": "8:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Same video as IG-27 (misbaha-R12.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0].",
+      "title": "Barren land to oasis, one drop at a time",
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/075b2aaa4e9714e2.webp",
+        "misbaha-R12.mp4"
+      ],
+      "kind": "reel"
     }
   ],
-  "built": "9 Nov 2026, 10:30"
+  "built": "10 Nov 2026, 12:28"
 }
