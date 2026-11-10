@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#0e0e0c; --ink-2:#181814; --ink-3:#24231e; --cream:#f2efe8; --muted:#9a968c; --teal:#14b8a6; --soft:rgba(20,184,166,.14); --line:rgba(242,239,232,.1); --amber:#f5b14c; --ig:#f472b6; --yt:#ff6a5e; --li:#5aa9ff; --x:#f2efe8; --bar:56px; }
+  :root { --ink:#0e0e0c; --ink-2:#181814; --ink-3:#24231e; --cream:#f2efe8; --muted:#9a968c; --teal:#14b8a6; --soft:rgba(20,184,166,.14); --line:rgba(242,239,232,.1); --amber:#f5b14c; --ig:#f472b6; --yt:#ff6a5e; --li:#5aa9ff; --x:#f2efe8; --rd:#ff7a45; --bar:56px; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: var(--ink); color: var(--cream); font-family: 'Geist', sans-serif; }
   body { min-height: 100vh; }
@@ -102,7 +102,7 @@
   .day.done .cnt b { color: var(--muted); }
   .row .tm { color: var(--cream); }
   .pf { text-decoration: none; } a.pf:hover { filter: brightness(1.15); outline: 1px solid var(--cream); }
-  .pf.IG { background: var(--ig); } .pf.YT { background: var(--yt); } .pf.LI { background: var(--li); } .pf.X { background: var(--x); }
+  .pf.IG { background: var(--ig); } .pf.YT { background: var(--yt); } .pf.LI { background: var(--li); } .pf.X { background: var(--x); } .pf.RD { background: var(--rd); }
   .ttl { background: none; border: 0; text-align: left; color: var(--cream); line-height: 1.35; }
   .ttl:hover { color: var(--teal); }
   .id .rno { font: 600 10px 'Geist Mono', monospace; color: var(--accent); margin-left: 5px; letter-spacing: .04em; }
@@ -267,6 +267,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const PAGES = {
   X: () => 'https://x.com/ibrahim_broach',
   YT: () => 'https://studio.youtube.com/',
+  RD: () => 'https://www.reddit.com/submit',
   LI: b => b === 'tappstudio' ? 'https://www.linkedin.com/company/145285359/admin/page-posts/published/?share=true' : 'https://www.linkedin.com/sharing/compose',
   IG: b => ({ splitup: 'https://www.instagram.com/split.remind.settle/', nasab: 'https://www.instagram.com/nasab.app/', misbaha: 'https://www.instagram.com/getmisbaha/', kadak: 'https://www.instagram.com/kadakchai.empire/' })[b],
 };
@@ -430,7 +431,7 @@ async function saveIdea(i) {
 }
 const ideaGuard = () => { if (ideasMode === 'live') return true; toast('The ideastore is read-only until the Firestore rule is added.'); return false; };
 const brandOpts = sel => `<option value="">Any brand</option>` + DATA.brands.map(b => `<option value="${b.key}"${sel === b.key ? ' selected' : ''}>${esc(b.label)}</option>`).join('');
-const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
+const platOpts = sel => `<option value="">Any platform</option>` + [['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X'], ['RD', 'Reddit']].map(([v, l]) => `<option value="${v}"${sel === v ? ' selected' : ''}>${l}</option>`).join('');
 const statusOpts = sel => ['new', 'shaping', 'scheduled', 'dropped'].map(v => `<option value="${v}"${sel === v ? ' selected' : ''}>${v}</option>`).join('');
 function ideaCard(i) {
   const isOpen = ideaOpen.has(i.id);
@@ -577,7 +578,7 @@ function render() {
 
   const f = document.getElementById('filters'); f.innerHTML = '';
   const chip = (html, on, fn) => { const b = document.createElement('button'); b.className = 'chip' + (on ? ' on' : ''); b.innerHTML = html; b.onclick = fn; f.appendChild(b); };
-  [['all', 'All'], ['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X']].forEach(([v, l]) => chip((v === 'all' ? '' : `<span class="dot" style="background:var(--${v.toLowerCase()})"></span>`) + l, plat === v, () => { plat = v; render(); }));
+  [['all', 'All'], ['IG', 'Instagram'], ['YT', 'YouTube'], ['LI', 'LinkedIn'], ['X', 'X'], ['RD', 'Reddit']].forEach(([v, l]) => chip((v === 'all' ? '' : `<span class="dot" style="background:var(--${v.toLowerCase()})"></span>`) + l, plat === v, () => { plat = v; render(); }));
   f.appendChild(Object.assign(document.createElement('span'), { className: 'sep' }));
   chip(hidePosted ? 'Posted hidden' : 'Showing posted', !hidePosted, () => { hidePosted = !hidePosted; render(); });
 
@@ -989,7 +990,7 @@ function row(p) {
       ${altBlock(p)}
       ${replyBlock(p)}
       <div class="tools"><button data-copy="${esc(k)}">${p.platform === 'YT' ? 'Copy description' : 'Copy post'}</button>
-        ${p.platform === 'YT' ? `<button data-title="${esc(k)}">Copy title</button>` : ''}
+        ${p.platform === 'YT' || p.platform === 'RD' ? `<button data-title="${esc(k)}">Copy title</button>` : ''}
         ${vid ? `<button class="ghost" data-video="${esc(k)}">${vid[0] ? 'Open video' : 'Video link missing'}</button>` : ''}
         ${imgs.length ? `<button class="ghost" data-save="${esc(k)}">Save ${imgs.length > 1 ? imgs.length + ' images' : 'image'}</button>` : ''}
         ${p.carousel && imgs.length > 1 ? `<button class="ghost" data-pdf="${esc(k)}">Make PDF</button>` : ''}

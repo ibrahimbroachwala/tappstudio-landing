@@ -5688,7 +5688,7 @@
       "platform": "IG",
       "time": "6:00 pm IST",
       "title": "Birthdays that move (Reel)",
-      "note": "Not built yet. Brief: nasab-R03, about 16 s. Person screen with both dates, then Upcoming Celebrations. Line: some birthdays move 11 days a year."
+      "note": "Not built yet. Brief: nasab-R03, about 16 s. Person screen with both dates, then Upcoming Celebrations. Line: some birthdays move 11 days a year. Also render an Arabic cut (app in Arabic) for the Arabic-speaking audience (PAIN_POINTS.md P8: 12% of families turned Hijri on unprompted)."
     },
     {
       "alt": {
@@ -7259,7 +7259,427 @@
       "title": "Astaghfirullah from morning to night",
       "text": "One thumb, one string of beads, from dawn to night.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #astaghfirullah #dhikr",
       "note": "Same video as IG-28 (misbaha-R13.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-26",
+      "platform": "IG",
+      "date": "2026-11-17",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Start with three names (Reel)",
+      "text": "You don't need six generations to start a family tree. You need three names: yours, your father's and your mother's.\n\nAdd them in Nasab and the tree is already standing. Home then suggests who to add next, one person at a time, so nobody has to track down a great-great-grandfather on day one.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Genealogy #FamilyHistory #Reels",
+      "alt": {
+        "summary": "Three member cards, Arif, his father Naveed and his mother Gulnaz, land on a paper page and join into a small tree, then a Home card suggests adding Naveed's mother.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R05, file nasab-R05.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (myth-bust, 2 bars): 'You don't need 6 generations to start.' then the turn 'You need 3 names.' Scenes: You card (Arif) lands; Father (Naveed) and Mother (Gulnaz) cards slide in and the dotted gold lineage line draws them into a tree; Home nudge card 'Add Naveed's mother to complete the record'; the tree grows one more branch; end card. Why: PAIN_POINTS.md P1, 85% of new families add no parent in onboarding. Optional image: none needed, all UI pieces. When built: add video [Drive link, poster webp, 'nasab-R05.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-05",
+      "platform": "YT",
+      "date": "2026-11-17",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Start a family tree with 3 names",
+      "text": "Yours, your father's and your mother's. That's a family tree. Nasab suggests who to add next.\n\n#Shorts #familytree #genealogy",
+      "alt": {
+        "summary": "Three member cards, Arif, his father Naveed and his mother Gulnaz, land on a paper page and join into a small tree, then a Home card suggests adding Naveed's mother.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-26 (nasab-R05.mp4); the brief is on IG-26. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-27",
+      "platform": "IG",
+      "date": "2026-11-20",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Only your family can edit (Reel)",
+      "text": "On some shared trees online, a stranger can change your grandfather's birth year.\n\nA Nasab family is invite-only. Relatives join with your link, and the owner can limit editing to trusted Editors (on Heritage) or hand ownership to someone else later.\n\nYour grandfather stays born in 1943. Unless Nani says it was 1942, in which case it was 1942.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Privacy #FamilyHistory #Reels",
+      "alt": {
+        "summary": "An edit card from an unknown user is stamped 'Not in this family', then Nasab's invite link, an Editors switch and a lock icon.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R06, file nasab-R06.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (contrast, 2 bars): 'On some tree sites, strangers can edit your grandfather.' Scenes: Naveed's profile card with birth year 1943; an edit card from 'unknown user' tries to change it to 1951 and gets stamped 'Not in this family'; invite link and QR card ('Only invited family can see this'); Settings card with 'Only Editors can change the tree' switching on, labelled Heritage; ownership transfer card; end card. Don't name any competitor on screen. Why: PAIN_POINTS.md P2 (FamilySearch threads about strangers editing). Optional image: none needed. When built: add video [Drive link, poster webp, 'nasab-R06.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-06",
+      "platform": "YT",
+      "date": "2026-11-20",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Who can edit your family tree?",
+      "text": "Nasab families are invite-only, and the owner can limit editing to trusted Editors (Heritage).\n\n#Shorts #familytree #privacy",
+      "alt": {
+        "summary": "An edit card from an unknown user is stamped 'Not in this family', then Nasab's invite link, an Editors switch and a lock icon.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-27 (nasab-R06.mp4); the brief is on IG-27. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-28",
+      "platform": "IG",
+      "date": "2026-11-24",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Relatives join free (Reel)",
+      "text": "Your cousins shouldn't need a subscription to see their own grandmother.\n\nIn Nasab one plan covers the whole family. Only the owner pays, if anyone does, and every relative joins free with an invite link or QR code, then claims their own profile.\n\nThe free plan stays free, and nothing you add is ever deleted.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Family #Genealogy #Reels",
+      "alt": {
+        "summary": "A grey cousin profile card turns to claimed after an invite link and QR code, and the tree fills in with relatives.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R07, file nasab-R07.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (2 bars): 'Your cousins shouldn't need a subscription' then the turn 'to see their own grandmother.' Scenes: invite card with link and QR; grey 'not joined' profiles for Farah, Junaid and Sana flip to claimed one per beat; the tree fills; a plan card 'One plan. The whole family. Relatives always join free.'; end card. Don't show prices or a trial. Why: PAIN_POINTS.md P3 and P4 (relatives won't pay; billing complaints). Optional image: none needed. When built: add video [Drive link, poster webp, 'nasab-R07.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-07",
+      "platform": "YT",
+      "date": "2026-11-24",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Relatives join free",
+      "text": "One plan covers the whole family. Relatives join free with a link or QR code.\n\n#Shorts #familytree #family",
+      "alt": {
+        "summary": "A grey cousin profile card turns to claimed after an invite link and QR code, and the tree fills in with relatives.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-28 (nasab-R07.mp4); the brief is on IG-28. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-29",
+      "platform": "IG",
+      "date": "2026-12-02",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Name the relation (Reel)",
+      "text": "Your dad's cousin's son. Is he your second cousin, or your cousin once removed?\n\n(Second cousin. Your dad's cousin is the one once removed.)\n\nNasab labels everyone relative to you, like \"Your great-aunt\" or \"Your father's cousin\", and Find in tree jumps straight to them. The next wedding will involve much less guessing.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Cousins #Genealogy #Reels",
+      "alt": {
+        "summary": "Three member cards are dealt with a 3, 2, 1 countdown and flip to show relationship labels: Your second cousin, Your great-aunt, Your father's cousin.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R08, file nasab-R08.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (quiz countdown): '3 relatives. 10 seconds. How are they related to you?' Scenes: deal three member cards (Rayan, Leila, Junaid) one per half beat; typewriter 3, 2, 1 counter; each flips to its label ('Your second cousin', 'Your great-aunt', 'Your father's cousin'); Find in tree highlights one on the tree; end card. Check every label against the demo tree and KinshipLabeler before rendering. Why: PAIN_POINTS.md P10. Optional image: none needed. When built: add video [Drive link, poster webp, 'nasab-R08.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-08",
+      "platform": "YT",
+      "date": "2026-12-02",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Is he your second cousin?",
+      "text": "Second cousin or cousin once removed? Nasab labels everyone relative to you.\n\n#Shorts #familytree #cousins",
+      "alt": {
+        "summary": "Three member cards are dealt with a 3, 2, 1 countdown and flip to show relationship labels: Your second cousin, Your great-aunt, Your father's cousin.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-29 (nasab-R08.mp4); the brief is on IG-29. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-30",
+      "platform": "IG",
+      "date": "2026-12-05",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Who's in this photo? (Reel)",
+      "text": "Every family has a box of old photos where only one person knows the names. Usually Nani.\n\nIn Nasab you tag each face to their profile, add a caption and file the photo in an album, so the names stay with the picture for the next generation. Tap a tag and you're on their profile.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #OldPhotos #FamilyHistory #FamilyArchive #Reels",
+      "alt": {
+        "summary": "A 1970s black and white family portrait drops onto a table, name tags appear on each face, and one tag opens Gulnaz's profile.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R09, file nasab-R09.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (mystery, 2 bars): 'Nobody in this photo is labelled.' then 'Only Nani knows who they are.' Scenes: old print drops on the table (camera shutter sfx); tags appear face by face; tap a tag, Gulnaz's profile card slides in; the memory files into an album cover; end card. Images needed from the user: nasab-R09-a (1970s black and white studio portrait of a South Asian family of seven, 4:5, flat physical print) and nasab-R09-b (Gulnaz's hands holding that print over a lace tablecloth, 9:16). Prompts are in the conversation of 10 Nov 2026. Turn on Instagram's AI info label if the images are AI-generated. Why: PAIN_POINTS.md P5 (strong outside evidence, but only 7 users add memories, so watch memory_added). When built: add video [Drive link, poster webp, 'nasab-R09.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-09",
+      "platform": "YT",
+      "date": "2026-12-05",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Who's in this old photo?",
+      "text": "Tag each face in an old photo to their profile, so the names stay with the picture.\n\n#Shorts #oldphotos #familyhistory",
+      "alt": {
+        "summary": "A 1970s black and white family portrait drops onto a table, name tags appear on each face, and one tag opens Gulnaz's profile.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-30 (nasab-R09.mp4); the brief is on IG-30. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-31",
+      "platform": "IG",
+      "date": "2026-12-08",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Your name, written right (Reel)",
+      "text": "Arif bin Naveed Malik doesn't fit in a First name box and a Last name box.\n\nIn Nasab the family owner picks how names are written: Standard, Arabic (\"Arif bin Naveed Malik\") or Malay (\"Arif bin Naveed\"), with prefixes like Dr. or Shk. and the nickname everyone actually uses. No name is rewritten, it's only how they're shown.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #ArabicNames #MuslimFamily #Reels",
+      "alt": {
+        "summary": "A form squeezes Arif bin Naveed Malik into two boxes as Arif B., then Nasab switches the same name between Standard, Arabic and Malay styles with a prefix and a nickname.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R10, file nasab-R10.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (pattern interrupt): 'Arif bin Naveed Malik. Every app writes this wrong.' Scenes: a two-box form cuts the name to 'Arif B.'; Naming style picker card switches Standard / Arabic / Malay and the member card updates each beat; prefix 'Shk.' and 'Dr.' chips; nickname shows on the tree node; end card. Also render an Arabic cut (app in Arabic, Arabic headline type in Markazi Text) and post it as a Story or a second reel. Why: PAIN_POINTS.md P9, and about 60% of families are Arabic-speaking or South Asian. Optional image: none needed. When built: add video [Drive link, poster webp, 'nasab-R10.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-10",
+      "platform": "YT",
+      "date": "2026-12-08",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Your name, written right",
+      "text": "Standard, Arabic or Malay naming, with prefixes and nicknames. Nasab writes your family's names your way.\n\n#Shorts #familytree #names",
+      "alt": {
+        "summary": "A form squeezes Arif bin Naveed Malik into two boxes as Arif B., then Nasab switches the same name between Standard, Arabic and Malay styles with a prefix and a nickname.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-31 (nasab-R10.mp4); the brief is on IG-31. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-32",
+      "platform": "IG",
+      "date": "2026-12-11",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Her voice, kept (Reel)",
+      "text": "Photos keep a face. They don't keep how Nani says your name.\n\nIn Nasab you can record a voice story and keep it on a memory or on her profile, next to her photos and dates, for the whole family. Voice stories are on Heritage.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyStories #Grandparents #FamilyHistory #Reels",
+      "alt": {
+        "summary": "An old print of Nani on a table, then a Nasab voice memory card with a waveform playing, tied to her profile.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R11, file nasab-R11.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (2 bars): 'One day you'll want to hear her say your name again.' Don't put the 47% poll on screen, it's unverified. Scenes: Gulnaz's print drops on the table; record beep; voice memory card with a live waveform; it attaches to her profile beside her dates; a family member card shows 'New voice story from Farah'; end card, Heritage noted in caption. The waveform plays without spoken audio (no voice in kinetic reels); music bed only. Image needed from the user: nasab-R11-a (Gulnaz, 78, by a window holding a phone face down, 9:16). VOICE TEST: if R11 beats the median Nasab reel on 3-second hold and saves, add more voice reels from the reserve: '5 recordings every family should have' (from IG-15), 'Nana's recipe, in his words', 'The story behind the photo' (voice on a memory), 'Record before the wedding'. Why: PAIN_POINTS.md P6. When built: add video [Drive link, poster webp, 'nasab-R11.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-11",
+      "platform": "YT",
+      "date": "2026-12-11",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Keep your grandmother's voice",
+      "text": "Record a voice story and keep it on her profile for the whole family. Voice stories are on Heritage.\n\n#Shorts #grandparents #familystories",
+      "alt": {
+        "summary": "An old print of Nani on a table, then a Nasab voice memory card with a waveform playing, tied to her profile.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-32 (nasab-R11.mp4); the brief is on IG-32. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-33",
+      "platform": "IG",
+      "date": "2026-12-13",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "The year it changed (Reel)",
+      "text": "1943. 1948. 1971. 1998. Every family has a few years that changed everything.\n\nNasab builds the timeline for you from births, marriages and deaths, with the places they happened, and you can attach photos to each one. Filter by a person to see one life in order.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTimeline #FamilyHistory #FamilyTree #Reels",
+      "alt": {
+        "summary": "Typewriter years 1943, 1948, 1971 and 1998 appear, each opening a Nasab timeline event with a place and a photo.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R12, file nasab-R12.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (story): 'Every family has a year when everything changed.' Scenes: typewriter years one per bar, each becomes a timeline event card (Naveed born 1943, Lahore; Gulnaz born 1948; their marriage 1971; the move in 1998) with a photo print attached; filter chip 'Naveed' shows one life in order; end card. Only births, marriages and deaths with places (no manual events). Images needed from the user: nasab-R12-a to -d, one print per decade (1960s wedding, 1970s family snapshot, late 1990s airport, present-day dinner), 4:5 flat prints. Why: no direct pain-point evidence; feature showcase. When built: add video [Drive link, poster webp, 'nasab-R12.mp4'] and set status to ready.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "YT-12",
+      "platform": "YT",
+      "date": "2026-12-13",
+      "time": "7:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Your family's story, in order",
+      "text": "Births, marriages and deaths, with places and photos, in one timeline built for you.\n\n#Shorts #familyhistory #timeline",
+      "alt": {
+        "summary": "Typewriter years 1943, 1948, 1971 and 1998 appear, each opening a Nasab timeline event with a place and a photo.",
+        "slides": []
+      },
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-33 (nasab-R12.mp4); the brief is on IG-33. Title is the Shorts title, the caption is the description.",
+      "kind": "reel"
+    },
+    {
+      "brand": "nasab",
+      "id": "LI-20",
+      "platform": "LI",
+      "date": "2026-12-02",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "One name, three ways to write it",
+      "text": "Arif bin Naveed Malik. Arif Naveed Malik. Arif bin Naveed. Same man, three families' ways of writing him.\n\nWhen I added naming styles to Nasab, the rule I set first was that no name is ever rewritten. The style is display only.\n\nHow it works:\n1. Each person is stored once: first name, father, family name.\n2. The family owner picks a style, saved on the family: Standard, Arabic or Malay.\n3. Standard is \"First, father's first name, Last\". A married woman's middle name becomes her husband's first name, unless the family turns that off.\n4. Arabic is \"First bin or bint father's first name, father's family name\".\n5. Malay is \"First bin or binti father's first name\", with no surname at all.\n6. Any viewer can override the style on their own phone without changing it for anyone else.\n\nPrefixes (Dr., Prof., Shk.) and nicknames sit on top, so the tree can say \"Shk. Arif\" while search still finds \"Abbu\".\n\nThe hardest part wasn't the code. It was learning that a form with two boxes quietly tells half the world their name is wrong.\n\n#BuildInPublic #Flutter #Localization",
+      "alt": {
+        "summary": "A diagram of one stored name, Arif, father Naveed, family Malik, rendered three ways: Standard, Arabic and Malay.",
+        "slides": []
+      },
+      "note": "IMAGE PENDING: not generated yet. Context for generating: one 1080x1350 card in the Nasab Heirloom style (ivory paper, Fraunces headings), showing a single stored record (first: Arif, father: Naveed, family: Malik) with three arrows to 'Arif Naveed Malik' (Standard), 'Arif bin Naveed Malik' (Arabic) and 'Arif bin Naveed' (Malay). Render HTML with headless Chrome, convert with cwebp, add to images. Facts checked against lib/core/utils/naming_style.dart on 10 Nov 2026.",
+      "images": [],
+      "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "brand": "nasab",
+      "id": "LI-21",
+      "platform": "LI",
+      "date": "2026-12-09",
+      "time": "8-10 am",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "How Nasab knows he's your second cousin",
+      "text": "Nasab never stores the word \"cousin\". It stores two kinds of link: parent and spouse. Every other relationship is worked out.\n\nWhen you open someone's profile and it says \"Your second cousin\", this is what just happened:\n1. Walk up from you, noting every ancestor and how many generations away they are.\n2. Do the same from them.\n3. Find the closest ancestor you share.\n4. The two distances give the label. Up 1 and down 0 is a parent. Up 2 and down 1 is an aunt or uncle. Up 3 and down 3 is a second cousin.\n5. No shared ancestor? Then check spouses, current and former, and in-laws.\n6. If the person has passed away, the label becomes \"Your late grandfather\".\n\nFormer spouses were the first thing to break it. A child connects to their own mother and father, not to whoever is married to them now, so the walk has to follow parents, never marriages.\n\nArabic made it more fun: the same label changes with gender, so every result is a localized select, not a string with a word swapped in.\n\n#BuildInPublic #Flutter #Algorithms",
+      "alt": {
+        "summary": "A small family tree diagram with two people highlighted and their closest shared ancestor, with up and down generation counts giving the label second cousin.",
+        "slides": []
+      },
+      "note": "IMAGE PENDING: not generated yet. Context for generating: one 1080x1350 diagram card in the Nasab Heirloom style: a 4-generation tree, 'You' and a cousin highlighted, their shared great-grandparents marked with a gold khatam star, 'up 3' and 'down 3' counts, label 'Your second cousin'. Render HTML with headless Chrome, convert with cwebp. Facts checked against lib/features/tree/presentation/utils/kinship_labeler.dart on 10 Nov 2026.",
+      "images": [],
+      "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
+    },
+    {
+      "brand": "nasab",
+      "id": "RD-01",
+      "platform": "RD",
+      "date": "2026-11-18",
+      "time": "7-9 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Questions that got my grandparents talking (and the ones that didn't)",
+      "text": "I've been interviewing the older people in my family and wanted to share what worked, because my first attempt was a disaster. I sat my grandmother down with a notebook and asked for dates. She gave me three and changed the subject.\n\nWhat worked better:\n\n- Questions that can't be answered with yes or no. \"What is the earliest thing you remember?\" got twenty minutes.\n- \"How did you and Nana meet?\" followed by \"Who disapproved?\" The second question is the good one.\n- \"What did you leave behind when the family moved?\"\n- \"Which saying did your father always repeat?\"\n- Old photos on the table. Names come back faster when there's a face to point at.\n- Doing it with siblings in the room. They correct each other, and the corrections are where the details are.\n- Recording audio (with permission). A transcript loses how they say things.\n- Writing names down while they talk. Spellings are the first thing a family forgets.\n\nWhat didn't work: asking for a full family tree in one sitting, and anything that felt like a form.",
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "note": "r/Genealogy. Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour. No app link in this one: it's a value post. Based on IG-04 and LI-17. No closing question, per our voice; comments come anyway on r/Genealogy.",
+      "images": []
+    },
+    {
+      "brand": "nasab",
+      "id": "RD-02",
+      "platform": "RD",
+      "date": "2026-11-25",
+      "time": "7-9 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "I built a private family archive app for my own family. What I learned",
+      "text": "My family's history was spread across a printed tree in a cupboard, an Excel flowchart of 12 generations, and four WhatsApp groups. So I built Nasab, a family tree and archive app, and it's now on iOS and Android.\n\nWhat it does: a multi-generation tree (vertical, horizontal and radial views), photos tagged to the people in them, voice stories, a timeline built from births, marriages and deaths, birthday reminders (including Hijri dates), and full Arabic.\n\nWhat I learned building it:\n\n- 85% of new families added no parent during onboarding. People don't want to build a tree, they want to have one. The onboarding now starts with just three names.\n- Relatives won't pay to see a tree. So one plan covers the whole family and relatives always join free.\n- Names are hard. Arabic and Malay names are a chain (bin, binti), not first plus last, so there are three naming styles. None of them rewrite a stored name.\n- Family data needs to be private by default: invite-only, location stripped from every upload, and in-app account deletion.\n\nBuilt solo with Flutter and Supabase. Free to start: https://nasab.tappstudio.in\n\nHappy to answer questions about the build.",
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "note": "r/SideProject (self-promotion allowed). Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour. Check the 85% figure in PostHog before posting.",
+      "images": []
+    },
+    {
+      "brand": "nasab",
+      "id": "RD-03",
+      "platform": "RD",
+      "date": "2026-12-02",
+      "time": "7-9 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "Shipping full Arabic RTL in a Flutter app: 1,000+ strings and 6 plural forms",
+      "text": "I just shipped full Arabic in my Flutter app (a family tree app) and wanted to share what it took, since most RTL write-ups stop at Directionality.\n\n- **Per-feature ARB files.** 1,000+ strings live in small ARB files per feature, merged by a script, with a test that fails if the generated files drift.\n- **Plurals.** Arabic has zero, one, two, few, many and other. \"3 members\" and \"11 members\" take different word forms, so every count is an ICU plural.\n- **Gender.** Lots of phrases change with the person's gender, so they're select cases. Relationship labels (\"your late grandfather\") are the worst offenders.\n- **Mirroring, deliberately.** The whole UI flips right to left, but the family tree canvas stays left to right on purpose.\n- **Real Arabic type.** Markazi Text for headings, Noto Sans Arabic for body, Noto Naskh in place of italics (Arabic has no italics).\n- **Calendar.** Dates can show Hijri (Umm al-Qura or Misri) next to Gregorian.\n- **First launch.** An Arabic-language phone opens the app in Arabic automatically.\n\nBiggest surprise: the plural and gender work took longer than the layout.\n\nHappy to share the ARB merge script setup if it's useful.",
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "note": "r/FlutterDev. Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour. No link in the post; share the store link only if someone asks. Based on LI-09.",
+      "images": []
+    },
+    {
+      "brand": "nasab",
+      "id": "RD-04",
+      "platform": "RD",
+      "date": "2026-12-09",
+      "time": "7-9 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "title": "[Dev] Nasab: a private family tree app with Hijri dates and Arabic names (free)",
+      "text": "Hi all, I'm the developer. Nasab is a family tree and archive app for families who want their history in one private place.\n\n- Family tree across unlimited generations, with vertical, horizontal and radial views\n- Every relative labelled relative to you (\"your second cousin\")\n- Photos tagged to the people in them, albums, voice stories\n- A timeline built from births, marriages and deaths\n- Birthday and anniversary reminders, with optional Hijri dates (Misri or Umm al-Qura)\n- Arabic and Malay naming styles, and a full Arabic interface\n- Invite-only: only family you invite can see it, and relatives join free\n\nFree plan, no ads. A paid Heritage plan adds things like voice, video and the radial tree.\n\niOS and Android: https://nasab.tappstudio.in\n\nFeedback welcome, especially from anyone who has tried to fit their family into Ancestry or MyHeritage.",
+      "alt": {
+        "summary": "",
+        "slides": []
+      },
+      "note": "r/iosapps or r/androidapps (both allow developer posts with a [Dev] tag; pick one, or post the other a week later). Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour.",
+      "images": []
     }
   ],
-  "built": "10 Nov 2026, 13:40"
+  "built": "10 Nov 2026, 17:30"
 }
