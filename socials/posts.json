@@ -5192,7 +5192,7 @@
       "reply": "More of what I build:\nhttps://tappstudio.in"
     },
     {
-      "text": "If you could only ask an elder in your family seven questions, which would you pick?\n\nThese are the ones I'd start with. They work because none of them can be answered with yes or no:\n1. What is the earliest thing you remember?\n2. How did you and your spouse meet? (Then ask who disapproved.)\n3. What was your mother like when you were small?\n4. What did Eid feel like when you were a child?\n5. What did you leave behind when the family moved?\n6. Which saying did your father always repeat?\n7. What do you want your great-grandchildren to know about you?\n\nThree tips that make the conversation better:\n• Ask at a meal or on a walk. People tell stories sideways, not across a table\n• Record audio. A voice at 80 is worth more than any transcript\n• Write down the names while they speak. Spellings are the first thing a family forgets\n\nDon't wait for a milestone birthday to ask. Ask this weekend. Nani will also be happy to be asked, and slightly suspicious about why.",
+      "text": "I looked at Nasab's onboarding data and one number stopped me: 85% of new families didn't add a single parent.\n\nOut of 180 families created in the last 90 days, 27 added a father during onboarding. Fewer than half finished onboarding at all.\n\nMy first guess was a bug. It wasn't. People open a family tree app, see an empty tree, and the job suddenly looks enormous: six generations, dates nobody remembers, names in three spellings.\n\nWhat I'm changing:\n1. Ask for three names, not a family. You, your father, your mother. That's already a tree.\n2. Suggest the next person, one at a time. Home already nudges \"Add Naveed's mother\"; it needs to show up sooner.\n3. Make inviting a cousin the shortcut. The person who knows their side should fill it in.\n\nThe lesson for me: people don't want to build a family tree. They want to have one. The product has to close that gap.\n\n#BuildInPublic #ProductManagement #Onboarding",
       "images": [],
       "alt": {
         "summary": "",
@@ -5205,8 +5205,8 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
-      "title": "Seven questions for your grandparents, before the stories are gone",
+      "note": "Text only. Replaces 'Seven questions for your grandparents', which repeated IG-04 and IG-23. Numbers from PostHog (Nasab, last 90 days to 10 Nov 2026, internal users excluded): 180 families created, 27 added a father, 85 finished onboarding. Re-check them before posting. Only describe changes that have shipped or are actually planned; edit the list if not.",
+      "title": "85% of new families didn't add a single parent",
       "posted": "",
       "carousel": false,
       "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
@@ -7422,13 +7422,13 @@
       "warn": true,
       "posted": "",
       "carousel": false,
-      "title": "Who's in this photo? (Reel)",
-      "text": "Every family has a box of old photos where only one person knows the names. Usually Nani.\n\nIn Nasab you tag each face to their profile, add a caption and file the photo in an album, so the names stay with the picture for the next generation. Tap a tag and you're on their profile.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #OldPhotos #FamilyHistory #FamilyArchive #Reels",
+      "title": "Zoom out (Reel)",
+      "text": "This is one person. Keep watching.\n\nAdd someone, then their parents, then theirs. A few weekends later one name has become seven generations, and the radial view shows all of them at once, with you in the middle.\n\nThe radial view is on Heritage.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Generations #FamilyHistory #Reels",
       "alt": {
-        "summary": "A 1970s black and white family portrait drops onto a table, name tags appear on each face, and one tag opens Gulnaz's profile.",
+        "summary": "One member card on a paper page, then the camera pulls back through parents and grandparents until a radial family tree of seven generations fills the frame.",
         "slides": []
       },
-      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R09, file nasab-R09.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (mystery, 2 bars): 'Nobody in this photo is labelled.' then 'Only Nani knows who they are.' Scenes: old print drops on the table (camera shutter sfx); tags appear face by face; tap a tag, Gulnaz's profile card slides in; the memory files into an album cover; end card. Images needed from the user: nasab-R09-a (1970s black and white studio portrait of a South Asian family of seven, 4:5, flat physical print) and nasab-R09-b (Gulnaz's hands holding that print over a lace tablecloth, 9:16). Prompts are in the conversation of 10 Nov 2026. Turn on Instagram's AI info label if the images are AI-generated. Why: PAIN_POINTS.md P5 (strong outside evidence, but only 7 users add memories, so watch memory_added). When built: add video [Drive link, poster webp, 'nasab-R09.mp4'] and set status to ready.",
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R09, file nasab-R09.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (pattern interrupt, 2 bars): 'This is one person.' then 'Keep watching.' Scenes: Iman's single member card; each bar a generation appears above (Farah and Arif, then Naveed and Gulnaz, and so on) with the dotted gold lineage line drawing in; the vertical tree eases into the radial view (max 1.08x zoom, no fast zooms); counter ticks to '7 generations'; end card, Heritage noted in the caption. Replaces the earlier 'Who's in this photo?' brief, which repeated IG-09. No images needed, all UI. When built: add video [Drive link, poster webp, 'nasab-R09.mp4'] and set status to ready.",
       "kind": "reel"
     },
     {
@@ -7441,10 +7441,10 @@
       "warn": true,
       "posted": "",
       "carousel": false,
-      "title": "Who's in this old photo?",
-      "text": "Tag each face in an old photo to their profile, so the names stay with the picture.\n\n#Shorts #oldphotos #familyhistory",
+      "title": "One name to seven generations",
+      "text": "Start with one person and keep adding parents. Nasab's radial view shows the whole family at once (Heritage).\n\n#Shorts #familytree #generations",
       "alt": {
-        "summary": "A 1970s black and white family portrait drops onto a table, name tags appear on each face, and one tag opens Gulnaz's profile.",
+        "summary": "One member card on a paper page, then the camera pulls back through parents and grandparents until a radial family tree of seven generations fills the frame.",
         "slides": []
       },
       "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-30 (nasab-R09.mp4); the brief is on IG-30. Title is the Shorts title, the caption is the description.",
@@ -7504,7 +7504,7 @@
         "summary": "An old print of Nani on a table, then a Nasab voice memory card with a waveform playing, tied to her profile.",
         "slides": []
       },
-      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R11, file nasab-R11.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (2 bars): 'One day you'll want to hear her say your name again.' Don't put the 47% poll on screen, it's unverified. Scenes: Gulnaz's print drops on the table; record beep; voice memory card with a live waveform; it attaches to her profile beside her dates; a family member card shows 'New voice story from Farah'; end card, Heritage noted in caption. The waveform plays without spoken audio (no voice in kinetic reels); music bed only. Image needed from the user: nasab-R11-a (Gulnaz, 78, by a window holding a phone face down, 9:16). VOICE TEST: if R11 beats the median Nasab reel on 3-second hold and saves, add more voice reels from the reserve: '5 recordings every family should have' (from IG-15), 'Nana's recipe, in his words', 'The story behind the photo' (voice on a memory), 'Record before the wedding'. Why: PAIN_POINTS.md P6. When built: add video [Drive link, poster webp, 'nasab-R11.mp4'] and set status to ready.",
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R11, file nasab-R11.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (2 bars): 'One day you'll want to hear her say your name again.' Don't put the 47% poll on screen, it's unverified. Scenes: Gulnaz's print drops on the table; record beep; voice memory card with a live waveform; it attaches to her profile beside her dates; a family member card shows 'New voice story from Farah'; end card, Heritage noted in caption. The waveform plays without spoken audio (no voice in kinetic reels); music bed only. VOICE TEST: if R11 beats the median Nasab reel on 3-second hold and saves, add more voice reels from the reserve: '5 recordings every family should have' (from IG-15), 'Nana's recipe, in his words', 'The story behind the photo' (voice on a memory), 'Record before the wedding'. Why: PAIN_POINTS.md P6. When built: add video [Drive link, poster webp, 'nasab-R11.mp4'] and set status to ready. IMAGE PROMPTS: nasab-R11-a (9:16): 'Gulnaz, a 78-year-old South Asian grandmother with silver hair in a low bun, a cream cotton dupatta loosely over her head and gold-rimmed reading glasses, sits on a floral sofa by a window, mid-laugh as she tells a story, holding a phone face down in her lap, a cup of tea on the side table, empty calm wall above her.' nasab-R11-b (4:5, flat physical print): 'A 1960s black-and-white studio portrait of a young South Asian woman in a heavy dupatta, soft smile, worn white border, slight silver fade, a crease across one corner, photographed flat as a physical print on a wooden table.' Shared style, negative prompt, character sheet and rules: ~/Projects/tappstudio_socials/reels/nasab/image_prompts.md (append the shared style to each prompt; turn on IG's AI info label).",
       "kind": "reel"
     },
     {
@@ -7542,7 +7542,7 @@
         "summary": "Typewriter years 1943, 1948, 1971 and 1998 appear, each opening a Nasab timeline event with a place and a photo.",
         "slides": []
       },
-      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R12, file nasab-R12.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (story): 'Every family has a year when everything changed.' Scenes: typewriter years one per bar, each becomes a timeline event card (Naveed born 1943, Lahore; Gulnaz born 1948; their marriage 1971; the move in 1998) with a photo print attached; filter chip 'Naveed' shows one life in order; end card. Only births, marriages and deaths with places (no manual events). Images needed from the user: nasab-R12-a to -d, one print per decade (1960s wedding, 1970s family snapshot, late 1990s airport, present-day dinner), 4:5 flat prints. Why: no direct pain-point evidence; feature showcase. When built: add video [Drive link, poster webp, 'nasab-R12.mp4'] and set status to ready.",
+      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R12, file nasab-R12.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (story): 'Every family has a year when everything changed.' Scenes: typewriter years one per bar, each becomes a timeline event card (Naveed born 1943, Lahore; Gulnaz born 1948; their marriage 1971; the move in 1998) with a photo print attached; filter chip 'Naveed' shows one life in order; end card. Only births, marriages and deaths with places (no manual events). Why: no direct pain-point evidence; feature showcase. When built: add video [Drive link, poster webp, 'nasab-R12.mp4'] and set status to ready. IMAGE PROMPTS: all 4:5 and photographed flat as physical prints on a wooden table. nasab-R12-a: 'A 1960s black-and-white wedding portrait of a young South Asian couple, the bride in a heavy embroidered dupatta, the groom in a sherwani, formal studio pose, aged paper and worn edges.' nasab-R12-b: 'A faded 1970s colour snapshot of a young South Asian family of five standing in front of a small whitewashed house, orange colour cast, rounded print corners.' nasab-R12-c: 'A late-1990s colour photo of a South Asian family at an airport with large suitcases, the camera flash slightly overexposed, date-stamp style print.' nasab-R12-d: 'A present-day photo of the same family, three generations, at a long dining table in natural light, warm and candid.' Shared style, negative prompt, character sheet and rules: ~/Projects/tappstudio_socials/reels/nasab/image_prompts.md (append the shared style to each prompt; turn on IG's AI info label).",
       "kind": "reel"
     },
     {
@@ -7614,13 +7614,13 @@
       "warn": true,
       "posted": "",
       "carousel": false,
-      "title": "Questions that got my grandparents talking (and the ones that didn't)",
-      "text": "I've been interviewing the older people in my family and wanted to share what worked, because my first attempt was a disaster. I sat my grandmother down with a notebook and asked for dates. She gave me three and changed the subject.\n\nWhat worked better:\n\n- Questions that can't be answered with yes or no. \"What is the earliest thing you remember?\" got twenty minutes.\n- \"How did you and Nana meet?\" followed by \"Who disapproved?\" The second question is the good one.\n- \"What did you leave behind when the family moved?\"\n- \"Which saying did your father always repeat?\"\n- Old photos on the table. Names come back faster when there's a face to point at.\n- Doing it with siblings in the room. They correct each other, and the corrections are where the details are.\n- Recording audio (with permission). A transcript loses how they say things.\n- Writing names down while they talk. Spellings are the first thing a family forgets.\n\nWhat didn't work: asking for a full family tree in one sitting, and anything that felt like a form.",
+      "title": "How I'm labelling old family photos so the names outlive me",
+      "text": "In most families one elder is the only person who can still name everyone in the old photos. If you're going through them with yours, this is a method that holds up:\n\n- **One photo at a time, with them holding it.** Names come back faster with the print in hand than on a screen.\n- **Who, where, when, why.** Everyone left to right, the place, a year (a guess is fine, mark it \"about\"), and the occasion.\n- **Record what they say, not just the names.** \"That's your great-uncle, the one who never paid anyone back\" is worth keeping.\n- **Write on the back with a soft pencil or an archival photo pen,** lightly, along the edge. Never ballpoint.\n- **Scan both sides** and name the file with the people and year, so the label survives if the print doesn't.\n- **Ask their siblings or old family friends about the faces they can't place.** Another person's memory fills gaps fast.\n- **Do the unknowns first.** The photos of people they know well will still be easy next year.\n\nWhen nobody remembers the year, the print itself helps: the border style, the colour cast and the ages of people you can place.",
       "alt": {
         "summary": "",
         "slides": []
       },
-      "note": "r/Genealogy. Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour. No app link in this one: it's a value post. Based on IG-04 and LI-17. No closing question, per our voice; comments come anyway on r/Genealogy.",
+      "note": "r/Genealogy. Replaces the questions-for-grandparents post, which repeated IG-04 and IG-23. Text post, no image needed. Post manually from the Nasab owner's Reddit account. No app link: it's a value post. Check the subreddit's rules on the day, and reply to comments for the first hour.",
       "images": []
     },
     {
@@ -7679,7 +7679,102 @@
       },
       "note": "r/iosapps or r/androidapps (both allow developer posts with a [Dev] tag; pick one, or post the other a week later). Text post, no image needed. Post manually from the Nasab owner's Reddit account. Check the subreddit's self-promotion rules on the day; if links aren't allowed, drop the last line. Reply to comments for the first hour.",
       "images": []
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-34",
+      "platform": "IG",
+      "date": "2026-11-15",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "title": "Wedding season checklist (Photo reel)",
+      "text": "Wedding season is family-archive season. Everyone is in one place, dressed up, and the elders are telling stories.\n\nBefore the next one, save this:\n1. One photo of every generation together\n2. The names of the elders in the group photos, written down that week\n3. The nikah date, in Hijri and Gregorian\n4. A voice message from each grandparent to the couple\n5. Both families' trees, joined where the couple joins them\n6. The story of how they met, from someone who isn't the couple\n\nNumber 6 is always better.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#WeddingSeason #FamilyArchive #FamilyTree #Nikah #Reels",
+      "alt": {
+        "summary": "A paper card titled Wedding season checklist with six items: every generation in one photo, elders' names, the nikah date in Hijri and Gregorian, a voice message from each grandparent, both family trees joined, and how they met.",
+        "slides": []
+      },
+      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: headline 'Wedding season checklist' with six short numbered lines (generations photo, elders' names, nikah date Hijri + Gregorian, grandparents' voice messages, both trees joined, how they met). Small gold khatam star, a marigold sprig in one corner. Cover is the still itself. File nasab-IG-34.mp4. IMAGE PROMPTS: Optional background for the checklist card (9:16): 'A South Asian wedding at mid-distance, three generations gathered for a group photo, an elderly grandfather in a white kurta seated in the middle, marigold garlands and warm string lights, everyone softly out of focus except the grandparents, calm empty space in the top half.' Place the checklist on an ivory card over the calm area. Shared style, negative prompt, character sheet and rules: ~/Projects/tappstudio_socials/reels/nasab/image_prompts.md (append the shared style to each prompt; turn on IG's AI info label)."
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-35",
+      "platform": "IG",
+      "date": "2026-11-22",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "title": "Where your family has lived (Photo reel)",
+      "text": "Lahore, 1943. Karachi, 1971. Leeds, 1998. Toronto, 2024.\n\nMost families are a map before they're a tree. Every move changed the accent, the food and who came to the weddings.\n\nIn Nasab each profile keeps where someone was born and where they live now, and the timeline places every birth and marriage. Ask your elders where everyone lived. It's often the easiest question they'll answer.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Diaspora #FamilyHistory #FamilyTree #Migration #Reels",
+      "alt": {
+        "summary": "A paper card with a dotted gold route linking four cities and years: Lahore 1943, Karachi 1971, Leeds 1998 and Toronto 2024.",
+        "slides": []
+      },
+      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: four city names with years joined by a dotted gold route like a hand-drawn travel line (Lahore 1943, Karachi 1971, Leeds 1998, Toronto 2024), headline 'Most families are a map before they're a tree.' No real map tiles or flags. Cover is the still itself. File nasab-IG-35.mp4."
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-36",
+      "platform": "IG",
+      "date": "2026-11-26",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "title": "The message that gets cousins to help (Photo reel)",
+      "text": "The quickest way to build a family tree is to stop building it alone.\n\nCopy this into the family group:\n\"Salaam everyone. I'm putting our family tree together in Nasab. Could each of you add your own branch? Your kids, their birthdays, one old photo. It takes five minutes and you join free: [link]\"\n\nOne branch each is a small ask. Everyone knows their own side best, and nobody has to remember the whole family.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#FamilyTree #FamilyGroup #Cousins #FamilyHistory #Reels",
+      "alt": {
+        "summary": "A chat message bubble on a paper card asking relatives to add their own branch of the family tree in Nasab, with a link placeholder.",
+        "slides": []
+      },
+      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: one chat bubble in a soft ivory card (not a WhatsApp clone: no WhatsApp green or logo) with the message from the caption, headline above 'Stop building it alone.' and a small 'Relatives join free' note under it. Cover is the still itself. File nasab-IG-36.mp4."
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-37",
+      "platform": "IG",
+      "date": "2026-12-04",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "title": "3 games for the next family dinner (Photo reel)",
+      "text": "Three games for the next family dinner. All you need is the family.\n\n1. Who's that? Pass an old photo round the table. Most names right wins.\n2. How are we related? Pick two cousins. The table has 10 seconds to name the relation.\n3. Guess the year. Read out one family event. Closest year wins.\n\nThe real winner is whoever writes down the answers, because the elders will tell stories the whole time.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#FamilyGames #FamilyDinner #FamilyHistory #FamilyTree #Reels",
+      "alt": {
+        "summary": "A paper card titled 3 games for the next family dinner: Who's that, How are we related, and Guess the year.",
+        "slides": []
+      },
+      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: headline '3 games for the next family dinner' with the three games as short numbered lines and a tiny illustration per line (a photo print, two linked member cards, a typewriter year). Warm, playful, still premium. Cover is the still itself. File nasab-IG-37.mp4. IMAGE PROMPTS: Optional background for the games card (9:16): 'A South Asian family of three generations around a dinner table in the evening, an old photo being passed from a grandmother to a teenage granddaughter, everyone laughing, warm lamp light, plates of food, faces at mid-distance, calm wall in the top third.' Place the three games on an ivory card over the calm area. Shared style, negative prompt, character sheet and rules: ~/Projects/tappstudio_socials/reels/nasab/image_prompts.md (append the shared style to each prompt; turn on IG's AI info label)."
+    },
+    {
+      "brand": "nasab",
+      "id": "IG-38",
+      "platform": "IG",
+      "date": "2026-12-10",
+      "time": "6:00 pm IST",
+      "status": "planned",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "title": "In 2070, someone will look you up (Photo reel)",
+      "text": "In 2070 a great-grandchild will look you up. What will they find?\n\nProbably your name and two dates. Unless you add a few things now:\n- How you met your partner\n- Your first job and what it paid\n- The meal you were famous for\n- A photo you actually like\n- One minute of your voice\n\nYou're somebody's ancestor. Leave them more than a date.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#FamilyHistory #FamilyArchive #Legacy #FamilyTree #Reels",
+      "alt": {
+        "summary": "A Nasab member card for 'You' with only a name and birth year filled in, and five empty lines waiting: how you met, first job, famous meal, a photo, your voice.",
+        "slides": []
+      },
+      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
     }
   ],
-  "built": "10 Nov 2026, 17:30"
+  "built": "10 Nov 2026, 19:00"
 }
