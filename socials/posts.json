@@ -7173,8 +7173,8 @@
       "brand": "misbaha",
       "id": "IG-27",
       "platform": "IG",
-      "date": "2026-11-12",
-      "time": "9:30 pm IST",
+      "date": "2026-11-10",
+      "time": "6:00 pm IST",
       "status": "ready",
       "warn": true,
       "note": "Reel is built (misbaha-R12.mp4, 46.8 s, 100 drops at an even tasbih pace, barren land to oasis, no voice). Check the Arabic (ٱلْحَمْدُ لِلَّهِ) before posting. Upload to Drive and paste the link into video[0]. Use misbaha-R12-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R12-cover.png.",
@@ -7197,8 +7197,8 @@
       "brand": "misbaha",
       "id": "YT-14",
       "platform": "YT",
-      "date": "2026-11-12",
-      "time": "8:30 pm IST",
+      "date": "2026-11-10",
+      "time": "7:00 pm IST",
       "status": "ready",
       "warn": true,
       "note": "Same video as IG-27 (misbaha-R12.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0].",
@@ -7211,7 +7211,55 @@
         "misbaha-R12.mp4"
       ],
       "kind": "reel"
+    },
+    {
+      "alt": {
+        "summary": "A thumb moves gold beads along a diagonal string in a dark room under the glowing word Astaghfirullah in Arabic and English. Behind the beads an arched window and a gold wall clock run from six in the morning to nine at night: dawn, a bright day, sunset, then a starry night with a crescent moon over a dome and minaret. The tassel arrives at night.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-11",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/c8588bfaeff36af6.webp",
+        "misbaha-R13.mp4"
+      ],
+      "kind": "reel",
+      "id": "IG-28",
+      "platform": "IG",
+      "time": "6:00 pm IST",
+      "title": "Astaghfirullah, morning to night (Reel)",
+      "text": "Astaghfirullah from the first light to the last.\n\nThe clock keeps moving, the window goes from dawn to night, and the beads keep going.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #astaghfirullah #dhikr #muslimapp",
+      "note": "Reel is built (misbaha-R13.mp4, 34.5 s, the R04 thumb with a window and clock running from 6 am to 9 pm, no voice). Check the Arabic (أَسْتَغْفِرُ ٱللَّهَ) before posting. Upload to Drive and paste the link into video[0]. Use misbaha-R13-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R13-cover.png. Misbaha IG-22 and YT-09 are also on 11 Nov, later in the evening."
+    },
+    {
+      "alt": {
+        "summary": "A thumb moves gold beads along a diagonal string in a dark room under the glowing word Astaghfirullah in Arabic and English. Behind the beads an arched window and a gold wall clock run from six in the morning to nine at night: dawn, a bright day, sunset, then a starry night with a crescent moon over a dome and minaret. The tassel arrives at night.",
+        "slides": []
+      },
+      "brand": "misbaha",
+      "date": "2026-11-11",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "video": [
+        "",
+        "img/c8588bfaeff36af6.webp",
+        "misbaha-R13.mp4"
+      ],
+      "kind": "reel",
+      "id": "YT-15",
+      "platform": "YT",
+      "time": "7:00 pm IST",
+      "title": "Astaghfirullah from morning to night",
+      "text": "One thumb, one string of beads, from dawn to night.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #astaghfirullah #dhikr",
+      "note": "Same video as IG-28 (misbaha-R13.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "10 Nov 2026, 12:28"
+  "built": "10 Nov 2026, 13:40"
 }
