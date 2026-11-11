@@ -7165,6 +7165,30 @@
       ]
     },
     {
+      "text": "Chai lover? Run your own chai tapri. ☕\n\nTap the kettle to pour. Level up your stalls. Come back to Rupees your tapri earned while you slept. Win decorations, then take the train and open outlets in 28 Indian cities.\n\nKadak: Idle Chai Empire, a cosy idle game. Free on Android and iOS, link in bio.\n\n#IdleGame #Chai #IndianGames",
+      "alt": {
+        "summary": "Gameplay reel from the Kadak idle game: chai poured from a kettle into a clay cup on a street stall counter, then inside a phone, taps on a chai stall's kettle earning Rupees, stall upgrades with brass buttons, a Welcome back reward being collected, fairy lights and a rangoli decorating the stall at night, and a train travelling from Lucknow station to Mumbai, ending on the Kadak app icon.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "IG-05",
+      "platform": "IG",
+      "date": "2026-11-12",
+      "time": "7:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (kadak-R05b.mp4, 30 s, gameplay with sound). Upload it to Drive and paste the link into video[0]; it is already in the Drive Kadak folder. Use the cover at 2.3 s. Share to Story with a 'Sound on' sticker. A 16:9 version for YouTube is kadak-R05b-youtube.mp4.",
+      "title": "Gameplay: Chai lover? Run your own chai tapri (Reel)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/7a7fe9a8e4bcf3ff.webp",
+        "kadak-R05b.mp4"
+      ]
+    },
+    {
       "alt": {
         "summary": "Barren cracked land under a dusty night sky. Glowing drops fall one by one while a thin gold bar fills to a hundred under the words Alhamdulillah in Arabic and English. Each drop leaves a green patch, a river runs down from the mountains, palms grow on its banks, the mountains turn green, and the night becomes a clear morning over an oasis.",
         "slides": []
@@ -7776,5 +7800,5 @@
       "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
     }
   ],
-  "built": "11 Nov 2026, 11:00"
+  "built": "11 Nov 2026, 16:02"
 }
