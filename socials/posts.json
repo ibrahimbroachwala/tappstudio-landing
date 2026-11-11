@@ -4160,16 +4160,16 @@
       "reply": "More of what I build at tappStudio:\nhttps://tappstudio.in"
     },
     {
-      "text": "📊 Splitup, in numbers:\n\n🌍 10 languages, including right-to-left Arabic and Urdu, all the way into the PDF exports\n💱 50+ currencies\n🗣️ 340 strings in the English source, translated 9 more ways\n🧪 19 test files, 17 of them for offline sync and voice input\n🙅 0 subscriptions\n\nWhat I'd tell myself on day 1: 💭\n1️⃣ Money is integer cents. Decide it before the first table.\n2️⃣ Every migration has to keep old app versions working. People update slowly.\n3️⃣ Build for no signal from the start. Retrofitting offline sync is a project, not a feature.\n4️⃣ The boring solution (a Dart parser) can beat the shiny one (an LLM) when you know your users' phones.\n5️⃣ Ask for reviews when people are happy. Then get out of the way.\n\n🔭 What's next: [ROADMAP, 2 or 3 items you're happy to announce]\n\nIf you've followed this Ship Log, thank you. 🙏 Splitup is free to start on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
+      "text": "📊 Splitup, in numbers:\n\n🌍 10 languages, including right-to-left Arabic and Urdu, all the way into the PDF exports\n💱 50+ currencies\n🗣️ 371 strings in the English source, translated 9 more ways\n🧪 23 test files, 18 of them for offline sync and voice input\n🙅 0 subscriptions\n\nWhat I'd tell myself on day 1: 💭\n1️⃣ Money is integer cents. Decide it before the first table.\n2️⃣ Every migration has to keep old app versions working. People update slowly.\n3️⃣ Build for no signal from the start. Retrofitting offline sync is a project, not a feature.\n4️⃣ The boring solution (a Dart parser) can beat the shiny one (an LLM) when you know your users' phones.\n5️⃣ Ask for reviews when people are happy. Then get out of the way.\n\n🔭 What's next: 🧾 scanning receipts. Snap the bill and the expense fills itself in.\n\nIf you've followed this Ship Log, thank you. 🙏 Splitup is free to start on iOS and Android.\n\n#BuildInPublic #IndieHacker #Flutter",
       "images": [
         [
-          "img/e6206c5e5e6effc3.webp",
-          "img/e6206c5e5e6effc3-t.webp",
+          "img/7d0dbe4279cf9a45.webp",
+          "img/7d0dbe4279cf9a45-t.webp",
           "splitup-LI-10.jpg"
         ]
       ],
       "alt": {
-        "summary": "A stat board for Splitup: 10 languages, 50+ currencies, 340 strings, 19 test files and zero subscriptions. Text: \"Splitup in numbers. Zero subscriptions.\"",
+        "summary": "A stat board for Splitup: 10 languages, 50+ currencies, 371 strings, 23 test files and zero subscriptions. Text: \"Splitup in numbers. Zero subscriptions.\"",
         "slides": []
       },
       "brand": "splitup",
@@ -4179,7 +4179,7 @@
       "time": "8-10 am",
       "status": "ready",
       "warn": true,
-      "note": "add the roadmap line",
+      "note": "",
       "title": "Splitup in numbers",
       "posted": "",
       "carousel": false,
@@ -4910,7 +4910,7 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
-      "text": "📊 Splitup in numbers:\n\n🌍 10 languages, including Arabic and Urdu\n💱 50+ currencies\n🧪 19 test files\n🙅 0 subscriptions\n\nWhat I'd tell myself at the start: money is integer cents, every migration must keep old app versions working, and build for no signal from day one.",
+      "text": "📊 Splitup in numbers:\n\n🌍 10 languages, including Arabic and Urdu\n💱 50+ currencies\n🧪 23 test files\n🙅 0 subscriptions\n\nWhat I'd tell myself at the start: money is integer cents, every migration must keep old app versions working, and build for no signal from day one.",
       "images": [],
       "alt": {
         "summary": "",
@@ -6318,7 +6318,7 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "The first version of Kadak showed new players everything on day one. Stalls, recipes, shop, tasks, festivals, events. All of it.\n\nTo me it made total sense. I built it. To everyone else it looked like a wedding menu card. Too many options, no idea where to start.\n\nSo now Bablu Bhaiya teaches you. One thing at a time.\n\nFirst you pour chai, open a stall and hire Bablu.\nThen Quick Jugaad, a free boost.\nThen tasks and the Daily Kulhad.\nThen Nuskhe, the recipe upgrades.\nThen lucky customers.\nAt ₹40,000 the Bazaar opens. That's the shop.\nAt ₹1 lakh you get Outlets and a new city.\n\nA few simple rules I followed:\n1. The early stuff opens when you play, not when you pay. Bablu explains one thing, then the next one shows up.\n2. No price tags before you know what you're buying. The shop waits till ₹40,000.\n3. Reward videos wait 2 more minutes after the shop opens. Festivals wait for the Bazaar and your next visit.\n4. After the tutorial you can see all 8 stalls, locked with their price. So you know what you're saving up for.\n\nMy test: can someone play for 10 minutes without reading more than one line at a time?\n\nBablu Bhaiya talks less than any real chai wala I know. Honestly that's the most unrealistic part of the game.",
+      "text": "The first version of Kadak showed new players everything on day one. Stalls, recipes, shop, tasks, festivals, events. All of it. 😅\n\nTo me it made total sense. I built it. To everyone else it looked like a wedding menu card. Too many options, no idea where to start. 🍽️\n\nSo now Bablu Bhaiya teaches you. One thing at a time. ☕\n\n1️⃣ First you pour chai, open a stall and hire Bablu.\n2️⃣ Then Quick Jugaad, a free boost. ⚡\n3️⃣ Then tasks and the Daily Kulhad.\n4️⃣ Then Nuskhe, the recipe upgrades. 📜\n5️⃣ Then lucky customers. 🍀\n6️⃣ At ₹40,000 the Bazaar opens. That's the shop. 🛍️\n7️⃣ At ₹1 lakh you get Outlets and a new city. 🏙️\n\nA few simple rules I followed:\n1. The early stuff opens when you play, not when you pay. Bablu explains one thing, then the next one shows up.\n2. No price tags before you know what you're buying. The shop waits till ₹40,000. 🏷️\n3. Reward videos wait 2 more minutes after the shop opens. Festivals wait for the Bazaar and your next visit. 🪔\n4. After the tutorial you can see all 8 stalls, locked with their price. So you know what you're saving up for. 🔒\n\nMy test: can someone play for 10 minutes without reading more than one line at a time? ⏱️\n\nBablu Bhaiya talks as little as a real chai wala. You say \"ek cutting\", he hands you chai. That's the whole conversation. 😂",
       "images": [
         [
           "img/b5e760e441ff604f.webp",
@@ -7776,5 +7776,5 @@
       "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
     }
   ],
-  "built": "10 Nov 2026, 19:00"
+  "built": "11 Nov 2026, 10:40"
 }
