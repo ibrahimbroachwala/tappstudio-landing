@@ -1,11 +1,12 @@
 # tappStudio
 
-> tappStudio is an independent app studio in Mumbai, India, run by Ibrahim Broachwala. It designs, builds, publishes and maintains its own iOS, Android and web apps, made for family, friends, faith and community.
+> tappStudio is an independent app studio in Mumbai, India, run by Ibrahim Broachwala. It designs, builds, publishes and maintains its own iOS, Android and web apps, made for family, friends, faith and community, and its first game, Kadak Chai.
 
 tappStudio is a one-person studio. Every app is designed, engineered, shipped to the App Store and Google Play (or the web) and supported in-house, and it keeps getting updates after launch. Apps are built with Claude Code (Anthropic's AI coding agent) inside the studio's own code guides, with every design decision and line of code reviewed by Ibrahim. The site at https://tappstudio.in/ is the studio's home: it showcases each app, keeps a public "now" status board of what is live and in progress, and has a contact form (reaching tappstudio.in@gmail.com) for app feedback, bug reports, feature ideas and press.
 
 ## Apps
 
+- [Kadak Chai: Idle Tea Tycoon](https://kadakchai.tappstudio.in): tappStudio's first game, a cosy idle tycoon about Indian street food. Pour the first cup at one roadside chai tapri, level up eight street stalls, hire Ustaads (stall masters), collect nuskhe (recipes) and take the train to open outlets across 28 Indian cities, with a festival season every month. Free to play, plays offline, no banner or forced ads. iOS: https://apps.apple.com/us/app/kadak-idle-chai-empire/id6821840374. Android: https://play.google.com/store/apps/details?id=in.tappstudio.kadakchai
 - [Nasab](https://nasab.tappstudio.in): A living family archive app. Build a family tree, preserve family stories, photos, and voice notes, and invite family members to keep it growing together. iOS: https://apps.apple.com/us/app/nasab-the-family-archive/id6793519541. Android: https://play.google.com/store/apps/details?id=in.tappstudio.nasab
 - [Splitup](https://splitup.tappstudio.in): A group expense and bill-splitting app: split costs, add expenses by voice, work offline, send reminders, and settle up with friends. iOS: https://apps.apple.com/us/app/splitup-group-expense/id6744556329. Android: https://play.google.com/store/apps/details?id=in.tappstudio.splitup
 - [My Deen](https://tappstudio.in/mydeen/): A smart Amal (deed) tracker that helps Muslims stay consistent with daily and weekly spiritual habits, tracking Namaz, Duas, and good deeds with reminders, streaks, and achievement badges. iOS: https://apps.apple.com/us/app/my-deen-build-consistency/id6739484125. Android: https://play.google.com/store/apps/details?id=in.tappstudio.mydeen
@@ -14,6 +15,7 @@ tappStudio is a one-person studio. Every app is designed, engineered, shipped to
 
 ## Support
 
+- [Kadak Chai support](https://kadakchai.tappstudio.in/support/)
 - [Nasab support](https://nasab.tappstudio.in/support/)
 - [Splitup support](https://tappstudio.in/splitup/support.html)
 - [My Deen support](https://tappstudio.in/mydeen/support.html)

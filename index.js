@@ -130,6 +130,54 @@ if (dock) {
 }
 
 // ---------------------------------------------------------------------------
+// Kadak Chai tile: tap the kettle to pour. A one-button taste of the game; the
+// count is a per-visitor nicety kept in localStorage (fine if it's missing).
+// ---------------------------------------------------------------------------
+const pourBtn = document.getElementById('pour-btn');
+
+if (pourBtn) {
+    const pourCount = document.getElementById('pour-count');
+    const KEY = 'kadak.cups';
+    const lines = {
+        1: 'One cutting chai. Kadak!',
+        10: '10 cups. Shabash, Ustaad!',
+        28: '28 cups: one for every city in the game.',
+        50: '50 cups. The tapri is getting famous.',
+        100: '100 cups. Time to open a second outlet?',
+        250: '250 cups. The game keeps pouring while you are away.',
+    };
+    let cups = 0;
+    try { cups = parseInt(localStorage.getItem(KEY), 10) || 0; } catch (e) { }
+
+    const fmt = (n) => n.toLocaleString('en-IN');
+    const say = (n, fresh) => {
+        if (n === 0) return;
+        pourCount.textContent = (fresh && lines[n]) || `${fmt(n)} ${n === 1 ? 'cup' : 'cups'} poured`;
+    };
+    say(cups, false);
+
+    let tiltTimer = null;
+    pourBtn.addEventListener('click', () => {
+        cups += 1;
+        try { localStorage.setItem(KEY, String(cups)); } catch (e) { }
+        say(cups, true);
+
+        pourBtn.classList.add('is-pouring');
+        clearTimeout(tiltTimer);
+        tiltTimer = setTimeout(() => pourBtn.classList.remove('is-pouring'), 220);
+
+        if (!reducedMotion.matches) {
+            const pop = document.createElement('span');
+            pop.className = 'pour-pop';
+            pop.setAttribute('aria-hidden', 'true');
+            pop.textContent = '+1 ☕';
+            pourBtn.appendChild(pop);
+            pop.addEventListener('animationend', () => pop.remove());
+        }
+    });
+}
+
+// ---------------------------------------------------------------------------
 // App tiles: spotlight follows the pointer
 // ---------------------------------------------------------------------------
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {

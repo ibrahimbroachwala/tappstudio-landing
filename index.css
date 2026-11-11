@@ -647,7 +647,7 @@ h3 {
     z-index: 4;
 }
 
-.deck-card[data-pos="4"] {
+.deck-card[data-pos="5"] {
     --x: -104px;
     --r: -8deg;
     --s: 0.84;
@@ -656,7 +656,8 @@ h3 {
 }
 
 .deck-card[data-pos="2"],
-.deck-card[data-pos="3"] {
+.deck-card[data-pos="3"],
+.deck-card[data-pos="4"] {
     --s: 0.72;
     --o: 0;
     z-index: 2;
@@ -835,8 +836,12 @@ h3 {
         --x: 78px;
     }
 
-    .deck-card[data-pos="4"] {
+    .deck-card[data-pos="5"] {
         --x: -78px;
+    }
+
+    .dock {
+        gap: 0.4rem;
     }
 
     .mascot-hero {
@@ -991,6 +996,409 @@ h3 {
 
 .tile#hunar-circle {
     grid-column: 7 / span 6;
+}
+
+/* Kadak Chai, the studio's first game: a full-width night street in the game's
+   own palette (from the Kadak repo's store tokens), the same in both themes. */
+.tile#kadak-chai {
+    grid-column: 1 / -1;
+}
+
+.tile--game {
+    --k-deep: #0B2328;
+    --k-night: #12343B;
+    --k-raised: #1A4650;
+    --k-marigold: #F4A300;
+    --k-haldi: #FFE1AD;
+    --k-paper: #FFF8EC;
+    --k-steam: #CFE3DF;
+    --k-ink: #231A14;
+    --k-chai: #6E5843;
+    --k-kesar: #E8742A;
+    display: grid;
+    grid-template-columns: minmax(0, 4.4fr) minmax(0, 7.6fr);
+    min-height: 500px;
+    color: var(--k-paper);
+    background:
+        radial-gradient(60% 55% at 72% 105%, rgba(244, 163, 0, 0.22), transparent 70%),
+        linear-gradient(180deg, var(--k-deep) 0%, var(--k-night) 58%, var(--k-raised) 100%);
+    border-color: rgba(244, 163, 0, 0.28);
+}
+
+.tile--game::before {
+    background: radial-gradient(420px circle at var(--mx) var(--my), rgba(244, 163, 0, 0.14), transparent 70%);
+}
+
+.tile--game:hover,
+.tile--game:target {
+    border-color: rgba(244, 163, 0, 0.6);
+}
+
+[data-theme="light"] .tile--game {
+    box-shadow: 0 1px 0 var(--line), 0 28px 50px -30px rgba(11, 35, 40, 0.55);
+}
+
+.game-sky {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1.4px 1.4px at 18px 26px, rgba(255, 248, 236, 0.9), transparent),
+        radial-gradient(1px 1px at 92px 70px, rgba(255, 248, 236, 0.7), transparent),
+        radial-gradient(1.6px 1.6px at 160px 18px, rgba(255, 225, 173, 0.9), transparent),
+        radial-gradient(1px 1px at 210px 104px, rgba(255, 248, 236, 0.6), transparent),
+        radial-gradient(1.2px 1.2px at 58px 128px, rgba(207, 227, 223, 0.7), transparent);
+    background-size: 240px 150px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 72%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 72%);
+    animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+.game-moon {
+    position: absolute;
+    top: 30px;
+    right: 42px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 36%, #fff3d6, var(--k-haldi) 60%, #f3cf8c);
+    box-shadow: 0 0 50px 12px rgba(255, 225, 173, 0.22);
+}
+
+/* Festival bunting strung across the sky, like the game's monthly Utsav */
+.game-bunting {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 120px;
+    height: 80px;
+    z-index: -1;
+    display: flex;
+    pointer-events: none;
+}
+
+.game-bunting i {
+    flex: 1;
+    height: 24px;
+    transform-origin: 0 0;
+    transform: rotate(5deg);
+    background:
+        linear-gradient(rgba(255, 248, 236, 0.4), rgba(255, 248, 236, 0.4)) 0 0 / 100% 1px no-repeat,
+        conic-gradient(from -30deg at 11px 100%, #F4A300 60deg, transparent 0) 0 1px / 66px 20px repeat-x,
+        conic-gradient(from -30deg at 11px 100%, #E8742A 60deg, transparent 0) 22px 1px / 66px 20px repeat-x,
+        conic-gradient(from -30deg at 11px 100%, #8EC3BF 60deg, transparent 0) 44px 1px / 66px 20px repeat-x;
+    animation: sway 6s ease-in-out infinite alternate;
+}
+
+.game-bunting i:last-child {
+    transform-origin: 100% 0;
+    transform: rotate(-5deg);
+    animation-name: swayBack;
+}
+
+@keyframes sway {
+    to {
+        transform: rotate(6.5deg);
+    }
+}
+
+@keyframes swayBack {
+    to {
+        transform: rotate(-6.5deg);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.55;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.tile--game .tile-body {
+    position: relative;
+    z-index: 1;
+    padding-bottom: clamp(2.2rem, 3.4vw, 2.8rem);
+}
+
+.game-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(207, 227, 223, 0.75);
+    margin-bottom: -0.2rem;
+}
+
+.game-eyebrow span:first-child {
+    color: var(--k-marigold);
+}
+
+.tile--game h3,
+.tile--game h3 a {
+    color: var(--k-paper);
+}
+
+.tile--game h3 a:hover,
+.tile--game .tile-link {
+    color: var(--k-marigold);
+}
+
+.tile--game .tile-cat {
+    color: rgba(207, 227, 223, 0.8);
+}
+
+.tile--game .tile-desc {
+    color: rgba(255, 248, 236, 0.84);
+    font-size: 1.04rem;
+}
+
+.tile--game .tile-feats li {
+    border-color: rgba(255, 248, 236, 0.2);
+    color: rgba(255, 248, 236, 0.8);
+}
+
+.tile--game .tile-badge {
+    white-space: nowrap;
+    background: var(--k-marigold);
+    color: var(--k-ink);
+}
+
+.tile--game .tile-icon {
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 248, 236, 0.16);
+}
+
+/* Screenshots stand along the street like shopfronts, then step up on hover */
+.tile-shots--street {
+    height: auto;
+    margin-top: 0;
+    align-items: flex-end;
+    padding: 5.5rem 1.5rem 0 0.5rem;
+    gap: 0;
+}
+
+/* Five shots in a shallow arc, overlapping a little, the middle one in front */
+.tile-shots--street .shot {
+    --lift: 78px;
+    flex: 0 1 176px;
+    margin-inline: -7px;
+    transform: translateY(var(--lift));
+}
+
+.tile-shots--street .shot:nth-child(2),
+.tile-shots--street .shot:nth-child(4) {
+    --lift: 40px;
+    z-index: 1;
+}
+
+.tile-shots--street .shot:nth-child(3) {
+    --lift: 12px;
+    z-index: 2;
+}
+
+.tile--game:hover .tile-shots--street .shot {
+    transform: translateY(calc(var(--lift) - 22px));
+}
+
+.tile--game:hover .tile-shots--street .shot:nth-child(4) {
+    transition-delay: 0.15s;
+}
+
+.tile--game:hover .tile-shots--street .shot:nth-child(5) {
+    transition-delay: 0.2s;
+}
+
+.tile--game .shot img {
+    box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 248, 236, 0.14);
+}
+
+.tile--game .shot:focus-visible,
+.pour-btn:focus-visible {
+    outline: 2px solid var(--k-marigold);
+}
+
+/* Railway along the bottom edge, with the odd train passing through */
+.game-rails {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 34px;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(207, 227, 223, 0.55), rgba(207, 227, 223, 0.55)) 0 22px / 100% 2px no-repeat,
+        linear-gradient(rgba(207, 227, 223, 0.35), rgba(207, 227, 223, 0.35)) 0 29px / 100% 2px no-repeat,
+        repeating-linear-gradient(90deg, var(--k-chai) 0 7px, transparent 7px 24px) 0 20px / 100% 14px no-repeat,
+        linear-gradient(180deg, transparent 0 18px, var(--k-deep) 18px);
+}
+
+.game-rails::after {
+    content: "";
+    position: absolute;
+    bottom: 13px;
+    left: -140px;
+    width: 120px;
+    height: 16px;
+    border-radius: 3px 10px 3px 3px;
+    background:
+        repeating-linear-gradient(90deg, var(--k-haldi) 0 7px, transparent 7px 13px) 8px 3px / 96px 5px no-repeat,
+        linear-gradient(90deg, var(--k-kesar) 0 32%, var(--k-night) 32% 34%, var(--k-kesar) 34% 66%, var(--k-night) 66% 68%, var(--k-marigold) 68%);
+    animation: trainRun 18s linear infinite 2s;
+}
+
+@keyframes trainRun {
+    from {
+        left: -140px;
+    }
+
+    55%,
+    to {
+        left: calc(100% + 20px);
+    }
+}
+
+/* Tap-the-kettle: a one-button taste of the game */
+.pour {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 0.4rem;
+    padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+    border-radius: 18px;
+    border: 1px dashed rgba(244, 163, 0, 0.42);
+    background: rgba(11, 35, 40, 0.5);
+}
+
+.pour-btn {
+    position: relative;
+    flex-shrink: 0;
+    display: grid;
+    place-items: end center;
+    width: 66px;
+    height: 58px;
+    padding: 0 0 8px;
+    border: 0;
+    border-radius: 14px;
+    background: rgba(244, 163, 0, 0.13);
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pour-btn:hover {
+    background: rgba(244, 163, 0, 0.22);
+}
+
+.pour-btn:active {
+    transform: scale(0.94);
+}
+
+.pour-kettle {
+    width: 46px;
+    height: auto;
+    overflow: visible;
+    transform-origin: 36% 65%;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pour-btn.is-pouring .pour-kettle {
+    transform: rotate(24deg) translateY(-2px);
+}
+
+.pour-steam {
+    position: absolute;
+    top: 6px;
+    left: 19px;
+    display: flex;
+    gap: 3px;
+}
+
+.pour-steam i {
+    width: 3px;
+    height: 11px;
+    border-radius: 3px;
+    background: var(--k-steam);
+    opacity: 0;
+    animation: steamRise 2.6s ease-in-out infinite;
+}
+
+.pour-steam i:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.pour-steam i:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes steamRise {
+    0% {
+        opacity: 0;
+        transform: translateY(6px) scaleY(0.6);
+    }
+
+    40% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(3px, -12px) scaleY(1.15);
+    }
+}
+
+.pour-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.3;
+    min-width: 0;
+}
+
+.pour-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--k-marigold);
+}
+
+.pour-count {
+    font-size: 0.9rem;
+    color: var(--k-paper);
+}
+
+.pour-pop {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--k-marigold);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    animation: pourPop 0.9s ease-out forwards;
+}
+
+@keyframes pourPop {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -40px);
+    }
 }
 
 .tile-body {
@@ -1246,6 +1654,26 @@ h3 {
     .tile-shots--fan {
         min-height: 380px;
     }
+
+    .tile--game {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    /* Three shots in a narrower arc */
+    .tile-shots--street .shot:nth-child(n+4) {
+        display: none;
+    }
+
+    .tile-shots--street .shot:nth-child(1),
+    .tile-shots--street .shot:nth-child(3) {
+        --lift: 46px;
+        z-index: 1;
+    }
+
+    .tile-shots--street .shot:nth-child(2) {
+        --lift: 12px;
+        z-index: 2;
+    }
 }
 
 @media (max-width: 700px) {
@@ -1268,6 +1696,35 @@ h3 {
     .tile-shots--fan {
         height: auto;
         min-height: 300px;
+    }
+
+    .tile--game {
+        display: flex;
+    }
+
+    .tile-shots--street {
+        height: 270px;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.5rem 1rem 0;
+    }
+
+    .tile-shots--street .shot {
+        flex-basis: 150px;
+        margin-inline: 0;
+    }
+
+    .tile-shots--street .shot:nth-child(n) {
+        --lift: 26px;
+    }
+
+    .tile-shots--street .shot:nth-child(2) {
+        --lift: 0px;
+    }
+
+    .game-bunting,
+    .game-moon {
+        display: none;
     }
 
 
@@ -1387,6 +1844,21 @@ h3 {
 .board-table td:first-child {
     width: 1%;
     white-space: nowrap;
+}
+
+.board-tag {
+    margin-left: 0.55rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: 0.1em;
+    color: #231A14;
+    background: #F4A300;
 }
 
 .status {

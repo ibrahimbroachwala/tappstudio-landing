@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tappStudio: independent apps, made in Mumbai</title>
     <meta name="description"
-        content="tappStudio is an independent app studio in Mumbai. It designs, builds and looks after its own apps for family, friends, faith and community: Nasab, Splitup, My Deen, Misbaha and Hunar Circle.">
+        content="tappStudio is an independent app studio in Mumbai. It designs, builds and looks after its own apps for family, friends, faith and community, and its first game: Kadak Chai, Nasab, Splitup, My Deen, Misbaha and Hunar Circle.">
     <meta name="keywords"
-        content="tappStudio, independent app studio, indie apps, Nasab, Splitup, My Deen, Misbaha, Hunar Circle, iOS apps, Android apps, Mumbai, India">
+        content="tappStudio, independent app studio, indie apps, Kadak Chai, idle tycoon game, Nasab, Splitup, My Deen, Misbaha, Hunar Circle, iOS apps, Android apps, Mumbai, India">
     <meta name="author" content="Ibrahim Broachwala">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)">
@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="tappStudio">
     <meta property="og:title" content="tappStudio: independent apps, made in Mumbai">
     <meta property="og:description"
-        content="Small apps for family, friends, faith and community. Nasab, Splitup, My Deen, Misbaha and Hunar Circle, designed, built and looked after in-house.">
+        content="Small apps for family, friends, faith and community, and a chai stall game. Kadak Chai, Nasab, Splitup, My Deen, Misbaha and Hunar Circle, designed, built and looked after in-house.">
     <meta property="og:image" content="https://tappstudio.in/public/images/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
@@ -59,7 +59,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./index.css?v=20261017">
+    <link rel="stylesheet" href="./index.css?v=20261111">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -167,6 +167,27 @@
             "url": "https://hunarcircle.com",
             "image": "https://tappstudio.in/public/apps/hunarcircle/icon.png"
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": ["VideoGame", "MobileApplication"],
+            "name": "Kadak Chai: Idle Tea Tycoon",
+            "alternateName": "Kadak",
+            "description": "A cosy idle tycoon game about Indian street food. Pour the first cup at one roadside chai tapri, hire Ustaads, collect recipes and grow it into a chai chain across 28 Indian cities. Plays offline.",
+            "applicationCategory": "GameApplication",
+            "genre": ["Idle", "Tycoon", "Simulation"],
+            "gamePlatform": ["iOS", "Android"],
+            "operatingSystem": "iOS, Android",
+            "url": "https://kadakchai.tappstudio.in",
+            "image": "https://tappstudio.in/public/apps/kadak/icon.png",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR"
+            }
+          }
         }
       ]
     }
@@ -216,23 +237,25 @@
                     <h1 class="hero-title">
                         <span class="hero-lead">Small apps for</span>
                         <span class="hero-rotator" aria-hidden="true">
-                            <span class="hero-word is-active">your family.</span>
+                            <span class="hero-word is-active">your chai break.</span>
+                            <span class="hero-word">your family.</span>
                             <span class="hero-word">your friends.</span>
                             <span class="hero-word">your deen.</span>
                             <span class="hero-word">your tasbih.</span>
                             <span class="hero-word">your community.</span>
                         </span>
-                        <span class="visually-hidden">family, friends, faith and community.</span>
+                        <span class="visually-hidden">chai breaks, family, friends, faith and community.</span>
                     </h1>
-                    <p class="hero-sub">tappStudio designs, builds and looks after its own apps for iPhone, Android
-                        and the web. A handful of products, made with care and kept going long after launch day.</p>
+                    <p class="hero-sub">tappStudio designs, builds and looks after its own apps, and now its first
+                        game, for iPhone, Android and the web. A handful of products, made with care and kept going long after launch day.</p>
                     <div class="hero-actions">
                         <a class="btn btn-accent btn-large" href="#apps">Explore the apps <span
                                 aria-hidden="true">↓</span></a>
                         <a class="btn btn-ghost btn-large" href="#now">What's on the bench</a>
                     </div>
                     <ul class="hero-stats" role="list">
-                        <li><span class="stat-num">5</span> apps live</li>
+                        <li><span class="stat-num">6</span> apps live</li>
+                        <li><span class="stat-num">1</span> chai empire</li>
                         <li>iOS · Android · Web</li>
                         <li><span class="stat-num">1</span> person</li>
                         <li>Made in Mumbai</li>
@@ -243,28 +266,31 @@
                     <div class="stage-glow" aria-hidden="true"></div>
                     <div class="stage-device">
                         <div class="deck" id="deck" aria-hidden="true">
-                            <img class="deck-card" data-pos="0" src="public/apps/nasab/1-540.webp"
-                                srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w"
+                            <img class="deck-card" data-pos="0" src="public/apps/kadak/1-540.webp"
+                                srcset="public/apps/kadak/1-540.webp 540w, public/apps/kadak/1-1080.webp 1080w"
                                 sizes="250px" width="1320" height="2868" decoding="async" fetchpriority="high" alt="" />
-                            <img class="deck-card" data-pos="1" src="public/apps/splitup/1-540.webp"
+                            <img class="deck-card" data-pos="1" src="public/apps/nasab/1-540.webp"
+                                srcset="public/apps/nasab/1-540.webp 540w, public/apps/nasab/1-1080.webp 1080w"
+                                sizes="250px" width="1320" height="2868" decoding="async" alt="" />
+                            <img class="deck-card" data-pos="2" src="public/apps/splitup/1-540.webp"
                                 srcset="public/apps/splitup/1-540.webp 540w, public/apps/splitup/1-1080.webp 1080w"
                                 sizes="250px" width="1320" height="2868" decoding="async" alt="" />
-                            <img class="deck-card" data-pos="2" src="public/apps/mydeen/1-540.webp"
+                            <img class="deck-card" data-pos="3" src="public/apps/mydeen/1-540.webp"
                                 srcset="public/apps/mydeen/1-540.webp 540w, public/apps/mydeen/1-1080.webp 1080w"
                                 sizes="250px" width="1320" height="2868" decoding="async" alt="" />
-                            <img class="deck-card" data-pos="3" src="public/apps/misbaha/2-540.webp"
+                            <img class="deck-card" data-pos="4" src="public/apps/misbaha/2-540.webp"
                                 srcset="public/apps/misbaha/2-540.webp 540w, public/apps/misbaha/2-1080.webp 1080w"
                                 sizes="250px" width="1170" height="2532" decoding="async" alt="" />
-                            <img class="deck-card" data-pos="4" src="public/apps/hunarcircle/1-540.webp"
+                            <img class="deck-card" data-pos="5" src="public/apps/hunarcircle/1-540.webp"
                                 srcset="public/apps/hunarcircle/1-540.webp 540w, public/apps/hunarcircle/1-1080.webp 1080w"
                                 sizes="250px" width="1080" height="2341" decoding="async" alt="" />
                         </div>
-                        <a class="stage-caption" id="stage-caption" href="#nasab">
-                            <img id="stage-caption-icon" src="public/apps/nasab/icon-256.webp" width="40" height="40"
+                        <a class="stage-caption" id="stage-caption" href="#kadak-chai">
+                            <img id="stage-caption-icon" src="public/apps/kadak/icon-256.webp" width="40" height="40"
                                 decoding="async" alt="" />
                             <span class="stage-caption-text">
-                                <strong id="stage-caption-name">Nasab</strong>
-                                <span id="stage-caption-line">The family archive</span>
+                                <strong id="stage-caption-name">Kadak Chai</strong>
+                                <span id="stage-caption-line">Idle chai tycoon</span>
                             </span>
                             <span class="stage-caption-arrow" aria-hidden="true">↓</span>
                         </a>
@@ -273,31 +299,37 @@
                     </div>
 
                     <div class="dock" id="dock" role="group" aria-label="Preview an app">
-                        <button class="dock-btn" type="button" aria-pressed="true" data-index="0" data-name="Nasab"
+                        <button class="dock-btn" type="button" aria-pressed="true" data-index="0"
+                            data-name="Kadak Chai" data-line="Idle chai tycoon" data-href="#kadak-chai"
+                            data-icon="public/apps/kadak/icon-256.webp">
+                            <img src="public/apps/kadak/icon-256.webp" width="48" height="48" decoding="async"
+                                alt="" /><span class="visually-hidden">Preview Kadak Chai</span>
+                        </button>
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="1" data-name="Nasab"
                             data-line="The family archive" data-href="#nasab"
                             data-icon="public/apps/nasab/icon-256.webp">
                             <img src="public/apps/nasab/icon-256.webp" width="48" height="48" decoding="async"
                                 alt="" /><span class="visually-hidden">Preview Nasab</span>
                         </button>
-                        <button class="dock-btn" type="button" aria-pressed="false" data-index="1" data-name="Splitup"
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="2" data-name="Splitup"
                             data-line="Split, remind, settle" data-href="#splitup"
                             data-icon="public/apps/splitup/icon-256.webp">
                             <img src="public/apps/splitup/icon-256.webp" width="48" height="48" decoding="async"
                                 alt="" /><span class="visually-hidden">Preview Splitup</span>
                         </button>
-                        <button class="dock-btn" type="button" aria-pressed="false" data-index="2" data-name="My Deen"
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="3" data-name="My Deen"
                             data-line="Daily Amal tracker" data-href="#my-deen"
                             data-icon="public/apps/mydeen/icon-256.webp">
                             <img src="public/apps/mydeen/icon-256.webp" width="48" height="48" decoding="async"
                                 alt="" /><span class="visually-hidden">Preview My Deen</span>
                         </button>
-                        <button class="dock-btn" type="button" aria-pressed="false" data-index="3" data-name="Misbaha"
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="4" data-name="Misbaha"
                             data-line="Tasbih with 3D beads" data-href="#misbaha-tasbih-counter"
                             data-icon="public/apps/misbaha/icon-256.webp">
                             <img src="public/apps/misbaha/icon-256.webp" width="48" height="48" decoding="async"
                                 alt="" /><span class="visually-hidden">Preview Misbaha</span>
                         </button>
-                        <button class="dock-btn" type="button" aria-pressed="false" data-index="4"
+                        <button class="dock-btn" type="button" aria-pressed="false" data-index="5"
                             data-name="Hunar Circle" data-line="Community directory" data-href="#hunar-circle"
                             data-icon="public/apps/hunarcircle/icon-256.webp">
                             <img src="public/apps/hunarcircle/icon-256.webp" width="48" height="48" decoding="async"
@@ -312,6 +344,8 @@
         <div class="ticker" aria-hidden="true">
             <div class="ticker-track">
                 <div class="ticker-group">
+                    <span class="ticker-item"><img src="public/apps/kadak/icon-256.webp" width="28" height="28"
+                            loading="lazy" alt="" />Kadak Chai<em>idle chai tycoon</em></span>
                     <span class="ticker-item"><img src="public/apps/nasab/icon-256.webp" width="28" height="28"
                             loading="lazy" alt="" />Nasab<em>family archive</em></span>
                     <span class="ticker-item"><img src="public/apps/splitup/icon-256.webp" width="28" height="28"
@@ -324,6 +358,8 @@
                             loading="lazy" alt="" />Hunar Circle<em>community directory</em></span>
                 </div>
                 <div class="ticker-group">
+                    <span class="ticker-item"><img src="public/apps/kadak/icon-256.webp" width="28" height="28"
+                            loading="lazy" alt="" />Kadak Chai<em>idle chai tycoon</em></span>
                     <span class="ticker-item"><img src="public/apps/nasab/icon-256.webp" width="28" height="28"
                             loading="lazy" alt="" />Nasab<em>family archive</em></span>
                     <span class="ticker-item"><img src="public/apps/splitup/icon-256.webp" width="28" height="28"
@@ -343,13 +379,110 @@
             <div class="wrap">
                 <div class="section-head">
                     <p class="kicker"><span>01</span> The apps</p>
-                    <h2 class="section-title">Five apps, crafted in-house<br class="br-wide"> and carefully maintained.
+                    <h2 class="section-title">Six apps (one's a game), crafted<br class="br-wide"> in-house and carefully maintained.
                     </h2>
                     <p class="section-sub">Designed, built, shipped and supported in-house. Tap a screenshot to see it
                         full size.</p>
                 </div>
 
                 <div class="bento">
+                    <!-- Kadak Chai: the studio's first game. A night street in the game's own palette. -->
+                    <article class="tile tile--game" id="kadak-chai" data-reveal>
+                        <div class="game-sky" aria-hidden="true"><span class="game-moon"></span></div>
+                        <div class="game-bunting" aria-hidden="true"><i></i><i></i></div>
+                        <div class="tile-body">
+                            <p class="game-eyebrow"><span>App 06</span> · <span>Game 01</span></p>
+                            <header class="tile-head">
+                                <a href="https://kadakchai.tappstudio.in" class="tile-icon-link" tabindex="-1">
+                                    <img class="tile-icon" src="public/apps/kadak/icon-256.webp" width="64" height="64"
+                                        loading="lazy" decoding="async" alt="Kadak Chai app icon" /></a>
+                                <div class="tile-title">
+                                    <h3><a href="https://kadakchai.tappstudio.in">Kadak Chai</a></h3>
+                                    <p class="tile-cat">Idle tea tycoon · iOS &amp; Android</p>
+                                </div>
+                                <span class="tile-badge">First game</span>
+                            </header>
+                            <p class="tile-desc">Pour the first cup at one roadside tapri, then grow it into a chai
+                                empire across 28 Indian cities. Hire Ustaads, collect family nuskhe, take the train to
+                                your next outlet, and come back to Rupees that kept rolling in while you were away.</p>
+                            <ul class="tile-feats" role="list">
+                                <li>8 street stalls</li>
+                                <li>28 cities by train</li>
+                                <li>A festival every month</li>
+                                <li>Plays offline</li>
+                            </ul>
+                            <div class="tile-actions">
+                                <div class="store-buttons">
+                                    <a href="https://apps.apple.com/us/app/kadak-idle-chai-empire/id6821840374"
+                                        target="_blank" rel="noopener"
+                                        aria-label="Download Kadak Chai on the App Store"><img
+                                            src="public/images/appstore.webp" width="567" height="168" loading="lazy"
+                                            decoding="async" alt="Download on the App Store" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=in.tappstudio.kadakchai"
+                                        target="_blank" rel="noopener" aria-label="Get Kadak Chai on Google Play"><img
+                                            src="public/images/playstore.webp" width="566" height="168" loading="lazy"
+                                            decoding="async" alt="Get it on Google Play" /></a>
+                                </div>
+                                <a class="tile-link" href="https://kadakchai.tappstudio.in">kadakchai.tappstudio.in
+                                    <span aria-hidden="true">↗</span></a>
+                            </div>
+                            <div class="pour" id="pour">
+                                <button class="pour-btn" id="pour-btn" type="button" aria-describedby="pour-count">
+                                    <span class="pour-steam" aria-hidden="true"><i></i><i></i><i></i></span>
+                                    <svg class="pour-kettle" viewBox="0 0 56 40" width="56" height="40"
+                                        aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M36 20L52 8" fill="none" stroke="#231A14" stroke-width="5" />
+                                        <path d="M36 20L52 8" fill="none" stroke="#B87400" stroke-width="2.5" />
+                                        <ellipse cx="20" cy="26" rx="18" ry="12" fill="#F4A300" stroke="#231A14"
+                                            stroke-width="2" />
+                                        <path d="M8 16Q20 0 32 16" fill="none" stroke="#231A14" stroke-width="2.5" />
+                                        <ellipse cx="20" cy="15" rx="6" ry="2.5" fill="#B87400" stroke="#231A14"
+                                            stroke-width="1.5" />
+                                    </svg>
+                                    <span class="visually-hidden">Tap the kettle to pour a cup of chai</span>
+                                </button>
+                                <p class="pour-text">
+                                    <span class="pour-label">Tap the kettle</span>
+                                    <span class="pour-count" id="pour-count" aria-live="polite">The first cup is on
+                                        the house.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile-shots tile-shots--street">
+                            <button class="shot" type="button"
+                                aria-label="View Kadak Chai screenshot: one tapri, a chai empire">
+                                <img src="public/apps/kadak/6-540.webp"
+                                    srcset="public/apps/kadak/6-540.webp 540w, public/apps/kadak/6-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Kadak Chai: one tapri, a chai empire, playable offline" /></button>
+                            <button class="shot" type="button"
+                                aria-label="View Kadak Chai screenshot: level up eight street stalls">
+                                <img src="public/apps/kadak/2-540.webp"
+                                    srcset="public/apps/kadak/2-540.webp 540w, public/apps/kadak/2-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Kadak Chai: samosa, vada pav, bun maska, eight street stalls to level up" /></button>
+                            <button class="shot" type="button"
+                                aria-label="View Kadak Chai screenshot: hire your chai masters">
+                                <img src="public/apps/kadak/3-540.webp"
+                                    srcset="public/apps/kadak/3-540.webp 540w, public/apps/kadak/3-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Kadak Chai: hire Ustaads, the chai masters who run your stalls" /></button>
+                            <button class="shot" type="button"
+                                aria-label="View Kadak Chai screenshot: take chai across India">
+                                <img src="public/apps/kadak/4-540.webp"
+                                    srcset="public/apps/kadak/4-540.webp 540w, public/apps/kadak/4-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Kadak Chai: ride the rails to 28 cities and open an outlet in each" /></button>
+                            <button class="shot" type="button"
+                                aria-label="View Kadak Chai screenshot: a festival every month">
+                                <img src="public/apps/kadak/5-540.webp"
+                                    srcset="public/apps/kadak/5-540.webp 540w, public/apps/kadak/5-1080.webp 1080w"
+                                    sizes="170px" width="1320" height="2868" loading="lazy" decoding="async"
+                                    alt="Kadak Chai: a festival every month with seasonal rewards" /></button>
+                        </div>
+                        <div class="game-rails" aria-hidden="true"></div>
+                    </article>
+
                     <!-- Nasab -->
                     <article class="tile tile--feature" id="nasab" data-reveal>
                         <div class="tile-body">
@@ -361,7 +494,6 @@
                                     <h3><a href="https://nasab.tappstudio.in">Nasab</a></h3>
                                     <p class="tile-cat">Family archive · iOS &amp; Android</p>
                                 </div>
-                                <span class="tile-badge">Newest</span>
                             </header>
                             <p class="tile-desc">A living family archive. Build your tree, preserve your family's
                                 stories, photos, and voice notes, and invite the people who care to keep it growing with
@@ -631,7 +763,7 @@
                     <p>A public note of what the studio is focused on right now, in the spirit of <a
                             href="https://nownownow.com/about" target="_blank" rel="noopener">/now pages</a>. It
                         changes when the focus does.</p>
-                    <p class="now-updated">Last updated <time datetime="2026-10-16">16 October 2026</time></p>
+                    <p class="now-updated">Last updated <time datetime="2026-11-11">11 November 2026</time></p>
                     <img class="mascot mascot-now" src="public/images/mascot/thinking.svg" width="96" height="101"
                         decoding="async" loading="lazy" alt="" />
                 </div>
@@ -650,6 +782,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr class="board-row--new">
+                                <td><span class="status status--live">live</span></td>
+                                <th scope="row"><a href="#kadak-chai">Kadak Chai</a><span class="board-tag">first
+                                        game</span></th>
+                                <td>iOS · Android</td>
+                            </tr>
                             <tr>
                                 <td><span class="status status--live">live</span></td>
                                 <th scope="row"><a href="#nasab">Nasab</a></th>
@@ -705,7 +843,7 @@
                     <p class="kicker"><span>03</span> The studio</p>
                     <h2 class="section-title">Hi, I'm Ibrahim.<br><span class="accent-text">I make the apps.</span></h2>
                     <p>tappStudio is a one-person studio in Mumbai. I design, build and look after every app on this
-                        page, and the ones that come after them.</p>
+                        page, from a family archive to a roadside chai tapri, and the ones that come after them.</p>
                     <p>So when you leave a review, report a bug or email support, the person reading it is the same
                         person who designed the screen and wrote the code. That's the whole point.</p>
                     <p class="signature">Ibrahim Broachwala<span>Founder, tappStudio</span></p>
@@ -728,6 +866,7 @@
                 </div>
                 <ul class="hello-support" role="list" aria-label="App support pages">
                     <li class="hello-support-label">App support</li>
+                    <li><a href="https://kadakchai.tappstudio.in/support/">Kadak Chai</a></li>
                     <li><a href="https://nasab.tappstudio.in/support/">Nasab</a></li>
                     <li><a href="splitup/support.html">Splitup</a></li>
                     <li><a href="mydeen/support.html">My Deen</a></li>
@@ -853,10 +992,12 @@
             <div class="footer-about">
                 <p class="footer-brand"><span class="brand-tapp">tapp</span><span class="brand-studio">Studio</span>
                 </p>
-                <p class="footer-tagline">Small apps for family, friends, faith and community. Made in Mumbai.</p>
+                <p class="footer-tagline">Small apps for family, friends, faith and community, and one chai tapri. Made in
+                    Mumbai.</p>
             </div>
             <nav class="footer-col" aria-label="Apps">
                 <h3>Apps</h3>
+                <a href="https://kadakchai.tappstudio.in">Kadak Chai</a>
                 <a href="https://nasab.tappstudio.in">Nasab</a>
                 <a href="https://splitup.tappstudio.in">Splitup</a>
                 <a href="mydeen/">My Deen</a>
@@ -865,6 +1006,7 @@
             </nav>
             <nav class="footer-col" aria-label="Support">
                 <h3>Support</h3>
+                <a href="https://kadakchai.tappstudio.in/support/">Kadak Chai support</a>
                 <a href="https://nasab.tappstudio.in/support/">Nasab support</a>
                 <a href="splitup/support.html">Splitup support</a>
                 <a href="mydeen/support.html">My Deen support</a>
@@ -891,7 +1033,7 @@
         </div>
     </footer>
 
-    <script src="./index.js?v=20261017"></script>
+    <script src="./index.js?v=20261111"></script>
 </body>
 
 </html>
