@@ -7189,6 +7189,30 @@
       ]
     },
     {
+      "text": "A mela just came to town. 🎡\n\nThe Mela pop-up is live in Kadak for 5 days. Run five mela stalls, earn Mela Tokens, and climb past the rival tapris to #1. Mela Masterji is waiting at the giant wheel.\n\nKadak: Idle Chai Empire. Free on Android and iOS, link in bio.\n\n#IdleGame #Chai #IndianGames",
+      "alt": {
+        "summary": "Reel for the Kadak idle game's Mela pop-up event: a giant wheel turning at a village fair at dusk, the guest character Mela Masterji greeting the player, five fair food stalls appearing one by one, and a rival table where the player's chai stall climbs from fifth place to first, ending on the Kadak app icon with \"5 days only\".",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "IG-06",
+      "platform": "IG",
+      "date": "2026-11-13",
+      "time": "7:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (kadak-R06.mp4, 15 s, the Mela pop-up, with sound). The event opens Fri 13 Nov at 6 pm IST, so post at 7:30 pm or later. It is in the Drive Kadak folder; paste its share link into video[0]. Use the cover at 2.2 s.",
+      "title": "The Mela pop-up is live (Reel)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/25b4d85b7cfd460c.webp",
+        "kadak-R06.mp4"
+      ]
+    },
+    {
       "alt": {
         "summary": "Barren cracked land under a dusty night sky. Glowing drops fall one by one while a thin gold bar fills to a hundred under the words Alhamdulillah in Arabic and English. Each drop leaves a green patch, a river runs down from the mountains, palms grow on its banks, the mountains turn green, and the night becomes a clear morning over an oasis.",
         "slides": []
@@ -7800,5 +7824,5 @@
       "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
     }
   ],
-  "built": "11 Nov 2026, 16:02"
+  "built": "12 Nov 2026, 22:20"
 }
