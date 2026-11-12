@@ -1181,22 +1181,35 @@ h3 {
     gap: 0;
 }
 
+/* Beside the text, the shots fill the column's height and sit centred under
+   the bunting instead of in a 230px strip at the bottom (the generic
+   .tile-shots height comes later in this file, hence the extra specificity) */
+@media (min-width: 701px) {
+    .tile--game .tile-shots--street {
+        height: auto;
+        margin-top: 0;
+        align-self: stretch;
+        align-items: center;
+        padding: 4.5rem 1.5rem 3rem 0.5rem;
+    }
+}
+
 /* Five shots in a shallow arc, overlapping a little, the middle one in front */
 .tile-shots--street .shot {
-    --lift: 78px;
-    flex: 0 1 176px;
-    margin-inline: -7px;
+    --lift: 44px;
+    flex: 0 1 200px;
+    margin-inline: -12px;
     transform: translateY(var(--lift));
 }
 
 .tile-shots--street .shot:nth-child(2),
 .tile-shots--street .shot:nth-child(4) {
-    --lift: 40px;
+    --lift: 18px;
     z-index: 1;
 }
 
 .tile-shots--street .shot:nth-child(3) {
-    --lift: 12px;
+    --lift: 0px;
     z-index: 2;
 }
 
@@ -1666,12 +1679,12 @@ h3 {
 
     .tile-shots--street .shot:nth-child(1),
     .tile-shots--street .shot:nth-child(3) {
-        --lift: 46px;
+        --lift: 30px;
         z-index: 1;
     }
 
     .tile-shots--street .shot:nth-child(2) {
-        --lift: 12px;
+        --lift: 0px;
         z-index: 2;
     }
 }
