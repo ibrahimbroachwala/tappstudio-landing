@@ -130,6 +130,22 @@ if (dock) {
 }
 
 // ---------------------------------------------------------------------------
+// Kadak Chai tile: the screenshot strip fades out at whichever edge still has
+// more to scroll to. data-start / data-end mark the ends it has reached.
+// ---------------------------------------------------------------------------
+const street = document.querySelector('.tile-shots--street');
+if (street) {
+    const edges = () => {
+        const max = street.scrollWidth - street.clientWidth;
+        street.toggleAttribute('data-start', street.scrollLeft <= 2);
+        street.toggleAttribute('data-end', street.scrollLeft >= max - 2);
+    };
+    street.addEventListener('scroll', edges, { passive: true });
+    window.addEventListener('resize', edges);
+    edges();
+}
+
+// ---------------------------------------------------------------------------
 // Kadak Chai tile: tap the kettle to pour. A one-button taste of the game; the
 // count is a per-visitor nicety kept in localStorage (fine if it's missing).
 // ---------------------------------------------------------------------------

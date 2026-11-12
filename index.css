@@ -1172,57 +1172,59 @@ h3 {
     box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 248, 236, 0.16);
 }
 
-/* Screenshots stand along the street like shopfronts, then step up on hover */
-.tile-shots--street {
+/* Three big shots in view; the rest wait in a scroll strip that fades out at
+   the edges (index.js flips data-start/data-end as the strip scrolls) */
+.tile--game .tile-shots--street {
+    --gap: 1rem;
+    --edge: 56px;
     height: auto;
     margin-top: 0;
-    align-items: flex-end;
-    padding: 5.5rem 1.5rem 0 0.5rem;
-    gap: 0;
+    align-self: center;
+    align-items: center;
+    gap: var(--gap);
+    padding: 1.5rem var(--edge) 2rem 1rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem var(--edge);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(244, 163, 0, 0.45) transparent;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - var(--edge) - 2rem), transparent);
+    mask-image: linear-gradient(90deg, #000 calc(100% - var(--edge) - 2rem), transparent);
 }
 
-/* Beside the text, the shots fill the column's height and sit centred under
-   the bunting instead of in a 230px strip at the bottom (the generic
-   .tile-shots height comes later in this file, hence the extra specificity) */
+.tile--game .tile-shots--street:not([data-start]) {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--edge), #000 calc(100% - var(--edge) - 2rem), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 var(--edge), #000 calc(100% - var(--edge) - 2rem), transparent);
+}
+
+.tile--game .tile-shots--street[data-end] {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--edge));
+    mask-image: linear-gradient(90deg, transparent, #000 var(--edge));
+}
+
+.tile--game .tile-shots--street[data-start][data-end] {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
 @media (min-width: 701px) {
     .tile--game .tile-shots--street {
-        height: auto;
-        margin-top: 0;
-        align-self: stretch;
-        align-items: center;
-        padding: 4.5rem 1.5rem 3rem 0.5rem;
+        margin-top: 2.5rem;
     }
 }
 
-/* Five shots in a shallow arc, overlapping a little, the middle one in front */
 .tile-shots--street .shot {
-    --lift: 44px;
-    flex: 0 1 200px;
-    margin-inline: -12px;
-    transform: translateY(var(--lift));
-}
-
-.tile-shots--street .shot:nth-child(2),
-.tile-shots--street .shot:nth-child(4) {
-    --lift: 18px;
-    z-index: 1;
-}
-
-.tile-shots--street .shot:nth-child(3) {
-    --lift: 0px;
-    z-index: 2;
+    /* three full shots plus a sliver of the fourth, fading into the edge */
+    flex: 0 0 calc((100% - 2 * var(--gap)) / 3.2);
+    min-width: 0;
+    scroll-snap-align: start;
+    transform: none;
 }
 
 .tile--game:hover .tile-shots--street .shot {
-    transform: translateY(calc(var(--lift) - 22px));
-}
-
-.tile--game:hover .tile-shots--street .shot:nth-child(4) {
-    transition-delay: 0.15s;
-}
-
-.tile--game:hover .tile-shots--street .shot:nth-child(5) {
-    transition-delay: 0.2s;
+    transform: translateY(-6px);
 }
 
 .tile--game .shot img {
@@ -1668,25 +1670,17 @@ h3 {
         min-height: 380px;
     }
 
+    /* Text on top, then the screenshot strip across the full tile width */
     .tile--game {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    /* Three shots in a narrower arc */
-    .tile-shots--street .shot:nth-child(n+4) {
-        display: none;
+    .tile--game .tile-shots--street {
+        align-self: stretch;
+        margin-top: 0;
+        padding-bottom: 3rem;
     }
 
-    .tile-shots--street .shot:nth-child(1),
-    .tile-shots--street .shot:nth-child(3) {
-        --lift: 30px;
-        z-index: 1;
-    }
-
-    .tile-shots--street .shot:nth-child(2) {
-        --lift: 0px;
-        z-index: 2;
-    }
 }
 
 @media (max-width: 700px) {
@@ -1715,24 +1709,16 @@ h3 {
         display: flex;
     }
 
-    .tile-shots--street {
-        height: 270px;
-        align-items: flex-start;
-        gap: 0.6rem;
-        padding: 0.5rem 1rem 0;
+    .tile--game .tile-shots--street {
+        --gap: 0.7rem;
+        --edge: 36px;
+        align-self: stretch;
+        padding: 0.75rem var(--edge) 2.5rem 1rem;
     }
 
+    /* a phone is too narrow for three at a readable size: two, then the fade */
     .tile-shots--street .shot {
-        flex-basis: 150px;
-        margin-inline: 0;
-    }
-
-    .tile-shots--street .shot:nth-child(n) {
-        --lift: 26px;
-    }
-
-    .tile-shots--street .shot:nth-child(2) {
-        --lift: 0px;
+        flex-basis: calc((100% - var(--gap)) / 2.2);
     }
 
     .game-bunting,
