@@ -1,30 +1,67 @@
 <!doctype html><html><head><meta charset="utf-8">
+<!-- LinkedIn profile banner, 1584x396. Pick a text option with ?v=a..f.
+     Render: Chrome --headless=new --window-size=1584,396 --force-device-scale-factor=2 --screenshot=out.png "file://.../banner.html?v=a"
+     The profile photo covers roughly x 40-360 on the bottom half, so text starts at x 420. -->
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1584px;height:396px;background:#0e0e0c;color:#f2efe8;font-family:'Geist',sans-serif;position:relative;overflow:hidden}
-.glow{position:absolute;right:-80px;top:-300px;width:1000px;height:1000px;background:radial-gradient(circle,rgba(20,184,166,.26),transparent 62%)}
-.txt{position:absolute;left:395px;top:84px}
-.eyebrow{font-family:'Geist Mono';font-size:17px;letter-spacing:.09em;text-transform:uppercase;color:#14b8a6}
-h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:40px;line-height:1.08;letter-spacing:-1.5px;margin-top:14px;white-space:nowrap}
-h1 span{color:#14b8a6}
-p{font-size:22px;line-height:1.3;color:#a8a49a;margin-top:16px}
-.url{font-family:'Geist Mono';font-size:16px;color:#9a968c;margin-top:16px}
-.ph{position:absolute;width:190px;bottom:-40px;border-radius:24px;box-shadow:0 20px 40px -8px rgba(0,0,0,.7);border:2px solid rgba(255,255,255,.08);transform-origin:50% 100%}
-.a{left:930px;transform:translateY(24px) rotate(-15deg);z-index:1}
-.b{left:1065px;transform:translateY(0) rotate(-5deg);z-index:3}
-.c{left:1195px;transform:translateY(0) rotate(5deg);z-index:4}
-.d{left:1325px;transform:translateY(24px) rotate(15deg);z-index:2}
+.glow-t{position:absolute;left:180px;top:-420px;width:900px;height:900px;background:radial-gradient(circle,rgba(20,184,166,.16),transparent 60%)}
+.glow-k{position:absolute;left:980px;top:-200px;width:820px;height:820px;background:radial-gradient(circle,rgba(244,163,0,.20),transparent 60%)}
+
+/* tilted wall of screenshots, fading into the text side */
+.wall{position:absolute;left:900px;top:-150px;width:900px;height:720px;display:flex;gap:18px;transform:rotate(-9deg);transform-origin:0 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 200px)}
+.col{display:flex;flex-direction:column;gap:18px}
+.col:nth-child(even){margin-top:-130px}
+.col img{width:150px;height:326px;border-radius:20px;display:block;object-fit:cover;
+  border:1.5px solid rgba(255,255,255,.09);box-shadow:0 18px 36px -10px rgba(0,0,0,.8)}
+.col img.k{border-color:rgba(244,163,0,.55)}
+
+.txt{position:absolute;left:420px;top:62px;width:560px}
+.eyebrow{font-family:'Geist Mono';font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#14b8a6;display:flex;align-items:center;gap:10px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#14b8a6;box-shadow:0 0 0 4px rgba(20,184,166,.18)}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:50px;line-height:1.02;letter-spacing:-1.8px;margin-top:14px}
+h1 em{font-style:normal;color:#14b8a6}
+h1 b{font-weight:800;color:#f4a300}
+p{font-size:19px;line-height:1.38;color:#a8a49a;margin-top:14px;max-width:520px}
+.foot{display:flex;align-items:center;gap:16px;margin-top:20px}
+.icons{display:flex;gap:8px}
+.icons img{width:36px;height:36px;border-radius:9px;border:1px solid rgba(255,255,255,.1)}
+.url{font-family:'Geist Mono';font-size:15px;color:#9a968c}
 </style></head><body>
-<div class="glow"></div>
-<img class="ph a" src="file:///Users/ibrahimbroach/Projects/tappstudio-landing/public/apps/splitup/1-1080.webp">
-<img class="ph b" src="file:///Users/ibrahimbroach/Projects/tappstudio-landing/public/apps/nasab/2-1080.webp">
-<img class="ph c" src="file:///Users/ibrahimbroach/Projects/tappstudio-landing/public/apps/mydeen/2-1080.webp">
-<img class="ph d" src="file:///Users/ibrahimbroach/Projects/tappstudio-landing/public/apps/misbaha/1-1080.webp">
-<div class="txt">
-<div class="eyebrow">Ibrahim Broachwala · Mumbai</div>
-<h1>Apps that feel right<br><span>and solve real problems.</span></h1>
-<p>Thoughtful UX on iOS, Android and web.</p>
-<div class="url">tappstudio.in</div>
+<div class="glow-t"></div><div class="glow-k"></div>
+
+<div class="wall">
+  <div class="col"><img src="../../public/apps/mydeen/2-540.webp"><img src="../../public/apps/misbaha/1-540.webp"></div>
+  <div class="col"><img class="k" src="../../public/apps/kadak/2-540.webp"><img class="k" src="../../public/apps/kadak/1-540.webp"><img src="../../public/apps/hunarcircle/1-540.webp"></div>
+  <div class="col"><img src="../../public/apps/splitup/2-540.webp"><img src="../../public/apps/splitup/1-540.webp"></div>
+  <div class="col"><img src="../../public/apps/mydeen/1-540.webp"><img src="../../public/apps/nasab/2-540.webp"><img src="../../public/apps/nasab/1-540.webp"></div>
+  <div class="col"><img class="k" src="../../public/apps/kadak/4-540.webp"><img src="../../public/apps/misbaha/2-540.webp"></div>
 </div>
+
+<div class="txt">
+  <div class="eyebrow"><i></i><span id="eb"></span></div>
+  <h1 id="h"></h1>
+  <p id="s"></p>
+  <div class="foot">
+    <div class="icons">
+      <img src="../../public/apps/kadak/icon-256.webp"><img src="../../public/apps/nasab/icon-256.webp"><img src="../../public/apps/splitup/icon-256.webp"><img src="../../public/apps/mydeen/icon-256.webp"><img src="../../public/apps/misbaha/icon-256.webp"><img src="../../public/apps/hunarcircle/icon-256.webp">
+    </div>
+    <div class="url">tappstudio.in</div>
+  </div>
+</div>
+
+<script>
+const V={
+  a:["tappStudio · Mumbai","Small apps for the<br><em>big parts of life.</em>","Chai breaks, family, friends and faith. Designed, built and looked after by one person."],
+  b:["tappStudio · Mumbai","From a family tree<br>to a <b>chai tapri.</b>","Apps for family, friends and faith, and now a game. Every one designed, built and looked after in-house."],
+  c:["tappStudio · Mumbai","Made by one person.<br><em>Looked after for years.</em>","Apps for family, friends and faith, and Kadak Chai, the studio's first game."],
+  d:["tappStudio · Mumbai","Apps for the<br><em>everyday rituals.</em>","A morning chai. A family story. A tasbih count. A bill split four ways."],
+  e:["tappStudio · Mumbai","Built one tap<br><em>at a time.</em>","An independent app studio for iPhone, Android and the web. Apps for family, friends and faith, and a chai stall game."],
+  f:["Ibrahim Broachwala · tappStudio","I make apps, and now<br>a <b>chai stall game.</b>","Nasab, Splitup, My Deen, Misbaha, Hunar Circle and Kadak Chai. Designed, built and looked after in Mumbai."]
+};
+const v=V[new URLSearchParams(location.search).get('v')]||V.a;
+eb.textContent=v[0];h.innerHTML=v[1];s.textContent=v[2];
+</script>
 </body></html>

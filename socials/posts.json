@@ -6376,7 +6376,7 @@
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
     },
     {
-      "text": "Idle games love guilt. Your streak is gone. This event will never come back. A notification at 2 am saying your customers miss you.\n\nBefore building the stuff that brings people back to Kadak, I made a list of what it won't do:\n\n1. No energy bars. Play as long as you want.\n2. Missed a pop-up event? No problem. It comes back later with the same Guest Ustaad and rewards.\n3. Miss one day of the daily reward and your streak stays. One free miss a week.\n4. Max 2 notifications a day. Only if you turn them on. Nothing between 10 pm and 8 am.\n5. Come back after even 10 minutes and something's waiting. Never an empty screen.\n\nSo what brings people back? Stuff that finishes while you're gone. Ustaad training done. A chest opened. The tapri full of chai by morning.\n\nA timer gives you a reason to come back. Guilt just makes you uninstall.\n\nBablu Bhaiya never takes a day off. But he also doesn't sulk like the relative you forgot to call on Diwali.",
+      "text": "Idle games love guilt. 😩 Your streak is gone. This event will never come back. A notification at 2 am saying your customers miss you.\n\nBefore building the stuff that brings people back to Kadak, I made a list of what it won't do:\n\n1. No energy bars. Play as long as you want. 🔋\n2. Missed a pop-up event? No problem. It comes back later with the same Guest Ustaad and rewards. 🎪\n3. Miss one day of the daily reward and your streak stays. One free miss a week. 🔥\n4. Max 2 notifications a day. Only if you turn them on. Nothing between 10 pm and 8 am. 🔕\n5. Come back after even 10 minutes and something's waiting. Never an empty screen. 🎁\n\nSo what brings people back? Stuff that finishes while you're gone. ⏳\nUstaad training done. A chest opened. The tapri full of chai by morning. ☕\n\nA timer gives you a reason to come back. Guilt just makes you uninstall. 🗑️\n\nBablu Bhaiya never takes a day off. But he also doesn't sulk like the relative you forgot to call on Diwali. 🪔😂",
       "images": [
         [
           "img/6d8a25d4993477c1.webp",
@@ -7828,6 +7828,54 @@
         "slides": []
       },
       "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-13",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/82241ce1baed0eba.webp",
+        "misbaha-R14.mp4"
+      ],
+      "alt": {
+        "summary": "A string of beads coils toward the viewer out of a glowing point in the dark, like a tunnel. With every count the next bead comes to the front, flashes gold and sweeps past. Red aqeeq beads for Allahu akbar, 33 times, green jade for Alhamdulillah, 33 times, amber for Subhanallah, 33 times, and one turquoise feroza bead for La ilaha illallah to make a hundred. Under the small words Tasbih e Fatima, the phrase glows at the top in Arabic and English over a gold bar and a count to 100. A white tassel stands up from the feroza bead as it lands.",
+        "slides": []
+      },
+      "id": "IG-29",
+      "platform": "IG",
+      "time": "9:30 pm IST",
+      "title": "The bead spiral, a hundred counts (Reel)",
+      "text": "Allahu akbar 33, Alhamdulillah 33, Subhanallah 33, La ilaha illallah once. A hundred.\n\nThe beads coil out of the dark, one to the front with every count. Aqeeq, then Jade, then Amber, and a Feroza for the hundredth with the white tassel standing on it. Every stone and the tassel are in the app.\n\nMisbaha, on iOS and Android. Link in bio.\n\n#misbaha #tasbih #dhikr #prayerbeads #muslimapp",
+      "note": "Reel is built (misbaha-R14.mp4, 48 s, a spiral of the app's own beads coming toward the viewer: Allahu akbar 33 on Aqeeq, Alhamdulillah 33 on Jade, Subhanallah 33 on Amber, La ilaha illallah 1 on Feroza, the app's white tassel, a small TASBIH E FATIMA line at the top, the rain reels' bead sound, no voice). Check the Arabic (ٱللَّهُ أَكْبَرُ, ٱلْحَمْدُ لِلَّهِ, سُبْحَانَ ٱللَّهِ, لَا إِلَٰهَ إِلَّا ٱللَّهُ) before posting. Upload to Drive and paste the link into video[0]. Use misbaha-R14-nomusic.mp4 for a licensed IG sound, and set the cover to misbaha-R14-cover.png."
+    },
+    {
+      "brand": "misbaha",
+      "date": "2026-11-13",
+      "status": "ready",
+      "warn": true,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/82241ce1baed0eba.webp",
+        "misbaha-R14.mp4"
+      ],
+      "alt": {
+        "summary": "A string of beads coils toward the viewer out of a glowing point in the dark, like a tunnel. With every count the next bead comes to the front, flashes gold and sweeps past. Red aqeeq beads for Allahu akbar, 33 times, green jade for Alhamdulillah, 33 times, amber for Subhanallah, 33 times, and one turquoise feroza bead for La ilaha illallah to make a hundred. Under the small words Tasbih e Fatima, the phrase glows at the top in Arabic and English over a gold bar and a count to 100. A white tassel stands up from the feroza bead as it lands.",
+        "slides": []
+      },
+      "id": "YT-16",
+      "platform": "YT",
+      "time": "8:30 pm IST",
+      "title": "A hundred beads in a spiral: 33, 33, 33 and 1",
+      "text": "Allahu akbar 33, Alhamdulillah 33, Subhanallah 33 and La ilaha illallah once, on a spiral of Aqeeq, Jade, Amber and one Feroza.\n\nMisbaha is on iOS and Android.\n\n#Shorts #tasbih #misbaha #dhikr #prayerbeads",
+      "note": "Same video as IG-29 (misbaha-R14.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
   "built": "13 Nov 2026, 10:48"
