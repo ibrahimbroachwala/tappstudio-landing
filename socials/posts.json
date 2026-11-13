@@ -4296,10 +4296,16 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
-      "text": "My longest client relationship is older than my company name. 🤝\n\nThe first commit on OnTime Health is from April 2021. tappStudio's website didn't exist until 2023. The most recent commit was last month.\n\nFive years on one app taught me more than any course:\n\n• [LESSON 1, your words: e.g. what a client actually values after year one]\n• [LESSON 2: something about maintenance vs. new features]\n• [LESSON 3: something about trust]\n\nPeople ask how a solo developer competes with agencies. Honestly? By still being there in year five.\n\n[ONE LINE thanking the client by name, if they agree]",
-      "images": [],
+      "text": "My longest client relationship is older than my company name. 🤝\n\nThe first commit on OnTime Health is from April 2021. tappStudio's website didn't exist until 2023. The most recent commit was last month.\n\nFive years on one app taught me more than any course:\n\n• Respect for time goes both ways. We kept it simple: WhatsApp for the day to day, and video calls a few days a week to get up to speed. David always valued my time, so the calls stayed short and useful. And I rarely left one without a new circadian rhythm tip. Five years in, my code has improved. My sleep schedule is getting there.\n\n• A steady rhythm beats a big launch. We mostly shipped on a two week release cycle, and new features kept landing in OnTime Health the whole way through. Two weeks is long enough to build something real and short enough that nobody forgets why we started it. Small releases meant small risks and quick feedback from real users. Upkeep like OS updates, package upgrades and old bugs went into the same cycle, so it never piled up into a scary rewrite.\n\n• Trust is what turns a project into five years. I was never rushed, and payments were never late. Not once. That sounds basic, but it changes how you work: no corners cut for a panic deadline, no chasing invoices, just focus on the app. When a client trusts you like that, you want to earn it again every release.\n\nPeople ask how a solo developer competes with agencies. Honestly? By still being there in year five.\n\nThank you, David, for five years of trust, patience, good questions and even better sleep advice. Here's to year six.",
+      "images": [
+        [
+          "img/c0b40520b286abda.webp",
+          "img/c0b40520b286abda-t.webp",
+          "tappstudio-LI-10.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "A git-log card titled \"Older than my company name.\" The OnTime Health repo's log runs from its first commits on 16 April 2021 (\"Initial Commit\", \"Getx Architecture setup\"), folds 807 commits, and ends with an Android Health Connect feature in August 2026 and a Firebase SDK fix on 4 September 2026. Below, a bar chart of commits per year: 31 in 2021, 244 in 2022, 132 in 2023, 254 in 2024, 59 in 2025 and 91 in 2026, with 2023 marked as the year tappstudio.in went live. Caret, the teal cursor mascot, celebrates.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -4308,8 +4314,8 @@
       "date": "2026-11-13",
       "time": "09:30 IST",
       "status": "planned",
-      "warn": true,
-      "note": "1) Ask the OnTime client if they are happy to be named. 2) Write the three lessons yourself. 3) Nothing visual: I build the git-log card.",
+      "warn": false,
+      "note": "Lessons, thank-you and git-log card done.",
       "title": "My longest client relationship is older than my company name.",
       "posted": "",
       "carousel": false,
@@ -7824,5 +7830,5 @@
       "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: a member card for 'You, b. 1995' with only the name filled in and five empty dotted lines (how you met, first job, famous meal, a photo, your voice), headline 'In 2070, someone will look you up.' Cover is the still itself. File nasab-IG-38.mp4."
     }
   ],
-  "built": "12 Nov 2026, 22:20"
+  "built": "13 Nov 2026, 10:48"
 }
