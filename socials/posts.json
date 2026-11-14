@@ -7219,6 +7219,111 @@
       ]
     },
     {
+      "text": "What's on the menu? ☕\n\nYour tapri starts with one cutting chai kettle. Then comes bun maska, vada pav, samosa, kulhad chai, pakoras, Irani bakes and kesar kulfi. Each stall has its own stall master who keeps it running while you're away.\n\nSwipe through the menu and tell us what you'd order first 👇\n\nKadak: Idle Chai Empire. Free on Android and iOS, link in bio.\n\n#IdleGame #Chai #IndianStreetFood",
+      "alt": {
+        "summary": "Carousel for the Kadak idle chai game: the eight street food stalls you open on your chai stall's street, from a cutting chai kettle to a kesar kulfi cart, each with its stall master.",
+        "slides": [
+          "Eight stall icons on cards under the title \"What's on the menu?\"",
+          "A kettle pouring cutting chai, run by Bablu Bhaiya.",
+          "A bun with butter on a plate, run by Rustom Uncle.",
+          "A vada pav with green chutney, run by Sakharam Mama.",
+          "Two samosas in a kadhai, run by Gurpreet Paaji.",
+          "Two clay kulhads of masala chai, run by Kamla Maasi.",
+          "Pakoras and a fried mirchi on a plate, run by Shabana Aapa.",
+          "A glass jar of Irani biscuits, run by Darius Seth.",
+          "A kesar kulfi on a stick with a clay pot, run by Murugan Anna.",
+          "The Kadak app icon: free on Android and iOS, link in bio."
+        ]
+      },
+      "brand": "kadak",
+      "id": "IG-07",
+      "platform": "IG",
+      "date": "2026-11-15",
+      "time": "7:30 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "10 slides. Reply to comments with that stall master's own line.",
+      "title": "What's on the menu?",
+      "posted": "",
+      "carousel": true,
+      "images": [
+        [
+          "img/3658d17974ad63fd.webp",
+          "img/3658d17974ad63fd-t.webp",
+          "kadak-IG-07-01.jpg"
+        ],
+        [
+          "img/d77b8c0aec01e183.webp",
+          "img/d77b8c0aec01e183-t.webp",
+          "kadak-IG-07-02.jpg"
+        ],
+        [
+          "img/3df40298cbf59ead.webp",
+          "img/3df40298cbf59ead-t.webp",
+          "kadak-IG-07-03.jpg"
+        ],
+        [
+          "img/01a9bd03128ef5fb.webp",
+          "img/01a9bd03128ef5fb-t.webp",
+          "kadak-IG-07-04.jpg"
+        ],
+        [
+          "img/52929a29b028f45a.webp",
+          "img/52929a29b028f45a-t.webp",
+          "kadak-IG-07-05.jpg"
+        ],
+        [
+          "img/684cd985958052dc.webp",
+          "img/684cd985958052dc-t.webp",
+          "kadak-IG-07-06.jpg"
+        ],
+        [
+          "img/c8a5ea60489df093.webp",
+          "img/c8a5ea60489df093-t.webp",
+          "kadak-IG-07-07.jpg"
+        ],
+        [
+          "img/5a97d289f5f008c4.webp",
+          "img/5a97d289f5f008c4-t.webp",
+          "kadak-IG-07-08.jpg"
+        ],
+        [
+          "img/9e9cbb238b2cfb7a.webp",
+          "img/9e9cbb238b2cfb7a-t.webp",
+          "kadak-IG-07-09.jpg"
+        ],
+        [
+          "img/a0f7dc3ac6a2d074.webp",
+          "img/a0f7dc3ac6a2d074-t.webp",
+          "kadak-IG-07-10.jpg"
+        ]
+      ]
+    },
+    {
+      "text": "Your tapri, sunrise to midnight. ☕🌙\n\nFirst kettle at dawn. Office Rush at 9 pays ×1.5. Samosa hour in the afternoon, the evening rush at 6, and the bulb still glowing at midnight.\n\nIn Kadak, the sky over your chai stall follows the real time in India, and your tapri keeps earning all day.\n\nKadak: Idle Chai Empire. Free on Android and iOS, link in bio.\n\n#IdleGame #Chai #IndianGames",
+      "alt": {
+        "summary": "Reel for the Kadak idle chai game: one day at a cartoon chai stall in a city street, the sky turning from dawn to midday to sunset to night as a clock runs, coins rising off the counter, an Office Rush at 9 am and 6 pm paying 1.5 times, and a commuter train passing behind.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "IG-08",
+      "platform": "IG",
+      "date": "2026-11-17",
+      "time": "7:30 pm IST",
+      "status": "ready",
+      "warn": true,
+      "note": "Reel is built (kadak-R08.mp4, 15 s, one day at the tapri, with sound). It is in the Drive Kadak folder; paste its share link into video[0]. Use the cover at 3.4 s.",
+      "title": "Your tapri, sunrise to midnight (Reel)",
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "",
+        "img/706c50fdbfcc1c26.webp",
+        "kadak-R08.mp4"
+      ]
+    },
+    {
       "alt": {
         "summary": "Barren cracked land under a dusty night sky. Glowing drops fall one by one while a thin gold bar fills to a hundred under the words Alhamdulillah in Arabic and English. Each drop leaves a green patch, a river runs down from the mountains, palms grow on its banks, the mountains turn green, and the night becomes a clear morning over an oasis.",
         "slides": []
@@ -7878,5 +7983,5 @@
       "note": "Same video as IG-29 (misbaha-R14.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "13 Nov 2026, 10:48"
+  "built": "14 Nov 2026, 09:10"
 }
