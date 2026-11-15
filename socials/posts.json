@@ -7981,18 +7981,23 @@
       "platform": "IG",
       "date": "2026-11-15",
       "time": "6:00 pm IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "posted": "",
       "carousel": false,
       "kind": "reel",
-      "title": "Wedding season checklist (Photo reel)",
+      "title": "Wedding season checklist (Reel)",
       "text": "Wedding season is family-archive season. Everyone is in one place, dressed up, and the elders are telling stories.\n\nBefore the next one, save this:\n1. One photo of every generation together\n2. The names of the elders in the group photos, written down that week\n3. The nikah date, in Hijri and Gregorian\n4. A voice message from each grandparent to the couple\n5. Both families' trees, joined where the couple joins them\n6. The story of how they met, from someone who isn't the couple\n\nNumber 6 is always better.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#WeddingSeason #FamilyArchive #FamilyTree #Nikah #Reels",
       "alt": {
-        "summary": "A paper card titled Wedding season checklist with six items: every generation in one photo, elders' names, the nikah date in Hijri and Gregorian, a voice message from each grandparent, both family trees joined, and how they met.",
+        "summary": "A paper card on ivory, titled Wedding season checklist, with a marigold sprig on its corner and six numbered items with empty boxes: every generation in one photo, the elders' names written down the same week, the nikah date in Hijri and Gregorian, grandparents' voice messages, both family trees joined, and how they met from someone who isn't the couple. Below: Number 6 is always better.",
         "slides": []
       },
-      "note": "PHOTO REEL PENDING: image not generated yet (we'll make these one by one). Context for generating: one 1080x1920 still in the Nasab Heirloom style (ivory paper and grain, Fraunces headline, Lora Italic for the turn, gold accents, Malik demo family only), with all text inside the middle safe zone (clear of the top 250 px and bottom 400 px for IG's UI). Make it a reel: 8 to 10 s, slow drift from 1.0 to 1.03 scale, music bed audio/library/nasab-archive.wav (or post the still as a reel and add a licensed IG track in-app). Still: headline 'Wedding season checklist' with six short numbered lines (generations photo, elders' names, nikah date Hijri + Gregorian, grandparents' voice messages, both trees joined, how they met). Small gold khatam star, a marigold sprig in one corner. Cover is the still itself. File nasab-IG-34.mp4. IMAGE PROMPTS: Optional background for the checklist card (9:16): 'A South Asian wedding at mid-distance, three generations gathered for a group photo, an elderly grandfather in a white kurta seated in the middle, marigold garlands and warm string lights, everyone softly out of focus except the grandparents, calm empty space in the top half.' Place the checklist on an ivory card over the calm area. Shared style, negative prompt, character sheet and rules: ~/Projects/tappstudio_socials/reels/nasab/image_prompts.md (append the shared style to each prompt; turn on IG's AI info label)."
+      "note": "Reel is built (nasab-IG-34.mp4, 10 s photo reel: the checklist still on Heirloom paper with a slow 1.0 to 1.03 drift, a marigold sprig and the nasab-archive bed faded out). No people in it, so no AI label needed. Upload it to Drive, paste the link into video[0], then post or schedule. Use nasab-IG-34-nomusic.mp4 (silent) to add a licensed IG sound instead. Cover is nasab-IG-34-cover.png, the still itself. Source: reels/nasab/ig34-wedding-checklist/build/index.html.",
+      "video": [
+        "",
+        "img/4e04e49627c8951a.webp",
+        "nasab-IG-34.mp4"
+      ]
     },
     {
       "brand": "nasab",
