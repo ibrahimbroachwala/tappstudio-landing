@@ -5159,9 +5159,15 @@
     },
     {
       "text": "A trip for 6 people can be settled in 5 payments. Never more. This is true for any group.\n\nMost groups still end up with 12 or 15 transfers, because everyone repays whoever they remember owing. Half of those payments are people passing the same money around in a circle.\n\nThe trick is to stop settling expense by expense and settle once, from the totals:\n1. Add up what each person paid.\n2. Divide by the group size. That is each person's fair share.\n3. Some people paid more than their share (they are owed). Some paid less (they owe).\n4. Match the biggest debtor with the biggest creditor. Repeat until everyone is at zero.\n\nEvery payment clears at least one person for good, so a group of N is done in at most N-1 payments.\n\nTwo habits that make this painless on a real trip:\n• Log each expense the day it happens, while everyone still remembers it\n• Settle once, on the last day, not at every dinner\n\nThis is exactly what Splitup does for you. But the method works with a notes app and a calculator too, and it will save your group a few awkward messages.\n\nA circle of people repaying each other is the only kind of circle that should be broken.",
-      "images": [],
+      "images": [
+        [
+          "img/55f0bf1fd2c477d1.webp",
+          "img/55f0bf1fd2c477d1-t.webp",
+          "splitup-LI-13.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Splitup Ship Log card: '6 people. 5 payments. Max.' Two panels compare six friends, Ali, Sara, Max, Zoya, Dev and Rhea. Left, every pair joined by a line: 15 possible transfers when people repay whoever they remember. Right, settling once from the totals: 5 arrows into the two people who are owed, everyone at zero. A note explains the method: add up what each person paid, divide by 6 for the fair share, match the biggest debtor with the biggest creditor.",
         "slides": []
       },
       "brand": "splitup",
@@ -5171,7 +5177,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "A trip for N people never needs more than N-1 payments",
       "posted": "",
       "carousel": false,
@@ -5179,9 +5185,15 @@
     },
     {
       "text": "Every feature I have added and later deleted failed the same three questions. I just asked them too late.\n\n1. Who asked for this, in their own words? \"It would be nice\" from me doesn't count. A user describing a problem does.\n2. What does the app do today when this problem happens? If the answer is \"nothing, they leave\", it is worth building. If the answer is \"they find a workaround in ten seconds\", it probably isn't.\n3. What will I have to keep maintaining? A feature isn't built once. It is tested on every new OS version, translated into every language, and explained in every support reply.\n\nWhen a small studio says yes to everything, the app slowly becomes a settings screen.\n\nA good week for me is often one where a feature request becomes a smaller fix to something that already exists.\n\nThe best code I ship is the code I talked myself out of.",
-      "images": [],
+      "images": [
+        [
+          "img/18105229961d07b4.webp",
+          "img/18105229961d07b4-t.webp",
+          "tappstudio-LI-11.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "tappStudio field note on light paper: 'Three questions before a feature.' An editor card, feature-gate.md, lists them: who asked, in their own words; what happens today; what will I keep maintaining. Below: a good week is when a feature request becomes a smaller fix to something that already exists. Caret, the teal cursor mascot, is thinking.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -5191,7 +5203,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Three questions I ask before I add a feature",
       "posted": "",
       "carousel": false,
@@ -5199,9 +5211,15 @@
     },
     {
       "text": "I looked at Nasab's onboarding data and one number stopped me: 85% of new families didn't add a single parent.\n\nOut of 180 families created in the last 90 days, 27 added a father during onboarding. Fewer than half finished onboarding at all.\n\nMy first guess was a bug. It wasn't. People open a family tree app, see an empty tree, and the job suddenly looks enormous: six generations, dates nobody remembers, names in three spellings.\n\nWhat I'm changing:\n1. Ask for three names, not a family. You, your father, your mother. That's already a tree.\n2. Suggest the next person, one at a time. Home already nudges \"Add Naveed's mother\"; it needs to show up sooner.\n3. Make inviting a cousin the shortcut. The person who knows their side should fill it in.\n\nThe lesson for me: people don't want to build a family tree. They want to have one. The product has to close that gap.\n\n#BuildInPublic #ProductManagement #Onboarding",
-      "images": [],
+      "images": [
+        [
+          "img/504cd6704f647399.webp",
+          "img/504cd6704f647399-t.webp",
+          "nasab-LI-17.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Nasab build log card on ivory paper: 'An empty tree looks enormous.' Bars for new families in the last 90 days: 180 created a family, 85 finished onboarding, 27 added a father. A dark card: 85% of new families didn't add a single parent. Not a bug. The job just looked too big. Below: start with three names, You, Father, Mother.",
         "slides": []
       },
       "brand": "nasab",
@@ -5211,7 +5229,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Replaces 'Seven questions for your grandparents', which repeated IG-04 and IG-23. Numbers from PostHog (Nasab, last 90 days to 10 Nov 2026, internal users excluded): 180 families created, 27 added a father, 85 finished onboarding. Re-check them before posting. Only describe changes that have shipped or are actually planned; edit the list if not.",
+      "note": "Replaces 'Seven questions for your grandparents', which repeated IG-04 and IG-23. Numbers from PostHog (Nasab, last 90 days to 10 Nov 2026, internal users excluded): 180 families created, 27 added a father, 85 finished onboarding. Re-check them before posting. Only describe changes that have shipped or are actually planned; edit the list if not.",
       "title": "85% of new families didn't add a single parent",
       "posted": "",
       "carousel": false,
@@ -5219,9 +5237,15 @@
     },
     {
       "text": "Most dhikr habits don't fail because of faith. They fail because the target was too big for a Tuesday.\n\nIf you want a habit that survives a busy week, shrink it until it is almost embarrassing:\n• Pick one anchor you never skip (after fajr, after a prayer, before sleep)\n• Pick one small count, like 33\n• Do only that, every day, for two weeks\n\nThe count matters less than the streak. A person who does 33 every day for a month has built something that a person who does 1,000 once on Friday hasn't.\n\nA few things that help:\n• Keep the counter where your hands already are, not in a drawer\n• Make it quiet, so it works in a bus or beside a sleeping child\n• Don't track a number you'll feel guilty about\n\nI built Misbaha around the same idea. The counting is free and calm, and the bead and tassel styles are there for the days you want it to feel special.\n\nConsistency is quiet. Your counter can be too.",
-      "images": [],
+      "images": [
+        [
+          "img/d29d6afcc37c5423.webp",
+          "img/d29d6afcc37c5423-t.webp",
+          "misbaha-LI-06.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Misbaha card in black and gold: 'The count matters less than the streak.' A four-week grid with an amber bead for every day, one anchor after fajr, 33 a day, adding up to 924. Two cards compare 33 a day, small enough for a Tuesday, with 1,000 once on a Friday. Note: shrink it until it's almost embarrassing, then don't skip it.",
         "slides": []
       },
       "brand": "misbaha",
@@ -5231,7 +5255,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "A dhikr habit that survives a busy week",
       "posted": "",
       "carousel": false,
@@ -5239,9 +5263,15 @@
     },
     {
       "text": "AI writes a pull request in minutes. Reviewing it still takes me an hour. That hour is the actual job.\n\nHere is the order I read it in, because order matters:\n1. The tests first. If the tests only check the happy path, the code probably does too.\n2. Anything that touches money, login or data deletion. I read these slowly, line by line.\n3. The edges: empty lists, no network, a user who taps twice, a language that reads right to left.\n4. What it did not change. Missing changes are harder to see than wrong ones.\n\nWhat I've learned to distrust:\n• Code that looks tidy but handles errors by ignoring them\n• Names that sound right but do something slightly different\n• Comments that describe the idea, not the code\n\nThe AI is a fast junior who never gets tired and never says \"I'm not sure\". So I do the saying for it.\n\nReading code carefully is still faster than debugging it in production.",
-      "images": [],
+      "images": [
+        [
+          "img/798130da89a6e91a.webp",
+          "img/798130da89a6e91a-t.webp",
+          "tappstudio-LI-12.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "tappStudio dark editor card: 'The review is the job.' A numbered review order: the tests first; money, login and deleting data, line by line; the edges (empty list, no network, double tap, right-to-left); what it didn't change. Below, three amber warnings: tidy code that ignores errors, names that sound right but differ, comments that describe the idea, not the code. Caret holds a magnifying glass.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -5251,7 +5281,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "How I review a pull request written by AI",
       "posted": "",
       "carousel": false,
@@ -5259,9 +5289,15 @@
     },
     {
       "text": "Nobody forgets a debt on purpose. It dies of politeness.\n\nDay 1: you remember it clearly.\nDay 3: you're embarrassed to bring it up first.\nDay 10: you're not sure of the amount, so you say nothing.\n\nThree small habits fix almost all of it:\n• Put the amount in writing the same day. A number in a chat is easier to settle than a vague memory\n• Ask in a neutral way. \"Splitup says it's $12.80\" is a lot easier than \"you owe me\"\n• Settle in one payment, not in pieces. Partial repayments are where the arithmetic gets lost\n\nIt also helps to remove the person from the conversation. A reminder from an app is just a reminder. A reminder from a friend is a conversation.\n\nThat is why Splitup sends the reminder for you. You stay the friend, and the app plays the accountant.",
-      "images": [],
+      "images": [
+        [
+          "img/a25a2066e62f7f22.webp",
+          "img/a25a2066e62f7f22-t.webp",
+          "splitup-LI-14.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Splitup Ship Log card: 'Debts die of politeness.' A three-row timeline: Day 1, 'I owe you $12.80'; Day 3, too awkward to bring up first; Day 10, was it $12 or $18, say nothing. Below, a struck-out bubble 'You owe me.' next to a yellow bubble 'Splitup says it's $12.80'. Sticker: You stay the friend. The app plays the accountant.",
         "slides": []
       },
       "brand": "splitup",
@@ -5271,7 +5307,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Why 'I'll pay you back' dies after three days",
       "posted": "",
       "carousel": false,
@@ -5279,9 +5315,15 @@
     },
     {
       "text": "A family tree with ten names and no details is a list. A family tree with five facts per person is a family.\n\nIf you are starting to record your family, these five fields do most of the work:\n1. Full name, as they would write it, in every script they use\n2. Birth and death dates. Note whether they are Gregorian or Hijri\n3. Where they lived, in order\n4. Who they were to others (father, teacher, neighbour, the one who made the best biryani)\n5. One story, in a sentence or two\n\nWhy these five:\n• Names are the first thing to blur. Spellings change between passports, school records and what the family says\n• Dates are what let a tree become a timeline\n• Places explain why branches ended up where they did\n• The role and the story are the reason anyone will read it in thirty years\n\nStart with the oldest person you can still ask. A tree filled in from the top is always more accurate than one filled in from memory.\n\nNobody ever finished a family tree. Everyone just got further than the last person.",
-      "images": [],
+      "images": [
+        [
+          "img/38ca8de8fbb7817c.webp",
+          "img/38ca8de8fbb7817c-t.webp",
+          "nasab-LI-18.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Nasab card on ivory paper: 'Five facts turn a list into a family.' One person's record with five numbered fields: full name in every script, Naveed Malik with the Urdu spelling; dates and which calendar, born 14 March 1948, Gregorian; where they lived, Surat, Karachi, Dubai; who they were to others, father, schoolteacher and the one who made the best biryani; one story, walked six kilometres to school and later taught at the same one.",
         "slides": []
       },
       "brand": "nasab",
@@ -5291,7 +5333,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "What to write down about a person before it is too late",
       "posted": "",
       "carousel": false,
@@ -5299,9 +5341,15 @@
     },
     {
       "text": "Every setting is a decision I made not to decide.\n\nWhen I build an app, I used to add a toggle whenever two options seemed equally good. Notification sound, default view, date format, sort order. It felt generous.\n\nIt wasn't. It meant:\n• More screens to design in two themes\n• More states to test on every OS version\n• More support questions that start with \"I can't find where to change it\"\n• Most users never opening the screen anyway\n\nA rule I follow now: pick the default that is right for most people, and add a setting only after three different users ask for it.\n\nThe exceptions are accessibility and language. Those are never optional.\n\nAn app with ten choices respects the user's time less than an app with the right ten defaults.\n\nThe best setting is the one you didn't have to make.",
-      "images": [],
+      "images": [
+        [
+          "img/74a4fd88bb3d2606.webp",
+          "img/74a4fd88bb3d2606-t.webp",
+          "tappstudio-LI-13.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "tappStudio field note on light paper: 'The best setting is one you didn't add.' A diff of settings_screen.dart strikes out four settings (notification sound, default view, date format, sort order) and adds one line: the default that's right for most people. The rule: a new setting only after three different users ask for it. Never optional: Accessibility, Language.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -5311,7 +5359,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Small apps need fewer settings than you think",
       "posted": "",
       "carousel": false,
@@ -5319,9 +5367,15 @@
     },
     {
       "text": "Open your phone's tasbih counter and ask one thing: would this work in a mosque, on a train and next to a sleeping baby?\n\nMost don't. They beep, flash or buzz the whole phone every time you tap.\n\nWhat a counter needs to get right:\n• A soft, short sound (or none) that doesn't turn heads\n• A tap area big enough to hit without looking\n• A count that is still there when you switch apps or lock the screen\n• Nothing on screen that competes with the number\n\nThe reason this matters isn't comfort. A distracting tool turns dhikr into a task. A calm one lets you drift into the rhythm and forget the phone is there.\n\nThat is the standard I hold Misbaha to. The beads move, the sound is soft, and the number stays big.\n\nIf your tool makes more noise than you do, it is the wrong tool.",
-      "images": [],
+      "images": [
+        [
+          "img/199424faeb8d271e.webp",
+          "img/199424faeb8d271e-t.webp",
+          "misbaha-LI-07.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Misbaha card in black and gold: 'A counter should be quiet.' A phone shows the counter, Alhamdulillah, marble beads on a gold string, 21 of 33. Beside it four points: soft sound or none, a big tap area, the count stays when you switch apps or lock the screen, only the number on screen. Note: a calm tool lets you forget the phone is there.",
         "slides": []
       },
       "brand": "misbaha",
@@ -5331,7 +5385,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Why a counter should be quiet",
       "posted": "",
       "carousel": false,
@@ -5339,9 +5393,15 @@
     },
     {
       "text": "Every group trip has a person who ends up paying for everything. It's usually the one who is bad at saying no.\n\nIf you plan the trip with a bit of structure, it never has to be them:\n• Rotate who pays. Dinner is on Ali, fuel is on Sara, tickets on Max. Over four days it evens out\n• Or pick one person as the bank, and give them a clear note of the cost at each step\n• Never pay for someone else's expense without writing it down at the time. \"I'll remember\" has a short shelf life\n\nAnd for the one who always ends up paying: set a personal limit. \"I'll cover up to $50, after that it goes in the app.\" It sounds blunt but people respect it.\n\nThe point of tracking isn't to be petty. It is so that nobody has to be generous by accident.\n\nA trip is better when the only thing anyone owes each other is a good story.",
-      "images": [],
+      "images": [
+        [
+          "img/66aadfaaaed5f6b2.webp",
+          "img/66aadfaaaed5f6b2-t.webp",
+          "splitup-LI-15.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Splitup Ship Log card: 'Nobody should be generous by accident.' Option A, rotate who pays: dinner Ali, fuel Sara, tickets Max. Option B, one person is the bank and logs the cost at every step. A yellow card for the one who always pays: 'I'll cover up to $50. After that it goes in the app.' Sticker: 'I'll remember' has a short shelf life.",
         "slides": []
       },
       "brand": "splitup",
@@ -5351,7 +5411,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Who should be the bank on a group trip",
       "posted": "",
       "carousel": false,
@@ -5359,9 +5419,15 @@
     },
     {
       "text": "Most App Store rejections are not about the code. They are about things I forgot to check.\n\nMy pre-submit list, in the order I run it:\n1. The privacy policy and support URLs open on a phone, and match what the app does\n2. Screenshots show the current build, not last month's design\n3. Every purchase works from a fresh install, including Restore Purchases\n4. The app does something useful with no account, or the review notes explain how to log in\n5. Permissions are asked for at the moment they are needed, with a plain reason\n6. The subscription terms and price are visible before the buy button\n7. The app works with the network off, and doesn't crash in airplane mode\n\nItems 1 and 3 are where I've lost the most time. A dead link is a rejection. A broken restore is a bad review.\n\nReviewers are people with a queue. If I make their job easy, mine gets easier.\n\nIt takes me twenty minutes. A rejection takes me two days.",
-      "images": [],
+      "images": [
+        [
+          "img/b78bd88c5ae739ac.webp",
+          "img/b78bd88c5ae739ac-t.webp",
+          "tappstudio-LI-14.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "tappStudio dark editor card: 'Before I press Submit.' A seven-item pre-submit checklist, run in order: privacy and support URLs open on a phone, screenshots show this build, purchases and Restore from a fresh install, useful with no account, permissions asked when needed, price and terms before Buy, no crash in airplane mode. Items 1 and 3 are marked 'cost me most'. Below: 20 min for the checklist, 2 days for a rejection.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -5371,7 +5437,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Before I press Submit for Review",
       "posted": "",
       "carousel": false,
@@ -5379,9 +5445,15 @@
     },
     {
       "text": "If your family uses both the Gregorian and the Hijri calendar, you already know the problem. Eid moves. A wedding anniversary isn't where it was last year.\n\nThe Islamic year is about 11 days shorter than the Gregorian one. So a date stays the same in one calendar and drifts in the other.\n\nWhat works:\n• Record each date once, in the calendar it was celebrated in. A birth in Ramadan should stay a Ramadan date\n• Store the other calendar next to it, as a reference\n• Decide which one your family follows for each event. Birthdays may be Gregorian and religious anniversaries Hijri\n\nThen let a tool do the conversion and the reminding. Doing it by hand means you'll be wrong by a day, and that's the day someone feels forgotten.\n\nNasab does exactly this. Every date is shown in both calendars and the upcoming celebrations include the ones that moved.\n\nA remembered birthday isn't a small thing.",
-      "images": [],
+      "images": [
+        [
+          "img/2c4d334556549260.webp",
+          "img/2c4d334556549260-t.webp",
+          "nasab-LI-19.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Nasab card on ivory paper: 'Record it once. Let the date move.' Arif's birth is recorded as 15 Ramadan 1400, with 28 July 1980 stored next to it as a reference. His next birthdays on 15 Ramadan fall on 4 March 2026, 22 February 2027 and 11 February 2028: about 11 days earlier every year. Two notes: birthdays Gregorian if that's how your family celebrates, religious days kept as Hijri dates.",
         "slides": []
       },
       "brand": "nasab",
@@ -5391,7 +5463,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "How to keep family dates straight when the calendar moves",
       "posted": "",
       "carousel": false,
@@ -5399,9 +5471,15 @@
     },
     {
       "text": "When AI gets something wrong, I used to blame the model. Now I check my prompt first, and the prompt is usually the problem.\n\nA prompt that works looks a lot like a good spec:\n• The goal, in one sentence (\"Add offline mode to expenses\")\n• The constraints (\"No new packages. Keep the existing database\")\n• What done looks like (\"Tests pass. A new expense saves with the network off\")\n• What not to touch (\"Leave payments alone\")\n\nA prompt that doesn't work looks like a wish: \"Make it better.\"\n\nTwo things I do before I start:\n• Write the acceptance check first, and give it to the AI\n• Ask it for a plan before any code, and edit the plan\n\nFixing a plan takes one minute. Fixing a wrong implementation takes an afternoon.\n\nThe time you spend on the spec is the time you save on the rework.",
-      "images": [],
+      "images": [
+        [
+          "img/b9167003e23a4b7b.webp",
+          "img/b9167003e23a4b7b-t.webp",
+          "tappstudio-LI-15.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "tappStudio dark editor card: 'A prompt is a spec.' A wish, '> make it better', struck out. A spec, prompt.md: goal, add offline mode to expenses; constraints, no new packages, keep the existing database; done when, tests pass and a new expense saves with the network off; don't touch, payments. Below: ask for the plan first, then edit it.",
         "slides": []
       },
       "brand": "tappstudio",
@@ -5411,7 +5489,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "A prompt is a spec. Write it like one.",
       "posted": "",
       "carousel": false,
@@ -5419,9 +5497,15 @@
     },
     {
       "text": "The rent is easy. The electricity bill is where flatmates fall out.\n\nA monthly routine that keeps it calm:\n• Rent is fixed, so set it once and forget it\n• Shared bills (electricity, internet, gas) go in the day they arrive, with a photo of the bill\n• Groceries: only log shared items. Personal snacks stay personal\n• On the first of the month, settle in one go\n\nA few rules that save arguments:\n• Agree the split before the first bill, not after. Equal is simplest. If rooms are different sizes, agree a ratio once\n• Whoever pays the bill gets paid back within a week, not \"when it is convenient\"\n• If someone leaves, settle up the same day\n\nMost flat arguments aren't about money. They are about not knowing where the money went.\n\nShow the numbers and the argument becomes a conversation.",
-      "images": [],
+      "images": [
+        [
+          "img/272997e1b1913540.webp",
+          "img/272997e1b1913540-t.webp",
+          "splitup-LI-16.jpg"
+        ]
+      ],
       "alt": {
-        "summary": "",
+        "summary": "Splitup Ship Log card: 'Rent is easy. Electricity isn't.' A month in a shared flat, four rows: rent, fixed, set once; shared bills, logged the day they arrive with a photo; groceries, shared items only; and, highlighted, the 1st of the month, settle everything in one go. Sticker: Show the numbers. Skip the argument.",
         "slides": []
       },
       "brand": "splitup",
@@ -5431,7 +5515,7 @@
       "time": "8-10 am",
       "status": "planned",
       "warn": false,
-      "note": "Text only. Read once and add your own detail where a line feels generic.",
+      "note": "Read once and add your own detail where a line feels generic.",
       "title": "Splitting rent and utilities with flatmates, without the monthly argument",
       "posted": "",
       "carousel": false,
@@ -6400,6 +6484,46 @@
       "posted": "",
       "carousel": false,
       "reply": "Kadak is live on Google Play and the App Store. Download links:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [],
+      "id": "LI-22",
+      "date": "2026-11-13",
+      "title": "Kadak's App Store header is live",
+      "text": "Kadak now has a moving header on the App Store. 🎬\n\nIt's the big banner at the top of the page. 20 seconds, on loop:\n\n🌅 The sky goes from before sunrise to night, in the same colours as the game\n☀️ The sun walks across the street, left to right\n🚶 Customers walk up, get their chai, pay +1 and leave\n😄 Bablu Bhaiya smiles bigger on every sale\n\nNothing here was screen recorded. It's a web page drawn in code, then turned into a video.\n\nTwo small tricks if you're making one:\n1. Every frame is worked out from the time alone. So the last frame is the same as the first, and the loop never jumps.\n2. The sky reads the same colour list the game uses for its live sky. Change the game's evening and the banner's evening changes too.\n\nThe version I'm posting here has the game's street sounds and music under it. 🔊\n\nI watched this loop maybe 200 times to check it. Bablu Bhaiya served the same customer 200 times and never once complained. 😂",
+      "reply": "See it at the top of Kadak's App Store page:\nhttps://apps.apple.com/us/app/kadak-idle-chai-empire/id6821840374\nGoogle Play and App Store links: https://kadakchai.tappstudio.in",
+      "note": "Attach the App Store header video (20 s loop, from the Kadak repo's render_header_video.sh) as a native LinkedIn video.",
+      "alt": {
+        "summary": "A 20 second looping video, Kadak's App Store header. A roadside chai tapri on a city street under a sky that moves from before dawn through the day to night as the sun crosses left to right. Customers walk up, are served, a +1 pops up, and they walk off. Bablu Bhaiya, the chai seller, smiles wider with each sale.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [],
+      "id": "LI-23",
+      "date": "2026-11-14",
+      "title": "Kadak is on tappstudio.in now",
+      "text": "Kadak now has its own spot on tappstudio.in. 🫖\n\nIt's our first game, so it didn't get a normal app card. It got a night street. 🌙 Bunting, a moon, a railway line and a kettle you can tap.\n\n☕ Tap the kettle and it pours a cup. The site counts your cups, only on your device. Nothing gets sent anywhere.\n🎨 The colours come straight from the game, so the website and the app feel like the same street.\n📱 App Store and Google Play buttons are right there.\n\nEvery other app on the site got a tile. Kadak got a whole tapri. Splitup has been asking why it doesn't get a moon. 😂",
+      "reply": "Go tap the kettle: https://tappstudio.in/#kadak-chai\nKadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Attach your screenshot of the Kadak section on tappstudio.in.",
+      "alt": {
+        "summary": "A screenshot of the tappstudio.in home page showing the Kadak Chai section: a full-width night street with bunting, a moon and a railway line, the Kadak Chai icon and description, App Store and Google Play buttons, and a Tap the kettle button.",
+        "slides": []
+      }
     },
     {
       "brand": "misbaha",
@@ -7730,7 +7854,7 @@
       "date": "2026-12-02",
       "time": "8-10 am",
       "status": "planned",
-      "warn": true,
+      "warn": false,
       "posted": "",
       "carousel": false,
       "title": "One name, three ways to write it",
@@ -7739,8 +7863,14 @@
         "summary": "A diagram of one stored name, Arif, father Naveed, family Malik, rendered three ways: Standard, Arabic and Malay.",
         "slides": []
       },
-      "note": "IMAGE PENDING: not generated yet. Context for generating: one 1080x1350 card in the Nasab Heirloom style (ivory paper, Fraunces headings), showing a single stored record (first: Arif, father: Naveed, family: Malik) with three arrows to 'Arif Naveed Malik' (Standard), 'Arif bin Naveed Malik' (Arabic) and 'Arif bin Naveed' (Malay). Render HTML with headless Chrome, convert with cwebp, add to images. Facts checked against lib/core/utils/naming_style.dart on 10 Nov 2026.",
-      "images": [],
+      "note": "Facts checked against lib/core/utils/naming_style.dart on 10 Nov 2026.",
+      "images": [
+        [
+          "img/4c0dce91bc10de64.webp",
+          "img/4c0dce91bc10de64-t.webp",
+          "nasab-LI-20.jpg"
+        ]
+      ],
       "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
@@ -7750,17 +7880,23 @@
       "date": "2026-12-09",
       "time": "8-10 am",
       "status": "planned",
-      "warn": true,
+      "warn": false,
       "posted": "",
       "carousel": false,
       "title": "How Nasab knows he's your second cousin",
       "text": "Nasab never stores the word \"cousin\". It stores two kinds of link: parent and spouse. Every other relationship is worked out.\n\nWhen you open someone's profile and it says \"Your second cousin\", this is what just happened:\n1. Walk up from you, noting every ancestor and how many generations away they are.\n2. Do the same from them.\n3. Find the closest ancestor you share.\n4. The two distances give the label. Up 1 and down 0 is a parent. Up 2 and down 1 is an aunt or uncle. Up 3 and down 3 is a second cousin.\n5. No shared ancestor? Then check spouses, current and former, and in-laws.\n6. If the person has passed away, the label becomes \"Your late grandfather\".\n\nFormer spouses were the first thing to break it. A child connects to their own mother and father, not to whoever is married to them now, so the walk has to follow parents, never marriages.\n\nArabic made it more fun: the same label changes with gender, so every result is a localized select, not a string with a word swapped in.\n\n#BuildInPublic #Flutter #Algorithms",
       "alt": {
-        "summary": "A small family tree diagram with two people highlighted and their closest shared ancestor, with up and down generation counts giving the label second cousin.",
+        "summary": "Nasab build log card: 'Nasab never stores the word cousin.' A four-generation tree: great-grandparents, marked with a gold star, at the top; Grandfather and his brother; Father and his son; You and Sana, his daughter. A gold path walks up 3 from You and down 3 to Sana. The verdict: up 3, down 3 from the closest shared ancestor, your second cousin.",
         "slides": []
       },
-      "note": "IMAGE PENDING: not generated yet. Context for generating: one 1080x1350 diagram card in the Nasab Heirloom style: a 4-generation tree, 'You' and a cousin highlighted, their shared great-grandparents marked with a gold khatam star, 'up 3' and 'down 3' counts, label 'Your second cousin'. Render HTML with headless Chrome, convert with cwebp. Facts checked against lib/features/tree/presentation/utils/kinship_labeler.dart on 10 Nov 2026.",
-      "images": [],
+      "note": "Facts checked against lib/features/tree/presentation/utils/kinship_labeler.dart on 10 Nov 2026.",
+      "images": [
+        [
+          "img/0ba364ea94ace429.webp",
+          "img/0ba364ea94ace429-t.webp",
+          "nasab-LI-21.jpg"
+        ]
+      ],
       "reply": "Nasab is on iOS and Android:\nhttps://nasab.tappstudio.in"
     },
     {
@@ -8031,5 +8167,5 @@
       "note": "Same video as IG-30 (misbaha-R15.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "14 Nov 2026, 12:00"
+  "built": "15 Nov 2026, 12:00"
 }
