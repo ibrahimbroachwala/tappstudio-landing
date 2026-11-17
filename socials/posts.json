@@ -6639,19 +6639,19 @@
       "carousel": false,
       "images": [
         [
-          "img/f8810d57651119de.webp",
-          "img/f8810d57651119de-t.webp",
+          "img/b5e5fb4c7af495ba.webp",
+          "img/b5e5fb4c7af495ba-t.webp",
           "kadak-LI-28.jpg"
         ]
       ],
       "id": "LI-28",
       "date": "2026-11-22",
       "title": "Your chai empire, sized for your status",
-      "text": "Kadak can now make a picture of your chai empire for you to share. 📲\n\nOne tap and you get a story card: your own decorated tapri, your title and medal, what your chain earns a second, and a rail map with your cities lit up.\n\nA few things I learned making it:\n1. It's 1080 × 1920, the size of an Instagram story and a WhatsApp status. Everything important stays away from the top and bottom edges, where Instagram puts its own bars.\n2. It ignores your phone's text size setting. It's a picture, not a screen, so it should look the same for everyone who sees it. 🔠\n3. WhatsApp shows the text you send with an image. Instagram drops it. So the card has to make sense alone, and the caption is a bonus.\n4. Both store links go in the caption, because your friend might have the other kind of phone. 🤝\n5. The plain text share in Settings skips the numbers until you've earned ₹1,000. Nobody needs to boast about ₹12.\n\nEvery family WhatsApp group has an uncle who sends a good morning picture every day. Now he can send his chai empire instead. 🌅😂",
+      "text": "Kadak can now make a picture of your chai empire for you to share. 📲\n\nOne tap and you get a story card: your title and medal, your own decorated tapri, what your chain earns a second, the cities you've reached out of 28, and a small challenge at the bottom: \"Can you out-brew me?\" ☕\n\nA few things I learned making it:\n1. It's 1080 × 1920, the size of an Instagram story and a WhatsApp status. Everything important stays away from the top and bottom edges, where Instagram puts its own bars.\n2. It ignores your phone's text size setting. It's a picture, not a screen, so it should look the same for everyone who sees it. 🔠\n3. WhatsApp shows the text you send with an image. Instagram drops it. So the card has to make sense alone, and the caption is a bonus.\n4. Both store links go in the caption, because your friend might have the other kind of phone. 🤝\n5. The plain text share in Settings skips the numbers until you've earned ₹1,000. Nobody needs to boast about ₹12.\n\nEvery family WhatsApp group has an uncle who sends a good morning picture every day. Now he can send his chai empire instead. 🌅😂",
       "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
       "note": "The share card shipped in 1.8.1.",
       "alt": {
-        "summary": "A tilted 9:16 story card with dashed safe zones at top and bottom, showing 'My chai empire', a Chai Raja medal, 10 outlets, a tapri scene and a rail map; four notes beside it: 1080 × 1920, safe zones, fixed text size, both store links.",
+        "summary": "The real Kadak share card next to four notes. The card reads My chai empire, Tapri Wala, from one tapri in Mumbai to 2 outlets, the tapri scene, 6.58K/s earned every second, 2 of 28 cities, 70.2M earned, 'Can you out-brew me?' and the store line; the notes are 1080 × 1920, safe zones, fixed text size, both store links.",
         "slides": []
       }
     },
@@ -8648,5 +8648,5 @@
       "note": "Same video as IG-37 (misbaha-R19.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "17 Nov 2026, 19:44"
+  "built": "17 Nov 2026, 19:48"
 }
