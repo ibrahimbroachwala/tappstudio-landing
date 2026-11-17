@@ -6526,6 +6526,136 @@
       }
     },
     {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/eccea6ed26b3c4da.webp",
+          "img/eccea6ed26b3c4da-t.webp",
+          "kadak-LI-24.jpg"
+        ]
+      ],
+      "id": "LI-24",
+      "date": "2026-11-18",
+      "title": "From Tapri Wala to Chai Shahenshah",
+      "text": "Kadak now gives you a title as your chai chain grows. 👑\n\nEight of them, one for each size of chain:\n☕ Tapri Wala: your first tapri\n🏪 Chai Seth: 3 outlets\n🎩 Chai Nawab: 5\n👑 Chai Raja: 10\n🐘 Chai Maharaja: 15\n⚔️ Chai Badshah: 20\n🏰 Chai Samrat: 25\n🌏 Chai Shahenshah: an outlet in every city on the map\n\nEach one has its own medal. The colour climbs from clay to marigold, the rim gets fancy at Nawab, and a second ring shows up at Badshah.\n\nTwo small decisions, if you're building something like this:\n1. The title is never saved. The game works it out from how many outlets you have, every time. Nothing can go out of sync, and an old save gets the right title the moment it opens. 🧮\n2. The next title's name stays hidden until you earn it. You see a dark medal and \"Open outlet 10\". Finding out what you're called next is half the fun. 🤫\n\nWhen an outlet earns you a title, its welcome card says so. Your chain banner shows it all the time.\n\nIn real life, one stall is enough to be Seth ji if the whole street calls you that. The game is stricter. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Chain titles shipped in 1.8.1.",
+      "alt": {
+        "summary": "An eight-card grid of title medals from Tapri Wala (first tapri) to Chai Shahenshah (every city), each with its outlet count; the medals climb from clay to marigold and the last card is highlighted.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/1dbf4cd0de268f5d.webp",
+          "img/1dbf4cd0de268f5d-t.webp",
+          "kadak-LI-25.jpg"
+        ]
+      ],
+      "id": "LI-25",
+      "date": "2026-11-19",
+      "title": "My train runs on real Indian engines",
+      "text": "Every outlet in Kadak is a city, and you travel between them by train. 🚆 Now you can build that train yourself.\n\nThe Rail Yard opens with your second outlet. It has 12 engines and 18 coach sets, all real Indian trains:\n\n🚂 You start with a WAP-7 electric and ICF sleeper coaches.\n⚡ Then WDM-3A, WAP-4, WAG-9, WAP-5 and the Vande Bharat.\n🛏️ Coaches go Garib Rath, Humsafar, Duronto, Shatabdi, Rajdhani, Deccan Queen, Tejas, Vistadome.\n👑 The top shelf: Golden Chariot, Deccan Odyssey, Palace on Wheels and the Maharajas' Express.\n🏔️ And heritage steam: the Darjeeling toy train, the Nilgiri rack engine, and the Fairy Queen, built in 1855.\n\nHow it works:\n1. Every piece adds to your whole chain's income, for good. +1% for the early ones, up to +6% for heritage steam.\n2. The whole chain pays, each outlet by its share of income. Your biggest city pays the most, like the earning cousin at a family wedding. 💸\n3. Train names are never translated. A Rajdhani is a Rajdhani in every language.\n\nEach piece is its own drawing, 30 in all, so your train actually changes when you buy one.\n\nThe Maharajas' Express costs ₹8 lakh crore in the game. I checked the real ticket price. The game isn't that far off. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "The Rail Yard shipped in 1.9.6.",
+      "alt": {
+        "summary": "A list card of four Rail Yard pieces with their side-view drawings: WAP-7 (electric, 6,350 hp, starter), Vande Bharat (+4% income), Palace on Wheels (+3%) and the Fairy Queen (steam, built 1855, +6%).",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/4f331075a949118f.webp",
+          "img/4f331075a949118f-t.webp",
+          "kadak-LI-26.jpg"
+        ]
+      ],
+      "id": "LI-26",
+      "date": "2026-11-20",
+      "title": "Every Indian station has a yellow board",
+      "text": "If you've taken a train in India, you know the yellow board before you know the city. 🟨 Black capital letters, the station name, right there on the platform.\n\nKadak's station has one for all 28 cities. 🚉 Your train pulls in under your city's board, and the platform next to your tapri has the round station sign too, red ring and blue bar.\n\nThe board isn't a picture. It's live text drawn by the game, and that saved a lot of work:\n1. One drawing for 28 cities. Not 28 image files.\n2. The name sizes itself. Pune gets big letters. Ahmedabad gets smaller ones. Visakhapatnam gets squeezed sideways a little. Never cut off. ✂️\n3. City names are never translated, so the board reads the same in every language.\n\nTip for anyone drawing signs in an app: keep words out of your images. Art is for shapes, text is for text. Your future self, adding city 29, will thank you.\n\nIn Kadak, the train is never late. That's the one thing I couldn't make realistic. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "The station shipped in 1.7.3.",
+      "alt": {
+        "summary": "The game's night railway station with a yellow LUCKNOW board on the platform, and below it three identical yellow boards reading PUNE in big letters, AHMEDABAD smaller, and VISAKHAPATNAM squeezed to fit.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/90b15c083d22745c.webp",
+          "img/90b15c083d22745c-t.webp",
+          "kadak-LI-27.jpg"
+        ]
+      ],
+      "id": "LI-27",
+      "date": "2026-11-21",
+      "title": "My game asks for a review only after a win",
+      "text": "Every app wants a 5-star review. 🌟 Most ask at the worst time, like the second you open it.\n\nKadak asks only right after something good happens:\n🏪 You open a new outlet (from the second one on)\n⭐ An outlet earns its 2nd star or more\n🏆 You finish top 3 in a pop-up event\n🎪 Every 10th tier on the festival track\n🧑‍🍳 An Ustaad finishes training at level 3 or more\n☕ Day 7 of the Daily Kulhad\n\nAnd it stays quiet when:\n🚫 You installed it less than 2 days ago, or haven't come back twice yet\n🚫 You bought something in the last 30 minutes\n🚫 You watched an ad in the last 5 minutes\n🚫 It already asked in the last 60 days (max 3 times a year)\n🚫 You already wrote one from Settings. Then it never asks again.\n\nThe purchase rule is my favourite. Right after paying is nobody's happy moment, even if they liked what they bought.\n\nWhy 3 a year: iOS caps the prompt at 3 a year anyway. Google Play doesn't say what its cap is, so asking less keeps the asks that count.\n\nIt's like asking your dad for money. You don't do it while he's reading the electricity bill. You wait till India wins the match. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Review prompts shipped in 1.7.3.",
+      "alt": {
+        "summary": "Two cards: 'Asks right after' lists new outlet, 2nd star, top 3 in a pop-up, every 10th festival tier, Ustaad level 3+, day 7 of the Daily Kulhad; 'Stays quiet' crosses out first 2 days, 30 min after you pay, 5 min after an ad, 60 days since it asked, once you wrote one.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/f8810d57651119de.webp",
+          "img/f8810d57651119de-t.webp",
+          "kadak-LI-28.jpg"
+        ]
+      ],
+      "id": "LI-28",
+      "date": "2026-11-22",
+      "title": "Your chai empire, sized for your status",
+      "text": "Kadak can now make a picture of your chai empire for you to share. 📲\n\nOne tap and you get a story card: your own decorated tapri, your title and medal, what your chain earns a second, and a rail map with your cities lit up.\n\nA few things I learned making it:\n1. It's 1080 × 1920, the size of an Instagram story and a WhatsApp status. Everything important stays away from the top and bottom edges, where Instagram puts its own bars.\n2. It ignores your phone's text size setting. It's a picture, not a screen, so it should look the same for everyone who sees it. 🔠\n3. WhatsApp shows the text you send with an image. Instagram drops it. So the card has to make sense alone, and the caption is a bonus.\n4. Both store links go in the caption, because your friend might have the other kind of phone. 🤝\n5. The plain text share in Settings skips the numbers until you've earned ₹1,000. Nobody needs to boast about ₹12.\n\nEvery family WhatsApp group has an uncle who sends a good morning picture every day. Now he can send his chai empire instead. 🌅😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "The share card shipped in 1.8.1.",
+      "alt": {
+        "summary": "A tilted 9:16 story card with dashed safe zones at top and bottom, showing 'My chai empire', a Chai Raja medal, 10 outlets, a tapri scene and a rail map; four notes beside it: 1080 × 1920, safe zones, fixed text size, both store links.",
+        "slides": []
+      }
+    },
+    {
       "brand": "misbaha",
       "date": "2026-11-09",
       "status": "ready",
@@ -8518,5 +8648,5 @@
       "note": "Same video as IG-37 (misbaha-R19.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "17 Nov 2026, 19:50"
+  "built": "17 Nov 2026, 19:44"
 }
