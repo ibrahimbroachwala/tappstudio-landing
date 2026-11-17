@@ -7549,18 +7549,23 @@
       "platform": "IG",
       "date": "2026-11-17",
       "time": "6:00 pm IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "posted": "",
       "carousel": false,
       "title": "Start with three names (Reel)",
       "text": "You don't need six generations to start a family tree. You need three names: yours, your father's and your mother's.\n\nAdd them in Nasab and the tree is already standing. Home then suggests who to add next, one person at a time, so nobody has to track down a great-great-grandfather on day one.\n\nNasab is free on iOS and Android. Link in bio.\n.\n#Nasab #FamilyTree #Genealogy #FamilyHistory #Reels",
       "alt": {
-        "summary": "Three member cards, Arif, his father Naveed and his mother Gulnaz, land on a paper page and join into a small tree, then a Home card suggests adding Naveed's mother.",
+        "summary": "Six empty generations fade away and three blank name cards appear. Arif's card lands, his father Naveed and mother Gulnaz join him into a small tree on a dotted page, a Home card suggests adding Naveed's mother, and Rukhsana is added on the branch above. Ends on Nasab, Start with three names.",
         "slides": []
       },
-      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Context for generating: nasab-R05, file nasab-R05.mp4 in ~/Projects/tappstudio_socials/reels/out/. Kinetic Heirloom reel per reels/nasab/nasab_reel_standards.md: no phone frame, no voiceover, no captions, 25 to 35 s, 90 bpm with a cut every bar, Malik demo family only, end card 'Free on iOS and Android'. Hook (myth-bust, 2 bars): 'You don't need 6 generations to start.' then the turn 'You need 3 names.' Scenes: You card (Arif) lands; Father (Naveed) and Mother (Gulnaz) cards slide in and the dotted gold lineage line draws them into a tree; Home nudge card 'Add Naveed's mother to complete the record'; the tree grows one more branch; end card. Why: PAIN_POINTS.md P1, 85% of new families add no parent in onboarding. Optional image: none needed, all UI pieces. When built: add video [Drive link, poster webp, 'nasab-R05.mp4'] and set status to ready.",
-      "kind": "reel"
+      "note": "Reel is built (nasab-R05.mp4, 32 s, Heirloom Kinetic on paper and sage leather, no voice, nasab-archive music). Upload to Drive and paste the link into video[0]. Use nasab-R05-nomusic.mp4 for a licensed IG sound, and set the cover to nasab-R05-cover.png. Rukhsana (b. 1919, Naveed's mother) and Arif's b. 1972 were added to the demo family for this reel. YT-05 shares the video.",
+      "kind": "reel",
+      "video": [
+        "",
+        "img/a3569f3c8a20264f.webp",
+        "nasab-R05.mp4"
+      ]
     },
     {
       "brand": "nasab",
@@ -7568,18 +7573,23 @@
       "platform": "YT",
       "date": "2026-11-17",
       "time": "7:00 pm IST",
-      "status": "planned",
+      "status": "ready",
       "warn": true,
       "posted": "",
       "carousel": false,
       "title": "Start a family tree with 3 names",
       "text": "Yours, your father's and your mother's. That's a family tree. Nasab suggests who to add next.\n\n#Shorts #familytree #genealogy",
       "alt": {
-        "summary": "Three member cards, Arif, his father Naveed and his mother Gulnaz, land on a paper page and join into a small tree, then a Home card suggests adding Naveed's mother.",
+        "summary": "Six empty generations fade away and three blank name cards appear. Arif's card lands, his father Naveed and mother Gulnaz join him into a small tree on a dotted page, a Home card suggests adding Naveed's mother, and Rukhsana is added on the branch above. Ends on Nasab, Start with three names.",
         "slides": []
       },
-      "note": "REEL PENDING: video not generated yet (we'll build reels one by one). Same video as IG-26 (nasab-R05.mp4); the brief is on IG-26. Title is the Shorts title, the caption is the description.",
-      "kind": "reel"
+      "note": "Same video as IG-26 (nasab-R05.mp4). Title is the Shorts title, the caption is the description.",
+      "kind": "reel",
+      "video": [
+        "",
+        "img/a3569f3c8a20264f.webp",
+        "nasab-R05.mp4"
+      ]
     },
     {
       "brand": "nasab",
@@ -8508,5 +8518,5 @@
       "note": "Same video as IG-37 (misbaha-R19.mp4). Check the Arabic before posting. Upload to Drive and paste the link into video[0]."
     }
   ],
-  "built": "17 Nov 2026, 14:15"
+  "built": "17 Nov 2026, 19:50"
 }
