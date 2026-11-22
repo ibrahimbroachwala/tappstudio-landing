@@ -6656,6 +6656,136 @@
       }
     },
     {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/72157bd994e6d398.webp",
+          "img/72157bd994e6d398-t.webp",
+          "kadak-LI-29.jpg"
+        ]
+      ],
+      "id": "LI-29",
+      "date": "2026-11-23",
+      "title": "The roof shows how far you have come",
+      "text": "Every tapri in Kadak starts under a plain teal roof. ☂️ It changes as your chain grows.\n\n12 roofs, humble to grand:\n🔩 Tin sheet: outlet 3\n🏕️ Tarpaulin: outlet 5\n🎋 Bamboo mat: outlet 8\n🌾 Thatch: outlet 11\n🎪 Striped canvas: outlet 14\n🧱 Clay tile: outlet 17\n🚉 Platform canopy: outlet 20\n⛺ Shamiana: outlet 23\n🏛️ Haveli eaves: outlet 26\nAnd two for Chai Club members: a truck-art roof and a brass roof. 🚚\n\nEach one is a real Indian roof you've seen somewhere. The tin sheet over the paan shop. The tarp at every monsoon stall. The shamiana at every wedding.\n\nYou keep every roof you win and can switch between them any time. They aren't saved as owned, either. The game works them out from your outlet count and Club membership, so a lapsed Club member gets the Club roofs back on rejoining.\n\nThe shamiana arrives at outlet 23. After 23 cities, a wedding tent is the least you deserve. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Roofs came in 1.4.2.",
+      "alt": {
+        "summary": "Twelve roof cards from the teal starter roof to the haveli eaves, each with the outlet it comes at (3, 5, 8, 11, 14, 17, 20, 23, 26); the last two, a truck-art roof and a brass roof, are highlighted as Chai Club roofs.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/02ba66db648f7ce9.webp",
+          "img/02ba66db648f7ce9-t.webp",
+          "kadak-LI-30.jpg"
+        ]
+      ],
+      "id": "LI-30",
+      "date": "2026-11-24",
+      "title": "Heritage cities each have one superpower",
+      "text": "Kadak has six Heritage cities, and each one has its own perk. ✨\n\n🍵 Darjeeling: +10% earnings while you're away\n🍵 Munnar: the same, +10% while away\n🪔 Varanasi: lucky customers show up 10% more often\n🙏 Amritsar: your taps pay 10% more\n🏰 Udaipur: outlets you're not in earn 10% more\n🏖️ Panaji: your tapri holds one more hour while you're away\n\nWhy they get perks: Heritage cities pay the least Kesar to open, 6 where a Metro pays 12. So instead of a discount, I gave them a different job.\n\nTip if you're balancing a game: a smaller price tag makes something feel like the worse option. A different benefit makes it feel like a choice.\n\nPanaji gives you an extra hour of rest. Very Goa. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "City perks came in 1.5.5.",
+      "alt": {
+        "summary": "Six cards, one per Heritage city: Darjeeling +10% earnings while away, Munnar +10% while away, Varanasi +10% more lucky customers, Amritsar +10% more per tap, Udaipur +10% from outlets you are not in, Panaji +1 h away cap.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/15ba99138841cda4.webp",
+          "img/15ba99138841cda4-t.webp",
+          "kadak-LI-31.jpg"
+        ]
+      ],
+      "id": "LI-31",
+      "date": "2026-11-25",
+      "title": "What your tapri earns while you sleep",
+      "text": "What does your Kadak tapri earn while you're away? 😴\n\nTwo numbers:\n💰 40% of normal income\n⏳ Up to 3 hours at a time\n\nSay you sleep 8 hours. The game pays for 3 of them at 40%. That's 1.2 hours of income. Same as every employee when the boss is on leave. 😂\n\nWays to raise it:\n🫖 Thermos Flask: +1 hour of cap per level, 12 levels\n🌙 Midnight Kettle: +8% rate per level, 25 levels\n🏖️ Panaji outlet: +1 hour of cap\n🍵 Darjeeling and Munnar: +10% rate\n🎟️ Chai Club: triple the rate, double the cap\n✌️ Collect ×2: with a video, with Elaichi, or free with Chai Club\n\nWhen you open the game, Welcome back tells you where the money came from: \"Your Mumbai tapri kept pouring for 3 hours.\" If it was full, it says so and tells you upgrades make it hold more. Your other outlets' earnings are listed too.\n\nTwo decisions I like:\n1. Away earnings stop at the cap. Move your phone clock forward a week and you still get 3 hours, not a week. Elaichi rewards tied to being away are skipped if the clock looks changed.\n2. Being away never costs you anything. The tapri just stops filling.",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Offline earnings are in the base game; the welcome back sheet shows other outlets from 1.5.5.",
+      "alt": {
+        "summary": "Two stat cards, 40% of normal income while away and a 3 h hold, above a list of six ways to raise away earnings: Thermos Flask, Midnight Kettle, Panaji, Darjeeling and Munnar, Chai Club, and Collect x2. A line says 8 h away pays for 3 h at 40%, which is 1.2 h of income.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/de0dd1289859e901.webp",
+          "img/de0dd1289859e901-t.webp",
+          "kadak-LI-32.jpg"
+        ]
+      ],
+      "id": "LI-32",
+      "date": "2026-11-26",
+      "title": "Customers now order from your stalls",
+      "text": "Kadak's tapri now shows your street from behind the counter. 🫖\n\nPan left and right and you see all of it: the kettle, the cups, and every stall you've opened. A new stall pops in the moment it opens. Tap one to see what it earns.\n\nAnd customers now order from your stalls. Each one picks a stall and pays what that stall earns in a second. A little chip floats up: \"+1 Samosa\". 🥟\n\nWhy I did it: an idle game is a number going up. That's fine for a while, then it's just a number. When every tick is a person at your samosa kadhai, the number has a reason. You can also see which stall is busy without opening a menu.\n\nSome details:\n1. Customers walk in from either side, stand across the counter, get served and walk off.\n2. They come a little more often than before.\n3. In a Pour Frenzy, people come ten times as often and the back of the street fills with passers-by. 🔥\n\nThe customer never asks for a discount. Rare in real life. 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "The seller's view shipped in 1.9.6.",
+      "alt": {
+        "summary": "The seller's view of the Kadak tapri on a railway platform: stalls and kettle on the counter, customers standing behind it, and three floating chips reading +1 Samosa, +1 Bun Maska and +1 Cutting chai. Below, three notes: tap a stall to see what it earns, pan left and right, Pour Frenzy brings 10 times the customers.",
+        "slides": []
+      }
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "time": "6-8 pm IST",
+      "status": "ready",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "images": [
+        [
+          "img/d2252c67c93a91ed.webp",
+          "img/d2252c67c93a91ed-t.webp",
+          "kadak-LI-33.jpg"
+        ]
+      ],
+      "id": "LI-33",
+      "date": "2026-11-27",
+      "title": "Locked things should say how to unlock",
+      "text": "In Kadak, everything you haven't won yet is a dark shape, and each one tells you how to get it. 🔒\n\n🏠 Tapri roof: \"Open outlet 14\"\n☕ Kulhad skin: \"Festival Pass tier 10\"\n🎊 Decoration: \"Festival Pass tier 20\"\n🌼 Marigold kulhad: \"Daily Kulhad, day 7\"\n🏅 Rank badge: \"First place at a pop-up\"\n🎟️ Two roofs: \"For Chai Club members\"\n\nStalls and Ustaads work the same way. From day one you can see all eight stalls and every Ustaad, greyed out, with the price. The ones nearest to winning come first.\n\nWhy: a hidden reward gives you nothing to aim at. A visible one is a goal for tomorrow. One exception: the name of your next chain title stays a surprise. Everything else tells you what it costs.\n\nThink of it as a train ticket that always shows your seat number. Not \"WL 47\". 😂",
+      "reply": "Kadak on Google Play and the App Store: https://kadakchai.tappstudio.in",
+      "note": "Keepsake locks showed from 1.3.8 and 1.4.2.",
+      "alt": {
+        "summary": "Six cards with dark silhouettes, each saying how to win it: a tapri roof at outlet 14, a kulhad skin at Festival Pass tier 10, a decoration at tier 20, a kulhad skin on day 7 of the Daily Kulhad, a rank badge for first place at a pop-up, and a roof for Chai Club members.",
+        "slides": []
+      }
+    },
+    {
       "text": "Kadak now gives your chai chain a title. 👑\n\nTapri Wala, Chai Seth, Nawab, Raja, Maharaja, Badshah, Samrat, and Chai Shahenshah for an outlet in every city.\n\nThe title is never saved. The game works it out from your outlet count every time, so it can't go out of sync.",
       "images": [
         [
@@ -6781,6 +6911,136 @@
       "warn": false,
       "note": "",
       "title": "Your chai empire, sized for your status",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "text": "Every Kadak tapri starts under a plain teal roof. ☂️\n\n12 roofs, humble to grand: tin sheet at outlet 3, tarpaulin at 5, thatch at 11, clay tile at 17, shamiana at 23, haveli eaves at 26.\n\nThe shamiana is a wedding tent. After 23 cities, you've earned it. 😂",
+      "images": [
+        [
+          "img/72157bd994e6d398.webp",
+          "img/72157bd994e6d398-t.webp",
+          "kadak-X-06.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "Twelve roof cards from the teal starter roof to the haveli eaves, each with the outlet it comes at (3, 5, 8, 11, 14, 17, 20, 23, 26); the last two, a truck-art roof and a brass roof, are highlighted as Chai Club roofs.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "X-06",
+      "platform": "X",
+      "date": "2026-11-23",
+      "time": "4:00 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "",
+      "title": "The roof shows how far you have come",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "text": "Kadak's six Heritage cities pay the least Kesar to open, so each gets a perk instead. ✨\n\n🍵 Darjeeling, Munnar: +10% away earnings\n🪔 Varanasi: more lucky customers\n🙏 Amritsar: +10% per tap\n🏰 Udaipur: +10% from outlets you're not in\n🏖️ Panaji: +1 h away cap\n\nCheap option, different job. Not a discount.",
+      "images": [
+        [
+          "img/02ba66db648f7ce9.webp",
+          "img/02ba66db648f7ce9-t.webp",
+          "kadak-X-07.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "Six cards, one per Heritage city: Darjeeling +10% earnings while away, Munnar +10% while away, Varanasi +10% more lucky customers, Amritsar +10% more per tap, Udaipur +10% from outlets you are not in, Panaji +1 h away cap.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "X-07",
+      "platform": "X",
+      "date": "2026-11-24",
+      "time": "4:00 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "",
+      "title": "Heritage cities each have one superpower",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "text": "While you're away, your Kadak tapri earns 40% of normal income, for up to 3 hours. 😴\n\nSleep 8 hours and you're paid for 3 of them at 40%. That's 1.2 hours of income.\n\nThermos Flask adds cap, Midnight Kettle adds rate. Same as every employee when the boss is on leave. 😂",
+      "images": [
+        [
+          "img/15ba99138841cda4.webp",
+          "img/15ba99138841cda4-t.webp",
+          "kadak-X-08.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "Two stat cards, 40% of normal income while away and a 3 h hold, above a list of six ways to raise away earnings: Thermos Flask, Midnight Kettle, Panaji, Darjeeling and Munnar, Chai Club, and Collect x2. A line says 8 h away pays for 3 h at 40%, which is 1.2 h of income.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "X-08",
+      "platform": "X",
+      "date": "2026-11-25",
+      "time": "4:00 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "",
+      "title": "What your tapri earns while you sleep",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "text": "Kadak now shows your tapri from behind the counter. 🫖\n\nPan across your street. Every stall you open stands in the scene. Customers pick a stall and pay what it earns, with a \"+1 Samosa\" chip floating up.\n\nThe number going up is now a person buying chai. And nobody asks for a discount. 😂",
+      "images": [
+        [
+          "img/de0dd1289859e901.webp",
+          "img/de0dd1289859e901-t.webp",
+          "kadak-X-09.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "The seller's view of the Kadak tapri on a railway platform: stalls and kettle on the counter, customers standing behind it, and three floating chips reading +1 Samosa, +1 Bun Maska and +1 Cutting chai. Below, three notes: tap a stall to see what it earns, pan left and right, Pour Frenzy brings 10 times the customers.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "X-09",
+      "platform": "X",
+      "date": "2026-11-26",
+      "time": "4:00 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "",
+      "title": "Customers now order from your stalls",
+      "posted": "",
+      "carousel": false,
+      "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
+    },
+    {
+      "text": "In Kadak, everything you haven't won is a dark shape, and each one says how to get it. 🔒\n\nOpen outlet 14 for a roof. Festival Pass tier 10 for a kulhad. Day 7 of the Daily Kulhad for the marigold one.\n\nA hidden reward is nothing to aim at. A visible one is tomorrow's goal.",
+      "images": [
+        [
+          "img/d2252c67c93a91ed.webp",
+          "img/d2252c67c93a91ed-t.webp",
+          "kadak-X-10.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "Six cards with dark silhouettes, each saying how to win it: a tapri roof at outlet 14, a kulhad skin at Festival Pass tier 10, a decoration at tier 20, a kulhad skin on day 7 of the Daily Kulhad, a rank badge for first place at a pop-up, and a roof for Chai Club members.",
+        "slides": []
+      },
+      "brand": "kadak",
+      "id": "X-10",
+      "platform": "X",
+      "date": "2026-11-27",
+      "time": "4:00 pm IST",
+      "status": "ready",
+      "warn": false,
+      "note": "",
+      "title": "Locked things should say how to unlock",
       "posted": "",
       "carousel": false,
       "reply": "Kadak is free on the App Store and Google Play:\nhttps://kadakchai.tappstudio.in"
@@ -9033,5 +9293,5 @@
       ]
     }
   ],
-  "built": "21 Nov 2026, 22:32"
+  "built": "22 Nov 2026, 06:20"
 }
