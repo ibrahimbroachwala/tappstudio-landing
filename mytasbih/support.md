@@ -1,32 +1,33 @@
-# Support
+# Misbaha Tasbih Counter Support
 
-## App Description and Purpose
+## About the App
 
-**My Tasbih Counter** is a mobile application designed to help users easily count and track their tasbeeh using a digital tasbih.
+**Misbaha Tasbih Counter** (shown as "Misbaha Counter" on your device, and formerly called My Tasbih Counter) is a digital misbaha for counting and tracking your dhikr, with:
 
-The app provides a simple and interactive experience with features such as:
+- A realistic bead strand with a tassel that moves as you count.
+- Tap counting with gentle haptics, on iPhone, Android and Apple Watch.
+- Saved tasbihs with targets, streaks and history.
+- Daily reminders for each tasbih.
+- Optional sign-in with Apple or Google to sync across devices.
+- **Misbaha Prime**, a one-time purchase that unlocks premium beads, tassels, live prayer-time scenes, Arabic, Gujarati and Bengali numerals and unlimited saved tasbihs.
 
-- A realistic 3D tasbih with moving beads and tassel.
-- Tap based tasbih counting.
-- Ability to create and save multiple tasbih counters with target counts.
-- Unlimited saved tasbih counters.
-- Tasbih session history tracking.
-- Secure account access using Google Sign In or Apple Sign In.
+## Misbaha Prime
 
-The app is designed to provide a clean and distraction free environment for users who want a modern digital tasbih experience.
+- **Restore Prime on a new phone:** open the Prime screen and tap **Restore Purchases**, using the same Apple ID or Google account you bought with.
+- **Refunds:** purchases are handled by Apple or Google. Request a refund from the App Store (reportaproblem.apple.com) or Google Play.
 
-## Data Deletion
+## Deleting Your Data
 
-1. The App collects and processes limited personal data such as email address and usage patterns in accordance with the Privacy Policy.
+1. You can delete your account and all tasbihs stored with it from **Settings → Delete Account** in the App.
+2. You can also email us to request deletion. Once the request is verified, all associated data is permanently removed.
+3. Tasbihs kept only on your device are removed when you uninstall the App.
 
-2. All collected data is used solely to provide tasbih counting features, account access, and to improve the App’s functionality.
-
-3. Users can request account and data deletion by contacting us via email. Once the request is verified, all associated user data will be permanently removed from our systems.
+See the [Privacy Policy](https://tappstudio.in/mytasbih/privacy-policy) for what is collected and why.
 
 ## Contact Us
 
-If you have any questions, concerns, feedback, or require support, please contact us at:
+For questions, feedback or support, contact us at:
 
 **Email:** tappstudio.in@gmail.com
 
-We are committed to ensuring that your experience with **My Tasbih Counter** is simple, reliable, and enjoyable.
+We want your experience with **Misbaha Tasbih Counter** to be simple, reliable and peaceful.

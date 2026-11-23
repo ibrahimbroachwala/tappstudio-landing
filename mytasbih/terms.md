@@ -1,61 +1,64 @@
-# Terms and Conditions
+# Terms and Conditions for Misbaha Tasbih Counter
 
-Welcome to the **My Tasbih Counter** mobile application ("App"). These terms and conditions ("Terms") govern your use of the App, so please read them carefully before using it.
+Last updated: 23 November 2026
 
-By downloading, accessing, or using the App, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, please do not use the App.
+Welcome to **Misbaha Tasbih Counter** (shown as "Misbaha Counter" on your device, and formerly called My Tasbih Counter), made by tappStudio ("we", "our" or "us"). These terms and conditions ("Terms") govern your use of the Misbaha Tasbih Counter app for iPhone, Apple Watch and Android (the "App"). Please read them carefully.
 
-## App Description and Purpose
+By downloading, accessing or using the App, you agree to these Terms. If you do not agree, please do not use the App.
 
-**My Tasbih Counter** is a mobile application designed to help users count and track tasbeeh using a digital tasbih interface. The App provides features such as tasbih counters, session tracking, targets, and account syncing.
+## About the App
 
-The App is intended as a personal counting tool to help users maintain consistency in their recitations.
+**Misbaha Tasbih Counter** is a digital misbaha (tasbih) for counting and tracking dhikr. It offers tap counting on a moving bead strand, saved tasbihs with targets, streaks and history, daily reminders, an Apple Watch companion, and optional sign-in to sync across devices.
+
+The App is a personal counting tool. It is not a source of religious rulings; please refer to a qualified scholar for guidance.
+
+## Misbaha Prime
+
+1. **Misbaha Prime** is an optional one-time purchase. It is not a subscription and is never billed again.
+2. Prime unlocks premium bead materials, tassels, live prayer-time scenes, alternative numerals and unlimited saved tasbihs, plus future designs we add to Prime. The free version holds a limited number of saved tasbihs.
+3. Purchases are made through the Apple App Store or Google Play and are subject to their terms. Prices are shown in the App before you buy.
+4. You can restore Prime on another device signed in to the same Apple ID or Google account using **Restore Purchases**.
+5. Refunds are handled by Apple or Google under their refund policies. We cannot issue refunds directly.
 
 ## User Conduct
 
-1. By using the App, you agree to use it in a lawful and respectful manner.
+1. You agree to use the App in a lawful and respectful manner.
+2. You will not misuse the App, disrupt its functionality or attempt to gain unauthorised access to its systems.
 
-2. You will not attempt to misuse the App, disrupt its functionality, or attempt to gain unauthorized access to its systems.
+## Your Content
 
-3. The App is intended for personal use and should not be used for any unlawful activities.
-
-## User Content
-
-1. When using the App, you may create personal tasbih counters, targets, and session records. You retain ownership of the data you create.
-
-2. By using the App, you grant permission for the App to store and process this data solely for the purpose of operating and improving the App.
+1. You keep ownership of the tasbihs, targets and records you create.
+2. You allow us to store and process them solely to operate, sync and improve the App, as described in the Privacy Policy.
 
 ## Intellectual Property
 
-1. The App, including its design, graphics, interface, and functionality, is the property of the developer and is protected by intellectual property laws.
+1. The App, including its design, graphics, bead and tassel artwork, scenes and functionality, belongs to tappStudio and is protected by intellectual property laws.
+2. You may not copy, reproduce, distribute, modify or create derivative works from any part of the App without our prior written permission.
 
-2. You may not copy, reproduce, distribute, modify, or create derivative works from any part of the App without prior written permission.
+## Privacy
 
-## Privacy and Data Collection
-
-1. The App collects limited information such as account authentication data and usage information in accordance with the Privacy Policy.
-
-2. By using the App, you consent to the collection and processing of your data as described in the Privacy Policy.
+Your use of the App is also governed by our [Privacy Policy](https://tappstudio.in/mytasbih/privacy-policy), which explains what we collect and how we use it.
 
 ## Disclaimer of Warranties
 
 1. The App is provided on an "as is" and "as available" basis.
-
-2. We do not guarantee that the App will always be uninterrupted, error free, or free of harmful components.
+2. We do not guarantee that the App will always be uninterrupted or error free, or that your counts and tasbihs will never be lost. Signing in helps keep a backup.
 
 ## Limitation of Liability
 
-To the maximum extent permitted by law, the developer shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use of the App.
+To the maximum extent permitted by law, tappStudio shall not be liable for any indirect, incidental or consequential damages arising from your use of the App. Our total liability shall not exceed the amount you paid, if any, for the App or Misbaha Prime.
 
-If any liability arises, it shall not exceed the amount paid by you, if any, for using the App.
+## Changes and Termination
 
-## Modifications and Termination
+1. We may modify, suspend or discontinue the App or any part of it at any time. Features you have bought with Prime will remain available for as long as we offer the App.
+2. We may update these Terms from time to time. Continued use of the App after an update means you accept the revised Terms.
 
-1. We reserve the right to modify, suspend, or discontinue the App or any part of it at any time.
+## Governing Law
 
-2. We may update these Terms from time to time. Continued use of the App after updates indicates acceptance of the revised Terms.
+These Terms are governed by the laws of India. Any disputes arising from the use of the App fall under the jurisdiction of the courts of India. Nothing in these Terms limits rights you have under the consumer laws of your country.
 
-## Governing Law and Jurisdiction
+## Contact Us
 
-These Terms shall be governed by the laws of India. Any disputes arising from the use of the App shall fall under the jurisdiction of the courts of India.
+**Email:** tappstudio.in@gmail.com
 
-By using **My Tasbih Counter**, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
+By using **Misbaha Tasbih Counter**, you acknowledge that you have read, understood and agreed to these Terms and Conditions.
