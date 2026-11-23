@@ -1,7 +1,7 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // ---------------------------------------------------------------------------
-// Reveal on scroll (tiles, principles, the Now board)
+// Reveal on scroll (app tiles)
 // ---------------------------------------------------------------------------
 const revealNodes = document.querySelectorAll('[data-reveal]');
 
@@ -180,7 +180,7 @@ if (pourBtn) {
 
         pourBtn.classList.add('is-pouring');
         clearTimeout(tiltTimer);
-        tiltTimer = setTimeout(() => pourBtn.classList.remove('is-pouring'), 220);
+        tiltTimer = setTimeout(() => pourBtn.classList.remove('is-pouring'), 750);
 
         if (!reducedMotion.matches) {
             const pop = document.createElement('span');
@@ -320,11 +320,18 @@ if (contactDialog) {
     });
 }
 
-// Keep the hidden "subject" field in sync with the chosen topic
+// Keep the hidden "subject" field in sync with the chosen topic, and ask
+// project briefs for what helps most (the app idea, audience and timing)
+const contactMessageField = document.getElementById('contact-message');
+const defaultMessageHint = contactMessageField ? contactMessageField.placeholder : '';
+const projectMessageHint = 'What are you building, who is it for, and when do you need it? A rough budget helps too.';
 document.querySelectorAll('input[name="topic"]').forEach((radio) => {
     radio.addEventListener('change', () => {
         if (contactSubjectField) {
             contactSubjectField.value = 'tappStudio: ' + radio.value;
+        }
+        if (contactMessageField) {
+            contactMessageField.placeholder = radio.value === 'New project' ? projectMessageHint : defaultMessageHint;
         }
     });
 });
