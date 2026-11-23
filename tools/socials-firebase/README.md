@@ -1,4 +1,9 @@
-# Socials posting: Instagram and YouTube from the calendar
+# Socials posting: Instagram and YouTube from the calendar (retired)
+
+> **Retired on 23 Nov 2026.** Meta restricted the Instagram accounts from running ads after this was set up, so
+> automated posting was switched off: the `api` and `tick` functions are to be deleted, the Instagram tokens revoked and
+> the Meta app removed. The calendar's Post now, Schedule, sign-in and Accounts controls are gone, and posting is manual
+> again. This folder is kept for reference only; don't deploy it.
 
 The calendar at `/socials/` posts to each app's Instagram account (single images, carousels and reels) and to the
 YouTube channel (Shorts). Nothing goes out on its own: a post goes live only when you tap **Post now**, or at the time you
