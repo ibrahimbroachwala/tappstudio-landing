@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPP price tool for App Store and Google Play: tappStudio</title>
+    <meta name="description"
+        content="Free purchasing power parity price tool for app developers. Enter one price and get a fair price for every App Store and Google Play country, in 5 tiers from World Bank data, snapped to real App Store price points.">
+    <meta name="author" content="Ibrahim Broachwala">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="https://tappstudio.in/ppp/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tappstudio.in/ppp/">
+    <meta property="og:title" content="PPP price tool for App Store and Google Play">
+    <meta property="og:description"
+        content="Enter one price, get a fair price for every App Store and Google Play country. World Bank PPP tiers, real App Store price points, free.">
+    <meta property="og:image" content="https://tappstudio.in/public/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../manifest.json">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../index.css?v=20261124c">
+    <link rel="stylesheet" href="ppp.css?v=20261124c">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PPP price tool for App Store and Google Play",
+      "url": "https://tappstudio.in/ppp/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Turns one app price into a purchasing-power-adjusted price for every App Store and Google Play country, using World Bank price level data in 5 tiers, with App Store price points and a setup prompt for coding AI tools.",
+      "author": { "@type": "Person", "name": "Ibrahim Broachwala", "url": "https://tappstudio.in/" },
+      "isPartOf": { "@type": "WebSite", "url": "https://tappstudio.in/", "name": "tappStudio" }
+    }
+    </script>
+</head>
+
+<body class="ppp-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="../index.html" class="brand" aria-label="tappStudio, back to home">
+                <svg class="brand-logo" width="28" height="28" viewBox="0 0 512 512" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path class="brand-logo-t"
+                        d="M195.581 190.455V231.818H76.0142V190.455H195.581ZM103.159 142.886H158.224V327.989C158.224 333.073 159 337.037 160.551 339.881C162.102 342.638 164.257 344.577 167.014 345.697C169.858 346.818 173.133 347.378 176.838 347.378C179.423 347.378 182.009 347.162 184.594 346.732C187.179 346.214 189.161 345.827 190.54 345.568L199.2 386.544C196.443 387.406 192.565 388.397 187.567 389.517C182.569 390.723 176.493 391.456 169.341 391.714C156.07 392.232 144.437 390.465 134.44 386.415C124.53 382.365 116.818 376.074 111.303 367.543C105.787 359.011 103.073 348.24 103.159 335.227V142.886Z" />
+                    <path class="brand-logo-s"
+                        d="M376.094 200.408C375.06 189.981 370.622 181.88 362.781 176.107C354.939 170.333 344.296 167.446 330.853 167.446C321.719 167.446 314.006 168.739 307.715 171.324C301.424 173.823 296.599 177.313 293.238 181.794C289.963 186.275 288.326 191.359 288.326 197.047C288.154 201.786 289.145 205.923 291.299 209.456C293.54 212.989 296.599 216.048 300.477 218.634C304.354 221.133 308.835 223.33 313.92 225.226C319.004 227.036 324.433 228.587 330.207 229.879L353.991 235.567C365.538 238.152 376.138 241.599 385.789 245.908C395.441 250.216 403.799 255.516 410.866 261.807C417.932 268.098 423.404 275.509 427.282 284.04C431.246 292.571 433.271 302.352 433.357 313.382C433.271 329.583 429.135 343.629 420.948 355.521C412.848 367.327 401.128 376.505 385.789 383.054C370.536 389.517 352.138 392.749 330.594 392.749C309.223 392.749 290.61 389.474 274.754 382.925C258.984 376.375 246.661 366.681 237.785 353.841C228.995 340.915 224.385 324.929 223.954 305.885H278.114C278.718 314.761 281.26 322.172 285.741 328.118C290.308 333.978 296.383 338.416 303.967 341.432C311.636 344.362 320.297 345.827 329.948 345.827C339.427 345.827 347.657 344.448 354.637 341.69C361.703 338.933 367.175 335.098 371.053 330.186C374.931 325.274 376.87 319.63 376.87 313.253C376.87 307.307 375.103 302.309 371.57 298.259C368.123 294.208 363.039 290.761 356.317 287.918C349.682 285.074 341.539 282.489 331.887 280.162L303.062 272.923C280.743 267.494 263.12 259.006 250.194 247.459C237.268 235.911 230.848 220.357 230.934 200.795C230.848 184.767 235.113 170.764 243.731 158.786C252.434 146.807 264.37 137.457 279.536 130.736C294.703 124.014 311.938 120.653 331.241 120.653C350.888 120.653 368.037 124.014 382.687 130.736C397.423 137.457 408.884 146.807 417.07 158.786C425.257 170.764 429.479 184.638 429.738 200.408H376.094Z" />
+                </svg>
+                <span class="brand-word"><span class="brand-tapp">tapp</span><span
+                        class="brand-studio">Studio</span></span>
+            </a>
+            <nav class="nav-links" aria-label="Page sections">
+                <a href="#tool">Prices</a>
+                <a href="#how-to">How to use</a>
+                <a href="#method">Method</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle dark/light mode"
+                    aria-label="Toggle dark or light theme" type="button">
+                    <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="ppp-hero">
+            <div class="wrap">
+                <p class="eyebrow">Free tool</p>
+                <h1>A fair price for every country</h1>
+                <p class="ppp-lede">Type the price you charge in one country. I'll work out a price for all
+                    <span data-ppp-count>192</span> App Store and Google Play countries, in 5 tiers based on what money
+                    actually buys there. It's the method I use for my own apps. The data is public, the maths is shown
+                    below, and nothing you type leaves this page.</p>
+            </div>
+        </section>
+
+        <section class="wrap ppp-tool" id="tool" aria-label="Price calculator">
+            <form class="ppp-inputs" onsubmit="return false">
+                <div class="ppp-field ppp-field-price">
+                    <label for="ppp-price">Your price</label>
+                    <div class="ppp-price-box">
+                        <input id="ppp-price" type="number" min="0" step="any" inputmode="decimal" value="4.99"
+                            aria-describedby="ppp-cur">
+                        <span class="ppp-cur-tag" id="ppp-cur">USD</span>
+                    </div>
+                </div>
+                <div class="ppp-field ppp-field-country">
+                    <label for="ppp-country">In this country</label>
+                    <div class="ppp-select-box">
+                        <span id="ppp-country-flag" aria-hidden="true"></span>
+                        <select id="ppp-country"></select>
+                    </div>
+                </div>
+                <fieldset class="ppp-field ppp-seg">
+                    <legend>Product</legend>
+                    <label><input type="radio" name="ppp-kind" value="sub" checked><span>Subscription</span></label>
+                    <label><input type="radio" name="ppp-kind" value="iap"><span>One-time</span></label>
+                </fieldset>
+                <div class="ppp-field ppp-toggles">
+                    <label class="ppp-switch"><input type="checkbox" id="ppp-snap" checked><span>Snap to App Store
+                            price points</span></label>
+                    <label class="ppp-switch"><input type="checkbox" id="ppp-tax" checked><span>Add local VAT/GST
+                            (like the stores do)</span></label>
+                </div>
+            </form>
+            <p class="ppp-meta"><span id="ppp-fx">Loading exchange rates…</span> <a href="#how-to">How to use
+                    this</a></p>
+
+            <div class="ppp-bar">
+                <p class="ppp-summary" id="ppp-summary" aria-live="polite"></p>
+                <div class="ppp-controls">
+                    <fieldset class="ppp-seg ppp-seg-small">
+                        <legend class="visually-hidden">View</legend>
+                        <label><input type="radio" name="ppp-view" value="tier" checked><span>By tier</span></label>
+                        <label><input type="radio" name="ppp-view" value="all"><span>All countries</span></label>
+                    </fieldset>
+                    <label class="ppp-mini"><span class="visually-hidden">Sort</span>
+                        <select id="ppp-sort">
+                            <option value="name">Name A–Z</option>
+                            <option value="name-desc">Name Z–A</option>
+                            <option value="price">Price, low to high</option>
+                            <option value="price-desc">Price, high to low</option>
+                            <option value="ratio">PPP ratio, high to low</option>
+                        </select>
+                    </label>
+                    <label class="ppp-mini"><span class="visually-hidden">Stores</span>
+                        <select id="ppp-store">
+                            <option value="both">Both stores</option>
+                            <option value="apple">App Store only</option>
+                            <option value="play">Google Play only</option>
+                        </select>
+                    </label>
+                    <label class="ppp-mini ppp-search"><span class="visually-hidden">Search countries</span>
+                        <input id="ppp-search" type="search" placeholder="Search country, code or currency"
+                            autocomplete="off">
+                    </label>
+                </div>
+            </div>
+
+            <div class="ppp-actions">
+                <button class="btn btn-accent btn-small" id="ppp-ai-btn" type="button" disabled>Set up these prices
+                    with AI</button>
+                <button class="btn btn-ghost btn-small" id="ppp-copy-md" type="button">Copy as Markdown</button>
+                <button class="btn btn-ghost btn-small" id="ppp-csv" type="button">Download CSV</button>
+            </div>
+
+            <details class="ppp-advanced">
+                <summary>Adjust tier multipliers</summary>
+                <p>Defaults come from the data: each tier's multiplier is the median price level ratio of its
+                    countries. Change them if you want to lean higher or lower. Your changes stay in this browser.</p>
+                <div class="ppp-mults" id="ppp-mults"></div>
+                <button class="btn btn-ghost btn-small" id="ppp-mult-reset" type="button">Reset to data
+                    defaults</button>
+            </details>
+
+            <div id="ppp-results" class="ppp-results">
+                <p class="ppp-empty">Loading prices…</p>
+            </div>
+        </section>
+
+        <section class="wrap ppp-doc" id="how-to">
+            <h2>How to use this</h2>
+            <ol class="ppp-steps">
+                <li><strong>Enter your price</strong> and the country you charge it in. ₹99 in India, $4.99 in the
+                    US, whatever you already know works.</li>
+                <li><strong>Pick the product type</strong> (subscription or one-time) and leave “Snap to App Store
+                    price points” on, so every App Store price is one Apple actually offers.</li>
+                <li><strong>Check the table.</strong> View it by tier or as one list, sort it A–Z, and nudge the tier
+                    multipliers under “Adjust tier multipliers” if you want.</li>
+                <li><strong>Copy the AI prompt.</strong> Click “Set up these prices with AI”, add your product's name,
+                    and copy it.</li>
+                <li><strong>Paste it into your coding AI</strong> (Claude Code, Cursor, Copilot or similar) inside your
+                    app's repo. It builds <code>scripts/store_pricing/pricing.yaml</code> with every price filled in,
+                    plus a script for each store.</li>
+                <li><strong>Create your API keys</strong> (below) and save them in
+                    <code>scripts/store_pricing/credentials/</code>, which the AI keeps out of git.</li>
+                <li><strong>Dry run.</strong> The AI runs <code>plan</code> for each store. It changes nothing and
+                    writes a CSV of every country's current and new price. Read it.</li>
+                <li><strong>Apply.</strong> Run <code>apply</code> and type <code>yes</code>. Check a few countries
+                    in App Store Connect and Play Console afterwards; stores can take a little while to show new
+                    prices.</li>
+            </ol>
+
+            <div class="ppp-keys">
+                <article>
+                    <h3>App Store Connect API key</h3>
+                    <ol>
+                        <li>Sign in as the Account Holder or an Admin.</li>
+                        <li>Users and Access → Integrations → App Store Connect API → <strong>Team Keys</strong>.
+                            First time? The Account Holder clicks Request Access once.</li>
+                        <li>Generate a key with access <strong>App Manager</strong>.</li>
+                        <li>Download the <code>.p8</code> file. Apple only lets you download it once. Note the
+                            <strong>Key ID</strong> and the <strong>Issuer ID</strong> shown on the same page.</li>
+                    </ol>
+                    <p class="ppp-links"><a href="https://appstoreconnect.apple.com/access/integrations/api"
+                            target="_blank" rel="noopener noreferrer">Open App Store Connect keys</a> <a
+                            href="https://developer.apple.com/documentation/appstoreconnectapi/creating-api-keys-for-app-store-connect-api"
+                            target="_blank" rel="noopener noreferrer">Apple's guide</a></p>
+                </article>
+                <article>
+                    <h3>Google Play service account</h3>
+                    <ol>
+                        <li>In Google Cloud, enable the <strong>Google Play Android Developer API</strong>.</li>
+                        <li>Create a service account, then add a <strong>JSON key</strong> and download it.</li>
+                        <li>In Play Console → Users and permissions, invite the service account's email. Give it
+                            your app with: view app information, manage store presence (products and prices), and
+                            manage orders and subscriptions if you'll move existing subscribers.</li>
+                        <li>New permissions can take up to a day to start working.</li>
+                    </ol>
+                    <p class="ppp-links"><a
+                            href="https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com"
+                            target="_blank" rel="noopener noreferrer">Enable the API</a> <a
+                            href="https://console.cloud.google.com/iam-admin/serviceaccounts" target="_blank"
+                            rel="noopener noreferrer">Service accounts</a> <a href="https://play.google.com/console"
+                            target="_blank" rel="noopener noreferrer">Play Console</a> <a
+                            href="https://developers.google.com/android-publisher/getting_started" target="_blank"
+                            rel="noopener noreferrer">Google's guide</a></p>
+                </article>
+            </div>
+            <p class="ppp-note">Keys stay on your machine. Never put them in the repo or in the prompt, and revoke them
+                when you're done if you won't price again soon.</p>
+        </section>
+
+        <section class="wrap ppp-doc" id="method">
+            <h2>How the prices are worked out</h2>
+            <p><strong>Purchasing power parity (PPP)</strong> asks how much a basket of goods costs in each country
+                compared with the US. The World Bank publishes it every year. Divide a country's PPP conversion factor
+                by its exchange rate and you get its <strong>price level ratio</strong>: 1.00 means prices like the US,
+                0.25 means things cost about a quarter as much in dollar terms.</p>
+
+            <h3>Tiers</h3>
+            <p>Every country goes into one of 5 tiers by its ratio, with no hand edits. Each tier's multiplier is the
+                median ratio of the countries in it, rounded to 0.05. Countries with no data from either source stay
+                at full price.</p>
+            <div class="ppp-table-wrap">
+                <table class="ppp-table ppp-tier-ref">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tier</th>
+                            <th scope="col">Price level ratio</th>
+                            <th scope="col">Multiplier</th>
+                            <th scope="col">Countries</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ppp-tier-table"></tbody>
+                </table>
+            </div>
+
+            <h3>The formula</h3>
+            <ol class="ppp-formula">
+                <li>Your price ÷ exchange rate ÷ your country's tier multiplier ÷ (1 + its VAT) = a pre-tax
+                    <strong>Tier 1 anchor</strong> in US dollars.</li>
+                <li>Each country: anchor × its tier multiplier × (1 + its VAT) × exchange rate into the currency each
+                    store bills it in.</li>
+                <li>App Store: rounded to the local pattern, then the nearest real App Store price point. Google
+                    Play: rounded to the local pattern (.99, ₹99, ¥480, 1,490).</li>
+            </ol>
+            <p>VAT is added because store prices include it everywhere except the US and Canada, so without it
+                you'd earn less in Europe than in the US for the same tier. Turn it off if you'd rather keep the
+                digits the same.</p>
+
+            <h3>Sources</h3>
+            <ul>
+                <li><strong>Price levels:</strong> <a
+                        href="https://data.worldbank.org/indicator/PA.NUS.PPP" target="_blank"
+                        rel="noopener noreferrer">World Bank PPP conversion factor (PA.NUS.PPP)</a> ÷ <a
+                        href="https://data.worldbank.org/indicator/PA.NUS.FCRF" target="_blank"
+                        rel="noopener noreferrer">official exchange rate (PA.NUS.FCRF)</a>, latest year with both
+                    (mostly 2025). For economies the World Bank doesn't cover, like Taiwan, or where it disagrees with
+                    the <a href="https://www.imf.org/external/datamapper/PPPGDP@WEO" target="_blank"
+                        rel="noopener noreferrer">IMF World Economic Outlook</a> by more than 20% (usually a currency
+                    change caught halfway, as with Bulgaria and the euro), the IMF figure is used. Hover a ratio to see
+                    its source.</li>
+                <li><strong>Store countries and currencies:</strong> the <span data-ppp-apple>175</span> App Store
+                    territories and <span data-ppp-play>174</span> Google Play countries, each with the currency that
+                    store bills in (they often differ: Apple bills over 100 territories in US dollars).</li>
+                <li><strong>App Store price points:</strong> read from the App Store Connect API for every territory,
+                    for subscriptions and one-time purchases.</li>
+                <li><strong>Exchange rates:</strong> <a href="https://github.com/fawazahmed0/exchange-api"
+                        target="_blank" rel="noopener noreferrer">fawazahmed0/exchange-api</a>, free and updated
+                    daily, fetched by your browser and kept for 12 hours. If it can't be reached, a saved copy is
+                    used and the date says so.</li>
+                <li><strong>VAT/GST:</strong> standard rates from <a
+                        href="https://github.com/valeriansaliou/node-sales-tax" target="_blank"
+                        rel="noopener noreferrer">node-sales-tax</a>. Where a rate is unknown, the country is treated
+                    as tax-free.</li>
+                <li><strong>Flags:</strong> <a href="https://github.com/lipis/flag-icons" target="_blank"
+                        rel="noopener noreferrer">flag-icons</a> (MIT).</li>
+            </ul>
+
+            <h3>What to keep in mind</h3>
+            <ul>
+                <li>PPP data is yearly and a year behind. Exchange rates move daily. Fast-moving currencies (Turkey,
+                    Argentina, Egypt, Nigeria) are worth rechecking every few months.</li>
+                <li>A few small economies sit higher than their incomes suggest because imports are expensive there.
+                    That's what the data says, so I've left it alone. Adjust the multipliers if you disagree.</li>
+                <li>Google Play takes any price within each currency's limits; the AI's dry run flags anything outside
+                    them.</li>
+                <li>This is a well-reasoned starting point, not financial advice. Watch your conversion in each
+                    region and adjust.</li>
+            </ul>
+            <p class="ppp-meta">Data built <span data-ppp-built></span>. Rates and settings are kept in your browser's
+                local storage. No cookies, no tracking.</p>
+        </section>
+    </main>
+
+    <dialog class="ppp-dialog" id="ppp-ai-dialog" aria-labelledby="ppp-ai-title">
+        <div class="ppp-dialog-inner">
+            <header>
+                <h2 id="ppp-ai-title">Set up these prices with AI</h2>
+                <button class="ppp-close" id="ppp-ai-close" type="button" aria-label="Close">×</button>
+            </header>
+            <p>Paste this into Claude Code, Cursor, Copilot or any coding AI, inside your app's repo. It holds every
+                price above, where the numbers came from, and step-by-step instructions to build a
+                <code>pricing.yaml</code> and scripts that set prices on both stores, with a dry run first. It's built
+                in your browser; nothing is sent anywhere.</p>
+            <div class="ppp-dialog-fields">
+                <label>Product name <input id="ppp-ai-product" type="text" placeholder="e.g. Pro monthly"
+                        maxlength="60"></label>
+                <label>This product
+                    <select id="ppp-ai-mode">
+                        <option value="reprice">already exists (re-price it)</option>
+                        <option value="create">is new (create it)</option>
+                    </select>
+                </label>
+            </div>
+            <textarea id="ppp-ai-text" readonly rows="14" aria-label="AI setup prompt"></textarea>
+            <div class="ppp-dialog-actions">
+                <button class="btn btn-accent btn-small" id="ppp-ai-copy" type="button">Copy prompt</button>
+                <button class="btn btn-ghost btn-small" id="ppp-ai-download" type="button">Download .md</button>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <div class="footer-brand">
+                <span class="brand-tapp">tapp</span><span class="brand-studio">Studio</span>
+            </div>
+            <div class="social-links">
+                <a href="https://twitter.com/messages/compose?recipient_id=ibrahim_broach" rel="noopener noreferrer"
+                    title="Message tappStudio on X (Twitter)" aria-label="Message tappStudio on X (Twitter)">X</a>
+                <a href="https://www.instagram.com/ibrahim.broach" rel="noopener noreferrer"
+                    title="Follow tappStudio on Instagram" aria-label="Follow tappStudio on Instagram">Instagram</a>
+                <a href="https://www.linkedin.com/in/ibrahimbroachwala/" rel="noopener noreferrer"
+                    title="Connect with tappStudio on LinkedIn"
+                    aria-label="Connect with tappStudio on LinkedIn">LinkedIn</a>
+            </div>
+            <div class="footer-legal">
+                <a href="../privacy-policy.html">Privacy</a>
+                <a href="../terms-of-service.html">Terms</a>
+            </div>
+        </div>
+        <div class="wrap">
+            <p>&copy; 2026 tappStudio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js?v=20261124b"></script>
+    <script src="engine.js?v=20261124b"></script>
+    <script src="prompt.js?v=20261124b"></script>
+    <script src="app.js?v=20261124b"></script>
+</body>
+
+</html>

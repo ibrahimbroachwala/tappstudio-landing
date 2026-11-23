@@ -21,6 +21,10 @@ tappStudio is a one-person studio. Every app is designed, engineered, shipped to
 - [My Deen support](https://tappstudio.in/mydeen/support.html)
 - [Misbaha support](https://tappstudio.in/mytasbih/support.html)
 
+## Tools
+
+- [PPP price tool](https://tappstudio.in/ppp/): Free purchasing power parity price calculator for app developers. Enter one price in any country and get a price for all 192 App Store and Google Play countries, in 5 tiers from World Bank price level data (IMF where needed), snapped to real App Store price points, with VAT handling, CSV/Markdown export and a ready-made prompt for coding AI tools to set the prices through the App Store Connect and Google Play APIs.
+
 ## Docs
 
 - [Privacy Policy](https://tappstudio.in/privacy-policy.html): tappStudio's studio-wide privacy policy.

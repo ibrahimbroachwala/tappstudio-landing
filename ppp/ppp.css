@@ -1,0 +1,798 @@
+/* PPP price tool (/ppp/). Builds on index.css tokens. */
+
+.ppp-hero {
+    padding: clamp(2.5rem, 6vw, 4rem) 0 1.5rem;
+}
+
+.ppp-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0.75rem 0 1rem;
+}
+
+.ppp-lede {
+    color: var(--muted);
+    max-width: 62ch;
+    font-size: 1.08rem;
+}
+
+.ppp-tool {
+    padding-bottom: 3rem;
+}
+
+/* ---------- inputs ---------- */
+
+.ppp-inputs {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.4fr) auto auto;
+    gap: 1rem 1.25rem;
+    align-items: end;
+    padding: 1.25rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-l);
+    background: var(--accent-soft);
+}
+
+.ppp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.ppp-field>label[for],
+.ppp-field>legend {
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: 0;
+}
+
+.ppp-price-box,
+.ppp-select-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    padding: 0 0.75rem;
+    height: 48px;
+}
+
+.ppp-price-box:focus-within,
+.ppp-select-box:focus-within {
+    border-color: var(--accent);
+}
+
+.ppp-price-box input,
+.ppp-select-box select {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 1.15rem;
+    font-weight: 600;
+    outline: none;
+    height: 100%;
+}
+
+.ppp-select-box select {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ppp-select-box select option {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.ppp-cur-tag {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+#ppp-country-flag {
+    display: inline-flex;
+}
+
+/* segmented control */
+.ppp-seg {
+    display: flex;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+}
+
+.ppp-seg>legend {
+    width: 100%;
+    margin-bottom: 0.4rem;
+}
+
+.ppp-seg label {
+    cursor: pointer;
+}
+
+.ppp-seg input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ppp-seg label span {
+    display: inline-flex;
+    white-space: nowrap;
+    align-items: center;
+    height: 48px;
+    padding: 0 1rem;
+    border: 1px solid var(--line-strong);
+    background: var(--bg);
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ppp-seg label:first-of-type span {
+    border-radius: var(--radius-s) 0 0 var(--radius-s);
+}
+
+.ppp-seg label:last-of-type span {
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+    border-left: 0;
+}
+
+.ppp-seg input:checked+span {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-color: var(--accent);
+}
+
+.ppp-seg input:focus-visible+span {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.ppp-seg-small label span {
+    height: 38px;
+    padding: 0 0.85rem;
+    font-size: 0.88rem;
+}
+
+.ppp-toggles {
+    gap: 0.55rem;
+}
+
+.ppp-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--text);
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-family: var(--font-body) !important;
+}
+
+.ppp-switch input {
+    appearance: none;
+    width: 36px;
+    height: 20px;
+    border-radius: 999px;
+    background: var(--line-strong);
+    position: relative;
+    cursor: pointer;
+    flex: none;
+    transition: background 0.15s ease;
+    margin: 0;
+}
+
+.ppp-switch input::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--text);
+    transition: transform 0.15s ease;
+}
+
+.ppp-switch input:checked {
+    background: var(--accent);
+}
+
+.ppp-switch input:checked::after {
+    transform: translateX(16px);
+    background: var(--accent-ink);
+}
+
+.ppp-switch input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.ppp-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0.85rem 0 0;
+}
+
+.ppp-meta a,
+.ppp-doc a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ppp-warn {
+    color: #e0a43c;
+}
+
+/* ---------- bar + actions ---------- */
+
+.ppp-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ppp-summary {
+    font-size: 1.05rem;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.ppp-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.ppp-mini select,
+.ppp-mini input {
+    height: 38px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.88rem;
+    padding: 0 0.7rem;
+}
+
+.ppp-mini select:focus,
+.ppp-mini input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.ppp-search input {
+    width: 240px;
+}
+
+.ppp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.ppp-actions .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ppp-advanced {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    padding: 0.8rem 1rem;
+}
+
+.ppp-advanced summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.ppp-advanced p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0.75rem 0;
+}
+
+.ppp-mults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.ppp-mult {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.88rem;
+}
+
+.ppp-mult input {
+    height: 38px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    padding: 0 0.6rem;
+}
+
+.ppp-mult small {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+/* ---------- results ---------- */
+
+.ppp-results {
+    margin-top: 1.5rem;
+}
+
+.ppp-empty {
+    color: var(--muted);
+    padding: 2rem 0;
+}
+
+.ppp-group {
+    margin-top: 2rem;
+}
+
+.ppp-group-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.ppp-group-head h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0;
+}
+
+.ppp-group-head p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0;
+    font-family: var(--font-mono);
+}
+
+.ppp-group-head p strong {
+    color: var(--text);
+}
+
+.ppp-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+}
+
+.ppp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.ppp-table th,
+.ppp-table td {
+    padding: 0.55rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+.ppp-table thead th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 500;
+    background: var(--bg);
+}
+
+.ppp-table tbody tr:last-child th,
+.ppp-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.ppp-table tbody tr:hover {
+    background: var(--accent-soft);
+}
+
+.ppp-table tbody th {
+    font-weight: 500;
+    position: sticky;
+    left: 0;
+    background: var(--bg);
+}
+
+.ppp-table tbody tr:hover th {
+    background: inherit;
+}
+
+.ppp-table tr.is-base {
+    background: var(--accent-soft);
+}
+
+.ppp-table tr.is-base th {
+    background: transparent;
+}
+
+.ppp-num {
+    text-align: right !important;
+}
+
+.ppp-tiercol {
+    text-align: center !important;
+}
+
+.ppp-country {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.ppp-flag {
+    width: 24px;
+    height: 18px;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px var(--line-strong);
+    flex: none;
+}
+
+.ppp-code {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+.ppp-price {
+    font-weight: 600;
+}
+
+.ppp-cur {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-left: 0.3rem;
+    font-weight: 500;
+}
+
+.ppp-badge {
+    color: #e0a43c;
+    font-weight: 600;
+    cursor: help;
+}
+
+.ppp-na,
+.ppp-muted {
+    color: var(--muted);
+}
+
+.ppp-table sup {
+    font-size: 0.6rem;
+    color: var(--muted);
+    margin-left: 2px;
+}
+
+.ppp-tier {
+    display: inline-grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    flex: none;
+}
+
+.ppp-tier.t1 { background: #0f766e; }
+.ppp-tier.t2 { background: #2563eb; }
+.ppp-tier.t3 { background: #7c3aed; }
+.ppp-tier.t4 { background: #c2410c; }
+.ppp-tier.t5 { background: #be123c; }
+
+/* ---------- docs ---------- */
+
+.ppp-doc {
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2.5rem);
+    border-top: 1px solid var(--line);
+}
+
+.ppp-doc>* {
+    max-width: 78ch;
+}
+
+.ppp-doc h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin: 0 0 1.25rem;
+}
+
+.ppp-doc h3 {
+    font-size: 1.1rem;
+    margin: 2rem 0 0.6rem;
+}
+
+.ppp-doc p,
+.ppp-doc li {
+    color: var(--muted);
+}
+
+.ppp-doc strong {
+    color: var(--text);
+}
+
+.ppp-doc ul,
+.ppp-doc ol {
+    padding-left: 1.3rem;
+}
+
+.ppp-doc li {
+    margin-bottom: 0.55rem;
+}
+
+.ppp-doc li::marker {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.ppp-doc code,
+.ppp-dialog code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--accent-soft);
+    padding: 0.1em 0.35em;
+    border-radius: 5px;
+    color: var(--text);
+}
+
+.ppp-steps li {
+    padding-left: 0.25rem;
+}
+
+.ppp-keys {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: none;
+    margin-top: 2rem;
+}
+
+.ppp-keys article {
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-m);
+    padding: 1.25rem 1.35rem;
+}
+
+.ppp-keys h3 {
+    margin-top: 0;
+}
+
+.ppp-keys ol {
+    font-size: 0.93rem;
+}
+
+.ppp-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    font-size: 0.9rem;
+    margin: 0.75rem 0 0;
+}
+
+.ppp-note {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.ppp-tier-ref td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ppp-doc .ppp-table-wrap {
+    max-width: 640px;
+}
+
+/* ---------- dialog ---------- */
+
+.ppp-dialog {
+    margin: auto;
+    width: min(860px, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    padding: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-l);
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 30px 80px -20px var(--shadow);
+}
+
+.ppp-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+.ppp-dialog-inner {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ppp-dialog header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ppp-dialog h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.ppp-dialog p {
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin: 0;
+}
+
+.ppp-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--text);
+    font-size: 1.3rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.ppp-close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.ppp-dialog-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+}
+
+.ppp-dialog-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    flex: 1 1 220px;
+}
+
+.ppp-dialog-fields input,
+.ppp-dialog-fields select {
+    height: 40px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+    padding: 0 0.7rem;
+}
+
+.ppp-dialog textarea {
+    width: 100%;
+    min-height: 280px;
+    resize: vertical;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    background: var(--accent-soft);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.85rem;
+}
+
+.ppp-dialog-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+    .ppp-inputs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .ppp-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .ppp-search,
+    .ppp-search input {
+        width: 100%;
+    }
+
+    .ppp-controls {
+        width: 100%;
+    }
+
+    .ppp-table th,
+    .ppp-table td {
+        padding: 0.5rem 0.55rem;
+    }
+
+    .ppp-table tbody th {
+        white-space: normal;
+        line-height: 1.25;
+    }
+
+    .ppp-code,
+    .ppp-results .ppp-tiercol,
+    .ppp-results .ppp-ratio,
+    .ppp-results .ppp-extax {
+        display: none;
+    }
+}
