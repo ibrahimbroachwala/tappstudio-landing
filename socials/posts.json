@@ -5392,7 +5392,7 @@
       "reply": "Misbaha Tasbih Counter is on iOS and Android:\nhttps://tappstudio.in/#misbaha-tasbih-counter"
     },
     {
-      "text": "Every group trip has a person who ends up paying for everything. It's usually the one who is bad at saying no.\n\nIf you plan the trip with a bit of structure, it never has to be them:\n• Rotate who pays. Dinner is on Ali, fuel is on Sara, tickets on Max. Over four days it evens out\n• Or pick one person as the bank, and give them a clear note of the cost at each step\n• Never pay for someone else's expense without writing it down at the time. \"I'll remember\" has a short shelf life\n\nAnd for the one who always ends up paying: set a personal limit. \"I'll cover up to $50, after that it goes in the app.\" It sounds blunt but people respect it.\n\nThe point of tracking isn't to be petty. It is so that nobody has to be generous by accident.\n\nA trip is better when the only thing anyone owes each other is a good story.",
+      "text": "💸 Every group trip has a person who ends up paying for everything. It's usually the one who is bad at saying no.\n\nIf you plan the trip with a bit of structure, it never has to be them:\n🔄 Rotate who pays. Dinner is on Ali, fuel is on Sara, tickets on Max. Over four days it evens out\n🏦 Or pick one person as the bank, and give them a clear note of the cost at each step\n📝 Never pay for someone else's expense without writing it down at the time. \"I'll remember\" has a short shelf life 🥛\n\n✋ And for the one who always ends up paying: set a personal limit. \"I'll cover up to $50, after that it goes in the app.\" It sounds blunt but people respect it.\n\nThe point of tracking isn't to be petty. It is so that nobody has to be generous by accident. 😅\n\nA trip is better when the only thing anyone owes each other is a good story. 🏕️",
       "images": [
         [
           "img/66aadfaaaed5f6b2.webp",
@@ -9650,7 +9650,7 @@
       "time": "8:30 am IST",
       "warn": false,
       "title": "10,000 active users across the tappStudio apps",
-      "text": "10,000 active users across the tappStudio apps.\n\nNot a big number next to the big apps. A big one for a studio that started with one person, one laptop and a list of small problems I wanted fixed.\n\nWhat it means to me is less the number and more the picture: 10,000 phones where something I built opens on its own. On a group trip, in a family chat, at the end of a long day.\n\nThank you to everyone who downloaded, reported a bug, wrote in or told a friend. A lot of what shipped this year started as one of your messages.\n\n10,000 is also roughly how many times I have said \"just one last small change\" before a release. Back to the next one.",
+      "text": "🎉 10,000 active users across the tappStudio apps.\n\nNot a big number next to the big apps. A big one for a studio that started with one person, one laptop and a list of small problems I wanted fixed. 💻\n\nWhat it means to me is less the number and more the picture: 10,000 phones where something I built opens on its own. On a group trip ✈️, in a family chat 👨‍👩‍👧, at the end of a long day 🌙.\n\nThank you to everyone who downloaded, reported a bug, wrote in or told a friend. 🙏 A lot of what shipped this year started as one of your messages.\n\n10,000 is also roughly how many times I have said \"just one last small change\" before a release. 😅 Back to the next one. 🚀",
       "note": "Image attached. 10,000 is the figure you gave; check it is the number you want to state.",
       "reply": "Every app, in one place:\nhttps://tappstudio.in"
     },
@@ -9676,10 +9676,62 @@
       "time": "10:00 IST",
       "warn": false,
       "title": "10,000 active users across the tappStudio apps",
-      "text": "10,000 active users across the tappStudio apps.\n\nSplitup, Nasab, Misbaha, Kadak Chai. Built one small feature at a time.\n\nThank you to everyone who downloaded, wrote in or told a friend. Back to the next release.",
+      "text": "🎉 10,000 active users across the tappStudio apps.\n\nSplitup, Nasab, Misbaha, Kadak Chai. Built one small feature at a time. 🛠️\n\nThank you to everyone who downloaded, wrote in or told a friend. 🙏 Back to the next release. 🚀",
       "note": "Image attached.",
       "reply": "Every app, in one place:\nhttps://tappstudio.in"
+    },
+    {
+      "text": "Setting one price for an app is easy. Setting it for 192 countries and territories is where I used to give up and let the store convert it.\n\nSo I built a tool for it. It's free and the code is open source.\n\nYou type the price you charge in one country. It suggests one for every App Store and Google Play country, in 5 tiers, using World Bank price data.\n\nA few things I learned building it:\n• A straight currency conversion ignores what money buys. Prices in India are about 0.23 of US prices. In Switzerland, 1.12.\n• Apple bills 109 of its 175 territories in US dollars. Of the 157 countries both stores share, 30 are billed in different currencies.\n• Even good data needs a second source. One series had Bulgaria in euros and the other in lev, which made it look half as expensive as it is. The tool now checks against the IMF too.\n• Apple only accepts certain prices, so the tool can snap to ones on its list.\n\nExchange rates update on their own. It also writes a prompt for your coding AI to set up the pricing scripts, with a dry run before anything changes.\n\nIt's a starting point. Taxes and store commission aren't included, so check the numbers against your own sales.\n\nI built all this to avoid filling in one spreadsheet. The spreadsheet would have taken an afternoon. 😅",
+      "images": [
+        [
+          "img/d7efaee5912d.webp",
+          "img/d7efaee5912d-t.webp",
+          "tappstudio-LI-18.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "tappStudio dark editor card: 'One price in. 192 out.' A window shows the PPP price tool with 99 INR entered for India (tier 5), which becomes $4.49 in the US. Below, a table of 7 of the 192 countries and territories with tier, PPP ratio, App Store price, Google Play price and USD value: United Kingdom £3.49, United States $4.49, Japan ¥410, Brazil R$10.99, Indonesia Rp 27,000, Nigeria ₦1,500 on the App Store and ₦1,490 on Google Play, and India ₹99. The tappStudio mascot cheers at the bottom.",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "date": "2026-12-01",
+      "status": "planned",
+      "warn": true,
+      "title": "Free PPP price tool, open source",
+      "posted": "",
+      "carousel": false,
+      "id": "LI-18",
+      "platform": "LI",
+      "time": "8-10 am",
+      "note": "Image attached (shows 24 Nov rates; re-render brand/linkedin/ppp-tool.html if prices move). Before posting: check Apple's terms on republishing price points, try the AI prompt in a real project, and recheck the numbers on /ppp/.",
+      "reply": "Try it: https://tappstudio.in/ppp/\nCode: https://github.com/ibrahimbroachwala/tappstudio-landing/tree/release/ppp\nLicense and data credits: https://tappstudio.in/ppp/license/"
+    },
+    {
+      "text": "I built a free, open source tool that turns one app price into prices for 192 App Store and Play countries.\n\n🌍 5 tiers, World Bank data\n🍎 Snaps to Apple's price points\n🤖 Setup prompt for your coding AI\n\n₹99 in India becomes $4.49 in the US. My calculator is retired. 😅",
+      "images": [
+        [
+          "img/d7efaee5912d.webp",
+          "img/d7efaee5912d-t.webp",
+          "tappstudio-X-21.jpg"
+        ]
+      ],
+      "alt": {
+        "summary": "tappStudio dark editor card: 'One price in. 192 out.' A window shows the PPP price tool with 99 INR entered for India (tier 5), which becomes $4.49 in the US. Below, a table of 7 of the 192 countries and territories with tier, PPP ratio, App Store price, Google Play price and USD value: United Kingdom £3.49, United States $4.49, Japan ¥410, Brazil R$10.99, Indonesia Rp 27,000, Nigeria ₦1,500 on the App Store and ₦1,490 on Google Play, and India ₹99. The tappStudio mascot cheers at the bottom.",
+        "slides": []
+      },
+      "brand": "tappstudio",
+      "date": "2026-12-01",
+      "status": "planned",
+      "warn": true,
+      "title": "Free PPP price tool, open source",
+      "posted": "",
+      "carousel": false,
+      "id": "X-21",
+      "platform": "X",
+      "time": "10:00 IST",
+      "note": "Image attached (shows 24 Nov rates; re-render brand/linkedin/ppp-tool.html if prices move). Before posting: check Apple's terms on republishing price points, try the AI prompt in a real project, and recheck the numbers on /ppp/. The $4.49 figure uses 24 Nov rates.",
+      "reply": "Try it: https://tappstudio.in/ppp/\nCode: https://github.com/ibrahimbroachwala/tappstudio-landing/tree/release/ppp"
     }
   ],
-  "built": "24 Nov 2026"
+  "built": "25 Nov 2026"
 }

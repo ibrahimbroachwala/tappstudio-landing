@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Social card for the PPP price tool (LI-18, X-21), 1080x1350. The window shows the real /ppp/ page,
+     trimmed to a few countries. Needs a local server for the iframe:
+     python3 -m http.server 8131, then open http://localhost:8131/brand/linkedin/ppp-tool.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>PPP price tool card</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1350px;overflow:hidden;position:relative;color:#f2efe8;font-family:"Geist Mono",monospace;
+ background:radial-gradient(circle at 92% 6%,rgba(20,184,166,.26),transparent 480px),repeating-linear-gradient(#0e0e0c 0 46px,#191917 46px 48px)}
+.top{position:absolute;left:56px;right:56px;top:38px;display:flex;justify-content:space-between;font-size:22px;color:#9a968c}
+.top b{color:#f2efe8;font-weight:500}.top i{display:inline-block;width:13px;height:13px;border-radius:50%;background:#14b8a6;margin-right:12px}
+.ln{position:absolute;left:56px;font-size:20px;color:#6b675e}
+.eb{position:absolute;left:124px;top:120px;font-size:22px;letter-spacing:.12em;color:#14b8a6}
+h1{position:absolute;left:124px;top:164px;font:800 92px/1 "Bricolage Grotesque";letter-spacing:-.045em}
+h1 em{font-style:normal;color:#14b8a6}h1 s{display:inline-block;width:38px;height:78px;background:#14b8a6;border-radius:4px;vertical-align:-10px;margin-left:8px}
+.win{position:absolute;left:60px;top:386px;width:960px;height:742px;border:2px solid #2a2a27;border-radius:24px;overflow:hidden;background:#0e0e0c;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.bar{height:56px;border-bottom:2px solid #2a2a27;background:#171714;display:flex;align-items:center;gap:14px;padding:0 26px;font-size:20px;color:#9a968c}
+.bar u{width:15px;height:15px;border-radius:50%;background:#33332f}.bar u:first-child{background:#14b8a6}.bar span{margin-left:12px}
+iframe{border:0;width:640px;height:456px;transform:scale(1.497);transform-origin:0 0;display:block}
+.cap{position:absolute;left:60px;top:1144px;font-size:20px;color:#9a968c}
+.tag{position:absolute;left:60px;top:1200px;font:700 42px/1 "Bricolage Grotesque";letter-spacing:-.02em}.tag em{font-style:normal;color:#14b8a6}
+.m{position:absolute;right:70px;bottom:66px;height:150px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:60px;border-top:2px solid #2a2a27;display:flex;align-items:center;font-size:21px;background:#0e0e0c;color:#9a968c}
+.foot>*{height:100%;display:flex;align-items:center;padding:0 25px;border-right:2px solid #2a2a27}
+.foot .s{background:#14b8a6;color:#0e0e0c;font-weight:600;border:0}.foot .w{color:#f2efe8}.foot .w b{color:#14b8a6;margin-right:13px;font:700 26px "Bricolage Grotesque"}.foot .w b i{font-style:normal;color:#9a968c}
+.foot .n{margin-left:auto;border:0}
+</style>
+</head>
+<body>
+<div class="top"><div>~/tappstudio/tools/<b>ppp.md</b></div><div><i></i>free · open source</div></div>
+<div class="ln" style="top:127px">01</div><div class="ln" style="top:173px">02</div>
+<div class="eb">APP STORE · GOOGLE PLAY</div>
+<h1>One price in.<br><em>192 out.</em><s></s></h1>
+<div class="win"><div class="bar"><u></u><u></u><u></u><span>tappstudio.in/ppp</span></div><iframe id="f"></iframe></div>
+<div class="cap" id="cap"></div>
+<div class="tag">Fair prices, <em>by tier.</em></div>
+<img class="m" src="../../public/images/mascot/happy.svg" alt="">
+<div class="foot"><div class="s">SHIP</div><div class="w"><b>t<i>S</i></b>tappstudio</div><div>tools/ppp.md</div><div class="n">Ibrahim Broachwala</div></div>
+<script>
+var K = 'ppp.settings', T = 'theme', old = localStorage.getItem(K), oldT = localStorage.getItem(T), f = document.getElementById('f');
+var show = ['US', 'GB', 'JP', 'BR', 'ID', 'NG', 'IN'];
+function back(k, v) { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); }
+localStorage.setItem(T, 'dark');
+localStorage.setItem(K, JSON.stringify({ price: 99, base: 'IN', kind: 'sub', snap: true, store: 'both', view: 'all', sort: 'price-desc', q: '', mult: {} }));
+f.src = '../../ppp/';
+f.onload = function () {
+  var d = f.contentDocument, s = d.createElement('style');
+  s.textContent = 'html{scrollbar-width:none;scroll-behavior:auto!important}.site-header,.ppp-hero,.ppp-doc,.site-footer,.ppp-meta,.ppp-controls,.ppp-actions,.ppp-advanced,.ppp-summary .ppp-muted,.ppp-toggles,.ppp-code{display:none!important}' +
+    '.ppp-tool{padding:14px 20px 0!important}.ppp-inputs{grid-template-columns:120px 1fr auto!important;padding:12px 14px!important;gap:12px!important}.ppp-bar{margin-top:12px!important}.ppp-results{margin-top:10px!important}.ppp-table td,.ppp-table th{padding:3.5px 11px!important}.ppp-seg label span{padding:0 11px!important}';
+  d.head.appendChild(s);
+  (function wait() {
+    var rows = d.querySelectorAll('#ppp-results tbody tr');
+    if (!rows.length) return setTimeout(wait, 100);
+    rows.forEach(function (r) { var c = r.querySelector('.ppp-code'); if (show.indexOf(c.textContent) < 0) r.remove(); });
+    d.querySelectorAll('img').forEach(function (i) { i.loading = 'eager'; });
+    document.getElementById('cap').textContent = show.length + ' of 192 countries and territories · rates ' + JSON.parse(localStorage.getItem('ppp.rates.v2')).date;
+    back(K, old); back(T, oldT);
+  })();
+};
+</script>
+</body>
+</html>
