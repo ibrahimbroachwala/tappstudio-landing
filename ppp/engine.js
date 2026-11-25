@@ -15,9 +15,6 @@
     var BIG_UNITS = ['NGN', 'CLP', 'COP', 'HUF', 'KZT', 'TZS', 'PYG', 'UZS', 'MNT', 'IQD', 'MMK', 'CRC',
         'ARS', 'XAF', 'XOF', 'RSD', 'KES', 'DZD', 'ETB', 'UGX'];
 
-    // US and Canadian store prices exclude sales tax; everywhere else they include VAT/GST.
-    var TAX_EXCLUSIVE = ['US', 'CA'];
-
     function cents(n) { return Math.round(n * 100) / 100; }
 
     /** A price as people expect to see it in [currency]. */
@@ -77,25 +74,20 @@
         return 'USD';
     }
 
-    function taxFactor(country, addTax) {
-        if (!addTax || TAX_EXCLUSIVE.indexOf(country.a2) >= 0 || !country.vat) return 1;
-        return 1 + country.vat;
-    }
-
     function tierMult(tiers, id) {
         for (var i = 0; i < tiers.length; i++) if (tiers[i].id === id) return tiers[i].mult;
         return 1;
     }
 
     /**
-     * The Tier 1, pre-tax US dollar price that [price] in [country] corresponds to.
-     * opts: { price, country, fx (currency -> units per USD), tiers, addTax }
+     * The Tier 1 US dollar price that [price] in [country] corresponds to.
+     * opts: { price, country, fx (currency -> units per USD), tiers }
      */
     function anchorUSD(opts) {
         var cur = baseCurrency(opts.country);
         var rate = opts.fx[cur];
         if (!rate || !(opts.price > 0)) return null;
-        return opts.price / rate / tierMult(opts.tiers, opts.country.tier) / taxFactor(opts.country, opts.addTax);
+        return opts.price / rate / tierMult(opts.tiers, opts.country.tier);
     }
 
     function storePrice(target, currency, ladder, snapOn, exact) {
@@ -111,18 +103,17 @@
 
     /**
      * One row per country.
-     * opts: { price, base (country object), countries, fx, tiers, addTax, snap, kind ('sub'|'iap'),
+     * opts: { price, base (country object), countries, fx, tiers, snap, kind ('sub'|'iap'),
      *         points (apple-points.json or null) }
      */
     function computeRows(opts) {
-        var anchor = anchorUSD({ price: opts.price, country: opts.base, fx: opts.fx, tiers: opts.tiers, addTax: opts.addTax });
+        var anchor = anchorUSD({ price: opts.price, country: opts.base, fx: opts.fx, tiers: opts.tiers });
         if (anchor == null) return { anchor: null, rows: [] };
         var baseCur = baseCurrency(opts.base);
         var points = opts.points;
         var rows = opts.countries.map(function (c) {
             var mult = tierMult(opts.tiers, c.tier);
-            var tax = taxFactor(c, opts.addTax);
-            var usdTarget = anchor * mult * tax;
+            var usdTarget = anchor * mult;
             var row = { country: c, tier: c.tier, mult: mult, usdTarget: usdTarget, apple: null, play: null };
             var isBase = c.a2 === opts.base.a2;
             if (c.apple && opts.fx[c.apple]) {
@@ -150,7 +141,6 @@
             }
             var ref = row.apple || row.play;
             row.usd = ref ? ref.usd : null;
-            row.exTaxUsd = ref ? ref.usd / taxFactor(c, true) : null;
             return row;
         });
         return { anchor: anchor, rows: rows };
@@ -189,12 +179,10 @@
         roundLocal: roundLocal,
         snap: snap,
         baseCurrency: baseCurrency,
-        taxFactor: taxFactor,
         anchorUSD: anchorUSD,
         computeRows: computeRows,
         sortRows: sortRows,
-        plain: plain,
-        TAX_EXCLUSIVE: TAX_EXCLUSIVE
+        plain: plain
     };
     if (typeof module !== 'undefined' && module.exports) module.exports = api;
     else root.PPPEngine = api;

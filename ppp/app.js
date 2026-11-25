@@ -9,7 +9,7 @@
     ];
     var FX_TTL = 12 * 60 * 60 * 1000; // one fetch per visitor per 12 hours
     var STORE_KEY = 'ppp.settings';
-    var RATES_KEY = 'ppp.rates';
+    var RATES_KEY = 'ppp.rates.v2';
 
     var $ = function (id) { return document.getElementById(id); };
     var regionNames = (function () {
@@ -24,7 +24,7 @@
     var byA2 = {};
     var defaultsMult = {};
     var state = {
-        price: 4.99, base: 'US', kind: 'sub', snap: true, addTax: true, store: 'both',
+        price: 4.99, base: 'US', kind: 'sub', snap: true, store: 'both',
         view: 'tier', sort: 'name', q: '', mult: {}
     };
     var result = null;
@@ -41,8 +41,8 @@
     }
 
     // ---------- data ----------
-    function getJSON(url) {
-        return fetch(url, { cache: 'default' }).then(function (r) {
+    function getJSON(url, cache) {
+        return fetch(url, { cache: cache || 'default' }).then(function (r) {
             if (!r.ok) throw new Error(url + ' ' + r.status);
             return r.json();
         });
@@ -55,7 +55,8 @@
         } catch (e) { }
         var tryUrl = function (i) {
             if (i >= FX_URLS.length) return Promise.reject(new Error('no live rates'));
-            return getJSON(FX_URLS[i]).then(function (j) {
+            // jsDelivr lets browsers keep @latest for 7 days, so always revalidate; FX_TTL is our own limit.
+            return getJSON(FX_URLS[i], 'no-cache').then(function (j) {
                 var usd = {};
                 needed.forEach(function (c) { if (j.usd[c.toLowerCase()]) usd[c] = j.usd[c.toLowerCase()]; });
                 usd.USD = 1;
@@ -113,7 +114,7 @@
         var base = byA2[state.base] || byA2.US;
         result = E.computeRows({
             price: state.price, base: base, countries: data.countries, fx: fx.usd, tiers: tiers(),
-            addTax: state.addTax, snap: state.snap && !!points, kind: state.kind, points: points
+            snap: state.snap && !!points, kind: state.kind, points: points
         });
     }
 
@@ -137,7 +138,6 @@
             (hide !== 'play' ? priceCell(r.apple, c, 'apple') : '') +
             (hide !== 'apple' ? priceCell(r.play, c, 'play') : '') +
             '<td class="ppp-num">' + usd(r.usd) + '</td>' +
-            '<td class="ppp-num ppp-muted ppp-extax" title="' + (c.vat == null ? 'VAT rate unknown, shown as tax-free' : 'Standard VAT/GST ' + Math.round(c.vat * 1000) / 10 + '%') + '">' + usd(r.exTaxUsd) + '</td>' +
             '</tr>';
     }
 
@@ -145,7 +145,7 @@
         return '<thead><tr><th scope="col">Country</th><th scope="col" class="ppp-tiercol">Tier</th><th scope="col" class="ppp-num ppp-ratio" title="World Bank price level ratio, US = 1.00">PPP ratio</th>' +
             (state.store !== 'play' ? '<th scope="col">App Store</th>' : '') +
             (state.store !== 'apple' ? '<th scope="col">Google Play</th>' : '') +
-            '<th scope="col" class="ppp-num">≈ USD</th><th scope="col" class="ppp-num ppp-extax" title="USD equivalent with VAT/GST taken out">Ex-tax USD</th></tr></thead>';
+            '<th scope="col" class="ppp-num">≈ USD</th></tr></thead>';
     }
 
     function visibleRows() {
@@ -214,7 +214,6 @@
         document.querySelectorAll('[name="ppp-kind"]').forEach(function (r) { r.checked = r.value === state.kind; });
         document.querySelectorAll('[name="ppp-view"]').forEach(function (r) { r.checked = r.value === state.view; });
         $('ppp-snap').checked = state.snap;
-        $('ppp-tax').checked = state.addTax;
         $('ppp-store').value = state.store;
         $('ppp-sort').value = state.sort;
         $('ppp-search').value = state.q;
@@ -270,7 +269,6 @@
             r.addEventListener('change', function () { state.view = r.value; changed(); });
         });
         $('ppp-snap').addEventListener('change', function (e) { state.snap = e.target.checked; changed(); });
-        $('ppp-tax').addEventListener('change', function (e) { state.addTax = e.target.checked; changed(); });
         $('ppp-store').addEventListener('change', function (e) { state.store = e.target.value; changed(); });
         $('ppp-sort').addEventListener('change', function (e) { state.sort = e.target.value; changed(); });
         $('ppp-search').addEventListener('input', function (e) { state.q = e.target.value; changed(true); });
@@ -320,13 +318,13 @@
     }
     function downloadCSV() {
         var q = function (s) { s = String(s == null ? '' : s); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
-        var lines = [['country', 'iso2', 'iso3', 'tier', 'ppp_ratio', 'ppp_source', 'apple_currency', 'apple_price', 'play_currency', 'play_price', 'usd', 'ex_tax_usd', 'vat'].join(',')];
+        var lines = [['country', 'iso2', 'iso3', 'tier', 'ppp_ratio', 'ppp_source', 'apple_currency', 'apple_price', 'play_currency', 'play_price', 'usd'].join(',')];
         exportRows().forEach(function (r) {
             var c = r.country;
             lines.push([name(c), c.a2, c.a3 || '', r.tier, c.ratio == null ? '' : c.ratio, c.src ? c.src + ' ' + c.year : '',
                 r.apple ? r.apple.currency : '', r.apple ? E.plain(r.apple.price, r.apple.currency) : '',
                 r.play ? r.play.currency : '', r.play ? E.plain(r.play.price, r.play.currency) : '',
-                r.usd == null ? '' : r.usd.toFixed(2), r.exTaxUsd == null ? '' : r.exTaxUsd.toFixed(2), c.vat == null ? '' : c.vat].map(q).join(','));
+                r.usd == null ? '' : r.usd.toFixed(2)].map(q).join(','));
         });
         download('ppp-prices-' + state.base + '-' + E.plain(state.price, E.baseCurrency(byA2[state.base])) + '.csv', lines.join('\n'), 'text/csv');
     }
@@ -336,7 +334,7 @@
         var base = byA2[state.base];
         return window.PPPPrompt.build({
             result: result, price: state.price, base: base, baseCurrency: E.baseCurrency(base),
-            kind: state.kind, snap: state.snap && !!points, addTax: state.addTax, tiers: tiers(), data: data,
+            kind: state.kind, snap: state.snap && !!points, tiers: tiers(), data: data,
             fxDate: fx.date, fxSource: fx.source, pointsBuilt: points ? points.built : '',
             productName: $('ppp-ai-product').value, mode: $('ppp-ai-mode').value, name: name
         });

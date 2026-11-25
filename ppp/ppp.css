@@ -110,6 +110,7 @@
 
 /* segmented control */
 .ppp-seg {
+    position: relative;
     display: flex;
     border: 0;
     margin: 0;
@@ -120,7 +121,7 @@
     gap: 0;
 }
 
-.ppp-seg>legend {
+.ppp-seg>legend:not(.visually-hidden) {
     width: 100%;
     margin-bottom: 0.4rem;
 }
@@ -791,8 +792,7 @@
 
     .ppp-code,
     .ppp-results .ppp-tiercol,
-    .ppp-results .ppp-ratio,
-    .ppp-results .ppp-extax {
+    .ppp-results .ppp-ratio {
         display: none;
     }
 }

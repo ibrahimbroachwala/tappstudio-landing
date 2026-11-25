@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Builds ppp/data/countries.json and ppp/data/rates.json for the PPP price tool. Stdlib only.
 
-    python3 ppp/build/build_data.py APPLE_PLAN.csv PLAY_PLAN.csv
+    python3 ppp/build/build_data.py APPLE_PLAN.csv PLAY_PLAN.csv IMF_FOLDER
+    python3 ppp/build/build_data.py --rates-only
 
 The two CSVs are `plan` outputs of a store pricing script (columns: store, product, region,
 currency, ...): they give every App Store territory (ISO 3166 alpha-3) and Google Play region
-(alpha-2) and the currency each store bills it in. Everything else is fetched from free, keyless
-public sources:
+(alpha-2) and the currency each store bills it in. IMF_FOLDER holds NGDPD.json and PPPGDP.json, opened in a browser
+and saved from https://www.imf.org/external/datamapper/api/v1/<code>. Sources:
 
 - World Bank WDI: PA.NUS.PPP (PPP conversion factor, GDP) / PA.NUS.FCRF (official exchange rate)
   = price level ratio, using the latest year where both exist.
 - IMF World Economic Outlook (DataMapper): NGDPD / PPPGDP, the same ratio, for economies the World
   Bank doesn't cover (e.g. Taiwan).
-- node-sales-tax (MIT) for standard VAT/GST rates.
 - fawazahmed0/currency-api for an FX snapshot (the page fetches live rates; this is the fallback).
 
 Tiers are fixed cut-offs on the ratio (TIERS below); each tier's multiplier is the median ratio of
@@ -45,7 +45,7 @@ DISAGREE = 0.2  # see the World Bank / IMF check in main()
 # Alpha-3 codes the World Bank country list doesn't map to alpha-2.
 EXTRA_A3 = {"TWN": "TW", "AIA": "AI", "MSR": "MS", "XKX": "XK", "XKS": "XK", "VGB": "VG", "COK": "CK"}
 
-UA = {"User-Agent": "Mozilla/5.0 (compatible; ppp-build/1.0)", "Accept": "application/json"}
+UA = {"User-Agent": "ppp-build/1.0", "Accept": "application/json"}
 
 
 def get_json(url: str):
@@ -64,8 +64,9 @@ def wb_indicator(code: str) -> dict[str, dict[int, float]]:
     return out
 
 
-def imf_indicator(code: str) -> dict[str, dict[int, float]]:
-    data = get_json(f"https://www.imf.org/external/datamapper/api/v1/{code}")["values"][code]
+def imf_indicator(folder: str, code: str) -> dict[str, dict[int, float]]:
+    # Saved by hand: the IMF refuses scripts and asks for permission before automated bulk downloads.
+    data = json.loads((Path(folder) / f"{code}.json").read_text())["values"][code]
     return {c: {int(y): float(v) for y, v in years.items() if v is not None} for c, years in data.items()}
 
 
@@ -84,8 +85,26 @@ def tier_of(ratio: float | None) -> int:
     return TIERS[-1]["id"]
 
 
+def write_rates(countries: list[dict]) -> None:
+    """Refreshes rates.json, the saved copy the page uses only when live rates can't be reached."""
+    print("Fetching FX snapshot...")
+    rates = get_json("https://latest.currency-api.pages.dev/v1/currencies/usd.min.json")
+    needed = sorted({c for r in countries for c in (r["apple"], r["play"]) if c})
+    missing = [c for c in needed if c.lower() not in rates["usd"]]
+    if missing:
+        sys.exit(f"error: FX snapshot lacks {missing}")
+    (OUT / "rates.json").write_text(json.dumps({
+        "date": rates["date"], "source": "fawazahmed0/currency-api",
+        "usd": {c: rates["usd"][c.lower()] for c in needed},
+    }, separators=(",", ":")))
+    print(f"rates.json: {rates['date']}")
+
+
 def main() -> None:
-    if len(sys.argv) != 3:
+    if sys.argv[1:] == ["--rates-only"]:
+        write_rates(json.loads((OUT / "countries.json").read_text())["countries"])
+        return
+    if len(sys.argv) != 4:
         sys.exit(__doc__)
     apple = read_plan(sys.argv[1])
     play = read_plan(sys.argv[2])
@@ -107,11 +126,10 @@ def main() -> None:
         # Play-only regions without a World Bank code (e.g. Vatican City) keep a3 = None.
         rows.setdefault(a2, {"a2": a2, "a3": a2_to_a3.get(a2)})["play"] = cur
 
-    print("Fetching World Bank and IMF data...")
+    print("Fetching World Bank data...")
     ppp, fx = wb_indicator("PA.NUS.PPP"), wb_indicator("PA.NUS.FCRF")
     gni = wb_indicator("NY.GNP.PCAP.CD")
-    imf_usd, imf_ppp = imf_indicator("NGDPD"), imf_indicator("PPPGDP")
-    vat = get_json("https://raw.githubusercontent.com/valeriansaliou/node-sales-tax/master/res/sales_tax_rates.json")
+    imf_usd, imf_ppp = imf_indicator(sys.argv[3], "NGDPD"), imf_indicator(sys.argv[3], "PPPGDP")
 
     for r in rows.values():
         a3 = a2_to_a3.get(r["a2"], r["a3"])  # World Bank code (Apple uses XKS for Kosovo, WB XKX)
@@ -137,8 +155,6 @@ def main() -> None:
             r.update(ratio=round(imf_ratio[y], 3), src="IMF", year=y)
         g = gni.get(a3, {})
         r["gni"] = round(g[max(g)]) if g else None
-        v = vat.get(r["a2"])
-        r["vat"] = v["rate"] if v and v.get("type") != "none" else (0 if v else None)
         r["tier"] = tier_of(r["ratio"])
 
     tiers = []
@@ -158,23 +174,13 @@ def main() -> None:
             "ppp": f"World Bank WDI PA.NUS.PPP / PA.NUS.FCRF, latest year {FIRST_YEAR}-{LAST_YEAR}",
             "ppp_fallback": "IMF World Economic Outlook NGDPD / PPPGDP",
             "gni": "World Bank WDI NY.GNP.PCAP.CD (Atlas method, current USD)",
-            "vat": "node-sales-tax (MIT), standard rates",
             "stores": "App Store Connect and Google Play Console price exports",
         },
         "tiers": tiers,
         "countries": countries,
     }, separators=(",", ":"), ensure_ascii=False))
 
-    print("Fetching FX snapshot...")
-    rates = get_json("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.min.json")
-    needed = sorted({c for r in countries for c in (r["apple"], r["play"]) if c})
-    missing = [c for c in needed if c.lower() not in rates["usd"]]
-    if missing:
-        sys.exit(f"error: FX snapshot lacks {missing}")
-    (OUT / "rates.json").write_text(json.dumps({
-        "date": rates["date"], "source": "fawazahmed0/currency-api",
-        "usd": {c: rates["usd"][c.lower()] for c in needed},
-    }, separators=(",", ":")))
+    write_rates(countries)
 
     print(f"\n{len(countries)} countries ({sum(1 for r in countries if r['apple'])} App Store, "
           f"{sum(1 for r in countries if r['play'])} Play), built {built}")
@@ -187,7 +193,6 @@ def main() -> None:
         if r.get("note"):
             print(f"{r['a2']}: {r['note']}")
     print(f"IMF: {' '.join(imf) or '-'}\nNo PPP data (kept in tier 1): {' '.join(nodata) or '-'}")
-    print(f"No VAT data: {' '.join(r['a2'] for r in countries if r['vat'] is None)}")
 
 
 if __name__ == "__main__":

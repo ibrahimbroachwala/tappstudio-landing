@@ -12,7 +12,7 @@
     }
 
     /**
-     * s: { result ({anchor, rows}), price, base, baseCurrency, kind, snap, addTax, tiers, data,
+     * s: { result ({anchor, rows}), price, base, baseCurrency, kind, snap, tiers, data,
      *      fxDate, fxSource, pointsBuilt, productName, mode ('create'|'reprice'), name (country -> name) }
      */
     function build(s) {
@@ -34,16 +34,16 @@
         L.push('I made this table with the free PPP price tool at https://tappstudio.in/ppp/ on ' + today() + '. How it works:');
         L.push('');
         L.push('- I entered **' + E.plain(s.price, s.baseCurrency) + ' ' + s.baseCurrency + '** as my price in **' + name(s.base) + '** (' + s.base.a2 + ', tier ' + s.base.tier + ').');
-        L.push('- Each country is in one of 5 tiers by its **price level ratio**: the World Bank\'s PPP conversion factor (GDP, LCU per international $, indicator PA.NUS.PPP) divided by the official exchange rate (PA.NUS.FCRF), latest year available (mostly 2025). US = 1.0. Where the World Bank has no figure, or differs from the IMF World Economic Outlook figure (NGDPD / PPPGDP) by more than 20% (usually a currency redenomination), the IMF figure is used. Countries with no data from either stay in tier 1.');
+        L.push('- Each country is in one of 5 tiers by its **price level ratio**: the World Bank\'s PPP conversion factor (GDP, LCU per international $, indicator PA.NUS.PPP) divided by the official exchange rate (PA.NUS.FCRF), latest year available (mostly 2025). US = 1.0. Multipliers default to 1.00 for tier 1 and the tier\'s median ratio, rounded to 0.05, for the rest. Where the World Bank has no figure, or differs from the IMF World Economic Outlook figure (NGDPD / PPPGDP) by more than 20% (usually a currency redenomination), the IMF figure is used. Countries with no data from either stay in tier 1.');
         L.push('- Tiers and multipliers used:');
         s.tiers.forEach(function (t) {
             L.push('  - Tier ' + t.id + ' (' + t.name + '): ratio ' + (t.max == null ? '>= ' + t.min.toFixed(2) : t.min.toFixed(2) + ' to < ' + t.max.toFixed(2)) + ', price multiplier **' + t.mult.toFixed(2) + 'x**');
         });
-        L.push('- Formula: Tier 1 pre-tax USD anchor = my price / FX / my tier multiplier' + (s.addTax ? ' / (1 + my country\'s VAT)' : '') + ' = **' + s.result.anchor.toFixed(2) + ' USD**. Each country = anchor x its tier multiplier' + (s.addTax ? ' x (1 + its standard VAT/GST rate; not for US/CA, where store prices exclude tax)' : '') + ' x FX into the currency each store bills it in.');
+        L.push('- Formula: Tier 1 USD anchor = my price / FX / my tier multiplier = **' + s.result.anchor.toFixed(2) + ' USD**. Each country = anchor x its tier multiplier x FX into the currency each store bills it in.');
         L.push('- Exchange rates: ' + s.fxSource + ', dated ' + s.fxDate + '.');
         L.push('- App Store prices were ' + (s.snap ? 'snapped to the nearest real App Store Connect ' + (s.kind === 'sub' ? 'subscription' : 'in-app purchase') + ' price point for each territory (snapshot ' + s.pointsBuilt + '), so they should exist exactly.' : 'rounded to local price patterns, not checked against Apple\'s price points: some may not exist exactly. Your script must find the nearest real point and show me.'));
         L.push('- Google Play prices were rounded to local price patterns (.99, 99, 1,490, 480 JPY...). Play accepts any price within its per-currency minimum and maximum.');
-        L.push('- What is approximate: PPP data is annual and lags a year; FX moves daily; VAT rates come from an open dataset (node-sales-tax). Treat this as a well-reasoned starting point, not a guarantee.');
+        L.push('- What is approximate: PPP data is annual and lags a year; FX moves daily; taxes and store commission are not part of the calculation. Treat this as a well-reasoned starting point, not a guarantee.');
         L.push('');
         L.push('## 2. The product');
         L.push('');

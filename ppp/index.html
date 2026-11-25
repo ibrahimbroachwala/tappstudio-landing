@@ -39,7 +39,7 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../index.css?v=20261124c">
-    <link rel="stylesheet" href="ppp.css?v=20261124c">
+    <link rel="stylesheet" href="ppp.css?v=20261125b">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -94,7 +94,7 @@
                 <h1>A fair price for every country</h1>
                 <p class="ppp-lede">Type the price you charge in one country. I'll work out a price for all
                     <span data-ppp-count>192</span> App Store and Google Play countries, in 5 tiers based on what money
-                    actually buys there. It's the method I use for my own apps. The data is public, the maths is shown
+                    actually buys there. It grew out of pricing my own apps. The data is public, the maths is shown
                     below, and nothing you type leaves this page.</p>
             </div>
         </section>
@@ -124,8 +124,6 @@
                 <div class="ppp-field ppp-toggles">
                     <label class="ppp-switch"><input type="checkbox" id="ppp-snap" checked><span>Snap to App Store
                             price points</span></label>
-                    <label class="ppp-switch"><input type="checkbox" id="ppp-tax" checked><span>Add local VAT/GST
-                            (like the stores do)</span></label>
                 </div>
             </form>
             <p class="ppp-meta"><span id="ppp-fx">Loading exchange rates…</span> <a href="#how-to">How to use
@@ -171,8 +169,8 @@
 
             <details class="ppp-advanced">
                 <summary>Adjust tier multipliers</summary>
-                <p>Defaults come from the data: each tier's multiplier is the median price level ratio of its
-                    countries. Change them if you want to lean higher or lower. Your changes stay in this browser.</p>
+                <p>Defaults come from the data: tier 1 is 1.00, and each other tier is the median price level
+                    ratio of its countries. Change them if you want to lean higher or lower. Your changes stay in this browser.</p>
                 <div class="ppp-mults" id="ppp-mults"></div>
                 <button class="btn btn-ghost btn-small" id="ppp-mult-reset" type="button">Reset to data
                     defaults</button>
@@ -254,8 +252,8 @@
                 0.25 means things cost about a quarter as much in dollar terms.</p>
 
             <h3>Tiers</h3>
-            <p>Every country goes into one of 5 tiers by its ratio, with no hand edits. Each tier's multiplier is the
-                median ratio of the countries in it, rounded to 0.05. Countries with no data from either source stay
+            <p>Every country goes into one of 5 tiers by its ratio, with no hand edits. Tier 1 is always
+                1.00×. Every other tier's multiplier is the median ratio of its countries, rounded to 0.05. Countries with no data from either source stay
                 at full price.</p>
             <div class="ppp-table-wrap">
                 <table class="ppp-table ppp-tier-ref">
@@ -273,17 +271,13 @@
 
             <h3>The formula</h3>
             <ol class="ppp-formula">
-                <li>Your price ÷ exchange rate ÷ your country's tier multiplier ÷ (1 + its VAT) = a pre-tax
+                <li>Your price ÷ exchange rate ÷ your country's tier multiplier = a
                     <strong>Tier 1 anchor</strong> in US dollars.</li>
-                <li>Each country: anchor × its tier multiplier × (1 + its VAT) × exchange rate into the currency each
+                <li>Each country: anchor × its tier multiplier × exchange rate into the currency each
                     store bills it in.</li>
                 <li>App Store: rounded to the local pattern, then the nearest real App Store price point. Google
                     Play: rounded to the local pattern (.99, ₹99, ¥480, 1,490).</li>
             </ol>
-            <p>VAT is added because store prices include it everywhere except the US and Canada, so without it
-                you'd earn less in Europe than in the US for the same tier. Turn it off if you'd rather keep the
-                digits the same.</p>
-
             <h3>Sources</h3>
             <ul>
                 <li><strong>Price levels:</strong> <a
@@ -303,12 +297,9 @@
                     for subscriptions and one-time purchases.</li>
                 <li><strong>Exchange rates:</strong> <a href="https://github.com/fawazahmed0/exchange-api"
                         target="_blank" rel="noopener noreferrer">fawazahmed0/exchange-api</a>, free and updated
-                    daily, fetched by your browser and kept for 12 hours. If it can't be reached, a saved copy is
+                    daily, fetched by your browser and kept for 12 hours. Prices here move with them, a day or so
+                    behind the market. If it can't be reached, a saved copy is
                     used and the date says so.</li>
-                <li><strong>VAT/GST:</strong> standard rates from <a
-                        href="https://github.com/valeriansaliou/node-sales-tax" target="_blank"
-                        rel="noopener noreferrer">node-sales-tax</a>. Where a rate is unknown, the country is treated
-                    as tax-free.</li>
                 <li><strong>Flags:</strong> <a href="https://github.com/lipis/flag-icons" target="_blank"
                         rel="noopener noreferrer">flag-icons</a> (MIT).</li>
             </ul>
@@ -317,6 +308,7 @@
             <ul>
                 <li>PPP data is yearly and a year behind. Exchange rates move daily. Fast-moving currencies (Turkey,
                     Argentina, Egypt, Nigeria) are worth rechecking every few months.</li>
+                <li>Taxes and store commission aren't part of the calculation.</li>
                 <li>A few small economies sit higher than their incomes suggest because imports are expensive there.
                     That's what the data says, so I've left it alone. Adjust the multipliers if you disagree.</li>
                 <li>Google Play takes any price within each currency's limits; the AI's dry run flags anything outside
@@ -325,7 +317,9 @@
                     region and adjust.</li>
             </ul>
             <p class="ppp-meta">Data built <span data-ppp-built></span>. Rates and settings are kept in your browser's
-                local storage. No cookies, no tracking.</p>
+                local storage. No cookies, no tracking. Code on <a
+                    href="https://github.com/ibrahimbroachwala/tappstudio-landing/tree/release/ppp" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>, <a href="license/">licence and data credits</a>.</p>
         </section>
     </main>
 
@@ -374,17 +368,18 @@
             <div class="footer-legal">
                 <a href="../privacy-policy.html">Privacy</a>
                 <a href="../terms-of-service.html">Terms</a>
+                <a href="license/">License</a>
             </div>
         </div>
         <div class="wrap">
-            <p>&copy; 2026 tappStudio. All rights reserved.</p>
+            <p>&copy; 2026 tappStudio. The PPP tool's code is open source under the <a href="license/">MIT License</a>.</p>
         </div>
     </footer>
 
     <script src="../index.js?v=20261124b"></script>
-    <script src="engine.js?v=20261124b"></script>
-    <script src="prompt.js?v=20261124b"></script>
-    <script src="app.js?v=20261124b"></script>
+    <script src="engine.js?v=20261125a"></script>
+    <script src="prompt.js?v=20261125a"></script>
+    <script src="app.js?v=20261125a"></script>
 </body>
 
 </html>

@@ -61,7 +61,7 @@ def main() -> None:
 
     OUT.write_text(json.dumps({
         "built": dt.date.today().isoformat(),
-        "source": "App Store Connect API price points (customer prices, tax included)",
+        "source": "App Store Connect API price points (customer prices)",
         "currency": currency,
         "ladders": ladders,
         "sub": out["sub"],
