@@ -1816,8 +1816,6 @@ h3 {
 
 .me-card {
     --me-w: 240px;
-    --me-frame-h: 176px;
-    --me-photo-w: 266px;
     --me-radius: var(--radius-l);
     --rx: 6deg;
     --ry: -14deg;
@@ -1829,7 +1827,7 @@ h3 {
 
 .me-card-body {
     position: relative;
-    height: calc(var(--me-photo-w) * 697 / 720);
+    aspect-ratio: 1;
     transform: rotateX(var(--rx)) rotateY(var(--ry));
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1840,8 +1838,7 @@ h3 {
 
 .me-card-frame {
     position: absolute;
-    inset: auto 0 0 0;
-    height: var(--me-frame-h);
+    inset: 0;
     border-radius: var(--me-radius);
     border: 1px solid rgba(255, 255, 255, 0.22);
     background:
@@ -1856,18 +1853,11 @@ h3 {
 
 .me-card-photo {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: var(--me-photo-w);
-    height: auto;
-    max-width: none;
-    transform: translateX(-50%);
-    clip-path: inset(-50% calc((var(--me-photo-w) - var(--me-w)) / 2 + 1px) 1px round 0 0 calc(var(--me-radius) - 1px) calc(var(--me-radius) - 1px));
-    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.35));
-}
-
-[data-theme="light"] .me-card-photo {
-    filter: drop-shadow(0 0 1px rgba(21, 20, 15, 0.35)) drop-shadow(0 10px 12px rgba(21, 20, 15, 0.25));
+    inset: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    object-fit: cover;
+    border-radius: calc(var(--me-radius) - 1px);
 }
 
 .me-card-tag {
