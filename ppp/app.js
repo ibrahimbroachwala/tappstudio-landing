@@ -330,10 +330,9 @@
     }
 
     // ---------- AI prompt dialog ----------
-    function promptText() {
-        var base = byA2[state.base];
+    function promptText(base, currency) {
         return window.PPPPrompt.build({
-            result: result, price: state.price, base: base, baseCurrency: E.baseCurrency(base),
+            result: result, price: state.price, base: base, baseCurrency: currency,
             kind: state.kind, snap: state.snap && !!points,
             fxDate: fx.date, fxSource: fx.source, pointsBuilt: points ? points.built : '',
             productName: $('ppp-ai-product').value, mode: $('ppp-ai-mode').value, name: name
@@ -341,7 +340,11 @@
     }
     function updatePrompt() {
         if (!result || !result.anchor) return;
-        $('ppp-ai-text').value = promptText();
+        var base = byA2[state.base];
+        var currency = E.baseCurrency(base);
+        $('ppp-ai-base-price').textContent = E.plain(state.price, currency) + ' ' + currency;
+        $('ppp-ai-base-country').textContent = name(base);
+        $('ppp-ai-text').value = promptText(base, currency);
     }
     function bindDialog() {
         var dlg = $('ppp-ai-dialog');
