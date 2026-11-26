@@ -39,7 +39,7 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../index.css?v=20261124c">
-    <link rel="stylesheet" href="ppp.css?v=20261125b">
+    <link rel="stylesheet" href="ppp.css?v=20261126b">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -131,13 +131,13 @@
 
             <div class="ppp-bar">
                 <p class="ppp-summary" id="ppp-summary" aria-live="polite"></p>
-                <div class="ppp-controls">
+                <div class="ppp-controls" role="group" aria-label="Pricing filters">
                     <fieldset class="ppp-seg ppp-seg-small">
-                        <legend class="visually-hidden">View</legend>
+                        <legend>View</legend>
                         <label><input type="radio" name="ppp-view" value="tier" checked><span>By tier</span></label>
                         <label><input type="radio" name="ppp-view" value="all"><span>All countries</span></label>
                     </fieldset>
-                    <label class="ppp-mini"><span class="visually-hidden">Sort</span>
+                    <label class="ppp-mini"><span>Sort by</span>
                         <select id="ppp-sort">
                             <option value="name">Name A–Z</option>
                             <option value="name-desc">Name Z–A</option>
@@ -146,15 +146,15 @@
                             <option value="ratio">PPP ratio, high to low</option>
                         </select>
                     </label>
-                    <label class="ppp-mini"><span class="visually-hidden">Stores</span>
+                    <label class="ppp-mini"><span>Filter by store</span>
                         <select id="ppp-store">
                             <option value="both">Both stores</option>
                             <option value="apple">App Store only</option>
                             <option value="play">Google Play only</option>
                         </select>
                     </label>
-                    <label class="ppp-mini ppp-search"><span class="visually-hidden">Search countries</span>
-                        <input id="ppp-search" type="search" placeholder="Search country, code or currency"
+                    <label class="ppp-mini ppp-search"><span>Search countries</span>
+                        <input id="ppp-search" type="search" placeholder="Country, code or currency"
                             autocomplete="off">
                     </label>
                 </div>
@@ -334,8 +334,15 @@
                 <code>pricing.yaml</code> and scripts that set prices on both stores, with a dry run first. It's built
                 in your browser; nothing is sent anywhere.</p>
             <div class="ppp-dialog-fields">
-                <label>Product name <input id="ppp-ai-product" type="text" placeholder="e.g. Pro monthly"
-                        maxlength="60"></label>
+                <div class="ppp-dialog-field">
+                    <label for="ppp-ai-product">Product name (optional)</label>
+                    <input id="ppp-ai-product" type="text" placeholder="e.g. Pro monthly" maxlength="60"
+                        aria-describedby="ppp-ai-product-help">
+                    <p id="ppp-ai-product-help">This label goes in the AI prompt and names the entry in
+                        <code>pricing.yaml</code>. Set the customer-facing name in your product’s localization in App
+                        Store Connect and in the subscription or one-time product details in Play Console. Use the
+                        separate product IDs to match an existing product.</p>
+                </div>
                 <label>This product
                     <select id="ppp-ai-mode">
                         <option value="reprice">already exists (re-price it)</option>
@@ -378,8 +385,8 @@
 
     <script src="../index.js?v=20261124b"></script>
     <script src="engine.js?v=20261125a"></script>
-    <script src="prompt.js?v=20261125a"></script>
-    <script src="app.js?v=20261125a"></script>
+    <script src="prompt.js?v=20261126b"></script>
+    <script src="app.js?v=20261126b"></script>
 </body>
 
 </html>

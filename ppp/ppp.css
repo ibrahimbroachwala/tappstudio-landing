@@ -251,32 +251,58 @@
 /* ---------- bar + actions ---------- */
 
 .ppp-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
     gap: 1rem;
     margin-top: 2rem;
 }
 
 .ppp-summary {
-    font-size: 1.05rem;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem;
+    align-items: baseline;
+    gap: 0.35rem 1rem;
+    margin: 0;
+}
+
+.ppp-summary:empty {
+    display: none;
+}
+
+.ppp-comparison {
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.ppp-count {
+    font-size: 0.85rem;
 }
 
 .ppp-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+    align-items: end;
+    gap: 0.75rem;
+    padding: 0.9rem;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-m);
+}
+
+.ppp-mini {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.ppp-mini > span,
+.ppp-controls legend {
+    font-size: 0.82rem;
+    font-weight: 600;
 }
 
 .ppp-mini select,
 .ppp-mini input {
+    width: 100%;
+    min-width: 0;
     height: 38px;
     border: 1px solid var(--line-strong);
     border-radius: var(--radius-s);
@@ -291,10 +317,6 @@
 .ppp-mini input:focus {
     outline: none;
     border-color: var(--accent);
-}
-
-.ppp-search input {
-    width: 240px;
 }
 
 .ppp-actions {
@@ -711,7 +733,8 @@
     gap: 0.75rem 1rem;
 }
 
-.ppp-dialog-fields label {
+.ppp-dialog-fields label,
+.ppp-dialog-field {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -721,6 +744,13 @@
     letter-spacing: 0.05em;
     color: var(--muted);
     flex: 1 1 220px;
+}
+
+.ppp-dialog-field p {
+    margin: 0.1rem 0 0;
+    font: 0.85rem/1.45 var(--font-body);
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 .ppp-dialog-fields input,
@@ -758,9 +788,28 @@
     flex-wrap: wrap;
 }
 
+.ppp-select-box select,
+.ppp-mini select,
+.ppp-dialog-fields select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%238a867e' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 0.875rem;
+    padding-inline-end: 2.25rem;
+}
+
+.ppp-select-box:has(select) {
+    padding-inline-end: 0;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
+    .ppp-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .ppp-inputs {
         grid-template-columns: 1fr 1fr;
     }
@@ -771,13 +820,9 @@
         grid-template-columns: 1fr;
     }
 
-    .ppp-search,
-    .ppp-search input {
-        width: 100%;
-    }
-
-    .ppp-controls {
-        width: 100%;
+    .ppp-controls > fieldset,
+    .ppp-search {
+        grid-column: 1 / -1;
     }
 
     .ppp-table th,

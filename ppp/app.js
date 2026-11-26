@@ -175,9 +175,9 @@
         var rows = visibleRows();
         var ts = tiers();
         var us = result.rows.filter(function (r) { return r.country.a2 === 'US'; })[0];
-        $('ppp-summary').innerHTML = esc(money(state.price, cur)) + ' in ' + flag(base) + ' ' + esc(name(base)) +
-            ' (tier ' + base.tier + ') → <strong>' + (us && us.apple ? esc(money(us.apple.price, 'USD')) : usd(result.anchor)) + '</strong> in the US' +
-            ' <span class="ppp-muted">· ' + rows.length + ' of ' + result.rows.length + ' countries shown</span>';
+        $('ppp-summary').innerHTML = '<span class="ppp-comparison"><strong>' + esc(money(state.price, cur)) + '</strong> in ' + flag(base) + ' ' + esc(name(base)) +
+            ' (tier ' + base.tier + ') → <strong>' + (us && us.apple ? esc(money(us.apple.price, 'USD')) : usd(result.anchor)) + '</strong> in the US</span>' +
+            ' <span class="ppp-count ppp-muted">' + rows.length + ' of ' + result.rows.length + ' countries shown</span>';
 
         var html = '';
         if (state.view === 'tier') {
@@ -334,7 +334,7 @@
         var base = byA2[state.base];
         return window.PPPPrompt.build({
             result: result, price: state.price, base: base, baseCurrency: E.baseCurrency(base),
-            kind: state.kind, snap: state.snap && !!points, tiers: tiers(), data: data,
+            kind: state.kind, snap: state.snap && !!points,
             fxDate: fx.date, fxSource: fx.source, pointsBuilt: points ? points.built : '',
             productName: $('ppp-ai-product').value, mode: $('ppp-ai-mode').value, name: name
         });
