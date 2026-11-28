@@ -10101,7 +10101,105 @@
         "misbaha-R34.mp4"
       ],
       "note": "Manual post. Check the Arabic before posting. Use cover.png (53 of 100) beside the MP4 in tappStudio Drive/Reels/Misbaha/misbaha-R34."
+    },
+    {
+      "brand": "kadak",
+      "platform": "IG",
+      "id": "IG-14",
+      "date": "2026-11-28",
+      "time": "8:30 pm IST",
+      "status": "scheduled",
+      "title": "Ek cutting, please. ☕",
+      "text": "Ek cutting, please. ☕ Then the whole street shows up for samosas.\n\nThis is Kadak, my idle chai game. Pour your first cup in Mumbai, hire Bablu Bhaiya when the queue gets long, and catch the train to Jaipur when you’re ready for tapri number two. 🚂\n\nFree on iOS and Android. Link in bio.\n\n#KadakChai #IndieGame #Chai",
+      "alt": {
+        "summary": "Kadak gameplay trailer. A kettle pours chai, eight stalls open, customers crowd the counter and Bablu joins. A train leaves Mumbai and pulls into Jaipur before the chain’s title medals appear.",
+        "slides": []
+      },
+      "note": "",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "https://drive.google.com/file/d/15EdxOVZWAvKIqkvCuSS0oBFG6kpusTxc/view",
+        "img/eb66d971c5e0cff3.webp",
+        "kadak-R10.mp4"
+      ]
+    },
+    {
+      "brand": "kadak",
+      "platform": "YT",
+      "id": "YT-01",
+      "date": "2026-11-28",
+      "time": "8:45 pm IST",
+      "status": "scheduled",
+      "title": "Kadak: Idle Chai Empire | Official Gameplay Trailer",
+      "text": "How far can one kettle take you? Start at a roadside chai stall in Mumbai, open a samosa kadhai, and pour through the rush with Bablu Bhaiya. Then board the train to Jaipur and open another outlet. Your Mumbai tapri keeps earning while you’re away.\n\nPlay Kadak free on Android and iOS: https://kadakchai.tappstudio.in",
+      "alt": {
+        "summary": "Kadak gameplay trailer. A kettle pours chai, eight stalls open, customers crowd the counter and Bablu joins. A train leaves Mumbai and pulls into Jaipur before the chain’s title medals appear.",
+        "slides": []
+      },
+      "note": "",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "https://drive.google.com/file/d/15EdxOVZWAvKIqkvCuSS0oBFG6kpusTxc/view",
+        "img/eb66d971c5e0cff3.webp",
+        "kadak-R10.mp4"
+      ]
+    },
+    {
+      "brand": "kadak",
+      "platform": "X",
+      "id": "X-11",
+      "date": "2026-11-28",
+      "time": "9:00 pm IST",
+      "status": "scheduled",
+      "title": "My chai stall needed a train",
+      "text": "I made an idle game about selling cutting chai. One kettle in Mumbai sounded simple enough. Now there are 8 stalls, 28 cities and a train to get to work. 🚂☕\n\nHere’s the gameplay trailer for Kadak.",
+      "alt": {
+        "summary": "Kadak gameplay trailer. A kettle pours chai, eight stalls open, customers crowd the counter and Bablu joins. A train leaves Mumbai and pulls into Jaipur before the chain’s title medals appear.",
+        "slides": []
+      },
+      "note": "",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "https://drive.google.com/file/d/15EdxOVZWAvKIqkvCuSS0oBFG6kpusTxc/view",
+        "img/eb66d971c5e0cff3.webp",
+        "kadak-R10.mp4"
+      ],
+      "reply": "Play Kadak free on Android and iOS: https://kadakchai.tappstudio.in"
+    },
+    {
+      "brand": "kadak",
+      "platform": "LI",
+      "id": "LI-34",
+      "date": "2026-11-28",
+      "time": "9:15 pm IST",
+      "status": "scheduled",
+      "title": "From one kettle in Mumbai to a second tapri in Jaipur",
+      "text": "My favourite bit of the Kadak trailer is the train pulling into Jaipur. A few seconds earlier you were in Mumbai pouring your first cutting chai. ☕\n\nI wanted opening a second outlet to feel like going somewhere. So you hire Bablu Bhaiya, leave the Mumbai tapri earning, and take the train. When you pull in, the yellow station board says JAIPUR. That’s where you get back to work.\n\nHere’s the gameplay trailer for Kadak, my first game. 🚂",
+      "alt": {
+        "summary": "Kadak gameplay trailer. A kettle pours chai, eight stalls open, customers crowd the counter and Bablu joins. A train leaves Mumbai and pulls into Jaipur before the chain’s title medals appear.",
+        "slides": []
+      },
+      "note": "",
+      "warn": false,
+      "posted": "",
+      "carousel": false,
+      "kind": "reel",
+      "video": [
+        "https://drive.google.com/file/d/15EdxOVZWAvKIqkvCuSS0oBFG6kpusTxc/view",
+        "img/eb66d971c5e0cff3.webp",
+        "kadak-R10.mp4"
+      ],
+      "reply": "Play Kadak free on Android and iOS: https://kadakchai.tappstudio.in"
     }
   ],
-  "built": "28 Nov 2026, 18:35 IST"
+  "built": "28 Nov 2026, 20:17"
 }
